@@ -1,0 +1,11 @@
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Erro: objeto 'ELEMENTO_ITEM_COD' não encontrado
+Execução interrompida

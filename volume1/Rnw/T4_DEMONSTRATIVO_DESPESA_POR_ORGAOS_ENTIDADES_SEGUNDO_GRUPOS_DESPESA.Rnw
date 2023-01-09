@@ -1,0 +1,137 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\newgeometry{bottom=0cm,top=0cm,left=1.5cm,right=2cm}
+
+\begin{landscape}
+
+<<results=tex,echo=FALSE>>=
+  
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_latex = paste0(dir_loa, "/volume1/Rnw")
+  dir_codigosR = paste0(dir_latex, "/CodigosR")
+  dir_utils = paste0(dir_loa, "/utils/")
+  dir_data = paste0(dir_loa, "/volume1/data")
+  dir_bancos = paste0(dir_loa, "/bancos")
+
+  ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
+  
+  source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
+
+  # INICIO TABELA 
+  library(dplyr)
+  library(readr)
+  
+  banco = read_delim(
+    file = paste0(dir_data, 
+                  "/T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA.txt"),
+    delim = '\t', 
+    locale = locale('pt', encoding = 'Latin1', decimal_mark = ',', grouping_mark = '.'),
+    na = '',
+    col_types = cols(total = col_character())
+    ) %>% as.data.table()
+  
+  banco[is.na(banco)] = ""
+  
+  cat("\\renewcommand*{\\arraystretch}{1.9}\n")
+  cat("\\footnotesize\n")
+  cat("\\color{myblack}\n")
+  cat("\\centering\n")
+
+  cat("\\noindent\\begin{longtable}[c]{m{6cm}|m{1.7cm}|m{1.5cm}|m{1.8cm}|m{1.5cm}|m{1.7cm}|m{2cm}|m{2cm}|m{1.3cm}}\n")
+
+  titulo1= paste0("\\multicolumn{9}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\small \\textbf{",
+                  "DEMONSTRATIVO DA DESPESA POR UNIDADE ORÇAMENTÁRIA SEGUNDO OS GRUPOS DE DESPESA}}} \\TBstrut",
+                  " \\\\[2ex]\n")
+ 
+  titulo2= paste0("\\multicolumn{9}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\small \\textbf{",
+                  "(Art. 2$\\mathbf{^o}$, \\S 2$\\mathbf{^o}$, inciso II da Lei 4.320/64)}}}  \\\\\n")
+ 
+  subtitulo1 = "\\multicolumn{9}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n"
+  subtitulo2 = paste("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",
+                     ANO_DOC , "}}} & \\multicolumn{8}{r}{\\textbf{R\\$1,00}} \\\\\n")
+ 
+  cat("\\hline\n")
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{0pt}{0pt}\n")
+  cat(subtitulo1)
+  cat(subtitulo2)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+ 
+  cabecalho = paste0("\\multicolumn{1}{L{6cm}|}{ \\textbf{UNIDADE ORÇAMENTÁRIA}} & ", 
+                     "\\multicolumn{1}{C{1.7cm}|}{ \\textbf{PESSOAL ENCARGOS SOCIAIS}} & ",
+                     "\\multicolumn{1}{C{1.5cm}|}{ \\textbf{JUROS E ENCARGOS DA DÍVIDA}} & ",
+                     "\\multicolumn{1}{C{1.8cm}|}{ \\textbf{OUTRAS DESPESAS CORRENTES}} & ",
+                     "\\multicolumn{1}{c|}{ \\textbf{INVESTIMENTOS}} & ",
+                     "\\multicolumn{1}{C{1.9cm}|}{ \\textbf{INVERSÕES FINANCEIRAS}} & ",
+                     "\\multicolumn{1}{C{2.3cm}|}{ \\textbf{AMORTIZAÇÃO DA DÍVIDA}} & ", 
+                     "\\multicolumn{1}{C{2.2cm}|}{ \\textbf{RESERVA DE CONTINGÊNCIA}} & ", 
+                     "\\multicolumn{1}{c}{ \\textbf{TOTAL}} \\\\\n")
+ 
+  cat(cabecalho)
+  cat("\\hline\n")
+  cat("\\endfirsthead\n")
+ 
+  cat("\\hline\n")
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{0pt}{0pt}\n")
+  cat(subtitulo1)
+  cat(subtitulo2)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+ 
+  cat(cabecalho)
+  cat("\\hline\n")
+  cat("\\endhead\n")
+ 
+  cat("\\endfoot\n")
+ 
+  cat("\\hline\n")
+  cat("\\hline \\hline\n")
+  cat("\\endlastfoot\n")
+
+
+  for(i in 1:nrow(banco)){
+
+    if(banco[i, orgaos]=="TOTAL"){
+      
+      cat("\\hline \\hline")
+      
+      cat("\\multicolumn{1}{L{6cm}@{}|}{ \\textbf{", TratamentoNA(banco[i, orgaos]),
+          "}} & \\multicolumn{1}{r|}{ \\textbf{",TratamentoNA(banco[i, pessoal]), 
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", TratamentoNA(banco[i, juros]), 
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", TratamentoNA(banco[i, outras]),
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", TratamentoNA(banco[i, investimentos]),
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", TratamentoNA(banco[i, inversoes]),
+          "}} & \\multicolumn{1}{r|}{ \\textbf{",  TratamentoNA(banco[i, amort]),  
+          "}} & \\multicolumn{1}{r|}{ \\textbf{",  TratamentoNA(banco[i, reserva]),  
+          "}} & \\multicolumn{1}{r}{ \\textbf{",  TratamentoNA(banco[i, total]), "}} \\\\\n")
+    
+      } else{
+
+        cat("\\multicolumn{1}{L{6cm}@{}|}{", TratamentoNA(banco[i, orgaos]),
+            "} & \\multicolumn{1}{r|}{",TratamentoNA(banco[i, pessoal]), 
+            "} & \\multicolumn{1}{r|}{", TratamentoNA(banco[i, juros]), 
+            "} & \\multicolumn{1}{r|}{", TratamentoNA(banco[i, outras]),
+            "} & \\multicolumn{1}{r|}{", TratamentoNA(banco[i, investimentos]),
+            "} & \\multicolumn{1}{r|}{", TratamentoNA(banco[i, inversoes]),
+            "} & \\multicolumn{1}{r|}{",  TratamentoNA(banco[i, amort]),  
+            "} & \\multicolumn{1}{r|}{",  TratamentoNA(banco[i, reserva]),
+            "} & \\multicolumn{1}{r}{",  TratamentoNA(banco[i, total]), "} \\\\\n")
+  }
+
+}
+  cat("\\end{longtable}\n")
+
+  
+  # FIM TABELA
+
+@
+
+\end{landscape}
+ 
+\end{document}

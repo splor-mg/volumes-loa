@@ -1,0 +1,160 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+\renewcommand{\contentsname}{Sumário}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+<<ParametrosRecortes, echo=FALSE, results=hide>>=
+  
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_latex = paste0(dir_loa, "/volume4/Rnw")
+  dir_codigosR = paste0(dir_latex, "/CodigosR")
+  dir_utils = paste0(dir_loa, "/utils/")
+  dir_data = paste0(dir_loa, "/volume4/data")
+  dir_bancos = paste0(dir_loa, "/bancos")
+
+  ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
+  
+  source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
+
+  getCodigoR(paste0(dir_latex, "/T1_OBRAS_POR_UNIDADE_ORCAMENTARIA_SEGUNDO_TERRITORIOS_DE_PLANEJAMENTO.Rnw"),
+             dir_codigosR)
+  getCodigoR(paste0(dir_latex, "/T2_DETALHAMENTO_DOS_INVESTIMENTOS_TERRITORIOS_PLANEJAMENTO_MUNICIPIOS.Rnw"), 
+             dir_codigosR)
+  getCodigoR(paste0(dir_latex, "/ANEXO_RelacaoTerritorio_X_Municipios.Rnw"), dir_codigosR)
+
+@
+
+% Capa
+\begin{titlepage}
+\newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+\includepdf[pages={6},scale=1.1]{capaLOA.pdf}
+\end{titlepage}
+% \capa
+
+% Títulos
+% Pagina com os titulos
+\restoregeometry
+\thispagestyle{empty}
+\newgeometry{top=1cm}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=2cm, height=2cm]{brasao_mg}
+\end{center}
+\end{figure}
+\vspace*{-2em}
+\begin{center}
+\large
+Governo do Estado de Minas Gerais \\
+Secretaria de Estado de Planejamento e Gestão \\
+Subsecretaria de Planejamento e Orçamento \\
+Superintendência Central de Planejamento e Orçamento \\
+
+\vspace*{10em}
+ \fontsize{45pt}{60pt}\selectfont {\textbf{PROJETO DE LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
+ %\fontsize{50pt}{10pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
+
+\vspace*{4em}
+\fontsize{15pt}{12pt}\selectfont {\textbf{ANEXO IV}} \\
+\large{DISTRIBUIÇÃO REGIONALIZADA DOS INVESTIMENTOS}
+
+\end{center}
+
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+% \Titulos
+
+% Sumario
+\restoregeometry
+\small
+\tableofcontents
+\newpage
+\phantomsection
+
+% Pagina iniciando Quadros Consolidados
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\restoregeometry
+\vspace*{9cm}
+\addcontentsline{toc}{section}{OBRAS POR UNIDADE ORÇAMENTÁRIA SEGUNDO AS REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS}
+\centering \Huge {\textbf{OBRAS POR UNIDADE ORÇAMENTÁRIA SEGUNDO AS REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+\phantomsection
+\scriptsize
+
+<<t1_obras_por_territorio, results=tex, echo=F>>=
+  
+  # INICIO TABELA
+  
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_latex = paste0(dir_loa, "/volume4/Rnw")
+  dir_codigosR = paste0(dir_latex, "/CodigosR")
+  dir_utils = paste0(dir_loa, "/utils/")
+  dir_data = paste0(dir_loa, "/volume4/data")
+  dir_bancos = paste0(dir_loa, "/bancos")
+
+  ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
+  
+  source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
+  
+  sumario = data.table(read.table(paste(dir_data, "/sumario_v4.txt", sep=""), header = T, sep = "\t", 
+                                  quote = "\"'", dec = "@", stringsAsFactors = FALSE))
+  
+  cat("\\newgeometry{bottom=2cm, top=2cm,left=1.5cm,right=1.5cm}\n")
+
+  for(uo in sumario[, COD_UO]){
+    
+    source(paste0(dir_codigosR, "/T1_OBRAS_POR_UNIDADE_ORCAMENTARIA_SEGUNDO_TERRITORIOS_DE_PLANEJAMENTO.R"),
+           encoding = "UTF-8")
+    
+    cat("\\newpage\n")
+  }
+@
+
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\restoregeometry
+\vspace*{9cm}
+\phantomsection
+\addcontentsline{toc}{section}{INVESTIMENTOS EM OBRAS POR REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS E RESPECTIVOS MUNICÍPIOS}
+\centering \Huge {\textbf{INVESTIMENTOS EM OBRAS POR REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS E RESPECTIVOS MUNICÍPIOS}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+
+<<t2_consolidado, results=tex, echo=F>>=
+  
+  cat("\\newgeometry{bottom=2cm,top=1cm,left=1.5cm,right=1.5cm}\n")
+  # Parâmetros importantes para a tabela 2
+  registro_poder = c()
+  registro_orgao = c()
+
+  for(uo in sumario$COD_UO){
+  
+    source(paste0(dir_codigosR, "/T2_DETALHAMENTO_DOS_INVESTIMENTOS_TERRITORIOS_PLANEJAMENTO_MUNICIPIOS.R"), 
+          encoding = "UTF-8")
+  }
+@
+
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\restoregeometry
+\vspace*{9cm}
+\phantomsection
+\addcontentsline{toc}{section}{RELAÇÃO DAS REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS E RESPECTIVOS MUNICÍPIOS}
+\centering \Huge {\textbf{RELAÇÃO DAS REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS E RESPECTIVOS MUNICÍPIOS}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+
+
+<<anexo, results=tex, echo=F>>=
+  cat("\\newgeometry{bottom=2cm,top=1cm,left=1.5cm,right=1.5cm}\n")
+  source(paste0(dir_codigosR, "/ANEXO_RelacaoTerritorio_X_Municipios.R"), encoding = "UTF-8")
+
+  # FIM TABELA
+  
+@
+
+% \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+% \includepdf[pages={157},scale=1.1]{05_LOA__Volume_IV_sem_contra_capa.pdf}
+
+\end{document}

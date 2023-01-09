@@ -1,0 +1,56 @@
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: T19_DCGF_Demonstrativo_Aplicacao_Recursos_Amparo_Fomento_Pesquisa Valor da despesa na fapemig 319.365.481 diferente do valor de receita 319.363.369 seguindo a regra do 1%
+
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:data.table':
+
+    between, first, last
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Joining, by = c("FUNCAO_COD", "SUBFUNCAO_COD")
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx",  :
+  trataQDD_Elemento_Item: Há valores iguais a zero na linha  4008
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'

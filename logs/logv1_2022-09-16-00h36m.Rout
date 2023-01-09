@@ -1,0 +1,7 @@
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: Valor de RCL pelo pkg relatorios (87.261.386.213) é diferente do apresentado no demonstrativo (87.261.386.216). Avaliar o demonstrativo em utils/rcl.R
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'

@@ -1,0 +1,8 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"39.888"	"230.499"	"11.020.877.091"	"100"	"1.26.1 - SECRETARIA DE ESTADO DE EDUCAÇÃO - SEE"	"1.26.0 - SECRETARIA DE ESTADO DE EDUCAÇÃO - SEE"
+	"DIREÇÃO E ASSESSORAMENTO"	"4.256"					
+	"DIREÇÃO SUPERIOR"	"      2"					
+	"DOCENTE"	"151.539"					
+	"ESPECIALIZADA"	"12.146"					
+	"TÉCNICA"	"22.668"					
+"TOTAL"			"230.499"	"11.020.877.091"	"100"		

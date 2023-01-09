@@ -1,0 +1,3 @@
+"cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
+""	""	""	"0"	"0"	"0"	"1.55.1 - DEPARTAMENTO DE TRÂNSITO DE MINAS GERAIS - DETRAN/MG"	"1.51.0 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG"
+""	""	"SUBTOTAL 1"	"0"	"0"	"0"		

@@ -1,0 +1,41 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+\renewcommand{\contentsname}{Sumário}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+  % Títulos
+  % Pagina com os titulos
+  \restoregeometry
+  \newgeometry{top=1cm}
+  \begin{titlepage}
+  \begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=2cm, height=2cm]{brasao_mg}
+  \end{center}
+  \end{figure}
+  \vspace*{-2em}
+  \begin{center}
+  \large
+  Governo do Estado de Minas Gerais \\
+  Secretaria de Estado de Planejamento e Gestão \\
+  Subsecretaria de Planejamento e Orçamento \\
+  Superintendência Central de Planejamento e Orçamento
+  
+  \vspace*{10em}
+  \fontsize{45pt}{12pt}\selectfont {\textbf{PROJETO DE LEI ORÇAMENTÁRIA 2023}}
+
+  \vspace*{4em}
+  \LARGE{\textbf {ANEXO I}} \\
+  
+  \LARGE{ORÇAMENTO FISCAL E ORÇAMENTO DE INVESTIMENTO DAS EMPRESAS CONTROLADAS PELO ESTADO}
+  
+  \vspace{1em}
+  \LARGE{\underline{DEMONSTRATIVOS}}
+  
+  \end{center}
+  \end{titlepage}
+  
+  \end{document}

@@ -1,0 +1,115 @@
+Registered S3 methods overwritten by 'tibble':
+  method     from  
+  format.tbl pillar
+  print.tbl  pillar
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO', MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  2171  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' VAGA/PARTICIPAÇÃO', EMPREENDIMENTO', CIDADÃO/AGRICULTOR
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/', DEFENSOR/SERVIDOR/CIDADÃO
+Registered S3 methods overwritten by 'tibble':
+  method     from  
+  format.tbl pillar
+  print.tbl  pillar
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO', MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  2171  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' VAGA/PARTICIPAÇÃO', EMPREENDIMENTO', CIDADÃO/AGRICULTOR
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/', DEFENSOR/SERVIDOR/CIDADÃO
+Registered S3 methods overwritten by 'tibble':
+  method     from  
+  format.tbl pillar
+  print.tbl  pillar
+Registered S3 methods overwritten by 'tibble':
+  method     from  
+  format.tbl pillar
+  print.tbl  pillar
+Registered S3 methods overwritten by 'tibble':
+  method     from  
+  format.tbl pillar
+  print.tbl  pillar
+Registered S3 methods overwritten by 'tibble':
+  method     from  
+  format.tbl pillar
+  print.tbl  pillar
+Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem um quantitativo de inativos, porém apresentam valores superiores a R$ 1.000 nas ações da FUNFIP: 
+ 1071 1261 
+Caso seja necessário inserir o quantitativo de inativos manualmente, criar em bancos/manual/PESSOAL_INATIVO_AUSENTE_SISOR.xlsx. 
+Banco com apenas duas variáveis: cod_uo e quantidade
+Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
+
+Registered S3 methods overwritten by 'tibble':
+  method     from  
+  format.tbl pillar
+  print.tbl  pillar
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4331 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1730.00.1.1.01.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1251 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1740.00.1.1.99.000
+1770.00.1.1.99.000
+2440.00.1.1.99.000
+2470.00.1.1.01.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2171 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1740.00.1.1.99.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2271 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1770.00.1.1.99.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1481 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1740.00.1.1.99.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4091 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1740.00.1.1.99.000
+1770.00.1.1.99.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4601 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1740.00.1.1.99.000
+1770.00.1.1.99.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2061 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1740.00.1.1.99.000
+Registered S3 methods overwritten by 'tibble':
+  method     from  
+  format.tbl pillar
+  print.tbl  pillar
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4331 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1730.00.1.1.01.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1251 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1740.00.1.1.99.000
+1770.00.1.1.99.000
+2440.00.1.1.99.000
+2470.00.1.1.01.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2171 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1740.00.1.1.99.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2271 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1770.00.1.1.99.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1481 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1740.00.1.1.99.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4091 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1740.00.1.1.99.000
+1770.00.1.1.99.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4601 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1740.00.1.1.99.000
+1770.00.1.1.99.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2061 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1740.00.1.1.99.000
+Registered S3 methods overwritten by 'tibble':
+  method     from  
+  format.tbl pillar
+  print.tbl  pillar
+Warning in xfun::read_utf8(input) :
+  The file logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd is not encoded in UTF-8. These lines contain invalid UTF-8 characters: 2, 3, 4, 5, 6, 7, ...
+
+
+processing file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd
+output file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.md
+

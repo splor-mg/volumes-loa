@@ -1,0 +1,7 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"295"	"1.226"	"186.674.063"	"100"	"2.37.1 - INSTITUTO MINEIRO DE AGROPECUÁRIA - IMA"	"1.23.0 - SECRETARIA DE ESTADO DE AGRICULTURA, PECUÁRIA E ABASTECIMENTO - SEAPA"
+	"DIREÇÃO E ASSESSORAMENTO"	"38"					
+	"DIREÇÃO SUPERIOR"	"  4"					
+	"ESPECIALIZADA"	"16"					
+	"TÉCNICA"	"873"					
+"TOTAL"			"1.226"	"186.674.063"	"100"		

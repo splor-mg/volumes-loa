@@ -1,0 +1,7 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"28"	"371"	"37.716.942"	"100"	"1.49.1 - SECRETARIA DE ESTADO DE GOVERNO - SEGOV"	"1.49.0 - SECRETARIA DE ESTADO DE GOVERNO - SEGOV"
+	"DIREÇÃO E ASSESSORAMENTO"	"234"					
+	"DIREÇÃO SUPERIOR"	"13"					
+	"ESPECIALIZADA"	"49"					
+	"TÉCNICA"	"47"					
+"TOTAL"			"371"	"37.716.942"	"100"		

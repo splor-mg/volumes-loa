@@ -1,0 +1,131 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\pagestyle{empty}
+\newgeometry{bottom=1cm,top=1cm,left=1.5cm,right=1.5cm}
+
+<<results=tex,echo=FALSE>>=
+  
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_data = paste0(dir_loa, "/volume1/data")
+  ANO_DOC = as.numeric(readLines(paste0(dir_loa, "/utils/ano.txt"), warn = F))
+  source(paste0(dir_loa, "/utils/funcoes.R"), encoding = "UTF-8")
+
+  # INICIO TABELA 
+
+  banco = ler_banco_txt(paste0(dir_data, "/T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas.txt"))
+
+  cat("\\renewcommand*{\\arraystretch}{1.9}\n")
+  cat("\\scriptsize\n")
+  cat("\\color{myblack}\n")
+  cat("\\centering\n")
+
+  cat("\\noindent\\begin{longtable}[c]{m{4cm}|m{1.8cm}|m{1.8cm}|m{4cm}|m{1.8cm}|m{1.8cm}}\n")
+
+  titulo1= paste0("\\multicolumn{6}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\small \\textbf{",
+                  "DEMONSTRATIVO DA RECEITA E DESPESA SEGUNDO AS CATEGORIAS ECONÔMICAS}}} \\TBstrut",
+                  " \\\\[2ex]\n")
+ 
+  titulo2= paste0("\\multicolumn{6}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\small \\textbf{",
+                  "(Art. 2$\\mathbf{^o}$, \\S 1$\\mathbf{^o}$, Inciso II da Lei 4.320/64)}}}  \\\\\n")
+ 
+  subtitulo1 = "\\multicolumn{6}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n"
+  subtitulo2 = paste("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",
+                     ANO_DOC , "}}} & \\multicolumn{5}{r}{\\textbf{R\\$1,00}} \\\\\n")
+ 
+  cabecalho = paste0("\\multicolumn{1}{L{4cm}|}{ \\textbf{RECEITA}} & ", 
+                     "\\multicolumn{2}{C{3cm}|}{ \\textbf{VALOR}} & ",
+                     "\\multicolumn{1}{C{4cm}|}{ \\textbf{DESPESA}} & ",
+                     "\\multicolumn{2}{C{3cm}}{ \\textbf{VALOR}} \\\\\n")
+  
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{0pt}{0pt}\n")
+  cat(subtitulo1)
+  cat(subtitulo2)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(cabecalho)
+  cat("\\hline\n")
+  
+
+  for(i in 1:nrow(banco)){
+
+    if(banco[i, vl_rec]==""){
+      
+      if(banco[i, RECEITA_DESC]=="TOTAL"){
+        alinhamento_horizontal = "C"
+      } else{
+        alinhamento_horizontal = "L"
+      }
+
+      cat("\\multicolumn{1}{", alinhamento_horizontal, "{4.5cm}|}{ \\textbf{", banco[i, RECEITA_DESC],
+          "}} & \\multicolumn{1}{R{1.8cm}|}{ \\textbf{", negativoContabil(banco[i, vl_rec]),
+          "}} & \\multicolumn{1}{R{1.8cm}|}{ \\textbf{", negativoContabil(banco[i, vl_rec_total]),
+          "}} & \\multicolumn{1}{", alinhamento_horizontal, "{4.5cm}|}{ \\textbf{", banco[i, DESPESA_DESC],
+          "}} & \\multicolumn{1}{R{1.8cm}|}{ \\textbf{", negativoContabil(banco[i, vl_desp]),
+          "}} & \\multicolumn{1}{R{1.8cm}}{ \\textbf{", negativoContabil(banco[i, vl_desp_total]),"}} \\\\\n", sep="")
+
+      } else{
+
+        cat("\\multicolumn{1}{@{\\hspace{2em}}L{4.5cm}|}{", banco[i, RECEITA_DESC],
+          "} & \\multicolumn{1}{R{1.8cm}|}{", negativoContabil(banco[i, vl_rec]),
+          "} & \\multicolumn{1}{R{1.8cm}|}{", negativoContabil(banco[i, vl_rec_total]),
+          "} & \\multicolumn{1}{@{\\hspace{2em}}L{4.5cm}|}{", banco[i, DESPESA_DESC],
+          "} & \\multicolumn{1}{R{1.8cm}|}{", negativoContabil(banco[i, vl_desp]),
+          "} & \\multicolumn{1}{R{1.8cm}}{", negativoContabil(banco[i, vl_desp_total]),"} \\\\\n", sep="")
+  }
+
+}
+
+cat("\\hline\\hline\\hline\n")  
+cat("\\end{longtable}\n")
+
+#### TABELA RESUMO
+
+resumo = data.table(read.table(paste0(dir_data, "/T3_DCGF_Resumo_Demonst_Receita_Despesa_Segundo_Categorias.txt"),
+                                header=T, sep="\t", dec=",", stringsAsFactors = FALSE))
+
+cat("\\footnotesize\n")
+cat("\\vspace{-0.7cm}\n")
+
+cat("\\noindent\\begin{longtable}[c]{m{4cm}|m{2cm}|m{4cm}|m{2cm}}\n")
+cat("\\multicolumn{4}{c}{\\small \\textbf{RESUMO} \\newline}  \\\\\n")
+
+for(i in 1:nrow(resumo)){
+  
+  if(resumo[i, RECEITA_DESC] %in% c("TOTAL", "DÉFICIT")){
+    
+    cat("\\multicolumn{1}{L{6cm}}{ \\textbf{", resumo[i, RECEITA_DESC],
+        "}} & \\multicolumn{1}{R{3cm}}{ \\textbf{", negativoContabil(resumo[i, vl_rec_total]),
+        "}} & \\multicolumn{1}{L{6cm}}{ \\textbf{ \\hspace{1cm}", resumo[i, DESPESA_DESC],
+        "}} & \\multicolumn{1}{R{2.5cm}}{ \\textbf{", negativoContabil(resumo[i, vl_desp_total]),"}} \\\\\n", sep="")
+    
+  } else{
+    
+    cat("\\multicolumn{1}{L{6cm}}{", resumo[i, RECEITA_DESC],
+        "} & \\multicolumn{1}{R{3cm}}{", negativoContabil(resumo[i, vl_rec_total]),
+        "} & \\multicolumn{1}{L{6cm}}{ \\hspace{1cm}", resumo[i, DESPESA_DESC],
+        "} & \\multicolumn{1}{R{2.5cm}}{", negativoContabil(resumo[i, vl_desp_total]),"} \\\\\n", sep="")  
+  }
+}
+  
+cat("\\hline\\hline\\hline\\hline\n")  
+  
+cat("\\end{longtable}\n")
+
+
+cat("\\raggedright\n")
+cat("\\fontsize{7pt}{10pt}\\selectfont {FONTE: Armazém SISOR.}\\\\\n")
+cat("\\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
+cat("\\fontsize{7pt}{10pt}\\selectfont {NOTA: Com intuito de evitar a dupla contagem na elaboração desse relatório, foram desconsiderados os valores referentes às operações intra-orçamentárias.}\\\\\n")
+
+
+# FIM TABELA
+
+@
+
+
+\end{document}

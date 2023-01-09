@@ -1,0 +1,119 @@
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+Warning: T19_DCGF_Demonstrativo_Aplicacao_Recursos_Amparo_Fomento_Pesquisa Valor da despesa na fapemig 336.784.718 diferente do valor de receita 326.151.717 seguindo a regra do 1%
+
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx",  :
+  trataQDD_Elemento_Item: Há valores iguais a zero na linha  8426, 8439, 8446
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: HÃ¡ valores iguais a zero na linha  3984
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:data.table':
+
+    between, first, last
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Joining, by = c("FUNCAO_COD", "SUBFUNCAO_COD")
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx",  :
+  trataQDD_Elemento_Item: Há valores iguais a zero na linha  8426, 8439, 8446
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: HÃ¡ valores iguais a zero na linha  3984
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: HÃ¡ valores iguais a zero na linha  3984
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx",  :
+  trataQDD_Elemento_Item: Há valores iguais a zero na linha  8426, 8439, 8446
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: HÃ¡ valores iguais a zero na linha  3984
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984

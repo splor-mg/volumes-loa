@@ -1,0 +1,8 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"1.183"	"12.248"	"1.143.616.997"	"100"	"2.27.1 - FUNDAÇÃO HOSPITALAR DO ESTADO DE MINAS GERAIS - FHEMIG"	"1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES"
+	"DIREÇÃO E ASSESSORAMENTO"	"571"					
+	"DIREÇÃO SUPERIOR"	"    1"					
+	"ESPECIALIZADA"	"4.220"					
+	"OUTRAS"	"975"					
+	"TÉCNICA"	"5.298"					
+"TOTAL"			"12.248"	"1.143.616.997"	"100"		

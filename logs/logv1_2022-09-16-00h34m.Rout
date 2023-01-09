@@ -1,0 +1,39 @@
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in adiciona_desc(desp, c("UO", "PROGRAMA")) :
+  Os seguintes pares ANO-PROGRAMA_COD nao foram classificados: 
+  2022-90
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in eval(jsub, SDenv, parent.frame()) :
+  NAs introduzidos por coerção
+Warning: T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitasprevidenciarias em funcoes.R 0 diferente do valor calculado em demonstr_receitas_previdenciarias 2.513.000
+
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning in eval(jsub, SDenv, parent.frame()) :
+  NAs introduzidos por coerção
+Warning in trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx",  :
+  trataQDD_Elemento_Item: o valor de BASE_QDD_FISCAL total (107.908.049.304) é diferente de BASE_ORCAM_DESPESA_ITEM_FISCAL (122.693.482.281) 
+
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Error in ler_novaReceita("bancos/manual/desc_classificacao_receita.xlsx") : 
+  não foi possível encontrar a função "ler_novaReceita"
+Execução interrompida

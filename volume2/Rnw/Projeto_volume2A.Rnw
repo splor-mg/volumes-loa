@@ -1,0 +1,258 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+\renewcommand{\contentsname}{Sumário}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+<<parametros, echo=FALSE, results=hide>>=
+  qual_anexo = "A"
+  codigo_funfip = 4711
+
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_latex = paste0(dir_loa, "/volume2/Rnw")
+  dir_codigosR = paste0(dir_latex, "/CodigosR")
+  dir_utils = paste0(dir_loa, "/utils/")
+  dir_data = paste0(dir_loa, "/volume2/data")
+  dir_bancos = paste0(dir_loa, "/bancos")
+
+  ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
+  
+  source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
+
+  getCodigoR(paste0(dir_latex, "/T1_PROGRAMA_DE_TRABALHO.Rnw"), dir_codigosR)
+  getCodigoR(paste0(dir_latex, "/T2_RECURSOS_FINANCEIROS_FONTE_RECURSOS_GRUPOS_DESPESA_FISCAL.Rnw"), dir_codigosR)
+  getCodigoR(paste0(dir_latex, "/T3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL.Rnw"), dir_codigosR)
+  getCodigoR(paste0(dir_latex, "/T4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rnw"), dir_codigosR)
+  getCodigoR(paste0(dir_latex, "/T5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS_TABELA_DEMAIS_RECURSOS.Rnw"), dir_codigosR)
+  getCodigoR(paste0(dir_latex, "/ANEXO_codigos_descricoes_2A.Rnw"), dir_codigosR)
+
+@
+
+% Capa
+\newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+\includepdf[pages={3},scale=1.1]{capaLOA.pdf}
+% \capa
+
+% Títulos
+% Pagina com os titulos
+\restoregeometry
+\newgeometry{top=1cm}
+\begin{titlepage}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=2cm, height=2cm]{brasao_mg}
+\end{center}
+\end{figure}
+\vspace*{-2em}
+\begin{center}
+\large
+Governo do Estado de Minas Gerais \\
+Secretaria de Estado de Planejamento e Gestão \\
+Subsecretaria de Planejamento e Orçamento \\
+Superintendência Central de Planejamento e Orçamento
+
+\vspace*{10em}
+ \fontsize{45pt}{12pt}\selectfont {\textbf{PROJETO DE LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
+ %\fontsize{50pt}{10pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
+
+\vspace*{4em}
+\LARGE{\textbf {ANEXO II - \Sexpr{qual_anexo }}} \\
+
+\LARGE{ORÇAMENTO FISCAL}
+
+\end{center}
+\end{titlepage}
+
+\newpage
+% \Titulos
+
+% Sumario
+\restoregeometry
+\normalsize
+\tableofcontents
+\newpage
+% \Sumario
+
+% Pagina iniciando DEMONSTRATIVO CONSOLIDADO DA DESPESA
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\phantomsection
+\addtocontents{toc}{\cftpagenumbersoff{section}}
+\restoregeometry
+\vspace*{10cm}
+\addcontentsline{toc}{section}{ DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}
+\LARGE \centering \textbf{DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}
+\afterpage{\null\thispagestyle{empty}\newpage}
+
+% retirado, pois as paginas em branco nao são mais necessárias já que os volumes não são mais impressos.
+\newpage 
+
+ \newgeometry{bottom=0cm,top=0cm,left=2cm,right=2cm}
+ \thispagestyle{lscape}
+ \pagestyle{lscape}
+ 
+ \begin{landscape}
+
+<<forUO, results=tex,echo=FALSE>>=
+  
+  # INICIO TABELA
+  
+  qual_anexo = "A"
+  codigo_funfip = 4711
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_latex = paste0(dir_loa, "/volume2/Rnw")
+  dir_codigosR = paste0(dir_latex, "/CodigosR")
+  dir_utils = paste0(dir_loa, "/utils/")
+  dir_data = paste0(dir_loa, "/volume2/data")
+  dir_bancos = paste0(dir_loa, "/bancos")
+  ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
+  source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
+  
+  sumario = data.table(read.table(paste(dir_data, "/sumario.txt", sep=""), header=T, sep="\t", 
+                                  dec=",", stringsAsFactors = FALSE))
+
+  metade = round(length(sumario$COD_UO) / 2, 0)
+  while(sumario$COD_ORGAO[metade]==sumario$COD_ORGAO[metade+1]){
+    metade = metade +1
+  }
+  
+  warning(paste("Volume2A A última UO considerada nesse relatório será ", sumario[metade, COD_UO], "--",
+                  sumario[metade, UO], "que fecha o orgao", sumario[metade, ORGAO], "\n"))
+
+  # Necessário para a tabela 2
+  rodape = data.table(read.table(paste0(dir_data, "/tabela2/rodape.txt"), header=T, sep="\t", 
+                                 dec=",", stringsAsFactors = FALSE))
+
+  registro_orgao =c()
+  registro_poder = c()
+
+  for(uo in sumario$COD_UO[0:metade]){
+  #uo = 1021
+    
+    if(file.exists(paste(paste(dir_data, "/tabela1/",uo,".txt",sep="")))==F){
+      warning(paste("V2A T1: Para a UO", uo, "NÃO existe o banco T2 PROGRAMA DE TRABALHO. Dado que todo o universo de UO's",
+                       "do volume 2 possuem a tabela 1, é um erro considerar essa UO\n"))
+      next
+  }
+  
+  banco = data.table(read.table(paste0(dir_data, "/tabela1/",uo,".txt"), header=T, 
+                                sep="\t", dec=",", stringsAsFactors = FALSE))
+  
+  if(!sumario[COD_UO==uo, PODER] %in% registro_poder){
+    cat("\\phantomsection\n")
+    cat("\\addcontentsline{toc}{section}{\\underline{", sumario[COD_UO==uo, poder] ,"}}\n")  
+    
+    registro_poder = append(registro_poder, sumario[COD_UO==uo, PODER])
+  }
+
+ if(!banco[1, nome_orgao] %in% registro_orgao){
+   cat("\\phantomsection\n")
+   cat("\\addcontentsline{toc}{section}{", banco[1, nome_orgao], "}\n")  
+   registro_orgao = append(registro_orgao, banco[1, nome_orgao])
+ }
+  
+  cat("\\ifthispageodd{ }{\\null\\thispagestyle{empty}\\newpage}\n")
+  cat("\\phantomsection\n")
+  cat("\\vspace*{10cm}\n")
+  cat("\\addcontentsline{toc}{subsection}{", banco[1, nome_uo] ,"}\n")
+  
+  cat("\\begin{longtable}[c]{m{20cm}}\n \\multicolumn{1}{C{20cm}}{ \\LARGE", 
+      gsub("\\d+\\.\\d+\\.\\d+ *- *(.+)", "\\1", banco[1, nome_uo]), "}\n \\end{longtable}\n" )
+  
+  cat("\\afterpage{\\null\\thispagestyle{empty}\\newpage}\n")
+  cat("\\newpage\n") #retirado, pois as paginas em branco nao são mais necessárias já que os volumes não são mais impressos.
+  
+
+  # Tabela 1 PROGRAMA DE TRABALHO
+      
+  source(paste(dir_codigosR, "/T1_PROGRAMA_DE_TRABALHO.R", sep=""), encoding = "UTF-8")
+
+  cat("\\newpage\n")
+
+  # Tabela 2 RECURSOS FINANCEIROS FONTE RECURSOS GRUPOS DESPESA FISCAL
+
+  if(file.exists(paste(dir_data, "/tabela2/",uo,".txt",sep=""))){
+  
+    source(paste0(dir_codigosR, "/T2_RECURSOS_FINANCEIROS_FONTE_RECURSOS_GRUPOS_DESPESA_FISCAL.R"), encoding = "UTF-8")
+ 
+    cat("\\newpage\n") 
+  } else{
+    warning(paste("V2A: T2: Para a UO", uo, 
+                   "NÃO existe o banco T2 RECURSOS FINANCEIROS FONTE RECURSOS GRUPOS DESPESA FISCAL\n"))
+    }
+
+  # Tabela 3 RECURSOS ORCAMENTARIO CATEGORIA PESSOAL
+ 
+  if(file.exists(paste(dir_data, "/tabela3/",uo,".txt",sep="")) & uo!=codigo_funfip){
+  
+    source(paste0(dir_codigosR, "/T3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL.R"), encoding = "UTF-8")
+ 
+    cat("\\newpage\n") 
+  } else{ 
+    warning(paste("V2A T3: Para a UO", uo, "NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL\n"))
+   }
+  
+  # Tabela 4 DEMONSTRATIVO DOS RECURSOS FINANCEIROS
+
+  if(file.exists(paste(dir_data, "/tabela4/",uo,".txt",sep="")) & substr(uo,1,1)!="1"){
+    
+    source(paste0(dir_codigosR, "/T4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.R"), encoding = "UTF-8")
+
+    cat("\\newpage\n") 
+  } else{ 
+    if(!file.exists(paste(dir_data, "/tabela4/",uo,".txt",sep=""))) {
+      warning(paste("V2A T4: Para a UO", uo, "NÃO existe o banco T4 DEMONSTRATIVO DOS RECURSOS FINANCEIROS\n"))
+    }
+    }
+  
+  # Tabela 5 DEMONSTRATIVO DOS RECURSOS FINANCEIROS: DEMAIS RECURSOS
+  
+  if(file.exists(paste(dir_data, "/tabela5/",uo,".txt",sep="")) & substr(uo,1,1)!="1"){
+    
+  source(paste0(dir_codigosR, "/T5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS_TABELA_DEMAIS_RECURSOS.R"), encoding = "UTF-8")
+
+  cat("\\newpage\n")
+  
+  } else{
+    if(!file.exists(paste(dir_data, "/tabela5/",uo,".txt",sep="")) & substr(uo,1,1)!="1") {
+        warning(paste("V2A T5: Para a UO", uo, "NÃO existe o banco",
+                "T5 DEMONSTRATIVO DOS RECURSOS FINANCEIROS TABELA DEMAIS RECURSOS"))
+    }
+  }
+  
+}
+
+@
+
+ 
+ \end{landscape}
+ \newpage
+ 
+ \pagestyle{plain}
+ 
+ \restoregeometry
+ \ifthispageodd{ }{\null\thispagestyle{empty}\newpage}
+ \addtocontents{toc}{\cftpagenumberson{section}}
+ \phantomsection
+  \vspace*{10cm}
+\addcontentsline{toc}{section}{GRUPOS DE DESPESA, FONTES DE RECURSO, IDENTIFICADORES DE PROCEDÊNCIA E USO E IDENTIFICADORES DE AÇÃO GOVERNAMENTAL}
+\begin{longtable}[c]{m{15cm}}
+\multicolumn{1}{C{15cm}}{ \Large GRUPOS DE DESPESA, FONTES DE RECURSO, IDENTIFICADORES DE PROCEDÊNCIA E USO E IDENTIFICADORES DE AÇÃO GOVERNAMENTAL}
+\end{longtable}
+
+\newpage
+
+<<anexos, results=tex, echo=F>>=
+  source(paste(dir_codigosR, "/ANEXO_codigos_descricoes_2A.R", sep=""), encoding = "UTF-8")
+  
+  # FIM TABELA
+  
+@
+ 
+ % Inicio: Contra Capa
+%  \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+% \includepdf[pages={641},scale=1.1]{02_LOA_Volume_II_A.pdf}
+ % Fim: Contra Capa
+ 
+  \end{document}

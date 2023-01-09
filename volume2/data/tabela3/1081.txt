@@ -1,0 +1,6 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"340"	"825"	"308.916.731"	"100"	"1.08.1 - ADVOCACIA GERAL DO ESTADO - AGE"	"1.08.0 - ADVOCACIA GERAL DO ESTADO - AGE"
+	"DIREÇÃO E ASSESSORAMENTO"	"50"					
+	"DIREÇÃO SUPERIOR"	"  3"					
+	"ESPECIALIZADA"	"432"					
+"TOTAL"			"825"	"308.916.731"	"100"		

@@ -1,0 +1,171 @@
+    # INICIO TABELA  
+      # O inicio da tabela não considera o banco pelo fato que este está sendo chamado no  
+      # projeto_volume2A.Rnw para montar o sumário 
+     
+    cat("\\renewcommand*{\\arraystretch}{1.9}\n") 
+    cat("\\scriptsize\n") 
+    cat("\\color{myblack}\n") 
+    cat("\\centering\n") 
+     
+    cat("\\noindent\\begin{longtable}[c]{", 
+        "m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}m{5cm}m{2cm}m{1cm}|m{0.1cm}|m{0.3cm}", 
+        "@{\\hskip 0.15cm}|m{0.65cm}|m{0.5cm}|m{1.5cm}|m{1.3cm}|m{1.48cm}|m{1.3cm}", 
+        "|m{1.65cm}|m{1.7cm}|m{1.3cm}}\n", sep="") 
+ 
+    titulo1= "\\multicolumn{20}{c}{\\cellcolor{gray!50} \\small \\textbf{ PROGRAMA DE TRABALHO}}\\TBstrut  \\\\[2ex]\n" 
+  
+    titulo2= paste("\\multicolumn{2}{l}{\\textbf{Exercício:}} & \\multicolumn{8}{l}{\\textbf{ ", 
+                   ANO_DOC , "}} & \\multicolumn{9}{l}{}  & \\multicolumn{1}{r}{\\textbf{R\\$1,00}} \\\\\n") 
+  
+    titulo_orgao = paste0("\\multicolumn{2}{l}{\\textbf{ÓRGÃO:}} & \\multicolumn{18}{l}{", banco[1, nome_orgao] , "} \\\\\n") 
+    titulo_uo = paste0("\\multicolumn{2}{l}{\\textbf{UO:}} & \\multicolumn{18}{l}{", banco[1, nome_uo] ,"} \\\\\n") 
+  
+    cabecalho = paste0("\\multicolumn{9}{L{8.2cm}|}{ESPECIFICAÇÃO} & ",  
+                       "\\multicolumn{1}{l|}{MOD} & ", 
+                       "\\multicolumn{1}{c|}{IAG} & ",  
+                       "\\multicolumn{1}{c|}{FONTE} & ", 
+                       "\\multicolumn{1}{c|}{IPU} & ", 
+                       "\\multicolumn{1}{C{1.5cm}|}{1.PESSOAL E ENCARGOS SOCIAIS} & ", 
+                       "\\multicolumn{1}{C{1.3cm}|}{2.JUROS E ENCARGOS DA DÍVIDA} & ", 
+                       "\\multicolumn{1}{C{1.48cm}|}{3.OUTRAS DESPESAS CORRENTES} & ", 
+                       "\\multicolumn{1}{l|}{4.INVESTIMENTOS} & ", 
+                       "\\multicolumn{1}{C{1.65cm}|}{5.INVERSOES FINANCEIRAS} & ", 
+                       "\\multicolumn{1}{C{2.1cm}|}{6.AMORTIZAÇÃO DA DÍVIDA} & ",  
+                       "\\multicolumn{1}{c}{TOTAL} \\\\\n")  
+  
+  
+    cat("\\hline\n") 
+    cat(titulo1) 
+    cat("\\specialrule{1.5pt}{0pt}{0pt}\n") 
+    cat(titulo2) 
+    cat("\\hline\n") 
+    cat(titulo_orgao) 
+    cat(titulo_uo) 
+    cat("\\specialrule{1pt}{0pt}{0pt}\n") 
+  
+    cat(cabecalho) 
+    cat("\\hline\n") 
+    cat("\\endfirsthead\n") 
+  
+  
+    cat("\\hline\n") 
+    cat(titulo1) 
+    cat("\\specialrule{1.5pt}{0pt}{0pt}\n") 
+    cat(titulo2) 
+    cat("\\hline\n") 
+    cat(titulo_orgao) 
+    cat(titulo_uo) 
+    cat("\\specialrule{1pt}{0pt}{0pt}\n") 
+  
+    cat(cabecalho) 
+    cat("\\hline\n") 
+    cat("\\endhead\n") 
+  
+    cat("\\endfoot\n") 
+  
+    cat("\\hline\n") 
+    cat("\\hline \\hline\n") 
+    cat("\\endlastfoot\n") 
+ 
+ 
+    for(i in 1:nrow(banco)){ 
+ 
+      if(banco[i, tipo]==1){ 
+         
+        id_classificacao = sum(is.na(banco[i, c("FUNCAO", "SUB_FUNCAO", "PROGRAMA",  
+                                                "IDENT_PROJATIV", "PROJ_ATIV", "SUB_PROJETO")])) 
+     
+      if(id_classificacao==5){ 
+       
+        cat("\\multicolumn{1}{c}{ {\\bf ", formatC(TratamentoNA(banco[i, FUNCAO]), width = 2, flag = "0"),  
+            "}} & \\multicolumn{5}{c}{} & \\multicolumn{3}{L{4cm}@{}|}{", TratamentoNA(banco[i, descricao]), 
+            "} & & & & & & & & & & & \\multicolumn{1}{r}{",  TratamentoNA(banco[i, total]), "} \\\\\n") 
+       
+      } else if(id_classificacao==4){ 
+       
+        cat("\\multicolumn{1}{c}{", formatC(TratamentoNA(banco[i, FUNCAO]), width = 2, flag = "0"),  
+            "} & \\multicolumn{1}{c}{ {\\bf ",formatC(TratamentoNA(banco[i, SUB_FUNCAO]), width = 3, flag = "0"), 
+            "}} & \\multicolumn{4}{c}{} & \\multicolumn{3}{L{4cm}@{}|}{", TratamentoNA(banco[i, descricao]), 
+            "} & & & & & & & & & & & \\multicolumn{1}{r}{",  TratamentoNA(banco[i, total]), "} \\\\\n") 
+       
+      } else if(id_classificacao==3){ 
+       
+        cat("\\multicolumn{1}{c}{", formatC(TratamentoNA(banco[i, FUNCAO]), width = 2, flag = "0"),  
+            "} & \\multicolumn{1}{c}{",formatC(TratamentoNA(banco[i, SUB_FUNCAO]), width = 3, flag = "0"), 
+            "} & \\multicolumn{1}{c}{ {\\bf ", formatC(TratamentoNA(banco[i, PROGRAMA]), width = 3, flag = "0"), 
+            "}} & \\multicolumn{3}{c}{} & \\multicolumn{3}{L{4cm}@{}|}{", TratamentoNA(banco[i, descricao]), 
+            "} & & & & & & & & & & & \\multicolumn{1}{r}{",  TratamentoNA(banco[i, total]), "} \\\\\n") 
+       
+      } else if(id_classificacao==1){ 
+       
+        cat("\\multicolumn{1}{c}{", formatC(TratamentoNA(banco[i, FUNCAO]), width = 2, flag = "0"),  
+            "} & \\multicolumn{1}{c}{",formatC(TratamentoNA(banco[i, SUB_FUNCAO]), width = 3, flag = "0"), 
+            "} & \\multicolumn{1}{c}{", formatC(TratamentoNA(banco[i, PROGRAMA]), width = 3, flag = "0"), 
+            "} & \\multicolumn{1}{c}{ {\\bf ",TratamentoNA(banco[i, IDENT_PROJATIV]),  
+            "}} & \\multicolumn{1}{c}{ {\\bf ",	formatC(TratamentoNA(banco[i, PROJ_ATIV]), width = 3, flag = "0"), 
+            "}} & \\multicolumn{1}{c}{} & \\multicolumn{3}{L{4cm}@{}|}{", TratamentoNA(banco[i, descricao]), 
+            "} & & & & & & & & & & & \\multicolumn{1}{r}{",  TratamentoNA(banco[i, total]), "} \\\\\n") 
+           
+            } 
+      else{ 
+     
+      cat("\\multicolumn{1}{c}{{\\bf ", formatC(TratamentoNA(banco[i, FUNCAO]), width = 2, flag = "0"),  
+          "}} & \\multicolumn{1}{c}{{\\bf ", formatC(TratamentoNA(banco[i, SUB_FUNCAO]), width = 3, flag = "0"),  
+          "}} & \\multicolumn{1}{c}{{\\bf ",	formatC(TratamentoNA(banco[i, PROGRAMA]), width = 3, flag = "0"),  
+          "}} & \\multicolumn{1}{c}{{\\bf ",TratamentoNA(banco[i, IDENT_PROJATIV]),  
+          "}} & \\multicolumn{1}{c}{{\\bf ",	formatC(TratamentoNA(banco[i, PROJ_ATIV]), width = 3, flag = "0"),  
+          "}} & \\multicolumn{1}{c}{{\\bf ",	formatC(TratamentoNA(banco[i, SUB_PROJETO]), width = 4, flag = "0"),  
+          "}} & \\multicolumn{3}{L{4cm}@{}|}{{\\bf", TratamentoNA(banco[i, descricao]),  
+          "}} & & & & & & & & & & & \\multicolumn{1}{r}{{\\bf ",  TratamentoNA(banco[i, total]), "}} \\\\\n") 
+      } 
+   
+     } else if(banco[i, tipo]==7) { 
+        
+        cat("\\multicolumn{9}{l|}{} &","\\multicolumn{1}{c|}{",TratamentoNA(banco[i, MOD]),  
+            "} &\\multicolumn{1}{c|}{", TratamentoNA(banco[i, IAG]), 
+            "} &","\\multicolumn{1}{c|}{",TratamentoNA(banco[i, FONTE]), 
+            "} & \\multicolumn{1}{c|}{",TratamentoNA(banco[i, IPU]), 
+            "} & \\multicolumn{1}{r|}{",TratamentoNA(banco[i, PESSOAL]),  
+            "} & \\multicolumn{1}{r|}{", TratamentoNA(banco[i, JUROS]),  
+            "} & \\multicolumn{1}{r|}{", TratamentoNA(banco[i, OUTRAS]),   
+            "} & \\multicolumn{1}{r|}{", TratamentoNA(banco[i, INVESTIMENTOS]), 
+            "} & \\multicolumn{1}{r|}{",  TratamentoNA(banco[i, INVERSOES]), 
+            "} & \\multicolumn{1}{r|}{",  TratamentoNA(banco[i, AMORTIZA]),   
+            "} & \\multicolumn{1}{r}{",  TratamentoNA(banco[i, total]), "} \\\\\n") 
+   
+      } else if(banco[i, tipo]==5){ # IMPORTANTE \scriptsize é equivalente a \fontsize{7pt}{6pt}\\selectfont 
+          
+        cat("\\multicolumn{9}{L{8cm}|}{\\underline{Finalidade}} & & & & & & & & & & & \\\\\n")  
+          
+        cat("\\multicolumn{9}{L{8cm}|}{\\fontsize{6pt}{8pt}\\selectfont \\textit{", banco[i, descricao], 
+            "}} & & & & & & & & & & & \\\\\n", sep="")  
+          
+       } else if(banco[i, tipo]==8){ 
+          
+          cat("\\multicolumn{6}{L{1cm}}{\\underline{Produto}} & ", 
+              "\\multicolumn{2}{C{2.2cm}}{\\underline{Unidade de Medida}}", 
+              "& \\multicolumn{1}{R{1.6cm}|}{\\underline{Meta Física}} & & & & & & & & & & & \\\\\n") 
+   
+          cat("\\multicolumn{6}{L{3cm}}{ \\fontsize{6pt}{8pt}\\selectfont ", banco[i, descricao],  
+              "} & \\multicolumn{2}{C{2cm}}{\\fontsize{6pt}{8pt}\\selectfont ", banco[i, unid_med_prod], 
+              "} & \\multicolumn{1}{R{1.5cm}|}{\\fontsize{6pt}{8pt}\\selectfont ", banco[i, valor_prod],  
+              "} & & & & & & & & & & & \\\\\n", sep="") 
+   } else{ 
+      
+     cat("\\hline \\hline") 
+      
+     cat("\\multicolumn{13}{l|}{\\textbf{ ",banco[i, descricao], 
+         "}} & \\multicolumn{1}{c|}{ \\textbf{ ", TratamentoNA(banco[i, PESSOAL]),  
+         "}} & \\multicolumn{1}{c|}{ \\textbf{ ", TratamentoNA(banco[i, JUROS]),  
+         "}} & \\multicolumn{1}{c|}{ \\textbf{ ", TratamentoNA(banco[i, OUTRAS]),  
+         "}} & \\multicolumn{1}{c|}{ \\textbf{ ", TratamentoNA(banco[i, INVESTIMENTOS]), 
+         "}} & \\multicolumn{1}{c|}{ \\textbf{ ", TratamentoNA(banco[i, INVERSOES]), 
+         "}} & \\multicolumn{1}{c|}{ \\textbf{ ",  TratamentoNA(banco[i, AMORTIZA]), 
+         "}} & \\multicolumn{1}{c}{ \\textbf{ ", TratamentoNA(banco[i, total]), "}} \\\\\n", sep="") 
+  
+   } 
+} 
+   
+    cat("\\end{longtable}\n") 
+   
+  # FIM TABELA 

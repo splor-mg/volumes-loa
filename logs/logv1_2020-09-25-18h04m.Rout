@@ -1,0 +1,5 @@
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB: setdiff(loa_desp[, unique(SUBFUNCAO_COD)], subfun_esperadas): 363
+ setdiff(subfun_esperadas, loa_desp[, unique(SUBFUNCAO_COD)]): 

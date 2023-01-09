@@ -1,0 +1,4 @@
+"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"OUTRAS DESPESAS CORRENTES"	"Total"
+"1.91.0 - ENCARGOS GERAIS DO ESTADO - SECRETARIA DE ESTADO DE FAZENDA - EGE SEF"	"1.91.7 - GESTÃO IMOBILIÁRIA - IMOVEIS"	" 2"		"10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS"	" 0"	"1"	"1.000"	"1.000"
+					"Total"	"1"	"1.000"	"1.000"
+				"TOTAL"	" 0"	"1"	"1.000"	"1.000"

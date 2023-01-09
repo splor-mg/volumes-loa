@@ -1,0 +1,61 @@
+% Libraries
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{longtable} % Carrega o objeto longtable
+%\usepackage{lscape}
+%\usepackage{pdflscape}
+\usepackage[table]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tocloft}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\graphicspath{ {img/} }
+\usepackage[hidelinks]{hyperref}
+\usepackage{ragged2e}
+\usepackage{afterpage}
+\usepackage{scrextend} % ifelse para páginas pares e ímpares
+\usepackage{gensymb}
+
+% Alterar a fonte para Arial
+\usepackage[T1]{fontenc}
+\usepackage{uarial}
+\renewcommand{\familydefault}{\sfdefault}
+
+% libraries teste 1
+
+% Novos comandos e definições
+\newcommand{\valorHeader}[1]{\scriptsize #1}
+\newcommand{\fonteSeis}[1]{\fontsize{6px}{8px}\selectfont #1}
+%\newcommand{\novaFonte}[1]{\fontsize{6px}{10px}\selectfont #1}
+\newcommand{\novaFonte}[1]{\fontsize{7px}{10px}\selectfont #1}
+
+\newcommand\Tstrut{\rule{0pt}{2em}}       % pading top para o titulo
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}} % padding bottom para o titulo
+\newcommand{\TBstrut}{\Tstrut\Bstrut} 
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{J}[1]{>{\justifying\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newcommand{\tab}[1]{\hspace{17.5pt}\rlap{#1}}
+
+%\addtocontents{toc}{\cftpagenumbersoff{section}}
+%\renewcommand{\cftdot}{} % Retira o pontilhado do summario (opcional)
+%\renewcommand{\contentsname}{Sumário}
+
+\setlength{\tabcolsep}{0.18cm}
+\definecolor{myblack}{RGB}{0,0,0}
+\definecolor{vermelhoTitulo}{RGB}{102,0,0}
+%\definecolor{vermelhoTitulo}{RGB}{0,0,0}
+
+\setlength{\cftbeforesubsecskip}{6pt} % Aumenta o espacamento antes do item subsecao na tabela de contents (sumario)
+\setlength{\cftbeforesecskip}{15pt} % Aumenta o espacamento antes do item secao na tabela de contents (sumario)
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000

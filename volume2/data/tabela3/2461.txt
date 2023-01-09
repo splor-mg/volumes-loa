@@ -1,0 +1,7 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	" 1"	"17"	"1.717.569"	"100"	"2.46.1 - AGÊNCIA DE DESENVOLVIMENTO DA REGIÃO METROPOLITANA DO VALE DO AÇO - ARMVA"	"1.22.0 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - SEDE"
+	"DIREÇÃO E ASSESSORAMENTO"	" 6"					
+	"DIREÇÃO SUPERIOR"	" 1"					
+	"ESPECIALIZADA"	" 8"					
+	"OUTRAS"	" 1"					
+"TOTAL"			"17"	"1.717.569"	"100"		

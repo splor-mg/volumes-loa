@@ -1,0 +1,101 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\pagestyle{empty}
+\newgeometry{bottom=1.5cm,top=1.5cm,left=1.5cm,right=1.5cm}
+
+
+<<results=tex,echo=FALSE>>=
+  
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_data = paste0(dir_loa, "/volume1/data")
+  ANO_DOC = as.numeric(readLines(paste0(dir_loa, "/utils/ano.txt"), warn = F))
+  source(paste0(dir_loa, "/utils/funcoes.R"), encoding = "UTF-8")
+
+  # INICIO TABELA 
+
+  banco = ler_banco_txt(paste0(dir_data, "/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.txt"))
+
+  cat("\\renewcommand*{\\arraystretch}{1.6}\n")
+  cat("\\footnotesize\n")
+  cat("\\color{myblack}\n")
+  cat("\\centering\n")
+
+  cat("\\noindent\\begin{longtable}[c]{m{12cm}m{3cm}}\n", sep="")
+
+  titulo1= paste0("\\multicolumn{2}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\small ",
+                  "\\textbf{RECEITA CORRENTE LÍQUIDA}}} \\\\\n")
+  
+  titulo2= paste0("\\multicolumn{2}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
+                  "\\textbf{(Art. 7\\degree, Inciso II da Lei  24.218/2022 - LDO)}}} \\\\\n")
+ 
+  subtitulo1 = paste0("\\multicolumn{2}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n")
+                      
+  
+  subtitulo2 = paste("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",
+                     ANO_DOC , "}}} & \\multicolumn{1}{r}{\\textbf{R\\$1,00}} \\\\\n")
+ 
+  cabecalho = paste0("\\multicolumn{1}{C{12cm}}{ \\textbf{ESPECIFICAÇÃO}} & ",
+                     "\\multicolumn{1}{C{3cm}}{ \\textbf{VALOR}} \\\\\n")
+                     
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo1)
+  cat(subtitulo2)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(cabecalho)
+  cat("\\hline\n")
+  cat("\\endfirsthead\n")
+ 
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo1)
+  cat(subtitulo2)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(cabecalho)
+  cat("\\hline\n")
+  cat("\\endhead\n")
+  cat("\\endfoot\n")
+  
+  cat("\\hline\\hline\n")
+  cat("\\endlastfoot\n")
+
+  for(i in 1:nrow(banco)){
+
+    linha = as.list(banco[i, ])
+    colocarNegrito = 0
+    
+    if(linha[["nvl"]] %in% c(0,1)){ 
+      
+      colocarNegrito = 1
+      if(linha[["nvl"]] ==0) cat("\\hline\\hline\n")
+      
+    }
+      
+      recuo_h = 2*as.numeric(linha[["nvl"]]) # Recuo Horizontal
+
+      cat("\\multicolumn{1}{@{\\hspace{", recuo_h, "em}}L{12cm}}{", aplicaNegrito(linha[["espec"]], colocarNegrito),
+          "} & \\multicolumn{1}{R{3cm}}{", aplicaNegrito(linha[["VL_LOA_REC"]], colocarNegrito),
+          "} \\\\\n", sep="")
+
+  }
+  
+  cat("\\hline\\hline\n")
+  cat("\\end{longtable}\n")
+
+  # NOTAS DE RODAPÉ
+  
+  cat("\\raggedright\n")
+  cat("\\fontsize{7pt}{10pt}\\selectfont {FONTE: Armazém Sisor.} \\\\\n")
+  cat("\\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
+  
+  # FIM TABELA
+
+@
+
+\end{document}

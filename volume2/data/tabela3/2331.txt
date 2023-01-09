@@ -1,0 +1,6 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"10"	"145"	"12.320.763"	"100"	"2.33.1 - INSTITUTO DE METROLOGIA E QUALIDADE DO ESTADO DE MINAS GERAIS - IPEMMG"	"1.22.0 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - SEDE"
+	"DIREÇÃO E ASSESSORAMENTO"	"35"					
+	"DIREÇÃO SUPERIOR"	" 3"					
+	"TÉCNICA"	"97"					
+"TOTAL"			"145"	"12.320.763"	"100"		

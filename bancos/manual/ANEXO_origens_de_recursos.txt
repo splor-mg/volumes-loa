@@ -1,0 +1,17 @@
+cod	descricao
+1	Aumento de Capital
+2	Recursos do Estado
+3	Tesouro Ordinário
+4	Aplicação Livre
+3	Tesouro Vinculado
+4	FUNDESE
+1	Operação de Crédito
+2	Contratada
+3	Interna
+4	BNDES
+4	Outras
+3	Externa
+4	KFW
+1	Recursos Próprios
+4	Recursos Próprios
+

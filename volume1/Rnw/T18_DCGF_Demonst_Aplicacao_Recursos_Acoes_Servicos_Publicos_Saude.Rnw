@@ -1,0 +1,113 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\pagestyle{empty}
+\newgeometry{bottom=1cm,top=1cm,left=1.5cm,right=1.5cm}
+
+
+<<results=tex,echo=FALSE>>=
+  
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_data = paste0(dir_loa, "/volume1/data")
+  ANO_DOC = as.numeric(readLines(paste0(dir_loa, "/utils/ano.txt"), warn = F))
+  source(paste0(dir_loa, "/utils/funcoes.R"), encoding = "UTF-8")
+
+  # INICIO TABELA 
+
+  banco = ler_banco_txt(paste0(dir_data, "/T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude.txt"))
+
+  cat("\\renewcommand*{\\arraystretch}{1.6}\n")
+  cat("\\scriptsize\n")
+  cat("\\color{myblack}\n")
+  cat("\\centering\n")
+
+  cat("\\noindent\\begin{longtable}[c]{m{3cm}m{9cm}|m{3cm}}\n", sep="")
+
+  titulo1= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
+                  "\\textbf{DEMONSTRATIVO DA APLICAÇÃO DE RECURSOS NAS AÇÕES E SERVIÇOS PÚBLICOS DE SAÚDE}}} \\\\\n")
+  
+  
+  titulo2= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
+                  "\\textbf{(Art. 198 da Constituição Federal e Art. 7\\degree, Inciso ",
+                  "V da Lei 24.218/2022 - LDO)}}}  \\\\\n")
+ 
+  subtitulo1 = paste0("\\multicolumn{3}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n")
+  
+  subtitulo2 = paste("\\multicolumn{2}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",
+                     ANO_DOC , "}}} & \\multicolumn{1}{r}{\\textbf{R\\$1,00}} \\\\\n")
+ 
+  cabecalho = paste0("\\multicolumn{2}{L{15cm}}{ \\textbf{ESPECIFICAÇÕES}} & ",
+                     "\\multicolumn{1}{C{3cm}}{ \\textbf{VALOR}} \\\\\n")
+                     
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo1)
+  cat(subtitulo2)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(cabecalho)
+  cat("\\hline\\hline\n")
+  cat("\\endfirsthead\n")
+
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo1)
+  cat(subtitulo2)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(cabecalho)
+  cat("\\hline\n")
+  cat("\\endhead\n")
+  cat("\\endfoot\n")
+
+  cat("\\hline\\hline\n")
+  cat("\\endlastfoot\n")
+
+  for(i in 1:nrow(banco)){
+
+    linha = as.list(banco[i, ])
+    colocarNegrito = 0
+    
+    if(linha[["nvl"]] %in% c(0)){ 
+      colocarNegrito = 1
+      if(!grepl("^A.+", linha[["espec"]])) cat("\\hline\\hline\n")
+      
+    }
+    if(linha[["cod"]]==""){
+      
+      recuo_h = 2*as.numeric(linha[["nvl"]]) # Recuo Horizontal
+
+      cat("\\multicolumn{2}{@{\\hspace{", recuo_h, "em}}L{12cm}}{", aplicaNegrito(linha[["espec"]], colocarNegrito),
+          "} & \\multicolumn{1}{R{3cm}}{", aplicaNegrito(linha[["VL_LOA"]], colocarNegrito),
+          "} \\\\\n", sep="")
+    } else{
+        cat("\\multicolumn{1}{@{\\hspace{2em}}L{2cm}}{", linha[["cod"]],
+            "} & \\multicolumn{1}{L{10cm}}{", linha[["espec"]],
+            "} & \\multicolumn{1}{R{3cm}}{", linha[["VL_LOA"]],
+            "} \\\\\n", sep="")
+      
+    }
+
+      
+     #if(grepl("^A.+", linha[["espec"]])) cat("\\hline\n")
+      
+    
+  }
+  
+  cat("\\hline\\hline\n")
+  cat("\\end{longtable}\n")
+
+  # NOTAS DE RODAPÉ
+  
+  cat("\\raggedright\n")
+  cat("\\fontsize{7pt}{10pt}\\selectfont {FONTE: Armazém Sisor.} \\\\\n")
+  cat("\\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
+  
+  # FIM TABELA
+
+@
+
+\end{document}

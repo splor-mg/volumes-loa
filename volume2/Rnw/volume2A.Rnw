@@ -1,0 +1,801 @@
+\documentclass{article}
+% Libraries
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage[table]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage[absolute]{textpos}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{tocloft}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\graphicspath{ {img/} }
+\usepackage[hidelinks]{hyperref}
+
+% Alterar a fonte para Arial
+\usepackage[T1]{fontenc}
+\usepackage{uarial}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{blindtext}
+
+\usepackage{array}
+% libraries teste
+
+
+% Fim
+% Novos comandos e definições
+\newcommand{\valorHeader}[1]{\tiny #1}
+\newcommand\Tstrut{\rule{0pt}{3em}}       % pading top para o titulo
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}} % padding bottom para o titulo
+\newcommand{\TBstrut}{\Tstrut\Bstrut} 
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\setlength{\tabcolsep}{4pt}
+\definecolor{myblack}{RGB}{0,0,0}
+\definecolor{vermelhoTitulo}{RGB}{102,0,0}
+
+\renewcommand{\contentsname}{Sumário}
+\setlength{\cftbeforesubsecskip}{6pt} % Aumenta o espacamento antes do item subsecao na tabela de contents (sumario)
+\setlength{\cftbeforesecskip}{18pt} % Aumenta o espacamento antes do item secao na tabela de contents (sumario)
+
+% Alterar a fonte para Arial
+\usepackage[T1]{fontenc}
+\usepackage{uarial}
+%\usepackage{arial}
+\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{blindtext}
+% libraries teste
+
+% Novos comandos e definições TESTE
+ \fancypagestyle{lscape}{% 
+ %\fancyhf{} % clear all header and footer fields 
+ 
+ \fancyfoot[LO] {%
+ \begin{textblock}{1}(20,14){\rotatebox{90}{\thepage}}
+ \end{textblock}}
+ 
+ \renewcommand{\footrulewidth}{0pt}
+ }
+ 
+ \setlength{\TPHorizModule}{1cm}
+ \setlength{\TPVertModule}{1cm}
+%
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+% Para evitar a hiphenizacao das palavras (wrap:break-word)
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+<<echo=FALSE>>=
+ANO_DOC = 2016 # Mudar apenas aqui
+@
+
+% Capa
+\newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+\includepdf[pages={1},scale=1.1]{02_LOA_Volume_II_A.pdf}
+% \capa
+
+% Títulos
+% Pagina com os titulos
+\restoregeometry
+\newgeometry{top=1cm}
+\begin{titlepage}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=2cm, height=2cm]{brasao_mg}
+\end{center}
+\end{figure}
+\vspace*{-2em}
+\begin{center}
+\large
+Governo do Estado de Minas Gerais \\
+Secretaria de Estado de Planejamento e Gestão \\
+Subsecretaria de Planejamento, Orçamento e Qualidade do Gasto \\
+Superintendência Central de Planejamento e Programação Orçamentária
+
+\vspace*{10em}
+ \fontsize{50pt}{12pt}\selectfont {\textbf{PROJETO DE LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
+
+\vspace*{4em}
+\LARGE{\textbf {ANEXO II - A}} \\
+
+\LARGE{ORÇAMENTO FISCAL}
+
+\end{center}
+\end{titlepage}
+
+\newpage
+% \Titulos
+
+% Sumario
+\restoregeometry
+\normalsize
+\tableofcontents
+\newpage
+% \Sumario
+
+% Pagina iniciando DEMONSTRATIVO CONSOLIDADO DA DESPESA
+\phantomsection
+\addtocontents{toc}{\cftpagenumbersoff{section}}
+\restoregeometry
+\vspace*{10cm}
+\addcontentsline{toc}{section}{ DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}
+\LARGE \centering \textbf{DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}
+\newpage
+
+ \newgeometry{bottom=0cm,top=0cm,left=1.5cm,right=2cm}
+ \thispagestyle{lscape}
+ \pagestyle{lscape}
+ 
+ \begin{landscape}
+
+<<results=tex,echo=FALSE>>=
+
+TratamentoNA = function(x){
+  return(ifelse(is.na(x)==TRUE, "", x))
+} 
+
+dir_bancos = "C:/Users/m1312932/SEPLAG/LOA/Volume 2A/Bancos/"
+
+registro_log = function(uo, tab, ok){
+  if(ok==1){  write.table(data.frame(hora_dia=date(), uo_codigo=uo, tabela=tab, obs="OK"), 
+                          file=paste(dir_bancos, "log.txt", sep=""), append = T, quote= F, 
+                          sep='\t', na="", row.names = F, col.names =F)
+    
+    } else{  write.table(data.frame(hora_dia=date(), uo_codigo=uo, tabela=tab, obs="Tabela nao existe"), 
+                         file=paste(dir_bancos, "log.txt", sep=""), append = T, quote= F, 
+                         sep='\t', na="", row.names = F, col.names =F)
+  }
+}
+
+ANO_DOC = 2016
+
+if(file.exists(paste(dir_bancos, "log.txt", sep=""))==F){
+  write.table(data.frame(hora_dia=as.Date(character()), uo_codigo=as.numeric(), tabela=as.numeric(), obs=as.character()), 
+              file=paste(dir_bancos, "log.txt", sep=""),  append = T, quote= F, sep='\t', na="", row.names = F)
+}
+
+
+sumario = read.table(paste(dir_bancos, "sumario.txt", sep=""), header=T, sep="\t", dec=",", stringsAsFactors = FALSE)
+
+registro_orgao =c()
+registro_poder = c()
+
+for(uo in sumario$COD_UO){
+###################################################################################
+############### INICIO: Tabela 1 Programa de Trabalho #############################
+###################################################################################
+  
+  if(file.exists(paste(paste(dir_bancos, "tabela1/",uo,".txt",sep="")))==F){
+    next
+  }
+  
+  banco = read.table(paste("C:\\Users\\m1312932\\SEPLAG\\LOA\\Volume 2A\\Bancos\\tabela1\\",uo,".txt",sep=""), 
+                     header=T, sep="\t", dec=",", stringsAsFactors = FALSE)
+  
+  if((sumario$PODER[sumario$COD_UO==uo] %in% registro_poder)==FALSE){
+    cat("\\phantomsection\n")
+    cat("\\addcontentsline{toc}{section}{\\underline{",
+        sumario$PODER[sumario$COD_UO==uo] ,"}}\n")  
+  }
+  
+  registro_poder = append(registro_poder, sumario$PODER[sumario$COD_UO==uo])
+ 
+ if((banco$orgao[1] %in% registro_orgao)==FALSE){
+   cat("\\phantomsection\n")
+   cat("\\addcontentsline{toc}{section}{", banco$orgao[1], "}\n")  
+ }
+  
+  registro_orgao = append(registro_orgao, banco$orgao[1])
+  
+  cat("\\phantomsection\n")
+  cat("\\vspace*{15cm}\n")
+  cat("\\addcontentsline{toc}{subsection}{", banco$uo[1] ,"}\n")
+  cat("\\raggedleft \\LARGE ", gsub("\\d+\\.\\d+\\.\\d+ *- *(.+)", "\\1", banco$uo[1]), "\\hspace{1cm} \n")
+  cat("\\newpage\n")
+  
+    
+cat("\\renewcommand*{\\arraystretch}{1.9}\n")
+cat("\\scriptsize\n")
+cat("\\color{myblack}\n")
+cat("\\centering\n")
+cat("\\noindent\\begin{longtable}[c]{m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}m{5cm}m{2cm}m{1cm}|m{0.1cm}|m{0.3cm}@{\\hskip 0.15cm}|m{0.65cm}|m{0.5cm}|m{1.5cm}|m{1.3cm}|m{1.48cm}|m{1.3cm}|m{1.65cm}|m{1.7cm}|m{1.3cm}}\n")
+
+ titulo1= "\\multicolumn{20}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\small \\textbf{ PROGRAMA DE TRABALHO}}}\\TBstrut  \\\\[2ex]\n"
+ 
+ titulo2= paste("\\multicolumn{2}{l}{\\textbf{Exercício:}} & \\multicolumn{8}{l}{\\textbf{ \\textcolor{myblack}{ ",
+                ANO_DOC ,
+          "}}} & \\multicolumn{9}{l}{\\textbf{RECURSOS DE TODAS AS FONTES}}  & \\multicolumn{1}{r}{\\textbf{R\\$1,00}} \\\\\n")
+ 
+ titulo_orgao = paste("\\multicolumn{2}{l}{\\textbf{ÓRGÃO:}} & \\multicolumn{18}{l}{", banco$orgao[1] , "} \\\\\n", sep="")
+ titulo_uo = paste("\\multicolumn{2}{l}{\\textbf{UO:}} & \\multicolumn{18}{l}{", banco$uo[1] ,"} \\\\\n", sep="")
+  
+ cat("\\hline\n")
+ cat(titulo1)
+ cat("\\specialrule{1.5pt}{0pt}{0pt}\n")
+ cat(titulo2)
+ cat("\\hline\n")
+ cat(titulo_orgao)
+ cat(titulo_uo)
+ cat("\\specialrule{1pt}{0pt}{0pt}\n")
+ 
+ 
+ cabecalho = paste("\\multicolumn{9}{L{8cm}|}{ESPECIFICAÇÃO}", " & ", 
+                   "\\multicolumn{1}{l|}{MOD}", " & ",
+                   "\\multicolumn{1}{c|}{IAG}", " & ", "\\multicolumn{1}{c|}{FONTE}", 
+                   " & ","\\multicolumn{1}{c|}{IPU}", " & ",
+                   "\\multicolumn{1}{C{1.5cm}|}{PESSOAL ENCARGOS SOCIAIS}", " & ",
+                   "\\multicolumn{1}{C{1.3cm}|}{JUROS ENC. DÍVIDA}", " & ",
+                   "\\multicolumn{1}{C{1.48cm}|}{OUTRAS DESPESAS CORRENTES}", " & ",
+                   "\\multicolumn{1}{l|}{INVESTIMENTOS}", " & ",
+                   "\\multicolumn{1}{C{1.65cm}|}{INVERSOES FINANCEIRAS}", " & ",
+                   "\\multicolumn{1}{C{2cm}|}{AMORTIZAÇÃO DA DÍVIDA}", " & ", 
+                   "\\multicolumn{1}{c}{TOTAL} \\\\\n", sep="")
+ 
+ 
+ cat(cabecalho)
+ cat("\\hline\n")
+ cat("\\endfirsthead\n")
+ 
+ 
+ cat("\\hline\n")
+ cat(titulo1)
+ cat("\\specialrule{1.5pt}{0pt}{0pt}\n")
+ cat(titulo2)
+ cat("\\hline\n")
+ cat(titulo_orgao)
+ cat(titulo_uo)
+ cat("\\specialrule{1pt}{0pt}{0pt}\n")
+ 
+ cat(cabecalho)
+ cat("\\hline\n")
+ cat("\\endhead\n")
+ 
+ cat("\\endfoot\n")
+ 
+ cat("\\hline\n")
+ cat("\\hline \\hline\n")
+ cat("\\endlastfoot\n")
+
+
+for(i in 1:nrow(banco)){
+
+  if(banco$tipo[i]==1){
+    
+    cat("\\multicolumn{1}{c}{", TratamentoNA(banco$funcao[i]), "} & \\multicolumn{1}{c}{", 
+        TratamentoNA(banco$subfuncao[i]), "} & \\multicolumn{1}{c}{",	TratamentoNA(banco$item1[i]), 
+        "} & \\multicolumn{1}{c}{",TratamentoNA(banco$item2[i]), "} & \\multicolumn{1}{c}{",	
+        formatC(TratamentoNA(banco$item4[i]), width = 3, flag = "0"), 
+        "} & \\multicolumn{1}{c}{",	formatC(TratamentoNA(banco$item4[i]), width = 4, flag = "0"), 
+        "} & \\multicolumn{3}{L{4cm}@{}|}{", TratamentoNA(banco$descricao[i]), 
+        "} & \\multicolumn{1}{c|}{",TratamentoNA(banco$MOD[i]),"} &", 
+        "\\multicolumn{1}{c|}{",TratamentoNA(banco$IAG[i]),"} &","\\multicolumn{1}{c|}{",
+        TratamentoNA(banco$FONTE[i]),"} & \\multicolumn{1}{c|}{",TratamentoNA(banco$IPU[i]),
+        "} & \\multicolumn{1}{r|}{",TratamentoNA(banco$PESSOAL[i]), "} & \\multicolumn{1}{r|}{", 
+        TratamentoNA(banco$JUROS[i]), "} & \\multicolumn{1}{r|}{", TratamentoNA(banco$OUTRAS[i]),  
+        "} & \\multicolumn{1}{r|}{", TratamentoNA(banco$INVESTIMENTOS[i]),"} & \\multicolumn{1}{r|}{",  
+        TratamentoNA(banco$INVERSOES[i]),"} & \\multicolumn{1}{r|}{",  TratamentoNA(banco$AMORTIZA[i]),  
+        " } & \\multicolumn{1}{r}{",  TratamentoNA(banco$TOTAL[i]), "} \\\\\n")
+  
+     } else if(banco$tipo[i]==7) {
+       cat("\\multicolumn{9}{l|}{} &","\\multicolumn{1}{c|}{",TratamentoNA(banco$MOD[i]),"} &", 
+        "\\multicolumn{1}{c|}{",TratamentoNA(banco$IAG[i]),"} &","\\multicolumn{1}{c|}{",
+        TratamentoNA(banco$FONTE[i]),"} & \\multicolumn{1}{c|}{",TratamentoNA(banco$IPU[i]),
+        "} & \\multicolumn{1}{r|}{",TratamentoNA(banco$PESSOAL[i]), "} & \\multicolumn{1}{r|}{", 
+        TratamentoNA(banco$JUROS[i]), "} & \\multicolumn{1}{r|}{", TratamentoNA(banco$OUTRAS[i]),  
+        "} & \\multicolumn{1}{r|}{", TratamentoNA(banco$INVESTIMENTOS[i]),"} & \\multicolumn{1}{r|}{",  
+        TratamentoNA(banco$INVERSOES[i]),"} & \\multicolumn{1}{r|}{",  TratamentoNA(banco$AMORTIZA[i]),  
+        " } & \\multicolumn{1}{r}{",  TratamentoNA(banco$TOTAL[i]), "} \\\\\n")
+  
+       } else if(banco$tipo[i]==5){ # IMPORTANTE \scriptsize é equivalente a \fontsize{7pt}{6pt}\\selectfont
+         cat("\\multicolumn{9}{L{8cm}|}{\\fontsize{6pt}{8pt}\\selectfont \\textit{",banco$descricao[i],
+        "}} & & & & & & & & & & & \\\\\n", sep="") 
+       } else if(banco$tipo[i]==8){
+          cat("\\multicolumn{7}{l}{\\underline{Produto}} & \\multicolumn{1}{c}{\\underline{Unid. Medida}}",
+              "& \\multicolumn{1}{R{1.5cm}|}{\\underline{Meta}}& & & & & & & & & & & \\\\\n")
+  
+          cat("\\multicolumn{7}{L{3cm}}{ \\fontsize{6pt}{8pt}\\selectfont ", banco$descricao[i], 
+              "} & \\multicolumn{1}{C{2cm}}{\\fontsize{6pt}{8pt}\\selectfont ", 
+              banco$UnidadeMedida[i],"} & \\multicolumn{1}{R{1.5cm}|}{\\fontsize{6pt}{8pt}\\selectfont ", 
+              banco$Meta[i], "} & & & & & & & & & & & \\\\\n", sep="")
+   } else{
+     cat("\\hline \\hline")
+     cat("\\multicolumn{13}{l|}{\\textbf{ ",banco$descricao[i], "}} & \\multicolumn{1}{c|}{ \\textbf{ ", 
+       TratamentoNA(banco$PESSOAL[i]), "}} & \\multicolumn{1}{c|}{ \\textbf{ ", 
+       TratamentoNA(banco$JUROS[i]), "}} & \\multicolumn{1}{c|}{ \\textbf{ ", 
+       TratamentoNA(banco$OUTRAS[i]), "}} & \\multicolumn{1}{c|}{ \\textbf{ ", TratamentoNA(banco$INVESTIMENTOS[i]),
+       "}} & \\multicolumn{1}{c|}{ \\textbf{ ", TratamentoNA(banco$INVERSOES[i]),"}} & \\multicolumn{1}{c|}{ \\textbf{ ",  
+       TratamentoNA(banco$AMORTIZA[i]),"}} & \\multicolumn{1}{c}{ \\textbf{ ", TratamentoNA(banco$TOTAL[i]), "}} \\\\\n", sep="")
+ 
+   }
+  
+  
+}
+  cat("\\end{longtable}\n")
+
+###################################################################################
+############### FIM: Tabela 1 Programa de Trabalho #############################
+###################################################################################
+  
+  registro_log(uo, 1, 1)
+  
+  cat("\\newpage\n")
+  
+#####################################################################################################
+############### INICIO: Tabela 2 RECURSOS FINANCEIROS FONTE RECURSOS GRUPOS DESPESA FISCAL ##########
+#####################################################################################################
+  
+  if(file.exists(paste(dir_bancos, "tabela2/",uo,".txt",sep=""))){
+  
+  banco = read.table(paste(dir_bancos, "tabela2/",uo,".txt",sep=""), 
+                     header=F, sep="\t", dec=",", stringsAsFactors = FALSE)
+
+  nColunas = ncol(banco)-4
+  
+  if (nColunas==5){
+    larguras_demais_colunas = round((2 / (nColunas -4)),0)  # Variáveis Fixas: 4(FONTE, IAG, IPU e TOTAL)
+  } else{
+  larguras_demais_colunas = round((10 / (nColunas -4)),1)
+  }
+  
+  col = paste("|m{",larguras_demais_colunas,"cm}", sep="") # Pirmeira coluna tem 5cm. A soma das demais deve ser 9cm.
+  
+  cat("\\scriptsize\n")
+
+  cat(paste("\\noindent\\begin{longtable}[c]{m{7cm}|m{4.5pt}@{\\hspace{1em}}|m{2.5pt}@{\\hspace{1em}}|", 
+            paste(rep(col, ncol(banco)-7), collapse=""),"}\n", sep=""))
+  
+  titulo1 = paste("\\multicolumn{",nColunas,"}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{RECURSOS FINANCEIROS}}}\\\\\n", sep="")
+  titulo2 = paste("\\multicolumn{",nColunas,"}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{FONTE DE RECURSOS E GRUPOS DE DESPESA - FISCAL}}}\\\\\n", sep="")
+  
+  subtitulo = paste("\\multicolumn{",(nColunas-1),
+                    "}{l}{\\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC, 
+                    "}}} & \\multicolumn{1}{r}{R\\$1,00} \\\\\n", sep="")
+  
+  titulo_orgao = paste("\\multicolumn{",nColunas,"}{l}{\\textbf{ÓRGÃO:} ",banco$V1[1],"} \\\\\n", sep="")
+  titulo_uo = paste("\\multicolumn{",nColunas,"}{l}{\\textbf{UO:} \\hspace{13pt} ",banco$V2[1],"} \\\\\n", sep="")
+  
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat(titulo_orgao)
+  cat(titulo_uo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  
+
+    cabecalho = ""
+  for(i in 1:nColunas){
+    if(i==1){
+      cabecalho = paste(cabecalho,"\\multicolumn{1}{C{7cm}|}{ \\textbf{ ", banco[1,(i+4)], "}} & ", sep="")
+    }else if(i<4){
+      cabecalho = paste(cabecalho,"\\multicolumn{1}{@{\\hspace{1em}}c@{\\hspace{1em}}|}{ \\textbf{ ", 
+                        banco[1,(i+4)], "}} & ", sep="")
+    }else if(i<nColunas){
+      cabecalho = paste(cabecalho,"\\multicolumn{1}{C{",larguras_demais_colunas,"cm}|}{ \\textbf{ ", 
+                        banco[1,(i+4)], "}} & ", sep="")
+      }else{
+      cabecalho = paste(cabecalho, "\\multicolumn{1}{C{2cm}}{\\textbf{ ", toupper(banco[1,(i+4)]), "}} \\\\\n", sep="")
+   }
+  }
+  cat(cabecalho)
+
+  cat("\\hline\n")
+  cat("\\endfirsthead\n")
+
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat(titulo_orgao)
+  cat(titulo_uo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(cabecalho)
+  
+  cat("\\hline\n")
+  cat("\\endhead\n")
+  
+  cat("\\endfoot\n")
+  
+  #cat("\\hline\n")
+  
+  #cat("\\hline\\hline\n")
+  cat("\\endlastfoot\n")
+  
+   for(j in 2:nrow(banco)){ #:nrow(banco)
+     linha = ""
+     if(toupper(banco$V5[j])!="TOTAL"){
+       
+       #   Para o caso que a linha não seja referente ao TOTAL
+       
+       if(is.na(banco$V3[j])==FALSE){ # Para o caso que o valor em FONTE deve mesclar linhas
+         linha = paste(linha,"\\multirow{", banco$V3[j] ,"}{*}{\\parbox{7cm}{\\raggedright ", banco$V5[j], "}} & ", sep="")
+         
+      } else{ # Para o caso que não é necessário mesclar linhas. Ou seja, o conteudo é "" (Vázio)
+        linha = paste(linha, banco$V5[j], " & ", sep="")
+      }
+       
+      if (is.na(banco$V4[j])==FALSE & toupper(banco$V6[j])!="TOTAL"){ # Para o caso de IPU em que é necessário mesclar as linhas
+        linha = paste(linha,"\\multicolumn{1}{c|}{\\multirow{",banco$V4[j],"}{*}{", banco$V6[j], "}} & ", 
+                      "\\multicolumn{1}{c|}{", banco$V7[j], "} & ", sep="")
+      } else if(toupper(banco$V6[j])=="TOTAL"){
+        linha = paste(linha,"\\multicolumn{2}{c|}{", banco$V6[j], "} & ", sep="")
+      } else{
+        linha = paste(linha,"\\multicolumn{1}{c|}{", banco$V6[j], "} & ", "\\multicolumn{1}{c|}{", 
+                      banco$V7[j], "} & ", sep="")
+     }
+    } else{
+      linha = paste(linha,"\\multicolumn{3}{l|}{", banco$V5[j], "} & ", sep="")
+     }
+     for(col in 4:nColunas){
+       if(col<nColunas){ # Para as demais colunas que variam na tabela
+      linha = paste(linha,"\\multicolumn{1}{R{",larguras_demais_colunas, "cm}@{\\hspace{1em}}|}{ ", 
+                    banco[j,(col+4)], "} & ", sep="")
+       } else{
+      linha = paste(linha, "\\multicolumn{1}{C{2cm}}{ ", banco[j,(col+4)], "} \\\\\n", sep="") 
+       }
+     }
+   
+  if(is.na(banco$V4[j])==FALSE & toupper(banco$V6[j])!="TOTAL"){
+    linha_horizontal = paste("\\cline{3-", nColunas, "}\n", sep="")
+  } else if (toupper(banco$V6[j])=="TOTAL" & toupper(banco$V5[j+1])!="TOTAL"){
+    linha_horizontal = paste("\\hline\n", sep="")
+    } else if ((toupper(banco$V6[j])=="TOTAL" & toupper(banco$V5[j+1])=="TOTAL") || toupper(banco$V5[j])=="TOTAL" ){
+    linha_horizontal = paste("\\hline \\hline \\hline\n", sep="")
+    } else{
+    linha_horizontal = paste("\\cline{2-", nColunas, "}\n", sep="")
+  }
+    cat(linha)
+    cat(linha_horizontal)
+  
+   }
+  cat("\\end{longtable}\n")
+  
+  cat("\\tiny\n")
+  cat("\\begin{tabular}{L{11cm}R{10cm}}\n")
+  
+cat("\\textbf{IPU - IDENTIFICADOR DE PROCEDÊNCIA E USO:} & \\textbf{ IAG - IDENTIFICADOR DE AÇÃO GOVERNAMENTAL} \\\\\n")
+ cat("1 - RECURSOS RECEBIDOS PARA LIVRE UTILIZAÇÃO & 0 - AÇÃO DE ACOMPANHAMENTO GERAL \\\\\n")
+ cat("2 - RECURSOS RECEBIDOS DE OUTRA UNIDADE ORÇAMENTÁRIA DO ORÇAMENTO FISCAL PARA LIVRE UTILIZAÇÃO & 1 - AÇÃO DE ACOMPANHAMENTO INTENSIVO \\\\\n")
+ cat(" 3 - RECURSOS RECEBIDOS PARA CONTRAPARTIDA & \\\\\n")
+ cat("4 - RECURSOS RECEBIDOS PARA EMENDAS DA COMISSÃO DE PARTICIPAÇÃO POPULAR & \\\\\n")
+ cat("5 - RECURSOS RECEBIDOS PARA BENEFÍCIOS PREVISTOS NO ART.39 DA LC 64/2002 & \\\\\n")
+ cat("6 - RECURSOS RECEBIDOS PARA CONTRAPARTIDA DE OPERAÇÃO DE CRÉDITO & \\\\\n")
+ cat("7 - RECURSOS RECEBIDOS PARA AUXÍLIOS DOENÇA, FUNERAL, ALIMENTAÇÃO, TRANSPORTE E FARDAMENTO & \\\\\n")
+ cat("8 - RECURSOS RECEBIDOS PARA EMENDAS PARLAMENTARES & \\\\\n")
+ cat("9- RECURSOS RECEBIDOS PARA PRECATÓRIOS E SENTENÇAS JUDICIAIS & \\\\\n")
+  
+ cat("\\end{tabular}\n")
+ 
+  registro_log(uo, 2, 1)
+  } else{registro_log(uo, 2, 0)  }
+  
+#####################################################################################################
+############### FIM: Tabela 2 RECURSOS FINANCEIROS FONTE RECURSOS GRUPOS DESPESA FISCAL ##########
+#####################################################################################################
+  
+ cat("\\newpage\n") 
+ 
+###################################################################################
+############### INICIO: Tabela 3 RECURSOS ORCAMENTARIO CATEGORIA PESSOAL ##########
+###################################################################################
+  
+  if(file.exists(paste(dir_bancos, "tabela3/",uo,".txt",sep=""))){
+  
+ banco = read.table(paste(dir_bancos, "tabela3/",uo,".txt",sep=""), 
+                     header=T, sep="\t", dec=",", stringsAsFactors = FALSE)
+
+  cat("\\renewcommand*{\\arraystretch}{1.5}\n")
+  cat("\\small\n")
+
+  cat("\\noindent\\begin{longtable}[c]{m{8cm}m{5cm}|m{8cm}}\n")
+            
+  
+  titulo1 = "\\multicolumn{3}{C{23cm}}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{RECURSOS ORÇAMENTÁRIO CATEGORIA DE PESSOAL}}} \\TBstrut   \\\\[2ex] \n"
+  
+  subtitulo = paste("\\multicolumn{2}{l}{\\textbf{Exercício: \\textcolor{myblack}{",ANO_DOC,
+                    "}}} & \\multicolumn{1}{r}{R\\$1,00} \\\\\n") 
+  
+  titulo_orgao = paste("\\multicolumn{3}{l}{\\textbf{ÓRGÃO:} ",banco$orgao[1],"} \\\\\n", sep="")
+  titulo_uo = paste("\\multicolumn{3}{l}{\\textbf{UO:} \\hspace{19pt}",banco$uo[1],"} \\\\\n", sep="")
+  
+  cat(titulo1)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat(titulo_orgao)
+  cat(titulo_uo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  
+
+  cat("\\hline\n")
+  cat("\\endfirsthead\n")
+
+  cat(titulo1)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat(titulo_orgao)
+  cat(titulo_uo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  
+  cat("\\hline\n")
+  cat("\\endhead\n")
+  
+  cat("\\endfoot\n")
+  
+  cat("\\hline\n")
+  
+  cat("\\hline\\hline\n") #Comentar caso o modo Dashed Line esteja ON
+  # cat("\\specialrule{1.5pt}{2pt}{0pt}\n") #Dashed Line
+  cat("\\endlastfoot\n")
+  
+cat("\\multicolumn{2}{c|}{ESPECIFICAÇÃO} & \\multicolumn{1}{C{8cm}}{QTDE} \\\\\n")
+cat("\\hline \n")
+  
+    for(i in 1:nrow(banco)){
+      if(is.na(banco$resumo[i])){
+      if(grepl("pessoal.+", banco$especificacao[i], ignore.case=T)){
+     cat("\\multicolumn{2}{L{12cm}|}{ \\textbf{", banco$especificacao[i], "}} & \\\\\n") 
+      } else if(grepl("subtotal", banco$especificacao[i], ignore.case=T)){
+        
+        cat("\\hline\n") #Comentar caso o modo Dashed Line esteja ON
+        #cat("\\hdashline\n") #Dashed Line
+        
+        cat("\\multicolumn{2}{C{12cm}|}{", banco$especificacao[i], 
+            "} & \\multicolumn{1}{C{8cm}}{\\textbf{", banco$qtde[i], "}} \\\\\n") 
+        cat("\\hline\n")
+        }   else if (grepl("^total$", banco$especificacao[i], ignore.case=T)) {
+        cat("\\multicolumn{2}{C{12cm}|}{\\textbf{", banco$especificacao[i], 
+            "}} & \\multicolumn{1}{C{8cm}}{\\textbf{", banco$qtde[i], "}} \\\\\n") 
+        
+          cat("\\hline\\hline\\hline\n") #Comentar caso o modo Dashed Line esteja ON
+          #cat("\\specialrule{1.5pt}{0pt}{-2pt}\n") #Dashed Line
+      }
+      else {
+        cat("\\multicolumn{2}{L{12cm}|}{\\hspace{4em}", banco$especificacao[i], 
+            "} & \\multicolumn{1}{C{8cm}}{", banco$qtde[i], "} \\\\\n") 
+          }
+      } else{
+        if(grepl("resumo", banco$especificacao[i], ignore.case=T)){
+     cat("\\multicolumn{3}{c}{ \\textbf{", banco$especificacao[i], "}} \\\\\n") 
+     cat(" & \\multicolumn{1}{r@{\\hspace{2em}}}{VALOR} & \\multicolumn{1}{c}{\\% DE PARTICIPAÇÃO} \\\\\n")
+      cat("\\hline \n")
+        } else if (grepl("total", banco$especificacao[i], ignore.case=T)) {
+        
+          #cat("\\specialrule{1.5pt}{2pt}{0pt}\n") #Dashed Line
+          cat("\\hline \\hline \n") #Comentar caso o modo Dashed Line esteja ON
+          
+          cat("\\multicolumn{1}{L{7cm}}{\\textbf{", banco$especificacao[i], 
+            "}} & \\multicolumn{1}{R{5cm}}{\\textbf{", banco$qtde[i], "}} & \\\\\n")
+        } else{
+        cat("\\multicolumn{1}{@{\\hspace{2em}}L{8cm}}{", banco$especificacao[i], 
+            "} & \\multicolumn{1}{R{5cm}}{", banco$qtde[i], "} & \\multicolumn{1}{R{5cm}}{", 
+            gsub("\\.", ",",banco$participacao[i]), "} \\\\\n")
+      }
+      }
+    }
+
+  cat("\\end{longtable}\n")
+ 
+###################################################################################
+############### FIM: Tabela 3 RECURSOS ORCAMENTARIO CATEGORIA PESSOAL #############
+###################################################################################
+ 
+  cat("\\newpage\n") 
+  
+  registro_log(uo, 3, 1)
+  } else{ registro_log(uo, 3, 0)
+   }
+  
+###################################################################################
+############### INICIO: Tabela 4 DEMONSTRATIVO DOS RECURSOS FINANCEIROS ###########
+###################################################################################
+  
+  if(file.exists(paste(dir_bancos, "tabela4/",uo,".txt",sep=""))){
+  
+  banco = read.table(paste(dir_bancos, "tabela4/",uo,".txt",sep=""), 
+                     header=T, sep="\t", dec=",", stringsAsFactors = FALSE)
+
+  cat("\\renewcommand*{\\arraystretch}{1.4}\n")
+  cat("\\small\n")
+
+  cat("\\noindent\\begin{longtable}[c]{L{3cm}|m{1.5cm}|m{8cm}|m{3cm}|m{3cm}|m{3cm}}\n")
+            
+  titulo1 = "\\multicolumn{6}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{DEMONSTRATIVO DOS RECURSOS FINANCEIROS}}} \\TBstrut   \\\\[2ex] \n"
+  
+  subtitulo = paste("\\multicolumn{5}{l}{\\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC,
+                    "}}} & \\multicolumn{1}{r}{R\\$1,00} \\\\\n") #### !!! Mudar 2016 para ANO_DOC !!!!!
+  
+  titulo_orgao = paste("\\multicolumn{6}{l}{\\textbf{ÓRGÃO:} ",banco$orgao[1],"} \\\\\n", sep="")
+  titulo_uo = paste("\\multicolumn{6}{l}{\\textbf{UO:} \\hspace{19pt}",banco$uo[1],"} \\\\\n", sep="")
+  
+  receita = "\\multicolumn{6}{l}{\\textbf{\\textcolor{myblack}{1.} RECEITA PRÓPRIA}} \\\\\n"
+  
+  cabecalho ="\\multicolumn{1}{L{3cm}|}{\\textbf{ CÓDIGO}} & \\multicolumn{1}{@{\\hspace{1em}}C{1.5cm}@{\\hspace{1em}}|}{\\textbf{ FONTE\nCLAS.}} & \\multicolumn{1}{@{\\hspace{1em}}L{8cm}@{\\hspace{0.5em}}|}{\\textbf{ ESPECIFICAÇÃO}}  &  \\multicolumn{1}{C{3.5cm}|}{\\textbf{ DESDOBRAMENTO}} &   \\multicolumn{1}{C{3cm}|}{\\textbf{ FONTE}} & \\multicolumn{1}{C{3cm}}{\\textbf{ CATEGORIA / SUBCATEGORIA}} \\\\\n"
+  
+  cat(titulo1)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat(titulo_orgao)
+  cat(titulo_uo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(receita)
+  cat("\\hline \n")
+  cat(cabecalho)
+
+  cat("\\hline\n")
+  cat("\\endfirsthead\n")
+
+  cat(titulo1)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat(titulo_orgao)
+  cat(titulo_uo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(receita)
+  cat("\\hline \n")
+  cat(cabecalho)
+  
+  cat("\\hline\n")
+  cat("\\endhead\n")
+  
+  cat("\\endfoot\n")
+  
+  cat("\\hline\n")
+  
+  cat("\\hline\\hline\n") 
+  cat("\\endlastfoot\n")
+  
+     for(i in 1:nrow(banco)){
+       if(grepl("^SUBTOTAL.*", banco$especificacao[i], ignore.case = T)){
+         cat("\\hline \\hline \n")
+         cat("\\multicolumn{5}{@{\\hspace{1em}}L{8cm}@{\\hspace{0.5em}}|}{ \\textbf{",
+           banco$especificacao[i], "}} & \\multicolumn{1}{r@{\\hspace{0.5em}}}{ \\textbf{", banco$categoria[i], "}} \\\\\n")  
+       } else{
+       cat(TratamentoNA(banco$codigo[i]), " & \\multicolumn{1}{c|}{", TratamentoNA(banco$fonteClas[i]), 
+           "} & \\multicolumn{1}{@{\\hspace{1em}}L{8cm}@{\\hspace{0.5em}}|}{",
+           banco$especificacao[i], "} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{", banco$desdobramento[i], 
+           "} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{",   banco$fonte[i],
+           "} & \\multicolumn{1}{r@{\\hspace{1em}}}{", banco$categoria[i], "} \\\\\n")
+       }
+     }
+
+  cat("\\end{longtable}\n")
+  
+###################################################################################
+############### FIM: Tabela 4 DEMONSTRATIVO DOS RECURSOS FINANCEIROS ##############
+###################################################################################
+  
+  registro_log(uo, 4, 1)
+  
+  cat("\\newpage\n") 
+  } else{ 
+    registro_log(uo, 4, 0) 
+    }
+  
+  
+  if(file.exists(paste(dir_bancos, "tabela5/",uo,".txt",sep=""))){
+####################################################################################################
+############### INICIO: Tabela 5 DEMONSTRATIVO DOS RECURSOS FINANCEIROS: DEMAIS RECURSOS ###########
+####################################################################################################
+
+  banco = read.table(paste(dir_bancos, "tabela5/",uo,".txt",sep=""), 
+                     header=T, sep="\t", dec=",", stringsAsFactors = FALSE)
+
+  cat("\\renewcommand*{\\arraystretch}{1.7}\n")
+  cat("\\small\n")
+
+  cat("\\noindent\\begin{longtable}[c]{m{12cm}m{3cm}m{3cm}m{3cm}}\n")
+            
+  titulo1 = "\\multicolumn{4}{C{23cm}}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{DEMONSTRATIVO DOS RECURSOS FINANCEIROS}}} \\TBstrut   \\\\[2ex] \n"
+  
+  subtitulo = paste("\\multicolumn{3}{l}{\\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC,
+                    "}}} & \\multicolumn{1}{r}{R\\$1,00} \\\\\n") #### !!! Mudar 2016 para ANO_DOC !!!!!
+  
+  titulo_orgao = paste("\\multicolumn{4}{l}{\\textbf{ÓRGÃO:} ",banco$orgao[1],"} \\\\\n", sep="")
+  titulo_uo = paste("\\multicolumn{4}{l}{\\textbf{UO:} \\hspace{19pt}",banco$uo[1],"} \\\\\n", sep="")
+  
+  cat(titulo1)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat(titulo_orgao)
+  cat(titulo_uo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  
+  cat("\\hline\n")
+  cat("\\endfirsthead\n")
+
+  cat(titulo1)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat(titulo_orgao)
+  cat(titulo_uo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  
+  
+  cat("\\hline\n")
+  cat("\\endhead\n")
+  
+  cat("\\endfoot\n")
+  
+  cat("\\hline\n")
+  
+  cat("\\hline\\hline\n") 
+  cat("\\endlastfoot\n")
+  
+     for(i in 1:nrow(banco)){
+       if(grepl("^(\\d+).+", banco$especificacao[i])){
+         
+         cat("\\multicolumn{1}{L{12cm}}{ \\textbf{ \\textcolor{myblack}{",  
+             gsub("^(\\d+\\.)(.+)", "\\1", banco$especificacao[i]), "} ", 
+             gsub("^(\\d+\\.)(.+)", "\\2", banco$especificacao[i]), "}} & \\multicolumn{1}{R{3cm}}{ \\textbf{", 
+           banco$ordinario[i], "}} & \\multicolumn{1}{R{3cm}}{ \\textbf{",banco$vinculado[i] , 
+           "}} & \\multicolumn{1}{R{3cm}}{ \\textbf{", banco$total[i],"}} \\\\\n", sep="")  
+         
+         cat("\\hline \\hline \\hline \n")
+       } else if(grepl("^subtotal.*", banco$especificacao[i], ignore.case = TRUE)){
+         
+         cat("\\hline \n")
+         cat("\\multicolumn{1}{L{12cm}}{ ",  banco$especificacao[i], "} & \\multicolumn{1}{R{3cm}}{ \\textbf{", 
+             banco$ordinario[i], "}} & \\multicolumn{1}{R{3cm}}{ \\textbf{",banco$vinculado[i] , 
+             "}} & \\multicolumn{1}{R{3cm}}{ \\textbf{", banco$total[i],"}} \\\\\n")
+         cat("\\hline \n")
+         
+         } else{
+        
+           cat("\\multicolumn{1}{@{\\hspace{3em}}L{12cm}}{ ",  banco$especificacao[i], "} & \\multicolumn{1}{R{3cm}}{ ", 
+           banco$ordinario[i], "} & \\multicolumn{1}{R{3cm}}{ ",banco$vinculado[i] , 
+           "} & \\multicolumn{1}{R{3cm}}{ ", banco$total[i],"} \\\\\n")  
+       }
+     }
+
+  cat("\\end{longtable}\n")
+  
+  
+####################################################################################################
+############### FIM: Tabela 5 DEMONSTRATIVO DOS RECURSOS FINANCEIROS: DEMAIS RECURSOS ###########
+####################################################################################################  
+  registro_log(uo, 5, 1)
+  
+  cat("\\newpage\n")
+  
+  } else{
+    registro_log(uo, 5, 0)
+  }
+}  
+@
+
+ 
+ \end{landscape}
+ 
+ \pagestyle{plain}
+ 
+ \restoregeometry
+ 
+ \addtocontents{toc}{\cftpagenumberson{section}}
+ \phantomsection
+  \vspace*{15cm}
+\addcontentsline{toc}{section}{GRUPOS DE DESPESA, FONTES DE RECURSO, IDENTIFICADORES DE PROCEDÊNCIA E USO E IDENTIFICADORES DE AÇÃO GOVERNAMENTAL}
+  \raggedleft \LARGE {GRUPOS DE DESPESA, FONTES DE RECURSO, IDENTIFICADORES DE PROCEDÊNCIA E USO E IDENTIFICADORES DE AÇÃO GOVERNAMENTAL}
+
+ 
+ \SweaveInput{ANEXO_codigos_descricoes_2A.Rnw}
+ 
+ % Inicio: Contra Capa
+ \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+\includepdf[pages={641},scale=1.1]{02_LOA_Volume_II_A.pdf}
+ % Fim: Contra Capa
+ 
+  \end{document}

@@ -1,0 +1,7 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"DIREÇÃO E ASSESSORAMENTO"	"113"	"2.191"	"276.067.528"	"100"	"2.31.1 - UNIVERSIDADE ESTADUAL DE MONTES CLAROS - UNIMONTES"	"1.26.0 - SECRETARIA DE ESTADO DE EDUCAÇÃO - SEE"
+	"DIREÇÃO SUPERIOR"	"  2"					
+	"DOCENTE"	"987"					
+	"ESPECIALIZADA"	"255"					
+	"TÉCNICA"	"834"					
+"TOTAL"			"2.191"	"276.067.528"	"100"		

@@ -1,0 +1,2 @@
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx") :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  3984

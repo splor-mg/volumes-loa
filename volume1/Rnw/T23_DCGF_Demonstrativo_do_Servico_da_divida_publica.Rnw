@@ -1,0 +1,92 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\pagestyle{empty}
+\newgeometry{bottom=1.5cm,top=1.5cm,left=1.5cm,right=1.5cm}
+
+
+<<results=tex,echo=FALSE>>=
+  
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_data = paste0(dir_loa, "/volume1/data")
+  ANO_DOC = as.numeric(readLines(paste0(dir_loa, "/utils/ano.txt"), warn = F))
+  source(paste0(dir_loa, "/utils/funcoes.R"), encoding = "UTF-8")
+
+  # INICIO TABELA 
+
+  banco = ler_banco_txt(paste0(dir_data, "/T23_DCGF_Demonstrativo_do_Servico_da_divida_publica.txt"))
+
+  cat("\\renewcommand*{\\arraystretch}{1.8}\n")
+  cat("\\footnotesize\n")
+  cat("\\color{myblack}\n")
+  cat("\\centering\n")
+
+  cat("\\noindent\\begin{longtable}[c]{m{6cm}m{3cm}m{3cm}m{3cm}}\n", sep="")
+
+  titulo1= paste0("\\multicolumn{4}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
+                  "\\textbf{DEMONSTRATIVO DO SERVIÇO DA DÍVIDA PÚBLICA}}} \\\\\n")
+  
+  titulo2= paste0("\\multicolumn{4}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
+                  "\\textbf{(Art. 7\\degree, Inciso XIII da Lei 24.218/2022 - LDO)}}}  \\\\\n")
+ 
+  subtitulo1 = paste0("\\multicolumn{4}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n")
+  
+  subtitulo2 = paste("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",
+                     ANO_DOC , "}}} & \\multicolumn{3}{r}{\\textbf{R\\$1,00}} \\\\\n")
+ 
+  cabecalho = paste0("\\multicolumn{1}{C{6cm}|}{ \\textbf{NATUREZA DA DÍVIDA}} & ",
+                     "\\multicolumn{1}{C{3cm}|}{ \\textbf{PRINCIPAL}} & ",
+                     "\\multicolumn{1}{C{3cm}|}{ \\textbf{ACESSÓRIO}} & ",
+                     "\\multicolumn{1}{C{3cm}}{ \\textbf{TOTAL}} \\\\\n")
+                     
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo1)
+  cat(subtitulo2)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(cabecalho)
+  cat("\\hline\\hline\n")
+  
+  
+  cat("\\multicolumn{1}{L{6cm}|}{ \\textbf{CONTRATADA}} & \\multicolumn{1}{r|}{ } & \\multicolumn{1}{r|}{ } & \\\\\n", sep="")
+  
+  for(i in 1:nrow(banco)){
+
+    linha = as.list(banco[i, ])
+  
+  # Insere uma linha acima das linhas que iniciam com "Poder" e "TOTAL PESSOAL DO ESTADO"
+    
+    hspace_espec = "@{\\hspace{2em}}"
+    colocarNegrito = 0
+    
+    if(linha[["espec"]]=="TOTAL"){
+      cat("\\hline\\hline\n")
+      hspace_espec = ""
+      colocarNegrito = 1
+    }
+
+    cat("\\multicolumn{1}{", hspace_espec, "L{6cm}|}{ \\textbf{", linha[["espec"]],
+          "}} & \\multicolumn{1}{R{3cm}|}{", aplicaNegrito(linha[["principal"]], colocarNegrito),
+          "} & \\multicolumn{1}{R{3cm}|}{", aplicaNegrito(linha[["acessorio"]], colocarNegrito),
+          "} & \\multicolumn{1}{R{3cm}}{", aplicaNegrito(linha[["total"]], colocarNegrito) , "} \\\\\n", sep="")
+      
+  }
+  
+  cat("\\hline\\hline\n")
+  cat("\\end{longtable}\n")
+
+  # NOTAS DE RODAPÉ
+  
+  cat("\\raggedright\n")
+  cat("\\hspace{1cm} \\fontsize{7pt}{10pt}\\selectfont {FONTE: Armazém Sisor.} \\\\\n")
+  cat("\\hspace{1cm} \\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
+  
+  # FIM TABELA
+
+@
+
+\end{document}

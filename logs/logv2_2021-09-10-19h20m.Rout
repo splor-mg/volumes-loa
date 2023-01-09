@@ -1,0 +1,696 @@
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4447 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4449 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4536 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO', MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  2171  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' VAGA/PARTICIPAÇÃO', EMPREENDIMENTO', CIDADÃO/AGRICULTOR
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1911 função 28 subfunção 846 programa 705 ação 7009 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1916 função 28 subfunção 846 programa 705 ação 7003 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 3 subfunção 128 programa 726 ação 2068 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 9 subfunção 272 programa 705 ação 7006 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 28 subfunção 846 programa 705 ação 7004 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4447 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4449 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4536 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO', MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  2171  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' VAGA/PARTICIPAÇÃO', EMPREENDIMENTO', CIDADÃO/AGRICULTOR
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1911 função 28 subfunção 846 programa 705 ação 7009 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1916 função 28 subfunção 846 programa 705 ação 7003 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 3 subfunção 128 programa 726 ação 2068 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 9 subfunção 272 programa 705 ação 7006 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 28 subfunção 846 programa 705 ação 7004 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4447 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4449 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4536 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO', MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  2171  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' VAGA/PARTICIPAÇÃO', EMPREENDIMENTO', CIDADÃO/AGRICULTOR
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1911 função 28 subfunção 846 programa 705 ação 7009 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1916 função 28 subfunção 846 programa 705 ação 7003 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 3 subfunção 128 programa 726 ação 2068 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 9 subfunção 272 programa 705 ação 7006 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 28 subfunção 846 programa 705 ação 7004 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4447 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4449 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4536 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO', MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  2171  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' VAGA/PARTICIPAÇÃO', EMPREENDIMENTO', CIDADÃO/AGRICULTOR
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1911 função 28 subfunção 846 programa 705 ação 7009 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1916 função 28 subfunção 846 programa 705 ação 7003 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 3 subfunção 128 programa 726 ação 2068 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 9 subfunção 272 programa 705 ação 7006 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 28 subfunção 846 programa 705 ação 7004 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4447 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4449 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4536 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO', MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  2171  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' VAGA/PARTICIPAÇÃO', EMPREENDIMENTO', CIDADÃO/AGRICULTOR
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1911 função 28 subfunção 846 programa 705 ação 7009 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1916 função 28 subfunção 846 programa 705 ação 7003 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 3 subfunção 128 programa 726 ação 2068 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 9 subfunção 272 programa 705 ação 7006 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 28 subfunção 846 programa 705 ação 7004 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4447 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4449 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2371 função 20 subfunção 304 programa 44 ação 4536 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO', MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  2171  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' VAGA/PARTICIPAÇÃO', EMPREENDIMENTO', CIDADÃO/AGRICULTOR
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1911 função 28 subfunção 846 programa 705 ação 7009 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1916 função 28 subfunção 846 programa 705 ação 7003 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 3 subfunção 128 programa 726 ação 2068 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 9 subfunção 272 programa 705 ação 7006 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1441 função 28 subfunção 846 programa 705 ação 7004 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/
+Warning: V2_Tabela2_FONTE_RECURSOS_GRUPOS_DESPESA_FISCAL: Há um codigo de FONTE em BASE_QDD_FISCAL que não possui correspondência em desc_fontes_de_recursos.xlsx. Trata-se do valor 13. Alterar os valores nessa aba e rodar novamente o código.
+
+Warning: V2_Tabela2_FONTE_RECURSOS_GRUPOS_DESPESA_FISCAL: Há um codigo de FONTE em BASE_QDD_FISCAL que não possui correspondência em desc_fontes_de_recursos.xlsx. Trata-se do valor 13. Alterar os valores nessa aba e rodar novamente o código.
+
+Warning: V2_Tabela2_FONTE_RECURSOS_GRUPOS_DESPESA_FISCAL: Há um codigo de FONTE em BASE_QDD_FISCAL que não possui correspondência em desc_fontes_de_recursos.xlsx. Trata-se do valor 13. Alterar os valores nessa aba e rodar novamente o código.
+
+Warning: V2_Tabela2_FONTE_RECURSOS_GRUPOS_DESPESA_FISCAL: Há um codigo de FONTE em BASE_QDD_FISCAL que não possui correspondência em desc_fontes_de_recursos.xlsx. Trata-se do valor 13. Alterar os valores nessa aba e rodar novamente o código.
+
+Warning: V2_Tabela2_FONTE_RECURSOS_GRUPOS_DESPESA_FISCAL: Há um codigo de FONTE em BASE_QDD_FISCAL que não possui correspondência em desc_fontes_de_recursos.xlsx. Trata-se do valor 13. Alterar os valores nessa aba e rodar novamente o código.
+
+Warning: V2_Tabela2_FONTE_RECURSOS_GRUPOS_DESPESA_FISCAL: Há um codigo de FONTE em BASE_QDD_FISCAL que não possui correspondência em desc_fontes_de_recursos.xlsx. Trata-se do valor 13. Alterar os valores nessa aba e rodar novamente o código.
+
+Warning: V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL: Para a UO  1091  não há nome da UO e nome do orgao em BASE_QDD_FISCAL 
+
+Warning: V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL: Para a UO  1491  não há nome da UO e nome do orgao em BASE_QDD_FISCAL 
+
+Warning: V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL: Para a UO  1091  não há nome da UO e nome do orgao em BASE_QDD_FISCAL 
+
+Warning: V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL: Para a UO  1491  não há nome da UO e nome do orgao em BASE_QDD_FISCAL 
+
+Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem um quantitativo de inativos, porém apresentam valores superiores a R$ 1.000 nas ações da FUNFIP: 
+ 1071 1261 2181 
+Caso seja necessário inserir o quantitativo de inativos manualmente, criar em bancos/manual/PESSOAL_INATIVO_AUSENTE_SISOR.xlsx. 
+Banco com apenas duas variáveis: cod_uo e quantidade
+Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
+
+Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: O codigo uo 1091, 1491 não está em BASE_QDD_FISCAL e no arquivo bancos/manual/Nome_UO_antigas.xlsx 
+
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1191 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2448.01.9.1.07.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2071 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1748.01.9.1.09.003
+2448.01.9.1.09.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2421 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.05.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  3051 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.05.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2121 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1210.99.1.1.11.001
+1210.99.1.1.11.002
+7210.99.1.1.12.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1261 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1758.01.1.1.09.001
+1758.01.1.1.09.002
+1758.01.1.1.09.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2311 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.2.1.03.000
+2418.10.9.1.11.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2351 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.2.1.03.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2201 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.09.002
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1301 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.7.1.03.000
+2418.10.7.1.04.000
+2438.10.9.1.15.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2301 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2428.10.9.1.06.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2271 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1748.10.1.1.99.001
+2438.10.1.0.01.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2241 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.16.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1401 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1728.10.9.1.20.004
+1728.10.9.1.20.005
+2428.10.9.1.20.004
+2428.10.9.1.20.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4141 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.99.1.1.27.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4691 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.99.1.1.27.002
+2418.99.1.1.27.002
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1481 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.9.1.11.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4711 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 7210.04.1.1.01.001
+7210.04.1.1.01.002
+7210.04.1.1.02.001
+7210.04.1.1.03.001
+7210.04.1.1.04.001
+7210.04.1.1.05.001
+7210.04.1.1.06.001
+7210.04.1.1.07.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1191 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2448.01.9.1.07.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2071 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1748.01.9.1.09.003
+2448.01.9.1.09.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2421 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.05.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  3051 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.05.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2121 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1210.99.1.1.11.001
+1210.99.1.1.11.002
+7210.99.1.1.12.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1261 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1758.01.1.1.09.001
+1758.01.1.1.09.002
+1758.01.1.1.09.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2311 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.2.1.03.000
+2418.10.9.1.11.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2351 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.2.1.03.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2201 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.09.002
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1301 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.7.1.03.000
+2418.10.7.1.04.000
+2438.10.9.1.15.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2301 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2428.10.9.1.06.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2271 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1748.10.1.1.99.001
+2438.10.1.0.01.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2241 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.16.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1401 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1728.10.9.1.20.004
+1728.10.9.1.20.005
+2428.10.9.1.20.004
+2428.10.9.1.20.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4141 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.99.1.1.27.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4691 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.99.1.1.27.002
+2418.99.1.1.27.002
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1481 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.9.1.11.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4711 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 7210.04.1.1.01.001
+7210.04.1.1.01.002
+7210.04.1.1.02.001
+7210.04.1.1.03.001
+7210.04.1.1.04.001
+7210.04.1.1.05.001
+7210.04.1.1.06.001
+7210.04.1.1.07.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1191 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2448.01.9.1.07.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2071 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1748.01.9.1.09.003
+2448.01.9.1.09.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2421 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.05.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  3051 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.05.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2121 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1210.99.1.1.11.001
+1210.99.1.1.11.002
+7210.99.1.1.12.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1261 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1758.01.1.1.09.001
+1758.01.1.1.09.002
+1758.01.1.1.09.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2311 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.2.1.03.000
+2418.10.9.1.11.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2351 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.2.1.03.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2201 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.09.002
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1301 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.7.1.03.000
+2418.10.7.1.04.000
+2438.10.9.1.15.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2301 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2428.10.9.1.06.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2271 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1748.10.1.1.99.001
+2438.10.1.0.01.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2241 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.16.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1401 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1728.10.9.1.20.004
+1728.10.9.1.20.005
+2428.10.9.1.20.004
+2428.10.9.1.20.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4141 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.99.1.1.27.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4691 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.99.1.1.27.002
+2418.99.1.1.27.002
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1481 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.9.1.11.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4711 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 7210.04.1.1.01.001
+7210.04.1.1.01.002
+7210.04.1.1.02.001
+7210.04.1.1.03.001
+7210.04.1.1.04.001
+7210.04.1.1.05.001
+7210.04.1.1.06.001
+7210.04.1.1.07.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1191 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2448.01.9.1.07.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2071 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1748.01.9.1.09.003
+2448.01.9.1.09.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2421 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.05.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  3051 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.05.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2121 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1210.99.1.1.11.001
+1210.99.1.1.11.002
+7210.99.1.1.12.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1261 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1758.01.1.1.09.001
+1758.01.1.1.09.002
+1758.01.1.1.09.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2311 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.2.1.03.000
+2418.10.9.1.11.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2351 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.2.1.03.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2201 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.09.002
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1301 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.7.1.03.000
+2418.10.7.1.04.000
+2438.10.9.1.15.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2301 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2428.10.9.1.06.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2271 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1748.10.1.1.99.001
+2438.10.1.0.01.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2241 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.16.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1401 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1728.10.9.1.20.004
+1728.10.9.1.20.005
+2428.10.9.1.20.004
+2428.10.9.1.20.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4141 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.99.1.1.27.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4691 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.99.1.1.27.002
+2418.99.1.1.27.002
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1481 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.9.1.11.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4711 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 7210.04.1.1.01.001
+7210.04.1.1.01.002
+7210.04.1.1.02.001
+7210.04.1.1.03.001
+7210.04.1.1.04.001
+7210.04.1.1.05.001
+7210.04.1.1.06.001
+7210.04.1.1.07.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1191 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2448.01.9.1.07.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2071 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1748.01.9.1.09.003
+2448.01.9.1.09.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2421 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.05.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  3051 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.05.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2121 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1210.99.1.1.11.001
+1210.99.1.1.11.002
+7210.99.1.1.12.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1261 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1758.01.1.1.09.001
+1758.01.1.1.09.002
+1758.01.1.1.09.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2311 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.2.1.03.000
+2418.10.9.1.11.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2351 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.2.1.03.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2201 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.09.002
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1301 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.7.1.03.000
+2418.10.7.1.04.000
+2438.10.9.1.15.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2301 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2428.10.9.1.06.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2271 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1748.10.1.1.99.001
+2438.10.1.0.01.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2241 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.16.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1401 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1728.10.9.1.20.004
+1728.10.9.1.20.005
+2428.10.9.1.20.004
+2428.10.9.1.20.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4141 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.99.1.1.27.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4691 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.99.1.1.27.002
+2418.99.1.1.27.002
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1481 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.9.1.11.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4711 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 7210.04.1.1.01.001
+7210.04.1.1.01.002
+7210.04.1.1.02.001
+7210.04.1.1.03.001
+7210.04.1.1.04.001
+7210.04.1.1.05.001
+7210.04.1.1.06.001
+7210.04.1.1.07.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1191 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2448.01.9.1.07.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2071 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1748.01.9.1.09.003
+2448.01.9.1.09.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2421 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.05.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  3051 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.05.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2121 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1210.99.1.1.11.001
+1210.99.1.1.11.002
+7210.99.1.1.12.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1261 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1758.01.1.1.09.001
+1758.01.1.1.09.002
+1758.01.1.1.09.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2311 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.2.1.03.000
+2418.10.9.1.11.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2351 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.2.1.03.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2201 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.09.002
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1301 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.7.1.03.000
+2418.10.7.1.04.000
+2438.10.9.1.15.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2301 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2428.10.9.1.06.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2271 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1748.10.1.1.99.001
+2438.10.1.0.01.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2241 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.10.9.1.16.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1401 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1728.10.9.1.20.004
+1728.10.9.1.20.005
+2428.10.9.1.20.004
+2428.10.9.1.20.005
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4141 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.99.1.1.27.001
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4691 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1718.99.1.1.27.002
+2418.99.1.1.27.002
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1481 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 2418.10.9.1.11.003
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4711 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 7210.04.1.1.01.001
+7210.04.1.1.01.002
+7210.04.1.1.02.001
+7210.04.1.1.03.001
+7210.04.1.1.04.001
+7210.04.1.1.05.001
+7210.04.1.1.06.001
+7210.04.1.1.07.001
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1021  no grupo de despesa  1  fonte  43  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  0 ) e BASE_REPASSE_RECURSO (valor =  91000000 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1021  no grupo de despesa  1  fonte  42  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  0 ) e BASE_REPASSE_RECURSO (valor =  102000000 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1051  no grupo de despesa  1  fonte  42  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  0 ) e BASE_REPASSE_RECURSO (valor =  6423000 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1051  no grupo de despesa  1  fonte  43  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  0 ) e BASE_REPASSE_RECURSO (valor =  5317000 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1091  no grupo de despesa  1  fonte  43  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  0 ) e BASE_REPASSE_RECURSO (valor =  194447416 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1091  no grupo de despesa  1  fonte  42  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  0 ) e BASE_REPASSE_RECURSO (valor =  306123353 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor deduzido das UO's beneficiadas ( 3.091.599.427 ) é diferente do valor somado as UO's financiadoras ( 2.768.156.903 ). Ver logs/erro_qdd_ajustado.csv.
+
+Warning in knitr::knit(paste0(caminho, "/log_", tabela, ".Rmd"), paste0(caminho,  :
+  The file "logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd" must be encoded in UTF-8. Please see https://yihui.org/en/2018/11/biggest-regret-knitr/ for more info.
+
+
+processing file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd
+output file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.md
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1021  no grupo de despesa  1  fonte  43  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  0 ) e BASE_REPASSE_RECURSO (valor =  91000000 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1021  no grupo de despesa  1  fonte  42  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  0 ) e BASE_REPASSE_RECURSO (valor =  102000000 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1051  no grupo de despesa  1  fonte  42  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  0 ) e BASE_REPASSE_RECURSO (valor =  6423000 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1051  no grupo de despesa  1  fonte  43  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  0 ) e BASE_REPASSE_RECURSO (valor =  5317000 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1091  no grupo de despesa  1  fonte  43  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  0 ) e BASE_REPASSE_RECURSO (valor =  194447416 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1091  no grupo de despesa  1  fonte  42  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  0 ) e BASE_REPASSE_RECURSO (valor =  306123353 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor deduzido das UO's beneficiadas ( 3.091.599.427 ) é diferente do valor somado as UO's financiadoras ( 2.768.156.903 ). Ver logs/erro_qdd_ajustado.csv.
+
+Warning in knitr::knit(paste0(caminho, "/log_", tabela, ".Rmd"), paste0(caminho,  :
+  The file "logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd" must be encoded in UTF-8. Please see https://yihui.org/en/2018/11/biggest-regret-knitr/ for more info.
+
+
+processing file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd
+output file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.md
+

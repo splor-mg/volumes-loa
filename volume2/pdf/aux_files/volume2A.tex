@@ -1,0 +1,142 @@
+\documentclass{article}
+% Libraries
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage[table]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage[absolute]{textpos}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{tocloft}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\graphicspath{ {img/} }
+\usepackage[hidelinks]{hyperref}
+
+% Alterar a fonte para Arial
+\usepackage[T1]{fontenc}
+\usepackage{uarial}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{blindtext}
+
+\usepackage{array}
+% libraries teste
+
+
+% Fim
+% Novos comandos e definições
+\newcommand{\valorHeader}[1]{\tiny #1}
+\newcommand\Tstrut{\rule{0pt}{3em}}       % pading top para o titulo
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}} % padding bottom para o titulo
+\newcommand{\TBstrut}{\Tstrut\Bstrut} 
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\setlength{\tabcolsep}{4pt}
+\definecolor{myblack}{RGB}{0,0,0}
+\definecolor{vermelhoTitulo}{RGB}{102,0,0}
+
+\renewcommand{\contentsname}{Sumário}
+\setlength{\cftbeforesubsecskip}{6pt} % Aumenta o espacamento antes do item subsecao na tabela de contents (sumario)
+\setlength{\cftbeforesecskip}{18pt} % Aumenta o espacamento antes do item secao na tabela de contents (sumario)
+
+% Alterar a fonte para Arial
+\usepackage[T1]{fontenc}
+\usepackage{uarial}
+%\usepackage{arial}
+\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{blindtext}
+% libraries teste
+
+% Novos comandos e definições TESTE
+ \fancypagestyle{lscape}{% 
+ %\fancyhf{} % clear all header and footer fields 
+ 
+ \fancyfoot[LO] {%
+ \begin{textblock}{1}(20,14){\rotatebox{90}{\thepage}}
+ \end{textblock}}
+ 
+ \renewcommand{\footrulewidth}{0pt}
+ }
+ 
+ \setlength{\TPHorizModule}{1cm}
+ \setlength{\TPVertModule}{1cm}
+%
+
+\usepackage{Sweave}
+\begin{document}
+\input{volume2A-concordance}
+
+% Para evitar a hiphenizacao das palavras (wrap:break-word)
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+
+% Capa
+\newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+\includepdf[pages={1},scale=1.1]{02_LOA_Volume_II_A.pdf}
+% \capa
+
+% Títulos
+% Pagina com os titulos
+\restoregeometry
+\newgeometry{top=1cm}
+\begin{titlepage}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=2cm, height=2cm]{brasao_mg}
+\end{center}
+\end{figure}
+\vspace*{-2em}
+\begin{center}
+\large
+Governo do Estado de Minas Gerais \\
+Secretaria de Estado de Planejamento e Gestão \\
+Subsecretaria de Planejamento, Orçamento e Qualidade do Gasto \\
+Superintendência Central de Planejamento e Programação Orçamentária
+
+\vspace*{10em}
+ \fontsize{50pt}{12pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA 2016}}
+
+\vspace*{4em}
+\LARGE{\textbf {ANEXO II - A}} \\
+
+\LARGE{ORÇAMENTO FISCAL}
+
+\end{center}
+\end{titlepage}
+
+\newpage
+% \Titulos
+
+% Sumario
+\restoregeometry
+\normalsize
+\tableofcontents
+\newpage
+% \Sumario
+
+% Pagina iniciando DEMONSTRATIVO CONSOLIDADO DA DESPESA
+\phantomsection
+\addtocontents{toc}{\cftpagenumbersoff{section}}
+\restoregeometry
+\vspace*{10cm}
+\addcontentsline{toc}{section}{ DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}
+\LARGE \centering \textbf{DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}
+\newpage
+
+ \newgeometry{bottom=0cm,top=0cm,left=1.5cm,right=2cm}
+ \thispagestyle{lscape}
+ \pagestyle{lscape}
+ 
+ \begin{landscape}
+

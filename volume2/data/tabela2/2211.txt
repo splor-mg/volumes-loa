@@ -1,0 +1,8 @@
+"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"PESSOAL E ENCARGOS SOCIAIS"	"OUTRAS DESPESAS CORRENTES"	"Total"
+"1.27.0 - SECRETARIA DE ESTADO DE CULTURA E TURISMO - SECULT"	"2.21.1 - FUNDAÇÃO TV MINAS CULTURAL E EDUCATIVA - TV MINAS"	" 4"	" 3"	"10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS"	" 0"	" 1"	"8.144.164"	"7.355.893"	"15.500.057"
+						" 7"	"        0"	"3.484.441"	"3.484.441"
+						" 9"	"1.701.674"	"         0"	"1.701.674"
+					"Total"	"17"	"9.845.838"	"10.840.334"	"20.686.172"
+		" 2"		"60 - RECURSOS DIRETAMENTE ARRECADADOS"	" 0"	" 1"	"        0"	"2.400.000"	"2.400.000"
+					"Total"	" 1"	"        0"	"2.400.000"	"2.400.000"
+				"TOTAL"	" 0"	"18"	"9.845.838"	"13.240.334"	"23.086.172"

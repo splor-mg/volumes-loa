@@ -1,0 +1,6 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"21"	"37"	"4.272.847"	"100"	"2.43.1 - AGÊNCIA DE DESENVOLVIMENTO DA REGIÃO METROPOLITANA DE BELO HORIZONTE - AGÊNCIA RMBH"	"1.22.0 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - SEDE"
+	"DIREÇÃO E ASSESSORAMENTO"	"13"					
+	"DIREÇÃO SUPERIOR"	" 1"					
+	"OUTRAS"	" 2"					
+"TOTAL"			"37"	"4.272.847"	"100"		

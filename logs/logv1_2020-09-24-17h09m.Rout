@@ -1,0 +1,10 @@
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Error in `[.data.table`(desp_real, FONTE_COD %in% fontes_uniao, list(VL_DESP_REALIZ = round(sum(`Valor Despesa Realizada`),  : 
+  objeto 'Valor Despesa Realizada' não encontrado
+Calls: [ -> [.data.table
+Execução interrompida

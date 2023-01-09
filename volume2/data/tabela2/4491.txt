@@ -1,0 +1,7 @@
+"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"OUTRAS DESPESAS CORRENTES"	"INVESTIMENTOS"	"INVERSÕES FINANCEIRAS"	"Total"
+"1.27.0 - SECRETARIA DE ESTADO DE CULTURA E TURISMO - SECULT"	"4.49.1 - FUNDO ESTADUAL DE CULTURA - FEC"	" 3"		"59 - OUTROS RECURSOS VINCULADOS"	" 0"	"1"	"30.000"	"        0"	"     0"	"30.000"
+					" 1"	"1"	"16.270.000"	"2.000.000"	"     0"	"18.270.000"
+					"Total"	"2"	"16.300.000"	"2.000.000"	"     0"	"18.300.000"
+		" 2"		"61 - RECURSOS DIRETAMENTE ARRECADADOS COM VINCULAÇÃO ESPECÍFICA"	" 1"	"2"	"         0"	"        0"	"15.000"	"15.000"
+					"Total"	"2"	"         0"	"        0"	"15.000"	"15.000"
+				"TOTAL"	" 2"	"4"	"16.300.000"	"2.000.000"	"15.000"	"18.315.000"

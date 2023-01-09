@@ -1,0 +1,7 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"DIREÇÃO E ASSESSORAMENTO"	"23"	"5.861"	"737.972.958"	"52,73"	"1.40.1 - CORPO DE BOMBEIROS MILITAR DO ESTADO DE MINAS GERAIS - CBMMG"	"1.40.0 - CORPO DE BOMBEIROS MILITAR DO ESTADO DE MINAS GERAIS - CBMMG"
+	"DOCENTE"	"80"					
+	"OFICIAL"	"863"					
+	"PRAÇA"	"4.895"					
+"PESSOAL INATIVO"	"INATIVO MILITAR"	"2.884"	"2.884"	"661.606.736"	"47,27"		
+"TOTAL"			"8.745"	"1.399.579.694"	"100,00"		

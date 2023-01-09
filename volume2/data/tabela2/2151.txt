@@ -1,0 +1,7 @@
+"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"PESSOAL E ENCARGOS SOCIAIS"	"OUTRAS DESPESAS CORRENTES"	"INVESTIMENTOS"	"Total"
+"1.26.0 - SECRETARIA DE ESTADO DE EDUCAÇÃO - SEE"	"2.15.1 - FUNDAÇÃO HELENA ANTIPOFF - FHA"	" 3"	" 2"	"10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS"	" 0"	" 1"	"31.638.059"	"12.504.742"	"13.810.000"	"57.952.801"
+						" 7"	"         0"	"7.276.245"	"         0"	"7.276.245"
+					"Total"	" 8"	"31.638.059"	"19.780.987"	"13.810.000"	"65.229.046"
+		" 2"		"60 - RECURSOS DIRETAMENTE ARRECADADOS"	" 0"	" 9"	"         0"	"1.000"	"         0"	"1.000"
+					"Total"	" 9"	"         0"	"1.000"	"         0"	"1.000"
+				"TOTAL"	" 0"	"17"	"31.638.059"	"19.781.987"	"13.810.000"	"65.230.046"

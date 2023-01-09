@@ -1,0 +1,3 @@
+Error in loadNamespace(name) : there is no package called 'readr'
+Calls: trataAcoesPlanejamento ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execução interrompida

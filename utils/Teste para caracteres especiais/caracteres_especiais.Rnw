@@ -1,0 +1,49 @@
+\documentclass{article}
+% Libraries
+\usepackage[utf8]{inputenc}
+
+% Alterar a fonte para Arial
+\usepackage[T1]{fontenc}
+\usepackage{uarial}
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+<<results = tex, echo=FALSE>>=
+TratamentoNA = function(valor){
+  if(is.na(valor)){""} else{valor}
+}
+
+dir_loa = "C:/Users/m1312932/SEPLAG/LOA"
+
+require(readxl)
+caracteres = read_excel(paste(dir_loa,"/utils/Caracteres Especiais.xlsx", sep=""), 
+                                  sheet=1, col_types = c("text", "text", "text"))
+
+caracteres_especiais = list()
+
+for(l in 1:nrow(caracteres)){
+  caracteres_especiais[[caracteres$caracter[l]]] = TratamentoNA(caracteres$correcao[l])
+}
+
+texto = "R$ 1800, #, 50%, &, caracteres_especiais, {chaves} 1º e 3ª \\comando ~ ^, D´ÁGUA \" Entre aspas\""
+
+correcaoCaracteresEspeciais = function(texto, caracteres){
+  for(padrao in names(caracteres)){
+  texto = gsub(padrao, caracteres[padrao], texto, perl=T)
+  }
+  return(texto)
+}
+
+cat(correcaoCaracteresEspeciais(texto, caracteres_especiais), "\\\\\n")
+
+cat("ÓRGÃO \\\\\n")
+
+cat("Ê \\\\\n")
+
+@
+
+
+
+\end{document}

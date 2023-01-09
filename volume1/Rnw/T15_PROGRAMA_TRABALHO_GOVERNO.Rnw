@@ -1,0 +1,163 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\renewcommand*{\arraystretch}{1.9}
+\scriptsize
+\color{myblack}
+\centering
+ 
+\newgeometry{bottom=0cm,top=0cm,left=1.5cm,right=2cm}
+%  \thispagestyle{lscape}
+%  \pagestyle{lscape}
+ 
+\begin{landscape}
+ 
+<<results=tex, echo=FALSE>>=
+
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_latex = paste0(dir_loa, "/volume1/Rnw")
+  dir_codigosR = paste0(dir_latex, "/CodigosR")
+  dir_utils = paste0(dir_loa, "/utils/")
+  dir_data = paste0(dir_loa, "/volume1/data")
+  dir_bancos = paste0(dir_loa, "/bancos")
+
+  ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
+  
+  source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
+  
+  formatarNum = function(x){
+    if(is.numeric(x)){  
+      x = format(x, big.mark=".", scientific = FALSE, decimal.mark = ",")
+      x = gsub(" *(-*\\d+.+)", "\\1", x)
+      x = ifelse(grepl("NA",x), NA, x)
+    } else{
+      x
+    }
+  }
+
+  # INICIO TABELA
+  suppressWarnings(suppressMessages(library(dplyr)))
+  suppressMessages(suppressWarnings(library(readr)))
+  
+  banco = read_delim(
+    file = 'volume1/data/T15_PROGRAMA_TRABALHO_GOVERNO.txt',
+    delim = '\t', 
+    locale = locale('pt', encoding = 'Latin1', decimal_mark = ',', grouping_mark = '.'),
+    na = '',
+    col_types = cols(.default = col_character())
+    ) %>% as.data.table()
+  
+  banco[is.na(banco)] = ''
+  
+  cat("\\scriptsize\n")
+  #cat("\\renewcommand*{\\arraystretch}{1.5}\n")
+
+  cat("\\noindent\\begin{longtable}[c]{",
+      "m{3pt}m{3pt}m{3pt}|m{5cm}|m{1.7cm}|m{1.5cm}|m{1.8cm}|m{1.5cm}|m{1.7cm}|m{2.3cm}|m{2cm}|m{1.3cm}}\n", sep="")
+
+  titulo1 = paste0("\\multicolumn{12}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize \\textbf{",
+                 "PROGRAMA DE TRABALHO DO GOVERNO: DEMONSTRATIVO DA DESPESA POR FUNÇÕES, SUBFUNÇÕES E PROGRAMAS ",
+                 "CONFORME OS GRUPOS DE DESPESA}}}\\\\\n")
+
+  titulo2 = paste0("\\multicolumn{12}{c}{\\cellcolor{gray!50} { \\textcolor{myblack}{ \\textbf{",
+                   "(Art. 2$^o$, \\S 2$^o$, Inciso II da Lei 4.320/64)}}}}\\\\\n")
+
+  subtitulo1 = paste0("\\multicolumn{12}{l}{ \\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC ,
+                     "}}} \\\\\n")
+
+  subtitulo2 = paste0("\\multicolumn{5}{l}{ \\textbf{ORÇAMENTO FISCAL}} &", 
+                      "\\multicolumn{6}{l}{ \\textbf{RECURSOS DE TODAS AS FONTES}} ",
+                      " & \\multicolumn{1}{r}{ \\textbf{R\\$1,00}} \\\\\n")
+
+  cabecalho1 = paste0("\\multicolumn{3}{C{2cm}|}{\\textbf{CÓDIGO}} & ",
+                      "\\multicolumn{1}{C{5cm}|}{\\multirow{2}{*}{ \\textbf{ESPECIFICAÇÃO}}} & ",
+                      "\\multirow{2}{*}{\\parbox{1.7cm}{\\centering \\textbf{PESSOAL ENCARGOS SOCIAIS}}} & ",
+                      "\\multirow{2}{*}{\\parbox{1.5cm}{\\centering \\textbf{JUROS E ENCARGOS DA DÍVIDA}}} & ",
+                      "\\multirow{2}{*}{\\parbox{1.8cm}{\\centering \\textbf{OUTRAS DESPESAS CORRENTES}}} & ",
+                      "\\multicolumn{1}{C{2.2cm}|}{\\multirow{2}{*}{\\textbf{INVESTIMENTOS}}} & ",
+                      "\\multirow{2}{*}{\\parbox{1.9cm}{\\centering \\textbf{INVERSÕES FINANCEIRAS}}} & ",
+                      "\\multirow{2}{*}{\\parbox{2.3cm}{\\centering \\textbf{AMORTIZAÇÃO DA DÍVIDA}}} & ", 
+                      "\\multirow{2}{*}{\\parbox{2.2cm}{\\centering \\textbf{RESERVA DE CONTINGÊNCIA}}} & ", 
+                      "\\multicolumn{1}{c}{\\multirow{2}{*}{\\textbf{TOTAL}}} \\\\\n")
+
+  cabecalho2 = paste("\\multicolumn{1}{c}{\\fonteSeis{FUN}} & \\multicolumn{1}{c}{\\fonteSeis{SUBF}} & ",
+                     "\\multicolumn{1}{c|}{\\fonteSeis{PROG}} & & & & & & & & & \\\\\n")
+                   
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo1)
+  cat(subtitulo2)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(cabecalho1)
+  cat(cabecalho2)
+  cat("\\hline\n")
+  cat("\\endfirsthead\n")
+ 
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo1)
+  cat(subtitulo2)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(cabecalho1)
+  cat(cabecalho2)
+  cat("\\hline\n")
+  cat("\\endhead\n")
+
+  cat("\\endfoot\n")
+  cat("\\hline\n")
+
+  cat("\\hline\\hline\n")
+  cat("\\endlastfoot\n")
+ 
+   for(i in 1:nrow(banco)){
+    
+    if(toupper(banco[i, especificacao])=="TOTAL"){
+      
+      cat("\\hline \\hline\n")
+      
+      cat("\\multicolumn{4}{@{\\hspace{0.5em}}C{5cm}|}{ \\textbf{", banco[i, especificacao], 
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", formatarNum(TratamentoNA(banco[i, pessoal])), 
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", formatarNum(TratamentoNA(banco[i, juros])), 
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", formatarNum(TratamentoNA(banco[i, outras])), 
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", formatarNum(TratamentoNA(banco[i, investimentos])), 
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", formatarNum(TratamentoNA(banco[i, inversoes])),
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", formatarNum(TratamentoNA(banco[i, amort])),
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", formatarNum(TratamentoNA(banco[i, reserva])),
+          "}} & \\multicolumn{1}{r}{ \\textbf{", formatarNum(TratamentoNA(banco[i, total])),   
+          "}} \\\\\n")
+      
+    } else{
+
+        cat("\\multicolumn{1}{l}{ ", formatC(TratamentoNA(banco[i, funcao]), width = 2, flag = "0"),  
+            "} & \\multicolumn{1}{l}{", formatC(TratamentoNA(banco[i, subfuncao]), width = 3, flag = "0"), 
+            "} & \\multicolumn{1}{c|}{", formatC(TratamentoNA(banco[i, programa]), width = 3, flag = "0"),
+            "} & \\multicolumn{1}{@{\\hspace{0.5em}}L{5cm}|}{", toupper(banco[i, especificacao]), 
+            "} & \\multicolumn{1}{r|}{", formatarNum(TratamentoNA(banco[i, pessoal])), 
+            "} & \\multicolumn{1}{r|}{", formatarNum(TratamentoNA(banco[i, juros])), 
+            "} & \\multicolumn{1}{r|}{", formatarNum(TratamentoNA(banco[i, outras])), 
+            "} & \\multicolumn{1}{r|}{", formatarNum(TratamentoNA(banco[i, investimentos])), 
+            "} & \\multicolumn{1}{r|}{", formatarNum(TratamentoNA(banco[i, inversoes])),
+            "} & \\multicolumn{1}{r|}{", formatarNum(TratamentoNA(banco[i, amort])),
+            "} & \\multicolumn{1}{r|}{", formatarNum(TratamentoNA(banco[i, reserva])),
+            "} & \\multicolumn{1}{r}{", formatarNum(TratamentoNA(banco[i, total])),
+            "} \\\\\n", sep=" ")
+      }
+   }
+  
+
+cat("\\end{longtable}\n")
+ 
+# FIM TABELA
+
+@
+
+\end{landscape}
+ 
+
+\end{document}

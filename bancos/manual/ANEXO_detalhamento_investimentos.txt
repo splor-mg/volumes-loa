@@ -1,0 +1,21 @@
+cod	descricao
+1	Participação Societária
+5	Sociedades Coligadas
+5	Sociedades Controladas
+1	Imobilizações
+5	Florestamento e Reflorestamento
+5	Máquinas, Aparelhos e Equipamentos
+5	Móveis e Utensílios
+5	Obras e Instalações
+5	Terrenos
+5	Veículos
+1	Amortização de Dívidas
+5	Empr. Financ. Moeda Estrangeira
+5	Empr. Financ. Moeda Nacional
+1	Outras Aplicações
+5	Aumento de Capital de Giro Líquido
+5	Desenvolvimento de Software
+5	Distribuição de Dividendos
+5	Equipamentos e Software
+5	Intangíveis e Outros Investimentos
+5	Pesquisa Mineral

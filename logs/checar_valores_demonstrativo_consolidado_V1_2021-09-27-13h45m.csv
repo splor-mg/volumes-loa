@@ -1,0 +1,155 @@
+"ordem";"tipo";"desp_rec_referencia";"receita_atual";"VL_REF";"VL_ATUAL";"DIFF_ATUAL_REF"
+"14";"rec ordinaria";"      TAXAS";"      TAXAS";174349;12246376;12072027
+"20";"rec ordinaria";"    LEI  COMPLEMENTAR Nº 87/96";"    COTA-PARTE DA CIDE";147881445;0;-147881445
+"20";"rec total";"    LEI  COMPLEMENTAR Nº 87/96";"    COTA-PARTE DA CIDE";184851806;35490089;-149361717
+"21";"rec ordinaria";"    TRANSFERÊNCIAS  SUS";"    COTA -PARTE DA COMP. FINANCEIRA - RECURSOS HÍDRICOS";0;26627685;26627685
+"21";"rec total";"    TRANSFERÊNCIAS  SUS";"    COTA -PARTE DA COMP. FINANCEIRA - RECURSOS HÍDRICOS";931465616;88758949;-842706667
+"21";"rec vinculada";"    TRANSFERÊNCIAS  SUS";"    COTA -PARTE DA COMP. FINANCEIRA - RECURSOS HÍDRICOS";931465616;62131264;-869334352
+"22";"rec ordinaria";"    COTA-PARTE DA CIDE";"    COTA -PARTE DA COMP. FINANCEIRA - RECURSOS MINERAIS";0;197929430;197929430
+"22";"rec total";"    COTA-PARTE DA CIDE";"    COTA -PARTE DA COMP. FINANCEIRA - RECURSOS MINERAIS";152384172;659764767;507380595
+"22";"rec vinculada";"    COTA-PARTE DA CIDE";"    COTA -PARTE DA COMP. FINANCEIRA - RECURSOS MINERAIS";152384172;461835337;309451165
+"23";"rec ordinaria";"    COTA -PARTE DA COMP. FINANCEIRA - RECURSOS HÍDRICOS";"    COTA -PARTE ROYALTIES - COMP. FINANC. - PROD. DE PETRÓLEO";0;7469365;7469365
+"23";"rec total";"    COTA -PARTE DA COMP. FINANCEIRA - RECURSOS HÍDRICOS";"    COTA -PARTE ROYALTIES - COMP. FINANC. - PROD. DE PETRÓLEO";101135176;24897883;-76237293
+"23";"rec vinculada";"    COTA -PARTE DA COMP. FINANCEIRA - RECURSOS HÍDRICOS";"    COTA -PARTE ROYALTIES - COMP. FINANC. - PROD. DE PETRÓLEO";101135176;17428518;-83706658
+"24";"rec ordinaria";"    COTA -PARTE DA COMP. FINANCEIRA - RECURSOS MINERAIS";"    OUTRAS TRANSFERÊNCIAS DA UNIÀO";0;390649278;390649278
+"24";"rec total";"    COTA -PARTE DA COMP. FINANCEIRA - RECURSOS MINERAIS";"    OUTRAS TRANSFERÊNCIAS DA UNIÀO";252677325;1311103963;1058426638
+"24";"rec vinculada";"    COTA -PARTE DA COMP. FINANCEIRA - RECURSOS MINERAIS";"    OUTRAS TRANSFERÊNCIAS DA UNIÀO";252677325;920454685;667777360
+"25";"rec total";"    COTA -PARTE ROYALTIES - COMP. FINANC. - PROD. DE PETRÓLEO";"  TRANSFERÊNCIAS MULTIGOVERNAMENTAIS";16346194;10771645413;10755299219
+"25";"rec vinculada";"    COTA -PARTE ROYALTIES - COMP. FINANC. - PROD. DE PETRÓLEO";"  TRANSFERÊNCIAS MULTIGOVERNAMENTAIS";16346194;10771645413;10755299219
+"26";"rec ordinaria";"    OUTRAS TRANSFERÊNCIAS DA UNIÀO";"  OUTRAS TRANSFERÊNCIAS";205914351;0;-205914351
+"26";"rec total";"    OUTRAS TRANSFERÊNCIAS DA UNIÀO";"  OUTRAS TRANSFERÊNCIAS";383763922;8795238;-374968684
+"26";"rec vinculada";"    OUTRAS TRANSFERÊNCIAS DA UNIÀO";"  OUTRAS TRANSFERÊNCIAS";177849571;8795238;-169054333
+"27";"rec total";"  TRANSFERÊNCIAS MULTIGOVERNAMENTAIS";"  TRANSFERÊNCIAS DE CONVÊNIOS";7900284775;268631228;-7631653547
+"27";"rec vinculada";"  TRANSFERÊNCIAS MULTIGOVERNAMENTAIS";"  TRANSFERÊNCIAS DE CONVÊNIOS";7900284775;268631228;-7631653547
+"28";"rec ordinaria";"  OUTRAS TRANSFERÊNCIAS";"  OUTRAS RECEITAS CORRENTES";0;1805085273;1805085273
+"28";"rec total";"  OUTRAS TRANSFERÊNCIAS";"  OUTRAS RECEITAS CORRENTES";13881410;4737976731;4724095321
+"28";"rec vinculada";"  OUTRAS TRANSFERÊNCIAS";"  OUTRAS RECEITAS CORRENTES";13881410;2932891458;2919010048
+"29";"rec ordinaria";"  TRANSFERÊNCIAS DE CONVÊNIOS";"    RECEITA PATRIMONIAL";0;1490081248;1490081248
+"29";"rec total";"  TRANSFERÊNCIAS DE CONVÊNIOS";"    RECEITA PATRIMONIAL";151699612;2449859420;2298159808
+"29";"rec vinculada";"  TRANSFERÊNCIAS DE CONVÊNIOS";"    RECEITA PATRIMONIAL";151699612;959778172;808078560
+"30";"rec ordinaria";"  OUTRAS RECEITAS CORRENTES";"    RECEITA AGROPECUÁRIA";585413334;0;-585413334
+"30";"rec total";"  OUTRAS RECEITAS CORRENTES";"    RECEITA AGROPECUÁRIA";4677260493;8735051;-4668525442
+"30";"rec vinculada";"  OUTRAS RECEITAS CORRENTES";"    RECEITA AGROPECUÁRIA";4091847159;8735051;-4083112108
+"31";"rec ordinaria";"    RECEITA PATRIMONIAL";"    RECEITA INDUSTRIAL";329372746;47720141;-281652605
+"31";"rec total";"    RECEITA PATRIMONIAL";"    RECEITA INDUSTRIAL";2780404012;475414899;-2304989113
+"31";"rec vinculada";"    RECEITA PATRIMONIAL";"    RECEITA INDUSTRIAL";2451031266;427694758;-2023336508
+"32";"rec ordinaria";"    RECEITA AGROPECUÁRIA";"    RECEITA DE SERVIÇOS";0;3904120;3904120
+"32";"rec total";"    RECEITA AGROPECUÁRIA";"    RECEITA DE SERVIÇOS";6956952;782474388;775517436
+"32";"rec vinculada";"    RECEITA AGROPECUÁRIA";"    RECEITA DE SERVIÇOS";6956952;778570268;771613316
+"33";"rec ordinaria";"    RECEITA INDUSTRIAL";"    RECEITAS DIVERSAS";55719778;263379764;207659986
+"33";"rec total";"    RECEITA INDUSTRIAL";"    RECEITAS DIVERSAS";554915248;1021492973;466577725
+"34";"rec ordinaria";"    RECEITA DE SERVIÇOS";NA;1967375;0;-1967375
+"34";"rec total";"    RECEITA DE SERVIÇOS";NA;639669713;0;-639669713
+"34";"rec vinculada";"    RECEITA DE SERVIÇOS";NA;637702338;0;-637702338
+"35";"rec ordinaria";"    RECEITAS DIVERSAS";"RECEITAS DE CAPITAL";198353435;776714;-197576721
+"35";"rec total";"    RECEITAS DIVERSAS";"RECEITAS DE CAPITAL";695314568;3207025109;2511710541
+"35";"rec vinculada";"    RECEITAS DIVERSAS";"RECEITAS DE CAPITAL";496961133;3206248395;2709287262
+"36";"rec total";NA;"  OPERAÇÕES DE CRÉDITO";0;27360980;27360980
+"36";"rec vinculada";NA;"  OPERAÇÕES DE CRÉDITO";0;27360980;27360980
+"37";"rec ordinaria";"RECEITAS DE CAPITAL";"    INTERNA";200000;0;-200000
+"37";"rec total";"RECEITAS DE CAPITAL";"    INTERNA";2485789414;20000000;-2465789414
+"37";"rec vinculada";"RECEITAS DE CAPITAL";"    INTERNA";2485589414;20000000;-2465589414
+"38";"rec total";"  OPERAÇÕES DE CRÉDITO";"    EXTERNA";653770052;7360980;-646409072
+"38";"rec vinculada";"  OPERAÇÕES DE CRÉDITO";"    EXTERNA";653770052;7360980;-646409072
+"39";"rec total";"    INTERNA";"  ALIENAÇÃO DE BENS";653770052;14275288;-639494764
+"39";"rec vinculada";"    INTERNA";"  ALIENAÇÃO DE BENS";653770052;14275288;-639494764
+"40";"rec ordinaria";"    EXTERNA";"  AMORTIZAÇÃO DE EMPRÉSTIMOS";0;776714;776714
+"40";"rec total";"    EXTERNA";"  AMORTIZAÇÃO DE EMPRÉSTIMOS";0;61737714;61737714
+"40";"rec vinculada";"    EXTERNA";"  AMORTIZAÇÃO DE EMPRÉSTIMOS";0;60961000;60961000
+"42";"rec ordinaria";"  AMORTIZAÇÃO DE EMPRÉSTIMOS";"  OUTRAS TRANSFERÊNCIAS";200000;0;-200000
+"43";"rec total";"  TRANSFERÊNCIAS DE CONVÊNIOS";"  OUTRAS RECEITAS";146609288;2362317027;2215707739
+"43";"rec vinculada";"  TRANSFERÊNCIAS DE CONVÊNIOS";"  OUTRAS RECEITAS";146609288;2362317027;2215707739
+"44";"rec total";"  OUTRAS TRANSFERÊNCIAS";NA;9997208;0;-9997208
+"44";"rec vinculada";"  OUTRAS TRANSFERÊNCIAS";NA;9997208;0;-9997208
+"45";"rec ordinaria";"  OUTRAS RECEITAS";"DEDUÇÕES DA RECEITA CORRENTE";0;-33660561;-33660561
+"45";"rec total";"  OUTRAS RECEITAS";"DEDUÇÕES DA RECEITA CORRENTE";63000000;-12510451138;-12573451138
+"45";"rec vinculada";"  OUTRAS RECEITAS";"DEDUÇÕES DA RECEITA CORRENTE";63000000;-12476790577;-12539790577
+"46";"rec total";NA;"    ICMS";0;-9967348616;-9967348616
+"46";"rec vinculada";NA;"    ICMS";0;-9967348616;-9967348616
+"47";"rec ordinaria";"DEDUÇÕES DA RECEITA CORRENTE";"    FPE";-174956343;0;174956343
+"47";"rec total";"DEDUÇÕES DA RECEITA CORRENTE";"    FPE";-9303303766;-1086130663;8217173103
+"47";"rec vinculada";"DEDUÇÕES DA RECEITA CORRENTE";"    FPE";-9128347423;-1086130663;8042216760
+"48";"rec total";"    ICMS";"    IPI";-7284613343;-139175850;7145437493
+"48";"rec vinculada";"    ICMS";"    IPI";-7284613343;-139175850;7145437493
+"49";"rec total";"    FPE";"    MULTAS DO ICMS";-835214906;-75869220;759345686
+"49";"rec vinculada";"    FPE";"    MULTAS DO ICMS";-835214906;-75869220;759345686
+"51";"rec total";"    ICMS - DESONERAÇÃO - LEI COMPLEMENTAR 87/96";"    IPVA";-36970361;-686306593;-649336232
+"51";"rec vinculada";"    ICMS - DESONERAÇÃO - LEI COMPLEMENTAR 87/96";"    IPVA";-36970361;-686306593;-649336232
+"52";"rec total";"    MULTAS DO ICMS";"    ITCD";-63092780;-247133993;-184041213
+"52";"rec vinculada";"    MULTAS DO ICMS";"    ITCD";-63092780;-247133993;-184041213
+"53";"rec total";"    DÍVIDA ATIVA TRIBUTÁRIA ICMS";"    MULTAS DO ITCD";-44733157;-5179106;39554051
+"53";"rec vinculada";"    DÍVIDA ATIVA TRIBUTÁRIA ICMS";"    MULTAS DO ITCD";-44733157;-5179106;39554051
+"54";"rec total";"    IPVA";"    MULTAS DO IPVA";-538901301;-38586129;500315172
+"54";"rec vinculada";"    IPVA";"    MULTAS DO IPVA";-538901301;-38586129;500315172
+"55";"rec total";"    ITCD";"    DÍVIDA ATIVA DO IPVA";-161768904;-15695253;146073651
+"55";"rec vinculada";"    ITCD";"    DÍVIDA ATIVA DO IPVA";-161768904;-15695253;146073651
+"57";"rec ordinaria";"    MULTAS DO IPVA";"    CESSÃO DE DIREITOS CREDITÓRIOS";0;-33660561;-33660561
+"57";"rec total";"    MULTAS DO IPVA";"    CESSÃO DE DIREITOS CREDITÓRIOS";-30935794;-201658553;-170722759
+"57";"rec vinculada";"    MULTAS DO IPVA";"    CESSÃO DE DIREITOS CREDITÓRIOS";-30935794;-167997992;-137062198
+"58";"rec total";"    DÍVIDA ATIVA DO IPVA";NA;-10992501;0;10992501
+"58";"rec vinculada";"    DÍVIDA ATIVA DO IPVA";NA;-10992501;0;10992501
+"59";"rec total";"    DÍVIDA ATIVA DO ITCD";NA;-1642799;0;1642799
+"59";"rec vinculada";"    DÍVIDA ATIVA DO ITCD";NA;-1642799;0;1642799
+"60";"rec ordinaria";"    CESSÃO DE DIREITOS CREDITÓRIOS";NA;-174956343;0;174956343
+"60";"rec total";"    CESSÃO DE DIREITOS CREDITÓRIOS";NA;-174956343;0;174956343
+"9";"rec ordinaria";"      TAXAS";"      TAXAS";696062;771296723;770600661
+"3-1-1-2-0";"desp ordinaria";"Corrente -- Pessoal -- Executivo -- Adm Indireta";NA;1972024775;4126667216;2154642441
+"3-1-1-2-1";"desp ordinaria";"Corrente -- Pessoal -- Executivo -- Adm Indireta -- Autarquia e Fund";NA;1552174156;3533580127;1981405971
+"3-1-1-2-1";"desp vinculada";"Corrente -- Pessoal -- Executivo -- Adm Indireta -- Autarquia e Fund";NA;1759181459;360125587;-1399055872
+"3-1-1-2-2";"desp ordinaria";"Corrente -- Pessoal -- Executivo -- Adm Indireta -- Empresas";NA;122990900;314218666;191227766
+"3-1-1-2-2";"desp vinculada";"Corrente -- Pessoal -- Executivo -- Adm Indireta -- Empresas";NA;244853665;57468640;-187385025
+"3-2-0-0-0";"desp ordinaria";"Corrente -- Juros";NA;4537606674;7866898479;3329291805
+"3-2-0-0-0";"desp total";"Corrente -- Juros";NA;4613409871;7866898479;3253488608
+"3-2-0-0-0";"desp vinculada";"Corrente -- Juros";NA;75803197;0;-75803197
+"3-2-1-0-0";"desp ordinaria";"Corrente -- Juros -- Executivo";NA;4537606674;7866898479;3329291805
+"3-2-1-0-0";"desp total";"Corrente -- Juros -- Executivo";NA;4613409871;7866898479;3253488608
+"3-2-1-0-0";"desp vinculada";"Corrente -- Juros -- Executivo";NA;75803197;0;-75803197
+"3-2-1-1-0";"desp ordinaria";"Corrente -- Juros -- Executivo -- Adm Direta";NA;4537606674;7866898479;3329291805
+"3-2-1-1-0";"desp total";"Corrente -- Juros -- Executivo -- Adm Direta";NA;4613409871;7866898479;3253488608
+"3-2-1-1-0";"desp vinculada";"Corrente -- Juros -- Executivo -- Adm Direta";NA;75803197;0;-75803197
+"3-3-1-1-0";"desp vinculada";"Corrente -- Custeio -- Executivo -- Adm Direta";NA;1489854373;3466931998;1977077625
+"3-3-1-2-2";"desp ordinaria";"Corrente -- Custeio -- Executivo -- Adm Indireta -- Empresas";NA;2448405;10438827;7990422
+"4-0-0-0-0";"desp ordinaria";"Capital";NA;4036707621;7761914006;3725206385
+"4-0-0-0-0";"desp total";"Capital";NA;7069668559;12299483242;5229814683
+"4-4-0-0-0";"desp total";"Capital -- Investimento";NA;3411355581;6506242621;3094887040
+"4-4-0-0-0";"desp vinculada";"Capital -- Investimento";NA;1365979730;4008659570;2642679840
+"4-4-1-0-0";"desp total";"Capital -- Investimento -- Executivo";NA;2700631273;5992729379;3292098106
+"4-4-1-0-0";"desp vinculada";"Capital -- Investimento -- Executivo";NA;735750760;3569546732;2833795972
+"4-4-1-1-0";"desp total";"Capital -- Investimento -- Executivo -- Adm Direta";NA;1325432809;3527016016;2201583207
+"4-4-1-1-0";"desp vinculada";"Capital -- Investimento -- Executivo -- Adm Direta";NA;249565555;2152037867;1902472312
+"4-4-1-2-0";"desp total";"Capital -- Investimento -- Executivo -- Adm Indireta";NA;1375198464;2465713363;1090514899
+"4-4-1-2-0";"desp vinculada";"Capital -- Investimento -- Executivo -- Adm Indireta";NA;486185205;1417508865;931323660
+"4-4-1-2-1";"desp total";"Capital -- Investimento -- Executivo -- Adm Indireta -- Autarquia e Fund";NA;852807019;1449946562;597139543
+"4-4-1-2-1";"desp vinculada";"Capital -- Investimento -- Executivo -- Adm Indireta -- Autarquia e Fund";NA;405386159;1086999692;681613533
+"4-4-1-2-2";"desp ordinaria";"Capital -- Investimento -- Executivo -- Adm Indireta -- Empresas";NA;955724;14000000;13044276
+"4-4-1-2-2";"desp total";"Capital -- Investimento -- Executivo -- Adm Indireta -- Empresas";NA;955724;19588495;18632771
+"4-4-1-2-2";"desp vinculada";"Capital -- Investimento -- Executivo -- Adm Indireta -- Empresas";NA;0;5588495;5588495
+"4-4-1-2-3";"desp total";"Capital -- Investimento -- Executivo -- Adm Indireta -- Fundos";NA;521435721;996178306;474742585
+"4-4-1-2-3";"desp vinculada";"Capital -- Investimento -- Executivo -- Adm Indireta -- Fundos";NA;80799046;324920678;244121632
+"4-5-0-0-0";"desp total";"Capital -- Inversoes";NA;328882448;771833000;442950552
+"4-5-0-0-0";"desp vinculada";"Capital -- Inversoes";NA;166981208;528909666;361928458
+"4-5-1-0-0";"desp total";"Capital -- Inversoes -- Executivo";NA;316745962;720677750;403931788
+"4-5-1-0-0";"desp vinculada";"Capital -- Inversoes -- Executivo";NA;154844722;492754416;337909694
+"4-5-1-1-0";"desp total";"Capital -- Inversoes -- Executivo -- Adm Direta";NA;12025000;125160000;113135000
+"4-5-1-1-0";"desp vinculada";"Capital -- Inversoes -- Executivo -- Adm Direta";NA;12015000;125150000;113135000
+"4-5-1-2-0";"desp total";"Capital -- Inversoes -- Executivo -- Adm Indireta";NA;304720962;595517750;290796788
+"4-5-1-2-0";"desp vinculada";"Capital -- Inversoes -- Executivo -- Adm Indireta";NA;142829722;367604416;224774694
+"4-5-1-2-3";"desp total";"Capital -- Inversoes -- Executivo -- Adm Indireta -- Fundos";NA;288725962;582027111;293301149
+"4-5-1-2-3";"desp vinculada";"Capital -- Inversoes -- Executivo -- Adm Indireta -- Fundos";NA;129029722;356913777;227884055
+"4-5-2-0-0";"desp ordinaria";"Capital -- Inversoes -- Outros Poderes";NA;0;15000000;15000000
+"4-5-2-0-0";"desp total";"Capital -- Inversoes -- Outros Poderes";NA;12136486;51155250;39018764
+"4-5-2-0-0";"desp vinculada";"Capital -- Inversoes -- Outros Poderes";NA;12136486;36155250;24018764
+"4-5-2-1-0";"desp ordinaria";"Capital -- Inversoes -- Outros Poderes -- Adm Direta";NA;0;15000000;15000000
+"4-5-2-1-0";"desp total";"Capital -- Inversoes -- Outros Poderes -- Adm Direta";NA;0;15000000;15000000
+"4-5-2-2-0";"desp total";"Capital -- Inversoes -- Outros Poderes -- Adm Indireta";NA;12136486;36155250;24018764
+"4-5-2-2-0";"desp vinculada";"Capital -- Inversoes -- Outros Poderes -- Adm Indireta";NA;12136486;36155250;24018764
+"4-5-2-2-3";"desp total";"Capital -- Inversoes -- Outros Poderes -- Adm Indireta -- Fundos";NA;7280236;31299000;24018764
+"4-5-2-2-3";"desp vinculada";"Capital -- Inversoes -- Outros Poderes -- Adm Indireta -- Fundos";NA;7280236;31299000;24018764
+"4-6-0-0-0";"desp ordinaria";"Capital -- Amortizacao";NA;1829430530;5021407621;3191977091
+"4-6-0-0-0";"desp vinculada";"Capital -- Amortizacao";NA;1500000000;0;-1500000000
+"4-6-1-0-0";"desp ordinaria";"Capital -- Amortizacao -- Executivo";NA;1829430530;5021407621;3191977091
+"4-6-1-0-0";"desp vinculada";"Capital -- Amortizacao -- Executivo";NA;1500000000;0;-1500000000
+"4-6-1-1-0";"desp ordinaria";"Capital -- Amortizacao -- Executivo -- Adm Direta";NA;1829430530;5021407621;3191977091
+"4-6-1-1-0";"desp vinculada";"Capital -- Amortizacao -- Executivo -- Adm Direta";NA;1500000000;0;-1500000000
+"9-0-0-0-0";"desp ordinaria";"Contigencia";NA;613189292;1552672961;939483669
+"9-0-0-0-0";"desp total";"Contigencia";NA;613189292;1552672961;939483669

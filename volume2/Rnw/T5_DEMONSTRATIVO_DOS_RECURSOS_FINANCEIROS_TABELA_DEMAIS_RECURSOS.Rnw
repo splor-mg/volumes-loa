@@ -1,0 +1,126 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+ \color{myblack}
+ \centering
+ 
+\newgeometry{bottom=0cm,top=0cm,left=1cm,right=2cm}
+
+\begin{landscape}
+
+<<results=tex, echo=FALSE>>=
+
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_latex = paste0(dir_loa, "/volume2/Rnw")
+  dir_codigosR = paste0(dir_latex, "/CodigosR")
+  dir_utils = paste0(dir_loa, "/utils/")
+  dir_data = paste0(dir_loa, "/volume2/data")
+  dir_bancos = paste0(dir_loa, "/bancos")
+
+  ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
+  
+  source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
+
+  sumario = data.table(read.table(paste0(dir_data, "/sumario.txt"), header=T, sep="\t", dec=",", 
+                                  stringsAsFactors = FALSE, quote = "\"'"))
+  
+  conjunto = c(2011, 2041, 2061, 2071, 2091, 2101, 2121, 2151, 2161, 2171, 2181, 2201, 2211, 	2241, 2251, 2261, 2271, 
+               2281, 2301, 2311, 2321, 2331, 2351, 2361, 2371, 2381, 2421, 2431, 2441, 2461, 3041, 3051, 3151, 4031, 
+               4091, 4101, 4111, 4121, 4141, 4151, 4251, 4291, 4321, 4331, 4341, 4381, 4421, 4441, 4451, 4711, 4491, 
+               4531, 4541, 4551, 4581, 4601, 4611, 4621, 4631, 4641, 4651, 4661, 4671)
+
+  for(uo in conjunto){
+    
+  # INICIO TABELA
+  
+    banco = data.table(read.table(paste(dir_data, "/tabela5/",uo,".txt",sep=""), header=T, sep="\t", 
+                                  dec=",", stringsAsFactors = FALSE))
+
+    cat("\\renewcommand*{\\arraystretch}{1.7}\n")
+    cat("\\small\n")
+
+    cat("\\noindent\\begin{longtable}[c]{m{12cm}m{3cm}m{3cm}m{3cm}}\n")
+            
+    titulo1 = paste("\\multicolumn{4}{C{23cm}}{\\cellcolor{gray!50} {\\normalsize \\textbf{",
+                    "DEMONSTRATIVO DOS RECURSOS FINANCEIROS}}} \\TBstrut   \\\\[2ex] \n")
+  
+    subtitulo = paste("\\multicolumn{3}{l}{\\textbf{Exercício: ", ANO_DOC,
+                      "}} & \\multicolumn{1}{r}{R\\$1,00} \\\\\n") 
+  
+    titulo_orgao = paste0("\\multicolumn{4}{l}{\\textbf{ÓRGÃO:} ", banco[1, nome_orgao],"} \\\\\n")
+    titulo_uo = paste0("\\multicolumn{4}{L{23cm}}{\\textbf{UO:} \\hspace{18pt} ", banco[1, nome_uo],"} \\\\\n")
+  
+    cabecalho = paste0("\\multicolumn{1}{L{12cm}}{ \\textbf{ 2. RECURSOS REPASSADOS PELO TESOURO ESTADUAL",
+                       "}} & \\multicolumn{1}{R{3cm}}{ \\textbf{ORDINÁRIO }} & ",
+                      "\\multicolumn{1}{R{3cm}}{ \\textbf{ VINCULADO }} & ",
+                      "\\multicolumn{1}{R{3cm}}{ \\textbf{TOTAL}} \\\\\n")
+  
+    cat(titulo1)
+    cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+    cat(subtitulo)
+    cat(titulo_orgao)
+    cat(titulo_uo)
+    cat("\\specialrule{1pt}{0pt}{0pt}\n")
+    cat(cabecalho)
+    cat("\\hline\n")
+    cat("\\endfirsthead\n")
+
+    cat(titulo1)
+    cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+    cat(subtitulo)
+    cat(titulo_orgao)
+    cat(titulo_uo)
+    cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  
+    cat("\\hline\n")
+    cat("\\endhead\n")
+    cat("\\endfoot\n")
+  
+    cat("\\hline\n")
+    cat("\\hline\\hline\n") 
+    cat("\\endlastfoot\n")
+  
+    for(i in 2:nrow(banco)){
+      
+      if(grepl("^(\\d{1})\\..+", banco[i, especificacao])){
+        
+        cat("\\multicolumn{2}{l}{ \\textbf{ ", banco[i, especificacao], 
+            "}} & & \\multicolumn{1}{R{3cm}}{ \\textbf{", banco[i, total], "}} \\\\\n", sep="")  
+        cat("\\hline \\hline \n")
+        
+       } else if(grepl("^subtotal.*", banco[i, especificacao], ignore.case = TRUE)){
+         
+         cat("\\hline \n")
+         
+         cat("\\multicolumn{1}{L{12cm}}{ \\textbf{",  banco[i, especificacao], 
+             "}} & \\multicolumn{1}{R{3cm}}{ \\textbf{", TratamentoNA(banco[i, ordinario]), 
+             "}} & \\multicolumn{1}{R{3cm}}{ \\textbf{", TratamentoNA(banco[i, vinculado]), 
+             "}} & \\multicolumn{1}{R{3cm}}{ \\textbf{", TratamentoNA(banco[i, total]),"}} \\\\\n")
+        
+          cat("\\hline \\hline \n")
+         
+         } else{
+        
+           cat("\\multicolumn{1}{@{\\hspace{3em}}L{12cm}}{ ",  banco[i, especificacao], 
+               "} & \\multicolumn{1}{R{3cm}}{ ", TratamentoNA(banco[i, ordinario]), 
+               "} & \\multicolumn{1}{R{3cm}}{ ", TratamentoNA(banco[i, vinculado]), 
+               "} & \\multicolumn{1}{R{3cm}}{ ", TratamentoNA(banco[i, total]),"} \\\\\n")  
+       }
+     }
+
+    cat("\\end{longtable}\n")
+  
+    
+    # FIM TABELA
+  
+  cat("\\newpage\n")
+  
+}
+@
+
+\end{landscape}   
+\end{document}

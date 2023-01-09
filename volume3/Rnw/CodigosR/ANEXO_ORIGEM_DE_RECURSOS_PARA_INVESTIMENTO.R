@@ -1,0 +1,44 @@
+# INICIO TABELA      
+ 
+  anexo = read.table(paste(dir_bancos, "/manual/ANEXO_origens_de_recursos.txt", sep=""), header=T, sep="\t",  
+                     stringsAsFactors = FALSE) 
+ 
+  cat("\\noindent\\begin{longtable}[c]{m{1cm}m{1cm}m{1cm}m{8cm}}\n") 
+ 
+  titulo = paste0("\\multicolumn{4}{C{14cm}}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{", 
+                  "ORIGEM DE RECURSOS PARA INVESTIMENTO}}}\\TBstrut  \\\\[2ex]\n") 
+  cat(titulo) 
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n") 
+  
+  cat("\\hline\n") 
+  cat("\\endfirsthead\n") 
+  
+  cat(titulo) 
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n") 
+  
+  cat("\\hline\n") 
+  cat("\\endhead\n") 
+  cat("\\endfoot\n") 
+  
+  cat("\\hline\n") 
+ 
+  cat("\\hline\\hline\n") 
+  cat("\\endlastfoot\n") 
+ 
+  for(i in 1:nrow(anexo)){ 
+    if(anexo$cod[i]==1){ 
+      cat("\\multicolumn{4}{L{10cm}}{\\textbf{",anexo$descricao[i], "}} \\\\\n", sep="") 
+    }else if(anexo$cod[i]==2){ 
+      cat("& \\multicolumn{3}{L{9cm}}{\\textbf{",anexo$descricao[i], "}} \\\\\n", sep="") 
+    }else if(anexo$cod[i]==3){ 
+      cat("& & \\multicolumn{2}{L{7cm}}{\\textbf{",anexo$descricao[i], "}} \\\\\n", sep="") 
+    }else if(anexo$cod[i]==4){ 
+      cat("& & & \\multicolumn{1}{L{8cm}}{",anexo$descricao[i], "} \\\\\n", sep="") 
+    }else { 
+      cat("& \\multicolumn{3}{L{7cm}}{",anexo$descricao[i], "} \\\\\n", sep="") 
+    } 
+  } 
+ 
+  cat("\\end{longtable}\n") 
+ 
+# FIM TABELA 

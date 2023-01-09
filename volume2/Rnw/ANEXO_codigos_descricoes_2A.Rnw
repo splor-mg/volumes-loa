@@ -1,0 +1,142 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+
+\scriptsize
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+
+<<results=tex, echo=FALSE>>=
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_bancos = paste0(dir_loa, "/bancos")
+  source(paste0(dir_loa,"/utils/funcoes.R"), encoding = "UTF-8")
+  
+  # INICIO TABELA
+  
+  cat("\\footnotesize\n")
+
+  cat("\\renewcommand*{\\arraystretch}{2}\n")
+
+  grupo_despesa = data.table(read_excel(paste0(dir_bancos, "/manual/desc_grupos_de_despesa.xlsx"), sheet=1))[order(CODIGO)]
+  #grupo_despesa = rbind(grupo_despesa, data.table(CODIGO=9, ESPECIFICACAO="Reserva de Contigência"), fill=T)
+  
+  fontes = data.table(read_excel(paste0(dir_bancos, "/manual/desc_fontes_de_recursos.xlsx"), sheet=1))[order(CODIGO)]
+  iag = data.table(read_excel(paste0(dir_bancos, "/manual/desc_IAG.xlsx"), sheet=1))[order(CODIGO)]
+  ipu = data.table(read_excel(paste0(dir_bancos, "/manual/desc_IPU.xlsx"), sheet=1))[order(CODIGO)]
+
+  # GRUPO DE DESPESA  
+  cat("\\renewcommand*{\\arraystretch}{1.5}\n")
+  cat("\\scriptsize\n")
+  cat("\\noindent\\begin{longtable}[c]{m{1cm}|m{11cm}}\n")
+
+  titulo = paste0("\\multicolumn{2}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{",
+                  "GRUPOS DE DESPESA}}}\\Tstrut  \\\\[2ex]\n")
+
+  cabecalho = paste0("\\multicolumn{1}{c|}{\\textbf{COD}} & \\multicolumn{1}{c}{\\textbf{ESPECIFICAÇÃO}} \\\\\n")
+
+  cat(titulo)
+  cat("\\hline\\hline\n")
+  cat(cabecalho)
+  cat("\\hline\n")
+  cat("\\endfirsthead\n")
+ 
+  cat(titulo)
+  cat("\\hline\\hline\n")
+  cat(cabecalho)
+  cat("\\hline\n")
+  cat("\\endhead\n")
+  cat("\\endfoot\n")
+
+  for(i in 1:nrow(grupo_despesa)){
+     cat("\\multicolumn{1}{c|}{",grupo_despesa[i, CODIGO], "} &", toupper(grupo_despesa[i, ESPECIFICACAO]), "\\\\\n")
+  }
+
+  cat("\\end{longtable}\n")
+
+  # FONTE DE RECURSOS
+  cat("\\noindent\\begin{longtable}[c]{m{1cm}|m{11cm}}\n")
+
+  titulo1 = paste0("\\multicolumn{2}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{",
+                   "FONTES DE RECURSOS}}}\\Tstrut \\\\[2ex] \n")
+
+  cabecalho1 = paste0("\\multicolumn{1}{c|}{\\textbf{COD}} & \\multicolumn{1}{c}{\\textbf{ESPECIFICAÇÃO}} \\\\ \n")
+
+  cat(titulo1)
+  cat("\\hline\\hline\n")
+  cat(cabecalho1)
+  cat("\\hline\n")
+  cat("\\endfirsthead\n")
+
+  cat(titulo1)
+  cat("\\hline\\hline\n")
+  cat(cabecalho1)
+  cat("\\hline\n")
+  cat("\\endhead\n")
+  cat("\\endfoot\n")
+  cat("\\hline\\hline\\hline\n")
+  cat("\\endlastfoot\n")
+
+  for(i in 1:nrow(fontes)){
+    cat("\\multicolumn{1}{c|}{",fontes[i, CODIGO], "} &", toupper(fontes[i, CLASSIFICACAO]), "\\\\\n")
+  }
+ 
+  cat("\\end{longtable}\n")
+  
+  # IPU
+  cat("\\noindent\\begin{longtable}[c]{m{1cm}|m{11cm}}\n")
+
+  titulo2 = paste0("\\multicolumn{2}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{",
+                   "IDENTIFICADORES DE PROCEDÊNCIA E USO}}}\\Tstrut  \\\\[2ex] \n")
+
+  cabecalho2 = paste0("\\multicolumn{1}{c|}{\\textbf{COD}} & \\multicolumn{1}{c}{\\textbf{ESPECIFICAÇÃO}} \\\\ \n")
+
+  cat(titulo2)
+  cat("\\hline\\hline\n")
+  cat(cabecalho2)
+  cat("\\hline\n")
+  cat("\\endfirsthead\n")
+  cat("\\hline\n")
+  cat("\\endhead\n")
+  cat("\\endfoot\n")
+  cat("\\hline\\hline\\hline\n")
+  cat("\\endlastfoot\n")
+  
+  for(i in 1:nrow(ipu)){
+    cat("\\multicolumn{1}{c|}{", ipu[i, CODIGO], "} &", toupper(ipu[i, ESPECIFICACAO]), "\\\\\n")
+  }
+  
+  cat("\\end{longtable}\n")
+
+  # IAG
+  cat("\\noindent\\begin{longtable}[c]{m{1cm}|m{11cm}}\n")
+
+  titulo3 = paste0("\\multicolumn{2}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{",
+                   "IDENTIFICADORES DE AÇÃO GOVERNAMENTAL}}}\\Tstrut  \\\\[2ex]\n")
+  
+  cabecalho3 = paste0("\\multicolumn{1}{c|}{\\textbf{COD}} & \\multicolumn{1}{c}{\\textbf{ESPECIFICAÇÃO}} \\\\\n")
+      
+
+  cat(titulo3)      
+  cat("\\hline\\hline\n")
+  cat(cabecalho3)
+
+  cat("\\hline\n")
+  cat("\\endfirsthead\n")
+  cat("\\hline\n")
+  cat("\\endhead\n")
+  cat("\\endfoot\n")
+  cat("\\hline\\hline\\hline\n")
+  cat("\\endlastfoot\n")
+  
+  for(i in 1:nrow(iag)){
+    cat("\\multicolumn{1}{c|}{", iag[i, CODIGO], "} &", toupper(iag[i, INTERPRETACAO]), "\\\\\n")
+ }
+
+ cat("\\end{longtable}\n")
+ 
+# FIM TABELA
+ 
+@
+
+\end{document}

@@ -1,0 +1,6 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"43"	"209"	"21.670.628"	"100"	"1.23.1 - SECRETARIA DE ESTADO DE AGRICULTURA, PECUÁRIA E ABASTECIMENTO - SEAPA - SEAPA"	"1.23.0 - SECRETARIA DE ESTADO DE AGRICULTURA, PECUÁRIA E ABASTECIMENTO - SEAPA"
+	"DIREÇÃO E ASSESSORAMENTO"	"120"					
+	"DIREÇÃO SUPERIOR"	"  1"					
+	"TÉCNICA"	"45"					
+"TOTAL"			"209"	"21.670.628"	"100"		

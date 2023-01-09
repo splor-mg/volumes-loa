@@ -1,0 +1,153 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\color{myblack}
+\centering
+ 
+
+\newgeometry{bottom=0cm,top=0cm,left=1cm,right=2cm}
+
+\begin{landscape}
+
+<<results=tex, echo=FALSE>>=
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_latex = paste0(dir_loa, "/volume2/Rnw")
+  dir_codigosR = paste0(dir_latex, "/CodigosR")
+  dir_utils = paste0(dir_loa, "/utils/")
+  dir_data = paste0(dir_loa, "/volume2/data")
+  dir_bancos = paste0(dir_loa, "/bancos")
+
+  ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
+  
+  source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
+  
+  sumario = data.table(read.table(paste0(dir_data, "/sumario.txt"), header=T, sep="\t", dec=",", 
+                                  stringsAsFactors = FALSE, quote = "\"'"))
+
+for(uo in c(1251, 2311, 3051)){
+  #uo = 1251
+  
+  # INICIO TABELA
+  
+  banco = data.table(read.table(paste(dir_data, "/tabela3/",uo,".txt",sep=""), 
+                                header=T, sep="\t", dec=",", stringsAsFactors = FALSE))
+
+  cat("\\renewcommand*{\\arraystretch}{1.5}\n")
+  cat("\\small\n")
+
+  cat("\\noindent\\begin{longtable}[c]{m{8cm}m{5cm}|m{8cm}}\n")
+            
+  titulo1 = paste0("\\multicolumn{3}{C{23cm}}{\\cellcolor{gray!50} \\textcolor{myblack}",
+                   " {\\normalsize \\textbf{RECURSOS ORÇAMENTÁRIO CATEGORIA DE PESSOAL}}} \\TBstrut   \\\\[2ex] \n")
+  
+  subtitulo = paste("\\multicolumn{2}{l}{\\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC,
+                    "}}} & \\multicolumn{1}{r}{R\\$1,00} \\\\\n") 
+  
+  titulo_orgao = paste0("\\multicolumn{3}{l}{\\textbf{ÓRGÃO:} ",banco[1, nome_orgao],"} \\\\\n")
+  titulo_uo = paste0("\\multicolumn{3}{l}{\\textbf{UO:} \\hspace{19pt}",banco[1, nome_uo],"} \\\\\n")
+  
+  cat(titulo1)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat(titulo_orgao)
+  cat(titulo_uo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  
+  cat("\\hline\n")
+  cat("\\endfirsthead\n")
+
+  cat(titulo1)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat(titulo_orgao)
+  cat(titulo_uo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  
+  cat("\\hline\n")
+  cat("\\endhead\n")
+  
+  cat("\\endfoot\n")
+  
+  cat("\\hline\n")
+  
+  cat("\\hline\\hline\n") #Comentar caso o modo Dashed Line esteja ON
+  # cat("\\specialrule{1.5pt}{2pt}{0pt}\n") #Dashed Line
+  cat("\\endlastfoot\n")
+  
+  cat("\\multicolumn{2}{c|}{ESPECIFICAÇÃO} & \\multicolumn{1}{C{8cm}}{QTDE} \\\\\n")
+  cat("\\hline \n")
+  
+  for(i in 1:nrow(banco)){
+    
+    if(is.na(banco[i, resumo])){
+      
+      if(grepl("pessoal.+", banco[i, especificacao], ignore.case=T)){
+        
+        cat("\\multicolumn{2}{L{12cm}|}{ \\textbf{", banco[i, especificacao], "}} & \\\\\n") 
+        
+      } else if(grepl("subtotal", banco[i, especificacao], ignore.case=T)){
+        
+        cat("\\hline\n") #Comentar caso o modo Dashed Line esteja ON
+        #cat("\\hdashline\n") #Dashed Line
+        
+        cat("\\multicolumn{2}{C{12cm}|}{", banco[i, especificacao], 
+            "} & \\multicolumn{1}{C{8cm}}{\\textbf{", banco[i, qtde], "}} \\\\\n") 
+        
+        cat("\\hline\n")
+        
+        }   else if (grepl("^total[i, ", banco[i, especificacao], ignore.case=T)) {
+          
+          cat("\\multicolumn{2}{C{12cm}|}{\\textbf{", banco[i, especificacao], 
+              "}} & \\multicolumn{1}{C{8cm}}{\\textbf{", banco[i, qtde], 
+              "}} \\\\\n") 
+          
+          cat("\\hline\\hline\\hline\n") #Comentar caso o modo Dashed Line esteja ON
+          #cat("\\specialrule{1.5pt}{0pt}{-2pt}\n") #Dashed Line
+      }
+      else {
+        cat("\\multicolumn{2}{L{12cm}|}{\\hspace{4em}", banco[i, especificacao], 
+            "} & \\multicolumn{1}{C{8cm}}{", banco[i, qtde], 
+            "} \\\\\n") 
+          }
+      } else{
+        if(grepl("resumo", banco[i, especificacao], ignore.case=T)){
+          
+          cat("\\multicolumn{3}{c}{ \\textbf{", banco[i, especificacao], "}} \\\\\n") 
+          cat(" & \\multicolumn{1}{r@{\\hspace{2em}}}{VALOR} & \\multicolumn{1}{c}{\\% DE PARTICIPAÇÃO} \\\\\n")
+          cat("\\hline \n")
+          
+        } else if (grepl("total", banco[i, especificacao], ignore.case=T)) {
+        
+          #cat("\\specialrule{1.5pt}{2pt}{0pt}\n") #Dashed Line
+          cat("\\hline \\hline \n") #Comentar caso o modo Dashed Line esteja ON
+          cat("\\multicolumn{1}{L{7cm}}{\\textbf{", banco[i, especificacao], 
+              "}} & \\multicolumn{1}{R{5cm}}{\\textbf{", banco[i, qtde], 
+              "}} & \\\\\n")
+          
+        } else{
+        
+          cat("\\multicolumn{1}{@{\\hspace{2em}}L{8cm}}{", banco[i, especificacao], 
+              "} & \\multicolumn{1}{R{5cm}}{", banco[i, qtde], 
+              "} & \\multicolumn{1}{R{5cm}}{", gsub("\\.", ",",banco[i, participacao]), "} \\\\\n")
+      }
+      }
+    }
+
+    cat("\\end{longtable}\n")
+  
+    
+    # FIM TABELA
+  
+  
+    cat("\\newpage\n")
+
+    }
+@
+
+\end{landscape}   
+
+\end{document}

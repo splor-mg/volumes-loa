@@ -1,0 +1,43 @@
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 3041 função 20 subfunção 608 programa 22 ação 4560 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO', MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  2171  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' VAGA/PARTICIPAÇÃO', EMPREENDIMENTO', CIDADÃO/AGRICULTOR
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/', DEFENSOR/SERVIDOR/CIDADÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 3041 função 20 subfunção 608 programa 22 ação 4560 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO', MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  2171  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' VAGA/PARTICIPAÇÃO', EMPREENDIMENTO', CIDADÃO/AGRICULTOR
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/', DEFENSOR/SERVIDOR/CIDADÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 3041 função 20 subfunção 608 programa 22 ação 4560 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO', MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  2171  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' VAGA/PARTICIPAÇÃO', EMPREENDIMENTO', CIDADÃO/AGRICULTOR
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/', DEFENSOR/SERVIDOR/CIDADÃO
+Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem um quantitativo de inativos, porém apresentam valores superiores a R$ 1.000 nas ações da FUNFIP: 
+ 2351 
+Caso seja necessário inserir o quantitativo de inativos manualmente, criar em bancos/manual/PESSOAL_INATIVO_AUSENTE_SISOR.xlsx. 
+Banco com apenas duas variáveis: cod_uo e quantidade
+Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor deduzido das UO's beneficiadas ( 5.036.439.760 ) é diferente do valor somado as UO's financiadoras ( 3.825.223.864 ). Ver logs/erro_qdd_ajustado.csv.
+
+
+
+processing file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd
+output file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.md
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor deduzido das UO's beneficiadas ( 5.036.439.760 ) é diferente do valor somado as UO's financiadoras ( 3.825.223.864 ). Ver logs/erro_qdd_ajustado.csv.
+
+
+
+processing file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd
+output file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.md
+

@@ -1,0 +1,7 @@
+Warning: replacing previous import 'data.table::last' by 'dplyr::last' when loading 'relatorios'
+Warning: replacing previous import 'data.table::first' by 'dplyr::first' when loading 'relatorios'
+Warning: replacing previous import 'data.table::between' by 'dplyr::between' when loading 'relatorios'
+Error in verifica_intervalos(base, cols) : 
+  Campo(s) FONTE_COD possuem valores invalidos. Verifique sua base de dados.
+Calls: <Anonymous> -> check_base -> check_types -> verifica_intervalos
+Execução interrompida

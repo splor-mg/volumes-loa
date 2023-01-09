@@ -1,0 +1,8 @@
+"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"PESSOAL E ENCARGOS SOCIAIS"	"OUTRAS DESPESAS CORRENTES"	"Total"
+"1.27.0 - SECRETARIA DE ESTADO DE CULTURA E TURISMO - SECULT"	"2.17.1 - FUNDAÇÃO DE ARTE DE OURO PRETO - FAOP"	" 4"	" 3"	"10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS"	" 0"	" 1"	"2.204.566"	"1.293.965"	"3.498.531"
+						" 7"	"        0"	"687.635"	"687.635"
+						" 9"	"1.000"	"        0"	"1.000"
+					"Total"	"17"	"2.205.566"	"1.981.600"	"4.187.166"
+		" 2"		"60 - RECURSOS DIRETAMENTE ARRECADADOS"	" 0"	" 1"	"        0"	"100.000"	"100.000"
+					"Total"	" 1"	"        0"	"100.000"	"100.000"
+				"TOTAL"	" 0"	"18"	"2.205.566"	"2.081.600"	"4.287.166"

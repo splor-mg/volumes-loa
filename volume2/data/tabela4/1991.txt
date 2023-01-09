@@ -1,0 +1,3 @@
+"cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
+""	""	""	"0"	"0"	"0"	"1.99.1 - RESERVA DE CONTINGÊNCIA - RC"	"1.99.0 - RESERVA DE CONTINGÊNCIA - RC"
+""	""	"SUBTOTAL 1"	"0"	"0"	"0"		

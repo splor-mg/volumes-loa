@@ -1,0 +1,3 @@
+"cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
+""	""	""	"0"	"0"	"0"	"1.94.1 - EGE-SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO - EGE-SEPLAG"	"1.94.0 - ENCARGOS GERAIS DO ESTADO - SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO - EGE SEPLAG"
+""	""	"SUBTOTAL 1"	"0"	"0"	"0"		

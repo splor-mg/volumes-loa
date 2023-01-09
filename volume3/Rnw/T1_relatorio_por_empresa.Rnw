@@ -1,0 +1,215 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\renewcommand*{\arraystretch}{1.9}
+ \scriptsize
+ \color{myblack}
+ \centering
+ 
+ 
+<<results=tex, echo=FALSE>>=
+
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_latex = paste0(dir_loa, "/volume3/Rnw")
+  dir_codigosR = paste0(dir_latex, "/CodigosR")
+  dir_utils = paste0(dir_loa, "/utils/")
+  dir_data = paste0(dir_loa, "/volume3/data")
+  dir_bancos = paste0(dir_loa, "/bancos")
+  
+  ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
+  
+  source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
+  
+  sumario = data.table(read.table(paste(dir_data, "/consolidado/sumario_v3.txt", sep=""), header=T, sep="\t",
+                                  dec=",", stringsAsFactors = FALSE))
+
+  for(uo in sumario$cod_uo){
+
+  options(readr.num_columns = 0)
+  # INICIO TABELA
+  t1 = data.table(
+    readr::read_delim(
+    file = paste(dir_data, "/tabela1/", uo,".txt", sep=""), 
+    delim = "\t", 
+    locale = readr::locale('pt', decimal_mark = ',', encoding = 'Latin1'),
+    col_types = readr::cols(.default = 'c')
+    )
+  )
+  
+  t1[is.na(t1)] = ""
+  
+  # cat("\\phantomsection\n")
+  # cat("\\restoregeometry\n")
+  # cat("\\vspace*{15cm}\n")
+  # cat("\\addcontentsline{toc}{subsection}{", t1$nome_uo[1],"}\n", sep="")
+  # cat("\\raggedleft \\large {\\textbf{", gsub("\\d+\\.\\d+\\.\\d+ *- *(.+)", "\\1", t1$nome_uo[1]),"}}\n", sep="")
+  # cat("\\newpage\n")
+
+  cat("\\newgeometry{left=3pt,right=3pt, top=1cm}\n")
+
+  cat("\\scriptsize\n")
+  #cat("\\renewcommand*{\\arraystretch}{1.5}\n")
+
+  cat("\\noindent\\begin{longtable}[c]{m{3pt}m{3pt}m{3pt}m{3pt}m{3pt}m{3pt}|m{1cm}m{5cm}m{1cm}m{1cm}|m{3cm}}\n")
+
+
+  titulo1 = paste0("\\multicolumn{11}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize \\textbf{",
+                   "PROGRAMA DE INVESTIMENTO}}}\\\\\n")
+
+  titulo2 = "\\multicolumn{11}{c}{\\cellcolor{gray!50} {\\scriptsize \\textbf{RECURSOS DE TODAS AS FONTES}}}\\\\\n"
+
+  subtitulo = paste0("\\multicolumn{6}{l}{\\scriptsize \\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC ,
+                     "}}} & \\multicolumn{5}{r}{\\scriptsize R\\$1,00} \\\\\n")
+
+  t_orgao = paste0("\\multicolumn{11}{L{16cm}}{\\textbf{ÓRGÃO: }", t1[1, nome_orgao] ,"}\\\\\n")
+  t_uo = paste0("\\multicolumn{11}{L{16cm}}{\\textbf{UO:} \\hspace{12.5pt} ",t1[1, nome_uo],"} \\\\\n")
+
+  cabecalho1 = paste0("\\multicolumn{6}{c|}{\\textbf{CÓDIGO}} & ",
+                      "\\multicolumn{4}{@{\\hspace{0.5em}}C{8cm}|}{\\multirow{2}{*}{\\textbf{ESPECIFICAÇÃO}}} ",
+                      "& \\multicolumn{1}{c}{\\multirow{2}{*}{\\textbf{TOTAL}}} \\\\\n")
+
+  cabecalho2 = paste0("\\multicolumn{1}{c}{\\fonteSeis{FUN}} & \\multicolumn{1}{c}{\\fonteSeis{SUBF}} & ",
+                      "\\multicolumn{1}{c}{\\fonteSeis{PROG}} & \\multicolumn{1}{c}{\\fonteSeis{ID}} & ",
+                      "\\multicolumn{1}{l}{\\fonteSeis{PROJ/A \\hspace{1em}}} & ",
+                      "\\multicolumn{1}{c@{\\hspace{1em}}|}{\\fonteSeis{IAG}} & \\multicolumn{4}{c|}{} &  \\\\\n")
+
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat(t_orgao)
+  cat(t_uo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+ 
+  cat(cabecalho1)
+  cat(cabecalho2)
+ 
+  cat("\\hline\n")
+  cat("\\endfirsthead\n")
+ 
+  cat(titulo1)
+  cat(titulo2)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat(t_orgao)
+  cat(t_uo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+ 
+  cat(cabecalho1)
+  cat(cabecalho2)
+ 
+  cat("\\hline\n")
+  cat("\\endhead\n")
+
+  cat("\\endfoot\n")
+  cat("\\hline\n")
+  cat("\\hline\\hline\n")
+  cat("\\endlastfoot\n")
+ 
+  for(i in 1:nrow(t1)){
+    
+    func_a_iag = c()
+    func_a_iag = c(t1[i, fun], t1[i, subf], t1[i, prog], 
+                   t1[i, id], t1[i, proja], t1[i, iag])
+   
+     if(sum(is.na(func_a_iag))==5){
+       hspace=0.5 
+       } else if(sum(is.na(func_a_iag))==4){
+         hspace=2 
+         } else if (sum(is.na(func_a_iag))==3){
+           hspace=0   
+           } else if (sum(is.na(func_a_iag))==0){
+             hspace=4
+             }
+   
+   if(t1[i, tipo]==0 & toupper(t1[i, especificacao])!="TOTAL GERAL"){
+     
+      if(is.na(t1[i, subf])){ # Condição de negrito apenas em Função
+        
+        cat("\\multicolumn{1}{l}{ \\textbf{",formatC(TratamentoNA(t1[i, fun]), width = 2, flag = "0"),
+            "}} & \\multicolumn{5}{l|}{ } &", 
+            " \\multicolumn{4}{@{\\hspace{0.5em}}J{8cm}|}{", t1[i, especificacao],
+            "} & \\multicolumn{1}{r@{\\hspace{",hspace,"em}}}{", formatarNum(TratamentoNA(t1[i, valor])),
+            "} \\\\\n", sep="")
+        
+      } else if(is.na(t1[i, prog])){ # Condição de negrito apenas em SubFunção
+        
+        cat("\\multicolumn{1}{l}{ ",formatC(TratamentoNA(t1[i, fun]), width = 2, flag = "0"),
+            "} & \\multicolumn{1}{l}{ \\textbf{",formatC(TratamentoNA(t1[i, subf]), width = 3, flag = "0"),
+            "}} & \\multicolumn{4}{l|}{ } &", 
+            "\\multicolumn{4}{@{\\hspace{0.5em}}J{8cm}|}{", t1[i, especificacao],
+            "} & \\multicolumn{1}{r@{\\hspace{",hspace,"em}}}{", formatarNum(TratamentoNA(t1[i, valor])),
+            "} \\\\\n", sep="")
+        
+      } else if(is.na(t1[i, id])){ # Condição de negrito apenas em Programa
+        
+        cat("\\multicolumn{1}{l}{ ",formatC(TratamentoNA(t1[i, fun]), width = 2, flag = "0"),
+            "} & \\multicolumn{1}{l}{",formatC(TratamentoNA(t1[i, subf]), width = 3, flag = "0"),
+            "} & \\multicolumn{1}{c}{ \\textbf{",formatC(TratamentoNA(t1[i, prog]), width = 3, flag = "0"),
+            "}} & \\multicolumn{3}{l|}{ } &",
+            " \\multicolumn{4}{@{\\hspace{0.5em}}J{8cm}|}{", t1[i, especificacao],
+            "} & \\multicolumn{1}{r@{\\hspace{",hspace,"em}}}{", formatarNum(TratamentoNA(t1[i, valor])),
+            "} \\\\\n", sep="")
+        
+        }  else{
+        
+        cat("\\multicolumn{1}{l}{ ", formatC(TratamentoNA(t1[i, fun]), width = 2, flag = "0"),  
+            "} & \\multicolumn{1}{l}{", formatC(TratamentoNA(t1[i, subf]), width = 3, flag = "0"), 
+            "} & \\multicolumn{1}{c}{", formatC(TratamentoNA(t1[i, prog]), width = 3, flag = "0"),
+            "} & \\multicolumn{1}{@{\\hspace{1em}}c@{\\hspace{1em}}}{ \\textbf{", TratamentoNA(t1[i, id]), 
+            "}} & \\multicolumn{1}{l}{ \\textbf{",formatC(TratamentoNA(t1[i, proja]), width = 3, flag = "0"),
+            "}} & \\multicolumn{1}{l|}{",TratamentoNA(t1[i, iag]), 
+            "} & \\multicolumn{4}{@{\\hspace{0.5em}}J{8cm}|}{", t1[i, especificacao], 
+            "} & \\multicolumn{1}{r@{\\hspace{",hspace,"em}}}{", formatarNum(TratamentoNA(t1[i, valor])),
+            "} \\\\\n", sep="")
+          
+        }
+     
+   } else if(t1[i, tipo]==1 & toupper(t1[i, especificacao])!="TOTAL GERAL"){
+     
+     cat("\\multicolumn{6}{l|}{} & \\multicolumn{2}{l}{\\fonteSeis \\underline{Produto}",
+         "} & \\multicolumn{1}{c}{\\fonteSeis \\underline{Unid. Medida}", 
+         "} & \\multicolumn{1}{c|}{\\fonteSeis \\underline{Meta Física}} & \\\\\n")
+     
+     cat("\\addlinespace[-0.5ex]\n")
+     
+     cat("\\multicolumn{6}{l|}{} & \\multicolumn{2}{L{3.8cm}}{\\fonteSeis ", t1[i, especificacao],
+         "} & \\multicolumn{1}{C{2.2cm}}{\\fonteSeis", t1[i, unidade_meta], 
+         "} & \\multicolumn{1}{C{1cm}|}{\\fonteSeis ", formatarNum(t1[i, meta_valor]),
+         "} & \\\\\n")
+     
+      #cat("\\multicolumn{6}{l|}{\\tiny } & \\multicolumn{4}{c|}{\\tiny } & \\multicolumn{1}{c}{\\tiny }\\\\\n", sep="")
+     
+   } else if(t1[i, tipo]==3 & toupper(t1[i, especificacao])!="TOTAL GERAL"){
+     
+     cat("\\multicolumn{6}{l|}{ } & ",
+         "\\multicolumn{4}{@{\\hspace{0.5em}}J{8cm}|}{","\\underline{Finalidade}} & \\\\\n", sep="")
+     
+     cat("\\multicolumn{6}{l|}{ } & ",
+         "\\multicolumn{4}{@{\\hspace{0.5em}}J{8cm}|}{",t1[i, especificacao], "} & \\\\\n", sep="")
+   
+     }else{
+       
+       cat("\\hline \\hline\n")
+       
+       cat("\\multicolumn{6}{c}{\\textbf{", t1[i, especificacao],
+         "}} & \\multicolumn{4}{l|}{} & ",
+         "\\multicolumn{1}{r@{\\hspace{0.5em}}}{\\textbf{", formatarNum(t1[i, valor]), "}} \\\\\n")
+    }
+ }
+
+ cat("\\end{longtable}\n")
+ 
+# FIM TABELA
+ 
+ cat("\\newpage\n")
+
+ }
+@
+
+\end{document}
+

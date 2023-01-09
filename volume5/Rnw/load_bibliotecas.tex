@@ -1,0 +1,58 @@
+% Libraries
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{longtable} % Carrega o objeto longtable
+%\usepackage{lscape}
+%\usepackage{pdflscape}
+\usepackage[table]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tocloft}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\graphicspath{ {img/} }
+\usepackage[hidelinks]{hyperref}
+\usepackage{afterpage}
+\usepackage{scrextend} % ifelse para p?ginas pares e ?mpares
+\usepackage{gensymb}
+
+% Novos comandos e defini??es
+\newcommand{\valorHeader}[1]{\scriptsize #1}
+\newcommand{\fonteSeis}[1]{\fontsize{6px}{2px}\selectfont #1}
+
+\newcommand\Tstrut{\rule{0pt}{2em}}       % pading top para o titulo
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}} % padding bottom para o titulo
+\newcommand{\TBstrut}{\Tstrut\Bstrut} 
+
+\newcolumntype{C}[1]{>{\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newcommand{\tab}[1]{\hspace{13pt}\rlap{#1}}
+
+%\addtocontents{toc}{\cftpagenumbersoff{section}}
+%\renewcommand{\cftdot}{} % Retira o pontilhado do summario (opcional)
+%\renewcommand{\contentsname}{Sum?rio}
+
+\setlength{\tabcolsep}{0.18cm}
+\definecolor{myblack}{RGB}{0,0,0}
+\definecolor{vermelhoTitulo}{RGB}{102,0,0}
+
+\setlength{\cftbeforesubsecskip}{6pt} % Aumenta o espacamento antes do item subsecao na tabela de contents (sumario)
+\setlength{\cftbeforesecskip}{18pt} % Aumenta o espacamento antes do item secao na tabela de contents (sumario)
+
+% Alterar a fonte para Arial
+\usepackage[T1]{fontenc}
+\usepackage{uarial}
+%\usepackage{helvet}
+%\usepackage{arial}
+\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{blindtext}
+% libraries teste
+
+% Para evitar a hiphenizacao das palavras (wrap:break-word)
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000

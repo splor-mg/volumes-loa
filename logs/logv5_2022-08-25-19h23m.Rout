@@ -1,0 +1,2 @@
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduzidos por coerção
