@@ -1,4 +1,4 @@
-.PHONY: help volumes v1 v2 v3 v4 v5 clean format rm v1_dcgf v1_prodemge
+.PHONY: help volumes v1 v2 v3 v4 v5 clean format rm docker v1_dcgf v1_prodemge
 #====================================================================
 # Gera dependências para os volumes
 INIT := $(shell Rscript utils/makefile/init.R)
@@ -43,6 +43,9 @@ format: ## Formata bancos brutos .xls e .txt
 
 rm: ## Remove todos os arquivos de um volume Ex. argumento vol=logs
 	@Rscript utils/removeArquivos.R $(vol)
+
+docker: ## Executa container docker em mode interativo
+	docker run --rm -ti --mount type=bind,source="$(PWD)",target=/project --name volumes-loa fjuniorr/volumes
 
 # ===================================================================
 # TARGETS
