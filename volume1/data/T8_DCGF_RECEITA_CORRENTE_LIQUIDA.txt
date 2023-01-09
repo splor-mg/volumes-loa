@@ -1,39 +1,39 @@
 espec	VL_LOA_REC	ordem	nvl
 RECEITAS CORRENTES ( I )	128.444.356.599	 0	0
-Impostos, Taxas e ContribuiÁıes de Melhoria	91.839.383.883	 1	1
+Impostos, Taxas e Contribui√ß√µes de Melhoria	91.839.383.883	 1	1
 Principal	86.554.475.031	 2	2
 ICMS	70.660.527.660	 3	3
 IPVA	7.961.424.517	 4	3
 ITCD	1.440.911.700	 5	3
 IRRF	6.491.611.154	 6	3
 Taxas	3.738.341.746	 7	3
-AcessÛrias [DÌvida Ativa, Multas e Juros]	1.465.195.131	 8	2
+Acess√≥rias [D√≠vida Ativa, Multas e Juros]	1.465.195.131	 8	2
 ICMS	860.972.162	 9	3
 IPVA	566.306.878	10	3
 ITCD	37.916.091	11	3
 Taxas	81.371.975	12	3
-Receitas de ContribuiÁıes	5.978.059.757	13	1
+Receitas de Contribui√ß√µes	5.978.059.757	13	1
 Receita Patrimonial	4.065.995.111	14	1
-Rendimentos de AplicaÁ„o Financeira	1.937.004.367	15	2
+Rendimentos de Aplica√ß√£o Financeira	1.937.004.367	15	2
 Outras Receitas Patrimoniais	2.128.990.744	16	2
-Receita Agropecu·ria	11.202.739	17	1
+Receita Agropecu√°ria	11.202.739	17	1
 Receita Industrial	650.531.392	18	1
-Receita de ServiÁos	1.021.259.201	19	1
-Receita de TransferÍncias Correntes	23.650.483.147	20	1
+Receita de Servi√ßos	1.021.259.201	19	1
+Receita de Transfer√™ncias Correntes	23.650.483.147	20	1
 Cota-Parte do FPE	7.341.397.806	21	2
-TransferÍncias da LC 61/1989	924.549.667	23	2
-TransferÍncias do FUNDEB	10.930.515.138	24	2
-Outras TransferÍncias Correntes	4.454.020.536	25	2
+Transfer√™ncias da LC 61/1989	924.549.667	23	2
+Transfer√™ncias do FUNDEB	10.930.515.138	24	2
+Outras Transfer√™ncias Correntes	4.454.020.536	25	2
 Outras Receitas Correntes	1.227.441.369	26	1
-DEDU«’ES ( II )	41.042.714.305	27	0
-TransferÍncias Constitucionais e Legais	22.387.923.062	28	1
-Contrib. para o Plano de PrevidÍncia do Servidor	3.312.729.077	29	1
-Contrib. para o Custeio das Pensıes Militares	1.761.536.485	30	1
-CompensaÁ„o Financ. entre Regimes PrevidÍncia	42.000.000	31	1
-Rendimentos de AplicaÁıes de Recursos Previdenci·rios	54.800.000	32	1
-DeduÁ„o da Receita Corrente ñ FormaÁ„o do FUNDEB	13.483.725.681	33	1
-RECEITA CORRENTE LÕQUIDA ( III ) = ( I - II )	87.401.642.294	34	0
-(-) Transf. obrig. da Uni„o relativas ‡s emendas individuais (art. 166-A, ß 1\degree, da CF) (IV)	84.566.078	35	0
-RCL AJUSTADA PARA C¡LCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )	87.317.076.216	36	0
-(-) Transf. obrig. da Uni„o relativas ‡s emendas de bancada (art. 166, ß 16, da CF) (VI)	55.690.003	37	0
-RCL AJUSTADA PARA C¡LCULO DOS DE DESPESA DE PESSOAL (VII) = ( V - VI )	87.261.386.213	38	0
+DEDU√á√ïES ( II )	41.042.714.305	27	0
+Transfer√™ncias Constitucionais e Legais	22.387.923.062	28	1
+Contrib. para o Plano de Previd√™ncia do Servidor	3.312.729.077	29	1
+Contrib. para o Custeio das Pens√µes Militares	1.761.536.485	30	1
+Compensa√ß√£o Financ. entre Regimes Previd√™ncia	42.000.000	31	1
+Rendimentos de Aplica√ß√µes de Recursos Previdenci√°rios	54.800.000	32	1
+Dedu√ß√£o da Receita Corrente ‚Äì Forma√ß√£o do FUNDEB	13.483.725.681	33	1
+RECEITA CORRENTE L√çQUIDA ( III ) = ( I - II )	87.401.642.294	34	0
+(-) Transf. obrig. da Uni√£o relativas √†s emendas individuais (art. 166-A, ¬ß 1\degree, da CF) (IV)	84.566.078	35	0
+RCL AJUSTADA PARA C√ÅLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )	87.317.076.216	36	0
+(-) Transf. obrig. da Uni√£o relativas √†s emendas de bancada (art. 166, ¬ß 16, da CF) (VI)	55.690.003	37	0
+RCL AJUSTADA PARA C√ÅLCULO DOS DE DESPESA DE PESSOAL (VII) = ( V - VI )	87.261.386.213	38	0

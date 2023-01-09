@@ -1,3 +1,3 @@
 "cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
-""	""	""	"0"	"0"	"0"	"4.53.1 - FUNDO DE INCENTIVO À INOVAÇÃO TECNOLÓGICA - FIIT"	"1.22.0 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - SEDE"
+""	""	""	"0"	"0"	"0"	"4.53.1 - FUNDO DE INCENTIVO Ã€ INOVAÃ‡ÃƒO TECNOLÃ“GICA - FIIT"	"1.22.0 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÃ”MICO - SEDE"
 ""	""	"SUBTOTAL 1"	"0"	"0"	"0"		

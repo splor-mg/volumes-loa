@@ -1,5 +1,5 @@
 "classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
 "PESSOAL ATIVO"	"ADMINISTRATIVA"	"116"	"152"	"18.303.160"	"100"	"1.30.1 - SECRETARIA DE ESTADO DE INFRAESTRUTURA E MOBILIDADE - SEINFRA"	"1.30.0 - SECRETARIA DE ESTADO DE INFRAESTRUTURA E MOBILIDADE - SEINFRA"
-	"DIRE«√O E ASSESSORAMENTO"	"35"					
-	"DIRE«√O SUPERIOR"	"  1"					
+	"DIRE√á√ÉO E ASSESSORAMENTO"	"35"					
+	"DIRE√á√ÉO SUPERIOR"	"  1"					
 "TOTAL"			"152"	"18.303.160"	"100"		

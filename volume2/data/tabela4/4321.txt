@@ -1,3 +1,3 @@
 "cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
-""	""	""	"0"	"0"	"0"	"4.32.1 - FUNDO ESTADUAL DE PREVENÇÃO, FISCALIZAÇÃO E REPRESSÃO DE ENTORPECENTES - FUNPREN"	"1.45.0 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP"
+""	""	""	"0"	"0"	"0"	"4.32.1 - FUNDO ESTADUAL DE PREVENÃ‡ÃƒO, FISCALIZAÃ‡ÃƒO E REPRESSÃƒO DE ENTORPECENTES - FUNPREN"	"1.45.0 - SECRETARIA DE ESTADO DE JUSTIÃ‡A E SEGURANÃ‡A PÃšBLICA - SEJUSP"
 ""	""	"SUBTOTAL 1"	"0"	"0"	"0"		

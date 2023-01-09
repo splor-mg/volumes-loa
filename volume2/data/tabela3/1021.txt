@@ -1,6 +1,6 @@
 "classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
 "PESSOAL ATIVO"	"ADMINISTRATIVA"	"254"	"1.211"	"556.402.811"	"58,95"	"1.02.1 - TRIBUNAL DE CONTAS DO ESTADO DE MINAS GERAIS - TCEMG"	"1.02.0 - TRIBUNAL DE CONTAS DO ESTADO DE MINAS GERAIS - TCEMG"
-	"DIRE«√O E ASSESSORAMENTO"	"359"					
+	"DIRE√á√ÉO E ASSESSORAMENTO"	"359"					
 	"ESPECIALIZADA"	"580"					
 	"MEMBROS DE PODER"	"14"					
 	"OUTRAS"	"  4"					

@@ -1,4 +1,4 @@
-"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"INVERSÕES FINANCEIRAS"	"Total"
+"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"INVERSÃ•ES FINANCEIRAS"	"Total"
 "1.19.0 - SECRETARIA DE ESTADO DE FAZENDA - SEF"	"4.62.1 - FUNDO DE INVESTIMENTO DO ESTADO DE MINAS GERAIS - MG INVESTE"	" 2"		"60 - RECURSOS DIRETAMENTE ARRECADADOS"	" 0"	"1"	"2.000"	"2.000"
 					"Total"	"1"	"2.000"	"2.000"
 				"TOTAL"	" 0"	"1"	"2.000"	"2.000"
