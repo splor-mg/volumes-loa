@@ -125,3 +125,48 @@ make v3
 make v2
 make v1
 ```
+
+## Testes
+
+Testes para conferência que não houve introdução de alterações não desejadas nos arquivos `.tex` e `pdf` após a geração de novos volumes podem ser realizados por meio do script `tests/test.sh` no computador host. 
+
+A [estratégia](https://en.wikipedia.org/wiki/Characterization_test) consiste em armazenar nas pastas `tests/assets/` versões validadas dos arquivos, e, depois da geração de novos volumes, comparar se houve alguma alteração nos arquivos. Se houve apenas alterações esperadas, os arquivos armazenados em `tests/assets/` devem ser atualizados.
+
+Abaixo exemplos de um teste aprovado e um reprovado:
+
+```
+./tests/test.sh T30_INVESTIMENTOS_SEGUNDO_FUNCOES
+```
+
+```
+Results:..
+```
+
+```
+./tests/test.sh Projeto_volume5
+```
+
+```
+Results:FF
+Failure testing Projeto_volume5.tex
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+renamed: volume5/pdf/aux_files/Projeto_volume5.tex to tests/assets/tex/Projeto_volume5.tex
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+@ tests/assets/tex/Projeto_volume5.tex:10255 @
+\renewcommand*{\arraystretch}{1.5}
+\footnotesize
+\renewcommand*{\arraystretch}{2}
+/usr/local/lib/R/site-library /usr/local/lib/R/library\noindent\begin{longtable}[c]{m{1cm}|m{11cm}}
+C:/Program Files/R/R-3.6.3/library\noindent\begin{longtable}[c]{m{1cm}|m{11cm}}
+\multicolumn{2}{c}{\cellcolor{gray!50} \textcolor{red} {\normalsize \textbf{GRUPOS DE DESPESA}}}\Tstrut  \\[2ex]
+\hline\hline
+\multicolumn{1}{c|}{\textbf{CÓDIGO}} & \multicolumn{1}{c}{\textbf{ESPECIFICAÇÃO}} \\
+===================================
+Failure testing Projeto_volume5.pdf
+page 20 differs
+page 277 differs
+2 of 283 pages differ.
+pdf diff saved at tests/Projeto_volume5-diff.pdf
+```
+
+Até o desenvolvimento de [volumes-docker#3](https://github.com/splor-mg/volumes-docker/issues/3), é necessário a instalação dos programas [`diff-pdf`](https://github.com/vslavik/diff-pdf) e [`diff-so-fancy`](https://github.com/so-fancy/diff-so-fancy).
