@@ -62,32 +62,31 @@ A criação dos volumes depende da atualização de uma série de informações.
 
 
 ```
-	                                        ....
-
-	% Capa
-	\begin{titlepage}
-	\newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
-	\includepdf[pages={6},scale=1.1]{capaLOA.pdf} % No arquivo capaLOA.pdf a capa do volume 5 está na página 6.
-	\end{titlepage}
-	% \capa
-                                         ....
-
+[...]
+% Capa
+\begin{titlepage}
+\newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+\includepdf[pages={6},scale=1.1]{capaLOA.pdf} % No arquivo capaLOA.pdf a capa do volume 5 está na página 6.
+\end{titlepage}
+% \capa
+[...]
 ```
 
 4- Converter os bancos `.xls` para `.xlsx` e tratar caracteres especiais possivelmente presentes nos arquivos `.txt`. Esse passo será realizado a partir do seguinte comando make
 ```
-
-	make format
+make format
 ```
 
 5- Atualizar o pacote relatorios, necessário para montar os demonstrativos do volume 1 de responsabilidade da DCGF. No console do RStudio, rodar:
 
 ```
-	devtools::install_bitbucket("dcgf/relatorios", 
-	                             auth_user = "dcgf-admin", 
-	                             password = "demandar-senha-DCGF", 
-	                             dependencies=F)
-```[24-08-2020 - ANDREY] A nome de usuário que deve ser utilizado agora é dcgf.scppo@gmail.com
+devtools::install_bitbucket("dcgf/relatorios", 
+							 auth_user = "dcgf-admin", 
+							 password = "demandar-senha-DCGF", 
+							 dependencies=F)
+```
+
+[24-08-2020 - ANDREY] A nome de usuário que deve ser utilizado agora é dcgf.scppo@gmail.com
 
 O pacote relatórios tem como dependência os pacotes reest e execucao. Instalar estes pacotes antes, caso necessário.
 
@@ -109,29 +108,20 @@ O pacote relatórios tem como dependência os pacotes reest e execucao. Instalar
 
 
 ```
-	make rm vol=2
-	make rm vol=3
-	make rm vol=4
-	make rm vol=5
-	make rm vol=logs
+make rm vol=2
+make rm vol=3
+make rm vol=4
+make rm vol=5
+make rm vol=logs
 ```
 
 
 8- Atualizar todos os bancos `.txt` e gerar os arquivos dos volumes `.pdf`. Esse passo pode ser realizado pelos comandos make. Sugere-se montar volume por volume, do mais fácil para o mais dificil segundo a orgem abaixo:
 
 ```
-	make v5
-	make v4
-	make v3
-	make v2
-	make v1
+make v5
+make v4
+make v3
+make v2
+make v1
 ```
-**Obs: necessário gerar o demonstrativo T20B individualmente com o comando `make pdf/T20B_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.pdf`.
-
-É possível gerar todos os volumes via `make volumes`.
-
-9- Verificar a pasta `logs/` em busca de erros esperados na execução dos scripts.
-
-10- Volumes finais bem como as tabelas do Volume 1 estarão disponíveis em `LOA/pdf`
-
-
