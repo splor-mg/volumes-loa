@@ -34,7 +34,7 @@ if(dir_vol!="1"){
   cat("-- Iniciando volume", args[1], ".pdf ...\n", sep = "")
   
   gera_pdf = system(paste0("R CMD Sweave --encoding=utf-8 --pdf volume", dir_vol ,
-                           "/Rnw/Projeto_volume", args[1] ,".Rnw"), show.output.on.console = T)
+                           "/Rnw/Projeto_volume", args[1] ,".Rnw"))
   
   remove_capa = file.remove("capaLOA.pdf")
 
@@ -44,10 +44,9 @@ if(dir_vol!="1"){
   
   #cat("-- Iniciando ", gsub("(.+)\\.Rnw", "\\1", file_rnw), ".pdf ...\n", sep = "")
   
-  gera_pdf = system(paste0("R CMD Sweave --encoding=utf-8 --pdf volume", dir_vol ,"/Rnw/", file_rnw), 
-                    show.output.on.console = T)
+  gera_pdf = system(paste0("R CMD Sweave --encoding=utf-8 --pdf volume", dir_vol ,"/Rnw/", file_rnw))
 
 }
   
 remove_load_bbt = file.remove("load_bibliotecas.tex")
-limpadir = system(paste0("Rscript utils/limpaDir.R ", dir_vol, " 1"), show.output.on.console = T)
+limpadir = system(paste0("Rscript utils/limpaDir.R ", dir_vol, " 1"))
