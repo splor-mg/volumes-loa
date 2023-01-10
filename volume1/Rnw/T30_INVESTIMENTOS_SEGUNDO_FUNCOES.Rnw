@@ -34,7 +34,7 @@
   banco = read_delim(
     file = paste0(dir_data, "/T30_INVESTIMENTOS_SEGUNDO_FUNCOES.txt"),
     delim = '\t', 
-    locale = locale(encoding = 'Latin1', decimal_mark = ',', grouping_mark = '.'),
+    locale = locale(decimal_mark = ',', grouping_mark = '.'),
     na = '',
     col_types = cols(.default = col_character())
     ) %>% as.data.table()

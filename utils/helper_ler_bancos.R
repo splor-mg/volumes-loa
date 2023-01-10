@@ -8,7 +8,6 @@ load_programas = function(base) {
   x = readr::read_delim(
     file = base,
     delim = '|', 
-    locale = readr::locale('pt', encoding = 'Latin1'),
     quote = '',
     na = '',
     col_types = 
@@ -53,7 +52,6 @@ load_acoes = function(base) {
   x = readr::read_delim(
     file = base,
     delim = '|', 
-    locale = readr::locale('pt', encoding = 'Latin1'),
     quote = '',
     na = '',
     col_types = 
@@ -117,7 +115,6 @@ load_localizadores = function(base) {
   x = readr::read_delim(
     file = base,
     delim = '|', 
-    locale = readr::locale('pt', encoding = 'Latin1'),
     quote = '',
     na = '',
     col_types = 
@@ -169,7 +166,6 @@ load_indicadores = function(base) {
   x = readr::read_delim(
     file = base,
     delim = '|', 
-    locale = readr::locale('pt', encoding = 'Latin1'),
     quote = '',
     na = '',
     col_types = 

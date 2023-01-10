@@ -3,7 +3,7 @@
       readr::read_delim( 
       file = paste(dir_data, "/tabela4/", uo,".txt", sep=""),  
       delim = "\t",  
-      locale = readr::locale('pt', decimal_mark = ',', encoding = 'Latin1'), 
+      locale = readr::locale('pt', decimal_mark = ','), 
       col_types = readr::cols(.default = 'c', nivel = 'i') 
       ) 
     ) 

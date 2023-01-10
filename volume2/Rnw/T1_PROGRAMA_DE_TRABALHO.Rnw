@@ -39,7 +39,7 @@
     # banco = readr::read_delim(
     #   file = paste(dir_data, "/tabela1/",aba,".txt",sep=""),
     #   delim = '\t',
-    #   locale = locale(encoding = 'Latin1', decimal_mark = ',', grouping_mark = '.')
+    #   locale = locale(decimal_mark = ',', grouping_mark = '.')
     # ) %>% as.data.table()
     # 
     # INICIO TABELA 

@@ -34,7 +34,7 @@
   banco = read_delim(
     file = paste0(dir_data, "/T39_DCGF_DEMONSTRATIVO_CUMPRIMENTO_LIMITACAO_CRESCIMENTO_DESPESA.txt"),
     delim = '\t', 
-    locale = locale('pt', encoding = 'Latin1', decimal_mark = ',', grouping_mark = '.'),
+    locale = locale('pt', decimal_mark = ',', grouping_mark = '.'),
     na = '', 
     col_types = cols(VL_EMP_2017 = col_character(),
                      VL_LIMITE = col_character(),

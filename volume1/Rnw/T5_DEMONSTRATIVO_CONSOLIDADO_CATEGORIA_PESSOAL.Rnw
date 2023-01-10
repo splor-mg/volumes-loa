@@ -32,7 +32,7 @@
   banco = read_delim(
     file = paste0(dir_data, "/T5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL.txt"),
     delim = '\t', 
-    locale = locale('pt', encoding = 'Latin1', decimal_mark = ',', grouping_mark = '.'),
+    locale = locale('pt', decimal_mark = ',', grouping_mark = '.'),
     na = '',
     col_types = cols(.default = col_character())
     ) %>% as.data.table()

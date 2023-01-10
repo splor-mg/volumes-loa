@@ -35,7 +35,7 @@
     file = paste0(dir_data3, 
                   "/T3_INVESTIMENTOS_SEGUNDO_FUNCOES_SUB_PROGRAMAS_PROJETOS_ATIVIDADES.txt"),
     delim = '\t', 
-    locale = locale('pt', encoding = 'Latin1', decimal_mark = ',', grouping_mark = '.'),
+    locale = locale('pt', decimal_mark = ',', grouping_mark = '.'),
     na = ''
     ) %>% as.data.table()
 

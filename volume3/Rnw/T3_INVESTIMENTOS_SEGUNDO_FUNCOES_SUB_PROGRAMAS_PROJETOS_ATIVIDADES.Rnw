@@ -82,7 +82,7 @@
     readr::read_delim(
     file = paste0(dir_data, nome_file), 
     delim = "\t", 
-    locale = readr::locale('pt', decimal_mark = ',', encoding = 'Latin1'),
+    locale = readr::locale('pt', decimal_mark = ','),
     col_types = readr::cols(.default = 'c')
     )
   )
