@@ -45,7 +45,10 @@ rm: ## Remove todos os arquivos de um volume Ex. argumento vol=logs
 	@Rscript utils/removeArquivos.R $(vol)
 
 docker: ## Executa container docker em mode interativo
-	docker run --rm -ti --mount type=bind,source="$(PWD)",target=/project --name volumes-loa fjuniorr/volumes
+	@docker run --rm -ti -p 8787:8787 --mount type=bind,source="$(PWD)",target=/home/rstudio --name volumes-loa fjuniorr/volumes
+
+rstudio: ## Inicia sessão do Rstudio em http://localhost:8787/ (usuário: rstudio, senha: splor)
+	@docker exec -d -e PASSWORD=splor volumes-loa /init
 
 # ===================================================================
 # TARGETS

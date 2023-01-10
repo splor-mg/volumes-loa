@@ -12,3 +12,4 @@
 *.toc
 *.aux
 .Rproj.user
+.rstudio
