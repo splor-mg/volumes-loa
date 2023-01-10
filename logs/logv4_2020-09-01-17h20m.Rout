@@ -1,4 +1,0 @@
-Error in `[.data.table`(obras, , .(mais14caracteres = (sapply(strsplit(obras$UNIDADE_DE_MEDIDA_DA_OBRA,  : 
-  SETLENGTH() cannot be applied to an ALTVEC object.
-Calls: trataDetalhe_Obras -> [ -> [.data.table
-Execução interrompida

@@ -1,4 +1,0 @@
-Error in `[.data.table`(acoes, , list(x = 1), by = list(FUNCAO, especificacao = nome_funcao)) : 
-  SETLENGTH() cannot be applied to an ALTVEC object.
-Calls: mergeDT -> data.table -> [ -> [.data.table
-Execução interrompida

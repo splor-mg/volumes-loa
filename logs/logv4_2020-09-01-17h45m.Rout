@@ -1,5 +1,0 @@
-Warning in trataDetalhe_Obras("bancos/SISOR/BASE_DETALHAMENTO_OBRAS.xlsx",  :
-  trataDetalhe_Obras(): Os seguintes valores se repetem mais de uma vez no campo SIAD: 
- 0, 5380, 5772, 7687, 8871, 9151, 9848, 10051
-Warning in trataDetalhe_Obras("bancos/SISOR/BASE_DETALHAMENTO_OBRAS.xlsx",  :
-  trataDetalhe_Obras(): Há 0 ou - NA no campo SIAD. Analisar as seguintes UO's  1091, 1261, 1271, 1301, 1401, 2071, 2271, 2321, 2331, 2361, 4031, 4381, 5031, 5081, 5141, 5391, 5401, 5511

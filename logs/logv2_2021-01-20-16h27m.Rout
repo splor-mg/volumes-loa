@@ -1,7 +1,0 @@
-Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", TRUE) :
-  BASE_QDD_FISCAL: Há nomes diferentes no banco. Os seguintes nomes de campos não estão no banco atual: {{ ANO, COD_ORGAO, ORGAO, PODER, COD_UO, UO, CATEGORIA, GRUPO_DESPESA, MODALIDADE, ELEMENTO_DESPESA, FONTE, IPU, SEQ_PROGTRAB, FUNCAO, SUB_FUNCAO, PROGRAMA, IDENT_PROJATIV, PROJ_ATIV, ACAO, SUB_PROJETO, valor, IAG, NOME_ACAO, NOME_PROGRAMA  }}
-Warning: Unknown or uninitialised column: `valor`.
-Warning: Unknown or uninitialised column: `valor`.
-Error in eval(bysub, x, parent.frame()) : objeto 'COD_UO' não encontrado
-Calls: [ -> [.data.table -> eval -> eval
-Execução interrompida

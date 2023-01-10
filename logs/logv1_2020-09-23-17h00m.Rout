@@ -1,7 +1,0 @@
-Warning: T7_QUADRO_GERAL_DA_RECEITA.R: Há um código de receita que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 1718.10.9.1.11.006
-Error in verifica_intervalos(base, cols) : 
-  Campo(s) RECEITA_COD possuem valores invalidos. Verifique sua base de dados.
-Calls: demonstr_mde_rec ... is_icms_principal -> verifica_base -> verifica_intervalos
-Execução interrompida

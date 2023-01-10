@@ -1,6 +1,0 @@
-Warning: T14_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_VINCULO_COM_RECURSOS: Há códigos de sub-função em  BASE_QDD_FISCAL que não possuem uma correspondência em banco apoio. Os codigos são  602 
-Correção: inserir esses códigos e sua descrição em banco apoio na aba Subfunção
-
-Warning: T15_PROGRAMA_TRABALHO_GOVERNO: Há códigos de sub-função em BASE_QDD_FISCAL que não possuem uma correspondência em desc_subfuncao.xlsx. Os codigos são  602 
-Correção: inserir esses códigos e sua descrição em banco_apoio na aba Subfunção
-

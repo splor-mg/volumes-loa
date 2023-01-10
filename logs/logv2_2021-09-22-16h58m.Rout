@@ -1,3 +1,0 @@
-Error in setcolorder(pessoal, c("orgao", "Ativo", "Inativo", "Terceirizado")) : 
-  neworder is length 4 but x has only 3 columns.
-Execução interrompida

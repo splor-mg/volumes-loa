@@ -1,3 +1,0 @@
-<h2>Log  Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS </h2> <br> <h3> 30 de agosto de 2022 as 15:51:31 </h3><br><br> <p> <strong> Montagem do banco para a UO:  4031  </strong> </p> 
- <p> Próxima UO na lista:  1071 </p> 
- <p> A seguinte lista de Uo's  não possuem a tabela 5.<br> 4031 1071 1081 2251 2071 2331 2421 4111 2371 3041 3051 2121 2151 2311 1271 2171 2181 2201 2261 2271 2321 2101 1451 4141 4691 1481 4091 4251 4421 4601 4701 1501 2011 2061 4551 1631 </p> 

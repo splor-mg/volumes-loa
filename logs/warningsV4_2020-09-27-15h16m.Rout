@@ -1,3 +1,0 @@
-Warning message:
-In read.table(paste0(dir_data, "/tabela2/", uo, ".txt", sep = ""),  :
-  incomplete final line found by readTableHeader on 'C:/dev/DCPPN/LeiOrcamentariaAnual/LOA/volume4/data/tabela2/4381.txt'

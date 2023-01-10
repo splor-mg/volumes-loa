@@ -1,7 +1,6 @@
 .PHONY: help volumes v1 v2 v3 v4 v5 clean format rm docker v1_dcgf v1_prodemge
 #====================================================================
 # Gera dependências para os volumes
-INIT := $(shell Rscript utils/makefile/init.R)
 DEP_PRODEMGE_PDF_V1 := $(shell Rscript utils/makefile/gera_dep_PRODEMGE_PDF_v1.R 2> logs/log.Rout)
 DEP_DCGF_PDF_V1 := $(shell Rscript utils/makefile/gera_dep_DCGF_PDF_v1.R 2> logs/log.Rout)
 DEP_QDD_FISCAL_TXT_V1 := $(shell Rscript utils/makefile/gera_dep_QDD_FISCAL_TXT_v1.R 2> logs/log.Rout)

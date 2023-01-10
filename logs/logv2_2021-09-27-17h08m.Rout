@@ -1,4 +1,0 @@
-Registered S3 methods overwritten by 'tibble':
-  method     from  
-  format.tbl pillar
-  print.tbl  pillar

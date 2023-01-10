@@ -1,3 +1,0 @@
-Warning: V3_bancos_consolidados.R: Em qual fonte de recurso para a Tabela 1 entra(m) a(s) fonte(s), OUTRAS ENTIDADES - CEMIG?
-Warning: V3_bancos_consolidados.R: A Tabela 1 não apresenta a fonte representada pelas variaveis, valor.outras_entidades, valor.tesouro_vinculado O total dessa tabela será realizado sem essa var e essa variaveis serão zeradas.
-Warning: V3_bancos_consolidados: A Tabela 2 INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS não apresenta a categoria representada pelas variaveis, valor.amortO total dessa tabela será realizado sem essa var e essa variaveis serão zeradas.

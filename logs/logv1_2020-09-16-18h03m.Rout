@@ -1,4 +1,0 @@
-Error in verifica_intervalos(base, cols) : 
-  Campo(s) RECEITA_COD possuem valores invalidos. Verifique sua base de dados.
-Calls: demonstr_mde_rec ... is_icms_principal -> verifica_base -> verifica_intervalos
-Execução interrompida
