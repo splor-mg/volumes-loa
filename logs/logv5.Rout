@@ -1,0 +1,18 @@
+running
+  '/Library/Frameworks/R.framework/Versions/4.2/Resources/bin/R --no-echo --no-restore --encoding=utf-8 --file=volume5/R/volume5.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx") :
+  BASE_QDD_FISCAL: Há nomes diferentes no banco. Os seguintes nomes de campos não estão no banco atual: {{ ACAO  }}
+Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  4.6.91.93 
+Correção: inserir esses códigos e sua descrição na tabela.
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume5/R/volume5.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  4.6.91.93 
+Correção: inserir esses códigos e sua descrição na tabela.
+
