@@ -41,7 +41,7 @@ format: ## Formata bancos brutos .xls e .txt
 	@Rscript --verbose utils/formataBancos.R
 
 rm: ## Remove todos os arquivos de um volume Ex. argumento vol=logs
-	@Rscript --verbose utils/removeArquivos.R $(vol)
+	@Rscript utils/removeArquivos.R $(vol)
 
 docker: ## Executa container docker em mode interativo
 	@docker run --rm -ti -p 8787:8787 --mount type=bind,source="$(PWD)",target=/home/rstudio --name volumes-loa fjuniorr/volumes
@@ -56,7 +56,7 @@ rstudio: ## Inicia sessão do Rstudio em http://localhost:8787/ (usuário: rstud
 pdf/Projeto_volume5.pdf: $(DEPENDENCIAS_V5)
 	@echo "- Gera logs/warningsV5.Rout"
 	@Rscript --verbose --encoding=utf-8 volume5/Rnw/CodigosR/Projeto_volume5.R 2> logs/warningsV5.Rout >&-
-	@Rscript --verbose utils/Rnw2Tex.R 5
+	@Rscript utils/Rnw2Tex.R 5
 	@echo "---------------------------------------------------------------"
 
 volume5/data/*.txt: volume5/R/volume5.R bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
@@ -68,7 +68,7 @@ volume5/data/*.txt: volume5/R/volume5.R bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos
 pdf/Projeto_volume4.pdf: $(DEPENDENCIAS_V4)
 	@echo "- Gera logs/warningsV4.Rout"
 	@Rscript --verbose --encoding=utf-8 volume4/Rnw/CodigosR/Projeto_volume4.R 2> logs/warningsV4.Rout >&-
-	@Rscript --verbose utils/Rnw2Tex.R 4
+	@Rscript utils/Rnw2Tex.R 4
 	@echo "---------------------------------------------------------------"
 
 volume4/data/sumario_v4.txt: volume4/R/sumario_v4.R bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx bancos/manual/codigosPoder.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos/SISOR/BASE_DETALHAMENTO_OBRAS.xlsx
@@ -88,7 +88,7 @@ volume4/data/tabela2/*.txt: volume4/R/T2_DETALHAMENTO_INVESTIMENTOS_POR_TERRITOR
 pdf/Projeto_volume3.pdf: $(DEPENDENCIAS_V3)
 	@echo "- Gera logs/warningsV3.Rout"
 	@Rscript --verbose --encoding=utf-8 volume3/Rnw/CodigosR/Projeto_volume3.R 2> logs/warningsV3.Rout >&-
-	@Rscript --verbose utils/Rnw2Tex.R 3
+	@Rscript utils/Rnw2Tex.R 3
 	@echo "---------------------------------------------------------------"
 
 volume3/data/consolidado/*.txt: volume3/R/V3_bancos_consolidados.R bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx $(acoes_planejamento)
@@ -159,23 +159,23 @@ volume2/data/tabela5/*.txt: volume2/R/V2_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINA
 
 # Volume 1
 $(DEP_PRODEMGE_PDF_V1): pdf/%.pdf: volume1/Rnw/%.Rnw volume1/data/%.txt
-	@Rscript --verbose utils/Rnw2Tex.R $*
+	@Rscript utils/Rnw2Tex.R $*
 	@echo "---------------------------------------------------------------"
 
 pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.pdf: volume3/data/consolidado/T3_INVESTIMENTOS_SEGUNDO_FUNCOES_SUB_PROGRAMAS_PROJETOS_ATIVIDADES.txt
-	@Rscript --verbose utils/Rnw2Tex.R T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES
+	@Rscript utils/Rnw2Tex.R T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES
 	@echo "---------------------------------------------------------------"
 
 pdf/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.pdf: volume3/data/consolidado/T1_INVESTIMENTO_POR_EMPRESA.txt
-	@Rscript --verbose utils/Rnw2Tex.R T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO
+	@Rscript utils/Rnw2Tex.R T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO
 	@echo "---------------------------------------------------------------"
 
 pdf/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.pdf: volume3/data/consolidado/T2_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO.txt
-	@Rscript --verbose utils/Rnw2Tex.R T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS
+	@Rscript utils/Rnw2Tex.R T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS
 	@echo "---------------------------------------------------------------"
 
 $(DEP_DCGF_PDF_V1): pdf/%.pdf: volume1/Rnw/%.Rnw volume1/data/%.txt
-	@Rscript --verbose utils/Rnw2Tex.R $*
+	@Rscript utils/Rnw2Tex.R $*
 	@echo "---------------------------------------------------------------"
 
 $(DEP_QDD_FISCAL_TXT_V1): volume1/data/%.txt: volume1/R/%.R bancos/SISOR/BASE_QDD_FISCAL.xlsx volume2/data/sumario.txt bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_funcao.xlsx bancos/manual/desc_subfuncao.xlsx
