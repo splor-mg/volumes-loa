@@ -1,21 +1,21 @@
 cod	descricao
-1	Participação Societária
+1	ParticipaÃ§Ã£o SocietÃ¡ria
 5	Sociedades Coligadas
 5	Sociedades Controladas
-1	Imobilizações
+1	ImobilizaÃ§Ãµes
 5	Florestamento e Reflorestamento
-5	Máquinas, Aparelhos e Equipamentos
-5	Móveis e Utensílios
-5	Obras e Instalações
+5	MÃ¡quinas, Aparelhos e Equipamentos
+5	MÃ³veis e UtensÃ­lios
+5	Obras e InstalaÃ§Ãµes
 5	Terrenos
-5	Veículos
-1	Amortização de Dívidas
+5	VeÃ­culos
+1	AmortizaÃ§Ã£o de DÃ­vidas
 5	Empr. Financ. Moeda Estrangeira
 5	Empr. Financ. Moeda Nacional
-1	Outras Aplicações
-5	Aumento de Capital de Giro Líquido
+1	Outras AplicaÃ§Ãµes
+5	Aumento de Capital de Giro LÃ­quido
 5	Desenvolvimento de Software
-5	Distribuição de Dividendos
+5	DistribuiÃ§Ã£o de Dividendos
 5	Equipamentos e Software
-5	Intangíveis e Outros Investimentos
+5	IntangÃ­veis e Outros Investimentos
 5	Pesquisa Mineral
