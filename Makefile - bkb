@@ -43,26 +43,41 @@ format: ## Formata bancos brutos .xls e .txt
 rm: ## Remove todos os arquivos de um volume Ex. argumento vol=logs
 	@Rscript utils/removeArquivos.R $(vol)
 
-#check if the terminal is cmd power
+
 ifeq ($(shell uname | head -c 5) , MINGW)
-# using mingwin, probably git bash for windows
+$(info MINGW)
 DIR :=${PWD}
-# add winpty to work on git bash
 CMD_DOCKER = $(shell echo winpty docker run --rm -ti -p 8787:8787 --mount type=bind,source="$(DIR)",target=/home/rstudio --name volumes-loa fjuniorr/volumes:ploa2023)
+xxx:
+	echo xxx
 else
+$(info MSYS_)
 DIR :="c:${CURDIR}"
-# command for cmd and powershell
+#DIR :=$(subst \,/, $(shell cmd /C echo %CD%))/
+#DIR :=c:/$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+#DIR = "%CD%"
+$(info $(DIR))
 CMD_DOCKER = $(shell echo docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(DIR),target=/home/rstudio --name volumes-loa fjuniorr/volumes:ploa2023)
 endif
 
+
+
+#docker: ## Executa container docker em mode interativo
+#	winpty docker run --rm -ti -p 8787:8787 --mount type=bind,source="$(DIR)",target=/home/rstudio --name volumes-loa fjuniorr/volumes:ploa2023
+
 docker:
 	@if [ "$(OS)" == "Windows_NT" ]; then \
-		#echo windows; \
+		echo windows; \
+		#echo $(CMD_DOCKER); \
 		$(CMD_DOCKER); \
+		#docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(DIR),target=/home/rstudio --name volumes-loa fjuniorr/volumes:ploa2023; \
 	else \
-		#echo linux; \
-		docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(PWD),target=/home/rstudio --name volumes-loa fjuniorr/volumes:ploa2023; \
+		echo linux; \
+		$(CMD_DOCKER); \
 	fi
+
+docker_all:
+	@docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(DIR),target=/home/rstudio --name volumes-loa fjuniorr/volumes:ploa2023
 
 rstudio: ## Inicia sessão do Rstudio em http://localhost:8787/ (usuário: rstudio, senha: splor)
 	@docker exec -d -e PASSWORD=splor volumes-loa /init

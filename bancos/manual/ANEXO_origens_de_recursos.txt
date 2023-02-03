@@ -1,17 +1,17 @@
 cod	descricao
 1	Aumento de Capital
 2	Recursos do Estado
-3	Tesouro Ordin√°rio
-4	Aplica√ß√£o Livre
+3	Tesouro Ordin·rio
+4	AplicaÁ„o Livre
 3	Tesouro Vinculado
 4	FUNDESE
-1	Opera√ß√£o de Cr√©dito
+1	OperaÁ„o de CrÈdito
 2	Contratada
 3	Interna
 4	BNDES
 4	Outras
 3	Externa
 4	KFW
-1	Recursos Pr√≥prios
-4	Recursos Pr√≥prios
+1	Recursos PrÛprios
+4	Recursos PrÛprios
 

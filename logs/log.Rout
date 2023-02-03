@@ -1,1 +1,3 @@
-sh: /Program Files/R/R-3.6.3/bin/Rscript: Permission denied
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=utils/makefile/ultimo_banco_mod.R --args bancos/SISOR/acoes_planejamento'
+

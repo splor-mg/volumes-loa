@@ -1,0 +1,8 @@
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_bancos_consolidados.R'
+
+Warning: The following named parsers don't match the column names: Código do Programa, Código da Área Temática, Área Temática, Exclusão Lógica do Programa, Justificativa de Inclusão ou Exclusão do Programa, Código da Unidade Orçamentária Responsável pelo Programa, Unidade Orçamentária Responsável pelo Programa, Código da Unidade Orçamentária Responsável pela Ação, Unidade Orçamentária Responsável pela Ação, Código da Função, Função, Código da Subfunção, Subfunção, Código do Tipo de Ação, Tipo de Ação, Código da Ação, Título da Ação, Código do Identificador de Ação Governamental (IAG), Identificador de Ação Governamental (IAG), Código do Projeto Estratégico, Projeto Estratégico, Exclusão Lógica da Ação, Nova Ação, Justificativa de Inclusão ou Exclusão da Ação, Unidade Administrativa Responsável pela Ação, Finalidade da Ação, Descrição da Ação, Código do Público-alvo, Público-Alvo, Código do Produto, Especificação d [... truncated]
+Error in make.names(names(acoes_planejamento)) : 
+  invalid multibyte string 1
+Calls: trataAcoesPlanejamento ... trataAcoesPlanejamento_txt -> removeAcentos -> unlist -> lapply -> make.names
+Execution halted
