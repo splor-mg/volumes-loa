@@ -6,3 +6,24 @@ Error in make.names(names(acoes_planejamento)) :
   invalid multibyte string 1
 Calls: trataAcoesPlanejamento ... trataAcoesPlanejamento_txt -> removeAcentos -> unlist -> lapply -> make.names
 Execution halted
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_bancos_consolidados.R'
+
+Warning: V3_bancos_consolidados.R: Em qual fonte de recurso para a Tabela 1 entra(m) a(s) fonte(s), OUTRAS ENTIDADES - OUTRAS?
+Warning: V3_bancos_consolidados.R: A Tabela 1 não apresenta a fonte representada pelas variaveis, valor.tesouro_vinculado O total dessa tabela será realizado sem essa var e essa variaveis serão zeradas.
+Warning: V3_bancos_consolidados: A Tabela 2 INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS não apresenta a categoria representada pelas variaveis, valor.amortO total dessa tabela será realizado sem essa var e essa variaveis serão zeradas.
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_T1_PROGRAMA_DE_INVESTIMENTO.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_T2_ORIGENS_RECURSOS_INVESTIMENTOS.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_T3_RECURSOS_FINANCEIROS_FONTE_RECURSOS_APLICACAO_INVESTIMENTO.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_T4_DETALHAMENTO_DOS_INVESTIMENTOS.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_T5_QUADRO_DE_DETALHAMENTO_INVESTIMENTO.R'
+

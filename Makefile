@@ -58,6 +58,7 @@ endif
 docker:
 	@if [ "$(OS)" == "Windows_NT" ]; then \
 		#echo windows; \
+		docker image pull fjuniorr/volumes:ploa2023; \
 		$(CMD_DOCKER); \
 	else \
 		#echo linux; \
