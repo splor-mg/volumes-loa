@@ -26,5 +26,5 @@ else ifeq ($(shell uname | head -c 5) , MINGW)
 	WINPTY := 'winpty '
 else
 # for cmd and powershell
-	SRC_DIR := "c:$(SRC_DIR)"
+	DOCKER_SRC_DIR := "c:$(DOCKER_SRC_DIR)"
 endif
