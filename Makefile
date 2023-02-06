@@ -57,11 +57,9 @@ endif
 
 docker:
 	@if [ "$(OS)" == "Windows_NT" ]; then \
-		#echo windows; \
 		docker image pull fjuniorr/volumes:ploa2023; \
 		$(CMD_DOCKER); \
 	else \
-		#echo linux; \
 		docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(PWD),target=/home/rstudio --name volumes-loa fjuniorr/volumes:ploa2023; \
 	fi
 
