@@ -44,21 +44,6 @@ docker:
 rstudio: ## Inicia sessão do Rstudio em http://localhost:8787/ (usuário: rstudio, senha: splor)
 	@docker exec -d -e PASSWORD=splor volumes-loa /init
 
-test:
-	@echo DIR is c:$(DIR)
-	@echo SHELL is $(SHELL)
-	@echo CURDIR is $(CURDIR)
-	@echo OS is $(OS)
-	@echo CD is $(shell cmd /c echo %CD%)
-	@echo confusao is $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
-	@echo srcdir is $(SRCDIR)
-	@echo uname is $(shell uname)
-	@echo PWD is $(shell PWD)
-	@echo basename:$(basename "$0")
-
-	
-
-
 # ===================================================================
 # TARGETS
 
