@@ -28,6 +28,7 @@ clean: ## Organiza os arquivos auxiliares e outputs da compilação latex. Ex. a
 	@Rscript --verbose utils/limpaDir.R $(vol) $(origem)
 
 format: ## Formata bancos brutos .xls e .txt
+	@./utils/encode_utf8.sh
 	@Rscript --verbose utils/formataBancos.R
 
 rm: ## Remove todos os arquivos de um volume Ex. argumento vol=logs
