@@ -34,12 +34,7 @@ rm: ## Remove todos os arquivos de um volume Ex. argumento vol=logs
 	@Rscript utils/removeArquivos.R $(vol)
 
 docker:
-	@if [ "$(OS)" == "Windows_NT" ]; then \
-		docker image pull fjuniorr/volumes:ploa2023; \
-		$(CMD_DOCKER); \
-	else \
-		docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(PWD),target=/home/rstudio --name volumes-loa fjuniorr/volumes:ploa2023; \
-	fi
+	@$(shell echo $(WINPTY)docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(DOCKER_SRC_DIR),target=/home/rstudio --name volumes-loa fjuniorr/volumes:ploa2023)
 
 rstudio: ## Inicia sessão do Rstudio em http://localhost:8787/ (usuário: rstudio, senha: splor)
 	@docker exec -d -e PASSWORD=splor volumes-loa /init

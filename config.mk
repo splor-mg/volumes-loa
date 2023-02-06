@@ -12,14 +12,19 @@ DEPENDENCIAS_V5 := $(shell Rscript --verbose utils/makefile/gera_dependencias_v5
 
 acoes_planejamento := $(shell Rscript --verbose utils/makefile/ultimo_banco_mod.R bancos/SISOR/acoes_planejamento 2> logs/log.Rout)
 
-#check if the terminal is cmd power
-ifeq ($(shell uname | head -c 5) , MINGW)
-# using mingwin, probably git bash for windows
-DIR :=${PWD}
-# add winpty to work on git bash
-CMD_DOCKER = $(shell echo winpty docker run --rm -ti -p 8787:8787 --mount type=bind,source="$(DIR)",target=/home/rstudio --name volumes-loa fjuniorr/volumes:ploa2023)
+# variaveis utilizadas pelo target make docker
+# vide https://github.com/splor-mg/volumes-loa/issues/24
+DOCKER_SRC_DIR := $(CURDIR)
+WINPTY := ''
+
+ifeq ($(shell uname), Darwin)
+# default works
+else ifeq ($(shell uname), Linux)
+# default works
+else ifeq ($(shell uname | head -c 5) , MINGW)
+# git bash needs prefixing with winpty
+	WINPTY := 'winpty '
 else
-DIR :="c:${CURDIR}"
-# command for cmd and powershell
-CMD_DOCKER = $(shell echo docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(DIR),target=/home/rstudio --name volumes-loa fjuniorr/volumes:ploa2023)
+# for cmd and powershell
+	SRC_DIR := "c:$(SRC_DIR)"
 endif
