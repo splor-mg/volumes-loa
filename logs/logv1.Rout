@@ -188,3 +188,102 @@ running
 Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
 Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
 Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T14_DEMONSTRATIVO_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_CONFORME_VINCULO_COM_RECURSOS.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T15_PROGRAMA_TRABALHO_GOVERNO.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T12_DCGF_Demonstrativo_Evolucao_Despesa_Categoria_Economica.R'
+
+Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T13_DCGF_Demonstrativo_Consolidado_Despesa.R'
+
+Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino.R'
+
+Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T17_DCGF_Demonst_Aplicacao_Recursos_Progr_Saude_Investim.R'
+
+Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude.R'
+
+Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T19_DCGF_Demonstrativo_Aplicacao_Recursos_Amparo_Fomento_Pesquisa.R'
+
+Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’
+Warning: T19_DCGF_Demonstrativo_Aplicacao_Recursos_Amparo_Fomento_Pesquisa Valor da despesa na fapemig 447.414.886 diferente do valor de receita 446.887.950 seguindo a regra do 1%
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T23_DCGF_Demonstrativo_do_Servico_da_divida_publica.R'
+
+Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB.R'
+
+Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T26_DCGF_DEMONSTRATIVO_RECURSOS_APLICADOS_ACOES_PARA_CRIANCA_E_ADOLESCENTE.R'
+
+Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:data.table’:
+
+    between, first, last
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Joining, by = c("FUNCAO_COD", "SUBFUNCAO_COD")
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T27_DCGF_Demonst_Despesas_UGEPREVI.R'
+
+Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas.R'
+
+Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T37_DCGF_DEMONSTRATIVOS_RECURSOS_APLICADOS_SEGURANCA_ALIMENTAR_NUTRICIONAL.R'
+
+Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
+Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’

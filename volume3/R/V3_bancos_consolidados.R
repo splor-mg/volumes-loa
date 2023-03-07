@@ -43,9 +43,12 @@ t1[, fonte1:= "sem correspondencia"]
 t1[grepl("tesouro *ordi.+", FONTE, ignore.case = T), fonte1:= "tesouro_ordinario"] # TESOURO ORDINÁRIO - APLICAÇÃO LIVRE
 t1[grepl("tesouro *vinc.+", FONTE, ignore.case = T), fonte1:= "tesouro_vinculado"] # TESOURO VINCULADO - FUNDESE
 
-# OUTRAS ENTIDADES - BDMG, OUTRAS ENTIDADES - COPASA, cemig, mgi, codemig. É necessário que todas as outras entidades que sejam fontes estejam aqui 
+# OUTRAS ENTIDADES - BDMG, OUTRAS ENTIDADES - COPASA, cemig, mgi, codemig. É necessário que todas as outras entidades que sejam fontes estejam aqui
+# [andrey 02-02-2023] GASMIG estava de fora, mas FONTE consta como "OUTRAS ENTIDADES - OUTRAS" o que pode gerar problema com 
+# futuras empresas que tenham essa mesma fonte, já que as demais tem o nome especificado, como OUTRAS ENTIDADES - CEMIG
 t1[grepl("outras .*bdmg", FONTE, ignore.case = T)  | grepl("outras .*copasa", FONTE, ignore.case = T)
                                                    | grepl("outras .*cemig", FONTE, ignore.case = T)
+                                                   | grepl("outras .*outras", FONTE, ignore.case = T)
                                                    | grepl("outras .*mgi", FONTE, ignore.case = T)
                                                    | grepl("outras .*codemig", FONTE, ignore.case = T), 
                                                                                     fonte1:= "outras_entidades"]
@@ -223,7 +226,7 @@ t3 = t3[order(codigo_numerico)]
 
 t3[, total := atividade + projeto]
 
-t3 = t3[,list(codigo, especificacao,	projeto, atividade, total)]
+t3 = t3[,list(codigo, especificacao,  projeto, atividade, total)]
 t3 = t3[, lapply(.SD, formatarNum)]
 t3[, especificacao := correcaoCaracteresEspeciais(especificacao, caracteres)]
 

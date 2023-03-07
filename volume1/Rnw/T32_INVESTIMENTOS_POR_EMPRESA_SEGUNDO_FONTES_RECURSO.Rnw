@@ -48,7 +48,7 @@
                      "\\multicolumn{1}{c}{\\multirow{2}{*}{\\textbf{TOTAL}}} \\\\\n")
 
   cabecalho2= paste0(" & \\centering{ \\textbf{ TESOURO ORDINÁRIO}} & ",
-                     "\\centering{ \\textbf{ TESOURO VINCULADO}} & 	",
+                     "\\centering{ \\textbf{ TESOURO VINCULADO}} &  ",
                      "\\centering{ \\textbf{ OUTRAS ENTIDADES}} & ",
                      "\\centering{ \\textbf{ OPERAÇÃO DE CRÉDITO}} & ",
                      "\\centering{ \\textbf{ RECURSOS PRÓPRIOS}} & \\\\\n")

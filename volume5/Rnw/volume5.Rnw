@@ -89,7 +89,7 @@ Subsecretaria de Planejamento e Orçamento \\
 Superintendência Central de Planejamento e Orçamento
 
 \vspace*{10em}
-\fontsize{45pt}{60pt}\selectfont {\textbf{PROJETO DE LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
+\fontsize{45pt}{60pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
 %\fontsize{50pt}{12pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
 
 \vspace*{5em}
@@ -140,7 +140,7 @@ Superintendência Central de Planejamento e Orçamento
  % Fim cabeçalho
  
  \multicolumn{3}{l|}{\textbf{ CÓDIGO}} & \multicolumn{1}{l|}{\textbf{ESPECIFICAÇÃO}} & 
-  \valorHeader{\centering \textbf{RECURSOS DO TESOURO}} & 	\valorHeader{\centering \textbf{RECURSOS DE OUTRAS FONTES}} & 
+  \valorHeader{\centering \textbf{RECURSOS DO TESOURO}} &   \valorHeader{\centering \textbf{RECURSOS DE OUTRAS FONTES}} & 
   \multicolumn{1}{c}{\textbf{TOTAL}}\\
  
  \hline
@@ -155,7 +155,7 @@ Superintendência Central de Planejamento e Orçamento
  % Fim cabeçalho
  
   \multicolumn{3}{l|}{\textbf{ CÓDIGO}} & \multicolumn{1}{l|}{\textbf{ESPECIFICAÇÃO}} & 
-  \valorHeader{\centering \textbf{RECURSOS DO TESOURO}} & 	\valorHeader{\centering \textbf{RECURSOS DE OUTRAS FONTES}} & 
+  \valorHeader{\centering \textbf{RECURSOS DO TESOURO}} &   \valorHeader{\centering \textbf{RECURSOS DE OUTRAS FONTES}} & 
   \multicolumn{1}{c}{\textbf{TOTAL}}\\
   
  \hline

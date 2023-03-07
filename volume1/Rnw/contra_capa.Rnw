@@ -25,7 +25,7 @@
   Superintendência Central de Planejamento e Orçamento
   
   \vspace*{10em}
-  \fontsize{45pt}{12pt}\selectfont {\textbf{PROJETO DE LEI ORÇAMENTÁRIA 2023}}
+  \fontsize{45pt}{12pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA 2023}}
 
   \vspace*{4em}
   \LARGE{\textbf {ANEXO I}} \\

@@ -107,7 +107,7 @@ Subsecretaria de Planejamento, Orçamento e Qualidade do Gasto \\
 Superintendência Central de Planejamento e Programação Orçamentária
 
 \vspace*{10em}
- \fontsize{50pt}{12pt}\selectfont {\textbf{PROJETO DE LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
+ \fontsize{50pt}{12pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
 
 \vspace*{4em}
 \LARGE{\textbf {ANEXO II - A}} \\
@@ -276,10 +276,10 @@ for(i in 1:nrow(banco)){
   if(banco$tipo[i]==1){
     
     cat("\\multicolumn{1}{c}{", TratamentoNA(banco$funcao[i]), "} & \\multicolumn{1}{c}{", 
-        TratamentoNA(banco$subfuncao[i]), "} & \\multicolumn{1}{c}{",	TratamentoNA(banco$item1[i]), 
-        "} & \\multicolumn{1}{c}{",TratamentoNA(banco$item2[i]), "} & \\multicolumn{1}{c}{",	
+        TratamentoNA(banco$subfuncao[i]), "} & \\multicolumn{1}{c}{", TratamentoNA(banco$item1[i]), 
+        "} & \\multicolumn{1}{c}{",TratamentoNA(banco$item2[i]), "} & \\multicolumn{1}{c}{",  
         formatC(TratamentoNA(banco$item4[i]), width = 3, flag = "0"), 
-        "} & \\multicolumn{1}{c}{",	formatC(TratamentoNA(banco$item4[i]), width = 4, flag = "0"), 
+        "} & \\multicolumn{1}{c}{", formatC(TratamentoNA(banco$item4[i]), width = 4, flag = "0"), 
         "} & \\multicolumn{3}{L{4cm}@{}|}{", TratamentoNA(banco$descricao[i]), 
         "} & \\multicolumn{1}{c|}{",TratamentoNA(banco$MOD[i]),"} &", 
         "\\multicolumn{1}{c|}{",TratamentoNA(banco$IAG[i]),"} &","\\multicolumn{1}{c|}{",
