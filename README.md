@@ -126,47 +126,61 @@ make v2
 make v1
 ```
 
-## Testes
+## Golden Tests
 
-Testes para conferência que não houve introdução de alterações não desejadas nos arquivos `.tex` e `pdf` após a geração de novos volumes podem ser realizados por meio do script `tests/test.sh` no computador host. 
+Esses testes são utilizados para conferência que não houve introdução de alterações não desejadas nos arquivos `.tex` e `pdf` após a geração de novos volumes ou durante refatorações do projeto.
 
-A [estratégia](https://en.wikipedia.org/wiki/Characterization_test) consiste em armazenar nas pastas `tests/assets/` versões validadas dos arquivos, e, depois da geração de novos volumes, comparar se houve alguma alteração nos arquivos. Se houve apenas alterações esperadas, os arquivos armazenados em `tests/assets/` devem ser atualizados.
+A [estratégia](https://en.wikipedia.org/wiki/Characterization_test) consiste em armazenar nas pastas `tests/assets/` versões validadas dos arquivos (_golden master_), e, depois da geração de novos volumes, comparar se houve alguma alteração nos arquivos. Se houve apenas alterações esperadas, os arquivos armazenados em `tests/assets/` devem ser atualizados.
 
-Abaixo exemplos de um teste aprovado e um reprovado:
+### Exemplos
 
+Para realizar todas as conferências execute
+
+```bash
+make check
 ```
-./tests/test.sh T30_INVESTIMENTOS_SEGUNDO_FUNCOES
-```
 
-```
+A avaliação das diferenças é feita para cada cada demonstrativo.
+Caso não exista diferença o output vai ser simplesmente
+
+```bash
+python checks/utils.py diff T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL
+
 Results:..
 ```
 
-```
-./tests/test.sh Projeto_volume5
+Caso exista diferenças além de mostrar a diferença no terminal do arquivo `.tex` vai ser gerado um arquivo pdf de diferença salvo na raiz do projeto:
+
+```bash
+python checks/utils.py diff T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas
+
+Results:FF
+Failure testing T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas.tex
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+renamed: volume1/pdf/aux_files/T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas.tex to checks/assets/tex/T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas.tex
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+@ checks/assets/tex/T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas.tex:11 @
+\pagestyle{empty}
+\newgeometry{bottom=1cm,top=1cm,left=1.5cm,right=1.5cm}
+
+\renewcommand*{\arraystretch}{1.9}\scriptsize\color{myblack}\centering\noindent\begin{longtable}[c]{m{4cm}|m{1.8cm}|m{1.8cm}|m{4cm}|m{1.8cm}|m{1.8cm}}\multicolumn{6}{c}{\cellcolor{gray!50} \textcolor{myblack} {\small \textbf{DEMONSTRATIVO DA RECEITA E DESPESA SEGUNDO AS CATEGORIAS ECONÔMICAS}}} \TBstrut \\[2ex]\multicolumn{6}{c}{\cellcolor{gray!50} \textcolor{myblack} {\small \textbf{(Art. 2$\mathbf{^o}$, \S 1$\mathbf{^o}$, Inciso II da Lei 4.320/64)}}}  \\\specialrule{1.5pt}{0pt}{0pt}\multicolumn{6}{l}{\textbf{ORÇAMENTO FISCAL}} \\\multicolumn{1}{l}{\textbf{Exercício: \textcolor{myblack}{  2023 }}} & \multicolumn{5}{r}{\textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{1}{L{4cm}|}{ \textbf{RECEITA}} & \multicolumn{2}{C{3cm}|}{ \textbf{VALOR}} & \multicolumn{1}{C{4cm}|}{ \textbf{DESPESA}} & \multicolumn{2}{C{3cm}}{ \textbf{VALOR}} \\\hline\multicolumn{1}{L{4.5cm}|}{ \textbf{RECEITAS CORRENTES}} & \multicolumn{1}{R{1.8cm}|}{ \textbf{}} & \multicolumn{1}{R{1.8cm}|}{ \textbf{128.444.356.599}} & \multicolumn{1}{L{4.5cm}|}{ \textbf{ DESPESAS CORRENTES}} & \multicolumn{1}{R{1.8cm}|}{ \textbf{}} & \multicolumn{1}{R{1.8cm}}{ \textbf{87.707.567.449}} \\
+\multicolumn{1}{@{\hspace{2em}}L{4.5cm}|}{IMPOSTOS, TAXAS E CONTRIBUIÇÕES DE MELHORIA} & \multicolumn{1}{R{1.8cm}|}{91.839.383.883} & \multicolumn{1}{R{1.8cm}|}{} & \multicolumn{1}{@{\hspace{2em}}L{4.5cm}|}{ PESSOAL E ENCARGOS SOCIAIS} & \multicolumn{1}{R{1.8cm}|}{61.948.072.092} & \multicolumn{1}{R{1.8cm}}{} \\
+\renewcommand*{\arraystretch}{1.9}\scriptsize\color{myblack}\centering\noindent\begin{longtable}[c]{m{4cm}|m{1.8cm}|m{1.8cm}|m{4cm}|m{1.8cm}|m{1.8cm}}\multicolumn{6}{c}{\cellcolor{gray!50} \textcolor{myblack} {\small \textbf{DEMONSTRATIVO DA RECEITA E DESPESA SEGUNDO AS CATEGORIAS ECONÔMICAS}}} \TBstrut \\[2ex]\multicolumn{6}{c}{\cellcolor{gray!50} \textcolor{myblack} {\small \textbf{(Art. 2$\mathbf{^o}$, \S 1$\mathbf{^o}$, Inciso II da Lei 4.320/64)}}}  \\\specialrule{1.5pt}{0pt}{0pt}\multicolumn{6}{l}{\textbf{ORÇAMENTO FISCAL}} \\\multicolumn{1}{l}{\textbf{Exercício: \textcolor{myblack}{  2023 }}} & \multicolumn{5}{r}{\textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{1}{L{4cm}|}{ \textbf{RECEITA}} & \multicolumn{2}{C{3cm}|}{ \textbf{VALOR}} & \multicolumn{1}{C{4cm}|}{ \textbf{DESPESA}} & \multicolumn{2}{C{3cm}}{ \textbf{VALOR}} \\\hline\multicolumn{1}{L{4.5cm}|}{ \textbf{RECEITAS CORRENTES}} & \multicolumn{1}{R{1.8cm}|}{ \textbf{}} & \multicolumn{1}{R{1.8cm}|}{ \textbf{128.444.356.599}} & \multicolumn{1}{L{4.5cm}|}{ \textbf{ DESPESAS CORRENTES}} & \multicolumn{1}{R{1.8cm}|}{ \textbf{}} & \multicolumn{1}{R{1.8cm}}{ \textbf{87.655.240.721}} \\
+\multicolumn{1}{@{\hspace{2em}}L{4.5cm}|}{IMPOSTOS, TAXAS E CONTRIBUIÇÕES DE MELHORIA} & \multicolumn{1}{R{1.8cm}|}{91.839.383.883} & \multicolumn{1}{R{1.8cm}|}{} & \multicolumn{1}{@{\hspace{2em}}L{4.5cm}|}{ PESSOAL E ENCARGOS SOCIAIS} & \multicolumn{1}{R{1.8cm}|}{61.912.157.897} & \multicolumn{1}{R{1.8cm}}{} \\
+===================================
+Failure testing T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas.pdf
+page 0 has 67676 pixels that differ
+page 0 differs
+1 of 1 pages differ.
+pdf diff saved at T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas-diff.pdf
 ```
 
-```
-Results:FF
-Failure testing Projeto_volume5.tex
-──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-renamed: volume5/pdf/aux_files/Projeto_volume5.tex to tests/assets/tex/Projeto_volume5.tex
-──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-@ tests/assets/tex/Projeto_volume5.tex:10255 @
-\renewcommand*{\arraystretch}{1.5}
-\footnotesize
-\renewcommand*{\arraystretch}{2}
-/usr/local/lib/R/site-library /usr/local/lib/R/library\noindent\begin{longtable}[c]{m{1cm}|m{11cm}}
-C:/Program Files/R/R-3.6.3/library\noindent\begin{longtable}[c]{m{1cm}|m{11cm}}
-\multicolumn{2}{c}{\cellcolor{gray!50} \textcolor{red} {\normalsize \textbf{GRUPOS DE DESPESA}}}\Tstrut  \\[2ex]
-\hline\hline
-\multicolumn{1}{c|}{\textbf{CÓDIGO}} & \multicolumn{1}{c}{\textbf{ESPECIFICAÇÃO}} \\
-===================================
-Failure testing Projeto_volume5.pdf
-page 20 differs
-page 277 differs
-2 of 283 pages differ.
-pdf diff saved at tests/Projeto_volume5-diff.pdf
+Depois de avaliar as diferenças, se houve apenas alterações esperadas, os arquivos armazenados em tests/assets/ devem ser atualizados. Isso pode ser feito com:
+
+```bash
+python checks/utils.py snapshot Projeto_volume5
+python checks/utils.py snapshot Projeto_volume2A Projeto_volume2B # snapshot de um ou mais demonstrativos
+python checks/utils.py snapshot # snapshot de todos os demonstrativos
 ```
 
 Até o desenvolvimento de [volumes-docker#3](https://github.com/splor-mg/volumes-docker/issues/3), é necessário a instalação dos programas [`diff-pdf`](https://github.com/vslavik/diff-pdf) e [`diff-so-fancy`](https://github.com/so-fancy/diff-so-fancy).
