@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ $# -ne 1 ]; then
   echo 1>&2 "$0: please pass one argument naming the document to test"
   exit 2
@@ -82,7 +84,7 @@ else
    exit 2
 fi
 
-diff "$vol"/pdf/aux_files/"$1".tex tests/assets/tex/"$1".tex > /dev/null 2>&1
+diff "$vol"/pdf/aux_files/"$1".tex checks/assets/tex/"$1".tex > /dev/null 2>&1
 diff_tex=$?
 
 printf "Results:"
@@ -95,7 +97,7 @@ then
    printf "F"
 fi
 
-diff-pdf pdf/"$1".pdf tests/assets/pdf/"$1".pdf > /dev/null 2>&1
+diff-pdf pdf/"$1".pdf checks/assets/pdf/"$1".pdf > /dev/null 2>&1
 diff_pdf=$?
 
 if [ $diff_pdf -eq 0 ]
@@ -111,13 +113,13 @@ printf "\n"
 if [ $diff_tex -eq 1 ]
 then
    echo "Failure testing $1.tex"
-   diff -u "$vol"/pdf/aux_files/"$1".tex tests/assets/tex/"$1".tex | diff-so-fancy
+   diff -u "$vol"/pdf/aux_files/"$1".tex checks/assets/tex/"$1".tex | diff-so-fancy
    echo "==================================="
 fi
 
 if [ $diff_pdf -eq 1 ]
 then
    echo "Failure testing $1.pdf"
-   diff-pdf -vsm --output-diff=tests/"$1"-diff.pdf pdf/"$1".pdf tests/assets/pdf/"$1".pdf
-   echo "pdf diff saved at tests/$1-diff.pdf"
+   diff-pdf -vsm --output-diff="$1"-diff.pdf pdf/"$1".pdf checks/assets/pdf/"$1".pdf
+   echo "pdf diff saved at $1-diff.pdf"
 fi

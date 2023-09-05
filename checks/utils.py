@@ -1,6 +1,13 @@
-from .report import Report
+import typer
+from typing_extensions import Annotated
+from report import Report
+from typing import List
+from typing import Optional
+import subprocess
 
-reports = [
+app = typer.Typer()
+
+REPORTS = [
         Report('T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL', 'volume1'),
         Report('T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas', 'volume1'),
         Report('T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA', 'volume1'),
@@ -41,6 +48,43 @@ reports = [
         Report('Projeto_volume5', 'volume5'),
     ]
 
-if __name__ == '__main__':
+def validate_report_name(report_names: str):
+    all_report_names = [report.name for report in REPORTS]
+    
+    if isinstance(report_names, str):
+        report_names = [report_names]  # Convert to a single-item list
+    
+    if report_names:
+        for report_name in report_names:
+            if report_name not in all_report_names:
+                raise typer.BadParameter(f"{report_name} report does not exist.")
+    return report_names
+
+@app.callback()
+def callback():
+    """
+    Utilities for testing report generation
+    """
+
+@app.command()
+def diff(report_name: Annotated[str, typer.Argument(callback=validate_report_name)]):
+    """
+    Diff of tex and pdf files
+    """
+    subprocess.run(["checks/diff.sh", report_name[0],])
+
+
+@app.command()
+def snapshot(report_names: Annotated[Optional[List[str]], typer.Argument(callback=validate_report_name)] = None):
+    """
+    Save tex and pdf files of reports for golden test
+    """
+    if report_names:
+        reports = [report for report in REPORTS if report.name in report_names]
+    else:
+        reports = REPORTS
     for report in reports:
         report.snapshot()
+
+if __name__ == "__main__":
+    app()
