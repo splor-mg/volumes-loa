@@ -36,9 +36,6 @@ class Report:
             print(f"Failure testing {self.name}.pdf")
             return False
 
-    def pdf_diff(self):
-        pass
-
     def test_tex(self):
         try:
             subprocess.run(["diff", "-u", self.tex, self.tex_snapshot], check=True, stdout=subprocess.DEVNULL)
@@ -46,6 +43,3 @@ class Report:
         except subprocess.CalledProcessError:
             print(f"Failure testing {self.name}.tex")
             return False
-        
-    def tex_diff(self):
-        pass
