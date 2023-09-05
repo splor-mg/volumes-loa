@@ -13,7 +13,7 @@ class Report:
 
     @property
     def tex_snapshot(self):
-        return f'tests/assets/tex/{self.name}.tex'
+        return f'checks/assets/tex/{self.name}.tex'
 
     @property
     def pdf(self):
@@ -21,7 +21,7 @@ class Report:
     
     @property
     def pdf_snapshot(self):
-        return f'tests/assets/pdf/{self.name}.pdf'
+        return f'checks/assets/pdf/{self.name}.pdf'
 
     def snapshot(self):
         shutil.copy(self.tex, self.tex_snapshot)
