@@ -13,3 +13,4 @@
 *.aux
 .Rproj.user
 .rstudio
+venv/
