@@ -43,7 +43,7 @@ rstudio: ## Inicia sessão do Rstudio em http://localhost:8787/ (usuário: rstud
 	@docker exec -d -e PASSWORD=splor volumes-loa /init
 
 check:
-	python -m pytest
+	python3 -m pytest
 
 # ===================================================================
 # TARGETS
