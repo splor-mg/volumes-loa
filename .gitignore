@@ -14,3 +14,4 @@
 .Rproj.user
 .rstudio
 venv/
+__pycache__
