@@ -72,6 +72,13 @@ A criação dos volumes depende da atualização de uma série de informações.
 [...]
 ```
 
+3.5- Para baixar a imagem e executar docker: 
+
+```
+make docker
+```
+
+
 4- Converter os bancos `.xls` para `.xlsx` e tratar caracteres especiais possivelmente presentes nos arquivos `.txt`. Esse passo será realizado a partir do seguinte comando make
 ```
 make format
@@ -144,15 +151,17 @@ A avaliação das diferenças é feita para cada cada demonstrativo.
 Caso não exista diferença o output vai ser simplesmente
 
 ```bash
-python checks/utils.py diff T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL
+python3 checks/utils.py diff T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL
 
 Results:..
 ```
+Nota: importante rodar o comando acima com `python3`, versões 2.x do Python não aceitam padrões utilizados nos testes deste projeto.
+
 
 Caso exista diferenças além de mostrar a diferença no terminal do arquivo `.tex` vai ser gerado um arquivo pdf de diferença salvo na raiz do projeto:
 
 ```bash
-python checks/utils.py diff T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas
+python3 checks/utils.py diff T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas
 
 Results:FF
 Failure testing T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas.tex
@@ -178,9 +187,9 @@ pdf diff saved at T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Econo
 Depois de avaliar as diferenças, se houve apenas alterações esperadas, os arquivos armazenados em tests/assets/ devem ser atualizados. Isso pode ser feito com:
 
 ```bash
-python checks/utils.py snapshot Projeto_volume5
-python checks/utils.py snapshot Projeto_volume2A Projeto_volume2B # snapshot de um ou mais demonstrativos
-python checks/utils.py snapshot # snapshot de todos os demonstrativos
+python3 checks/utils.py snapshot Projeto_volume5
+python3 checks/utils.py snapshot Projeto_volume2A Projeto_volume2B # snapshot de um ou mais demonstrativos
+python3 checks/utils.py snapshot # snapshot de todos os demonstrativos
 ```
 
-Até o desenvolvimento de [volumes-docker#3](https://github.com/splor-mg/volumes-docker/issues/3), é necessário a instalação dos programas [`diff-pdf`](https://github.com/vslavik/diff-pdf) e [`diff-so-fancy`](https://github.com/so-fancy/diff-so-fancy).
+

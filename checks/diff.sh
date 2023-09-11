@@ -113,7 +113,7 @@ printf "\n"
 if [ $diff_tex -eq 1 ]
 then
    echo "Failure testing $1.tex"
-   diff -u "$vol"/pdf/aux_files/"$1".tex checks/assets/tex/"$1".tex | diff-so-fancy
+   diff -u checks/assets/tex/"$1".tex "$vol"/pdf/aux_files/"$1".tex | diff-so-fancy
    echo "==================================="
 fi
 
