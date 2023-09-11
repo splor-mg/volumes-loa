@@ -1,4 +1,4 @@
-.PHONY: help volumes v1 v2 v3 v4 v5 clean format rm docker v1_dcgf v1_prodemge
+.PHONY: help volumes v1 v2 v3 v4 v5 clean format rm docker v1_dcgf v1_prodemge validate check
 
 include config.mk
 
@@ -7,6 +7,9 @@ include config.mk
 
 help: 
 	@grep -E '^[a-zA-Z_0-9]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-10s\033[0m %s\n", $$1, $$2}'
+
+validate:
+	python -m frictionless validate datapackage.yaml
 
 volumes: v1 v2 v3 v4 v5 ## Gera todos os volumes
 
