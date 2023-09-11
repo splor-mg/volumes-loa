@@ -29,4 +29,4 @@ else
 	DOCKER_SRC_DIR := "c:$(DOCKER_SRC_DIR)"
 endif
 
-DOCKER_RUN_CMD = $(shell echo $(WINPTY) docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(DOCKER_SRC_DIR),target=/home/rstudio --name volumes-loa fjuniorr/volumes:ploa2023)
+DOCKER_RUN_CMD = $(shell echo $(WINPTY) docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(DOCKER_SRC_DIR),target=/home/rstudio --name volumes-loa fjuniorr/volumes:ploa2024 bash)
