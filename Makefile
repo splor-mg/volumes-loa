@@ -62,7 +62,7 @@ pdf/Projeto_volume6.pdf: volume6/data/*.txt volume6/Rnw/ANEXOS.Rnw volume6/Rnw/c
 	@echo "---------------------------------------------------------------"
 
 volume6/data/*.txt: volume6/R/volume6.R bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
-	@echo "Atualizando v6/data/ consolidado.txt e QUADRO_DETALHAMENTO_DESPESA_porUO.txt..."
+	@echo "Atualizando dados..."
 	Rscript --verbose --encoding=utf-8 $< 2>> logs/logv6.Rout
 
 # Volume 5
