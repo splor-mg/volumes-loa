@@ -8,8 +8,6 @@ dir_bancos <- paste0(dir_loa, "/bancos")
 source(paste(dir_utils, "funcoes.R", sep = ""))
 ANO_DOC <- as.numeric(readLines(paste(dir_utils, "ano.txt", sep = ""), warn = F))
 
-source(paste(dir_codigosR, "/demonstrativo_consolidado_despesav1.R", sep = ""), encoding = "UTF-8")
-
 banco <- read.table(paste(dir_data, "/QUADRO_DETALHAMENTO_DESPESA_porUO.txt", sep = ""),
   header = T,
   sep = "\t", quote = NULL, dec = ",", stringsAsFactors = FALSE

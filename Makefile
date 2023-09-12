@@ -54,7 +54,7 @@ check:
 # TARGETS
 
 # Volume 6
-pdf/Projeto_volume6.pdf: volume6/data/*.txt volume6/Rnw/ANEXOS.Rnw volume6/Rnw/capaLOA.pdf volume6/Rnw/demonstrativo_consolidado_despesav1.Rnw \
+pdf/Projeto_volume6.pdf: volume6/data/*.txt volume6/Rnw/ANEXOS.Rnw volume6/Rnw/capaLOA.pdf \
 						 volume6/Rnw/load_bibliotecas.tex volume6/Rnw/Projeto_volume6.Rnw volume6/Rnw/QUADRO_DETALHAMENTO_DESPESA.Rnw \
 						 bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_fontes_de_recursos.xlsx bancos/manual/desc_IAG.xlsx bancos/manual/desc_IPU.xlsx
 	@echo "- Gera logs/warningsV6.Rout"

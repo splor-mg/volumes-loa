@@ -19,7 +19,6 @@ ANO_DOC <- as.numeric(readLines(paste(dir_utils, "ano.txt", sep = ""), warn = F)
 # Recortes dos arquivos Rnw para obter os códigos em R
 source(paste(dir_utils, "funcoes.R", sep = ""))
 
-getCodigoR(paste(dir_latex, "/demonstrativo_consolidado_despesav1.Rnw", sep = ""), dir_codigosR)
 getCodigoR(paste(dir_latex, "/QUADRO_DETALHAMENTO_DESPESA.Rnw", sep = ""), dir_codigosR)
 getCodigoR(paste(dir_latex, "/QUADRO_DETALHAMENTO_DESPESA_PROPOSTA_OUTROS_PODERES.Rnw", sep = ""), dir_codigosR)
 getCodigoR(paste(dir_latex, "/ANEXOS.Rnw", sep = ""), dir_codigosR)
@@ -72,43 +71,6 @@ Superintendência Central de Planejamento e Orçamento \\
 \tableofcontents
 \newpage
 % \Sumario
-
-% Pagina iniciando DEMONSTRATIVO CONSOLIDADO DA DESPESA
-\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
-\phantomsection
-%\addtocontents{toc}{\cftpagenumbersoff{section}}
-\restoregeometry
-\vspace*{9cm}
-\addcontentsline{toc}{section}{ DEMONSTRATIVO CONSOLIDADO DA DESPESA}
-\centering \Huge {\textbf{DEMONSTRATIVO CONSOLIDADO DA DESPESA}}
-\afterpage{\null\thispagestyle{empty}\newpage}
-\newpage
-% \Pagina iniciando DEMONSTRATIVO CONSOLIDADO DA DESPESA
-
-\newgeometry{left=1cm,right=1cm, top=2cm}
-
-\renewcommand*{\arraystretch}{1.9}
- \scriptsize
- \color{myblack}
- \centering
- 
-\newpage
-<<demonstrativo_consolidado, results=tex, echo=F>>=
-# INICIO TABELA
-
-dir_loa <- gsub("(.+LOA).*", "\\1", getwd())
-dir_codigosR <- paste0(dir_loa, "/volume5/Rnw/CodigosR")
-dir_utils <- paste0(dir_loa, "/utils/")
-dir_data <- paste0(dir_loa, "/volume5/data")
-dir_bancos <- paste0(dir_loa, "/bancos")
-source(paste(dir_utils, "funcoes.R", sep = ""))
-ANO_DOC <- as.numeric(readLines(paste(dir_utils, "ano.txt", sep = ""), warn = F))
-
-source(paste(dir_codigosR, "/demonstrativo_consolidado_despesav1.R", sep = ""), encoding = "UTF-8")
-@
-
-\newpage
-\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
 
 % Pagina iniciando DEMONSTRATIVOS POR ORGAO E ENTIDADE
 \phantomsection
