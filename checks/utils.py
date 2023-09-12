@@ -25,7 +25,6 @@ REPORTS = [
         Report('T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude', 'volume1'),
         Report('T19_DCGF_Demonstrativo_Aplicacao_Recursos_Amparo_Fomento_Pesquisa', 'volume1'),
         Report('T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF', 'volume1'),
-        Report('T20B_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF', 'volume1'),
         Report('T23_DCGF_Demonstrativo_do_Servico_da_divida_publica', 'volume1'),
         Report('T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB', 'volume1'),
         Report('T26_DCGF_DEMONSTRATIVO_RECURSOS_APLICADOS_ACOES_PARA_CRIANCA_E_ADOLESCENTE', 'volume1'),
