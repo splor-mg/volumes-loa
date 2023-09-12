@@ -126,5 +126,5 @@ final[grepl(" *-.+", valor_categoria) & is.na(valor_categoria)==F,
 
 final[, descricao := correcaoCaracteresEspeciais(descricao, caracteres)]
 
-write.table(final, "volume6/data/T7_QUADRO_GERAL_DA_RECEITA.txt", quote = F, 
+write.table(final, "volume6/data/receita_fonte_stn.txt", quote = F, 
             sep = "\t", na = "", dec = ",", row.names = FALSE)

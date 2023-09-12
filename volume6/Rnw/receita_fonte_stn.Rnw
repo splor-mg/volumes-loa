@@ -116,7 +116,7 @@
   library(dplyr)
   library(readr)
 
-  banco=data.table(read.table(paste0(dir_data, "/T7_QUADRO_GERAL_DA_RECEITA.txt"),
+  banco=data.table(read.table(paste0(dir_data, "/receita_fonte_stn.txt"),
                                 header=T, sep="\t", dec="@", stringsAsFactors = FALSE))
 
   cat("\\renewcommand*{\\arraystretch}{1.7}\n")
