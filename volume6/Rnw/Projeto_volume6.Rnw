@@ -8,10 +8,10 @@
 
 <<ParametrosRecortes, echo=FALSE, results=hide>>=
 dir_loa <- gsub("(.+LOA).*", "\\1", getwd())
-dir_latex <- paste0(dir_loa, "/volume5/Rnw")
+dir_latex <- paste0(dir_loa, "/volume6/Rnw")
 dir_codigosR <- paste0(dir_latex, "/CodigosR")
 dir_utils <- paste0(dir_loa, "/utils/")
-dir_data <- paste0(dir_loa, "/volume5/data")
+dir_data <- paste0(dir_loa, "/volume6/data")
 dir_bancos <- paste0(dir_loa, "/bancos")
 
 ANO_DOC <- as.numeric(readLines(paste(dir_utils, "ano.txt", sep = ""), warn = F))

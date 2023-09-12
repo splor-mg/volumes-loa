@@ -19,7 +19,7 @@ dir_loa <- gsub("(.+LOA).*", "\\1", getwd())
 
 ANO_DOC <- as.numeric(readLines(paste(dir_loa, "/utils/ano.txt", sep = ""), warn = F))
 
-dir_data <- paste(dir_loa, "/volume5/data", sep = "")
+dir_data <- paste(dir_loa, "/volume6/data", sep = "")
 
 
 banco <- read.table(paste(dir_data, "/QUADRO_DETALHAMENTO_DESPESA_porUO.txt", sep = ""),
