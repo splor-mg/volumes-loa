@@ -1,0 +1,13 @@
+resources:
+  - name: obz-dados
+    path: https://raw.githubusercontent.com/splor-mg/obz-dados/main/datapackage.json
+    token: GITHUB_TOKEN
+  - name: reestimativa
+    path: https://raw.githubusercontent.com/splor-mg/reestimativa-dados/obz/datapackage.yaml
+    token: GITHUB_TOKEN
+  - name: teto-gastos
+    path: https://raw.githubusercontent.com/splor-mg/teto-gastos-rrf-dados/main/datapackage.json?
+    token: GITHUB_TOKEN
+  - name: sisor-dados-2024
+    path: https://raw.githubusercontent.com/splor-mg/sisor-dados-2024/main/datapackage.json
+    token: GITHUB_TOKEN
