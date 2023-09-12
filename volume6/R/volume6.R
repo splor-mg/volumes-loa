@@ -24,11 +24,7 @@ classificacao_despesa[, codigo_texto := paste(substr(codigo, 1, 1), substr(codig
   sep = "."
 )]
 
-banco <- trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx")
-
-if (file.exists("bancos/SISOR/BASE_QDD_FISCAL_PROPOSTA.xlsx")) {
-  banco <- merge_QDD_v5(banco, uos_proposta)
-}
+banco <- trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx")
 
 poderes <- read_excel("bancos/manual/codigosPoder.xlsx", sheet = 1)
 

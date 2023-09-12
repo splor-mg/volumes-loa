@@ -91,3 +91,8 @@ running
 
 Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
   NAs introduced by coercion
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion

@@ -236,6 +236,67 @@ resources:
           type: string
         - name: NOME_PROGRAMA
           type: string
+  - name: base_qdd_fiscal_fonte_stn
+    path: bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx
+    scheme: file
+    format: xlsx
+    encoding: utf-8
+    schema:
+      fields:
+        - name: ANO
+          type: integer
+        - name: COD_ORGAO
+          type: integer
+        - name: ORGAO
+          type: string
+        - name: PODER
+          type: integer
+        - name: SITUACAO
+          type: integer
+        - name: COD_UO
+          type: integer
+        - name: UO
+          type: string
+        - name: CATEGORIA
+          type: integer
+        - name: GRUPO_DESPESA
+          type: integer
+        - name: MODALIDADE
+          type: integer
+        - name: ELEMENTO_DESPESA
+          type: integer
+        - name: FONTE
+          type: integer
+        - name: IPU
+          type: integer
+        - name: SEQ_PROGTRAB
+          type: integer
+        - name: FUNCAO
+          type: integer
+        - name: SUB_FUNCAO
+          type: integer
+        - name: PROGRAMA
+          type: integer
+        - name: IDENT_PROJATIV
+          type: integer
+        - name: PROJ_ATIV
+          type: integer
+        - name: AÇÃO
+          type: integer
+        - name: SUB_PROJETO
+          type: integer
+        - name: VALOR UO (R$)
+          type: integer
+        - name: VALOR SCPPO (R$)
+          type: integer
+        - name: VALOR FINAL (R$)
+          type: integer
+        - name: IAG
+          type: integer
+        - name: NOME_ACAO
+          type: string
+        - name: NOME_PROGRAMA
+          type: string
   - name: base_qdd_investimento
     path: bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx
     scheme: file
