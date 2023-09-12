@@ -1,0 +1,471 @@
+\documentclass{article}
+% \usepackage{Sweave}
+% Libraries
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{longtable} % Carrega o objeto longtable
+%\usepackage{lscape}
+%\usepackage{pdflscape}
+\usepackage[table]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tocloft}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\graphicspath{ {img/} }
+\usepackage[hidelinks]{hyperref}
+
+
+
+% Alterar a fonte para Arial
+\usepackage[T1]{fontenc}
+\usepackage{uarial}
+%\usepackage{arial}
+\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{blindtext}
+% libraries teste
+
+
+% Novos comandos e definições
+\newcommand{\valorHeader}[1]{\scriptsize #1}
+\newcommand{\fonteSeis}[1]{\fontsize{6px}{2px}\selectfont #1}
+
+\newcommand\Tstrut{\rule{0pt}{2em}}       % pading top para o titulo
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}} % padding bottom para o titulo
+\newcommand{\TBstrut}{\Tstrut\Bstrut} 
+
+\newcolumntype{C}[1]{>{\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newcommand{\tab}[1]{\hspace{13pt}\rlap{#1}}
+
+%\addtocontents{toc}{\cftpagenumbersoff{section}}
+%\renewcommand{\cftdot}{} % Retira o pontilhado do summario (opcional)
+\renewcommand{\contentsname}{Sumário}
+
+\setlength{\tabcolsep}{0.18cm}
+\definecolor{myblack}{RGB}{0,0,0}
+\definecolor{vermelhoTitulo}{RGB}{102,0,0}
+
+\setlength{\cftbeforesubsecskip}{6pt} % Aumenta o espacamento antes do item subsecao na tabela de contents (sumario)
+\setlength{\cftbeforesecskip}{18pt} % Aumenta o espacamento antes do item secao na tabela de contents (sumario)
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+<<echo=FALSE>>=
+ANO_DOC = 2016 # Mudar apenas aqui
+@
+
+% Para evitar a hiphenizacao das palavras (wrap:break-word)
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% Capa
+\newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+\includepdf[pages={1},scale=1.1]{06_LOA_Volume_V.pdf}
+% \capa
+
+% Títulos
+% Pagina com os titulos
+\restoregeometry
+\newgeometry{top=1cm}
+\begin{titlepage}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=2cm, height=2cm]{brasao_mg}
+\end{center}
+\end{figure}
+\vspace*{-2em}
+\begin{center}
+\large
+Governo do Estado de Minas Gerais \\
+Secretaria de Estado de Planejamento e Gestão \\
+Subsecretaria de Planejamento e Orçamento \\
+Superintendência Central de Planejamento e Orçamento
+
+\vspace*{10em}
+\fontsize{45pt}{60pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
+%\fontsize{50pt}{12pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
+
+\vspace*{5em}
+\large{QUADROS DE DETALHAMENTO DA DESPESA}
+
+\end{center}
+\end{titlepage}
+
+\newpage
+% \Titulos
+
+% Sumario
+\restoregeometry
+\small
+\tableofcontents
+\newpage
+% \Sumario
+
+% Pagina iniciando DEMONSTRATIVO CONSOLIDADO DA DESPESA
+\phantomsection
+\addtocontents{toc}{\cftpagenumbersoff{section}}
+\restoregeometry
+\vspace*{52em}
+\addcontentsline{toc}{section}{ DEMONSTRATIVO CONSOLIDADO DA DESPESA}
+\hspace{4em} \large {\textbf{DEMONSTRATIVO CONSOLIDADO DA DESPESA}}
+\newpage
+% \Pagina iniciando DEMONSTRATIVO CONSOLIDADO DA DESPESA
+
+\newgeometry{left=1cm,right=1cm, top=2cm}
+
+\scriptsize
+
+\renewcommand*{\arraystretch}{1.9}
+ \scriptsize
+ \color{myblack}
+ \centering
+ 
+\newpage
+
+  \noindent\begin{longtable}[c]{m{0.1cm}m{0.1cm}m{0.8cm}|m{8cm}|m{2cm}|m{2cm}|m{2cm}}
+
+ % Inicio cabeçalho
+   \multicolumn{7}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{DEMONSTRATIVO CONSOLIDADO DA DESPESA}}}\TBstrut  \\[2ex]
+ \specialrule{1.5pt}{2pt}{0pt}
+ \multicolumn{3}{l}{\textbf{Exercício: \textcolor{myblack}{\Sexpr{ANO_DOC }}}} & \multicolumn{3}{c}{RECURSOS DE TODAS AS FONTES}& \multicolumn{1}{r}{R\$1,00} \\
+ \multicolumn{7}{l}{ORÇAMENTO FISCAL} \\
+ \specialrule{1pt}{0pt}{0pt}
+ % Fim cabeçalho
+ 
+ \multicolumn{3}{l|}{\textbf{ CÓDIGO}} & \multicolumn{1}{l|}{\textbf{ESPECIFICAÇÃO}} & 
+  \valorHeader{\centering \textbf{RECURSOS DO TESOURO}} &   \valorHeader{\centering \textbf{RECURSOS DE OUTRAS FONTES}} & 
+  \multicolumn{1}{c}{\textbf{TOTAL}}\\
+ 
+ \hline
+ \endfirsthead
+ 
+ % Inicio cabeçalho
+   \multicolumn{7}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{DEMONSTRATIVO CONSOLIDADO DA DESPESA}}}\TBstrut  \\[2ex]
+ \specialrule{1.5pt}{2pt}{0pt}
+ \multicolumn{3}{l}{\textbf{Exercício: \textcolor{myblack}{\Sexpr{ANO_DOC }}}} & \multicolumn{3}{c}{RECURSOS DE TODAS AS FONTES}& \multicolumn{1}{r}{R\$1,00} \\
+ \multicolumn{7}{l}{ORÇAMENTO FISCAL} \\
+ \specialrule{1pt}{0pt}{0pt}
+ % Fim cabeçalho
+ 
+  \multicolumn{3}{l|}{\textbf{ CÓDIGO}} & \multicolumn{1}{l|}{\textbf{ESPECIFICAÇÃO}} & 
+  \valorHeader{\centering \textbf{RECURSOS DO TESOURO}} &   \valorHeader{\centering \textbf{RECURSOS DE OUTRAS FONTES}} & 
+  \multicolumn{1}{c}{\textbf{TOTAL}}\\
+  
+ \hline
+ \endhead
+
+ \endfoot
+ 
+ \hline
+
+ \hline\hline
+ \endlastfoot
+
+<<echo=FALSE, results=tex>>=
+consolidado = read.table("C:/Users/m1312932/SEPLAG/LOA/Volume 5/Bancos/consolidado.txt", header = T, sep = "\t", 
+                         quote = NULL,   dec = ",", stringsAsFactors = FALSE)
+
+for(i in 1:nrow(consolidado)){
+  if(consolidado$codigo_texto[i]!="Total" & i<nrow(consolidado)){
+    # Os condicionais a seguir tem como objetivo identar os codigos de despesa de acordo com os itens isolados e totais
+    if(substr(as.character(consolidado$codigo_texto[i]),3,3)=="0" | substr(as.character(consolidado$codigo_texto[i]),3,3)=="9"){
+  cat("\\multicolumn{3}{l|}{\\textbf{", as.character(consolidado$codigo_texto[i]), "}} & \\multicolumn{1}{L{8cm}|}{\\textit{", 
+      as.character(consolidado$especificacao[i]), "}} & \\multicolumn{1}{r|}{", 
+      as.character(consolidado$recurso_tesouro[i]) , "} & \\multicolumn{1}{r|}{", as.character(consolidado$outras_fontes[i]), 
+      "} &  \\multicolumn{1}{r}{", as.character(consolidado$total[i]), "}\\\\\n", sep="")
+    } else if(substr(as.character(consolidado$codigo_texto[i]),5,6)=="00"){
+  cat("\\multicolumn{1}{l}{} & \\multicolumn{2}{l|}{\\textbf{", as.character(consolidado$codigo_texto[i]), 
+      "}} & \\multicolumn{1}{L{8cm}|}{\\textit{", as.character(consolidado$especificacao[i]), "}} & \\multicolumn{1}{r|}{", 
+      as.character(consolidado$recurso_tesouro[i]) , "} & \\multicolumn{1}{r|}{", as.character(consolidado$outras_fontes[i]), 
+      "} &  \\multicolumn{1}{r}{", as.character(consolidado$total[i]), "}\\\\\n", sep="")
+    } else{
+      cat("\\multicolumn{1}{l}{} & \\multicolumn{1}{l}{} & \\multicolumn{1}{l|}{", as.character(consolidado$codigo_texto[i]), 
+          "} & \\multicolumn{1}{L{8cm}|}{\\textit{",as.character(consolidado$especificacao[i]), "}} & \\multicolumn{1}{r|}{", 
+          as.character(consolidado$recurso_tesouro[i]) , "} & \\multicolumn{1}{r|}{", as.character(consolidado$outras_fontes[i]),
+          "} &  \\multicolumn{1}{r}{", as.character(consolidado$total[i]), "}\\\\\n", sep="")
+    }
+  }
+  if (consolidado$codigo_texto[i]=="Total" & i==nrow(consolidado)){
+  cat("\\hline\n\\multicolumn{4}{c|}{\\textbf{", toupper(as.character(consolidado$codigo_texto[i])), 
+      "}} & \\multicolumn{1}{r|}{", as.character(consolidado$recurso_tesouro[i]) , "} & \\multicolumn{1}{r|}{", 
+      as.character(consolidado$outras_fontes[i]), "} &  \\multicolumn{1}{r}{", 
+      as.character(consolidado$total[i]), "}\n", sep="")
+    
+  }
+}
+@
+
+\end{longtable}
+\newpage
+
+% Pagina iniciando DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE
+\phantomsection
+\restoregeometry
+\vspace*{55em}
+\addcontentsline{toc}{section}{ DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}
+\hspace{4em} \large {\textbf{DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}}
+\newpage
+\phantomsection
+%Pagina iniciando DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE
+
+\newgeometry{left=3pt,right=3pt, top=1cm}
+
+\setlength{\tabcolsep}{2.5pt}
+
+<<echo=FALSE, results=tex>>=
+banco = read.table("C:/Users/m1312932/SEPLAG/LOA/Volume 5/Bancos/QUADRO_DETALHAMENTO_DESPESA_porUO.txt", header = T, 
+                   sep = "\t", quote = NULL,   dec = ",", stringsAsFactors = FALSE)
+
+registro_orgao =c()
+registro_poder = c()
+
+for(codigo_uo in unique(banco$COD_UO)){
+
+  uo = banco[banco$COD_UO==codigo_uo,] # realizar recorte em loop
+  
+cat("\\renewcommand*{\\arraystretch}{1.9}\n")
+cat("\\scriptsize\n")
+ cat("\\color{myblack}\n")
+ cat("\\centering\n")
+ 
+ if((uo$poder[1] %in% registro_poder)==FALSE){
+ cat("\\addcontentsline{toc}{section}{\\underline{",uo$poder[1] ,"}}\n")  
+ }
+ 
+ registro_poder = append(registro_poder, uo$poder[1])
+ 
+ if((uo$COD_ORGAO[1] %in% registro_orgao)==FALSE){
+ cat("\\addcontentsline{toc}{section}{",paste(substr(uo$COD_ORGAO[1],1,1),".", substr(uo$COD_ORGAO[1],2,3), ".", 
+                                                   substr(uo$COD_ORGAO[1],4,4), " - ", uo$ORGAO[1], sep=""),"}\n")  
+ }
+ 
+ registro_orgao = append(registro_orgao, uo$COD_ORGAO[1])
+ 
+ cat("\\addcontentsline{toc}{subsection}{",paste(substr(uo$COD_UO[1],1,1),".", substr(uo$COD_UO[1],2,3), ".", 
+                                                   substr(uo$COD_UO[1],4,4), " - ", uo$UO[1], sep=""),"}\n")
+ #cat("\\subsection*{",paste(substr(uo$COD_UO[1],1,1),".", substr(uo$COD_UO[1],2,3), ".", 
+    #                                               substr(uo$COD_UO[1],4,4), " - ", uo$UO[1], sep=""),"}\n")
+ cat("\\noindent\\begin{longtable}[c]{m{5.5cm}|m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}|m{1pt}m{1pt}m{0.5pt}m{1pt}|m{1pt}|m{1pt}m{1pt}|m{1pt}|m{2pt}}\n")
+#cat("\\caption{",paste(substr(uo$COD_UO[1],1,1),".", substr(uo$COD_UO[1],2,3), ".", 
+                                                #   substr(uo$COD_UO[1],4,4), " - ", uo$UO[1], sep=""),"}\\\\\n")
+  cat("% Inicio cabeçalho\n")
+   cat("\\multicolumn{16}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize \\textbf{QUADRO DE DETALHAMENTO DA DESPESA - FISCAL}}}\\TBstrut  \\\\[2ex]\n")
+ cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+ cat("\\multicolumn{15}{l}{\\textbf{Exercício:} \\textcolor{myblack}{", uo$ANO[1] ,"}} & \\multicolumn{1}{r}{ R\\$1,00} \\\\\n")
+cat("\\multicolumn{16}{L{15cm}}{\\textbf{ÓRGÃO:}", paste(substr(uo$COD_ORGAO[1],1,1),".", substr(uo$COD_ORGAO[1],2,3), ".", 
+                                                   substr(uo$COD_ORGAO[1],4,4), " - ", uo$ORGAO[1], sep=""), "} \\\\\n")
+ cat("\\multicolumn{16}{L{15cm}}{\\textbf{UO:} \\hspace{13pt} ", paste(substr(uo$COD_UO[1],1,1),".", 
+                                                                       substr(uo$COD_UO[1],2,3), ".", 
+                                                                       substr(uo$COD_UO[1],4,4), " - ", 
+                                                                       uo$UO[1], sep="") ,"} \\\\\n")
+ cat("\\specialrule{1pt}{0pt}{0pt}\n")
+ cat("% Fim cabeçalho\n")
+ 
+ 
+ cat("\\multirow{2}{3pt}{ESPECIFICAÇÃO} & \\multicolumn{13}{|c|}{CLASSIFICAÇÃO ORÇAMENTÁRIA} & \\multicolumn{2}{c}{IMPORTÂNCIA} \\\\\n")
+cat("\\cline{2-16}\n")
+cat("& \\multicolumn{1}{|c}{\\fonteSeis FUN} & \\multicolumn{1}{c}{\\fonteSeis SUBF} & \\multicolumn{1}{c}{\\fonteSeis PRG} & \\multicolumn{1}{c}{\\fonteSeis ID} & \\multicolumn{1}{c}{\\fonteSeis P/A} & \\multicolumn{1}{c|}{\\fonteSeis C/A} & \\multicolumn{1}{c}{\\fonteSeis C} & \\multicolumn{1}{c}{\\fonteSeis GD} & \\multicolumn{1}{c}{\\fonteSeis M} & \\multicolumn{1}{c|}{\\fonteSeis ED} & \\multicolumn{1}{c|}{\\fonteSeis IAG} & \\multicolumn{1}{c}{\\fonteSeis F/} & \\multicolumn{1}{c|}{\\fonteSeis IPU} & \\multicolumn{1}{c|}{\\fonteSeis DETALHADA} & \\multicolumn{1}{c}{\\fonteSeis TOTAL} \\\\\n")
+ 
+ 
+ 
+ cat("\\hline\n")
+ cat("\\endfirsthead\n")
+ 
+  cat("% Inicio cabeçalho\n")
+   cat("\\multicolumn{16}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize \\textbf{QUADRO DE DETALHAMENTO DA DESPESA - FISCAL}}}\\TBstrut  \\\\[2ex]\n")
+ cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+ cat("\\multicolumn{15}{l}{\\scriptsize \\textbf{Exercício:} \\textcolor{myblack}{", uo$ANO[1] ,"}} & \\multicolumn{1}{r}{\\scriptsize R\\$1,00} \\\\\n")
+cat("\\multicolumn{16}{L{15cm}}{\\textbf{ÓRGÃO:}", paste(substr(uo$COD_ORGAO[1],1,1),".", substr(uo$COD_ORGAO[1],2,3), ".", 
+                                                   substr(uo$COD_ORGAO[1],4,4), " - ", uo$ORGAO[1], sep=""), "} \\\\\n")
+ cat("\\multicolumn{16}{L{15cm}}{\\textbf{UO:} \\hspace{13pt} ", paste(substr(uo$COD_UO[1],1,1),".", 
+                                                                       substr(uo$COD_UO[1],2,3), ".", 
+                                                                       substr(uo$COD_UO[1],4,4), " - ", 
+                                                                       uo$UO[1], sep="") ,"} \\\\\n")
+ cat("\\specialrule{1pt}{0pt}{0pt}\n")
+ cat("% Fim cabeçalho\n")
+ 
+ 
+ cat("\\multirow{2}{3pt}{ESPECIFICAÇÃO} & \\multicolumn{13}{|c|}{CLASSIFICAÇÃO ORÇAMENTÁRIA} & \\multicolumn{2}{c}{IMPORTÂNCIA} \\\\\n")
+cat("\\cline{2-16}\n")
+ cat("& \\multicolumn{1}{|c}{\\fonteSeis FUN} & \\multicolumn{1}{c}{\\fonteSeis SUBF} & \\multicolumn{1}{c}{\\fonteSeis PRG} & \\multicolumn{1}{c}{\\fonteSeis ID} & \\multicolumn{1}{c}{\\fonteSeis P/A} & \\multicolumn{1}{c|}{\\fonteSeis C/A} & \\multicolumn{1}{c}{\\fonteSeis C} & \\multicolumn{1}{c}{\\fonteSeis GD} & \\multicolumn{1}{c}{\\fonteSeis M} & \\multicolumn{1}{c|}{\\fonteSeis ED} & \\multicolumn{1}{c|}{\\fonteSeis IAG} & \\multicolumn{1}{c}{\\fonteSeis F/} & \\multicolumn{1}{c|}{\\fonteSeis IPU} & \\multicolumn{1}{c|}{\\fonteSeis DETALHADA} & \\multicolumn{1}{c}{\\fonteSeis TOTAL} \\\\\n")
+ 
+  
+ cat("\\hline\n")
+ cat("\\endhead\n")
+
+ cat("\\endfoot\n")
+ 
+ cat("\\hline\n")
+
+ cat("\\hline\\hline\n")
+ cat("\\endlastfoot\n")
+ for(i in 1:nrow(uo)){
+if(uo$NOME_ACAO[i]!="Total" & uo$NOME_ACAO[i]!=""){
+   cat("\\multicolumn{1}{L{5.5cm}|}{",uo$NOME_ACAO[i],"} & \\multicolumn{1}{c}{", 
+      formatC(uo$FUNCAO[i], width = 2, flag = "0"),"} & \\multicolumn{1}{c}{", 
+      formatC(uo$SUB_FUNCAO[i], width = 3, flag = "0"), "} & \\multicolumn{1}{c}{", 
+      uo$PROGRAMA[i],"} & \\multicolumn{1}{l}{", uo$IDENT_PROJATIV[i],
+      "} & \\multicolumn{1}{c}{",  formatC(uo$PROJ_ATIV[i], width = 3, flag = "0"),
+      "} & \\multicolumn{1}{l|}{",  
+      formatC(uo$SUB_PROJETO[i], width = 4, flag = "0"), 
+      "} & & & & & & & & & \\multicolumn{1}{r}{", uo$valor_final[i], "} \\\\\n")
+}
+if(uo$NOME_ACAO[i]!="Total" & uo$NOME_ACAO[i]==""){
+  cat("& & & & & & & \\multicolumn{1}{c}{", uo$CATEGORIA[i], "} & \\multicolumn{1}{c}{", uo$GRUPO_DESPESA[i], 
+      "} & \\multicolumn{1}{c}{", uo$MODALIDADE[i], "} & \\multicolumn{1}{c|}{", 
+      formatC(uo$ELEMENTO_DESPESA[i], width = 2, flag = "0"), 
+      "} & \\multicolumn{1}{c|}{",uo$IAG[i],"} & \\multicolumn{1}{l}{", uo$FONTE[i],"} & \\multicolumn{1}{c|}{", 
+      uo$IPU[i], "} & \\multicolumn{1}{r|}{", uo$valor_final[i], "} & \\\\\n")
+}
+if(uo$NOME_ACAO[i]=="Total"){
+  cat("\\hline\n")
+  cat("\\multicolumn{15}{C{6cm}|}{\\textbf{",toupper(uo$NOME_ACAO[i]),
+      "}} & \\multicolumn{1}{r}{\\textbf{", uo$valor_final[i], "}} \\\\\n")
+}
+}
+cat("\\end{longtable}\n")
+cat("\\newpage\n")
+cat("\\phantomsection\n")
+}
+@
+
+\addtocontents{toc}{\cftpagenumberson{section}}
+\addcontentsline{toc}{section}{GRUPOS DE DESPESA, FONTES DE RECURSO, IDENTIFICADORES DE PROCEDÊNCIA E USO E IDENTIFICADOR DE AÇÃO GOVERNAMENTAL}
+
+\scriptsize
+\noindent\begin{longtable}[c]{m{1cm}|m{11cm}}
+
+\multicolumn{2}{c}{\cellcolor{gray!50} \textcolor{red} {\normalsize \textbf{FONTES DE RECURSOS}}}\Tstrut  \\[2ex]
+\hline\hline
+ \multicolumn{1}{c|}{\textbf{COD}} & \multicolumn{1}{c}{\textbf{ESPECIFICAÇÃO}} \\
+
+\hline
+ \endfirsthead
+ \hline
+ \endhead
+ \endfoot
+
+ \hline\hline\hline
+ \endlastfoot
+
+10 & RECURSOS ORDINÁRIOS\\
+12 & OPERAÇÕES DE CRÉDITO CONTRATUAIS - SWAP\\
+20 & RECURSOS CONSTITUCIONALMENTE VINCULADOS AOS MUNICÍPIOS\\
+21 & COTA ESTADUAL DO SALÁRIO EDUCAÇÃO – QESE\\
+22 & RECURSOS DO SISTEMA ÚNICO DE SAÚDE – SUS\\
+23 & FUNDO DE MANUTENÇÃO E DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA - FUNDEB\\
+24 & CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES\\
+25 & OPERAÇÕES DE CRÉDITO CONTRATUAIS\\
+26 & TAXA FLORESTAL\\
+27 & TAXA DE SEGURANÇA PÚBLICA\\
+28 & TAXA DE FISCALIZAÇÃO JUDICIÁRIA\\
+29 & TAXA DE EXPEDIENTE\\
+30 & CONTRIBUIÇÃO À APOSENTADORIA\\
+31 & UTILIZAÇÃO DE RECURSOS HÍDRICOS\\
+32 & EXPLORAÇÃO DE RECURSOS MINERAIS\\
+33 & EXPLORAÇÃO E PRODUÇÃO DE PETRÓLEO E GÁS NATURAL\\
+34 & NOTIFICAÇÃO DE INFRAÇÃO DE TRÂNSITO\\
+35 & CONTRIBUIÇÃO AO FUNDESE\\
+36 & TRANSFERÊNCIAS DE RECURSOS DA UNIÃO VINCULADOS À EDUCAÇÃO\\
+37 & TRANSFERÊNCIAS DE RECURSOS DA UNIÃO VINCULADOS À SAÚDE\\
+38 & TRANSFERÊNCIAS DE RECURSOS DA UNIÃO VINCULADOS AO ESPORTE\\
+39 & MULTAS PECUNIÁRIAS E JUROS DE MORA FIXADOS EM SENTENÇAS JUDICIAIS\\
+40 & RECURSOS FUNDOS EXTINTOS – LEI Nº 13.848/2001\\
+41 & CESSÃO DE CRÉDITOS\\
+42 & CONTRIBUIÇÃO PATRONAL PARA FUNFIP\\
+43 & CONTRIBUIÇÃO DO SERVIDOR PARA FUNFIP\\
+44 & COMPENSAÇÃO FINANCEIRA ENTRE REGIMES DE PREVIDÊNCIA\\
+45 & DOAÇÕES DE PESSOAS, DE INSTITUIÇÕES PRIVADAS OU DO EXTERIOR A ÓRGAOS E ENTIDADES DO ESTADO\\
+46 & DOAÇÕES DE PESSOAS, DE INSTITUIÇÕES PRIVADAS OU DO EXTERIOR AO TESOURO ESTADUAL\\
+47 & ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS\\
+48 & ALIENAÇÃO DE BENS DO TESOURO ESTADUAL\\
+49 & CONTRIBUIÇÃO PATRONAL DO ESTADO AOS INSTITUTOS DE PREVIDÊNCIA \\
+50 & CONTRIBUIÇÃO DO SERVIDOR DO ESTADO AOS INSTITUTOS DE PREVIDÊNCIA\\
+51 & CONTRIBUIÇÃO DE INTERVENÇÃO NO DOMÍNIO ECONÔMICO/COMBUSTÍVEIS-CIDE\\
+52 & TAXA DE CONTROLE E FISCALIZAÇÃO AMBIENTAL\\
+53 & TAXA DE INCÊNDIO\\
+54 & TAXA DE LICENCIAMENTO DA FAIXA DE DOMÍNIO DAS RODOVIAS\\
+55 & TRANSFERÊNCIAS DE RECURSOS DOS MUNICÍPIOS VINCULADOS À FARMÁCIA BÁSICA - FES\\
+56 & TRANSFERÊNCIAS DE RECURSOS DA UNIÃO VINCULADOS À ASSISTÊNCIA SOCIAL\\
+57 & TRANSFERENCIAS DE RECURSOS DA UNIAO POR MEIO DE PORTARIA\\
+58 & RECURSOS PARA COBERTURA DO DEFICIT ATUARIAL DO RPPS\\
+59 & OUTROS RECURSOS VINCULADOS\\
+60 & RECURSOS DIRETAMENTE ARRECADADOS\\
+61 & RECURSOS DIRETAMENTE ARRECADADOS COM VINCULAÇÃO ESPECÍFICA\\
+70 & CONVÊNIOS COM OS ESTADOS, O DISTRITO FEDERAL, OS MUNICÍPIOS, AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR\\
+71 & RECURSOS DO FUNDO ESTADUAL DE ERRADICACAO DA MISERIA\\
+72 & TAXA DE FISCALIZACAO DE RECURSOS MINERARIOS\\
+73 & ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM A UNIÃO E SUAS ENTIDADES.\\
+74 & ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM OS ESTADOS, O DISTRITO FEDERAL, OS MUNICÍPIOS, AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR\\
+75 & CONTRIBUIÇÃO PATRONAL PARA CUSTEIO DOS PROVENTOS DOS MILITARES\\
+76 & TAXA DE ADMINISTRAÇÃO DO FUNPEMG \\
+77 & RECEITAS DE FISCALIZAÇÃO, TAXAS E CUSTAS JUDICIAIS \\
+79 & CONTRIBUIÇÃO PATRONAL PARA O FUNPREV \\
+80 & CONTRIBUIÇÃO DO SERVIDOR PARA O FUNPREV \\ 
+81 & RECURSOS DE DEPÓSITOS JUDICIAIS – LEI 21.720/15 \\
+82 & NOTIFICAÇÃO DE INFRAÇÃO DE TRÂNSITO – ESTADO \\
+83 & NOTIFICAÇÃO DE INFRAÇÃO DE TRÂNSITO – FUNTRANS \\
+84 & TRANSFERÊNCIAS DE RECURSOS DO SUS PARA A GESTÃO DO SUS \\
+85 & TRANSFERÊNCIAS DE RECURSOS DO SUS PARA A VIGILÂNCIA EM SAÚDE \\
+86 & TRANSFERÊNCIAS DE RECURSOS DO SUS PARA A ASSISTÊNCIA FARMACÊUTICA \\
+87 & TRANSFERÊNCIAS DE RECURSOS DO SUS PARA A ATENÇÃO BÁSICA \\
+
+
+ \end{longtable}
+
+\noindent\begin{longtable}[c]{m{1cm}|m{11cm}}
+
+\multicolumn{2}{c}{\cellcolor{gray!50} \textcolor{red} {\normalsize \textbf{IDENTIFICADORES DE PROCEDÊNCIA E USO}}}\Tstrut  \\[2ex]
+\hline\hline
+ \multicolumn{1}{c|}{\textbf{COD}} & \multicolumn{1}{c}{\textbf{ESPECIFICAÇÃO}} \\
+
+\hline
+ \endfirsthead
+ \hline
+ \endhead
+ \endfoot
+
+ \hline\hline\hline
+ \endlastfoot
+ 1 & RECURSOS RECEBIDOS PARA LIVRE UTILIZAÇÃO\\
+2 & RECURSOS RECEBIDOS DE OUTRA UNIDADE ORÇAMENTÁRIA DO ORÇAMENTO FISCAL PARA LIVRE UTILIZAÇÃO\\
+3 & RECURSOS RECEBIDOS PARA CONTRAPARTIDA\\
+4 & RECURSOS RECEBIDOS PARA ATENDIMENTO DE DEMANDAS DE PARTICIPAÇÃO CIDADÃ\\
+5 & RECURSOS RECEBIDOS PARA BENEFÍCIOS PREVISTOS NO ART. 39 \& DA LEI COMPLEMENTAR 64/2002\\
+7 & RECURSOS RECEBIDOS PARA AUXÍLIOS DOENÇA, FUNERAL, ALIMENTAÇÃO E TRANSPORTE\\
+8 & RECURSOS RECEBIDOS PARA EMENDAS PARLAMENTARES\\
+9 & RECURSOS RECEBIDOS PARA PRECATÓRIOS E SENTENÇAS JUDICIAIS\\
+\end{longtable}
+
+
+\noindent\begin{longtable}[c]{m{1cm}|m{11cm}}
+
+\multicolumn{2}{c}{\cellcolor{gray!50} \textcolor{red} {\normalsize \textbf{IDENTIFICADORES DE AÇÃO GOVERNAMENTAL}}}\Tstrut  \\[2ex]
+\hline\hline
+ \multicolumn{1}{c|}{\textbf{COD}} & \multicolumn{1}{c}{\textbf{ESPECIFICAÇÃO}} \\
+
+\hline
+ \endfirsthead
+ \hline
+ \endhead
+ \endfoot
+ \hline\hline\hline
+ \endlastfoot
+0 & AÇÃO DE ACOMPANHAMENTO GERAL\\
+1 & AÇÃO DE ACOMPANHAMENTO INTENSIVO\\
+ \end{longtable}
+
+% Contra capa
+\newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+\includepdf[pages={177},scale=1.1]{06_LOA_Volume_V.pdf}
+% \Contra capa
+
+
+\end{document}
