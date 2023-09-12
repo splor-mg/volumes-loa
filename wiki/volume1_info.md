@@ -76,13 +76,6 @@ Utiliza em seu cálculo as seguintes funções:
 5- `relatorios::is_judiciario()`
 6- `relatorios::is_pgj()`
 
-
-## Tabela 20B Demonstrativo da Participação Percentual de Pessoal na Receita Corrente Líquida B – LRF e IN-TCMG
-
-Em `LOA/volume1/R/T20B_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_TCE.R` revisar, quando necessário, as deduções do TCE sobre a despesa de pessoal descritos em `is_deducoes_tce(base)`
-
-Ainda, depende de todas as funções descritas na **Tabela 20A** acima.
-
 ## Tabela 23 Demonstrativo do Serviço da Dívida Pública
 
 Em `LOA/volume1/R/T23_DCGF_Demonstrativo_do_Servico_da_divida_publica.R` atualizar:

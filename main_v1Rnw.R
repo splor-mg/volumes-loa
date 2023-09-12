@@ -41,10 +41,6 @@ source("volume1/R/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.R", 
 args <- "T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF"
 source("utils/Rnw2Tex.R" , encoding = "UTF-8")
 
-source("volume1/R/T20B_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.R", encoding = "UTF-8")
-args <- "T20B_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF"
-source("utils/Rnw2Tex.R" , encoding = "UTF-8")
-
 source("volume1/R/T23_DCGF_Demonstrativo_do_Servico_da_divida_publica.R", encoding = "UTF-8")
 args <- "T23_DCGF_Demonstrativo_do_Servico_da_divida_publica"
 source("utils/Rnw2Tex.R" , encoding = "UTF-8")
