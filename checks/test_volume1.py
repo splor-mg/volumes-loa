@@ -85,11 +85,6 @@ def test_volume1_t20():
     assert report.test_tex()
     assert report.test_pdf()
 
-def test_volume1_t20():
-    report = Report('T20B_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF', 'volume1')
-    assert report.test_tex()
-    assert report.test_pdf()
-
 def test_volume1_t23():
     report = Report('T23_DCGF_Demonstrativo_do_Servico_da_divida_publica', 'volume1')
     assert report.test_tex()

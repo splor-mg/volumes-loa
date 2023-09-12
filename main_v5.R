@@ -281,10 +281,6 @@ volume1/data/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.txt: volu
 @Rscript --encoding=utf-8 volume1/R/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.R 2>> logs/logv1.Rout
 
 
-# volume1/data/T20B_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_TCE.txt: volume1/R/T20B_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_TCE.R bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx
-# 	@echo "Atualizando volume1/data/T20B_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_TCE.txt..."
-# 	@Rscript --encoding=utf-8 volume1/R/T20B_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_TCE.R 2>> logs/logv1.Rout
-
 volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.csv: volume1/R/T1_DCGF_Demonstrativo_Consolidado_Orcamento_Fiscal.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx utils/suporte/V1/demonstr_consolidado.R
 @echo "Atualizando volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.csv"
 @echo "<Gerar pdf manualmente utilizando 'volume1/docs/01. Demonstrativo Consolidado do Orçamento Fiscal2018.xlsx' >"

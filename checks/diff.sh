@@ -47,8 +47,6 @@ elif [ $1 == "T19_DCGF_Demonstrativo_Aplicacao_Recursos_Amparo_Fomento_Pesquisa"
 then vol="volume1"
 elif [ $1 == "T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF" ]
 then vol="volume1"
-elif [ $1 == "T20B_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF" ]
-then vol="volume1"
 elif [ $1 == "T23_DCGF_Demonstrativo_do_Servico_da_divida_publica" ]
 then vol="volume1"
 elif [ $1 == "T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB" ]
