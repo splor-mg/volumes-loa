@@ -56,7 +56,7 @@
 %\SweaveOpts{concordance=TRUE}
 
 <<echo=FALSE>>=
-ANO_DOC = 2016 # Mudar apenas aqui
+ANO_DOC <- 2016 # Mudar apenas aqui
 @
 
 % Para evitar a hiphenizacao das palavras (wrap:break-word)
@@ -169,35 +169,44 @@ Superintendência Central de Planejamento e Orçamento
  \endlastfoot
 
 <<echo=FALSE, results=tex>>=
-consolidado = read.table("C:/Users/m1312932/SEPLAG/LOA/Volume 5/Bancos/consolidado.txt", header = T, sep = "\t", 
-                         quote = NULL,   dec = ",", stringsAsFactors = FALSE)
+consolidado <- read.table("C:/Users/m1312932/SEPLAG/LOA/Volume 5/Bancos/consolidado.txt",
+  header = T, sep = "\t",
+  quote = NULL, dec = ",", stringsAsFactors = FALSE
+)
 
-for(i in 1:nrow(consolidado)){
-  if(consolidado$codigo_texto[i]!="Total" & i<nrow(consolidado)){
+for (i in 1:nrow(consolidado)) {
+  if (consolidado$codigo_texto[i] != "Total" & i < nrow(consolidado)) {
     # Os condicionais a seguir tem como objetivo identar os codigos de despesa de acordo com os itens isolados e totais
-    if(substr(as.character(consolidado$codigo_texto[i]),3,3)=="0" | substr(as.character(consolidado$codigo_texto[i]),3,3)=="9"){
-  cat("\\multicolumn{3}{l|}{\\textbf{", as.character(consolidado$codigo_texto[i]), "}} & \\multicolumn{1}{L{8cm}|}{\\textit{", 
-      as.character(consolidado$especificacao[i]), "}} & \\multicolumn{1}{r|}{", 
-      as.character(consolidado$recurso_tesouro[i]) , "} & \\multicolumn{1}{r|}{", as.character(consolidado$outras_fontes[i]), 
-      "} &  \\multicolumn{1}{r}{", as.character(consolidado$total[i]), "}\\\\\n", sep="")
-    } else if(substr(as.character(consolidado$codigo_texto[i]),5,6)=="00"){
-  cat("\\multicolumn{1}{l}{} & \\multicolumn{2}{l|}{\\textbf{", as.character(consolidado$codigo_texto[i]), 
-      "}} & \\multicolumn{1}{L{8cm}|}{\\textit{", as.character(consolidado$especificacao[i]), "}} & \\multicolumn{1}{r|}{", 
-      as.character(consolidado$recurso_tesouro[i]) , "} & \\multicolumn{1}{r|}{", as.character(consolidado$outras_fontes[i]), 
-      "} &  \\multicolumn{1}{r}{", as.character(consolidado$total[i]), "}\\\\\n", sep="")
-    } else{
-      cat("\\multicolumn{1}{l}{} & \\multicolumn{1}{l}{} & \\multicolumn{1}{l|}{", as.character(consolidado$codigo_texto[i]), 
-          "} & \\multicolumn{1}{L{8cm}|}{\\textit{",as.character(consolidado$especificacao[i]), "}} & \\multicolumn{1}{r|}{", 
-          as.character(consolidado$recurso_tesouro[i]) , "} & \\multicolumn{1}{r|}{", as.character(consolidado$outras_fontes[i]),
-          "} &  \\multicolumn{1}{r}{", as.character(consolidado$total[i]), "}\\\\\n", sep="")
+    if (substr(as.character(consolidado$codigo_texto[i]), 3, 3) == "0" | substr(as.character(consolidado$codigo_texto[i]), 3, 3) == "9") {
+      cat("\\multicolumn{3}{l|}{\\textbf{", as.character(consolidado$codigo_texto[i]), "}} & \\multicolumn{1}{L{8cm}|}{\\textit{",
+        as.character(consolidado$especificacao[i]), "}} & \\multicolumn{1}{r|}{",
+        as.character(consolidado$recurso_tesouro[i]), "} & \\multicolumn{1}{r|}{", as.character(consolidado$outras_fontes[i]),
+        "} &  \\multicolumn{1}{r}{", as.character(consolidado$total[i]), "}\\\\\n",
+        sep = ""
+      )
+    } else if (substr(as.character(consolidado$codigo_texto[i]), 5, 6) == "00") {
+      cat("\\multicolumn{1}{l}{} & \\multicolumn{2}{l|}{\\textbf{", as.character(consolidado$codigo_texto[i]),
+        "}} & \\multicolumn{1}{L{8cm}|}{\\textit{", as.character(consolidado$especificacao[i]), "}} & \\multicolumn{1}{r|}{",
+        as.character(consolidado$recurso_tesouro[i]), "} & \\multicolumn{1}{r|}{", as.character(consolidado$outras_fontes[i]),
+        "} &  \\multicolumn{1}{r}{", as.character(consolidado$total[i]), "}\\\\\n",
+        sep = ""
+      )
+    } else {
+      cat("\\multicolumn{1}{l}{} & \\multicolumn{1}{l}{} & \\multicolumn{1}{l|}{", as.character(consolidado$codigo_texto[i]),
+        "} & \\multicolumn{1}{L{8cm}|}{\\textit{", as.character(consolidado$especificacao[i]), "}} & \\multicolumn{1}{r|}{",
+        as.character(consolidado$recurso_tesouro[i]), "} & \\multicolumn{1}{r|}{", as.character(consolidado$outras_fontes[i]),
+        "} &  \\multicolumn{1}{r}{", as.character(consolidado$total[i]), "}\\\\\n",
+        sep = ""
+      )
     }
   }
-  if (consolidado$codigo_texto[i]=="Total" & i==nrow(consolidado)){
-  cat("\\hline\n\\multicolumn{4}{c|}{\\textbf{", toupper(as.character(consolidado$codigo_texto[i])), 
-      "}} & \\multicolumn{1}{r|}{", as.character(consolidado$recurso_tesouro[i]) , "} & \\multicolumn{1}{r|}{", 
-      as.character(consolidado$outras_fontes[i]), "} &  \\multicolumn{1}{r}{", 
-      as.character(consolidado$total[i]), "}\n", sep="")
-    
+  if (consolidado$codigo_texto[i] == "Total" & i == nrow(consolidado)) {
+    cat("\\hline\n\\multicolumn{4}{c|}{\\textbf{", toupper(as.character(consolidado$codigo_texto[i])),
+      "}} & \\multicolumn{1}{r|}{", as.character(consolidado$recurso_tesouro[i]), "} & \\multicolumn{1}{r|}{",
+      as.character(consolidado$outras_fontes[i]), "} &  \\multicolumn{1}{r}{",
+      as.character(consolidado$total[i]), "}\n",
+      sep = ""
+    )
   }
 }
 @
@@ -220,119 +229,138 @@ for(i in 1:nrow(consolidado)){
 \setlength{\tabcolsep}{2.5pt}
 
 <<echo=FALSE, results=tex>>=
-banco = read.table("C:/Users/m1312932/SEPLAG/LOA/Volume 5/Bancos/QUADRO_DETALHAMENTO_DESPESA_porUO.txt", header = T, 
-                   sep = "\t", quote = NULL,   dec = ",", stringsAsFactors = FALSE)
+banco <- read.table("C:/Users/m1312932/SEPLAG/LOA/Volume 5/Bancos/QUADRO_DETALHAMENTO_DESPESA_porUO.txt",
+  header = T,
+  sep = "\t", quote = NULL, dec = ",", stringsAsFactors = FALSE
+)
 
-registro_orgao =c()
-registro_poder = c()
+registro_orgao <- c()
+registro_poder <- c()
 
-for(codigo_uo in unique(banco$COD_UO)){
+for (codigo_uo in unique(banco$COD_UO)) {
+  uo <- banco[banco$COD_UO == codigo_uo, ] # realizar recorte em loop
 
-  uo = banco[banco$COD_UO==codigo_uo,] # realizar recorte em loop
-  
-cat("\\renewcommand*{\\arraystretch}{1.9}\n")
-cat("\\scriptsize\n")
- cat("\\color{myblack}\n")
- cat("\\centering\n")
- 
- if((uo$poder[1] %in% registro_poder)==FALSE){
- cat("\\addcontentsline{toc}{section}{\\underline{",uo$poder[1] ,"}}\n")  
- }
- 
- registro_poder = append(registro_poder, uo$poder[1])
- 
- if((uo$COD_ORGAO[1] %in% registro_orgao)==FALSE){
- cat("\\addcontentsline{toc}{section}{",paste(substr(uo$COD_ORGAO[1],1,1),".", substr(uo$COD_ORGAO[1],2,3), ".", 
-                                                   substr(uo$COD_ORGAO[1],4,4), " - ", uo$ORGAO[1], sep=""),"}\n")  
- }
- 
- registro_orgao = append(registro_orgao, uo$COD_ORGAO[1])
- 
- cat("\\addcontentsline{toc}{subsection}{",paste(substr(uo$COD_UO[1],1,1),".", substr(uo$COD_UO[1],2,3), ".", 
-                                                   substr(uo$COD_UO[1],4,4), " - ", uo$UO[1], sep=""),"}\n")
- #cat("\\subsection*{",paste(substr(uo$COD_UO[1],1,1),".", substr(uo$COD_UO[1],2,3), ".", 
-    #                                               substr(uo$COD_UO[1],4,4), " - ", uo$UO[1], sep=""),"}\n")
- cat("\\noindent\\begin{longtable}[c]{m{5.5cm}|m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}|m{1pt}m{1pt}m{0.5pt}m{1pt}|m{1pt}|m{1pt}m{1pt}|m{1pt}|m{2pt}}\n")
-#cat("\\caption{",paste(substr(uo$COD_UO[1],1,1),".", substr(uo$COD_UO[1],2,3), ".", 
-                                                #   substr(uo$COD_UO[1],4,4), " - ", uo$UO[1], sep=""),"}\\\\\n")
+  cat("\\renewcommand*{\\arraystretch}{1.9}\n")
+  cat("\\scriptsize\n")
+  cat("\\color{myblack}\n")
+  cat("\\centering\n")
+
+  if ((uo$poder[1] %in% registro_poder) == FALSE) {
+    cat("\\addcontentsline{toc}{section}{\\underline{", uo$poder[1], "}}\n")
+  }
+
+  registro_poder <- append(registro_poder, uo$poder[1])
+
+  if ((uo$COD_ORGAO[1] %in% registro_orgao) == FALSE) {
+    cat("\\addcontentsline{toc}{section}{", paste(substr(uo$COD_ORGAO[1], 1, 1), ".", substr(uo$COD_ORGAO[1], 2, 3), ".",
+      substr(uo$COD_ORGAO[1], 4, 4), " - ", uo$ORGAO[1],
+      sep = ""
+    ), "}\n")
+  }
+
+  registro_orgao <- append(registro_orgao, uo$COD_ORGAO[1])
+
+  cat("\\addcontentsline{toc}{subsection}{", paste(substr(uo$COD_UO[1], 1, 1), ".", substr(uo$COD_UO[1], 2, 3), ".",
+    substr(uo$COD_UO[1], 4, 4), " - ", uo$UO[1],
+    sep = ""
+  ), "}\n")
+  # cat("\\subsection*{",paste(substr(uo$COD_UO[1],1,1),".", substr(uo$COD_UO[1],2,3), ".",
+  #                                               substr(uo$COD_UO[1],4,4), " - ", uo$UO[1], sep=""),"}\n")
+  cat("\\noindent\\begin{longtable}[c]{m{5.5cm}|m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}|m{1pt}m{1pt}m{0.5pt}m{1pt}|m{1pt}|m{1pt}m{1pt}|m{1pt}|m{2pt}}\n")
+  # cat("\\caption{",paste(substr(uo$COD_UO[1],1,1),".", substr(uo$COD_UO[1],2,3), ".",
+  #   substr(uo$COD_UO[1],4,4), " - ", uo$UO[1], sep=""),"}\\\\\n")
   cat("% Inicio cabeçalho\n")
-   cat("\\multicolumn{16}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize \\textbf{QUADRO DE DETALHAMENTO DA DESPESA - FISCAL}}}\\TBstrut  \\\\[2ex]\n")
- cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
- cat("\\multicolumn{15}{l}{\\textbf{Exercício:} \\textcolor{myblack}{", uo$ANO[1] ,"}} & \\multicolumn{1}{r}{ R\\$1,00} \\\\\n")
-cat("\\multicolumn{16}{L{15cm}}{\\textbf{ÓRGÃO:}", paste(substr(uo$COD_ORGAO[1],1,1),".", substr(uo$COD_ORGAO[1],2,3), ".", 
-                                                   substr(uo$COD_ORGAO[1],4,4), " - ", uo$ORGAO[1], sep=""), "} \\\\\n")
- cat("\\multicolumn{16}{L{15cm}}{\\textbf{UO:} \\hspace{13pt} ", paste(substr(uo$COD_UO[1],1,1),".", 
-                                                                       substr(uo$COD_UO[1],2,3), ".", 
-                                                                       substr(uo$COD_UO[1],4,4), " - ", 
-                                                                       uo$UO[1], sep="") ,"} \\\\\n")
- cat("\\specialrule{1pt}{0pt}{0pt}\n")
- cat("% Fim cabeçalho\n")
- 
- 
- cat("\\multirow{2}{3pt}{ESPECIFICAÇÃO} & \\multicolumn{13}{|c|}{CLASSIFICAÇÃO ORÇAMENTÁRIA} & \\multicolumn{2}{c}{IMPORTÂNCIA} \\\\\n")
-cat("\\cline{2-16}\n")
-cat("& \\multicolumn{1}{|c}{\\fonteSeis FUN} & \\multicolumn{1}{c}{\\fonteSeis SUBF} & \\multicolumn{1}{c}{\\fonteSeis PRG} & \\multicolumn{1}{c}{\\fonteSeis ID} & \\multicolumn{1}{c}{\\fonteSeis P/A} & \\multicolumn{1}{c|}{\\fonteSeis C/A} & \\multicolumn{1}{c}{\\fonteSeis C} & \\multicolumn{1}{c}{\\fonteSeis GD} & \\multicolumn{1}{c}{\\fonteSeis M} & \\multicolumn{1}{c|}{\\fonteSeis ED} & \\multicolumn{1}{c|}{\\fonteSeis IAG} & \\multicolumn{1}{c}{\\fonteSeis F/} & \\multicolumn{1}{c|}{\\fonteSeis IPU} & \\multicolumn{1}{c|}{\\fonteSeis DETALHADA} & \\multicolumn{1}{c}{\\fonteSeis TOTAL} \\\\\n")
- 
- 
- 
- cat("\\hline\n")
- cat("\\endfirsthead\n")
- 
-  cat("% Inicio cabeçalho\n")
-   cat("\\multicolumn{16}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize \\textbf{QUADRO DE DETALHAMENTO DA DESPESA - FISCAL}}}\\TBstrut  \\\\[2ex]\n")
- cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
- cat("\\multicolumn{15}{l}{\\scriptsize \\textbf{Exercício:} \\textcolor{myblack}{", uo$ANO[1] ,"}} & \\multicolumn{1}{r}{\\scriptsize R\\$1,00} \\\\\n")
-cat("\\multicolumn{16}{L{15cm}}{\\textbf{ÓRGÃO:}", paste(substr(uo$COD_ORGAO[1],1,1),".", substr(uo$COD_ORGAO[1],2,3), ".", 
-                                                   substr(uo$COD_ORGAO[1],4,4), " - ", uo$ORGAO[1], sep=""), "} \\\\\n")
- cat("\\multicolumn{16}{L{15cm}}{\\textbf{UO:} \\hspace{13pt} ", paste(substr(uo$COD_UO[1],1,1),".", 
-                                                                       substr(uo$COD_UO[1],2,3), ".", 
-                                                                       substr(uo$COD_UO[1],4,4), " - ", 
-                                                                       uo$UO[1], sep="") ,"} \\\\\n")
- cat("\\specialrule{1pt}{0pt}{0pt}\n")
- cat("% Fim cabeçalho\n")
- 
- 
- cat("\\multirow{2}{3pt}{ESPECIFICAÇÃO} & \\multicolumn{13}{|c|}{CLASSIFICAÇÃO ORÇAMENTÁRIA} & \\multicolumn{2}{c}{IMPORTÂNCIA} \\\\\n")
-cat("\\cline{2-16}\n")
- cat("& \\multicolumn{1}{|c}{\\fonteSeis FUN} & \\multicolumn{1}{c}{\\fonteSeis SUBF} & \\multicolumn{1}{c}{\\fonteSeis PRG} & \\multicolumn{1}{c}{\\fonteSeis ID} & \\multicolumn{1}{c}{\\fonteSeis P/A} & \\multicolumn{1}{c|}{\\fonteSeis C/A} & \\multicolumn{1}{c}{\\fonteSeis C} & \\multicolumn{1}{c}{\\fonteSeis GD} & \\multicolumn{1}{c}{\\fonteSeis M} & \\multicolumn{1}{c|}{\\fonteSeis ED} & \\multicolumn{1}{c|}{\\fonteSeis IAG} & \\multicolumn{1}{c}{\\fonteSeis F/} & \\multicolumn{1}{c|}{\\fonteSeis IPU} & \\multicolumn{1}{c|}{\\fonteSeis DETALHADA} & \\multicolumn{1}{c}{\\fonteSeis TOTAL} \\\\\n")
- 
-  
- cat("\\hline\n")
- cat("\\endhead\n")
+  cat("\\multicolumn{16}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize \\textbf{QUADRO DE DETALHAMENTO DA DESPESA - FISCAL}}}\\TBstrut  \\\\[2ex]\n")
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat("\\multicolumn{15}{l}{\\textbf{Exercício:} \\textcolor{myblack}{", uo$ANO[1], "}} & \\multicolumn{1}{r}{ R\\$1,00} \\\\\n")
+  cat("\\multicolumn{16}{L{15cm}}{\\textbf{ÓRGÃO:}", paste(substr(uo$COD_ORGAO[1], 1, 1), ".", substr(uo$COD_ORGAO[1], 2, 3), ".",
+    substr(uo$COD_ORGAO[1], 4, 4), " - ", uo$ORGAO[1],
+    sep = ""
+  ), "} \\\\\n")
+  cat("\\multicolumn{16}{L{15cm}}{\\textbf{UO:} \\hspace{13pt} ", paste(substr(uo$COD_UO[1], 1, 1), ".",
+    substr(uo$COD_UO[1], 2, 3), ".",
+    substr(uo$COD_UO[1], 4, 4), " - ",
+    uo$UO[1],
+    sep = ""
+  ), "} \\\\\n")
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat("% Fim cabeçalho\n")
 
- cat("\\endfoot\n")
- 
- cat("\\hline\n")
 
- cat("\\hline\\hline\n")
- cat("\\endlastfoot\n")
- for(i in 1:nrow(uo)){
-if(uo$NOME_ACAO[i]!="Total" & uo$NOME_ACAO[i]!=""){
-   cat("\\multicolumn{1}{L{5.5cm}|}{",uo$NOME_ACAO[i],"} & \\multicolumn{1}{c}{", 
-      formatC(uo$FUNCAO[i], width = 2, flag = "0"),"} & \\multicolumn{1}{c}{", 
-      formatC(uo$SUB_FUNCAO[i], width = 3, flag = "0"), "} & \\multicolumn{1}{c}{", 
-      uo$PROGRAMA[i],"} & \\multicolumn{1}{l}{", uo$IDENT_PROJATIV[i],
-      "} & \\multicolumn{1}{c}{",  formatC(uo$PROJ_ATIV[i], width = 3, flag = "0"),
-      "} & \\multicolumn{1}{l|}{",  
-      formatC(uo$SUB_PROJETO[i], width = 4, flag = "0"), 
-      "} & & & & & & & & & \\multicolumn{1}{r}{", uo$valor_final[i], "} \\\\\n")
-}
-if(uo$NOME_ACAO[i]!="Total" & uo$NOME_ACAO[i]==""){
-  cat("& & & & & & & \\multicolumn{1}{c}{", uo$CATEGORIA[i], "} & \\multicolumn{1}{c}{", uo$GRUPO_DESPESA[i], 
-      "} & \\multicolumn{1}{c}{", uo$MODALIDADE[i], "} & \\multicolumn{1}{c|}{", 
-      formatC(uo$ELEMENTO_DESPESA[i], width = 2, flag = "0"), 
-      "} & \\multicolumn{1}{c|}{",uo$IAG[i],"} & \\multicolumn{1}{l}{", uo$FONTE[i],"} & \\multicolumn{1}{c|}{", 
-      uo$IPU[i], "} & \\multicolumn{1}{r|}{", uo$valor_final[i], "} & \\\\\n")
-}
-if(uo$NOME_ACAO[i]=="Total"){
+  cat("\\multirow{2}{3pt}{ESPECIFICAÇÃO} & \\multicolumn{13}{|c|}{CLASSIFICAÇÃO ORÇAMENTÁRIA} & \\multicolumn{2}{c}{IMPORTÂNCIA} \\\\\n")
+  cat("\\cline{2-16}\n")
+  cat("& \\multicolumn{1}{|c}{\\fonteSeis FUN} & \\multicolumn{1}{c}{\\fonteSeis SUBF} & \\multicolumn{1}{c}{\\fonteSeis PRG} & \\multicolumn{1}{c}{\\fonteSeis ID} & \\multicolumn{1}{c}{\\fonteSeis P/A} & \\multicolumn{1}{c|}{\\fonteSeis C/A} & \\multicolumn{1}{c}{\\fonteSeis C} & \\multicolumn{1}{c}{\\fonteSeis GD} & \\multicolumn{1}{c}{\\fonteSeis M} & \\multicolumn{1}{c|}{\\fonteSeis ED} & \\multicolumn{1}{c|}{\\fonteSeis IAG} & \\multicolumn{1}{c}{\\fonteSeis F/} & \\multicolumn{1}{c|}{\\fonteSeis IPU} & \\multicolumn{1}{c|}{\\fonteSeis DETALHADA} & \\multicolumn{1}{c}{\\fonteSeis TOTAL} \\\\\n")
+
+
+
   cat("\\hline\n")
-  cat("\\multicolumn{15}{C{6cm}|}{\\textbf{",toupper(uo$NOME_ACAO[i]),
-      "}} & \\multicolumn{1}{r}{\\textbf{", uo$valor_final[i], "}} \\\\\n")
-}
-}
-cat("\\end{longtable}\n")
-cat("\\newpage\n")
-cat("\\phantomsection\n")
+  cat("\\endfirsthead\n")
+
+  cat("% Inicio cabeçalho\n")
+  cat("\\multicolumn{16}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize \\textbf{QUADRO DE DETALHAMENTO DA DESPESA - FISCAL}}}\\TBstrut  \\\\[2ex]\n")
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat("\\multicolumn{15}{l}{\\scriptsize \\textbf{Exercício:} \\textcolor{myblack}{", uo$ANO[1], "}} & \\multicolumn{1}{r}{\\scriptsize R\\$1,00} \\\\\n")
+  cat("\\multicolumn{16}{L{15cm}}{\\textbf{ÓRGÃO:}", paste(substr(uo$COD_ORGAO[1], 1, 1), ".", substr(uo$COD_ORGAO[1], 2, 3), ".",
+    substr(uo$COD_ORGAO[1], 4, 4), " - ", uo$ORGAO[1],
+    sep = ""
+  ), "} \\\\\n")
+  cat("\\multicolumn{16}{L{15cm}}{\\textbf{UO:} \\hspace{13pt} ", paste(substr(uo$COD_UO[1], 1, 1), ".",
+    substr(uo$COD_UO[1], 2, 3), ".",
+    substr(uo$COD_UO[1], 4, 4), " - ",
+    uo$UO[1],
+    sep = ""
+  ), "} \\\\\n")
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat("% Fim cabeçalho\n")
+
+
+  cat("\\multirow{2}{3pt}{ESPECIFICAÇÃO} & \\multicolumn{13}{|c|}{CLASSIFICAÇÃO ORÇAMENTÁRIA} & \\multicolumn{2}{c}{IMPORTÂNCIA} \\\\\n")
+  cat("\\cline{2-16}\n")
+  cat("& \\multicolumn{1}{|c}{\\fonteSeis FUN} & \\multicolumn{1}{c}{\\fonteSeis SUBF} & \\multicolumn{1}{c}{\\fonteSeis PRG} & \\multicolumn{1}{c}{\\fonteSeis ID} & \\multicolumn{1}{c}{\\fonteSeis P/A} & \\multicolumn{1}{c|}{\\fonteSeis C/A} & \\multicolumn{1}{c}{\\fonteSeis C} & \\multicolumn{1}{c}{\\fonteSeis GD} & \\multicolumn{1}{c}{\\fonteSeis M} & \\multicolumn{1}{c|}{\\fonteSeis ED} & \\multicolumn{1}{c|}{\\fonteSeis IAG} & \\multicolumn{1}{c}{\\fonteSeis F/} & \\multicolumn{1}{c|}{\\fonteSeis IPU} & \\multicolumn{1}{c|}{\\fonteSeis DETALHADA} & \\multicolumn{1}{c}{\\fonteSeis TOTAL} \\\\\n")
+
+
+  cat("\\hline\n")
+  cat("\\endhead\n")
+
+  cat("\\endfoot\n")
+
+  cat("\\hline\n")
+
+  cat("\\hline\\hline\n")
+  cat("\\endlastfoot\n")
+  for (i in 1:nrow(uo)) {
+    if (uo$NOME_ACAO[i] != "Total" & uo$NOME_ACAO[i] != "") {
+      cat(
+        "\\multicolumn{1}{L{5.5cm}|}{", uo$NOME_ACAO[i], "} & \\multicolumn{1}{c}{",
+        formatC(uo$FUNCAO[i], width = 2, flag = "0"), "} & \\multicolumn{1}{c}{",
+        formatC(uo$SUB_FUNCAO[i], width = 3, flag = "0"), "} & \\multicolumn{1}{c}{",
+        uo$PROGRAMA[i], "} & \\multicolumn{1}{l}{", uo$IDENT_PROJATIV[i],
+        "} & \\multicolumn{1}{c}{", formatC(uo$PROJ_ATIV[i], width = 3, flag = "0"),
+        "} & \\multicolumn{1}{l|}{",
+        formatC(uo$SUB_PROJETO[i], width = 4, flag = "0"),
+        "} & & & & & & & & & \\multicolumn{1}{r}{", uo$valor_final[i], "} \\\\\n"
+      )
+    }
+    if (uo$NOME_ACAO[i] != "Total" & uo$NOME_ACAO[i] == "") {
+      cat(
+        "& & & & & & & \\multicolumn{1}{c}{", uo$CATEGORIA[i], "} & \\multicolumn{1}{c}{", uo$GRUPO_DESPESA[i],
+        "} & \\multicolumn{1}{c}{", uo$MODALIDADE[i], "} & \\multicolumn{1}{c|}{",
+        formatC(uo$ELEMENTO_DESPESA[i], width = 2, flag = "0"),
+        "} & \\multicolumn{1}{c|}{", uo$IAG[i], "} & \\multicolumn{1}{l}{", uo$FONTE[i], "} & \\multicolumn{1}{c|}{",
+        uo$IPU[i], "} & \\multicolumn{1}{r|}{", uo$valor_final[i], "} & \\\\\n"
+      )
+    }
+    if (uo$NOME_ACAO[i] == "Total") {
+      cat("\\hline\n")
+      cat(
+        "\\multicolumn{15}{C{6cm}|}{\\textbf{", toupper(uo$NOME_ACAO[i]),
+        "}} & \\multicolumn{1}{r}{\\textbf{", uo$valor_final[i], "}} \\\\\n"
+      )
+    }
+  }
+  cat("\\end{longtable}\n")
+  cat("\\newpage\n")
+  cat("\\phantomsection\n")
 }
 @
 
