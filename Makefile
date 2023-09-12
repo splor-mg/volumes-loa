@@ -54,17 +54,13 @@ check:
 # TARGETS
 
 # Volume 6
-pdf/Projeto_volume6.pdf: volume6/data/*.txt volume6/Rnw/ANEXOS.Rnw volume6/Rnw/capaLOA.pdf \
+pdf/Projeto_volume6.pdf: volume6/Rnw/ANEXOS.Rnw volume6/Rnw/capaLOA.pdf \
 						 volume6/Rnw/load_bibliotecas.tex volume6/Rnw/Projeto_volume6.Rnw volume6/Rnw/QUADRO_DETALHAMENTO_DESPESA.Rnw \
 						 bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_fontes_de_recursos.xlsx bancos/manual/desc_IAG.xlsx bancos/manual/desc_IPU.xlsx
 	@echo "- Gera logs/warningsV6.Rout"
 	@Rscript --verbose --encoding=utf-8 volume6/Rnw/CodigosR/Projeto_volume6.R 2> logs/warningsV6.Rout >&-
 	@Rscript utils/Rnw2Tex.R 6
 	@echo "---------------------------------------------------------------"
-
-volume6/data/*.txt: volume6/R/volume6.R bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
-	@echo "Atualizando v6/data/ consolidado.txt e QUADRO_DETALHAMENTO_DESPESA_porUO.txt..."
-	@Rscript --verbose --encoding=utf-8 $< 2>> logs/logv6.Rout
 
 # Volume 5
 pdf/Projeto_volume5.pdf: $(DEPENDENCIAS_V5)
