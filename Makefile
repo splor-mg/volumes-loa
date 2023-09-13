@@ -27,7 +27,7 @@ v4: pdf/Projeto_volume4.pdf ## Gera volume 4
 
 v5: pdf/Projeto_volume5.pdf ## Gera volume 5
 
-v6: pdf/Projeto_volume6.pdf ## Gera volume 6
+v6: pdf/Projeto_volume6A.pdf pdf/Projeto_volume6B.pdf ## Gera volume 6
 
 clean: ## Organiza os arquivos auxiliares e outputs da compilação latex. Ex. argumento vol=5. origem=1 limpa o dir principal.
 	@Rscript --verbose utils/limpaDir.R $(vol) $(origem)
@@ -54,14 +54,25 @@ check:
 # TARGETS
 
 # Volume 6
-pdf/Projeto_volume6.pdf: volume6/data/*.txt volume6/Rnw/ANEXOS.Rnw volume6/Rnw/capaLOA.pdf \
-						 volume6/Rnw/load_bibliotecas.tex volume6/Rnw/Projeto_volume6.Rnw volume6/Rnw/QUADRO_DETALHAMENTO_DESPESA.Rnw \
+pdf/Projeto_volume6A.pdf: volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt volume6/Rnw/ANEXOS.Rnw volume6/Rnw/capaLOA.pdf \
+						 volume6/Rnw/load_bibliotecas.tex volume6/Rnw/Projeto_volume6A.Rnw volume6/Rnw/QUADRO_DETALHAMENTO_DESPESA.Rnw \
 						 bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_fontes_de_recursos.xlsx bancos/manual/desc_IAG.xlsx bancos/manual/desc_IPU.xlsx
-	@echo "- Gera logs/warningsV6.Rout"
-	Rscript utils/Rnw2Tex.R 6
+	@echo "- Gera logs/warningsV6A.Rout"
+	touch logs/warningsV6A.Rout
+	Rscript utils/Rnw2Tex.R 6A
 	@echo "---------------------------------------------------------------"
 
-volume6/data/*.txt: volume6/R/volume6.R bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt: volume6/R/volume6A.R bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+	@echo "Atualizando dados..."
+	Rscript --verbose --encoding=utf-8 $< 2>> logs/logv6.Rout
+
+pdf/Projeto_volume6B.pdf: volume6/data/receita_fonte_stn.txt volume6/Rnw/Projeto_volume6B.Rnw
+	@echo "- Gera logs/warningsV6B.Rout"
+	touch logs/warningsV6B.Rout
+	Rscript utils/Rnw2Tex.R 6B
+	@echo "---------------------------------------------------------------"
+
+volume6/data/receita_fonte_stn.txt: volume6/R/volume6B.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_FONTE_STN.xlsx
 	@echo "Atualizando dados..."
 	Rscript --verbose --encoding=utf-8 $< 2>> logs/logv6.Rout
 

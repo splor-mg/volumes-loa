@@ -13,7 +13,9 @@ elif [ $1 == "Projeto_volume4" ]
 then vol="volume4"
 elif [ $1 == "Projeto_volume5" ]
 then vol="volume5"
-elif [ $1 == "Projeto_volume6" ]
+elif [ $1 == "Projeto_volume6A" ]
+then vol="volume6"
+elif [ $1 == "Projeto_volume6B" ]
 then vol="volume6"
 elif [ $1 == "T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL" ]
 then vol="volume1"
