@@ -56,7 +56,7 @@ check:
 # Volume 6
 pdf/Projeto_volume6A.pdf: volume6/data/receita_fonte_stn.txt volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt volume6/Rnw/ANEXOS.Rnw volume6/Rnw/capaLOA.pdf \
 						 volume6/Rnw/load_bibliotecas.tex volume6/Rnw/Projeto_volume6A.Rnw volume6/Rnw/QUADRO_DETALHAMENTO_DESPESA.Rnw \
-						 bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_fontes_de_recursos.xlsx bancos/manual/desc_IAG.xlsx bancos/manual/desc_IPU.xlsx
+						 bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_fontes_de_recursos_stn.xlsx bancos/manual/desc_IAG.xlsx bancos/manual/desc_IPU.xlsx
 	@echo "- Gera logs/warningsV6A.Rout"
 	touch logs/warningsV6A.Rout
 	Rscript utils/Rnw2Tex.R 6A

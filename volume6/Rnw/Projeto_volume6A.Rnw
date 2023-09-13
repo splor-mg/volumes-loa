@@ -55,8 +55,8 @@ Superintendência Central de Planejamento e Orçamento \\
  %\fontsize{50pt}{10pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
 
 \vspace*{5em}
-\fontsize{15pt}{12pt}\selectfont {\textbf{VOLUME V}} \\
-\large{QUADROS DE DETALHAMENTO DA DESPESA}
+\fontsize{15pt}{12pt}\selectfont {\textbf{VOLUME AUXILIAR}} \\
+\large{PORTARIA Nº 710, DE 25 DE FEVEREIRO DE 2021}
 
 \end{center}
 

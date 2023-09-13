@@ -109,3 +109,11 @@ Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6B.R'
 
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6B.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6A.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion

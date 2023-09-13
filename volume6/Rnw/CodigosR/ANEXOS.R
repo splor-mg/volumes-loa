@@ -5,7 +5,7 @@ cat("\\footnotesize\n")
 cat("\\renewcommand*{\\arraystretch}{2}\n") 
 cat(.libPaths()) 
 grupo_despesa <- data.table(read_excel(paste0(dir_bancos, "/manual/desc_grupos_de_despesa.xlsx"), sheet = 1))[order(CODIGO)] 
-fontes <- data.table(read_excel(paste0(dir_bancos, "/manual/desc_fontes_de_recursos.xlsx"), sheet = 1))[order(CODIGO)] 
+fontes <- data.table(read_excel(paste0(dir_bancos, "/manual/desc_fontes_de_recursos_stn.xlsx"), sheet = 1))[order(CODIGO)] 
 iag <- data.table(read_excel(paste0(dir_bancos, "/manual/desc_IAG.xlsx"), sheet = 1))[order(CODIGO)] 
 ipu <- data.table(read_excel(paste0(dir_bancos, "/manual/desc_IPU.xlsx"), sheet = 1))[order(CODIGO)] 
  
