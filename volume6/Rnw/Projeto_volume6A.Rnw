@@ -19,6 +19,7 @@ ANO_DOC <- as.numeric(readLines(paste(dir_utils, "ano.txt", sep = ""), warn = F)
 # Recortes dos arquivos Rnw para obter os códigos em R
 source(paste(dir_utils, "funcoes.R", sep = ""))
 
+getCodigoR(paste(dir_latex, "/Projeto_volume6B.Rnw", sep = ""), dir_codigosR)
 getCodigoR(paste(dir_latex, "/QUADRO_DETALHAMENTO_DESPESA.Rnw", sep = ""), dir_codigosR)
 getCodigoR(paste(dir_latex, "/QUADRO_DETALHAMENTO_DESPESA_PROPOSTA_OUTROS_PODERES.Rnw", sep = ""), dir_codigosR)
 getCodigoR(paste(dir_latex, "/ANEXOS.Rnw", sep = ""), dir_codigosR)
@@ -71,6 +72,44 @@ Superintendência Central de Planejamento e Orçamento \\
 \tableofcontents
 \newpage
 % \Sumario
+
+% INICIO QUADRO GERAL DA RECEITA
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\phantomsection
+%\addtocontents{toc}{\cftpagenumbersoff{section}}
+\restoregeometry
+\vspace*{9cm}
+\addcontentsline{toc}{section}{ QUADRO GERAL DA RECEITA }
+\centering \Huge {\textbf{QUADRO GERAL DA RECEITA}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+% \Pagina iniciando QUADRO GERAL DA RECEITA
+
+\newgeometry{left=1cm,right=1cm, top=2cm}
+
+\renewcommand*{\arraystretch}{1.9}
+ \scriptsize
+ \color{myblack}
+ \centering
+ 
+\newpage
+<<quadro_geral_da_receita, results=tex, echo=F>>=
+  
+  # INICIO TABELA
+  
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_codigosR = paste0(dir_loa, "/volume6/Rnw/CodigosR")
+  dir_utils = paste0(dir_loa, "/utils/")
+  dir_data = paste0(dir_loa, "/volume6/data")
+  dir_bancos = paste0(dir_loa, "/bancos")
+  source(paste(dir_utils, "funcoes.R", sep=""))
+  ANO_DOC = as.numeric(readLines(paste(dir_utils, "ano.txt", sep=""), warn = F))
+  
+  source(paste(dir_codigosR, "/Projeto_volume6B.R", sep=""), encoding = "UTF-8")
+@
+
+\newpage
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
 
 % Pagina iniciando DEMONSTRATIVOS POR ORGAO E ENTIDADE
 \phantomsection

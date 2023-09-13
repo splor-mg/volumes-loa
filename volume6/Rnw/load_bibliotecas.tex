@@ -10,6 +10,7 @@
 %\usepackage{pdflscape}
 \usepackage[table]{xcolor}
 \usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{202F}{\hspace{0pt}}
 \usepackage{booktabs}
 \usepackage{geometry}
 \usepackage{array}
@@ -19,6 +20,7 @@
 \usepackage{pdfpages}
 \graphicspath{ {img/} }
 \usepackage[hidelinks]{hyperref}
+\usepackage{ragged2e}
 \usepackage{afterpage}
 \usepackage{scrextend} % ifelse para p?ginas pares e ?mpares
 \usepackage{gensymb}
@@ -33,6 +35,8 @@
 
 \newcolumntype{C}[1]{>{\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{J}[1]{>{\justifying\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 \newcommand{\tab}[1]{\hspace{13pt}\rlap{#1}}
 

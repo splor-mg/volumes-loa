@@ -46,7 +46,6 @@ REPORTS = [
         Report('Projeto_volume4', 'volume4'),
         Report('Projeto_volume5', 'volume5'),
         Report('Projeto_volume6A', 'volume6'),
-        Report('Projeto_volume6B', 'volume6'),
     ]
 
 def validate_report_name(report_names: str):
