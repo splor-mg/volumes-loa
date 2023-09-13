@@ -1,1565 +1,1624 @@
 {
   "name": "loa-elaboracao",
-  "profile": "tabular-data-package",
   "resources": [
     {
       "name": "base_orcam_despesa_item_fiscal",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_orcam_despesa_item_fiscal.csv",
+      "title": "Orçamento da Despesa Fiscal / Itens de Despesa",
+      "path": "data-raw/base_orcam_despesa_item_fiscal.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:647c615c05f5e875abf9c0625b8629a2a16a1e351bf1f610f6d6d31df30f02b2",
-      "bytes": 2374266,
-      "fields": 21,
-      "rows": 10723,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
-            "name": "ORGAO_COD",
+            "name": "Código do Órgão",
             "type": "integer",
-            "source": "Código do Órgão"
+            "target": "ORGAO_COD"
           },
           {
-            "name": "ORGAO_NOME_SIGLA",
+            "name": "Órgão",
             "type": "string",
-            "source": "Órgão"
+            "target": "ORGAO_NOME_SIGLA"
           },
           {
-            "name": "UO_COD",
+            "name": "Código da UO",
             "type": "integer",
-            "source": "Código da UO"
+            "target": "UO_COD"
           },
           {
-            "name": "UO_NOME_SIGLA",
+            "name": "Unidade Orçamentária",
             "type": "string",
-            "source": "Unidade Orçamentária"
+            "target": "UO_NOME_SIGLA"
           },
           {
-            "name": "FUNCAO_COD",
+            "name": "Função",
             "type": "integer",
-            "source": "Função"
+            "target": "FUNCAO_COD"
           },
           {
-            "name": "SUBFUNCAO_COD",
+            "name": "Subfunção",
             "type": "integer",
-            "source": "Subfunção"
+            "target": "SUBFUNCAO_COD"
           },
           {
-            "name": "PROGRAMA_COD",
+            "name": "Programa",
             "type": "integer",
-            "source": "Programa"
+            "target": "PROGRAMA_COD"
           },
           {
-            "name": "IDENTIFICADOR",
+            "name": "Identificador",
             "type": "integer",
-            "source": "Identificador"
+            "target": "IDENTIFICADOR"
           },
           {
-            "name": "PROJETO_ATIVIDADE",
+            "name": "Projeto_Atividade",
             "type": "integer",
-            "source": "Projeto_Atividade"
+            "target": "PROJETO_ATIVIDADE"
           },
           {
-            "name": "ACAO_COD",
+            "name": "Ação",
             "type": "integer",
-            "source": "Ação"
+            "target": "ACAO_COD"
           },
           {
-            "name": "SUBPROJETO_COD",
+            "name": "Subprojeto",
             "type": "integer",
-            "source": "Subprojeto"
+            "target": "SUBPROJETO_COD"
           },
           {
-            "name": "CATEGORIA_COD",
+            "name": "Categoria",
             "type": "integer",
-            "source": "Categoria"
+            "target": "CATEGORIA_COD"
           },
           {
-            "name": "GRUPO_COD",
+            "name": "Grupo_Despesa",
             "type": "integer",
-            "source": "Grupo_Despesa"
+            "target": "GRUPO_COD"
           },
           {
-            "name": "MODALIDADE_COD",
+            "name": "Modalidade",
             "type": "integer",
-            "source": "Modalidade"
+            "target": "MODALIDADE_COD"
           },
           {
-            "name": "ELEMENTO_COD",
+            "name": "Elemento_Despesa",
             "type": "integer",
-            "source": "Elemento_Despesa"
+            "target": "ELEMENTO_COD"
           },
           {
-            "name": "ITEM_COD",
+            "name": "Item_Despesa",
             "type": "integer",
-            "source": "Item_Despesa"
+            "target": "ITEM_COD"
           },
           {
-            "name": "FONTE_COD",
+            "name": "Fonte",
             "type": "integer",
-            "source": "Fonte"
+            "target": "FONTE_COD"
           },
           {
-            "name": "IPU_COD",
+            "name": "IPU",
             "type": "integer",
-            "source": "IPU"
+            "target": "IPU_COD"
           },
           {
-            "name": "IAG_COD",
+            "name": "IAG",
             "type": "integer",
-            "source": "IAG"
+            "target": "IAG_COD"
           },
           {
-            "name": "ACAO_DESC",
+            "name": "Descrição",
             "type": "string",
-            "source": "Descrição"
+            "target": "ACAO_DESC"
           },
           {
-            "name": "VL_LOA_DESP",
+            "name": "Valor (R$)",
             "type": "number",
-            "source": "Valor (R$)"
+            "decimalChar": ",",
+            "groupChar": ".",
+            "target": "VL_LOA_DESP"
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 1,
+        "CmNomePlanilha": "BASE_ORCAM_DESPESA_ITEM_FISCAL.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 1
       }
     },
     {
       "name": "base_qdd_plurianual",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_qdd_plurianual.csv",
+      "title": "Detalhamento Plurianual Fiscal",
+      "path": "data-raw/base_qdd_plurianual.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:6a8a41eaf8b2cf414140e0f2529d1e2e13f99133dd4a2247bd7c6091fb724d60",
-      "bytes": 680250,
-      "fields": 23,
-      "rows": 2376,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
             "name": "ANO",
             "type": "integer",
-            "source": "ANO"
+            "target": "ANO"
           },
           {
-            "name": "ORGAO_COD",
+            "name": "COD_ORGAO",
             "type": "integer",
-            "source": "COD_ORGAO"
+            "target": "ORGAO_COD"
           },
           {
-            "name": "ORGAO_NOME_SIGLA",
+            "name": "DESC_ORGAO",
             "type": "string",
-            "source": "DESC_ORGAO"
+            "target": "ORGAO_NOME_SIGLA"
           },
           {
-            "name": "UO_COD",
+            "name": "COD_UO",
             "type": "integer",
-            "source": "COD_UO"
+            "target": "UO_COD"
           },
           {
-            "name": "UO_NOME_SIGLA",
+            "name": "DESC_UO",
             "type": "string",
-            "source": "DESC_UO"
+            "target": "UO_NOME_SIGLA"
           },
           {
-            "name": "FUNCAO_COD",
+            "name": "FUNCAO",
             "type": "integer",
-            "source": "FUNCAO"
+            "target": "FUNCAO_COD"
           },
           {
-            "name": "SUBFUNCAO_COD",
+            "name": "SUBFUNCAO",
             "type": "integer",
-            "source": "SUBFUNCAO"
+            "target": "SUBFUNCAO_COD"
           },
           {
-            "name": "PROGRAMA_COD",
+            "name": "COD_PROGRAMA",
             "type": "integer",
-            "source": "COD_PROGRAMA"
+            "target": "PROGRAMA_COD"
           },
           {
             "name": "IDENT_PROJATIV",
-            "type": "integer",
-            "source": "IDENT_PROJATIV"
+            "type": "integer"
           },
           {
             "name": "PROJ_ATIV",
-            "type": "integer",
-            "source": "PROJ_ATIV"
+            "type": "integer"
           },
           {
-            "name": "ACAO_COD",
+            "name": "AÇÃO",
             "type": "integer",
-            "source": "AÇÃO"
+            "target": "ACAO_COD"
           },
           {
-            "name": "SUBPROJETO_COD",
+            "name": "SUBPROJETO",
             "type": "integer",
-            "source": "SUBPROJETO"
+            "target": "SUBPROJETO_COD"
           },
           {
-            "name": "CATEGORIA_COD",
+            "name": "CATEGORIA",
             "type": "integer",
-            "source": "CATEGORIA"
+            "target": "CATEGORIA_COD"
           },
           {
-            "name": "GRUPO_COD",
+            "name": "GRUPO_DESPESA",
             "type": "integer",
-            "source": "GRUPO_DESPESA"
+            "target": "GRUPO_COD"
           },
           {
-            "name": "FONTE_COD",
+            "name": "FONTE",
             "type": "integer",
-            "source": "FONTE"
+            "target": "FONTE_COD"
           },
           {
-            "name": "IPU_COD",
+            "name": "IPU",
             "type": "integer",
-            "source": "IPU"
+            "target": "IPU_COD"
           },
           {
-            "name": "IAG_COD",
+            "name": "IAG",
             "type": "integer",
-            "source": "IAG"
+            "target": "IAG_COD"
           },
           {
-            "name": "PROGRAMA_DESC",
+            "name": "PROGRAMA",
             "type": "string",
-            "source": "PROGRAMA"
+            "target": "PROGRAMA_DESC"
           },
           {
-            "name": "ACAO_DESC",
+            "name": "ACAO",
             "type": "string",
-            "source": "ACAO"
+            "target": "ACAO_DESC"
           },
           {
-            "name": "VL_LOA_DESP_ANO0",
+            "name": "VALOR (R$) 2024",
             "type": "number",
-            "source": "VALOR (R$) 2024"
+            "decimalChar": ",",
+            "groupChar": ".",
+            "target": "VL_LOA_DESP_ANO0"
           },
           {
-            "name": "VL_LOA_DESP_ANO1",
+            "name": "VALOR (R$) 2025",
             "type": "number",
-            "source": "VALOR (R$) 2025"
+            "decimalChar": ",",
+            "groupChar": ".",
+            "target": "VL_LOA_DESP_ANO1"
           },
           {
-            "name": "VL_LOA_DESP_ANO2",
+            "name": "VALOR (R$) 2026",
             "type": "number",
-            "source": "VALOR (R$) 2026"
+            "decimalChar": ",",
+            "groupChar": ".",
+            "target": "VL_LOA_DESP_ANO2"
           },
           {
-            "name": "VL_LOA_DESP_ANO3",
+            "name": "VALOR (R$) 2027",
             "type": "number",
-            "source": "VALOR (R$) 2027"
+            "decimalChar": ",",
+            "groupChar": ".",
+            "target": "VL_LOA_DESP_ANO3"
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 9,
+        "CmNomePlanilha": "BASE_QDD_PLURIANUAL.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 9
       }
     },
     {
       "name": "base_qdd_plurianual_invest",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_qdd_plurianual_invest.csv",
+      "title": "Detalhamento Plurianual Investimento",
+      "path": "data-raw/base_qdd_plurianual_invest.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:e3fe1015db5aee0a68ea88f04497e68008766df96d9732bfb2612870587e4e06",
-      "bytes": 12173,
-      "fields": 21,
-      "rows": 40,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
             "name": "ANO",
-            "type": "integer",
-            "source": "ANO"
+            "type": "integer"
           },
           {
             "name": "COD_ORGAO",
-            "type": "integer",
-            "source": "COD_ORGAO"
+            "type": "integer"
           },
           {
             "name": "DESC_ORGAO",
-            "type": "string",
-            "source": "DESC_ORGAO"
+            "type": "string"
           },
           {
             "name": "COD_UO",
-            "type": "integer",
-            "source": "COD_UO"
+            "type": "integer"
           },
           {
             "name": "DESC_UO",
-            "type": "string",
-            "source": "DESC_UO"
+            "type": "string"
           },
           {
             "name": "FUNCAO",
-            "type": "integer",
-            "source": "FUNCAO"
+            "type": "integer"
           },
           {
             "name": "SUBFUNCAO",
-            "type": "integer",
-            "source": "SUBFUNCAO"
+            "type": "integer"
           },
           {
             "name": "COD_PROGRAMA",
-            "type": "integer",
-            "source": "COD_PROGRAMA"
+            "type": "integer"
           },
           {
             "name": "IDENT_PROJATIV",
-            "type": "integer",
-            "source": "IDENT_PROJATIV"
+            "type": "integer"
           },
           {
             "name": "PROJ_ATIV",
-            "type": "integer",
-            "source": "PROJ_ATIV"
+            "type": "integer"
           },
           {
-            "name": "ACAO_COD",
+            "name": "AÇÃO",
             "type": "integer",
-            "source": "AÇÃO"
+            "target": "ACAO_COD"
           },
           {
             "name": "SUBPROJETO",
-            "type": "integer",
-            "source": "SUBPROJETO"
+            "type": "integer"
           },
           {
             "name": "CATEGORIA",
-            "type": "integer",
-            "source": "CATEGORIA"
+            "type": "integer"
           },
           {
             "name": "FONTE",
-            "type": "integer",
-            "source": "FONTE"
+            "type": "integer"
           },
           {
             "name": "IAG",
-            "type": "integer",
-            "source": "IAG"
+            "type": "integer"
           },
           {
             "name": "PROGRAMA",
+            "type": "string"
+          },
+          {
+            "name": "ACAO",
             "type": "string",
-            "source": "PROGRAMA"
+            "target": "ACAO_DESC"
           },
           {
-            "name": "ACAO_DESC",
-            "type": "string",
-            "source": "ACAO"
-          },
-          {
-            "name": "VALOR_2024",
+            "name": "VALOR (R$) 2024",
             "type": "number",
-            "source": "VALOR (R$) 2024"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_2025",
+            "name": "VALOR (R$) 2025",
             "type": "number",
-            "source": "VALOR (R$) 2025"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_2026",
+            "name": "VALOR (R$) 2026",
             "type": "number",
-            "source": "VALOR (R$) 2026"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_2027",
+            "name": "VALOR (R$) 2027",
             "type": "number",
-            "source": "VALOR (R$) 2027"
+            "decimalChar": ",",
+            "groupChar": "."
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 16,
+        "CmNomePlanilha": "BASE_QDD_PLURIANUAL_INVEST.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 16
       }
     },
     {
       "name": "base_orcam_despesa_investimento",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_orcam_despesa_investimento.csv",
+      "title": "Orçamento da Despesa de Investimento",
+      "path": "data-raw/base_orcam_despesa_investimento.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:cf3c9dc9f2ce07f1d9e8a2076437639a3a703d7e22c7045c7be214ced3307658",
-      "bytes": 12346,
-      "fields": 21,
-      "rows": 40,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
-            "name": "CODIGO_DO_ORGAO",
-            "type": "integer",
-            "source": "Código do Órgão"
+            "name": "Código do Órgão",
+            "type": "integer"
           },
           {
-            "name": "ORGAO",
-            "type": "string",
-            "source": "Órgão"
+            "name": "Órgão",
+            "type": "string"
           },
           {
-            "name": "CODIGO_DA_UO",
-            "type": "integer",
-            "source": "Código da UO"
+            "name": "Código da UO",
+            "type": "integer"
           },
           {
-            "name": "UNIDADE_ORCAMENTARIA",
-            "type": "string",
-            "source": "Unidade Orçamentária"
+            "name": "Unidade Orçamentária",
+            "type": "string"
           },
           {
-            "name": "FUNCAO",
-            "type": "integer",
-            "source": "Função"
+            "name": "Função",
+            "type": "integer"
           },
           {
-            "name": "SUBFUNCAO",
-            "type": "integer",
-            "source": "Subfunção"
+            "name": "Subfunção",
+            "type": "integer"
           },
           {
-            "name": "PROGRAMA",
-            "type": "integer",
-            "source": "Programa"
+            "name": "Programa",
+            "type": "integer"
           },
           {
-            "name": "IDENTIFICADOR",
-            "type": "integer",
-            "source": "Identificador"
+            "name": "Identificador",
+            "type": "integer"
           },
           {
-            "name": "PROJETO_ATIVIDADE",
-            "type": "integer",
-            "source": "Projeto_Atividade"
+            "name": "Projeto_Atividade",
+            "type": "integer"
           },
           {
-            "name": "ACAO",
-            "type": "integer",
-            "source": "Ação"
+            "name": "Ação",
+            "type": "integer"
           },
           {
-            "name": "SUBPROJETO",
-            "type": "integer",
-            "source": "Subprojeto"
+            "name": "Subprojeto",
+            "type": "integer"
           },
           {
-            "name": "FONTE",
-            "type": "integer",
-            "source": "Fonte"
+            "name": "Fonte",
+            "type": "integer"
           },
           {
             "name": "IAG",
-            "type": "integer",
-            "source": "IAG"
+            "type": "integer"
           },
           {
-            "name": "DESCRICAO",
-            "type": "string",
-            "source": "Descrição"
+            "name": "Descrição",
+            "type": "string"
           },
           {
-            "name": "CATEGORIA",
-            "type": "string",
-            "source": "Categoria"
+            "name": "Categoria",
+            "type": "string"
           },
           {
-            "name": "CODIGO_DA_NATUREZA",
-            "type": "integer",
-            "source": "Código da Natureza"
+            "name": "Código da Natureza",
+            "type": "integer"
           },
           {
-            "name": "NATUREZA",
-            "type": "string",
-            "source": "Natureza"
+            "name": "Natureza",
+            "type": "string"
           },
           {
-            "name": "VALOR_2024",
+            "name": "Valor (R$) 2024",
             "type": "number",
-            "source": "Valor (R$) 2024"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_2025",
+            "name": "Valor (R$) 2025",
             "type": "number",
-            "source": "Valor (R$) 2025"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_2026",
+            "name": "Valor (R$) 2026",
             "type": "number",
-            "source": "Valor (R$) 2026"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_2027",
+            "name": "Valor (R$) 2027",
             "type": "number",
-            "source": "Valor (R$) 2027"
+            "decimalChar": ",",
+            "groupChar": "."
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 2,
+        "CmNomePlanilha": "BASE_ORCAM_DESPESA_INVESTIMENTO.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 2
       }
     },
     {
       "name": "base_detalhamento_obras",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_detalhamento_obras.csv",
+      "title": "Detalhamento de Obras",
+      "path": "data-raw/base_detalhamento_obras.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:cf56f64d0d5b482943c83f5c8ac862aa99c75f568cf4b0359dc43e18ede9cd1e",
-      "bytes": 63496,
-      "fields": 24,
-      "rows": 262,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
             "name": "UO",
-            "type": "integer",
-            "source": "UO"
+            "type": "integer"
           },
           {
             "name": "FUNCAO",
-            "type": "integer",
-            "source": "FUNCAO"
+            "type": "integer"
           },
           {
             "name": "SUBFUNCAO",
-            "type": "integer",
-            "source": "SUBFUNCAO"
+            "type": "integer"
           },
           {
             "name": "PROGRAMA",
-            "type": "integer",
-            "source": "PROGRAMA"
+            "type": "integer"
           },
           {
             "name": "ACAO",
-            "type": "integer",
-            "source": "ACAO"
+            "type": "integer"
           },
           {
             "name": "SUBPROJETO",
-            "type": "integer",
-            "source": "SUBPROJETO"
+            "type": "integer"
           },
           {
             "name": "IAG",
-            "type": "integer",
-            "source": "IAG"
+            "type": "integer"
           },
           {
-            "name": "NUMERO_DA_OBRA_SISOR",
-            "type": "integer",
-            "source": "NUMERO DA OBRA SISOR"
+            "name": "NUMERO DA OBRA SISOR",
+            "type": "integer"
           },
           {
-            "name": "NUMERO_DA_OBRA_SIAD",
-            "type": "integer",
-            "source": "NUMERO DA OBRA SIAD"
+            "name": "NUMERO DA OBRA SIAD",
+            "type": "integer"
           },
           {
-            "name": "DESCRICAO_DA_OBRA",
-            "type": "string",
-            "source": "DESCRICAO DA OBRA"
+            "name": "DESCRICAO DA OBRA",
+            "type": "string"
           },
           {
-            "name": "STATUS_DA_OBRA",
-            "type": "string",
-            "source": "STATUS DA OBRA"
+            "name": "STATUS DA OBRA",
+            "type": "string"
           },
           {
-            "name": "UNIDADE_DE_MEDIDA_DA_OBRA",
-            "type": "string",
-            "source": "UNIDADE DE MEDIDA DA OBRA"
+            "name": "UNIDADE DE MEDIDA DA OBRA",
+            "type": "string"
           },
           {
             "name": "QUANTIDADE",
-            "type": "integer",
-            "source": "QUANTIDADE"
+            "type": "integer"
           },
           {
-            "name": "ALTERAR_UNIDADE_DE_MEDIDA_DA_OBRA",
-            "type": "string",
-            "source": "ALTERAR UNIDADE DE MEDIDA DA OBRA"
+            "name": "ALTERAR UNIDADE DE MEDIDA DA OBRA",
+            "type": "string"
           },
           {
-            "name": "REGIAO_GEOGRAFICA_INTERMEDIARIA",
-            "type": "string",
-            "source": "REGIÃO GEOGRÁFICA INTERMEDIÁRIA"
+            "name": "REGIÃO GEOGRÁFICA INTERMEDIÁRIA",
+            "type": "string"
           },
           {
-            "name": "MUNICIPIO",
-            "type": "string",
-            "source": "MUNICÍPIO"
+            "name": "MUNICÍPIO",
+            "type": "string"
           },
           {
-            "name": "VALOR_TESOURO_2024",
+            "name": "VALOR TESOURO 2024 (R$)",
             "type": "number",
-            "source": "VALOR TESOURO 2024 (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_OUTROS_2024",
+            "name": "VALOR OUTROS 2024 (R$)",
             "type": "number",
-            "source": "VALOR OUTROS 2024 (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_TESOURO_2025",
+            "name": "VALOR TESOURO 2025 (R$)",
             "type": "number",
-            "source": "VALOR TESOURO 2025 (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_OUTROS_2025",
+            "name": "VALOR OUTROS 2025 (R$)",
             "type": "number",
-            "source": "VALOR OUTROS 2025 (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_TESOURO_2026",
+            "name": "VALOR TESOURO 2026 (R$)",
             "type": "number",
-            "source": "VALOR TESOURO 2026 (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_OUTROS_2026",
+            "name": "VALOR OUTROS 2026 (R$)",
             "type": "number",
-            "source": "VALOR OUTROS 2026 (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_TESOURO_2027",
+            "name": "VALOR TESOURO 2027 (R$)",
             "type": "number",
-            "source": "VALOR TESOURO 2027 (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_OUTROS_2027",
+            "name": "VALOR OUTROS 2027 (R$)",
             "type": "number",
-            "source": "VALOR OUTROS 2027 (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 3,
+        "CmNomePlanilha": "BASE_DETALHAMENTO_OBRAS.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 3
       }
     },
     {
       "name": "base_qdd_fiscal",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_qdd_fiscal.csv",
+      "title": "QDD Fiscal",
+      "path": "data-raw/base_qdd_fiscal.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:89f8e11581bc92d1d7a2af325358d6273e4251d6283ebe24749eb8e63e03e537",
-      "bytes": 1641045,
-      "fields": 27,
-      "rows": 5408,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
             "name": "ANO",
             "type": "integer",
-            "source": "ANO"
+            "target": "ANO"
           },
           {
-            "name": "ORGAO_COD",
+            "name": "COD_ORGAO",
             "type": "integer",
-            "source": "COD_ORGAO"
+            "target": "ORGAO_COD"
           },
           {
-            "name": "ORGAO_NOME_SIGLA",
+            "name": "ORGAO",
             "type": "string",
-            "source": "ORGAO"
+            "target": "ORGAO_NOME_SIGLA"
           },
           {
-            "name": "PODER_COD",
+            "name": "PODER",
             "type": "integer",
-            "source": "PODER"
+            "target": "PODER_COD"
           },
           {
             "name": "SITUACAO",
-            "type": "integer",
-            "source": "SITUACAO"
+            "type": "integer"
           },
           {
-            "name": "UO_COD",
+            "name": "COD_UO",
             "type": "integer",
-            "source": "COD_UO"
+            "target": "UO_COD"
           },
           {
-            "name": "UO_NOME_SIGLA",
+            "name": "UO",
             "type": "string",
-            "source": "UO"
+            "target": "UO_NOME_SIGLA"
           },
           {
-            "name": "CATEGORIA_COD",
+            "name": "CATEGORIA",
             "type": "integer",
-            "source": "CATEGORIA"
+            "target": "CATEGORIA_COD"
           },
           {
-            "name": "GRUPO_COD",
+            "name": "GRUPO_DESPESA",
             "type": "integer",
-            "source": "GRUPO_DESPESA"
+            "target": "GRUPO_COD"
           },
           {
-            "name": "MODALIDADE_COD",
+            "name": "MODALIDADE",
             "type": "integer",
-            "source": "MODALIDADE"
+            "target": "MODALIDADE_COD"
           },
           {
-            "name": "ELEMENTO_COD",
+            "name": "ELEMENTO_DESPESA",
             "type": "integer",
-            "source": "ELEMENTO_DESPESA"
+            "target": "ELEMENTO_COD"
           },
           {
-            "name": "FONTE_COD",
+            "name": "FONTE",
             "type": "integer",
-            "source": "FONTE"
+            "target": "FONTE_COD"
           },
           {
-            "name": "IPU_COD",
+            "name": "IPU",
             "type": "integer",
-            "source": "IPU"
+            "target": "IPU_COD"
           },
           {
             "name": "SEQ_PROGTRAB",
-            "type": "integer",
-            "source": "SEQ_PROGTRAB"
+            "type": "integer"
           },
           {
-            "name": "FUNCAO_COD",
+            "name": "FUNCAO",
             "type": "integer",
-            "source": "FUNCAO"
+            "target": "FUNCAO_COD"
           },
           {
-            "name": "SUBFUNCAO_COD",
+            "name": "SUB_FUNCAO",
             "type": "integer",
-            "source": "SUB_FUNCAO"
+            "target": "SUBFUNCAO_COD"
           },
           {
-            "name": "PROGRAMA_COD",
+            "name": "PROGRAMA",
             "type": "integer",
-            "source": "PROGRAMA"
+            "target": "PROGRAMA_COD"
           },
           {
             "name": "IDENT_PROJATIV",
-            "type": "integer",
-            "source": "IDENT_PROJATIV"
+            "type": "integer"
           },
           {
             "name": "PROJ_ATIV",
-            "type": "integer",
-            "source": "PROJ_ATIV"
+            "type": "integer"
           },
           {
-            "name": "ACAO_COD",
+            "name": "AÇÃO",
             "type": "integer",
-            "source": "AÇÃO"
+            "target": "ACAO_COD"
           },
           {
             "name": "SUB_PROJETO",
+            "type": "integer"
+          },
+          {
+            "name": "VALOR UO (R$)",
+            "type": "number",
+            "decimalChar": ",",
+            "groupChar": ".",
+            "target": "VL_LOA_DESP_UO"
+          },
+          {
+            "name": "VALOR SCPPO (R$)",
+            "type": "number",
+            "decimalChar": ",",
+            "groupChar": ".",
+            "target": "VL_LOA_DESP_SCPPO"
+          },
+          {
+            "name": "VALOR FINAL (R$)",
+            "type": "number",
+            "decimalChar": ",",
+            "groupChar": ".",
+            "target": "VL_LOA_DESP"
+          },
+          {
+            "name": "IAG",
             "type": "integer",
-            "source": "SUB_PROJETO"
+            "target": "IAG_COD"
           },
           {
-            "name": "VL_LOA_DESP_UO",
-            "type": "number",
-            "source": "VALOR UO (R$)"
-          },
-          {
-            "name": "VL_LOA_DESP_SCPPO",
-            "type": "number",
-            "source": "VALOR SCPPO (R$)"
-          },
-          {
-            "name": "VL_LOA_DESP",
-            "type": "number",
-            "source": "VALOR FINAL (R$)"
-          },
-          {
-            "name": "IAG_COD",
-            "type": "integer",
-            "source": "IAG"
-          },
-          {
-            "name": "ACAO_DESC",
+            "name": "NOME_ACAO",
             "type": "string",
-            "source": "NOME_ACAO"
+            "target": "ACAO_DESC"
           },
           {
-            "name": "PROGRAMA_DESC",
+            "name": "NOME_PROGRAMA",
             "type": "string",
-            "source": "NOME_PROGRAMA"
+            "target": "PROGRAMA_DESC"
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 4,
+        "CmNomePlanilha": "BASE_QDD_FISCAL.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 4
       }
     },
     {
       "name": "base_qdd_investimento",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_qdd_investimento.csv",
+      "title": "QDD Investimento",
+      "path": "data-raw/base_qdd_investimento.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:1c0a66e7ba4bba044328e295e2c5ed2f4db8228282cb7b17204327f0aa6c10e7",
-      "bytes": 17037,
-      "fields": 23,
-      "rows": 40,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
             "name": "ANO",
-            "type": "integer",
-            "source": "ANO"
+            "type": "integer"
           },
           {
             "name": "COD_ORGAO",
-            "type": "integer",
-            "source": "COD_ORGAO"
+            "type": "integer"
           },
           {
             "name": "ORGAO",
-            "type": "string",
-            "source": "ORGAO"
+            "type": "string"
           },
           {
             "name": "PODER",
-            "type": "integer",
-            "source": "PODER"
+            "type": "integer"
           },
           {
             "name": "COD_UO",
-            "type": "integer",
-            "source": "COD_UO"
+            "type": "integer"
           },
           {
             "name": "UO",
-            "type": "string",
-            "source": "UO"
+            "type": "string"
           },
           {
             "name": "SEQ_PROGTRAB",
-            "type": "integer",
-            "source": "SEQ_PROGTRAB"
+            "type": "integer"
           },
           {
             "name": "FUNCAO",
-            "type": "integer",
-            "source": "FUNCAO"
+            "type": "integer"
           },
           {
             "name": "SUB_FUNCAO",
-            "type": "integer",
-            "source": "SUB_FUNCAO"
+            "type": "integer"
           },
           {
             "name": "PROGRAMA",
-            "type": "integer",
-            "source": "PROGRAMA"
+            "type": "integer"
           },
           {
             "name": "IDENT_PROJATIV",
-            "type": "integer",
-            "source": "IDENT_PROJATIV"
+            "type": "integer"
           },
           {
             "name": "PROJ_ATIV",
-            "type": "integer",
-            "source": "PROJ_ATIV"
+            "type": "integer"
           },
           {
-            "name": "ACAO",
-            "type": "integer",
-            "source": "AÇÃO"
+            "name": "AÇÃO",
+            "type": "integer"
           },
           {
-            "name": "VALOR",
+            "name": "VALOR (R$)",
             "type": "number",
-            "source": "VALOR (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
             "name": "IAG",
-            "type": "integer",
-            "source": "IAG"
+            "type": "integer"
           },
           {
             "name": "DESC_PROJETO_ATIV",
-            "type": "string",
-            "source": "DESC_PROJETO_ATIV"
+            "type": "string"
           },
           {
             "name": "CATEGORIA",
-            "type": "string",
-            "source": "CATEGORIA"
+            "type": "string"
           },
           {
             "name": "COD_NATUREZA",
-            "type": "integer",
-            "source": "COD_NATUREZA"
+            "type": "integer"
           },
           {
             "name": "NATUREZA",
-            "type": "string",
-            "source": "NATUREZA"
+            "type": "string"
           },
           {
             "name": "COD_FONTE",
-            "type": "integer",
-            "source": "COD_FONTE"
+            "type": "integer"
           },
           {
             "name": "FONTE",
-            "type": "string",
-            "source": "FONTE"
+            "type": "string"
           },
           {
             "name": "NOME_ACAO",
-            "type": "string",
-            "source": "NOME_ACAO"
+            "type": "string"
           },
           {
             "name": "NOME_PROGRAMA",
-            "type": "string",
-            "source": "NOME_PROGRAMA"
+            "type": "string"
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 5,
+        "CmNomePlanilha": "BASE_QDD_INVESTIMENTO.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 5
       }
     },
     {
       "name": "base_orcam_receita_fiscal",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_orcam_receita_fiscal.csv",
+      "title": "Orçamento da Receita Fiscal",
+      "path": "data-raw/base_orcam_receita_fiscal.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:1b99ebac4c335b7827aa664757efb5455d010fce3fcbc1d3bf39bf39536a443a",
-      "bytes": 509436,
-      "fields": 24,
-      "rows": 1027,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
             "name": "UO_COD",
-            "type": "integer",
-            "source": "UO_COD"
+            "type": "integer"
           },
           {
             "name": "NOME_UO",
-            "type": "string",
-            "source": "NOME_UO"
+            "type": "string"
           },
           {
-            "name": "UO_SIGLA",
+            "name": "SIGLA_UO",
             "type": "string",
-            "source": "SIGLA_UO"
+            "target": "UO_SIGLA"
           },
           {
-            "name": "FONTE_COD",
+            "name": "COD_FONTE",
             "type": "integer",
-            "source": "COD_FONTE"
+            "target": "FONTE_COD"
           },
           {
-            "name": "FONTE_DESC",
+            "name": "FONTE",
             "type": "string",
-            "source": "FONTE"
+            "target": "FONTE_DESC"
           },
           {
             "name": "INTERPRETACAO",
-            "type": "string",
-            "source": "INTERPRETACAO"
+            "type": "string"
           },
           {
             "name": "CATEGORIA",
-            "type": "integer",
-            "source": "CATEGORIA"
+            "type": "integer"
           },
           {
             "name": "ORIGEM",
-            "type": "integer",
-            "source": "ORIGEM"
+            "type": "integer"
           },
           {
-            "name": "ESPECIE",
-            "type": "integer",
-            "source": "ESPÉCIE"
+            "name": "ESPÉCIE",
+            "type": "integer"
           },
           {
             "name": "RUBRICA",
-            "type": "integer",
-            "source": "RUBRICA"
+            "type": "integer"
           },
           {
             "name": "ALINEA",
-            "type": "integer",
-            "source": "ALINEA"
+            "type": "integer"
           },
           {
             "name": "SUBALINEA",
-            "type": "integer",
-            "source": "SUBALINEA"
+            "type": "integer"
           },
           {
-            "name": "TIPO_DE_RECEITA",
-            "type": "integer",
-            "source": "TIPO DE RECEITA"
+            "name": "TIPO DE RECEITA",
+            "type": "integer"
           },
           {
             "name": "ITEM",
-            "type": "integer",
-            "source": "ITEM"
+            "type": "integer"
           },
           {
             "name": "SUBITEM",
-            "type": "integer",
-            "source": "SUBITEM"
+            "type": "integer"
           },
           {
-            "name": "RECEITA_COD",
+            "name": "COD_RECEITA",
             "type": "integer",
-            "source": "COD_RECEITA"
+            "target": "RECEITA_COD"
           },
           {
-            "name": "RECEITA_DESC",
+            "name": "RECEITA",
             "type": "string",
-            "source": "RECEITA"
+            "target": "RECEITA_DESC"
           },
           {
             "name": "INTERP_RECEITA",
-            "type": "string",
-            "source": "INTERP_RECEITA"
+            "type": "string"
           },
           {
-            "name": "VL_LOA_REC_UO",
+            "name": "VALOR UO (R$)",
             "type": "number",
-            "source": "VALOR UO (R$)"
+            "decimalChar": ",",
+            "groupChar": ".",
+            "target": "VL_LOA_REC_UO"
           },
           {
-            "name": "VL_LOA_REC_SCPPO",
+            "name": "VALOR SCPPO (R$)",
             "type": "number",
-            "source": "VALOR SCPPO (R$)"
+            "decimalChar": ",",
+            "groupChar": ".",
+            "target": "VL_LOA_REC_SCPPO"
           },
           {
-            "name": "VL_LOA_REC",
+            "name": "VALOR FINAL (R$)",
             "type": "number",
-            "source": "VALOR FINAL (R$)"
+            "decimalChar": ",",
+            "groupChar": ".",
+            "target": "VL_LOA_REC"
           },
           {
             "name": "ANO",
-            "type": "integer",
-            "source": "ANO"
+            "type": "integer"
           },
           {
-            "name": "BASE_LEGAL",
-            "type": "string",
-            "source": "BASE LEGAL"
+            "name": "BASE LEGAL",
+            "type": "string"
           },
           {
-            "name": "METODOLOGIA_DE_CALCULO_E_PREMISSAS_UTILIZADAS",
-            "type": "string",
-            "source": "METODOLOGIA DE CÁLCULO E PREMISSAS UTILIZADAS"
+            "name": "METODOLOGIA DE CÁLCULO E PREMISSAS UTILIZADAS",
+            "type": "string"
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 6,
+        "CmNomePlanilha": "BASE_ORCAM_RECEITA_FISCAL.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 6
       }
     },
     {
       "name": "base_orcam_receita_investimento",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_orcam_receita_investimento.csv",
+      "title": "Orçamento da Receita Investimento",
+      "path": "data-raw/base_orcam_receita_investimento.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:ce49b7a0d8474633b585131a57c35531828363517b8f2db73469c08bb7015223",
-      "bytes": 2271,
-      "fields": 14,
-      "rows": 16,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
             "name": "COD_UO",
-            "type": "integer",
-            "source": "COD_UO"
+            "type": "integer"
           },
           {
             "name": "NOME_UO",
-            "type": "string",
-            "source": "NOME_UO"
+            "type": "string"
           },
           {
             "name": "SIGLA_UO",
-            "type": "string",
-            "source": "SIGLA_UO"
+            "type": "string"
           },
           {
             "name": "CATEGORIA",
-            "type": "integer",
-            "source": "CATEGORIA"
+            "type": "integer"
           },
           {
             "name": "SUBCATEGORIA",
-            "type": "integer",
-            "source": "SUBCATEGORIA"
+            "type": "integer"
           },
           {
             "name": "ALINEA",
-            "type": "integer",
-            "source": "ALINEA"
+            "type": "integer"
           },
           {
             "name": "SUBALINEA",
-            "type": "integer",
-            "source": "SUBALINEA"
+            "type": "integer"
           },
           {
             "name": "COD_RECEITA",
-            "type": "string",
-            "source": "COD_RECEITA"
+            "type": "string"
           },
           {
             "name": "NIVEL_ORIGEM",
-            "type": "string",
-            "source": "NIVEL_ORIGEM"
+            "type": "string"
           },
           {
             "name": "RECEITA",
-            "type": "string",
-            "source": "RECEITA"
+            "type": "string"
           },
           {
-            "name": "VALOR_UO",
+            "name": "VALOR UO (R$)",
             "type": "number",
-            "source": "VALOR UO (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_SCPPO",
+            "name": "VALOR SCPPO (R$)",
             "type": "number",
-            "source": "VALOR SCPPO (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_FINAL",
+            "name": "VALOR FINAL (R$)",
             "type": "number",
-            "source": "VALOR FINAL (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
             "name": "ANO",
-            "type": "integer",
-            "source": "ANO"
+            "type": "integer"
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 7,
+        "CmNomePlanilha": "BASE_ORCAM_RECEITA_INVESTIMENTO.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 7
       }
     },
     {
       "name": "base_obras_siad",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_obras_siad.csv",
+      "title": "Registro de Obras no SIAD",
+      "path": "data-raw/base_obras_siad.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:d4d4529b9f66b37628cc69e6b7db7892cf1f1284db2a71589ba50f8b9e8b53ee",
-      "bytes": 116696,
-      "fields": 10,
-      "rows": 428,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
             "name": "ORGAO_COD",
-            "type": "string",
-            "source": "ORGAO_COD"
+            "type": "string"
           },
           {
             "name": "UNIDADE_ADIMINISTRATIVA_COD",
-            "type": "string",
-            "source": "UNIDADE_ADIMINISTRATIVA_COD"
+            "type": "string"
           },
           {
-            "name": "NUMERO_DA_OBRA_SIAD",
-            "type": "integer",
-            "source": "Número da Obra SIAD"
+            "name": "Número da Obra SIAD",
+            "type": "integer"
           },
           {
-            "name": "NUMERO_DE_REFERENCIA_DA_UO",
-            "type": "string",
-            "source": "Número de Referência da UO"
+            "name": "Número de Referência da UO",
+            "type": "string"
           },
           {
-            "name": "SITUACAO",
-            "type": "string",
-            "source": "Situação"
+            "name": "Situação",
+            "type": "string"
           },
           {
-            "name": "DESCRICAO",
-            "type": "string",
-            "source": "Descrição"
+            "name": "Descrição",
+            "type": "string"
           },
           {
-            "name": "DATA_DE_INICIO",
-            "type": "string",
-            "source": "Data de Início"
+            "name": "Data de Início",
+            "type": "string"
           },
           {
-            "name": "DATA_DE_TERMINO",
-            "type": "string",
-            "source": "Data de Término"
+            "name": "Data de Término",
+            "type": "string"
           },
           {
-            "name": "ANO_DE_EXERCICIO",
-            "type": "integer",
-            "source": "Ano de Exercício"
+            "name": "Ano de Exercício",
+            "type": "integer"
           },
           {
-            "name": "VALOR_GLOBAL",
+            "name": "Valor Global (R$)",
             "type": "number",
-            "source": "Valor Global (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 11,
+        "CmNomePlanilha": "BASE_OBRAS_SIAD.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 11
       }
     },
     {
       "name": "base_categoria_pessoal",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_categoria_pessoal.csv",
+      "title": "Categoria de Pessoal",
+      "path": "data-raw/base_categoria_pessoal.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:4b83239f3ccc7dbcbebc33f26bbca3f69479967f611ffa5c422b40e5d96c6f94",
-      "bytes": 14414,
-      "fields": 5,
-      "rows": 316,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
-            "name": "ANO_DE_EXERCICIO",
-            "type": "integer",
-            "source": "Ano de Exercício"
+            "name": "Ano de Exercício",
+            "type": "integer"
           },
           {
             "name": "UO",
-            "type": "string",
-            "source": "UO"
+            "type": "string"
           },
           {
-            "name": "CLASSIFICACAO",
-            "type": "string",
-            "source": "Classificação"
+            "name": "Classificação",
+            "type": "string"
           },
           {
-            "name": "CATEGORIA",
-            "type": "string",
-            "source": "Categoria"
+            "name": "Categoria",
+            "type": "string"
           },
           {
-            "name": "QUANTIDADE",
-            "type": "integer",
-            "source": "Quantidade"
+            "name": "Quantidade",
+            "type": "integer"
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 12,
+        "CmNomePlanilha": "BASE_CATEGORIA_PESSOAL.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 12
       }
     },
     {
       "name": "base_repasse_recursos",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_repasse_recursos.csv",
+      "title": "Repasse de Recursos",
+      "path": "data-raw/base_repasse_recursos.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:86743929f84963e68313bbf028ed05d36ba88479ced2149905b7b583421522d9",
-      "bytes": 5531,
-      "fields": 9,
-      "rows": 39,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
-            "name": "COD_UO_FINANCIADORA",
-            "type": "integer",
-            "source": "Cód. UO Financiadora"
+            "name": "Cód. UO Financiadora",
+            "type": "integer"
           },
           {
-            "name": "UO_FINANCIADORA",
-            "type": "string",
-            "source": "UO Financiadora"
+            "name": "UO Financiadora",
+            "type": "string"
           },
           {
-            "name": "COD_UO_BENEFICIADA",
-            "type": "integer",
-            "source": "Cód. UO Beneficiada"
+            "name": "Cód. UO Beneficiada",
+            "type": "integer"
           },
           {
-            "name": "UO_BENEFICIADA",
-            "type": "string",
-            "source": "UO Beneficiada"
+            "name": "UO Beneficiada",
+            "type": "string"
           },
           {
-            "name": "GRUPO_DE_DESPESA",
-            "type": "integer",
-            "source": "Grupo de Despesa"
+            "name": "Grupo de Despesa",
+            "type": "integer"
           },
           {
-            "name": "FONTE",
-            "type": "integer",
-            "source": "Fonte"
+            "name": "Fonte",
+            "type": "integer"
           },
           {
             "name": "IPU",
-            "type": "integer",
-            "source": "IPU"
+            "type": "integer"
           },
           {
             "name": "IAG",
-            "type": "integer",
-            "source": "IAG"
+            "type": "integer"
           },
           {
-            "name": "VALOR_TRANSFERIDO",
+            "name": "Valor Transferido (R$)",
             "type": "number",
-            "source": "Valor Transferido (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 13,
+        "CmNomePlanilha": "BASE_REPASSE_RECURSOS.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 13
       }
     },
     {
       "name": "base_limite_cota",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_limite_cota.csv",
+      "title": "Limite de Cota",
+      "path": "data-raw/base_limite_cota.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:6441d75578d05e5cf2b0395fa9eb80b3913e2ceba420468af04fe4fb93c0797f",
-      "bytes": 38509,
-      "fields": 15,
-      "rows": 464,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
-            "name": "COD_UO",
-            "type": "integer",
-            "source": "Cód. UO"
+            "name": "Cód. UO",
+            "type": "integer"
           },
           {
             "name": "UO",
-            "type": "string",
-            "source": "UO"
+            "type": "string"
           },
           {
-            "name": "GRUPO_DE_DESPESA",
-            "type": "integer",
-            "source": "Grupo de Despesa"
+            "name": "Grupo de Despesa",
+            "type": "integer"
           },
           {
-            "name": "FONTE",
-            "type": "integer",
-            "source": "Fonte"
+            "name": "Fonte",
+            "type": "integer"
           },
           {
             "name": "IPU",
-            "type": "integer",
-            "source": "IPU"
+            "type": "integer"
           },
           {
             "name": "IAG",
-            "type": "integer",
-            "source": "IAG"
+            "type": "integer"
           },
           {
-            "name": "VALOR_LIMITE_2024",
+            "name": "Valor Limite 2024",
             "type": "number",
-            "source": "Valor Limite 2024"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_UTILIZADO_2024",
+            "name": "Valor Utilizado 2024",
             "type": "number",
-            "source": "Valor Utilizado 2024"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_TRANSFERIDO",
+            "name": "Valor Transferido",
             "type": "number",
-            "source": "Valor Transferido"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_LIMITE_2025",
+            "name": "Valor Limite 2025",
             "type": "number",
-            "source": "Valor Limite 2025"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_UTILIZADO_2025",
+            "name": "Valor Utilizado 2025",
             "type": "number",
-            "source": "Valor Utilizado 2025"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_LIMITE_2026",
+            "name": "Valor Limite 2026",
             "type": "number",
-            "source": "Valor Limite 2026"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_UTILIZADO_2026",
+            "name": "Valor Utilizado 2026",
             "type": "number",
-            "source": "Valor Utilizado 2026"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_LIMITE_2027",
+            "name": "Valor Limite 2027",
             "type": "number",
-            "source": "Valor Limite 2027"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_UTILIZADO_2027",
+            "name": "Valor Utilizado 2027",
             "type": "number",
-            "source": "Valor Utilizado 2027"
+            "decimalChar": ",",
+            "groupChar": "."
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 14,
+        "CmNomePlanilha": "BASE_LIMITE_COTA.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 14
       }
     },
     {
       "name": "base_intra_orcamentaria_detalhamento",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_intra_orcamentaria_detalhamento.csv",
+      "title": "Base Intraorçamentária de Detalhamento",
+      "path": "data-raw/base_intra_orcamentaria_detalhamento.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:d6f45a7f5f949a08a5c9f84f250cd687067d8c218d1f2b37f47ac16008978636",
-      "bytes": 381,
-      "fields": 4,
-      "rows": 13,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
-            "name": "COD_UO_BENEFICIADA",
-            "type": "integer",
-            "source": "Cód. UO Beneficiada"
+            "name": "Cód. UO Beneficiada",
+            "type": "integer"
           },
           {
-            "name": "UO_BENEFICIADA",
-            "type": "string",
-            "source": "UO Beneficiada"
+            "name": "UO Beneficiada",
+            "type": "string"
           },
           {
-            "name": "VALOR_RECEBIDO",
+            "name": "Valor Recebido (R$)",
             "type": "number",
-            "source": "Valor Recebido (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "VALOR_DETALHADO",
+            "name": "Valor Detalhado (R$)",
             "type": "number",
-            "source": "Valor Detalhado (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 17,
+        "CmNomePlanilha": "BASE_INTRA_ORCAMENTARIA_DETALHAMENTO.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 17
       }
     },
     {
       "name": "base_intra_orcamentaria_repasse",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_intra_orcamentaria_repasse.csv",
+      "title": "Base Intraorçamentária de Repasse",
+      "path": "data-raw/base_intra_orcamentaria_repasse.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:59822ff0b8b778f1d51479d8b77257fcee5e6266549a2660167ee4b6dbe4871d",
-      "bytes": 185024,
-      "fields": 9,
-      "rows": 961,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
-            "name": "COD_UO_REPASSADORA",
-            "type": "integer",
-            "source": "Cód. UO Repassadora"
+            "name": "Cód. UO Repassadora",
+            "type": "integer"
           },
           {
-            "name": "UO_REPASSADORA",
-            "type": "string",
-            "source": "UO Repassadora"
+            "name": "UO Repassadora",
+            "type": "string"
           },
           {
-            "name": "COD_PROGRAMA_DE_TRABALHO",
-            "type": "string",
-            "source": "Cód. Programa de Trabalho"
+            "name": "Cód. Programa de Trabalho",
+            "type": "string"
           },
           {
-            "name": "ACAO",
-            "type": "string",
-            "source": "Ação"
+            "name": "Ação",
+            "type": "string"
           },
           {
-            "name": "COD_NATUREZA_DE_DESPESA",
-            "type": "string",
-            "source": "Cód. Natureza de Despesa"
+            "name": "Cód. Natureza de Despesa",
+            "type": "string"
           },
           {
-            "name": "ELEMENTO_ITEM",
-            "type": "string",
-            "source": "Elemento Item"
+            "name": "Elemento Item",
+            "type": "string"
           },
           {
-            "name": "VALOR_REPASSADO",
+            "name": "Valor Repassado (R$)",
             "type": "number",
-            "source": "Valor Repassado (R$)"
+            "decimalChar": ",",
+            "groupChar": "."
           },
           {
-            "name": "COD_UO_BENEFICIADA",
+            "name": "Cód. UO Beneficiada",
             "type": "integer",
-            "source": "Cód. UO Beneficiada"
+            "missingValues": [
+              "Não Repassado"
+            ]
           },
           {
-            "name": "UO_BENEFICIADA",
+            "name": "UO Beneficiada",
             "type": "string",
-            "source": "UO Beneficiada"
+            "missingValues": [
+              "Não Repassado"
+            ]
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 18,
+        "CmNomePlanilha": "BASE_INTRA_ORCAMENTARIA_REPASSE.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 18
       }
     },
     {
       "name": "base_unidades_orcamentaria_versoes",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_unidades_orcamentaria_versoes.csv",
+      "title": "Relação das Unidades Orçamentárias e suas Versões",
+      "path": "data-raw/base_unidades_orcamentaria_versoes.html",
       "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:12c8128b6fb1a76d130a34117939b378ebdc5bfc0da38a80318a0d20c25fe0fd",
-      "bytes": 11074,
-      "fields": 4,
-      "rows": 172,
+      "format": "html",
+      "mediatype": "text/html",
+      "encoding": "windows-1252",
+      "dialect": {
+        "html": {
+          "selector": "table"
+        }
+      },
       "schema": {
         "fields": [
           {
             "name": "UO_COD",
-            "type": "integer",
-            "source": "UO_COD"
+            "type": "integer"
           },
           {
-            "name": "UO_NOME",
+            "name": "UO_DESC",
             "type": "string",
-            "source": "UO_DESC"
+            "target": "UO_NOME"
           },
           {
             "name": "UO_SIGLA",
-            "type": "string",
-            "source": "UO_SIGLA"
+            "type": "string"
           },
           {
             "name": "MOMENTO_COD",
-            "type": "integer",
-            "source": "MOMENTO_COD"
+            "type": "integer"
           }
         ]
+      },
+      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
+      "payload": {
+        "sAnoSelecao": 2024,
+        "sTabelaSelec": 21,
+        "CmNomePlanilha": "BASE_UNIDADES_ORCAMENTARIA_VERSOES.xls",
+        "selecaoAno": 2024,
+        "sBaseSelec": 21
       }
     }
-  ],
-  "updated_at": "2023-09-12T16:29:46"
+  ]
 }

@@ -1,0 +1,5 @@
+git+https://github.com/splor-mg/dpm.git@main#egg=dpm
+pandas
+openpyxl
+html5lib
+beautifulsoup4

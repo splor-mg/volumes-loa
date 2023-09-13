@@ -1,3 +1,3 @@
 running
-  'C:\PROGRA~1\R\R-43~1.1\bin\x64\Rterm.exe --no-echo --no-restore --file=utils/makefile/ultimo_banco_mod.R --args bancos/SISOR/acoes_planejamento'
+  'C:\Program Files\R\R-4.3.1\bin\x64\Rterm.exe --no-echo --no-restore --file=utils/makefile/ultimo_banco_mod.R --args bancos/SISOR/acoes_planejamento'
 

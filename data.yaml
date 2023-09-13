@@ -1,4 +1,3 @@
 resources:
   - name: sisor-dados-2024
-    path: https://raw.githubusercontent.com/splor-mg/sisor-dados-2024/main/datapackage.json
-    token: GITHUB_TOKEN
+    path: https://raw.githubusercontent.com/splor-mg/sisor-dados-2024/main/datapackage.yaml
