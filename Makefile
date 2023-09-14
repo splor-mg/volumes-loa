@@ -70,6 +70,15 @@ volume6/data/receita_fonte_stn.txt: volume6/R/volume6B.R bancos/SISOR/BASE_ORCAM
 	@echo "Atualizando dados..."
 	Rscript --verbose --encoding=utf-8 $< 2>> logs/logv6.Rout
 
+bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx: utils/trataBancos/trataQDD_Fiscal_Fonte_STN.R bancos/SISOR/BASE_QDD_FISCAL.xlsx
+	Rscript --verbose --encoding=utf-8 $< 2>> logs/logv6.Rout
+
+bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_FONTE_STN.xlsx: utils/trataBancos/trataReceita_Fiscal_Fonte_STN.R bancos/manual/desc_fontes_de_recursos_stn.xlsx
+	Rscript --verbose --encoding=utf-8 $< 2>> logs/logv6.Rout
+
+bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte_STN.R bancos/manual/fonte_stn.csv utils/ano.txt
+	Rscript --verbose --encoding=utf-8 $< 2>> logs/logv6.Rout
+
 # Volume 5
 pdf/Projeto_volume5.pdf: $(DEPENDENCIAS_V5)
 	@echo "- Gera logs/warningsV5.Rout"
