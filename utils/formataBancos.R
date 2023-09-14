@@ -26,6 +26,48 @@ formata_txt = function(caminho){
 }
 
 
+formata_html <- function(arquivo, dir = "bancos/SISOR")
+{
+  library(readxl)
+  library(dplyr)
+  library(rvest)
+  library(openxlsx)
+  
+  bancos_sisor_dir <- file.path("bancos/SISOR")
+  datapackage_dir <- file.path("datapackages/sisor-dados-2024/data-raw/")
+  
+
+  # Read the HTML content from the file
+  html <- read_html( file.path(datapackage_dir, arquivo))
+  
+  # Extract the table
+  table_data <- html %>% 
+    html_table(fill = TRUE)
+  
+  # Since there may be multiple tables on the page, you may want to identify the correct table
+  # For example, if it's the first table on the page:
+  df <- table_data[[1]]
+  
+  # Rename the columns
+  colnames(df) <- df[1, ]
+  
+  # Remove the first row (header row)
+  df <- df[-1, ]
+  
+  # infer columns types
+  df[] <- lapply(df, type.convert)
+  
+  filename <- gsub(".html$", ".xlsx", arquivo)
+  
+  save_path <- file.path(bancos_sisor_dir, filename)
+  sheet_name <- substr(toupper(gsub(".xlsx$", "", filename)), 1, 31)
+  write.xlsx(df, save_path, sheetName = sheet_name )
+  print(paste("Arquivo", filename, ".xlsx salvo em", bancos_sisor_dir))
+  
+
+}
+
+
 formata_xls <- function(arquivo, dir = "bancos/SISOR") {
   #===============================================
   # Retira formato e salva em .xlsx arquivos xls
@@ -45,6 +87,14 @@ formata_xls <- function(arquivo, dir = "bancos/SISOR") {
   }
 }
 
+for (arquivo in dir("datapackages/sisor-dados-2024/data-raw/")){
+  if(grepl(".+html$", arquivo)){
+    cat("- Formata arquivo ", arquivo, "\n")
+    formata_html(arquivo)
+  }
+}
+
+
 for(arquivo in dir("bancos/SISOR")){
   if(grepl(".+txt$", arquivo)){
     
@@ -56,5 +106,12 @@ for(arquivo in dir("bancos/SISOR")){
     cat("- Formata arquivo ", arquivo, "\n")
     formata_xls(arquivo)
     
+  } else if(grepl(".+html$", arquivo)){
+  
+  cat("- Formata arquivo ", arquivo, "\n")
+  formata_html(arquivo)
   }
 }
+
+
+
