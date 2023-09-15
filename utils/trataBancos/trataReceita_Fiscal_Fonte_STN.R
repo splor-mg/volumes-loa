@@ -16,7 +16,7 @@ df$INTERPRETACAO <- NULL
 ANO_DOC = readLines(here::here("utils", "ano.txt"))
 periodo_vigencia_ref <- paste0(ANO_DOC, "-01-01")
 
-fonte_stn_desc <- readxl::read_excel("bancos/manual/desc_fontes_de_recursos_stn.xlsx")
+fonte_stn_desc <- as.data.table(readxl::read_excel("bancos/manual/desc_fontes_de_recursos_stn.xlsx"))
 names(fonte_stn_desc) <- c("COD_FONTE", "FONTE", "INTERPRETACAO")
 
 result <- fonte_stn_desc[df, on = "COD_FONTE"]
