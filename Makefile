@@ -32,7 +32,8 @@ clean: ## Organiza os arquivos auxiliares e outputs da compilação latex. Ex. a
 
 format: ## Formata bancos brutos .xls, html e .txt
 	@./utils/encode_utf8.sh
-	@python3 utils/read_html_table.py
+	@python3 utils/read_html_sisor.py
+	@python3 utils/read_txt_sigplan.py
 	@Rscript --verbose utils/formataBancos.R
 
 rm: ## Remove todos os arquivos de um volume Ex. argumento vol=logs

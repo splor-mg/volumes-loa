@@ -106,3 +106,46 @@ running
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_T5_QUADRO_DE_DETALHAMENTO_INVESTIMENTO.R'
 
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_bancos_consolidados.R'
+
+Warning: The following named parsers don't match the column names: Código do Programa, Código da Área Temática, Área Temática, Exclusão Lógica do Programa, Justificativa de Inclusão ou Exclusão do Programa, Código da Unidade Orçamentária Responsável pelo Programa, Unidade Orçamentária Responsável pelo Programa, Código da Unidade Orçamentária Responsável pela Ação, Unidade Orçamentária Responsável pela Ação, Código da Função, Função, Código da Subfunção, Subfunção, Código do Tipo de Ação, Tipo de Ação, Código da Ação, Título da Ação, Código do Identificador de Ação Governamental (IAG), Identificador de Ação Governamental (IAG), Código do Projeto Estratégico, Projeto Estratégico, Exclusão Lógica da Ação, Nova Ação, Justificativa de Inclusão ou Exclusão da Ação, Unidade Administrativa Responsável pela Ação, Finalidade da Ação, Descrição da Ação, Código do Público-alvo, Público-Alvo, Código do Produto, Especificação d [... truncated]
+Error in .checkTypos(e, names_x) : 
+  Object 'exclusao.logica.do.programa' not found amongst c.f3.digo.do.programa, nome.do.programa, c.f3.digo.da..c1.rea.tem.e1.tica, x.c1.rea.tem.e1.tica, exclus.e3.o.l.f3.gica.do.programa and 43 more
+Calls: trataAcoesPlanejamento ... tryCatchList -> tryCatchOne -> <Anonymous> -> .checkTypos
+Execution halted
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_bancos_consolidados.R'
+
+Warning: The following named parsers don't match the column names: Código do Programa, Código da Área Temática, Área Temática, Exclusão Lógica do Programa, Justificativa de Inclusão ou Exclusão do Programa, Código da Unidade Orçamentária Responsável pelo Programa, Unidade Orçamentária Responsável pelo Programa, Código da Unidade Orçamentária Responsável pela Ação, Unidade Orçamentária Responsável pela Ação, Código da Função, Função, Código da Subfunção, Subfunção, Código do Tipo de Ação, Tipo de Ação, Código da Ação, Título da Ação, Código do Identificador de Ação Governamental (IAG), Identificador de Ação Governamental (IAG), Código do Projeto Estratégico, Projeto Estratégico, Exclusão Lógica da Ação, Nova Ação, Justificativa de Inclusão ou Exclusão da Ação, Unidade Administrativa Responsável pela Ação, Finalidade da Ação, Descrição da Ação, Código do Público-alvo, Público-Alvo, Código do Produto, Especificação d [... truncated]
+Error in .checkTypos(e, names_x) : 
+  Object 'exclusao.logica.do.programa' not found amongst c.f3.digo.do.programa, nome.do.programa, c.f3.digo.da..c1.rea.tem.e1.tica, x.c1.rea.tem.e1.tica, exclus.e3.o.l.f3.gica.do.programa and 43 more
+Calls: trataAcoesPlanejamento ... tryCatchList -> tryCatchOne -> <Anonymous> -> .checkTypos
+Execution halted
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_bancos_consolidados.R'
+
+Warning: V3_bancos_consolidados.R: A Tabela 1 não apresenta a fonte representada pelas variaveis, valor.tesouro_vinculado O total dessa tabela será realizado sem essa var e essa variaveis serão zeradas.
+Warning: V3_bancos_consolidados: A Tabela 2 INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS não apresenta a categoria representada pelas variaveis, valor.amortO total dessa tabela será realizado sem essa var e essa variaveis serão zeradas.
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_T1_PROGRAMA_DE_INVESTIMENTO.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM.R'
+
+Warning: V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM: Nova Fonte: nao classificado, CEMIG 
+ Veja as tabelas 'ORIGENS DE RECURSOS PARA INVESTIMENTOS' no projeto-volume3.pdf gerado. As fontes não classificadas aparecem primeiro nesses demonstrativos. Para correção  necessário atualizar manualmente, indicando a ordem em volume3/R/V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM.R linhas ~ 115 a 134 
+
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_T2_ORIGENS_RECURSOS_INVESTIMENTOS.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_T3_RECURSOS_FINANCEIROS_FONTE_RECURSOS_APLICACAO_INVESTIMENTO.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_T4_DETALHAMENTO_DOS_INVESTIMENTOS.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume3/R/V3_T5_QUADRO_DE_DETALHAMENTO_INVESTIMENTO.R'
+
