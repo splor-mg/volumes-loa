@@ -19,9 +19,9 @@ bancos_sisor_path = Path.joinpath(Path(__file__).parents[1], 'bancos/SISOR/')
 data_filenames = [Path.joinpath(datapackage_dataraw_path, y + '.html') for x in ([datapackage_dataraw_path]) for y in map(str.lower, bancos_names)]
 
 for filename in data_filenames:
-  print("Formata base", filename)
+  print(f"Formata base {filename}")
   df = pd.read_html(filename, header=0, index_col=0, decimal=',', thousands='.', encoding='latin1')
-  save_path = Path.joinpath(bancos_sisor_path, filename.stem + '.xlsx' )
+  save_path = Path.joinpath(bancos_sisor_path, filename.stem.upper() + '.xlsx' )
   df[0].to_excel(save_path, sheet_name=filename.stem.upper())
-  print("Arquivo", filename.stem,".xlsx salvo em ", bancos_sisor_path)
+  print(f"Arquivo {filename.stem.upper()}.xlsx salvo em {bancos_sisor_path}")
 

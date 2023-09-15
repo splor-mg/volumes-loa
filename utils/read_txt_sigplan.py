@@ -15,7 +15,7 @@ for filename in data_filenames:
   save_path = Path.joinpath(bancos_sisor_path, filename.stem + '.txt' )
   print("copiando base", filename)
 
-  with open(filename, 'r', encoding='latin1') as source:
+  with open(filename, 'r', encoding='utf-8') as source:
     content = source.read()
 
   with open(save_path, 'w', encoding='utf-8') as destination:
