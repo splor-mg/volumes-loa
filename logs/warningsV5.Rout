@@ -1,3 +1,3 @@
 running
-  'C:\Program Files\R\R-4.3.1\bin\x64\Rterm.exe --no-echo --no-restore --encoding=utf-8 --file=volume5/Rnw/CodigosR/Projeto_volume5.R'
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume5/Rnw/CodigosR/Projeto_volume5.R'
 

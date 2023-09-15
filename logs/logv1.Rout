@@ -287,3 +287,10 @@ running
 Warning: replacing previous import ‘data.table::last’ by ‘dplyr::last’ when loading ‘relatorios’
 Warning: replacing previous import ‘data.table::first’ by ‘dplyr::first’ when loading ‘relatorios’
 Warning: replacing previous import ‘data.table::between’ by ‘dplyr::between’ when loading ‘relatorios’
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T14_DEMONSTRATIVO_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_CONFORME_VINCULO_COM_RECURSOS.R'
+
+Error in gsum(valor, na.rm = TRUE) : 
+  Type 'character' not supported by GForce sum (gsum). Either add the prefix base::sum(.) or turn off GForce optimization using options(datatable.optimize=1)
+Calls: [ -> [.data.table -> gforce -> gsum
+Execution halted

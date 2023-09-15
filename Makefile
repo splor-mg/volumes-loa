@@ -30,8 +30,9 @@ v5: pdf/Projeto_volume5.pdf ## Gera volume 5
 clean: ## Organiza os arquivos auxiliares e outputs da compilação latex. Ex. argumento vol=5. origem=1 limpa o dir principal.
 	@Rscript --verbose utils/limpaDir.R $(vol) $(origem)
 
-format: ## Formata bancos brutos .xls, .html e .txt
+format: ## Formata bancos brutos .xls, html e .txt
 	@./utils/encode_utf8.sh
+	@python3 utils/read_html_table.py
 	@Rscript --verbose utils/formataBancos.R
 
 rm: ## Remove todos os arquivos de um volume Ex. argumento vol=logs
