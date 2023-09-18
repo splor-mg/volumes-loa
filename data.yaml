@@ -5,3 +5,5 @@ resources:
     path: https://raw.githubusercontent.com/splor-mg/ppag-planejamento-dados-2023/main/datapackage.yaml
   - name: apoio
     path: https://raw.githubusercontent.com/splor-mg/volumes-loa-dados/main/datapackage.json
+  - name: fonte_stn
+    path: https://raw.githubusercontent.com/splor-mg/matriz-fonte-stn-dadosmg/main/datapackage.yaml
