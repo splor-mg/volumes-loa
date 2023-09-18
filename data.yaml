@@ -3,3 +3,5 @@ resources:
     path: https://raw.githubusercontent.com/splor-mg/sisor-dados-2023/main/datapackage.yaml
   - name: sigplan
     path: https://raw.githubusercontent.com/splor-mg/ppag-planejamento-dados-2023/main/datapackage.yaml
+  - name: apoio
+    path: https://raw.githubusercontent.com/splor-mg/volumes-loa-dados/main/datapackage.json

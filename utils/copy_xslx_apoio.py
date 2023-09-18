@@ -1,0 +1,27 @@
+from pathlib import Path
+import shutil
+
+datapackages_dir = Path('datapackages/apoio/data-raw/')
+sisor_dir = Path('bancos/SISOR/')
+manual_dir = Path('bancos/manual/')
+
+items = [
+ (datapackages_dir / 'exec_desp_realizada.xlsx', sisor_dir / 'exec_desp_realizada.xlsx'), 
+ (datapackages_dir / 'exec_rec.xlsx', sisor_dir / 'exec_rec.xlsx'), 
+ (datapackages_dir / 'FFP_acoes.xlsx', manual_dir / 'FFP_acoes.xlsx'), 
+ (datapackages_dir / 'Nome_UO_antigas.xlsx', manual_dir / 'Nome_UO_antigas.xlsx'), 
+ (datapackages_dir / 'codigosPoder.xlsx', manual_dir / 'codigosPoder.xlsx'), 
+ (datapackages_dir / 'correspondencia_mun_terr_desenvol.xlsx', manual_dir / 'correspondencia_mun_terr_desenvol.xlsx'), 
+ (datapackages_dir / 'desc_IAG.xlsx', manual_dir / 'desc_IAG.xlsx'), 
+ (datapackages_dir / 'desc_IPU.xlsx', manual_dir / 'desc_IPU.xlsx'), 
+ (datapackages_dir / 'desc_classificacao_economica_despesa.xlsx', manual_dir / 'desc_classificacao_economica_despesa.xlsx'), 
+ (datapackages_dir / 'desc_classificacao_receita.xlsx', manual_dir / 'desc_classificacao_receita.xlsx'), 
+ (datapackages_dir / 'desc_fontes_de_recursos.xlsx', manual_dir / 'desc_fontes_de_recursos.xlsx'), 
+ (datapackages_dir / 'desc_funcao.xlsx', manual_dir / 'desc_funcao.xlsx'), 
+ (datapackages_dir / 'desc_grupos_de_despesa.xlsx', manual_dir / 'desc_grupos_de_despesa.xlsx'), 
+ (datapackages_dir / 'desc_subfuncao.xlsx', manual_dir / 'desc_subfuncao.xlsx'), 
+ (datapackages_dir / 'memoria_calculo.xlsx', manual_dir / 'memoria_calculo.xlsx' ),
+ ]
+
+for item in items:
+    shutil.copy(item[0], item[1])
