@@ -1,4 +1,4 @@
-.PHONY: help volumes v1 v2 v3 v4 v5 clean format rm docker v1_dcgf v1_prodemge validate check
+.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker v1_dcgf v1_prodemge validate check
 
 include config.mk
 
@@ -11,7 +11,7 @@ help:
 validate:
 	python3 -m frictionless validate datapackage.yaml
 
-volumes: v1 v2 v3 v4 v5 ## Gera todos os volumes
+volumes: v1 v2 v3 v4 v5 v6 ## Gera todos os volumes
 
 v1: v1_prodemge v1_dcgf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE e DCGF
 
@@ -26,6 +26,8 @@ v3: pdf/Projeto_volume3.pdf ## Gera volume 3
 v4: pdf/Projeto_volume4.pdf ## Gera volume 4
 
 v5: pdf/Projeto_volume5.pdf ## Gera volume 5
+
+v6: pdf/Projeto_volume6A.pdf ## Gera volume 6
 
 clean: ## Organiza os arquivos auxiliares e outputs da compilação latex. Ex. argumento vol=5. origem=1 limpa o dir principal.
 	@Rscript --verbose utils/limpaDir.R $(vol) $(origem)
@@ -52,6 +54,32 @@ check:
 
 # ===================================================================
 # TARGETS
+
+# Volume 6
+pdf/Projeto_volume6A.pdf: volume6/data/receita_fonte_stn.txt volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt volume6/Rnw/ANEXOS.Rnw volume6/Rnw/capaLOA.pdf \
+						 volume6/Rnw/load_bibliotecas.tex volume6/Rnw/Projeto_volume6A.Rnw volume6/Rnw/QUADRO_DETALHAMENTO_DESPESA.Rnw \
+						 bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_fontes_de_recursos_stn.xlsx bancos/manual/desc_IAG.xlsx bancos/manual/desc_IPU.xlsx
+	@echo "- Gera logs/warningsV6A.Rout"
+	touch logs/warningsV6A.Rout
+	Rscript utils/Rnw2Tex.R 6A
+	@echo "---------------------------------------------------------------"
+
+volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt: volume6/R/volume6A.R bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+	@echo "Atualizando dados..."
+	Rscript --verbose --encoding=utf-8 $< 2>> logs/logv6.Rout
+
+volume6/data/receita_fonte_stn.txt: volume6/R/volume6B.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_FONTE_STN.xlsx
+	@echo "Atualizando dados..."
+	Rscript --verbose --encoding=utf-8 $< 2>> logs/logv6.Rout
+
+bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx: utils/trataBancos/trataQDD_Fiscal_Fonte_STN.R bancos/SISOR/BASE_QDD_FISCAL.xlsx
+	Rscript --verbose --encoding=utf-8 $< 2>> logs/logv6.Rout
+
+bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_FONTE_STN.xlsx: utils/trataBancos/trataReceita_Fiscal_Fonte_STN.R bancos/manual/desc_fontes_de_recursos_stn.xlsx
+	Rscript --verbose --encoding=utf-8 $< 2>> logs/logv6.Rout
+
+bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte_STN.R bancos/manual/fonte_stn.csv utils/ano.txt
+	Rscript --verbose --encoding=utf-8 $< 2>> logs/logv6.Rout
 
 # Volume 5
 pdf/Projeto_volume5.pdf: $(DEPENDENCIAS_V5)
