@@ -28,7 +28,7 @@ getCodigoR(paste(dir_latex, "/ANEXOS.Rnw", sep = ""), dir_codigosR)
 % Capa
 \begin{titlepage}
 \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
-\includepdf[pages={7},scale=1.1]{capaLOA.pdf}
+\includepdf[pages={8},scale=1.1]{capaLOA.pdf}
 \end{titlepage}
 % \capa
 
@@ -51,7 +51,7 @@ Subsecretaria de Planejamento e Orçamento \\
 Superintendência Central de Planejamento e Orçamento \\
 
 \vspace*{10em}
- \fontsize{45pt}{10pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
+ \fontsize{45pt}{10pt}\selectfont {\textbf{PROJETO DE LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
  %\fontsize{50pt}{10pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
 
 \vspace*{5em}

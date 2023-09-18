@@ -53,7 +53,7 @@ Subsecretaria de Planejamento e Orçamento \\
 Superintendência Central de Planejamento e Orçamento \\
 
 \vspace*{10em}
- \fontsize{45pt}{10pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
+ \fontsize{45pt}{10pt}\selectfont {\textbf{PROJETO DE LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
  %\fontsize{50pt}{10pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
 
 \vspace*{5em}
