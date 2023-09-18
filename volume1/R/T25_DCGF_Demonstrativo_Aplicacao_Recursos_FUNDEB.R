@@ -93,9 +93,7 @@ write.table(demonst1, "volume1/data/T25_DCGF_Demonstrativo_Aplicacao_Recursos_FU
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
 
 
-### PERCENTUAL DE APLICAÇÃO DA RECEITA DO FUNDEB NA REMUNERAÇÃO DOS PROFISSIONAIS DO MAGISTÉRIO DA EDUCAÇÃO BÁSICA
-# grepl("magisterio", removeAcentos(ACAO_DESC)): Em 2016 representou as ações 2144 2143 2138 2134
-acoes_magisterio = c(2074, 2065, 2066, 4297, 4298, 4299, 4304, 4305, 4306, 4313, 4314, 4324) 
+acoes_magisterio = c(2080, 2081, 2082, 2083, 2085, 2086, 2088, 2089, 2090, 2093, 2094, 2096 e 2097) 
 loa_desp_magisterio = loa_desp[ACAO_COD %in% acoes_magisterio & GRUPO_COD==1,]
 
 loa_desp_magisterio[, cod := paste0(UO_COD, " ", FUNCAO_COD, ".", SUBFUNCAO_COD, ".", 
