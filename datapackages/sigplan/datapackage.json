@@ -1,0 +1,921 @@
+{
+  "name": "ppag2023-dadosmg",
+  "resources": [
+    {
+      "name": "acoes_planejamento",
+      "type": "table",
+      "title": "Relatórios e Bases do Planejamento - Ações",
+      "path": "data-raw/acoes_planejamento.txt",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "windows-1252",
+      "hash": "sha256:c5aa5075fb2dc53d9c58bc4afa2fdf85d0af900c97be88abdc05a12cc89b8bb2",
+      "dialect": {
+        "csv": {
+          "delimiter": "|"
+        }
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "Código do Programa",
+            "type": "integer",
+            "target": "programa_cod"
+          },
+          {
+            "name": "Nome do Programa",
+            "type": "string",
+            "target": "programa_desc"
+          },
+          {
+            "name": "Código da Área Temática",
+            "type": "string",
+            "target": "area_tematica_cod"
+          },
+          {
+            "name": "Área Temática",
+            "type": "string",
+            "target": "area_tematica_desc"
+          },
+          {
+            "name": "Exclusão Lógica do Programa",
+            "type": "boolean",
+            "trueValues": [
+              "Sim"
+            ],
+            "falseValues": [
+              "Não"
+            ],
+            "target": "is_deleted_programa"
+          },
+          {
+            "name": "Programa Novo",
+            "type": "boolean",
+            "trueValues": [
+              "Sim"
+            ],
+            "falseValues": [
+              "Não"
+            ],
+            "target": "is_new_programa"
+          },
+          {
+            "name": "Justificativa de Inclusão ou Exclusão do Programa",
+            "type": "string",
+            "target": "justificativa_is_new_programa"
+          },
+          {
+            "name": "Código da Unidade Orçamentária Responsável pelo Programa",
+            "type": "integer",
+            "target": "uo_programa_cod"
+          },
+          {
+            "name": "Unidade Orçamentária Responsável pelo Programa",
+            "type": "string",
+            "target": "uo_programa_nome"
+          },
+          {
+            "name": "Código da Unidade Orçamentária Responsável pela Ação",
+            "type": "integer",
+            "target": "uo_acao_cod"
+          },
+          {
+            "name": "Unidade Orçamentária Responsável pela Ação",
+            "type": "string",
+            "target": "uo_acao_nome"
+          },
+          {
+            "name": "Código da Função",
+            "type": "integer",
+            "target": "funcao_cod"
+          },
+          {
+            "name": "Função",
+            "type": "string",
+            "target": "funcao_desc"
+          },
+          {
+            "name": "Código da Subfunção",
+            "type": "integer",
+            "target": "subfuncao_cod"
+          },
+          {
+            "name": "Subfunção",
+            "type": "string",
+            "target": "subfuncao_desc"
+          },
+          {
+            "name": "Código do Tipo de Ação",
+            "type": "integer",
+            "target": "identificador_tipo_acao_cod"
+          },
+          {
+            "name": "Tipo de Ação",
+            "type": "string",
+            "target": "identificador_tipo_acao_desc"
+          },
+          {
+            "name": "Código da Ação",
+            "type": "integer",
+            "target": "acao_cod"
+          },
+          {
+            "name": "Título da Ação",
+            "type": "string",
+            "target": "acao_desc"
+          },
+          {
+            "name": "Código do Identificador de Ação Governamental (IAG)",
+            "type": "integer",
+            "target": "iag_cod"
+          },
+          {
+            "name": "Identificador de Ação Governamental (IAG)",
+            "type": "string",
+            "target": "iag_desc"
+          },
+          {
+            "name": "Código do Projeto Estratégico",
+            "type": "string",
+            "target": "projeto_estrategico_cod"
+          },
+          {
+            "name": "Projeto Estratégico",
+            "type": "string",
+            "target": "projeto_estrategico"
+          },
+          {
+            "name": "Exclusão Lógica da Ação",
+            "type": "boolean",
+            "trueValues": [
+              "Sim"
+            ],
+            "falseValues": [
+              "Não"
+            ],
+            "target": "is_deleted_acao"
+          },
+          {
+            "name": "Nova Ação",
+            "type": "boolean",
+            "trueValues": [
+              "Sim"
+            ],
+            "falseValues": [
+              "Não"
+            ],
+            "target": "is_new_acao"
+          },
+          {
+            "name": "Justificativa de Inclusão ou Exclusão da Ação",
+            "type": "string",
+            "target": "justificativa_is_new_acao"
+          },
+          {
+            "name": "Transferida para o SISOR",
+            "type": "boolean",
+            "trueValues": [
+              "Sim"
+            ],
+            "falseValues": [
+              "Não"
+            ],
+            "target": "is_transferida_sisor"
+          },
+          {
+            "name": "Unidade Administrativa Responsável pela Ação",
+            "type": "string",
+            "target": "ua_acao_nome"
+          },
+          {
+            "name": "Base legal",
+            "type": "string",
+            "target": "base_legal"
+          },
+          {
+            "name": "Finalidade da Ação",
+            "type": "string",
+            "target": "acao_finalidade"
+          },
+          {
+            "name": "Descrição da Ação",
+            "type": "string",
+            "target": "acao_descricao"
+          },
+          {
+            "name": "Código do Público-alvo",
+            "type": "integer",
+            "target": "publico_alvo_cod"
+          },
+          {
+            "name": "Público-Alvo",
+            "type": "string",
+            "target": "publico_alvo_desc"
+          },
+          {
+            "name": "Código do Produto",
+            "type": "integer",
+            "target": "produto_cod"
+          },
+          {
+            "name": "Produto",
+            "type": "string",
+            "target": "produto_desc"
+          },
+          {
+            "name": "Especificação do Produto",
+            "type": "string",
+            "target": "produto_especificacao"
+          },
+          {
+            "name": "Código da Unidade de Medida do Produto",
+            "type": "integer",
+            "target": "produto_unidade_medida_cod"
+          },
+          {
+            "name": "Unidade de Medida do Produto",
+            "type": "string",
+            "target": "produto_unidade_medida_desc"
+          },
+          {
+            "name": "Previsão Orçamentária 2023",
+            "type": "number",
+            "target": "vr_meta_orcamentaria_ano0"
+          },
+          {
+            "name": "Previsão Orçamentária 2024",
+            "type": "number",
+            "target": "vr_meta_orcamentaria_ano1"
+          },
+          {
+            "name": "Previsão Orçamentária 2025",
+            "type": "number",
+            "target": "vr_meta_orcamentaria_ano2"
+          },
+          {
+            "name": "Previsão Orçamentária 2026",
+            "type": "number",
+            "target": "vr_meta_orcamentaria_ano3"
+          },
+          {
+            "name": "Previsão Física 2023",
+            "type": "integer",
+            "target": "vr_meta_fisica_ano0"
+          },
+          {
+            "name": "Previsão Física 2024",
+            "type": "integer",
+            "target": "vr_meta_fisica_ano1"
+          },
+          {
+            "name": "Previsão Física 2025",
+            "type": "integer",
+            "target": "vr_meta_fisica_ano2"
+          },
+          {
+            "name": "Previsão Física 2026",
+            "type": "integer",
+            "target": "vr_meta_fisica_ano3"
+          },
+          {
+            "name": "Ação Transposta",
+            "type": "boolean",
+            "trueValues": [
+              "Sim"
+            ],
+            "falseValues": [
+              "Não"
+            ],
+            "target": "is_acao_transposta"
+          },
+          {
+            "name": "Setor de Governo",
+            "type": "string",
+            "target": "setor_governo"
+          }
+        ],
+        "primaryKey": [
+          "Código da Unidade Orçamentária Responsável pela Ação",
+          "Código da Ação",
+          "Exclusão Lógica da Ação"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "Código da Unidade Orçamentária Responsável pelo Programa"
+            ],
+            "reference": {
+              "fields": [
+                "Código da Unidade Orçamentária Responsável pelo Programa"
+              ],
+              "resource": "programas_planejamento"
+            }
+          },
+          {
+            "fields": [
+              "Código do Programa"
+            ],
+            "reference": {
+              "fields": [
+                "Código do Programa"
+              ],
+              "resource": "programas_planejamento"
+            }
+          }
+        ]
+      },
+      "api_url": "https://www.sigplan.mg.gov.br/v4/Relatorios/base_acoes_planejamento.asp?tipo_saida=2&mostraSQL=N&periodo=undefined",
+      "download_url": "https://www.sigplan.mg.gov.br/BasesTxt/acoes_planejamento.txt"
+    },
+    {
+      "name": "indicadores_planejamento",
+      "type": "table",
+      "title": "Relatórios e Bases do Planejamento - Indicadores",
+      "path": "data-raw/indicadores_planejamento.txt",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "windows-1252",
+      "hash": "sha256:cb4b1d2ed172eb83d7d017b8c12182d28aa4b04044c50245df80f8eac172f192",
+      "dialect": {
+        "csv": {
+          "delimiter": "|"
+        }
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "Código do Programa",
+            "type": "integer",
+            "target": "programa_cod"
+          },
+          {
+            "name": "Nome do Programa",
+            "type": "string",
+            "target": "programa_nome"
+          },
+          {
+            "name": "Exclusão Lógica do Programa",
+            "type": "boolean",
+            "target": "is_deleted_programa"
+          },
+          {
+            "name": "Indicador",
+            "type": "string",
+            "target": "indicador"
+          },
+          {
+            "name": "Exclusão Lógica do Indicador",
+            "type": "boolean",
+            "target": "is_deleted_indicador"
+          },
+          {
+            "name": "Unidade de Medida",
+            "type": "string",
+            "target": "unidade_de_medida"
+          },
+          {
+            "name": "Índice de Referência",
+            "type": "string",
+            "target": "indice_de_referencia"
+          },
+          {
+            "name": "Em apuração? (Índice de Referência)",
+            "type": "string",
+            "target": "em_apuracao_indice_de_referencia"
+          },
+          {
+            "name": "Data de Apuração",
+            "type": "date",
+            "format": "%d/%m/%Y",
+            "target": "dt_apuracao"
+          },
+          {
+            "name": "Previsão para 2023",
+            "type": "string",
+            "target": "previsao_para_ano0"
+          },
+          {
+            "name": "Em apuração? (2023)",
+            "type": "string",
+            "target": "em_apuracao_ano0"
+          },
+          {
+            "name": "Previsão para 2024",
+            "type": "string",
+            "target": "previsao_para_ano1"
+          },
+          {
+            "name": "Em apuração? (2024)",
+            "type": "string",
+            "target": "em_apuracao_ano1"
+          },
+          {
+            "name": "Previsão para 2025",
+            "type": "string",
+            "target": "previsao_para_ano2"
+          },
+          {
+            "name": "Em apuração? (2025)",
+            "type": "string",
+            "target": "em_apuracao_ano2"
+          },
+          {
+            "name": "Previsão para 2026",
+            "type": "string",
+            "target": "previsao_para_ano3"
+          },
+          {
+            "name": "Em apuração? (2026)",
+            "type": "string",
+            "target": "em_apuracao_ano3"
+          },
+          {
+            "name": "Fonte",
+            "type": "string",
+            "target": "fonte"
+          },
+          {
+            "name": "Periodicidade",
+            "type": "string",
+            "target": "periodicidade"
+          },
+          {
+            "name": "Base Geográfica",
+            "type": "string",
+            "target": "base_geografica"
+          },
+          {
+            "name": "Fórmula de Cálculo",
+            "type": "string",
+            "target": "formula_de_calculo"
+          },
+          {
+            "name": "Justificativa do Status em apuração da(s) Previsão(es) do(s) Índice(s)",
+            "type": "string",
+            "target": "justificativa_status_apuracao_previsoes"
+          },
+          {
+            "name": "Justificativa do Status em apuração do Índice de Referência",
+            "type": "string",
+            "target": "justificativa_status_apuracao_indice_ref"
+          },
+          {
+            "name": "Data Alteração",
+            "type": "datetime",
+            "format": "%d/%m/%Y %H:%M:%S",
+            "target": "updated_at"
+          },
+          {
+            "name": "Indicador Novo?",
+            "type": "boolean",
+            "target": "is_indicador_new"
+          },
+          {
+            "name": "Polaridade",
+            "type": "string",
+            "target": "polaridade"
+          }
+        ],
+        "primaryKey": [
+          "Código do Programa",
+          "Exclusão Lógica do Programa",
+          "Indicador",
+          "Exclusão Lógica do Indicador"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "Código do Programa"
+            ],
+            "reference": {
+              "fields": [
+                "Código do Programa"
+              ],
+              "resource": "programas_planejamento"
+            }
+          }
+        ]
+      },
+      "api_url": "https://www.sigplan.mg.gov.br/v4/Relatorios/base_indicadores_planejamento.asp?tipo_saida=2&mostraSQL=N&periodo=undefined",
+      "download_url": "https://www.sigplan.mg.gov.br/BasesTxt/indicadores_planejamento.txt"
+    },
+    {
+      "name": "localizadores_todos_planejamento",
+      "type": "table",
+      "title": "Relatórios e Bases do Planejamento - Localizadores (Todos)",
+      "path": "data-raw/localizadores_todos_planejamento.txt",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "windows-1252",
+      "hash": "sha256:65502d93cac791438de9a3e9c8155583648778e4ad578fbc794ea3e06a0e91be",
+      "dialect": {
+        "csv": {
+          "delimiter": "|"
+        }
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "Código do Programa",
+            "type": "integer",
+            "target": "programa_cod"
+          },
+          {
+            "name": "Nome do Programa",
+            "type": "string",
+            "target": "programa_desc"
+          },
+          {
+            "name": "Código da Área Temática",
+            "type": "string",
+            "target": "area_tematica_cod"
+          },
+          {
+            "name": "Área Temática",
+            "type": "string",
+            "target": "area_tematica_desc"
+          },
+          {
+            "name": "Exclusão Lógica do Programa",
+            "type": "boolean",
+            "target": "is_deleted_programa"
+          },
+          {
+            "name": "Código da Ação",
+            "type": "integer",
+            "target": "acao_cod"
+          },
+          {
+            "name": "Título da Ação",
+            "type": "string",
+            "target": "titulo_da_acao"
+          },
+          {
+            "name": "Código do Identificador de Ação Governamental (IAG)",
+            "type": "integer",
+            "target": "iag_cod"
+          },
+          {
+            "name": "Identificador de Ação Governamental (IAG)",
+            "type": "string",
+            "target": "iag_desc"
+          },
+          {
+            "name": "Código do Projeto Estratégico",
+            "type": "string",
+            "target": "projeto_estrategico_cod"
+          },
+          {
+            "name": "Projeto Estratégico",
+            "type": "string",
+            "target": "projeto_estrategico_desc"
+          },
+          {
+            "name": "Código da Função",
+            "type": "integer",
+            "target": "funcao_cod"
+          },
+          {
+            "name": "Função",
+            "type": "string",
+            "target": "funcao_desc"
+          },
+          {
+            "name": "Código da Subfunção",
+            "type": "integer",
+            "target": "subfuncao_cod"
+          },
+          {
+            "name": "SubFunção",
+            "type": "string",
+            "target": "subfuncao_desc"
+          },
+          {
+            "name": "Código da Unidade Orçamentária Responsável pela Ação",
+            "type": "integer",
+            "target": "uo_acao_cod"
+          },
+          {
+            "name": "Unidade Orçamentária Responsável pela Ação",
+            "type": "string",
+            "target": "uo_acao_nome"
+          },
+          {
+            "name": "Exclusão Lógica da Ação",
+            "type": "boolean",
+            "target": "is_deleted_acao"
+          },
+          {
+            "name": "Código do Localizador",
+            "type": "string",
+            "target": "localizador_cod"
+          },
+          {
+            "name": "Exclusão Lógica do Localizador",
+            "type": "boolean",
+            "trueValues": [
+              "Sim"
+            ],
+            "falseValues": [
+              "Não"
+            ],
+            "target": "is_deleted_localizador"
+          },
+          {
+            "name": "Código da Região Geográfica Intermediária",
+            "type": "integer",
+            "target": "regiao_geografica_cod"
+          },
+          {
+            "name": "Região Geográfica Intermediária",
+            "type": "string",
+            "target": "regiao_geografica_desc"
+          },
+          {
+            "name": "Código do Município IBGE",
+            "type": "integer",
+            "target": "municipio_ibge_cod"
+          },
+          {
+            "name": "Código do Município Sigplan",
+            "type": "integer",
+            "target": "municipio_sigplan_cod"
+          },
+          {
+            "name": "Município",
+            "type": "string",
+            "target": "municipio"
+          },
+          {
+            "name": "Previsão Orçamentária 2023",
+            "type": "number",
+            "target": "vr_meta_orcamentaria_ano0"
+          },
+          {
+            "name": "Previsão Física 2023",
+            "type": "integer",
+            "target": "vr_meta_fisica_ano0"
+          },
+          {
+            "name": "Previsão Orçamentária 2024",
+            "type": "number",
+            "target": "vr_meta_orcamentaria_ano1"
+          },
+          {
+            "name": "Previsão Física 2024",
+            "type": "integer",
+            "target": "vr_meta_fisica_ano1"
+          },
+          {
+            "name": "Previsão Orçamentária 2025",
+            "type": "number",
+            "target": "vr_meta_orcamentaria_ano2"
+          },
+          {
+            "name": "Previsão Física 2025",
+            "type": "integer",
+            "target": "vr_meta_fisica_ano2"
+          },
+          {
+            "name": "Previsão Orçamentária 2026",
+            "type": "number",
+            "target": "vr_meta_orcamentaria_ano3"
+          },
+          {
+            "name": "Previsão Física 2026",
+            "type": "integer",
+            "target": "vr_meta_fisica_ano3"
+          }
+        ],
+        "primaryKey": [
+          "Código da Unidade Orçamentária Responsável pela Ação",
+          "Código da Ação",
+          "Exclusão Lógica da Ação",
+          "Código do Localizador"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "Código da Unidade Orçamentária Responsável pela Ação"
+            ],
+            "reference": {
+              "fields": [
+                "Código da Unidade Orçamentária Responsável pela Ação"
+              ],
+              "resource": "acoes_planejamento"
+            }
+          },
+          {
+            "fields": [
+              "Código da Ação"
+            ],
+            "reference": {
+              "fields": [
+                "Código da Ação"
+              ],
+              "resource": "acoes_planejamento"
+            }
+          }
+        ]
+      },
+      "api_url": "https://www.sigplan.mg.gov.br/v4/Relatorios/base_localizadores_planejamento.asp?tipo_saida=2&mostraSQL=N&tipo_rel=5&periodo=undefined",
+      "download_url": "https://www.sigplan.mg.gov.br/BasesTxt/localizadores_Todos_planejamento.txt"
+    },
+    {
+      "name": "programas_planejamento",
+      "type": "table",
+      "title": "Relatórios e Bases do Planejamento - Programas",
+      "path": "data-raw/programas_planejamento.txt",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "windows-1252",
+      "hash": "sha256:8653b3eb6a6df02ad623b292248b69ab212189829ac54c2492cb18bc6c9c9142",
+      "dialect": {
+        "csv": {
+          "delimiter": "|"
+        }
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "Código do Programa",
+            "type": "integer",
+            "target": "programa_cod"
+          },
+          {
+            "name": "Nome do Programa",
+            "type": "string",
+            "target": "programa_desc"
+          },
+          {
+            "name": "Exclusão Lógica do Programa",
+            "type": "boolean",
+            "trueValues": [
+              "Sim"
+            ],
+            "falseValues": [
+              "Não"
+            ],
+            "target": "is_deleted_programa"
+          },
+          {
+            "name": "Programa Novo",
+            "type": "boolean",
+            "trueValues": [
+              "Sim"
+            ],
+            "falseValues": [
+              "Não"
+            ],
+            "target": "is_new_programa"
+          },
+          {
+            "name": "Código da Área Temática",
+            "type": "string",
+            "target": "area_tematica_cod"
+          },
+          {
+            "name": "Área Temática",
+            "type": "string",
+            "target": "area_tematica_desc"
+          },
+          {
+            "name": "Código do Objetivo Estratégico",
+            "type": "integer",
+            "target": "objetivo_estrategico_cod"
+          },
+          {
+            "name": "Objetivo Estratégico",
+            "type": "string",
+            "target": "objetivo_estrategico_desc"
+          },
+          {
+            "name": "Código da Diretriz Estratégica",
+            "type": "string",
+            "target": "diretriz_estrategica_cod"
+          },
+          {
+            "name": "Diretriz Estratégica",
+            "type": "string",
+            "target": "diretriz_estrategica_desc"
+          },
+          {
+            "name": "Justificativa de Inclusão ou Exclusão do Programa",
+            "type": "string",
+            "target": "justificativa_is_new_programa"
+          },
+          {
+            "name": "Código do Órgão Responsável pelo Programa",
+            "type": "integer",
+            "target": "orgao_programa_cod"
+          },
+          {
+            "name": "Órgão Responsável pelo Programa",
+            "type": "string",
+            "target": "orgao_programa_nome"
+          },
+          {
+            "name": "Código da Unidade Orçamentária Responsável pelo Programa",
+            "type": "integer",
+            "target": "uo_programa_cod"
+          },
+          {
+            "name": "Unidade Orçamentária Responsável pelo Programa",
+            "type": "string",
+            "target": "uo_programa_nome"
+          },
+          {
+            "name": "Objetivo",
+            "type": "string",
+            "target": "objetivo"
+          },
+          {
+            "name": "Justificativa",
+            "type": "string",
+            "target": "justificativa"
+          },
+          {
+            "name": "Tipo de Programa",
+            "type": "string",
+            "target": "tipo_de_programa"
+          },
+          {
+            "name": "Horizonte Temporal",
+            "type": "string",
+            "target": "horizonte_temporal"
+          },
+          {
+            "name": "Estratégia de Implementação",
+            "type": "string",
+            "target": "estrategia_de_implementacao"
+          },
+          {
+            "name": "Unidade Administrativa Responsável pelo Programa",
+            "type": "string",
+            "target": "ua_programa_nome"
+          },
+          {
+            "name": "Previsão Orçamentária 2023",
+            "type": "number",
+            "target": "vr_meta_orcamentaria_ano0"
+          },
+          {
+            "name": "Previsão Orçamentária 2024",
+            "type": "number",
+            "target": "vr_meta_orcamentaria_ano1"
+          },
+          {
+            "name": "Previsão Orçamentária 2025",
+            "type": "number",
+            "target": "vr_meta_orcamentaria_ano2"
+          },
+          {
+            "name": "Previsão Orçamentária 2026",
+            "type": "number",
+            "target": "vr_meta_orcamentaria_ano3"
+          },
+          {
+            "name": "Programa Transposto",
+            "type": "boolean",
+            "trueValues": [
+              "Sim"
+            ],
+            "falseValues": [
+              "Não"
+            ],
+            "target": "is_programa_transposto"
+          },
+          {
+            "name": "Causas",
+            "type": "string",
+            "target": "causas"
+          },
+          {
+            "name": "Título do Objetivo de Desenvolvimento Sustentável",
+            "type": "string",
+            "target": "ods_titulo"
+          },
+          {
+            "name": "Subtítulo do Objetivo de Desenvolvimento Sustentável",
+            "type": "string",
+            "target": "ods_subtitulo"
+          }
+        ],
+        "primaryKey": [
+          "Código da Unidade Orçamentária Responsável pelo Programa",
+          "Código do Programa",
+          "Exclusão Lógica do Programa",
+          "Código do Objetivo Estratégico",
+          "Código da Diretriz Estratégica",
+          "Título do Objetivo de Desenvolvimento Sustentável"
+        ]
+      },
+      "api_url": "https://www.sigplan.mg.gov.br/v4/Relatorios/base_programas_planejamento.asp?tipo_saida=2&mostraSQL=N&periodo=undefined",
+      "download_url": "https://www.sigplan.mg.gov.br/BasesTxt/programas_planejamento.txt"
+    }
+  ]
+}
