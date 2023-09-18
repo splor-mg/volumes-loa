@@ -23,17 +23,17 @@ Receita de Transferências Correntes	23.650.483.147	20	1
 Cota-Parte do FPE	7.341.397.806	21	2
 Transferências da LC 61/1989	924.549.667	23	2
 Transferências do FUNDEB	10.930.515.138	24	2
-Outras Transferências Correntes	4.454.020.536	25	2
+Outras Transferências Correntes	4.403.840.571	25	2
 Outras Receitas Correntes	1.227.441.369	26	1
-DEDUÇÕES ( II )	41.042.714.305	27	0
+DEDUÇÕES ( II )	41.035.133.757	27	0
 Transferências Constitucionais e Legais	22.387.923.062	28	1
-Contrib. para o Plano de Previdência do Servidor	3.312.729.077	29	1
+Contrib. para o Plano de Previdência do Servidor	3.305.148.529	29	1
 Contrib. para o Custeio das Pensões Militares	1.761.536.485	30	1
 Compensação Financ. entre Regimes Previdência	42.000.000	31	1
 Rendimentos de Aplicações de Recursos Previdenciários	54.800.000	32	1
 Dedução da Receita Corrente – Formação do FUNDEB	13.483.725.681	33	1
-RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )	87.401.642.294	34	0
+RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )	87.409.222.842	34	0
 (-) Transf. obrig. da União relativas às emendas individuais (art. 166-A, § 1\degree, da CF) (IV)	84.566.078	35	0
-RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )	87.317.076.216	36	0
+RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )	87.324.656.764	36	0
 (-) Transf. obrig. da União relativas às emendas de bancada (art. 166, § 16, da CF) (VI)	55.690.003	37	0
-RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (VII) = ( V - VI )	87.261.386.213	38	0
+RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (VII) = ( V - VI )	87.268.966.761	38	0
