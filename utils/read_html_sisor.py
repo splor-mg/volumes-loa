@@ -1,27 +1,23 @@
-import pandas as pd
 from pathlib import Path
-from frictionless import Package, Resource
+from frictionless import Package, formats
 
+package = Package('datapackages/sisor/datapackage.json')
 
-bancos_names = ["BASE_CATEGORIA_PESSOAL",
-              "BASE_DETALHAMENTO_OBRAS",
-              "BASE_ORCAM_DESPESA_ITEM_FISCAL",
-              "BASE_ORCAM_RECEITA_FISCAL",
-              "BASE_QDD_FISCAL",
-              "BASE_QDD_INVESTIMENTO",
-              "BASE_QDD_PLURIANUAL_INVEST",
-              "BASE_REPASSE_RECURSOS",
-            ]
-datapackage_path = Path.joinpath(Path(__file__).parents[1], 'datapackages/sisor')
-datapackage_dataraw_path = Path.joinpath(Path(__file__).parents[1], 'datapackages/sisor/data-raw/')
-bancos_sisor_path = Path.joinpath(Path(__file__).parents[1], 'bancos/SISOR/')
+resource_names = [
+                  "base_categoria_pessoal",
+                  "base_detalhamento_obras",
+                  "base_orcam_despesa_item_fiscal",
+                  "base_orcam_receita_fiscal",
+                  "base_qdd_fiscal",
+                  "base_qdd_investimento",
+                  "base_qdd_plurianual_invest",
+                  "base_repasse_recursos",
+                 ]
 
-data_filenames = [Path.joinpath(datapackage_dataraw_path, y + '.html') for x in ([datapackage_dataraw_path]) for y in map(str.lower, bancos_names)]
-
-for filename in data_filenames:
-  print(f"Formata base {filename}")
-  df = pd.read_html(filename, header=0, index_col=0, decimal=',', thousands='.', encoding='latin1')
-  save_path = Path.joinpath(bancos_sisor_path, filename.stem.upper() + '.xlsx' )
-  df[0].to_excel(save_path, sheet_name=filename.stem.upper())
-  print(f"Arquivo {filename.stem.upper()}.xlsx salvo em {bancos_sisor_path}")
-
+for resource_name in resource_names:
+  print("Formata recurso", resource_name)
+  resource = package.get_resource(resource_name)
+  excel_control = formats.ExcelControl(sheet=resource_name.upper())
+  output_path = str(Path('bancos/SISOR/') / f'{resource_name.upper()}.xlsx')
+  resource.write(output_path, control = excel_control)
+  print(f"Arquivo salvo em {output_path}")
