@@ -175,8 +175,124 @@ resources:
           type: string
         - name: METODOLOGIA DE CÁLCULO E PREMISSAS UTILIZADAS
           type: string
+  - name: base_orcam_receita_fiscal_fonte_stn
+    path: bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_FONTE_STN.xlsx
+    scheme: file
+    format: xlsx
+    encoding: utf-8
+    schema:
+      fields:
+        - name: UO_COD
+          type: integer
+        - name: NOME_UO
+          type: string
+        - name: SIGLA_UO
+          type: string
+        - name: COD_FONTE
+          type: integer
+        - name: FONTE
+          type: string
+        - name: INTERPRETACAO
+          type: string
+        - name: CATEGORIA
+          type: integer
+        - name: ORIGEM
+          type: integer
+        - name: ESPÉCIE
+          type: integer
+        - name: RUBRICA
+          type: integer
+        - name: ALINEA
+          type: integer
+        - name: SUBALINEA
+          type: integer
+        - name: TIPO DE RECEITA
+          type: integer
+        - name: ITEM
+          type: integer
+        - name: SUBITEM
+          type: integer
+        - name: COD_RECEITA
+          type: integer
+        - name: RECEITA
+          type: string
+        - name: INTERP_RECEITA
+          type: string
+        - name: VALOR UO (R$)
+          type: integer
+        - name: VALOR SCPPO (R$)
+          type: integer
+        - name: VALOR FINAL (R$)
+          type: integer
+        - name: ANO
+          type: integer
+        - name: BASE LEGAL
+          type: string
+        - name: METODOLOGIA DE CÁLCULO E PREMISSAS UTILIZADAS
+          type: string
   - name: base_qdd_fiscal
     path: bancos/SISOR/BASE_QDD_FISCAL.xlsx
+    scheme: file
+    format: xlsx
+    encoding: utf-8
+    schema:
+      fields:
+        - name: ANO
+          type: integer
+        - name: COD_ORGAO
+          type: integer
+        - name: ORGAO
+          type: string
+        - name: PODER
+          type: integer
+        - name: SITUACAO
+          type: integer
+        - name: COD_UO
+          type: integer
+        - name: UO
+          type: string
+        - name: CATEGORIA
+          type: integer
+        - name: GRUPO_DESPESA
+          type: integer
+        - name: MODALIDADE
+          type: integer
+        - name: ELEMENTO_DESPESA
+          type: integer
+        - name: FONTE
+          type: integer
+        - name: IPU
+          type: integer
+        - name: SEQ_PROGTRAB
+          type: integer
+        - name: FUNCAO
+          type: integer
+        - name: SUB_FUNCAO
+          type: integer
+        - name: PROGRAMA
+          type: integer
+        - name: IDENT_PROJATIV
+          type: integer
+        - name: PROJ_ATIV
+          type: integer
+        - name: AÇÃO
+          type: integer
+        - name: SUB_PROJETO
+          type: integer
+        - name: VALOR UO (R$)
+          type: integer
+        - name: VALOR SCPPO (R$)
+          type: integer
+        - name: VALOR FINAL (R$)
+          type: integer
+        - name: IAG
+          type: integer
+        - name: NOME_ACAO
+          type: string
+        - name: NOME_PROGRAMA
+          type: string
+  - name: base_qdd_fiscal_fonte_stn
+    path: bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx
     scheme: file
     format: xlsx
     encoding: utf-8
@@ -676,6 +792,19 @@ resources:
           type: string
   - name: desc_fontes_de_recursos
     path: bancos/manual/desc_fontes_de_recursos.xlsx
+    scheme: file
+    format: xlsx
+    encoding: utf-8
+    schema:
+      fields:
+        - name: CODIGO
+          type: integer
+        - name: CLASSIFICACAO
+          type: string
+        - name: INTERPRETACAO
+          type: string
+  - name: desc_fontes_de_recursos_stn
+    path: bancos/manual/desc_fontes_de_recursos_stn.xlsx
     scheme: file
     format: xlsx
     encoding: utf-8

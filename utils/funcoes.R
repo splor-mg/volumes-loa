@@ -184,7 +184,10 @@ make_vol_dir = function(x){
 
   if(grepl("^2(A|B)", x)){ return("2")
     } else if(grepl("^T\\d+.+", x)){ return("1")
-      } else{ return(x)
+    } else if(grepl("^6(A|B)", x)) {
+        return("6")
+      }
+        else{ return(x)
     }
 }
 

@@ -1,0 +1,119 @@
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  4.6.91.93 
+Correção: inserir esses códigos e sua descrição na tabela.
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  4.6.91.93 
+Correção: inserir esses códigos e sua descrição na tabela.
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  4.6.91.93 
+Correção: inserir esses códigos e sua descrição na tabela.
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  4.6.91.93 
+Correção: inserir esses códigos e sua descrição na tabela.
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  4.6.91.93 
+Correção: inserir esses códigos e sua descrição na tabela.
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  4.6.91.93 
+Correção: inserir esses códigos e sua descrição na tabela.
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  4.6.91.93 
+Correção: inserir esses códigos e sua descrição na tabela.
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  4.6.91.93 
+Correção: inserir esses códigos e sua descrição na tabela.
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  4.6.91.93 
+Correção: inserir esses códigos e sua descrição na tabela.
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  4.6.91.93 
+Correção: inserir esses códigos e sua descrição na tabela.
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+Warning: volume6.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  4.6.91.93 
+Correção: inserir esses códigos e sua descrição na tabela.
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6A.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6A.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6B.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6B.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6A.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion
