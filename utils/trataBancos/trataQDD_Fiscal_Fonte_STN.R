@@ -1,6 +1,6 @@
 library(data.table)
 
-df <- read_excel("bancos/SISOR/BASE_QDD_FISCAL.xlsx") |> as.data.table()
+df <- as.data.table(readxl::read_excel("bancos/SISOR/BASE_QDD_FISCAL.xlsx"))
 
 column_mapping <- c(COD_UO = "UO_COD", 
                     GRUPO_DESPESA = "GRUPO_COD", 
