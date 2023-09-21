@@ -401,5 +401,39 @@ zero2traco = function(valor){
   return(ifelse(valor==0, "-", valor))
 }
 
-
+adiciona_desc_volumes = function(base, column) {
+  result <- data.table::copy(base)
+  
+  if(column == "GRUPO") {
+    aux <- data.table(read_excel("bancos/manual/desc_grupos_de_despesa.xlsx"))
+    aux <- aux[
+      , .(GRUPO_COD = CODIGO, 
+          GRUPO_DESC = stringi::stri_trans_general(ESPECIFICACAO, "latin-ascii"))
+    ]
+    result <- aux[result, on = "GRUPO_COD"]
+  } else if(column == "UO") {
+    aux <- data.table(read_excel("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx"))
+    aux <- unique(
+      aux[
+        , .(UO_COD = UO_COD, 
+            UO_SIGLA = SIGLA_UO)
+      ]
+    )
+    result <- aux[result, on = "UO_COD"]
+  } else if(column == "PROGRAMA") {
+    aux <- data.table(read_excel("bancos/SISOR/BASE_QDD_FISCAL.xlsx"))
+    aux <- unique(
+      aux[
+        , .(UO_COD = COD_UO,
+            PROGRAMA_COD = PROGRAMA, 
+            PROGRAMA_DESC = stringi::stri_trans_general(NOME_PROGRAMA, "latin-ascii"))
+      ]
+    )
+    result <- aux[result, on = c("UO_COD", "PROGRAMA_COD")]
+  } else {
+    stop(paste("adiciona_desc_volumes não pode ser utilizada para coluna", column))
+  }
+  
+  result
+}
 

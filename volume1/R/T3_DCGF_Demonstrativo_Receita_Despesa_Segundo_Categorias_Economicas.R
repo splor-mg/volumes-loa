@@ -20,7 +20,7 @@ receita = trataReceita_Fiscal("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx")
 loa_rec = geraLoa_rec(receita)
 
 # ======= Banco LOA DESPESA ==========================================================
-loa_desp = adiciona_desc(loa_desp, columns = "GRUPO")
+loa_desp = adiciona_desc_volumes(loa_desp, column = "GRUPO")
 
 loa_gd = loa_desp[MODALIDADE_COD!=91, list(vl_desp=sum(VL_LOA_DESP, na.rm=T)), 
                   by=list(DESPESA_DESC = paste0(CATEGORIA_COD, GRUPO_COD, ". ", GRUPO_DESC))]
