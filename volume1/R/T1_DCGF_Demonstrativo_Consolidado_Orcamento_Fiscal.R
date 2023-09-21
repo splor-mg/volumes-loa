@@ -133,7 +133,7 @@ write.csv2(painel_rec_para_teste, paste0("utils/suporte/V1/painel_rec", loa_rec[
            row.names=F)
 
 # ======= Banco LOA DESPESA ==========================================================
-loa_desp = adiciona_desc(loa_desp, "GRUPO")
+loa_desp = adiciona_desc_volumes(loa_desp, "GRUPO")
 
 loa_desp[FONTE_COD %in% rec_ordinario, recurso := "ordinaria"]
 loa_desp[!FONTE_COD %in% rec_ordinario, recurso := "vinculada"]

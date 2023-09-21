@@ -16,7 +16,8 @@ desp = desp[FONTE_COD %in% fontes_uniao,
             list(VL_LOA_DESP = sum(VL_LOA_DESP)), 
             by=list(UO_COD, PROGRAMA_COD, ANO)]
 
-desp = adiciona_desc(desp, c("UO", "PROGRAMA"))
+desp = adiciona_desc_volumes(desp, column = "UO")
+desp = adiciona_desc_volumes(desp, column = "PROGRAMA")
 desp = desp[order(UO_COD, PROGRAMA_COD)]
 
 desp = rbind(desp, desp[, lapply(.SD, sum), .SDcols=6], fill=T)

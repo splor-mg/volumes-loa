@@ -29,7 +29,7 @@ desp = rbind(desp, loa, fill=T)
 # existe um de-para no pacote relatórios que pode nao ser atualizado ano a ano, 
 # manter um valor de ano que esteja no de-para ou pedir para atualizar pacote relatórios (andrey 09-2022)
 desp[, ANO_TEMP:= ANO]; desp[, ANO:=2022]
-desp = adiciona_desc(desp, columns = "GRUPO")
+desp = adiciona_desc_volumes(desp, column = "GRUPO")
 desp[, ANO:= ANO_TEMP]; desp[, ANO_TEMP:=NULL]
 
 desp[, CATEGORIA_DESC := ifelse(CATEGORIA_COD==3, "Despesas Correntes", 

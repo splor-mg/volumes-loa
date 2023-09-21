@@ -19,7 +19,7 @@ setnames(desp, "VL_LOA_DESP", "VL_DESP")
 # de-para ou pedir para atualizar pacote relatórios (Andrey 09-2022)
 #==============================================================================
 desp[, ANO:=2022]
-desp = adiciona_desc(desp, "GRUPO")
+desp = adiciona_desc_volumes(desp, "GRUPO")
 
 desp[, CATEGORIA_DESC := ifelse(CATEGORIA_COD==3, "Despesas Correntes", 
                          ifelse(CATEGORIA_COD==4, "Despesas de Capital",
