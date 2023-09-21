@@ -7,9 +7,9 @@ trataQDD_Fiscal = function(caminho, realizarTeste = TRUE){
   
   avisoNumAbas(caminho)
   
-  qdd = read_excel(caminho, sheet=1)
-  names(qdd) = gsub(".*VALOR *FINAL.+", "valor", names(qdd), ignore.case = FALSE)
-  names(qdd) = iconv(names(qdd), from="UTF-8", to="ASCII//TRANSLIT")
+  qdd = as.data.table(read_excel(caminho, sheet=1))
+  data.table::setnames(qdd, "VALOR FINAL (R$)", "valor")
+  names(qdd) = stringi::stri_trans_general(names(qdd), "latin-ascii")
  
   nomes_esperados = c("ANO", "COD_ORGAO", "ORGAO", "PODER", "COD_UO", "UO", "CATEGORIA", "GRUPO_DESPESA",
                         "MODALIDADE", "ELEMENTO_DESPESA", "FONTE", "IPU", "SEQ_PROGTRAB", "FUNCAO", "SUB_FUNCAO", 
