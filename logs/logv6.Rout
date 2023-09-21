@@ -1,0 +1,21 @@
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=utils/trataBancos/trataDescFonte_STN.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=utils/trataBancos/trataReceita_Fiscal_Fonte_STN.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6B.R'
+
+Warning: T7_QUADRO_GERAL_DA_RECEITA.R: Há um código de receita que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1713.50.2.1.01.000
+2213.01.0.1.01.000
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=utils/trataBancos/trataQDD_Fiscal_Fonte_STN.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume6/R/volume6A.R'
+
+Warning in format(as.numeric(gsub(" ", "", codigo)), scientific = F) :
+  NAs introduced by coercion

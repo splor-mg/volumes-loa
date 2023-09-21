@@ -1,0 +1,3 @@
+"cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
+""	""	""	"0"	"0"	"0"	"1.71.1 - SECRETARIA DE ESTADO DE COMUNICAÇÃO SOCIAL - SECOM"	"1.71.0 - SECRETARIA DE ESTADO DE COMUNICAÇÃO SOCIAL - SECOM"
+""	""	"SUBTOTAL 1"	"0"	"0"	"0"		
