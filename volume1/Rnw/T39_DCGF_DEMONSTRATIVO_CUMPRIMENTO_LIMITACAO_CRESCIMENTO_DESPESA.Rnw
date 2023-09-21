@@ -28,7 +28,6 @@
   source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
 
   # INICIO TABELA
-  suppressMessages(suppressWarnings(library(dplyr)))
   suppressMessages(suppressWarnings(library(readr)))
   
   banco = read_delim(
@@ -40,7 +39,9 @@
                      VL_LIMITE = col_character(),
                      credito_inicial = col_character(),
                      excedente = col_character())
-    ) %>% as.data.table()
+    )
+
+  banco = as.data.table(banco)
 
   cat("\\renewcommand*{\\arraystretch}{1.7}\n")
   cat("\\normalsize\n")

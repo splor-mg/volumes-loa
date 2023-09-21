@@ -34,7 +34,6 @@
   
   arquivo = "/T14_DEMONSTRATIVO_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_CONFORME_VINCULO_COM_RECURSOS.txt"
   
-  suppressWarnings(suppressMessages(library(dplyr)))
   suppressMessages(suppressWarnings(library(readr)))
   
   banco = read_delim(
@@ -42,7 +41,9 @@
     delim = '\t', 
     na = '',
     col_types = cols(.default = col_character())
-    ) %>% as.data.table()
+    )
+
+  banco = as.data.table(banco)
 
   cat("\\footnotesize\n")
   #cat("\\renewcommand*{\\arraystretch}{1.5}\n")

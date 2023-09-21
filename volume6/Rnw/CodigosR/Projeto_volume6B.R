@@ -1,5 +1,4 @@
   # INICIO TABELA 
-  library(dplyr) 
   library(readr) 
  
   banco=data.table(read.table(paste0(dir_data, "/receita_fonte_stn.txt"), 

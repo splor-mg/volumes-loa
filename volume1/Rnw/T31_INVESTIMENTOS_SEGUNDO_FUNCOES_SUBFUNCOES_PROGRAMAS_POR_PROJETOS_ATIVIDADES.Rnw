@@ -28,7 +28,6 @@
   source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
 
   # INICIO TABELA
-  library(dplyr)
   library(readr)
   
   banco = read_delim(
@@ -37,7 +36,9 @@
     delim = '\t', 
     locale = locale('pt', decimal_mark = ',', grouping_mark = '.'),
     na = ''
-    ) %>% as.data.table()
+    )
+
+  banco = as.data.table(banco)
 
   banco$total = format(banco$total, big.mark = '.', decimal.mark = ',', scientific = F)
   
