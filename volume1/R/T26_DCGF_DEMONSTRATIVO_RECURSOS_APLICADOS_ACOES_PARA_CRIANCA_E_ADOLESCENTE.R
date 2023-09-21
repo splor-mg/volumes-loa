@@ -25,15 +25,12 @@ setnames(qdd_inv, c(c("ANO","COD_UO", "FUNCAO", "SUB_FUNCAO", "PROGRAMA", "ACAO"
 loa_desp = rbind(loa_desp, qdd_inv, fill=T)
 
 # Identificar as ações voltadas para criança e adolescente
-suppressWarnings(library(dplyr))
 memoria = readxl::read_excel('bancos/manual/memoria_calculo.xlsx', sheet = 'criança e adolescente')
-memoria = memoria %>% 
-  select(FUNCAO_COD, SUBFUNCAO_COD, `NE/E`) %>% 
-  rename(EXCLUSIVA = `NE/E`)
+memoria =  dplyr::select(memoria, FUNCAO_COD, SUBFUNCAO_COD, `NE/E`)
+memoria =  dplyr::rename(memoria, EXCLUSIVA = `NE/E`)
 
-loa_desp = loa_desp %>% 
-  left_join(memoria) %>% 
-  as.data.table()
+loa_desp = dplyr::left_join(loa_desp, memoria)
+loa_desp = as.data.table(loa_desp)
   
 loa_desp[, ACOES_CRIANCA := FALSE]
 loa_desp[!is.na(EXCLUSIVA), ACOES_CRIANCA := TRUE]

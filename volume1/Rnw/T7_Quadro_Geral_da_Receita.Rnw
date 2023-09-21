@@ -28,7 +28,6 @@
   source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
 
   # INICIO TABELA
-  library(dplyr)
   library(readr)
 
   banco=data.table(read.table(paste0(dir_data, "/T7_QUADRO_GERAL_DA_RECEITA.txt"),

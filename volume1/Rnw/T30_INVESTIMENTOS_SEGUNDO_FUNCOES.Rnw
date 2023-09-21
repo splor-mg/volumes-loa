@@ -28,7 +28,6 @@
   source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
 
   # INICIO TABELA
-  library(dplyr)
   library(readr)
   
   banco = read_delim(
@@ -37,7 +36,9 @@
     locale = locale(decimal_mark = ',', grouping_mark = '.'),
     na = '',
     col_types = cols(.default = col_character())
-    ) %>% as.data.table()
+    ) 
+  
+  banco = as.data.table(banco)
   
   cat("\\renewcommand*{\\arraystretch}{1.7}\n")
   cat("\\normalsize\n")
