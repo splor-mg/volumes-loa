@@ -1,0 +1,5 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"DIREÇÃO E ASSESSORAMENTO"	"54"	"66"	"9.459.035"	"100"	"1.72.1 - SECRETARIA DE ESTADO DA CASA CIVIL - SCC"	"1.72.0 - SECRETARIA DE ESTADO DA CASA CIVIL - SCC"
+	"DIREÇÃO SUPERIOR"	" 2"					
+	"ESPECIALIZADA"	"10"					
+"TOTAL"			"66"	"9.459.035"	"100"		
