@@ -57,7 +57,7 @@ loa_desp = mergeDT(loa_desp, subfuncao_desc, by.x="SUBFUNCAO_COD", by.y="codigo"
 setnames(loa_desp, "subfuncao", "espec")
 loa_desp[, merge:=NULL]
 
-subf_esperadas = c(361, 363, 362, 366, 367, 368) # Códigos de subfunção que apareceram em 2023
+subf_esperadas = c(122, 361, 363, 362, 366, 367, 368) # Códigos de subfunção que apareceram em 2023
 
 if(length(intersect(loa_desp[, unique(SUBFUNCAO_COD)], subf_esperadas)) != length(loa_desp[, unique(SUBFUNCAO_COD)])){
   warning(paste0("T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB: ",

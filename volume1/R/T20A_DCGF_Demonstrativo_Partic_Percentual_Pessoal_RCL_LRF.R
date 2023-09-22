@@ -106,7 +106,7 @@ parte_pgj = data.table(cod=c(7,8),
 
 
 # =============== B - Poder Executivo ==================================================
-desc_executivo = "Poder Executivo"
+desc_executivo = "Poder Executivo (inclusive Defensoria Pública)"
 vl_executivo = loa_desp[is_dtp(loa_desp) & !(is_pgj(loa_desp) | is_legislativo(loa_desp) | 
                                                is_tce(loa_desp) | is_judiciario(loa_desp)), sum(VL_DESP)]
 perc_executivo = 0.49

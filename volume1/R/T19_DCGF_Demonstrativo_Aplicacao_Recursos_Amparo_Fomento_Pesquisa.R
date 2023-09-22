@@ -52,11 +52,11 @@ parteA = data.table(cod=1, espec = parteA_desc, valor= loa_rec[is_fapemig_rec(lo
 
 # deducao30_Fapemig = loa_rec[is_fapemig_desvinc_rec(loa_rec), sum(VL_REC)*0.3]
 # deducao30_Fapemig = loa_rec[is_fapemig_desvinc_rec_3(loa_rec), sum(VL_REC)*0.3]
-deducao30_Fapemig = loa_rec[is_fapemig_rec(loa_rec), sum(VL_REC)*0.3]
+deducao30_Fapemig = loa_rec[is_fapemig_rec(loa_rec), sum(VL_REC)*0.0]
 
-parteA = rbind(parteA, data.table(cod=2,
-                                  espec = "B - DESVINCULAÇÃO DE 30% DE IMPOSTOS, TAXAS E MULTAS (EC 93/2016)", 
-                                  valor = deducao30_Fapemig))
+#parteA = rbind(parteA, data.table(cod=2,
+#                                  espec = "B - DESVINCULAÇÃO DE 30% DE IMPOSTOS, TAXAS E MULTAS", 
+#                                  valor = deducao30_Fapemig))
 
 parteA = rbind(parteA, data.table(cod=3, 
                                   espec = "C - BASE DE CÁLCULO FAPEMIG (A - B)", 

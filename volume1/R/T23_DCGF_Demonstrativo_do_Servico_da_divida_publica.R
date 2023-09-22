@@ -13,7 +13,7 @@ qdd = trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F)
 loa_desp = geraLoa_desp(qdd)
 setnames(loa_desp, "VL_LOA_DESP", "VL_DESP")
 
-acoes_divida_interna = c(7007, 7886, 7030, 7043, 7658, 7003)
+acoes_divida_interna = c(7886, 7030, 7043, 7658, 7003)
 acoes_divida_externa = 7896
 
 
