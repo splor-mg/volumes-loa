@@ -17,7 +17,7 @@ classificacao_despesa = data.table(read_excel("bancos/manual/desc_classificacao_
 
 classificacao_despesa = classificacao_despesa[!is.na(codigo),]
 
-classificacao_despesa[, codigo:= format(as.numeric(gsub(" ", "", codigo)), scientific = F)]
+classificacao_despesa[, codigo:= format(as.numeric(gsub(" |\u00A0", "", codigo)), scientific = F)]
 
 classificacao_despesa[, codigo_texto := paste(substr(codigo,1,1), substr(codigo,2,2), 
                                               substr(codigo,3,4), substr(codigo,5,6), sep=".")]
