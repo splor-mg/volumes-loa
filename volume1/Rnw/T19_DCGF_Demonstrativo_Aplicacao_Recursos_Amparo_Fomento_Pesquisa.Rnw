@@ -96,11 +96,7 @@
   cat("\\raggedright\n")
   cat("\\fontsize{7pt}{10pt}\\selectfont {FONTE: Armazém Sisor.} \\\\\n")
   cat("\\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
-  cat("\\fontsize{7pt}{10pt}\\selectfont {NOTA: A Emenda Constitucional Federal n\\degree 93/2016 estabeleceu,",
-      "nos temos do seu Art. 2\\degree, a desvinculação de órgão, fundo e despesa de 30\\% das receitas dos Estados",
-      "relativas a impostos, taxas e multas até 2023. Assim, procedeu-se a desvinculação, no citado percentual, em",
-      "relação à aplicação de recursos no amparo e fomento à pesquisa à conta dos recursos ordinários na FAPEMIG,",
-      "vinculação advinda da Emenda Constitucional Estadual n\\degree 17/1995.}\\\\\n")
+  
 
   # FIM TABELA
 
