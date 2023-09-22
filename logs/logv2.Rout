@@ -1,0 +1,26 @@
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume2/R/sumario.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T30_INVESTIMENTOS_SEGUNDO_FUNCOES.R'
+
+Warning in trataQDD_Investimento("bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx") :
+  trataQDD_Investimento(): Há valores iguais a zero na linha  16
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL.R'
+
+Warning: V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume2/R/sumario.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T30_INVESTIMENTOS_SEGUNDO_FUNCOES.R'
+
+Warning in trataQDD_Investimento("bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx") :
+  trataQDD_Investimento(): Há valores iguais a zero na linha  16
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --encoding=utf-8 --file=volume1/R/T5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL.R'
+
+Warning: V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
+
