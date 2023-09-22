@@ -18,3 +18,4 @@ __pycache__
 .env
 .idea
 datapackages/
+*t2d
