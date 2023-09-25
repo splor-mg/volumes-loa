@@ -12,6 +12,8 @@ DEPENDENCIAS_V5 := $(shell Rscript --verbose utils/makefile/gera_dependencias_v5
 
 acoes_planejamento := $(shell Rscript --verbose utils/makefile/ultimo_banco_mod.R bancos/SISOR/acoes_planejamento 2> logs/log.Rout)
 
+include .env
+
 # variaveis utilizadas pelo target make docker
 # vide https://github.com/splor-mg/volumes-loa/issues/24
 DOCKER_SRC_DIR := $(CURDIR)
