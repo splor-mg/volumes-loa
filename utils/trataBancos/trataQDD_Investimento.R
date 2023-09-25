@@ -7,8 +7,8 @@ trataQDD_Investimento = function(caminho, realizarTeste = TRUE){
   avisoNumAbas(caminho)
   
   qdd = read_excel(caminho, sheet=1)
-  names(qdd) = gsub(".*VALOR.+", "valor", names(qdd), ignore.case = FALSE)
-  names(qdd) = iconv(names(qdd), from="UTF-8", to="ASCII//TRANSLIT")
+  data.table::setnames(qdd, "VALOR (R$)", "valor")
+  names(qdd) = stringi::stri_trans_general(names(qdd), "latin-ascii")
   
   nomes_esperados = c("ANO", "COD_ORGAO", "ORGAO", "PODER", "COD_UO", "UO", "SEQ_PROGTRAB", "FUNCAO", "SUB_FUNCAO",
                       "PROGRAMA", "IDENT_PROJATIV", "PROJ_ATIV", "ACAO", "valor", "IAG", "DESC_PROJETO_ATIV", "CATEGORIA",
