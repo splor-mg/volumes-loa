@@ -133,6 +133,8 @@ make v2
 make v1
 ```
 
+Se for necessário informação sobre qual script estava sendo executado para rastrear algum erro durante a geração dos volumes defina a variável de ambiente `VERBOSE="--verbose"` no arquivo `.env` e gere o volume novamente.
+
 ## Golden Tests
 
 Esses testes são utilizados para conferência que não houve introdução de alterações não desejadas nos arquivos `.tex` e `pdf` após a geração de novos volumes ou durante refatorações do projeto.
