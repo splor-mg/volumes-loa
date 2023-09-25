@@ -50,18 +50,6 @@ parteA_desc =  "A - Receita Orçamentária Corrente Ordinária - Base de Cálcul
 # parteA = data.table(cod=1, espec = parteA_desc, valor= loa_rec[is_fapemig_rec(loa_rec), sum(VL_REC)])
 parteA = data.table(cod=1, espec = parteA_desc, valor= loa_rec[is_fapemig_rec(loa_rec), sum(VL_REC)])
 
-# deducao30_Fapemig = loa_rec[is_fapemig_desvinc_rec(loa_rec), sum(VL_REC)*0.3]
-# deducao30_Fapemig = loa_rec[is_fapemig_desvinc_rec_3(loa_rec), sum(VL_REC)*0.3]
-deducao30_Fapemig = loa_rec[is_fapemig_rec(loa_rec), sum(VL_REC)*0.0]
-
-#parteA = rbind(parteA, data.table(cod=2,
-#                                  espec = "B - DESVINCULAÇÃO DE 30% DE IMPOSTOS, TAXAS E MULTAS", 
-#                                  valor = deducao30_Fapemig))
-
-#parteA = rbind(parteA, data.table(cod=3, 
-#                                  espec = "C - BASE DE CÁLCULO FAPEMIG (A - B)", 
-#                                  valor = parteA[cod==1, valor] - deducao30_Fapemig))
-
 parteA = rbind(parteA, data.table(cod=4, 
                                   espec = "B - 1% SOBRE A BASE DE CÁLCULO", 
                                   valor = parteA[cod==1, valor]*0.01))
