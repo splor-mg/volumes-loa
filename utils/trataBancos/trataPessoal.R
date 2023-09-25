@@ -8,7 +8,7 @@ trataPessoal = function(caminho, realizarTeste = TRUE){
   avisoNumAbas(caminho)
   
   pessoal = read_excel(caminho, sheet=1)
-  names(pessoal) = iconv(names(pessoal), from="UTF-8", to="ASCII//TRANSLIT")
+  names(pessoal) = stringi::stri_trans_general(names(pessoal), "latin-ascii")
   names(pessoal) = tolower(gsub(" ", "_", names(pessoal)))
   pessoal$cod_uo = gsub("(\\d{4}).+", "\\1", pessoal$uo)
   
