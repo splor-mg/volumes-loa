@@ -29,7 +29,7 @@ memoria = readxl::read_excel('bancos/manual/memoria_calculo.xlsx', sheet = 'cria
 memoria =  dplyr::select(memoria, FUNCAO_COD, SUBFUNCAO_COD, `NE/E`)
 memoria =  dplyr::rename(memoria, EXCLUSIVA = `NE/E`)
 
-loa_desp = dplyr::left_join(loa_desp, memoria)
+loa_desp = dplyr::left_join(loa_desp, memoria, by = c("FUNCAO_COD", "SUBFUNCAO_COD"))
 loa_desp = as.data.table(loa_desp)
   
 loa_desp[, ACOES_CRIANCA := FALSE]
