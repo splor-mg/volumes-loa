@@ -3,60 +3,52 @@ demonstr_despesas_previdenciarias = function(base){
   
   base = copy(loa_desp)
   
-  # N1: ADMINISTRAÇÃO MILITAR
+
+  # N2: BENEFÍCIOS CIVIL
   
-  base[UO_COD == 2121 & ACAO_COD %in% c(2018, 4003) & CATEGORIA_COD == 3, 
-       c("nvl2", "ordem2") := list("Despesas Correntes", 2)]
-
-  base[UO_COD == 2121 & ACAO_COD %in% c(2018, 4003) & CATEGORIA_COD == 4,
-      c("nvl2", "ordem2") := list("Despesas de Capital", 3)]
-
-  base[ordem2 %in% 2:3, c("nvl1", "ordem1") := list("ADMINISTRAÇÃO MILITAR", 1)]
-
-  # N2: Benefícios -  Civil
-  
-  base[UO_COD == 4711 & !(ACAO_COD %in% c(7008, 7023, 7016)), c("nvl3", "ordem3") := list("Aposentadoria", 6)]
+  base[UO_COD == 4711 & !ACAO_COD %in% c(7008, 7016) & ELEMENTO_COD %in% c(1, 13, 91, 92, 94) & !ELEMENTO_ITEM_COD == 1308, c("nvl3", "ordem3") := list("Aposentadorias", 3)]
   base[UO_COD %in% c(1011, 1021, 1031, 1051, 1091, 1441) & 
-       ACAO_COD == 7006 & !(ELEMENTO_COD %in% c(3, 59) | ELEMENTO_ITEM_COD == 1308), c("nvl3", "ordem3") := list("Aposentadoria", 6)]
+       ACAO_COD == 7006 & IPU_COD == 5 & ELEMENTO_COD %in% c(1, 13, 91, 92, 94) & !ELEMENTO_ITEM_COD == 1308, c("nvl3", "ordem3") := list("Aposentadorias", 3)]
   
-  
-  base[ACAO_COD %in% c(7008, 7023), c("nvl3", "ordem3") := list("Pensão", 7)] 
-  base[ACAO_COD == 7006 & (ELEMENTO_COD %in% c(3, 59) | ELEMENTO_ITEM_COD == 1308), 
-       c("nvl3", "ordem3") := list("Pensão", 7)]
+  base[ACAO_COD %in% c(7008, 7023) & (ELEMENTO_COD %in% c(3)| ELEMENTO_ITEM_COD == 1308), c("nvl3", "ordem3") := list("Pensões", 4)] 
+  base[ACAO_COD == 7006 & (ELEMENTO_COD %in% c(3) | ELEMENTO_ITEM_COD == 1308), 
+       c("nvl3", "ordem3") := list("Pensões", 4)]
 
-  base[UO_COD %in% c(2121, 4711) & ELEMENTO_COD %in% c(92,94) & GRUPO_COD == 1, 
-       c("nvl3", "ordem3") := list("Outros Benefícios Previdenciários", 8)]
+  base[UO_COD %in% c(4711) & !ELEMENTO_COD %in% c(1, 3, 13, 86, 91, 92, 94), 
+       c("nvl3", "ordem3") := list("Outros Benefícios Previdenciários", 5)]
+  base[ACAO_COD %in% c(7006) & IPU_COD == 5 & !ELEMENTO_COD %in% c(1, 3, 13, 91, 92, 94), 
+       c("nvl3", "ordem3") := list("Outros Benefícios Previdenciários", 5)]
 
-  base[ordem3 %in% 6:8, c("nvl2", "ordem2") := list("Benefícios -  Civil", 5)]
+  base[ordem3 %in% 3:5, c("nvl2", "ordem2") := list("Benefícios -  Civil", 2)]
   
-  # N2: Benefícios - Militar
+  # N2: BENEFÍCIOS - MILITAR
   
-  base[ACAO_COD == 7007, c("nvl3", "ordem3") := list("Reformas", 10)]
+  base[ACAO_COD == 7007 & ELEMENTO_COD %in% c(1, 13, 91, 92, 94), c("nvl3", "ordem3") := list("Reformas", 7)]
   
-  base[ACAO_COD == 7002, c("nvl3", "ordem3") := list("Pensões", 11)]
+  base[ACAO_COD == 7002 & (ELEMENTO_COD %in% c(3) | ELEMENTO_ITEM_COD == 1308), c("nvl3", "ordem3") := list("Pensões", 8)]
   
-  base[UO_COD %in% c(1251, 1401, 2121, 1051) & 
-       ELEMENTO_ITEM_COD %in% c(501, 505, 802, 805, 807), 
-       c("nvl3", "ordem3") := list("Outros Benefícios Previdenciários", 12)]
-  
-  base[ordem3 %in% 10:12, c("nvl2", "ordem2") := list("Benefícios - Militar", 9)]
+  base[ACAO_COD %in% c(7007,7002) & !ELEMENTO_COD %in% c(1, 3, 13, 91, 92, 94), c("nvl3", "ordem3") := list("Outros Benefícios Previdenciários", 9)]
 
-  # N2: Outras Despesas Previdenciárias
+  base[ordem3 %in% 7:9, c("nvl2", "ordem2") := list("Benefícios - Militar", 6)]
+
+  # N1: BENEFÍCIOS
+  
+  base[nvl2 %in% c("Benefícios - Militar",
+                   "Benefícios -  Civil"), 
+       c("nvl1", "ordem1") := list("BENEFÍCIOS", 1)]
+
+
+  # N1: OUTRAS DESPESAS PREVIDENCIÁRIAS
 
   base[ACAO_COD == 7016, 
-       c("nvl3", "ordem3") := list("Compensação Previdenciária do RPPS para o RGPS", 14)]
+       c("nvl2", "ordem2") := list("Compensação Previdenciária do RPPS para o RGPS", 11)]
   
   base[UO_COD %in% c(2011, 2121) & ACAO_COD == 7004, 
-       c("nvl3", "ordem3") := list("Demais Despesas Previdenciárias", 15)]
+       c("nvl2", "ordem2") := list("Demais Despesas Previdenciárias", 12)]
   
-  base[ordem3 %in% 14:15, c("nvl2", "ordem2") := list("Outras Despesas Previdenciárias", 13)]
+  base[ordem2 %in% 11:12, c("nvl1", "ordem1") := list("Outras Despesas Previdenciárias", 10)]
   
-  # N1: PREVIDÊNCIA
   
-  base[nvl2 %in% c("Outras Despesas Previdenciárias",
-                   "Benefícios - Militar",
-                   "Benefícios -  Civil"), 
-       c("nvl1", "ordem1") := list("PREVIDÊNCIA", 4)]
   
   
   demonstr_desp_prev = rbindlist(list(base[!is.na(nvl1), list(nvl=1, VL_LOA = sum(VL_LOA_DESP)),
