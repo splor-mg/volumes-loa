@@ -12,6 +12,8 @@ DEPENDENCIAS_V5 := $(shell Rscript --verbose utils/makefile/gera_dependencias_v5
 
 acoes_planejamento := $(shell Rscript --verbose utils/makefile/ultimo_banco_mod.R bancos/SISOR/acoes_planejamento 2> logs/log.Rout)
 
+# .env must exist otherwise we get ".env: No such file or directory" error
+touch .env 
 include .env
 
 # variaveis utilizadas pelo target make docker
