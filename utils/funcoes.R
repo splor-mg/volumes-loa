@@ -199,12 +199,10 @@ removeAcentos = function(vetor){
   #===================================================================================
   
   removeAcentoEncoding = function(texto, encoding){
-    encoding = ifelse(encoding=="UTF-8", "TRUE", "FALSE")
-    switch(encoding, "TRUE" = tolower(iconv(texto, from="UTF-8", to="ASCII//TRANSLIT")),
-           "FALSE" = tolower(iconv(texto, to="ASCII//TRANSLIT")))
+    tolower(stringi::stri_trans_general(texto, "latin-ascii"))
   }
   
-  return(unlist(lapply(vetor, function(x) removeAcentoEncoding(x, Encoding(x)))))
+  return(unlist(lapply(vetor, function(x) removeAcentoEncoding(x))))
   
 }
 
