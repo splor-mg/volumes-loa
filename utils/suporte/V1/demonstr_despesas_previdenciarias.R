@@ -11,7 +11,7 @@ demonstr_despesas_previdenciarias = function(base){
        ACAO_COD == 7006 & IPU_COD == 5 & ELEMENTO_COD %in% c(1, 13, 91, 92, 94) & !ELEMENTO_ITEM_COD == 1308, c("nvl3", "ordem3") := list("Aposentadorias", 3)]
   
   base[ACAO_COD %in% c(7008, 7023) & (ELEMENTO_COD %in% c(3)| ELEMENTO_ITEM_COD == 1308), c("nvl3", "ordem3") := list("Pensões", 4)] 
-  base[ACAO_COD == 7006 & (ELEMENTO_COD %in% c(3) | ELEMENTO_ITEM_COD == 1308), 
+  base[ACAO_COD == 7006  & IPU_COD ==5 & (ELEMENTO_COD %in% c(3) | ELEMENTO_ITEM_COD == 1308), 
        c("nvl3", "ordem3") := list("Pensões", 4)]
 
   base[UO_COD %in% c(4711) & !ELEMENTO_COD %in% c(1, 3, 13, 86, 91, 92, 94), 
