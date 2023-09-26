@@ -30,7 +30,9 @@
                   "\\textbf{DEMONSTRATIVO DA UNIDADE DE GESTÃO PREVIDENCIÁRIA INTEGRADA - UGEPREVI}}} \\\\\n")
   
   titulo2= paste("\\multicolumn{2}{C{18cm}}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize",
-                 "\\textbf{(Art. 7\\degree, Inciso X da Lei 24.218/2022 - LDO)}}}  \\\\\n")
+                 "\\textbf{",
+                 base_legal("T27_DCGF_Demonst_Despesas_UGEPREVI"),
+                 "}}}  \\\\\n")
  
   subtitulo1 = paste("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",
                      ANO_DOC , "}}} & \\multicolumn{1}{r}{\\textbf{R\\$1,00}} \\\\\n")

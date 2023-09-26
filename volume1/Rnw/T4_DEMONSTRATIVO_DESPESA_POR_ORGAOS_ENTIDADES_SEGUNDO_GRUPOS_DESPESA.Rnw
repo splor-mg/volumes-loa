@@ -49,7 +49,8 @@
                   " \\\\[2ex]\n")
  
   titulo2= paste0("\\multicolumn{9}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\small \\textbf{",
-                  "(Art. 2$\\mathbf{^o}$, \\S 2$\\mathbf{^o}$, inciso II da Lei 4.320/64)}}}  \\\\\n")
+                  base_legal("T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA"),
+                  "}}}  \\\\\n")
  
   subtitulo1 = "\\multicolumn{9}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n"
   subtitulo2 = paste("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",

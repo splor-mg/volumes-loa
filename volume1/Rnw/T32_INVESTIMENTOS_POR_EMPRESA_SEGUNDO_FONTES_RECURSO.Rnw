@@ -37,7 +37,8 @@
                    "INVESTIMENTOS POR EMPRESA SEGUNDO FONTES DE RECURSO}}}\\TBstrut  \\\\[2ex]\n")
 
   titulo2 = paste0("\\multicolumn{7}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{",
-                   "(Art. 32 da Lei 24.218/2022 - LDO)}}} \\\\\n")
+                   base_legal("T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO"),
+                   "}}} \\\\\n")
  
   subtitulo = paste("\\multicolumn{3}{l}{\\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC, 
                     "}}} & \\multicolumn{4}{r}{R\\$1,00} \\\\\n")

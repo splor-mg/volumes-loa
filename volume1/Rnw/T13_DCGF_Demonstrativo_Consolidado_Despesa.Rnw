@@ -30,7 +30,8 @@
                   "DEMONSTRATIVO CONSOLIDADO DA DESPESA}}} \\\\\n")
  
   titulo2= paste0("\\multicolumn{4}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\small \\textbf{",
-                  "(Art. 2$\\mathbf{^o}$, \\S 1$\\mathbf{^o}$, Inciso II da Lei 4.320/64)}}}  \\\\\n")
+                  base_legal("T13_DCGF_Demonstrativo_Consolidado_Despesa"),
+                  "}}}  \\\\\n")
  
   subtitulo = paste("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",
                      ANO_DOC , "}}} & \\multicolumn{3}{r}{\\textbf{R\\$1,00}} \\\\\n")

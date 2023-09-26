@@ -30,7 +30,9 @@
                   "\\textbf{RECEITA CORRENTE LÍQUIDA}}} \\\\\n")
   
   titulo2= paste0("\\multicolumn{2}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
-                  "\\textbf{(Art. 7\\degree, Inciso II da Lei  24.218/2022 - LDO)}}} \\\\\n")
+                  "\\textbf{",
+                  base_legal("T8_DCGF_RECEITA_CORRENTE_LIQUIDA"),
+                  "}}} \\\\\n")
  
   subtitulo1 = paste0("\\multicolumn{2}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n")
                       

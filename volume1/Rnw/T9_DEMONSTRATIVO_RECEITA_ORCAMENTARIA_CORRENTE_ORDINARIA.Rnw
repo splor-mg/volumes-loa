@@ -40,7 +40,8 @@
                    "DEMONSTRATIVO DA RECEITA ORÇAMENTÁRIA CORRENTE ORDINÁRIA}}} \\TBstrut  \\\\[2ex]\n")
   
   titulo2 = paste0("\\multicolumn{6}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize \\textbf{",
-                   "(Art. 7$\\mathbf{^o}$, Inciso XV da Lei 24.218/2022 – LDO)}}} \\\\\n")
+                   base_legal("T9_DEMONSTRATIVO_RECEITA_ORCAMENTARIA_CORRENTE_ORDINARIA"),
+                   "}}} \\\\\n")
   
   subtitulo = paste("\\multicolumn{5}{l}{\\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC,
                     "}}} & \\multicolumn{1}{r}{R\\$1,00} \\\\[2ex] \n") 

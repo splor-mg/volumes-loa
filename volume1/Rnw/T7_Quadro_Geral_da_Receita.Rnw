@@ -42,7 +42,8 @@
                    "QUADRO GERAL DA RECEITA}}} \\\\\n")
   
   titulo2 = paste0("\\multicolumn{6}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{",
-                   "(Art. 2$^o$, \\S 1$^o$, Inciso III da Lei 4.320/64)}}} \\\\\n")
+                   base_legal("T7_QUADRO_GERAL_DA_RECEITA"), 
+                   "}}} \\\\\n")
   
   subtitulo = paste("\\multicolumn{5}{l}{\\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC,
                     "}}} & \\multicolumn{1}{r}{R\\$1,00} \\\\[2ex] \n") 

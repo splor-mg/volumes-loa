@@ -30,8 +30,9 @@
                   "\\textbf{DEMONSTRATIVO DA PARTICIPAÇÃO PERCENTUAL DE PESSOAL NA RECEITA CORRENTE LÍQUIDA}}} \\\\\n")
   
   titulo2= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
-                  "\\textbf{(Art. 19 da Lei Complementar 101/2000 - LRF e Art. 7\\degree, ",
-                  "Inciso VIII da Lei 24.218/2022 - LDO)}}}  \\\\\n")
+                  "\\textbf{",
+                  base_legal("T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF"),
+                  "}}}  \\\\\n")
  
   subtitulo1 = paste0("\\multicolumn{3}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n")
   

@@ -49,7 +49,8 @@
                   "INVESTIMENTOS SEGUNDO AS FUNÇÕES}}} \\\\\n")
   
   titulo2 = paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize \\textbf{",
-                  "(Art. 2\\degree, \\S 1\\degree, Inciso I da Lei 4.320/64)}}} \\\\\n")
+                  base_legal("T30_INVESTIMENTOS_SEGUNDO_FUNCOES"),
+                  "}}} \\\\\n")
  
   subtitulo = paste("\\multicolumn{2}{l}{\\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC,
                     "}}} & \\multicolumn{1}{r}{R\\$1,00} \\\\[2ex] \n") 

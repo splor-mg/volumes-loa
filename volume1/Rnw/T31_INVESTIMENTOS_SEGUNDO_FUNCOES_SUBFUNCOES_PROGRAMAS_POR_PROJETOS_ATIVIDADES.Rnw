@@ -61,7 +61,8 @@
                    "POR PROJETOS E ATIVIDADES}}} \\\\\n")
   
   titulo3 = paste0("\\multicolumn{5}{c}{\\cellcolor{gray!50} \\textcolor{myblack}{\\footnotesize \\textbf{",
-                   "(Art. 32 da Lei 24.218/2022 - LDO)}}} \\\\\n")
+                   base_legal("T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES"),
+                   "}}} \\\\\n")
   
   subtitulo1 = paste("\\multicolumn{4}{l}{\\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC,
                     "}}} & \\multicolumn{1}{r}{R\\$1,00} \\\\[2ex] \n") 

@@ -30,7 +30,9 @@
                   "DEMONSTRATIVO DA RECEITA CORRENTE FISCAL}}} \\\\\n")
   
   titulo2= paste0("\\multicolumn{2}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
-                  "\\textbf{(Art. 7\\degree, Inciso XXII da Lei 24.218/2022 - LDO)}}}  \\\\\n")
+                  "\\textbf{",
+                  base_legal("T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL"),
+                  "}}}  \\\\\n")
   
  
   subtitulo = paste("\\multicolumn{1}{l}{\\textbf{Exercício: ", ANO_DOC,

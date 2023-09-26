@@ -47,7 +47,9 @@
                    "DEMONSTRATIVO CONSOLIDADO DA CATEGORIA DE PESSOAL POR UNIDADE ORÇAMENTÁRIA}}} \\\\\n")
   
   titulo2= paste0("\\multicolumn{5}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
-                  "\\textbf{(Art. 7\\degree, Inciso XXIII da Lei 24.218/2022 - LDO)}}}  \\\\\n")
+                  "\\textbf{",
+                  base_legal("T5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL"),
+                  "}}}  \\\\\n")
   
   subtitulo = paste("\\multicolumn{5}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ", 
                     ANO_DOC," }}} \\\\[2ex] \n") 

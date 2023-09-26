@@ -31,7 +31,9 @@
                   "\\textbf{DEMONSTRATIVO DAS RECEITAS E DESPESAS PREVIDENCIÁRIAS}}} \\\\\n")
   
   titulo2= paste0("\\multicolumn{2}{c}{\\cellcolor{gray!50} \\textcolor{myblack}{ ",
-                  "\\textbf{(Art. 7\\degree, Inciso XI da Lei 24.218/2022 - LDO)}}} \\\\\n")
+                  "\\textbf{",
+                  base_legal("T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS"),
+                  "}}} \\\\\n")
  
   subtitulo = paste("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",
                      ANO_DOC , "}}} & \\multicolumn{1}{r}{\\textbf{R\\$1,00}} \\\\\n")

@@ -33,8 +33,9 @@
                   "\\textbf{ENSINO À CONTA DE RECURSOS ORDINÁRIOS E DOS VINCULADOS AO FUNDO DE EDUCAÇÃO}}} \\\\\n")
  
   titulo3= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
-                  "\\textbf{(Art. 212 da Constituição Federal, Art. 201 da Constituição Estadual e Art. ",
-                  "7$\\mathbf{^o}$, Inciso III da Lei 24.218/2022 - LDO)}}}  \\\\\n")
+                  "\\textbf{",
+                  base_legal("T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino"),
+                  "}}}  \\\\\n")
  
   subtitulo1 = paste0("\\multicolumn{3}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n")
   

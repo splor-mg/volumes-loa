@@ -20,7 +20,7 @@
   banco = ler_banco_txt(paste0(dir_data, "/T28_DCGF_PT1_Receita_prevista_e_realizada.txt"))
 
   titulo_demonstrativo = "DEMONSTRATIVO DOS PROGRAMAS FINANCIADOS COM RECURSOS PROVENIENTES DA UNIÃO"
-  titulo2_demons = "(Art. 7\\degree, Inciso XX da Lei 24.218/2022 - LDO)"
+  titulo2_demons = base_legal("T28_DCGF")
   
   cat("\\renewcommand*{\\arraystretch}{1.8}\n")
   cat("\\scriptsize\n")

@@ -33,7 +33,9 @@
                   "\\textbf{POLÍTICA ESTADUAL DE SEGURANÇA ALIMENTAR E NUTRICIONAL SUSTENTÁVEL}}} \\\\\n")
   
   titulo3= paste("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\scriptsize",
-                 "\\textbf{(Art. 7\\degree, Inciso XVII da Lei 24.218/2022 - LDO)}}}  \\\\\n")
+                 "\\textbf{",
+                 base_legal("T37_DCGF_DEMONSTRATIVOS_RECURSOS_APLICADOS_SEGURANCA_ALIMENTAR_NUTRICIONAL"),
+                 "}}}  \\\\\n")
  
   subtitulo = paste("\\multicolumn{2}{l}{\\textbf{Exercício: ",
                      ANO_DOC , "}} & \\multicolumn{1}{r}{\\textbf{R\\$1,00}} \\\\\n")

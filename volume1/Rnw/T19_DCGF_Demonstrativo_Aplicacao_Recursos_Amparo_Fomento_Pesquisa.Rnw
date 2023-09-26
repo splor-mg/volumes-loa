@@ -30,8 +30,9 @@
                   "\\textbf{DEMONSTRATIVO DA APLICAÇÃO DE RECURSOS NO AMPARO E FOMENTO À PESQUISA}}} \\\\\n")
   
   titulo2= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
-                  "\\textbf{(Art. 212 da Constituição Estadual e Art. 7\\degree, ",
-                  "Inciso VI da Lei 24.218/2022 - LDO)}}} \\\\\n")
+                  "\\textbf{",
+                  base_legal("T19_DCGF_Demonstrativo_Aplicacao_Recursos_Amparo_Fomento_Pesquisa"),
+                  "}}} \\\\\n")
  
   subtitulo1 = paste0("\\multicolumn{3}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n")
                       
