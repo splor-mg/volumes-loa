@@ -37,7 +37,8 @@
   
   
   titulo3= paste0("\\multicolumn{11}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\small \\textbf{",
-                  "(Art. 22, Inciso III da Lei 4.320/64)}}}  \\\\\n")
+                  base_legal("T6_DCGF_Demonstrativo_Evolucao_Receita_por_Categoria_Economica"),
+                  "}}}  \\\\\n")
  
   subtitulo1 = "\\multicolumn{11}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n"
   subtitulo2 = paste("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",

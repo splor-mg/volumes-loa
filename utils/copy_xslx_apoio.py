@@ -21,6 +21,7 @@ items = [
  (datapackages_dir / 'desc_grupos_de_despesa.xlsx', manual_dir / 'desc_grupos_de_despesa.xlsx'), 
  (datapackages_dir / 'desc_subfuncao.xlsx', manual_dir / 'desc_subfuncao.xlsx'), 
  (datapackages_dir / 'memoria_calculo.xlsx', manual_dir / 'memoria_calculo.xlsx' ),
+ (datapackages_dir / 'desc_base_legal_demonstrativos.xlsx', manual_dir / 'desc_base_legal_demonstrativos.xlsx' ),
  (Path('datapackages/fonte_stn/data/fonte_stn.csv'), manual_dir / 'fonte_stn.csv' ),
  ]
 

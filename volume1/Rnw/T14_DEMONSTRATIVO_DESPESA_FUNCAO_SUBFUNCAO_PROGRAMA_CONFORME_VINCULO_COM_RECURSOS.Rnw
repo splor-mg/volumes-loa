@@ -56,7 +56,8 @@
                    "COM OS RECURSOS}}}\\TBstrut  \\\\[2ex]\n")
 
   titulo2 = paste0("\\multicolumn{8}{c}{\\cellcolor{gray!50} { \\textcolor{myblack}{ \\textbf{",
-                   "(Art. 2$\\mathbf{^o}$, \\S 2$\\mathbf{^o}$, Inciso II da Lei 4.320/64)}}}}\\\\\n")
+                   base_legal("T14_DEMONSTRATIVO_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_CONFORME_VINCULO_COM_RECURSOS"),
+                   "}}}}\\\\\n")
 
   subtitulo = paste0("\\multicolumn{7}{l}{\\scriptsize \\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC ,
                     "}}} & \\multicolumn{1}{r}{\\scriptsize R\\$1,00} \\\\\n")

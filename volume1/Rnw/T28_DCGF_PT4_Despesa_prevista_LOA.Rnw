@@ -26,7 +26,7 @@
   #banco = ler_banco_txt()
 
   titulo_demonstrativo = "DEMONSTRATIVO DOS PROGRAMAS FINANCIADOS COM RECURSOS PROVENIENTES DA UNIÂO"
-  titulo2_demons = "(Art. 7\\degree, Inciso XX da Lei 24.218/2022 - LDO)"
+  titulo2_demons = base_legal("T28_DCGF")
   
   cat("\\renewcommand*{\\arraystretch}{1.8}\n")
   cat("\\scriptsize\n")

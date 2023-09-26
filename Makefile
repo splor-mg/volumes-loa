@@ -204,7 +204,7 @@ pdf/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.pdf: volume3/da
 	@Rscript $(VERBOSE) utils/Rnw2Tex.R T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS
 	@echo "---------------------------------------------------------------"
 
-$(DEP_DCGF_PDF_V1): pdf/%.pdf: volume1/Rnw/%.Rnw volume1/data/%.txt
+$(DEP_DCGF_PDF_V1): pdf/%.pdf: volume1/Rnw/%.Rnw volume1/data/%.txt bancos/manual/desc_base_legal_demonstrativos.xlsx
 	@Rscript $(VERBOSE) utils/Rnw2Tex.R $*
 	@echo "---------------------------------------------------------------"
 

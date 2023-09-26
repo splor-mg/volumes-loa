@@ -30,7 +30,9 @@
                   "\\textbf{DEMONSTRATIVO DO SERVIÇO DA DÍVIDA PÚBLICA}}} \\\\\n")
   
   titulo2= paste0("\\multicolumn{4}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
-                  "\\textbf{(Art. 7\\degree, Inciso XIII da Lei 24.218/2022 - LDO)}}}  \\\\\n")
+                  "\\textbf{",
+                  base_legal("T23_DCGF_Demonstrativo_do_Servico_da_divida_publica"),
+                  "}}}  \\\\\n")
  
   subtitulo1 = paste0("\\multicolumn{4}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n")
   

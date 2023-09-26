@@ -33,7 +33,9 @@
                   "\\textbf{PARA A CRIANÇA E O ADOLESCENTE}} \\\\\n")
   
   titulo3= paste("\\multicolumn{5}{c}{\\cellcolor{gray!50} \\scriptsize",
-                 "\\textbf{(Art. 7\\degree, Inciso XVIII da Lei 24.218/2022 - LDO)}}  \\\\\n")
+                 "\\textbf{",
+                 base_legal("T26_DCGF_DEMONSTRATIVO_RECURSOS_APLICADOS_ACOES_PARA_CRIANCA_E_ADOLESCENTE"),
+                 "}}  \\\\\n")
  
   subtitulo = paste("\\multicolumn{2}{l}{\\textbf{Exercício: ",
                      ANO_DOC , "}} & \\multicolumn{3}{r}{\\textbf{R\\$1,00}} \\\\\n")

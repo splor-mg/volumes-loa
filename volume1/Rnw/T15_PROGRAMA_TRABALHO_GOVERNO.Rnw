@@ -65,7 +65,8 @@
                  "CONFORME OS GRUPOS DE DESPESA}}}\\\\\n")
 
   titulo2 = paste0("\\multicolumn{12}{c}{\\cellcolor{gray!50} { \\textcolor{myblack}{ \\textbf{",
-                   "(Art. 2$^o$, \\S 2$^o$, Inciso II da Lei 4.320/64)}}}}\\\\\n")
+                   base_legal("T15_PROGRAMA_TRABALHO_GOVERNO"),
+                   "}}}}\\\\\n")
 
   subtitulo1 = paste0("\\multicolumn{12}{l}{ \\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC ,
                      "}}} \\\\\n")

@@ -412,3 +412,13 @@ adiciona_desc_volumes = function(base, column) {
   result
 }
 
+base_legal <- function(id_demonstrativo) {
+  banco <- "bancos/manual/desc_base_legal_demonstrativos.xlsx"
+  base_legal <- as.data.table(readxl::read_excel(banco, sheet = "base_legal")) 
+  result <- base_legal[cod == id_demonstrativo, legislacao]
+  if(identical(result, character(0))) {
+    msg <- glue::glue("Faltando base legal do demonstrativo {id_demonstrativo} na planilha {banco}")
+    stop(msg)
+  }
+  result
+}

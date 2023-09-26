@@ -35,9 +35,9 @@
   
   
   titulo3= paste("\\multicolumn{3}{C{19cm}}{\\cellcolor{gray!50} \\textcolor{myblack} {\\scriptsize",
-                 "\\textbf{(Art. 212 da Constituição Federal, Art. 60 dos ADCT/CF",
-                 "e Art. 7\\degree, Inciso XII da Lei 24.218/2022",
-                 "- LDO)}}}  \\\\\n")
+                 "\\textbf{",
+                 base_legal("T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB"),
+                 "}}}  \\\\\n")
                                                                                                            
   subtitulo1 = paste0("\\multicolumn{3}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n")
   
