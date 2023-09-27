@@ -7,7 +7,7 @@
 "  4"	"122"	"11"	" 4"	"  7"	" 1"	"90"	" 0"	"10"	" 1"	"2.755.477"	"1.309.977"	"4.065.454"	"7"												
 "  4"	"122"	"11"	" 4"	"  7"	" 1"	"90"	" 0"	"10"	" 7"		"531.911"	"531.911"	"7"												
 "  4"	"122"	"11"	" 4"	"  7"	" 1"	"91"	" 0"	"10"	" 1"	"114.324"		"114.324"	"7"												
-"  4"	"122"	"11"	" 4"	"  7"	" 1"	"92"	" 0"						"8"	"SUPORTE TÉCNICO E REGIONALIZADO PRESTADO"			" 1"	"SUPORTE"	"Atividade Meio do Orçamento Fiscal"	"Não"					
+"  4"	"122"	"11"	" 4"	"  7"	" 1"	"92"	" 0"						"8"	"SUPORTE TÉCNICO E REGIONALIZADO PRESTADO"			" 1"	"SUPORTE"	"Atividade Fim do Orçamento Fiscal"	"Não"					
 "  4"	"122"	"705"										"12.329.485"	"1"	"APOIO ÀS POLÍTICAS PÚBLICAS"											
 "  4"	"122"	"705"	" 2"	"500"								"12.329.485"	"5"	"VIABILIZAR A EXECUÇÃO DE SERVIÇOS TÉCNICOS-ADMINISTRATIVOS DE GERENCIAMENTO E SUPORTE DA ÁREA MEIO DOS ÓRGÃOS E ENTIDADES, ELENCANDO OS RECURSOS QUE NÃO PODEM SER DIRETAMENTE DISTRIBUÍDOS NAS AÇÕES FINALÍSTICAS."											
 "  4"	"122"	"705"	" 2"	"500"	" 1"							"12.329.485"	"1"	"ASSESSORAMENTO E GERENCIAMENTO DE POLÍTICAS PÚBLICAS"											
