@@ -14,7 +14,7 @@ receita_corrente = receita[nat(RECEITA_COD,1), sum(VL_LOA_REC)]
 deducao = receita[nat(RECEITA_COD, 9), sum(VL_LOA_REC)]
 
 demonst = data.table(espec = c("RECEITAS CORRENTES", 
-                               "DEDUÇÃO DA RECEITA CORRENTE - FORMAÇÃO DO FUNDEB E TRANSFERÊNCIA MUNICÍPIOS",
+                               "DEDUÇÃO DA RECEITA CORRENTE",
                                "RECEITA CORRENTE FISCAL"),
                      valor = c(receita_corrente,
                                deducao,
