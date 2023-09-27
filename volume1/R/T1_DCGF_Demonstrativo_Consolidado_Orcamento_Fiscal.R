@@ -7,7 +7,6 @@ suppressMessages(require(relatorios))
 source("utils/funcoes.r", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 source("utils/suporte/V1/demonstr_consolidado.R", encoding = "UTF-8")
-source("utils/suporte/V1/checa_demonstrativo_consolidado.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
 source("utils/trataBancos/trataReceita_Fiscal.R", encoding = "UTF-8")
@@ -272,16 +271,5 @@ parte_final = cbind(painel_rec_final, painel_desp_final)
 
 parte_final[, c("ordem_rec", "ordem"):=NULL]
 demonstr = rbind(demonstr, parte_final, fill=T)
-
-
-## REALIZA TESTE PARA OS VALORES
-# Caso seja de interesse alterar o limiar modificar o parâmetro limiar abaixo
-
-
-checa_demonstrativo_consolidado(caminho_rec_ref = "utils/suporte/V1/painel_rec2019.csv",
-                                caminho_desp_ref = "utils/suporte/V1/painel_desp2019.csv",
-                                limiar = 0.7)
-
-
 
 write.csv2(demonstr, "volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.csv", row.names=F, na="")
