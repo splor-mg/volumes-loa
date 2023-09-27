@@ -1,5 +1,5 @@
 espec	VL_LOA_REC	ordem	nvl
-RECEITAS CORRENTES ( I )	141.607.970.521	 0	0
+RECEITAS CORRENTES ( I )	141.617.850.582	 0	0
 Impostos, Taxas e Contribuições de Melhoria	103.007.227.969	 1	1
 Principal	96.768.683.847	 2	2
 ICMS	77.911.920.322	 3	3
@@ -12,7 +12,7 @@ ICMS	1.130.241.198	 9	3
 IPVA	761.098.475	10	3
 ITCD	146.209.646	11	3
 Taxas	95.306.006	12	3
-Receitas de Contribuições	5.944.281.726	13	1
+Receitas de Contribuições	5.954.161.787	13	1
 Receita Patrimonial	5.157.006.627	14	1
 Rendimentos de Aplicação Financeira	2.454.237.597	15	2
 Outras Receitas Patrimoniais	2.702.769.030	16	2
@@ -25,9 +25,9 @@ Transferências da LC 61/1989	768.545.444	23	2
 Transferências do FUNDEB	11.875.020.597	24	2
 Outras Transferências Correntes	3.518.965.476	25	2
 Outras Receitas Correntes	1.532.604.523	26	1
-DEDUÇÕES ( II )	45.541.927.309	27	0
+DEDUÇÕES ( II )	45.551.807.370	27	0
 Transferências Constitucionais e Legais	25.479.703.327	28	1
-Contrib. para o Plano de Previdência do Servidor	3.435.126.602	29	1
+Contrib. para o Plano de Previdência do Servidor	3.445.006.663	29	1
 Contrib. para o Custeio das Pensões Militares	1.561.549.133	30	1
 Compensação Financ. entre Regimes Previdência	37.732.510	31	1
 Rendimentos de Aplicações de Recursos Previdenciários	50.488.871	32	1

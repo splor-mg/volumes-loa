@@ -36,7 +36,7 @@
 % Capa
 \begin{titlepage}
 \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
-\includepdf[pages={5},scale=1.1]{capaLOA.pdf}
+\includepdf[pages={6}]{capaLOA.pdf}
 \end{titlepage}
 % \capa
 

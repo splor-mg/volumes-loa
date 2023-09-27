@@ -32,7 +32,7 @@
 
 % Capa
 \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
-\includepdf[pages={3},scale=1.1]{capaLOA.pdf}
+\includepdf[pages={4}]{capaLOA.pdf}
 % \capa
 
 % Títulos
