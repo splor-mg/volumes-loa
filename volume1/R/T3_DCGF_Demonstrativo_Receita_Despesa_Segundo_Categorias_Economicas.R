@@ -98,7 +98,7 @@ painel_rec[, c("ordem2", "RECEITA_COD1"):=NULL]
 
 painel_rec = mergeDT(painel_rec, class_receita, by="RECEITA_COD", all.x=T)
 
-nome_deducao = "DEDUÇÃO DA RECEITA CORRENTE - FORMAÇÃO DO FUNDEB E TRANSFERÊNCIA MUNICÍPIOS"
+nome_deducao = "DEDUÇÃO DA RECEITA CORRENTE"
 painel_rec[nat(RECEITA_COD, 9), c("RECEITA_DESC", "ordem"):=list(nome_deducao, "10")]
 
 painel_rec = rbind(painel_rec,
