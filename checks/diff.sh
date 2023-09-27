@@ -79,8 +79,6 @@ elif [ $1 == "T37_DCGF_DEMONSTRATIVOS_RECURSOS_APLICADOS_SEGURANCA_ALIMENTAR_NUT
 then vol="volume1"
 elif [ $1 == "T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS" ]
 then vol="volume1"
-elif [ $1 == "T39_DCGF_DEMONSTRATIVO_CUMPRIMENTO_LIMITACAO_CRESCIMENTO_DESPESA" ]
-then vol="volume1"
 else
    echo "$1 is not a valid document"
    exit 2

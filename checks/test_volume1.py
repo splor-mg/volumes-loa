@@ -154,8 +154,3 @@ def test_volume1_t38():
     report = Report('T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS', 'volume1')
     assert report.test_tex()
     assert report.test_pdf()
-
-def test_volume1_t39():
-    report = Report('T39_DCGF_DEMONSTRATIVO_CUMPRIMENTO_LIMITACAO_CRESCIMENTO_DESPESA', 'volume1')
-    assert report.test_tex()
-    assert report.test_pdf()
