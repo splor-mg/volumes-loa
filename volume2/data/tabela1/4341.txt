@@ -15,7 +15,7 @@
 "17"	"512"	"21"	" 4"	"258"	" 1"	"41"	" 0"						"8"	"FINANCIAMENTO DE OBRAS E PROJETOS PARA SANEAMENTO BÁSICO"			"20"	"UNIDADE"	"Atividade Fim do Orçamento Fiscal"	"Não"					
 "18"												"46.801.637"	"1"	"GESTÃO AMBIENTAL"											
 "18"	"541"											"26.600.134"	"1"	"PRESERVAÇÃO E CONSERVAÇÃO AMBIENTAL"											
-"18"	"541"	"27"										"5.984.760"	"1"	"GESTÃO AMBIENTAL"											
+"18"	"541"	"27"										"5.984.760"	"1"	"GESTÃO AMBIENTAL."											
 "18"	"541"	"27"	" 4"	"64"								"5.984.760"	"5"	"FOMENTAR E/OU IMPLEMENTAR POLÍTICAS PÚBLICAS DE INSTRUMENTOS ECONÔMICOS DE PAGAMENTO POR SERVIÇOS AMBIENTAIS."											
 "18"	"541"	"27"	" 4"	"64"	" 1"							"5.984.760"	"1"	"PAGAMENTO POR SERVIÇOS AMBIENTAIS"											
 "18"	"541"	"27"	" 4"	"64"	" 1"	"90"	" 0"	"31"	" 1"	"5.984.760"		"5.984.760"	"7"												
