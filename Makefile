@@ -61,26 +61,29 @@ pdf/Projeto_volume6A.pdf: volume6/data/receita_fonte_stn.txt volume6/data/QUADRO
 						 volume6/Rnw/load_bibliotecas.tex volume6/Rnw/Projeto_volume6A.Rnw volume6/Rnw/QUADRO_DETALHAMENTO_DESPESA.Rnw \
 						 bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_fontes_de_recursos_stn.xlsx bancos/manual/desc_IAG.xlsx bancos/manual/desc_IPU.xlsx
 	@echo "- Gera logs/warningsV6A.Rout"
-	touch logs/warningsV6A.Rout
-	Rscript $(VERBOSE) utils/Rnw2Tex.R 6A
+	@touch logs/warningsV6A.Rout
+	@Rscript $(VERBOSE) utils/Rnw2Tex.R 6A
 	@echo "---------------------------------------------------------------"
 
 volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt: volume6/R/volume6A.R bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
-	@echo "Atualizando dados..."
-	Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
+	@echo "Atualizando $@..."
+	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
 
 volume6/data/receita_fonte_stn.txt: volume6/R/volume6B.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_FONTE_STN.xlsx
-	@echo "Atualizando dados..."
-	Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
+	@echo "Atualizando $@..."
+	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
 
 bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx: utils/trataBancos/trataQDD_Fiscal_Fonte_STN.R bancos/SISOR/BASE_QDD_FISCAL.xlsx
-	Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
+	@echo "Atualizando $@..."
+	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
 
 bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_FONTE_STN.xlsx: utils/trataBancos/trataReceita_Fiscal_Fonte_STN.R bancos/manual/desc_fontes_de_recursos_stn.xlsx
-	Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
+	@echo "Atualizando $@..."
+	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
 
 bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte_STN.R bancos/manual/fonte_stn.csv utils/ano.txt
-	Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
+	@echo "Atualizando $@..."
+	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
 
 # Volume 5
 pdf/Projeto_volume5.pdf: $(DEPENDENCIAS_V5)
