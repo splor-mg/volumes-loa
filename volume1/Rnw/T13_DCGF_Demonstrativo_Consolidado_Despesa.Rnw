@@ -82,9 +82,7 @@
   cat("\\raggedright\n")
   cat("\\fontsize{7pt}{10pt}\\selectfont {FONTE: Armazém Sisor.} \\\\\n")
   cat("\\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
-  cat("\\fontsize{7pt}{10pt}\\selectfont {NOTA: Excepcionalmente, em 2023,",
-      "foi destinado o valor de R\\$ 5.675.431,00 via emenda parlamentar (Indicador de Procedência - IPU 8) à Reserva de Contingência.",
-      "Entretanto, apesar desse montante compor a referida reserva, optou-se em contabilizar o recurso no grupo de despesa “OUTRAS DESPESAS CORRENTES”, respeitando-se a classificação orçamentária e o objeto do gasto da emenda.}\\\\\n")
+  cat("\\fontsize{7pt}{10pt}\\selectfont {NOTA: Com intuito de evitar a dupla contagem na elaboração desse relatório, foram desconsiderados os valores referentes às operações intra-orçamentárias.}\\\\\n")
   
   # FIM TABELA
 
