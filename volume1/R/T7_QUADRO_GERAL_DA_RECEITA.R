@@ -126,5 +126,4 @@ final[grepl(" *-.+", valor_categoria) & is.na(valor_categoria)==F,
 
 final[, descricao := correcaoCaracteresEspeciais(descricao, caracteres)]
 
-write.table(final, "volume1/data/T7_QUADRO_GERAL_DA_RECEITA.txt", quote = F, 
-            sep = "\t", na = "", dec = ",", row.names = FALSE)
+jsonlite::write_json(final, paste0(dir_data, "/T7_QUADRO_GERAL_DA_RECEITA.json"), pretty = TRUE)

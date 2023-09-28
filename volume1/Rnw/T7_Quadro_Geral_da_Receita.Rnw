@@ -30,8 +30,7 @@
   # INICIO TABELA
   library(readr)
 
-  banco=data.table(read.table(paste0(dir_data, "/T7_QUADRO_GERAL_DA_RECEITA.txt"),
-                                header=T, sep="\t", dec="@", stringsAsFactors = FALSE))
+  banco=jsonlite::read_json(paste0(dir_data, "/T7_QUADRO_GERAL_DA_RECEITA.json"))
 
   cat("\\renewcommand*{\\arraystretch}{1.7}\n")
   cat("\\scriptsize\n")
@@ -80,42 +79,42 @@
   cat("\\hline\\hline\n") 
   cat("\\endlastfoot\n")
   
-     for(i in 1:nrow(banco)){
-       if(grepl("TOTAL", banco[i, descricao], ignore.case = T)){
+     for(row in banco){
+       if(grepl("TOTAL", row[["descricao"]], ignore.case = T)){
          
          cat("\\hline \\hline \n")
-         cat("\\multicolumn{5}{@{\\hspace{1em}}L{8cm}@{\\hspace{0.5em}}|}{ \\textbf{", banco[i, descricao], 
-             "}} & \\multicolumn{1}{r@{\\hspace{0.5em}}}{ \\textbf{", banco[i, valor_categoria], 
+         cat("\\multicolumn{5}{@{\\hspace{1em}}L{8cm}@{\\hspace{0.5em}}|}{ \\textbf{", row[["descricao"]], 
+             "}} & \\multicolumn{1}{r@{\\hspace{0.5em}}}{ \\textbf{", row[["valor_categoria"]], 
              "}} \\\\\n") 
          
-       } else if(grepl("\\d{1}0{3}\\.0{2}\\.0\\.0\\.0{2}\\.0{3}", as.character(banco[i, cod_texto]))){
+       } else if(grepl("\\d{1}0{3}\\.0{2}\\.0\\.0\\.0{2}\\.0{3}", as.character(row[["cod_texto"]]))){
          
-         cat("\\multicolumn{1}{L{3cm}|}{\\textbf{ ",TratamentoNA(banco[i, cod_texto]), 
-             "}} & \\multicolumn{1}{c|}{ \\textbf{", TratamentoNA(banco[i, COD_FONTE]), 
-             "}} & \\multicolumn{1}{@{\\hspace{1em}}J{6cm}@{\\hspace{0.5em}}|}{ \\textbf{", banco[i, descricao], 
-             "}} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{ \\textbf{", banco[i, valor_desdobramento], 
-             "}} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{ \\textbf{", banco[i, valor_especie],
-             "}} & \\multicolumn{1}{r@{\\hspace{1em}}}{ \\textbf{", banco[i, valor_categoria], 
+         cat("\\multicolumn{1}{L{3cm}|}{\\textbf{ ",TratamentoNA(row[["cod_texto"]]), 
+             "}} & \\multicolumn{1}{c|}{ \\textbf{", TratamentoNA(row[["COD_FONTE"]]), 
+             "}} & \\multicolumn{1}{@{\\hspace{1em}}J{6cm}@{\\hspace{0.5em}}|}{ \\textbf{", row[["descricao"]], 
+             "}} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{ \\textbf{", row[["valor_desdobramento"]], 
+             "}} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{ \\textbf{", row[["valor_especie"]],
+             "}} & \\multicolumn{1}{r@{\\hspace{1em}}}{ \\textbf{", row[["valor_categoria"]], 
              "}} \\\\\n")
          
-       } else if(grepl("\\d{1}[1-9]0{2}\\.0{2}\\.0\\.0\\.0{2}\\.0{3}", as.character(banco[i, cod_texto]))){
+       } else if(grepl("\\d{1}[1-9]0{2}\\.0{2}\\.0\\.0\\.0{2}\\.0{3}", as.character(row[["cod_texto"]]))){
          
-         cat("\\multicolumn{1}{L{3cm}|}{ \\hspace{1em}",TratamentoNA(banco[i, cod_texto]), 
-             "} & \\multicolumn{1}{c|}{ ", TratamentoNA(banco[i, COD_FONTE]), 
-             "} & \\multicolumn{1}{@{\\hspace{2em}}J{6cm}@{\\hspace{0.5em}}|}{ ", banco[i, descricao], 
-             "} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{ ", banco[i, valor_desdobramento], 
-             "} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{ ",   banco[i, valor_especie],
-             "} & \\multicolumn{1}{r@{\\hspace{1em}}}{ ", banco[i, valor_categoria], 
+         cat("\\multicolumn{1}{L{3cm}|}{ \\hspace{1em}",TratamentoNA(row[["cod_texto"]]), 
+             "} & \\multicolumn{1}{c|}{ ", TratamentoNA(row[["COD_FONTE"]]), 
+             "} & \\multicolumn{1}{@{\\hspace{2em}}J{6cm}@{\\hspace{0.5em}}|}{ ", row[["descricao"]], 
+             "} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{ ", row[["valor_desdobramento"]], 
+             "} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{ ",   row[["valor_especie"]],
+             "} & \\multicolumn{1}{r@{\\hspace{1em}}}{ ", row[["valor_categoria"]], 
              "} \\\\\n")
          
        } else{
          
-         cat("\\multicolumn{1}{L{3cm}|}{ \\hspace{2em}",TratamentoNA(banco[i, cod_texto]), 
-             "} & \\multicolumn{1}{c|}{ ", TratamentoNA(banco[i, COD_FONTE]), 
-             "} & \\multicolumn{1}{@{\\hspace{3em}}J{6cm}@{\\hspace{0.5em}}|}{ ", banco[i, descricao], 
-             "} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{ ", banco[i, valor_desdobramento], 
-             "} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{ ", banco[i, valor_especie],
-             "} & \\multicolumn{1}{r@{\\hspace{1em}}}{ ", banco[i, valor_categoria], 
+         cat("\\multicolumn{1}{L{3cm}|}{ \\hspace{2em}",TratamentoNA(row[["cod_texto"]]), 
+             "} & \\multicolumn{1}{c|}{ ", TratamentoNA(row[["COD_FONTE"]]), 
+             "} & \\multicolumn{1}{@{\\hspace{3em}}J{6cm}@{\\hspace{0.5em}}|}{ ", row[["descricao"]], 
+             "} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{ ", row[["valor_desdobramento"]], 
+             "} & \\multicolumn{1}{r@{\\hspace{0.5em}}|}{ ", row[["valor_especie"]],
+             "} & \\multicolumn{1}{r@{\\hspace{1em}}}{ ", row[["valor_categoria"]], 
              "} \\\\\n")
          
        }
