@@ -15,7 +15,7 @@ volumes: v1 v2 v3 v4 v5 v6 ## Gera todos os volumes
 
 v1: v1_prodemge v1_dcgf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE e DCGF
 
-v1_prodemge: $(DEP_PRODEMGE_PDF_V1) pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.pdf pdf/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.pdf pdf/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.pdf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE
+v1_prodemge: $(DEP_PRODEMGE_PDF_V1) pdf/T7_QUADRO_GERAL_DA_RECEITA.pdf pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.pdf pdf/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.pdf pdf/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.pdf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE
 
 v1_dcgf: $(DEP_DCGF_PDF_V1) volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.csv ## Gera tabelas do volume 1 de responsabilidade da DCGF
 
@@ -193,6 +193,10 @@ volume2/data/tabela5/*.txt: volume2/R/V2_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINA
 # Volume 1
 $(DEP_PRODEMGE_PDF_V1): pdf/%.pdf: volume1/Rnw/%.Rnw volume1/data/%.txt
 	@Rscript $(VERBOSE) utils/Rnw2Tex.R $*
+	@echo "---------------------------------------------------------------"
+
+pdf/T7_QUADRO_GERAL_DA_RECEITA.pdf: volume1/Rnw/T7_QUADRO_GERAL_DA_RECEITA.Rnw volume1/data/T7_QUADRO_GERAL_DA_RECEITA.json
+	@Rscript $(VERBOSE) utils/Rnw2Tex.R T7_QUADRO_GERAL_DA_RECEITA
 	@echo "---------------------------------------------------------------"
 
 pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.pdf: volume3/data/consolidado/T3_INVESTIMENTOS_SEGUNDO_FUNCOES_SUB_PROGRAMAS_PROJETOS_ATIVIDADES.txt volume1/Rnw/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.Rnw
