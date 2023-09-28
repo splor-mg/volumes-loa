@@ -116,7 +116,7 @@
   library(readr)
 
   banco=data.table(read.table(paste0(dir_data, "/receita_fonte_stn.txt"),
-                                header=T, sep="\t", dec="@", stringsAsFactors = FALSE))
+                                header=T, sep="\t", dec="@", stringsAsFactors = FALSE, quote = ""))
 
   cat("\\renewcommand*{\\arraystretch}{1.7}\n")
   cat("\\scriptsize\n")
