@@ -4,6 +4,7 @@
 # 3. INVESTIMENTOS SEGUNDO FUNÇÕES, SUBFUNÇÕES E PROGRAMAS POR PROJETOS E ATIVIDADES
 
 options(warn = 1)
+library(relatorios)
 source("utils/funcoes.r", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
@@ -34,54 +35,35 @@ write.table(sumario, "volume3/data/consolidado/sumario_v3.txt", quote = FALSE, s
 # 1. INVESTIMENTOS POR EMPRESA SEGUNDO FONTES DE RECURSO 
 #=========================================================================================
 
-t1 = qdd[,list(valor = sum(valor, na.rm=T)), by=list(UO, FONTE)]
+t1 = qdd[,list(valor = sum(valor, na.rm=T)), by=list(UO, COD_FONTE)]
 
-# Aplica expressões regulares para identificar e padronizar as fontes de recursos. Nos comentários há o
-# alvo de cada expressão regular
+t1[nat(COD_FONTE, 111), fonte1 := "tesouro_ordinario"]
+t1[nat(COD_FONTE, 112), fonte1 := "tesouro_vinculado"]
+t1[nat(COD_FONTE, 12), fonte1 := "outras_entidades"]
+t1[nat(COD_FONTE, 2), fonte1 := "operacao_credito"]
+t1[nat(COD_FONTE, 3), fonte1 := "alienacao"]
+t1[nat(COD_FONTE, 4), fonte1 := "convenios"]
+t1[nat(COD_FONTE, 5), fonte1 := "recursos_proprios"]
+t1[nat(COD_FONTE, 6), fonte1 := "outras_origens"]
 
-t1[, fonte1:= "sem correspondencia"]
-t1[grepl("tesouro *ordi.+", FONTE, ignore.case = T), fonte1:= "tesouro_ordinario"] # TESOURO ORDINÁRIO - APLICAÇÃO LIVRE
-t1[grepl("tesouro *vinc.+", FONTE, ignore.case = T), fonte1:= "tesouro_vinculado"] # TESOURO VINCULADO - FUNDESE
+fontes <- c(
+  "tesouro_ordinario",
+  "tesouro_vinculado",
+  "outras_entidades",
+  "operacao_credito",
+  "alienacao",
+  "convenios",
+  "recursos_proprios",
+  "outras_origens")
 
-# OUTRAS ENTIDADES - BDMG, OUTRAS ENTIDADES - COPASA, cemig, mgi, codemig. É necessário que todas as outras entidades que sejam fontes estejam aqui
-# [andrey 02-02-2023] GASMIG estava de fora, mas FONTE consta como "OUTRAS ENTIDADES - OUTRAS" o que pode gerar problema com 
-# futuras empresas que tenham essa mesma fonte, já que as demais tem o nome especificado, como OUTRAS ENTIDADES - CEMIG
-t1[grepl("outras .*bdmg", FONTE, ignore.case = T)  | grepl("outras .*copasa", FONTE, ignore.case = T)
-                                                   | grepl("outras .*cemig", FONTE, ignore.case = T)
-                                                   | grepl("outras .*outras", FONTE, ignore.case = T)
-                                                   | grepl("outras .*mgi", FONTE, ignore.case = T)
-                                                   | grepl("outras .*codemig", FONTE, ignore.case = T), 
-                                                                                    fonte1:= "outras_entidades"]
+t1[, fonte1 := factor(fonte1, levels = fontes)]
 
-# OP CRÉD A CONTRATAR INTERNA - OUTRAS, OP CRÉD CONTRAT INTERNA - OUTRAS, OP CRÉD A CONTRATAR INTERNA - OUTRAS
-t1[grepl("op cr(é|e)d.+", FONTE, ignore.case = T), fonte1:= "operacao_credito"] 
-t1[grepl(".+ * pr(ó|o)prios", FONTE, ignore.case = T), fonte1:= "recursos_proprios"] # RECURSOS PRÓPRIOS
-
-
-if("sem correspondencia" %in% t1[, unique(fonte1)]) {
+if(anyNA(t1[["fonte1"]])) {
   warning(paste0("V3_bancos_consolidados.R: Em qual fonte de recurso para a Tabela 1 entra(m) a(s) fonte(s), ",
-                    paste(t1[fonte1=="sem correspondencia", unique(FONTE)]), collapse=", "), "?")
+                    paste(t1[is.na(fonte1), unique(COD_FONTE)]), collapse=", "), "?")
 }
 
-t1 = t1[,list(valor = sum(valor, na.rm=T)), by=list(UO, fonte1)]
-t1 <- reshape(t1,   timevar = "fonte1", idvar = "UO",  direction = "wide")
-
-t1[is.na(t1)] = 0
-t1 = t1[order(UO)]
-
-var_esperadas = c("valor.tesouro_ordinario", "valor.recursos_proprios", "valor.outras_entidades", 
-                  "valor.tesouro_vinculado",  "valor.operacao_credito")
-
-if(length(setdiff(var_esperadas, names(t1)))>0){
-  # Caso uma das var_esperadas não exista essa será criada
-  
-  warning(paste0("V3_bancos_consolidados.R: A Tabela 1 não apresenta a fonte representada pelas variaveis, ",
-                    paste(setdiff(var_esperadas, names(t1)), collapse=", "), 
-                    " O total dessa tabela será realizado sem essa var e essa variaveis serão zeradas."))
-  
-  t1[,setdiff(var_esperadas, names(t1)):=0 ]
-  
-}
+t1 <- dcast(t1, UO ~ fonte1, value.var = "valor", fun.aggregate = sum, drop = FALSE)
 
 t1[, total:= apply(.SD, 1, sum), .SDcols=2:ncol(t1)]
 total = t1[, lapply(.SD, sum), .SDcols = 2:ncol(t1)]
@@ -89,10 +71,7 @@ total = t1[, lapply(.SD, sum), .SDcols = 2:ncol(t1)]
 total$UO = "TOTAL"
 t1 = rbind(t1, total)
 
-setnames(t1, c("UO", "valor.tesouro_ordinario", "valor.recursos_proprios", "valor.outras_entidades", 
-               "valor.tesouro_vinculado", "valor.operacao_credito"), 
-             c("orgaos", "ordinario", "recursos", "outras", 
-               "vinculado", "operacoes"))
+setnames(t1, c("UO"), c("orgaos"))
 
 t1[, orgaos := correcaoCaracteresEspeciais(orgaos, caracteres)]
 t1 = t1[, lapply(.SD, formatarNum)]
