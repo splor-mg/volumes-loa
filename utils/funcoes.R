@@ -330,7 +330,7 @@ is_receitas_previdenciarias = function(base){
   
   base[nat(RECEITA_COD, 121501, 121552, 7215021, 7219991205), RECEITAS_PREV := TRUE]
   
-  base[UO_COD %in% c(2121,4711) & nat(RECEITA_COD, 131, 132, 16, 19, 22, 23, 24, 25, 29, 
+  base[UO_COD %in% c(4711) & nat(RECEITA_COD, 131, 132, 16, 19, 22, 23, 24, 25, 29, 
                                                    931, 932, 96, 99), RECEITAS_PREV := TRUE]
 
   return(base$RECEITAS_PREV)
