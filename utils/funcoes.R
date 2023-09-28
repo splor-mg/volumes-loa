@@ -137,7 +137,7 @@ TratamentoNA = function(valor){
   # Se o valor for NA substitui por ""
   # ==================================
   
-  if(is.null(valor) || is.na(valor)){""} else{valor}
+  if(is.na(valor)){""} else{valor}
 }
 
 

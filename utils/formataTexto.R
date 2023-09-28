@@ -28,7 +28,7 @@ correcaoCaracteresEspeciais = function(texto, caracteres, is_maiscula=TRUE){
 }
 
 TratamentoNA = function(valor){
-  if(is.null(valor) || is.na(valor)){""} else{valor}
+  if(is.na(valor)){""} else{valor}
 }
 
 list_caracteres_especiais = function(){
