@@ -220,8 +220,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 11	363		ENSINO PROFISSIONAL	1.831.018	            0	408.566	            0	            0	            0	            0	2.239.584
 11	363	67	REDE DE DESENVOLVIMENTO DA EDUCAÇÃO PROFISSIONAL	1.831.018	            0	408.566	            0	            0	            0	            0	2.239.584
 12			EDUCAÇÃO	14.333.737.395	            0	3.600.815.934	873.193.962	1.000	            0	            0	18.807.748.291
-12	122		ADMINISTRAÇÃO GERAL	550.232.790	            0	100.651.952	1.237.420	            0	            0	            0	652.122.162
-12	122	162	GESTÃO DE PESSOAL DA ÁREA EDUCACIONAL	531.131.587	            0	77.085.557	            0	            0	            0	            0	608.217.144
+12	122		ADMINISTRAÇÃO GERAL	19.101.203	            0	23.566.395	1.237.420	            0	            0	            0	43.905.018
 12	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	19.101.203	            0	23.566.395	1.237.420	            0	            0	            0	43.905.018
 12	130		ADMINISTRAÇÃO DE CONCESSÕES	             0	            0	             0	            0	1.000	            0	            0	1.000
 12	130	85	PROMOÇÃO DE CONCESSÕES E PARCERIAS	             0	            0	             0	            0	1.000	            0	            0	1.000
@@ -270,14 +269,14 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	367		EDUCAÇÃO ESPECIAL	1.252.006.929	            0	20.601.196	500.000	            0	            0	            0	1.273.108.125
 12	367	162	GESTÃO DE PESSOAL DA ÁREA EDUCACIONAL	1.252.006.929	            0	13.601.196	            0	            0	            0	            0	1.265.608.125
 12	367	167	APOIO PEDAGÓGICO PARA O DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	7.000.000	500.000	            0	            0	            0	7.500.000
-12	368		EDUCAÇÃO BÁSICA	13.335.693	            0	856.537.818	446.478.709	            0	            0	            0	1.316.352.220
+12	368		EDUCAÇÃO BÁSICA	544.467.280	            0	933.623.375	446.478.709	            0	            0	            0	1.924.569.364
 12	368	37	VALORIZAÇÃO E SAÚDE DO SERVIDOR	5.586.640	            0	770.094	12.827	            0	            0	            0	6.369.561
 12	368	42	DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	5.753.857	1.000.000	            0	            0	            0	6.753.857
 12	368	43	DESJUDICIALIZA MINAS	             0	            0	1.000	            0	            0	            0	            0	1.000
 12	368	51	ATENDIMENTO COMUNITÁRIO E PSICOPEDAGOGICO NA FUNDACÃO HELENA ANTIPOFF	655.740	            0	283.992	            0	            0	            0	            0	939.732
 12	368	76	DESENVOLVIMENTO DA EDUCAÇÃO PROFISSIONAL TÉCNICA	6.807.092	            0	1.341.149	280.000	            0	            0	            0	8.428.241
 12	368	89	MEMÓRIA VIVA: DIFUSÃO CULTURAL, PATRIMÔNIO MATERIAL E IMATERIAL	286.221	            0	1.930.036	            0	            0	            0	            0	2.216.257
-12	368	162	GESTÃO DE PESSOAL DA ÁREA EDUCACIONAL	             0	            0	42.730.000	            0	            0	            0	            0	42.730.000
+12	368	162	GESTÃO DE PESSOAL DA ÁREA EDUCACIONAL	531.131.587	            0	119.815.557	            0	            0	            0	            0	650.947.144
 12	368	163	ALIMENTAÇÃO ESCOLAR	             0	            0	25.000.000	            0	            0	            0	            0	25.000.000
 12	368	165	ORGANIZAÇÃO, AVALIAÇÃO E GESTÃO ESCOLAR	             0	            0	95.381.508	5.057.195	            0	            0	            0	100.438.703
 12	368	167	APOIO PEDAGÓGICO PARA O DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	57.500.000	20.001.000	            0	            0	            0	77.501.000
