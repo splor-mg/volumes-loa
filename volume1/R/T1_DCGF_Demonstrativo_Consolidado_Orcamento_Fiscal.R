@@ -272,4 +272,4 @@ parte_final = cbind(painel_rec_final, painel_desp_final)
 parte_final[, c("ordem_rec", "ordem"):=NULL]
 demonstr = rbind(demonstr, parte_final, fill=T)
 
-write.csv2(demonstr, "volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.csv", row.names=F, na="")
+fwrite(demonstr, "volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.csv", sep = ";", dec = ",", bom = TRUE, na = "")
