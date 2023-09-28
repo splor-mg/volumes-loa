@@ -104,8 +104,6 @@ Superintendência Central de Planejamento e Orçamento
 % TABELA 1 GERAL - INVESTIMENTOS POR EMPRESA SEGUNDO FONTES DE RECURSO
 \addcontentsline{toc}{section}{ INVESTIMENTOS POR EMPRESA SEGUNDO FONTES DE RECURSO}
 
-\begin{landscape}
-
 <<t1_consolidado, results=tex, echo=F>>=
   
   # INICIO TABELA
@@ -123,8 +121,6 @@ Superintendência Central de Planejamento e Orçamento
   
   source(paste0(dir_codigosR, "/T1_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_DE_RECURSO.R"), encoding = "UTF-8")
 @
-
-\end{landscape}
 
 \newpage
 \phantomsection
