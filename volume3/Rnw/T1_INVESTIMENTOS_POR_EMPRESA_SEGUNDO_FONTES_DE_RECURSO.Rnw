@@ -36,31 +36,34 @@
 
   # INICIO TABELA
 
-  titulo= paste0("\\multicolumn{7}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{",
+  titulo= paste0("\\multicolumn{10}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{",
                  "INVESTIMENTOS POR EMPRESA SEGUNDO FONTES DE RECURSO}}}\\TBstrut  \\\\[2ex]\n")
  
   subtitulo = paste("\\multicolumn{3}{l}{\\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC, 
-                    "}}} & \\multicolumn{4}{r}{R\\$1,00} \\\\\n")
+                    "}}} & \\multicolumn{7}{r}{R\\$1,00} \\\\\n")
 
   cabecalho1= paste0("\\multirow{2}{*}{\\parbox{3cm}{\\centering \\textbf{EMPRESAS CONTROLADAS PELO ESTADO}}} & ",
                      "\\multicolumn{3}{|c|}{\\textbf{AUMENTO DE CAPITAL}} & ",
-                     "\\multicolumn{2}{c|}{\\textbf{OUTROS}} &  ",
+                     "\\multicolumn{5}{c|}{\\textbf{OUTROS}} &  ",
                      "\\multicolumn{1}{c}{\\multirow{2}{*}{\\textbf{TOTAL}}} \\\\\n")
 
   cabecalho2= paste0(" & \\valorHeader{\\centering TESOURO ORDINÁRIO} &  ",
                      "\\valorHeader{\\centering TESOURO VINCULADO} & ",
                     "\\valorHeader{\\centering OUTRAS ENTIDADES} & ",
                     "\\valorHeader{\\centering OPERAÇÃO DE CRÉDITO} & ",
-                    "\\valorHeader{\\centering RECURSOS PRÓPRIOS} & \\\\\n")
+                    "\\valorHeader{\\centering ALIENAÇÃO DE BENS E DIREITOS} & ",
+                    "\\valorHeader{\\centering CONVÊNIOS FIRMADOS PELA EMPRESA} & ",
+                    "\\valorHeader{\\centering RECURSOS PRÓPRIOS} & ",
+                    "\\valorHeader{\\centering OUTRAS ORIGENS} & \\\\\n")
 
-  cat("\\noindent\\begin{longtable}[c]{m{3cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}}\n")
+  cat("\\noindent\\begin{longtable}[c]{m{2.0cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.0cm}}\n")
 
   cat(titulo)
   cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
   cat(subtitulo)
   cat("\\specialrule{1pt}{0pt}{0pt}\n")
   cat(cabecalho1)
-  cat("\\cline{2-6}\n")
+  cat("\\cline{2-9}\n")
   cat(cabecalho2)
  
   cat("\\hline\n")
@@ -95,22 +98,28 @@
       cat("\\hline\n")
     
       cat("\\multicolumn{1}{L{4cm}|}{ \\textbf{", t1_geral[i, orgaos], 
-          "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, ordinario], 
-          "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, vinculado],
-          "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, outras], 
-          "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, operacoes],
-          "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, recursos], 
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, tesouro_ordinario], 
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, tesouro_vinculado],
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, outras_entidades], 
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, operacao_credito],
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, alienacao], 
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, convenios], 
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, recursos_proprios], 
+          "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, outras_origens], 
           "}} & \\multicolumn{1}{r}{ \\textbf{", t1_geral[i, total],
           "}} \\\\\n", sep="")
   
       } else{
         
         cat("\\multicolumn{1}{L{4cm}|}{", t1_geral[i, orgaos],
-            "} & \\multicolumn{1}{r|}{", t1_geral[i, ordinario], 
-            "} & \\multicolumn{1}{r|}{", t1_geral[i, vinculado],
-            "} & \\multicolumn{1}{r|}{", t1_geral[i, outras], 
-            "} & \\multicolumn{1}{r|}{", t1_geral[i, operacoes],
-            "} & \\multicolumn{1}{r|}{", t1_geral[i, recursos], 
+            "} & \\multicolumn{1}{r|}{", t1_geral[i, tesouro_ordinario], 
+            "} & \\multicolumn{1}{r|}{", t1_geral[i, tesouro_vinculado],
+            "} & \\multicolumn{1}{r|}{", t1_geral[i, outras_entidades], 
+            "} & \\multicolumn{1}{r|}{", t1_geral[i, operacao_credito],
+            "} & \\multicolumn{1}{r|}{", t1_geral[i, alienacao], 
+            "} & \\multicolumn{1}{r|}{", t1_geral[i, convenios], 
+            "} & \\multicolumn{1}{r|}{", t1_geral[i, recursos_proprios], 
+            "} & \\multicolumn{1}{r|}{", t1_geral[i, outras_origens], 
             "} & \\multicolumn{1}{r}{ \\textbf{", t1_geral[i, total],
             "}} \\\\\n", sep="")
       }
@@ -121,5 +130,5 @@
 # FIM TABELA
 
 @
- 
+
 \end{document}
