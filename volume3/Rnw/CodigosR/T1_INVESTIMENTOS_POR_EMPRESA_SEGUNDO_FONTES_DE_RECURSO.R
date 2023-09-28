@@ -20,14 +20,14 @@
                     "\\valorHeader{\\centering RECURSOS PRÓPRIOS} & ", 
                     "\\valorHeader{\\centering OUTRAS ORIGENS} & \\\\\n") 
  
-  cat("\\noindent\\begin{longtable}[c]{m{3cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}}\n") 
+  cat("\\noindent\\begin{longtable}[c]{m{3cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}}\n") 
  
   cat(titulo) 
   cat("\\specialrule{1.5pt}{2pt}{0pt}\n") 
   cat(subtitulo) 
   cat("\\specialrule{1pt}{0pt}{0pt}\n") 
   cat(cabecalho1) 
-  cat("\\cline{2-6}\n") 
+  cat("\\cline{2-9}\n") 
   cat(cabecalho2) 
   
   cat("\\hline\n") 
