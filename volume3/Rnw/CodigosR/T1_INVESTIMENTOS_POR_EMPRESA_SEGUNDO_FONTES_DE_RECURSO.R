@@ -20,7 +20,7 @@
                     "\\valorHeader{\\centering RECURSOS PRÓPRIOS} & ", 
                     "\\valorHeader{\\centering OUTRAS ORIGENS} & \\\\\n") 
  
-  cat("\\noindent\\begin{longtable}[c]{m{3cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}|m{1.75cm}}\n") 
+  cat("\\noindent\\begin{longtable}[c]{m{2.0cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.0cm}}\n") 
  
   cat(titulo) 
   cat("\\specialrule{1.5pt}{2pt}{0pt}\n") 
