@@ -55,10 +55,6 @@ resources:
           type: string
         - name: MUNICÍPIO
           type: string
-        - name: VALOR TESOURO 2023 (R$)
-          type: integer
-        - name: VALOR OUTROS 2023 (R$)
-          type: integer
         - name: VALOR TESOURO 2024 (R$)
           type: integer
         - name: VALOR OUTROS 2024 (R$)
@@ -70,6 +66,10 @@ resources:
         - name: VALOR TESOURO 2026 (R$)
           type: integer
         - name: VALOR OUTROS 2026 (R$)
+          type: integer
+        - name: VALOR TESOURO 2027 (R$)
+          type: integer
+        - name: VALOR OUTROS 2027 (R$)
           type: integer
   - name: base_orcam_despesa_item_fiscal
     path: bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx
@@ -446,13 +446,13 @@ resources:
           type: string
         - name: ACAO
           type: string
-        - name: VALOR (R$) 2023
-          type: integer
         - name: VALOR (R$) 2024
           type: integer
         - name: VALOR (R$) 2025
           type: integer
         - name: VALOR (R$) 2026
+          type: integer
+        - name: VALOR (R$) 2027
           type: integer
   - name: base_repasse_recursos
     path: bancos/SISOR/BASE_REPASSE_RECURSOS.xlsx
@@ -574,21 +574,21 @@ resources:
         type: integer
       - name: Unidade de Medida do Produto
         type: string
-      - name: Previsão Orçamentária 2023
-        type: number
       - name: Previsão Orçamentária 2024
         type: number
       - name: Previsão Orçamentária 2025
         type: number
       - name: Previsão Orçamentária 2026
         type: number
-      - name: Previsão Física 2023
-        type: integer
+      - name: Previsão Orçamentária 2027
+        type: number
       - name: Previsão Física 2024
         type: integer
       - name: Previsão Física 2025
         type: integer
       - name: Previsão Física 2026
+        type: integer
+      - name: Previsão Física 2027
         type: integer
       - name: Ação Transposta
         type: boolean
