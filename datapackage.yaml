@@ -670,7 +670,7 @@ resources:
     format: csv
     encoding: utf-8
     dialect:
-        delimiter: '\t'
+        delimiter: "\t"
     schema:
       fields:
         - name: cod
@@ -683,7 +683,7 @@ resources:
     format: csv
     encoding: utf-8
     dialect:
-        delimiter: '\t'
+        delimiter: "\t"
     schema:
       fields:
         - name: cod
@@ -868,7 +868,7 @@ resources:
     format: csv
     encoding: utf-8
     dialect:
-        delimiter: '\t'
+        delimiter: "\t"
     schema:
       fields:
         - name: fonte
@@ -881,7 +881,7 @@ resources:
     format: csv
     encoding: utf-8
     dialect:
-        delimiter: '\t'
+        delimiter: "\t"
     schema:
       fields:
         - name: n4_banco
