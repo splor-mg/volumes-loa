@@ -16,7 +16,8 @@
   dir_bancos = paste0(dir_loa, "/bancos")
 
   ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
-  
+  ETAPA_ORCAMENTO = readLines(paste(dir_utils, "etapa_orcamento.txt", sep=""), warn = F)
+
   source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
 
   getCodigoR(paste0(dir_latex, "/T1_OBRAS_POR_UNIDADE_ORCAMENTARIA_SEGUNDO_TERRITORIOS_DE_PLANEJAMENTO.Rnw"),
@@ -53,8 +54,7 @@ Subsecretaria de Planejamento e Orçamento \\
 Superintendência Central de Planejamento e Orçamento \\
 
 \vspace*{10em}
- \fontsize{45pt}{60pt}\selectfont {\textbf{PROJETO DE LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
- %\fontsize{50pt}{10pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
+ \fontsize{45pt}{10pt}\selectfont {\textbf{\Sexpr{ETAPA_ORCAMENTO} \Sexpr{ANO_DOC}}}
 
 \vspace*{4em}
 \fontsize{15pt}{12pt}\selectfont {\textbf{ANEXO IV}} \\

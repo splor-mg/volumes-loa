@@ -15,6 +15,7 @@ dir_data <- paste0(dir_loa, "/volume6/data")
 dir_bancos <- paste0(dir_loa, "/bancos")
 
 ANO_DOC <- as.numeric(readLines(paste(dir_utils, "ano.txt", sep = ""), warn = F))
+ETAPA_ORCAMENTO = readLines(paste(dir_utils, "etapa_orcamento.txt", sep=""), warn = F)
 
 # Recortes dos arquivos Rnw para obter os códigos em R
 source(paste(dir_utils, "funcoes.R", sep = ""))
@@ -51,8 +52,7 @@ Subsecretaria de Planejamento e Orçamento \\
 Superintendência Central de Planejamento e Orçamento \\
 
 \vspace*{10em}
- \fontsize{45pt}{10pt}\selectfont {\textbf{PROJETO DE LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
- %\fontsize{50pt}{10pt}\selectfont {\textbf{LEI ORÇAMENTÁRIA \Sexpr{ANO_DOC }}}
+ \fontsize{45pt}{10pt}\selectfont {\textbf{\Sexpr{ETAPA_ORCAMENTO} \Sexpr{ANO_DOC}}}
 
 \vspace*{5em}
 \fontsize{15pt}{12pt}\selectfont {\textbf{VOLUME AUXILIAR}} \\

@@ -1,4 +1,4 @@
-.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker v1_dcgf v1_prodemge validate check
+.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker v1_dcgf v1_prodemge validate check rm-all
 
 include config.mk
 
@@ -41,6 +41,13 @@ format: ## Formata bancos brutos .xls, html e .txt
 
 rm: ## Remove todos os arquivos de um volume Ex. argumento vol=logs
 	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol)
+
+rm-all: ## Remove todos os arquivos de todos os volumes incluindo logs
+	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) 2
+	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) 3
+	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) 4
+	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) 5
+	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) logs
 
 docker:
 	@if [ TRUE ]; then \
