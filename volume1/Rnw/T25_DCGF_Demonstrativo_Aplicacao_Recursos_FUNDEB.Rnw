@@ -28,10 +28,10 @@
   cat("\\noindent\\begin{longtable}[c]{m{2.5cm}|m{14cm}|m{1.5cm}}\n", sep="")
 
   titulo1= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize{ ",
-                  "\\textbf{DEMONSTRATIVO DA APLICAÇÃO DE RECURSOS DO FUNDO DE DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA}}}} \\\\\n")
+                  "\\textbf{DEMONSTRATIVO DA APLICAÇÃO DE RECURSOS DO FUNDO DE MANUTENÇÃO E DESENVOLVIMENTO}}}} \\\\\n")
   
   titulo2= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
-                  "\\textbf{E VALORIZAÇÃO DOS PROFISSIONAIS DA EDUCAÇÃO}}} \\\\\n")
+                  "\\textbf{DA EDUCAÇÃO BÁSICA E DE VALORIZAÇÃO DOS PROFISSIONAIS DA EDUCAÇÃO}}} \\\\\n")
   
   
   titulo3= paste("\\multicolumn{3}{C{19cm}}{\\cellcolor{gray!50} \\textcolor{myblack} {\\scriptsize",
