@@ -125,7 +125,7 @@
 "20"	"609"	"108"	" 4"	"498"	" 1"	"91"	" 0"	"10"	" 1"	"299.566"			"299.566"	"7"											
 "20"	"609"	"108"	" 4"	"498"	" 1"	"91"	" 0"	"60"	" 1"	"7.707"			"7.707"	"7"											
 "20"	"609"	"108"	" 4"	"498"	" 1"	"91"	" 0"	"91"	" 1"	"26.746"			"26.746"	"7"											
-"20"	"609"	"108"	" 4"	"498"	" 1"	"92"	" 0"							"8"	"PROJETO APOIADO"			"130"	"UNIDADE"	"Atividade Fim do Orçamento Fiscal"	"Não"				
+"20"	"609"	"108"	" 4"	"498"	" 1"	"92"	" 0"							"8"	"PROJETO APOIADO"			"150"	"UNIDADE"	"Atividade Fim do Orçamento Fiscal"	"Não"				
 "28"													"4.197.741"	"1"	"ENCARGOS ESPECIAIS"										
 "28"	"846"												"4.197.741"	"1"	"OUTROS ENCARGOS ESPECIAIS"										
 "28"	"846"	"705"											"4.197.741"	"1"	"APOIO ÀS POLÍTICAS PÚBLICAS"										
