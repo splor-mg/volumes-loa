@@ -5,15 +5,15 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   1	32		CONTROLE EXTERNO	613.775.410	            0	52.176.269	            0	            0	            0	            0	665.951.679
   1	32	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	            0	47.487.229	            0	            0	            0	            0	47.487.229
   1	32	746	CONTROLE EXTERNO DA GESTÃO DOS RECURSOS PÚBLICOS	613.775.410	            0	4.689.040	            0	            0	            0	            0	618.464.450
-  1	122		ADMINISTRAÇÃO GERAL	1.241.000	            0	126.908.431	21.500.691	            0	            0	            0	149.650.122
+  1	122		ADMINISTRAÇÃO GERAL	1.241.000	            0	129.008.431	21.500.691	            0	            0	            0	151.750.122
   1	122	704	MODERNIZAÇÃO INSTITUCIONAL	             0	            0	420.000	3.000.000	            0	            0	            0	3.420.000
   1	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	1.241.000	            0	7.457.551	487.731	            0	            0	            0	9.186.282
-  1	122	746	CONTROLE EXTERNO DA GESTÃO DOS RECURSOS PÚBLICOS	             0	            0	119.030.880	18.012.960	            0	            0	            0	137.043.840
-  1	128		FORMAÇÃO DE RECURSOS HUMANOS	             0	            0	6.045.549	            0	            0	            0	            0	6.045.549
-  1	128	760	CAPACITAÇÃO E ORIENTAÇÃO PARA MELHORAR A GESTÃO DOS RECURSOS PÚBLICOS	             0	            0	6.045.549	            0	            0	            0	            0	6.045.549
-  2			JUDICIÁRIA	6.290.860.202	            0	3.291.964.372	619.857.068	6.270.000	            0	            0	10.208.951.642
-  2	61		AÇÃO JUDICIÁRIA	             0	            0	2.704.888.582	619.857.068	6.270.000	            0	            0	3.331.015.650
-  2	61	706	PRESTAÇÃO JURISDICIONAL	             0	            0	2.686.347.839	614.704.276	6.270.000	            0	            0	3.307.322.115
+  1	122	746	CONTROLE EXTERNO DA GESTÃO DOS RECURSOS PÚBLICOS	             0	            0	121.130.880	18.012.960	            0	            0	            0	139.143.840
+  1	128		FORMAÇÃO DE RECURSOS HUMANOS	             0	            0	3.945.549	            0	            0	            0	            0	3.945.549
+  1	128	760	CAPACITAÇÃO E ORIENTAÇÃO PARA MELHORAR A GESTÃO DOS RECURSOS PÚBLICOS	             0	            0	3.945.549	            0	            0	            0	            0	3.945.549
+  2			JUDICIÁRIA	6.290.860.202	            0	3.215.628.569	702.462.871	            0	            0	            0	10.208.951.642
+  2	61		AÇÃO JUDICIÁRIA	             0	            0	2.628.552.779	702.462.871	            0	            0	            0	3.331.015.650
+  2	61	706	PRESTAÇÃO JURISDICIONAL	             0	            0	2.610.012.036	697.310.079	            0	            0	            0	3.307.322.115
   2	61	734	PRESTAÇÃO JURISDICIONAL MILITAR	             0	            0	18.540.743	5.152.792	            0	            0	            0	23.693.535
   2	122		ADMINISTRAÇÃO GERAL	6.290.860.202	            0	582.175.790	            0	            0	            0	            0	6.873.035.992
   2	122	706	PRESTAÇÃO JURISDICIONAL	6.222.027.769	            0	582.175.790	            0	            0	            0	            0	6.804.203.559
@@ -35,27 +35,27 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   3	122	737	MODERNIZAÇÃO INSTITUCIONAL	             0	            0	39.600.000	26.400.000	            0	            0	            0	66.000.000
   3	128		FORMAÇÃO DE RECURSOS HUMANOS	             0	            0	300.000	            0	            0	            0	            0	300.000
   3	128	726	ACESSO À JUSTIÇA	             0	            0	300.000	            0	            0	            0	            0	300.000
-  4			ADMINISTRAÇÃO	2.484.203.379	            0	2.890.583.729	556.442.140	1.267.043.912	            0	            0	7.198.273.160
+  4			ADMINISTRAÇÃO	2.484.203.379	            0	1.950.817.100	1.153.089.846	1.267.043.912	            0	            0	6.855.154.237
   4	121		PLANEJAMENTO E ORÇAMENTO	37.490.128	            0	8.767.117	2.520.152	            0	            0	            0	48.777.397
   4	121	95	ASSESSORIA E PESQUISA EM POLÍTICAS PÚBLICAS	13.946.822	            0	3.491.954	            0	            0	            0	            0	17.438.776
   4	121	96	PRODUÇÃO DE ESTATÍSTICAS E INFORMAÇÕES	13.185.847	            0	3.338.276	            0	            0	            0	            0	16.524.123
-  4	121	131	ARTICULAÇÃO, ATRAÇÃO DE INVESTIMENTOS E CAPTAÇÃO DE RECURSOS E PARCERIAS	3.295.436	            0	696.024	120.152	            0	            0	            0	4.111.612
+  4	121	131	ARTICULAÇÃO INTERFEDERATIVA, ATRAÇÃO DE INVESTIMENTOS, CAPTAÇÃO E TRANSFERÊNCIA DE RECURSOS E PARCERIAS	3.295.436	            0	696.024	120.152	            0	            0	            0	4.111.612
   4	121	157	GESTÃO DO PLANEJAMENTO ORÇAMENTÁRIO GOVERNAMENTAL	7.062.023	            0	1.240.863	2.400.000	            0	            0	            0	10.702.886
-  4	122		ADMINISTRAÇÃO GERAL	747.542.998	            0	1.956.891.735	348.477.313	1.000	            0	            0	3.052.913.046
+  4	122		ADMINISTRAÇÃO GERAL	747.542.998	            0	1.017.125.106	945.125.019	1.000	            0	            0	2.709.794.123
   4	122	11	ASSESSORAMENTO TÉCNICO E ADMINISTRATIVO AO GOVERNADOR E VICE-GOVERNADOR	2.869.801	            0	1.841.888	            0	            0	            0	            0	4.711.689
   4	122	38	TESOURO RESPONSÁVEL E TRANSPARENTE	             0	            0	162.873	            0	            0	            0	            0	162.873
   4	122	49	ADMINISTRAÇÃO DOS PRÉDIOS GOVERNAMENTAIS	1.058.496	            0	6.096.772	            0	            0	            0	            0	7.155.268
   4	122	83	POLÍTICAS DE PROMOÇÃO AO DESENVOLVIMENTO SOCIAL NO CONTEXTO RURAL - PERCURSOS GERAIS: TRAJETÓRIA PARA AUTONOMIA	             0	            0	76.103	            0	            0	            0	            0	76.103
-  4	122	84	POLÍTICAS DE INTEGRAÇÃO, REGIONALIZAÇÃO E INOVAÇÃO	138.379	            0	631.276	            0	            0	            0	            0	769.655
+  4	122	84	POLÍTICAS DE INTEGRAÇÃO, REGIONALIZAÇÃO E INOVAÇÃO	138.379	            0	631.276	500.000	            0	            0	            0	1.269.655
   4	122	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	2.048.040	135.766	            0	            0	            0	2.183.806
   4	122	115	GESTÃO DO PROCESSO LEGISLATIVO ESTADUAL SOB A RESPONSABILIDADE DO PODER EXECUTIVO	3.121.022	            0	436.840	            0	            0	            0	            0	3.557.862
-  4	122	119	APOIO AO DESENVOLVIMENTO MUNICIPAL E À COORDENAÇÃO DAS TRANSFERÊNCIAS ESTADUAIS DE RECURSOS FINANCEIROS	5.663.494	            0	29.708.981	140.000.000	            0	            0	            0	175.372.475
+  4	122	119	APOIO AO DESENVOLVIMENTO MUNICIPAL E À COORDENAÇÃO DAS TRANSFERÊNCIAS ESTADUAIS DE RECURSOS FINANCEIROS	5.663.494	            0	70.066.584	716.113.527	            0	            0	            0	791.843.605
   4	122	120	PRODUÇÃO E VEICULAÇÃO DO DIÁRIO OFICIAL ELETRÔNICO MINAS GERAIS	3.049.904	            0	1.595.563	1.500.000	            0	            0	            0	6.145.467
-  4	122	122	FORTALECIMENTO DA GESTÃO DAS TRANSFERÊNCIAS ESTADUAIS	4.246.124	            0	992.298.369	7.214.400	            0	            0	            0	1.003.758.893
-  4	122	131	ARTICULAÇÃO, ATRAÇÃO DE INVESTIMENTOS E CAPTAÇÃO DE RECURSOS E PARCERIAS	390.433	            0	505.603	48.500	            0	            0	            0	944.536
+  4	122	122	FORTALECIMENTO DA GESTÃO DAS TRANSFERÊNCIAS ESTADUAIS	4.246.124	            0	3.473.137	7.214.400	            0	            0	            0	14.933.661
+  4	122	131	ARTICULAÇÃO INTERFEDERATIVA, ATRAÇÃO DE INVESTIMENTOS, CAPTAÇÃO E TRANSFERÊNCIA DE RECURSOS E PARCERIAS	390.433	            0	506.603	49.500	            0	            0	            0	946.536
   4	122	133	MINAS GERAÇÃO DE VALOR	436.943	            0	15.047.870	            0	            0	            0	            0	15.484.813
   4	122	147	GESTÃO DE PESSOAS	56.273.114	            0	19.840.037	87.383.716	            0	            0	            0	163.496.867
-  4	122	148	APOIO ÀS POLÍTICAS DE DESENVOLVIMENTO SOCIAL	2.797.438	            0	1.014.669	            0	            0	            0	            0	3.812.107
+  4	122	148	APOIO ÀS POLÍTICAS DE DESENVOLVIMENTO SOCIAL	2.797.438	            0	9.714.669	20.033.179	            0	            0	            0	32.545.286
   4	122	149	TRANSFORMAÇÃO DIGITAL E ATENDIMENTO AO CIDADÃO	1.759.870	            0	40.337.384	133.000	            0	            0	            0	42.230.254
   4	122	151	PROMOÇÃO DA INOVAÇÃO E DA GESTÃO ESTRATÉGICA	4.796.569	            0	867.434	            0	            0	            0	            0	5.664.003
   4	122	155	REPARAÇÃO DOS DANOS DOS ROMPIMENTOS EM BRUMADINHO E MARIANA	             0	            0	3.703.217	            0	            0	            0	            0	3.703.217
@@ -97,26 +97,26 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   4	131	109	GESTÃO DE CERIMONIAL E EVENTOS	1.991.711	            0	25.233.693	22.000	            0	            0	            0	27.247.404
   4	274		PREVIDÊNCIA ESPECIAL	209.950.783	            0	             0	            0	            0	            0	            0	209.950.783
   4	274	705	APOIO ÀS POLÍTICAS PÚBLICAS	209.950.783	            0	             0	            0	            0	            0	            0	209.950.783
-  6			SEGURANÇA PÚBLICA	19.135.411.776	            0	2.241.701.419	377.692.779	1.000	            0	            0	21.754.806.974
-  6	122		ADMINISTRAÇÃO GERAL	486.064.815	            0	120.883.201	18.000	            0	            0	            0	606.966.016
-  6	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	486.064.815	            0	120.883.201	18.000	            0	            0	            0	606.966.016
+  6			SEGURANÇA PÚBLICA	19.135.411.776	            0	2.252.208.856	442.501.623	1.000	            0	            0	21.830.123.255
+  6	122		ADMINISTRAÇÃO GERAL	486.064.815	            0	120.883.201	463.158	            0	            0	            0	607.411.174
+  6	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	486.064.815	            0	120.883.201	463.158	            0	            0	            0	607.411.174
   6	123		ADMINISTRAÇÃO FINANCEIRA	             0	            0	13.361.530	25.936.146	            0	            0	            0	39.297.676
   6	123	134	GESTÃO INTEGRADA DE SEGURANÇA PÚBLICA	             0	            0	13.361.530	25.936.146	            0	            0	            0	39.297.676
-  6	128		FORMAÇÃO DE RECURSOS HUMANOS	109.711.925	            0	21.363.090	580.818	            0	            0	            0	131.655.833
+  6	128		FORMAÇÃO DE RECURSOS HUMANOS	109.711.925	            0	21.363.090	730.818	            0	            0	            0	131.805.833
   6	128	37	VALORIZAÇÃO E SAÚDE DO SERVIDOR	77.356.519	            0	10.545.324	580.818	            0	            0	            0	88.482.661
-  6	128	52	PROMOÇÃO DE DEFESA CIVIL	32.355.406	            0	10.817.766	            0	            0	            0	            0	43.173.172
+  6	128	52	PROMOÇÃO DE DEFESA CIVIL	32.355.406	            0	10.817.766	150.000	            0	            0	            0	43.323.172
   6	130		ADMINISTRAÇÃO DE CONCESSÕES	             0	            0	             0	            0	1.000	            0	            0	1.000
   6	130	85	PROMOÇÃO DE CONCESSÕES E PARCERIAS	             0	            0	             0	            0	1.000	            0	            0	1.000
-  6	181		POLICIAMENTO	6.840.755.739	            0	910.457.380	212.341.671	            0	            0	            0	7.963.554.790
-  6	181	32	INVESTIGAÇÃO	2.333.997.328	            0	210.442.402	80.437.538	            0	            0	            0	2.624.877.268
+  6	181		POLICIAMENTO	6.840.755.739	            0	914.294.830	265.946.788	            0	            0	            0	8.020.997.357
+  6	181	32	INVESTIGAÇÃO	2.333.997.328	            0	213.132.402	100.992.125	            0	            0	            0	2.648.121.855
   6	181	46	SUPORTE AÉREO AOS SERVIÇOS PÚBLICOS ESTADUAIS	34.089.818	            0	15.992.424	80.000	            0	            0	            0	50.162.242
   6	181	134	GESTÃO INTEGRADA DE SEGURANÇA PÚBLICA	17.002.553	            0	60.577.696	3.932.024	            0	            0	            0	81.512.273
   6	181	135	PROTEÇÃO SOCIAL DOS MILITARES	             0	            0	70.392	            0	            0	            0	            0	70.392
-  6	181	137	POLÍCIA OSTENSIVA	4.455.666.040	            0	623.374.466	127.892.109	            0	            0	            0	5.206.932.615
-  6	182		DEFESA CIVIL	756.825.500	            0	103.272.617	46.645.989	            0	            0	            0	906.744.106
-  6	182	47	SUPORTE ÀS AÇÕES DE COMBATE E RESPOSTA AOS DANOS CAUSADOS PELAS CHUVAS	             0	            0	9.558.625	            0	            0	            0	            0	9.558.625
+  6	181	137	POLÍCIA OSTENSIVA	4.455.666.040	            0	624.521.916	160.942.639	            0	            0	            0	5.241.130.595
+  6	182		DEFESA CIVIL	756.825.500	            0	104.643.617	52.930.939	            0	            0	            0	914.400.056
+  6	182	47	SUPORTE ÀS AÇÕES DE COMBATE E RESPOSTA AOS DANOS CAUSADOS PELAS CHUVAS	             0	            0	10.049.625	            0	            0	            0	            0	10.049.625
   6	182	48	PROTEÇÃO E DEFESA CIVIL	1.091.742	            0	8.701.018	10.000.000	            0	            0	            0	19.792.760
-  6	182	52	PROMOÇÃO DE DEFESA CIVIL	755.733.758	            0	85.012.974	36.644.989	            0	            0	            0	877.391.721
+  6	182	52	PROMOÇÃO DE DEFESA CIVIL	755.733.758	            0	85.892.974	42.929.939	            0	            0	            0	884.556.671
   6	182	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	            0	             0	1.000	            0	            0	            0	1.000
   6	183		INFORMAÇÃO E INTELIGÊNCIA	             0	            0	23.330.097	102.000	            0	            0	            0	23.432.097
   6	183	36	IDENTIFICAÇÃO CIVIL E CRIMINAL	             0	            0	19.624.800	            0	            0	            0	            0	19.624.800
@@ -130,25 +130,27 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   6	331	134	GESTÃO INTEGRADA DE SEGURANÇA PÚBLICA	             0	            0	147.290	            0	            0	            0	            0	147.290
   6	363		ENSINO PROFISSIONAL	             0	            0	1.543.902	724.658	            0	            0	            0	2.268.560
   6	363	134	GESTÃO INTEGRADA DE SEGURANÇA PÚBLICA	             0	            0	1.543.902	724.658	            0	            0	            0	2.268.560
-  6	421		CUSTÓDIA E REINTEGRAÇÃO SOCIAL	2.074.983.196	            0	973.042.342	58.109.851	            0	            0	            0	3.106.135.389
+  6	421		CUSTÓDIA E REINTEGRAÇÃO SOCIAL	2.074.983.196	            0	974.341.329	62.293.470	            0	            0	            0	3.111.617.995
   6	421	128	PROGRAMA DE APOIO A AMPLIAÇÃO E A MELHORIA DOS SISTEMAS PRISIONAL E SOCIOEDUCATIVO	             0	            0	6.032.161	5.439.688	            0	            0	            0	11.471.849
-  6	421	129	PREVENÇÃO À CRIMINALIDADE	3.699.572	            0	47.827.026	100.000	            0	            0	            0	51.626.598
-  6	421	130	INFRAESTRUTURA DO SISTEMA PRISIONAL	2.071.283.624	            0	919.183.155	52.570.163	            0	            0	            0	3.043.036.942
-  6	422		DIREITOS INDIVIDUAIS, COLETIVOS E DIFUSOS	30.106.330	            0	24.448.354	3.733.646	            0	            0	            0	58.288.330
-  6	422	36	IDENTIFICAÇÃO CIVIL E CRIMINAL	30.061.861	            0	24.097.598	3.733.646	            0	            0	            0	57.893.105
-  6	422	141	POLÍTICAS SOBRE DROGAS	44.469	            0	350.756	            0	            0	            0	            0	395.225
+  6	421	129	PREVENÇÃO À CRIMINALIDADE	3.699.572	            0	48.027.026	100.000	            0	            0	            0	51.826.598
+  6	421	130	INFRAESTRUTURA DO SISTEMA PRISIONAL	2.071.283.624	            0	920.282.142	56.753.782	            0	            0	            0	3.048.319.548
+  6	422		DIREITOS INDIVIDUAIS, COLETIVOS E DIFUSOS	30.106.330	            0	28.448.354	3.873.646	            0	            0	            0	62.428.330
+  6	422	36	IDENTIFICAÇÃO CIVIL E CRIMINAL	30.061.861	            0	24.097.598	3.873.646	            0	            0	            0	58.033.105
+  6	422	141	POLÍTICAS SOBRE DROGAS	44.469	            0	4.350.756	            0	            0	            0	            0	4.395.225
   6	781		TRANSPORTE AÉREO	4.111.346	            0	8.579.560	            0	            0	            0	            0	12.690.906
   6	781	46	SUPORTE AÉREO AOS SERVIÇOS PÚBLICOS ESTADUAIS	4.111.346	            0	8.579.560	            0	            0	            0	            0	12.690.906
   6	782		TRANSPORTE RODOVIÁRIO	575.566	            0	3.904.706	            0	            0	            0	            0	4.480.272
   6	782	34	SUPORTE ÀS AÇÕES DE TRANSPORTE RODOVIÁRIO	575.566	            0	3.904.706	            0	            0	            0	            0	4.480.272
   7			RELAÇÕES EXTERIORES	2.259.263	            0	873.673	36.245	            0	            0	            0	3.169.181
   7	212		COOPERAÇÃO INTERNACIONAL	2.259.263	            0	873.673	36.245	            0	            0	            0	3.169.181
-  7	212	131	ARTICULAÇÃO, ATRAÇÃO DE INVESTIMENTOS E CAPTAÇÃO DE RECURSOS E PARCERIAS	2.259.263	            0	873.673	36.245	            0	            0	            0	3.169.181
-  8			ASSISTÊNCIA SOCIAL	7.270.808	            0	108.004.928	2.323.840	            0	            0	            0	117.599.576
+  7	212	131	ARTICULAÇÃO INTERFEDERATIVA, ATRAÇÃO DE INVESTIMENTOS, CAPTAÇÃO E TRANSFERÊNCIA DE RECURSOS E PARCERIAS	2.259.263	            0	873.673	36.245	            0	            0	            0	3.169.181
+  8			ASSISTÊNCIA SOCIAL	7.270.808	            0	108.805.928	2.323.840	            0	            0	            0	118.400.576
   8	182		DEFESA CIVIL	             0	            0	1.000	            0	            0	            0	            0	1.000
   8	182	47	SUPORTE ÀS AÇÕES DE COMBATE E RESPOSTA AOS DANOS CAUSADOS PELAS CHUVAS	             0	            0	1.000	            0	            0	            0	            0	1.000
-  8	244		ASSISTÊNCIA COMUNITÁRIA	7.270.808	            0	108.003.928	2.323.840	            0	            0	            0	117.598.576
-  8	244	71	FORTALECIMENTO DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL - SUAS	7.270.808	            0	106.998.550	2.323.840	            0	            0	            0	116.593.198
+  8	242		ASSISTÊNCIA AO PORTADOR DE DEFICIÊNCIA	             0	            0	1.000	            0	            0	            0	            0	1.000
+  8	242	71	FORTALECIMENTO DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL - SUAS	             0	            0	1.000	            0	            0	            0	            0	1.000
+  8	244		ASSISTÊNCIA COMUNITÁRIA	7.270.808	            0	108.803.928	2.323.840	            0	            0	            0	118.398.576
+  8	244	71	FORTALECIMENTO DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL - SUAS	7.270.808	            0	107.798.550	2.323.840	            0	            0	            0	117.393.198
   8	244	83	POLÍTICAS DE PROMOÇÃO AO DESENVOLVIMENTO SOCIAL NO CONTEXTO RURAL - PERCURSOS GERAIS: TRAJETÓRIA PARA AUTONOMIA	             0	            0	1.000	            0	            0	            0	            0	1.000
   8	244	138	CONCESSÃO DE AUXÍLIO FINANCEIRO, SEGURO E PECÚLIO	             0	            0	1.004.378	            0	            0	            0	            0	1.004.378
   9			PREVIDÊNCIA SOCIAL	24.902.084.632	            0	256.599.406	25.562.302	4.854.750	            0	            0	25.189.101.090
@@ -162,36 +164,36 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   9	274	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	            0	64.761.132	            0	            0	            0	            0	64.761.132
   9	274	766	BENEFÍCIOS ASSISTENCIAIS	             0	            0	4.906.275	            0	            0	            0	            0	4.906.275
   9	274	767	RESERVA DE BENEFÍCIOS	             0	            0	             0	25.484.225	4.854.750	            0	            0	30.338.975
-10			SAÚDE	2.577.614.423	            0	13.706.694.404	910.464.769	2.000	            0	            0	17.194.775.596
+10			SAÚDE	2.577.614.423	            0	13.577.859.831	1.116.801.705	2.000	            0	            0	17.272.277.959
 10	61		AÇÃO JUDICIÁRIA	3.229.204	            0	507.579.743	1.703.200	            0	            0	            0	512.512.147
 10	61	62	ACESSO A SERVIÇOS DE SAÚDE	3.229.204	            0	507.579.743	1.703.200	            0	            0	            0	512.512.147
-10	122		ADMINISTRAÇÃO GERAL	458.226.252	            0	1.438.891.657	28.695.967	            0	            0	            0	1.925.813.876
+10	122		ADMINISTRAÇÃO GERAL	458.226.252	            0	753.346.807	40.223.366	            0	            0	            0	1.251.796.425
 10	122	39	GESTÃO DA ASSISTÊNCIA À SAÚDE	11.622.410	            0	10.111.269	5.052.518	            0	            0	            0	26.786.197
 10	122	59	APOIO À GESTÃO DO SUS	271.518.160	            0	237.151.041	2.602.127	            0	            0	            0	511.271.328
 10	122	166	EXECUÇÃO DESCENTRALIZADA E AUTÔNOMA DAS AÇÕES E SERVIÇOS DE SAÚDE	             0	            0	210.712.260	            0	            0	            0	            0	210.712.260
-10	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	175.085.682	            0	980.917.087	21.041.322	            0	            0	            0	1.177.044.091
+10	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	175.085.682	            0	295.372.237	32.568.721	            0	            0	            0	503.026.640
 10	128		FORMAÇÃO DE RECURSOS HUMANOS	11.628.203	            0	27.275.739	400.000	            0	            0	            0	39.303.942
 10	128	28	DESENVOLVIMENTO DE AÇÕES DE EDUCAÇÃO E PESQUISA PARA O SISTEMA ÚNICO DE SAÚDE	11.628.203	            0	4.730.776	400.000	            0	            0	            0	16.758.979
 10	128	166	EXECUÇÃO DESCENTRALIZADA E AUTÔNOMA DAS AÇÕES E SERVIÇOS DE SAÚDE	             0	            0	22.544.963	            0	            0	            0	            0	22.544.963
 10	130		ADMINISTRAÇÃO DE CONCESSÕES	             0	            0	             0	            0	2.000	            0	            0	2.000
 10	130	85	PROMOÇÃO DE CONCESSÕES E PARCERIAS	             0	            0	             0	            0	2.000	            0	            0	2.000
-10	242		ASSISTÊNCIA AO PORTADOR DE DEFICIÊNCIA	             0	            0	102.464.122	132.729	            0	            0	            0	102.596.851
-10	242	61	ATENÇÃO ESPECIALIZADA À SAÚDE	             0	            0	102.464.122	132.729	            0	            0	            0	102.596.851
+10	242		ASSISTÊNCIA AO PORTADOR DE DEFICIÊNCIA	             0	            0	102.764.122	132.729	            0	            0	            0	102.896.851
+10	242	61	ATENÇÃO ESPECIALIZADA À SAÚDE	             0	            0	102.764.122	132.729	            0	            0	            0	102.896.851
 10	243		ASSISTÊNCIA À CRIANÇA E AO ADOLESCENTE	19.441.505	            0	2.410.556	266	            0	            0	            0	21.852.327
 10	243	146	PROMOÇÃO DA POLÍTICA SOCIOEDUCATIVA PARA ATENDIMENTO AOS ADOLESCENTES EM CONFLITO COM A LEI	19.441.505	            0	2.410.556	266	            0	            0	            0	21.852.327
-10	301		ATENÇÃO BÁSICA	7.007.759	            0	539.133.173	132.927.875	            0	            0	            0	679.068.807
-10	301	60	ATENÇÃO PRIMÁRIA À SAÚDE	7.007.759	            0	539.133.173	132.927.875	            0	            0	            0	679.068.807
-10	302		ASSISTÊNCIA HOSPITALAR E AMBULATORIAL	1.873.702.526	            0	9.352.773.818	638.318.404	            0	            0	            0	11.864.794.748
+10	301		ATENÇÃO BÁSICA	7.007.759	            0	978.927.457	242.314.366	            0	            0	            0	1.228.249.582
+10	301	60	ATENÇÃO PRIMÁRIA À SAÚDE	7.007.759	            0	978.927.457	242.314.366	            0	            0	            0	1.228.249.582
+10	302		ASSISTÊNCIA HOSPITALAR E AMBULATORIAL	1.873.702.526	            0	9.464.400.480	721.936.602	            0	            0	            0	12.060.039.608
 10	302	  6	ASSISTÊNCIA À SAÚDE DOS SEGURADOS E DOS SEUS DEPENDENTES	4.855.980	            0	842.548.698	            0	            0	            0	            0	847.404.678
-10	302	19	ATENÇÃO HOSPITALAR ESPECIALIZADA	1.188.648.995	            0	779.195.291	32.476.778	            0	            0	            0	2.000.321.064
+10	302	19	ATENÇÃO HOSPITALAR ESPECIALIZADA	1.188.648.995	            0	779.595.291	32.476.778	            0	            0	            0	2.000.721.064
 10	302	37	VALORIZAÇÃO E SAÚDE DO SERVIDOR	17.679.499	            0	2.568.406	35.561	            0	            0	            0	20.283.466
 10	302	39	GESTÃO DA ASSISTÊNCIA À SAÚDE	             0	            0	639.651.901	            0	            0	            0	            0	639.651.901
 10	302	52	PROMOÇÃO DE DEFESA CIVIL	25.223.803	            0	1.514.919	            0	            0	            0	            0	26.738.722
-10	302	53	ATENDIMENTO PRÉ-HOSPITALAR	             0	            0	6.304.590	60.000	            0	            0	            0	6.364.590
-10	302	58	POLÍTICAS DE ATENÇÃO HOSPITALAR	7.273.578	            0	2.322.202.571	377.421.291	            0	            0	            0	2.706.897.440
-10	302	61	ATENÇÃO ESPECIALIZADA À SAÚDE	12.008.856	            0	463.326.340	5.682.930	            0	            0	            0	481.018.126
-10	302	62	ACESSO A SERVIÇOS DE SAÚDE	26.711.137	            0	1.275.913.081	182.042.168	            0	            0	            0	1.484.666.386
-10	302	87	ASSISTÊNCIA EM HEMATOLOGIA, HEMOTERAPIA,CÉLULAS E TECIDOS BIOLÓGICOS	154.767.303	            0	205.149.021	22.644.161	            0	            0	            0	382.560.485
+10	302	53	ATENDIMENTO PRÉ-HOSPITALAR	             0	            0	7.234.590	13.880.000	            0	            0	            0	21.114.590
+10	302	58	POLÍTICAS DE ATENÇÃO HOSPITALAR	7.273.578	            0	2.423.351.053	408.521.815	            0	            0	            0	2.839.146.446
+10	302	61	ATENÇÃO ESPECIALIZADA À SAÚDE	12.008.856	            0	472.474.520	6.017.930	            0	            0	            0	490.501.306
+10	302	62	ACESSO A SERVIÇOS DE SAÚDE	26.711.137	            0	1.275.913.081	219.954.842	            0	            0	            0	1.522.579.060
+10	302	87	ASSISTÊNCIA EM HEMATOLOGIA, HEMOTERAPIA,CÉLULAS E TECIDOS BIOLÓGICOS	154.767.303	            0	205.149.021	23.094.161	            0	            0	            0	383.010.485
 10	302	88	SERVIÇOS DE SAÚDE PRESTADOS PELO IPSEMG NA REDE PRÓPRIA	215.580.849	            0	357.699.607	13.955.515	            0	            0	            0	587.235.971
 10	302	135	PROTEÇÃO SOCIAL DOS MILITARES	220.952.526	            0	11.266.085	4.000.000	            0	            0	            0	236.218.611
 10	302	166	EXECUÇÃO DESCENTRALIZADA E AUTÔNOMA DAS AÇÕES E SERVIÇOS DE SAÚDE	             0	            0	2.445.432.308	            0	            0	            0	            0	2.445.432.308
@@ -203,23 +205,23 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 10	303	166	EXECUÇÃO DESCENTRALIZADA E AUTÔNOMA DAS AÇÕES E SERVIÇOS DE SAÚDE	             0	            0	508.933.086	            0	            0	            0	            0	508.933.086
 10	304		VIGILÂNCIA SANITÁRIA	11.448.913	            0	18.538.895	2.515.945	            0	            0	            0	32.503.753
 10	304	63	VIGILÂNCIA EM SAÚDE	11.448.913	            0	18.538.895	2.515.945	            0	            0	            0	32.503.753
-10	305		VIGILÂNCIA EPIDEMIOLÓGICA	15.143.061	            0	406.239.537	20.789.551	            0	            0	            0	442.172.149
-10	305	63	VIGILÂNCIA EM SAÚDE	15.143.061	            0	406.239.537	20.789.551	            0	            0	            0	442.172.149
+10	305		VIGILÂNCIA EPIDEMIOLÓGICA	15.143.061	            0	406.428.868	22.594.399	            0	            0	            0	444.166.328
+10	305	63	VIGILÂNCIA EM SAÚDE	15.143.061	            0	406.428.868	22.594.399	            0	            0	            0	444.166.328
 10	421		CUSTÓDIA E REINTEGRAÇÃO SOCIAL	109.973.068	            0	44.540.935	15.734.308	            0	            0	            0	170.248.311
 10	421	130	INFRAESTRUTURA DO SISTEMA PRISIONAL	109.973.068	            0	44.540.935	15.734.308	            0	            0	            0	170.248.311
-10	422		DIREITOS INDIVIDUAIS, COLETIVOS E DIFUSOS	             0	            0	14.491.614	4.120.008	            0	            0	            0	18.611.622
-10	422	141	POLÍTICAS SOBRE DROGAS	             0	            0	14.491.614	4.120.008	            0	            0	            0	18.611.622
+10	422		DIREITOS INDIVIDUAIS, COLETIVOS E DIFUSOS	             0	            0	19.291.614	4.120.008	            0	            0	            0	23.411.622
+10	422	141	POLÍTICAS SOBRE DROGAS	             0	            0	19.291.614	4.120.008	            0	            0	            0	23.411.622
 10	571		DESENVOLVIMENTO CIENTÍFICO	14.178.652	            0	12.608.908	2.899.738	            0	            0	            0	29.687.298
 10	571	150	UNIVERSALIZAÇÃO DO ACESSO AO CONHECIMENTO CIENTÍFICO E TECNOLÓGICO	2.286.886	            0	1.887.980	259.100	            0	            0	            0	4.433.966
 10	571	152	INOVAÇÃO CIENTÍFICA E TECNOLÓGICA	11.891.766	            0	10.720.928	2.640.638	            0	            0	            0	25.253.332
-11			TRABALHO	7.465.223	            0	14.818.572	665.508	            0	            0	            0	22.949.303
-11	334		FOMENTO AO TRABALHO	5.634.205	            0	14.410.006	665.508	            0	            0	            0	20.709.719
-11	334	66	POLÍTICAS DE TRABALHO E EMPREGO	4.687.173	            0	5.540.679	            0	            0	            0	            0	10.227.852
+11			TRABALHO	7.465.223	            0	23.918.572	1.015.508	            0	            0	            0	32.399.303
+11	334		FOMENTO AO TRABALHO	5.634.205	            0	14.610.006	1.015.508	            0	            0	            0	21.259.719
+11	334	66	POLÍTICAS DE TRABALHO E EMPREGO	4.687.173	            0	5.740.679	350.000	            0	            0	            0	10.777.852
 11	334	83	POLÍTICAS DE PROMOÇÃO AO DESENVOLVIMENTO SOCIAL NO CONTEXTO RURAL - PERCURSOS GERAIS: TRAJETÓRIA PARA AUTONOMIA	             0	            0	5.124.906	            0	            0	            0	            0	5.124.906
 11	334	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	947.032	            0	3.744.421	665.508	            0	            0	            0	5.356.961
-11	363		ENSINO PROFISSIONAL	1.831.018	            0	408.566	            0	            0	            0	            0	2.239.584
-11	363	67	REDE DE DESENVOLVIMENTO DA EDUCAÇÃO PROFISSIONAL	1.831.018	            0	408.566	            0	            0	            0	            0	2.239.584
-12			EDUCAÇÃO	14.333.737.395	            0	3.600.815.934	873.193.962	1.000	            0	            0	18.807.748.291
+11	363		ENSINO PROFISSIONAL	1.831.018	            0	9.308.566	            0	            0	            0	            0	11.139.584
+11	363	67	REDE DE DESENVOLVIMENTO DA EDUCAÇÃO PROFISSIONAL	1.831.018	            0	9.308.566	            0	            0	            0	            0	11.139.584
+12			EDUCAÇÃO	14.333.737.395	            0	3.615.965.445	975.220.087	1.000	            0	            0	18.924.923.927
 12	122		ADMINISTRAÇÃO GERAL	19.101.203	            0	23.566.395	1.237.420	            0	            0	            0	43.905.018
 12	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	19.101.203	            0	23.566.395	1.237.420	            0	            0	            0	43.905.018
 12	130		ADMINISTRAÇÃO DE CONCESSÕES	             0	            0	             0	            0	1.000	            0	            0	1.000
@@ -255,21 +257,21 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	363	105	FORMAÇÃO E CAPACITAÇÃO TÉCNICO-CULTURAL	2.731.825	            0	2.195.469	            0	            0	            0	            0	4.927.294
 12	363	162	GESTÃO DE PESSOAL DA ÁREA EDUCACIONAL	87.704.664	            0	1.639.913	            0	            0	            0	            0	89.344.577
 12	363	167	APOIO PEDAGÓGICO PARA O DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	415.000.000	7.000.000	            0	            0	            0	422.000.000
-12	364		ENSINO SUPERIOR	465.108.585	            0	232.192.808	99.756.958	            0	            0	            0	797.058.351
-12	364	  7	EDUCAÇÃO SUPERIOR	205.765.496	            0	53.055.041	252.000	            0	            0	            0	259.072.537
+12	364		ENSINO SUPERIOR	465.108.585	            0	239.607.456	101.693.958	            0	            0	            0	806.409.999
+12	364	  7	EDUCAÇÃO SUPERIOR	205.765.496	            0	55.253.689	352.000	            0	            0	            0	261.371.185
 12	364	15	ENSINO SUPERIOR PARA A AGRICULTURA E PECUÁRIA	12.500.000	            0	4.050.000	13.000.000	            0	            0	            0	29.550.000
-12	364	26	DESENVOLVIMENTO DO ENSINO SUPERIOR NA UEMG	228.343.854	            0	163.593.435	6.455.558	            0	            0	            0	398.392.847
-12	364	91	APRIMORAMENTO DA GESTÃO PÚBLICA POR MEIO DE ENSINO DE EXCELÊNCIA	18.499.235	            0	11.494.332	49.400	            0	            0	            0	30.042.967
+12	364	26	DESENVOLVIMENTO DO ENSINO SUPERIOR NA UEMG	228.343.854	            0	168.439.435	8.292.558	            0	            0	            0	405.075.847
+12	364	91	APRIMORAMENTO DA GESTÃO PÚBLICA POR MEIO DE ENSINO DE EXCELÊNCIA	18.499.235	            0	11.864.332	49.400	            0	            0	            0	30.412.967
 12	364	164	APOIO AO ENSINO SUPERIOR	             0	            0	             0	80.000.000	            0	            0	            0	80.000.000
 12	365		EDUCAÇÃO INFANTIL	2.727.657	            0	54.286	            0	            0	            0	            0	2.781.943
 12	365	162	GESTÃO DE PESSOAL DA ÁREA EDUCACIONAL	2.727.657	            0	54.286	            0	            0	            0	            0	2.781.943
 12	366		EDUCAÇÃO DE JOVENS E ADULTOS	385.422.895	            0	6.669.688	1.500.000	            0	            0	            0	393.592.583
 12	366	162	GESTÃO DE PESSOAL DA ÁREA EDUCACIONAL	385.422.895	            0	5.669.688	            0	            0	            0	            0	391.092.583
 12	366	167	APOIO PEDAGÓGICO PARA O DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	1.000.000	1.500.000	            0	            0	            0	2.500.000
-12	367		EDUCAÇÃO ESPECIAL	1.252.006.929	            0	20.601.196	500.000	            0	            0	            0	1.273.108.125
+12	367		EDUCAÇÃO ESPECIAL	1.252.006.929	            0	20.601.196	1.000.000	            0	            0	            0	1.273.608.125
 12	367	162	GESTÃO DE PESSOAL DA ÁREA EDUCACIONAL	1.252.006.929	            0	13.601.196	            0	            0	            0	            0	1.265.608.125
-12	367	167	APOIO PEDAGÓGICO PARA O DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	7.000.000	500.000	            0	            0	            0	7.500.000
-12	368		EDUCAÇÃO BÁSICA	544.467.280	            0	933.623.375	446.478.709	            0	            0	            0	1.924.569.364
+12	367	167	APOIO PEDAGÓGICO PARA O DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	7.000.000	1.000.000	            0	            0	            0	8.000.000
+12	368		EDUCAÇÃO BÁSICA	544.467.280	            0	941.358.238	546.067.834	            0	            0	            0	2.031.893.352
 12	368	37	VALORIZAÇÃO E SAÚDE DO SERVIDOR	5.586.640	            0	770.094	12.827	            0	            0	            0	6.369.561
 12	368	42	DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	5.753.857	1.000.000	            0	            0	            0	6.753.857
 12	368	43	DESJUDICIALIZA MINAS	             0	            0	1.000	            0	            0	            0	            0	1.000
@@ -279,10 +281,10 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	368	162	GESTÃO DE PESSOAL DA ÁREA EDUCACIONAL	531.131.587	            0	119.815.557	            0	            0	            0	            0	650.947.144
 12	368	163	ALIMENTAÇÃO ESCOLAR	             0	            0	25.000.000	            0	            0	            0	            0	25.000.000
 12	368	165	ORGANIZAÇÃO, AVALIAÇÃO E GESTÃO ESCOLAR	             0	            0	95.381.508	5.057.195	            0	            0	            0	100.438.703
-12	368	167	APOIO PEDAGÓGICO PARA O DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	57.500.000	20.001.000	            0	            0	            0	77.501.000
-12	368	168	GESTÃO DE INFRAESTRUTURA EDUCACIONAL	             0	            0	393.413.506	280.127.687	            0	            0	            0	673.541.193
+12	368	167	APOIO PEDAGÓGICO PARA O DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	57.500.000	20.251.000	            0	            0	            0	77.751.000
+12	368	168	GESTÃO DE INFRAESTRUTURA EDUCACIONAL	             0	            0	401.147.369	379.466.812	            0	            0	            0	780.614.181
 12	368	169	SUPORTE AO SISTEMA EDUCACIONAL MINEIRO	             0	            0	182.432.676	70.000.000	            0	            0	            0	252.432.676
-12	368	170	MODALIDADES E TEMATICAS ESPECIAIS DE ENSINO	             0	            0	45.000.000	            0	            0	            0	            0	45.000.000
+12	368	170	MODALIDADES E TEMATICAS ESPECIAIS DE ENSINO	             0	            0	45.001.000	            0	            0	            0	            0	45.001.000
 12	368	172	COOPERAÇÃO ESTADO-MUNICÍPIO NA ÁREA EDUCACIONAL	             0	            0	5.000.000	70.000.000	            0	            0	            0	75.000.000
 12	572		DESENVOLVIMENTO TECNOLÓGICO E ENGENHARIA	             0	            0	             0	100.000	            0	            0	            0	100.000
 12	572	75	AMPLIAÇÃO E MODERNIZAÇÃO DA FUNDAÇÃO HELENA ANTIPOFF	             0	            0	             0	100.000	            0	            0	            0	100.000
@@ -290,23 +292,23 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	782	172	COOPERAÇÃO ESTADO-MUNICÍPIO NA ÁREA EDUCACIONAL	             0	            0	632.500.000	            0	            0	            0	            0	632.500.000
 12	812		DESPORTO COMUNITÁRIO	             0	            0	300.000	            0	            0	            0	            0	300.000
 12	812	75	AMPLIAÇÃO E MODERNIZAÇÃO DA FUNDAÇÃO HELENA ANTIPOFF	             0	            0	300.000	            0	            0	            0	            0	300.000
-13			CULTURA	51.000.006	            0	273.827.826	9.540.382	            0	            0	            0	334.368.214
+13			CULTURA	51.000.006	            0	276.868.143	10.340.382	            0	            0	            0	338.208.531
 13	131		COMUNICAÇÃO SOCIAL	9.103.412	            0	12.497.751	49.116	            0	            0	            0	21.650.279
 13	131	121	ACESSO E ALCANCE À COMUNICAÇÃO DE INTERESSE PÚBLICO	9.103.412	            0	12.497.751	49.116	            0	            0	            0	21.650.279
-13	391		PATRIMÔNIO HISTÓRICO, ARTÍSTICO E ARQUEOLÓGICO	8.456.949	            0	7.226.521	250.000	            0	            0	            0	15.933.470
+13	391		PATRIMÔNIO HISTÓRICO, ARTÍSTICO E ARQUEOLÓGICO	8.456.949	            0	8.921.680	250.000	            0	            0	            0	17.628.629
 13	391	102	FOMENTO À ECONOMIA DA CRIATIVIDADE	1.311.825	            0	223.922	            0	            0	            0	            0	1.535.747
 13	391	103	ESPAÇOS CULTURAIS, CORPOS ARTÍSTICOS E ÓRGÃOS COLEGIADOS	1.157.703	            0	777.401	            0	            0	            0	            0	1.935.104
 13	391	105	FORMAÇÃO E CAPACITAÇÃO TÉCNICO-CULTURAL	335.090	            0	186.227	            0	            0	            0	            0	521.317
-13	391	106	PROTEÇÃO E SALVAGUARDA DE ACERVOS E BENS CULTURAIS	5.652.331	            0	6.038.971	250.000	            0	            0	            0	11.941.302
-13	392		DIFUSÃO CULTURAL	27.105.223	            0	244.646.622	9.240.573	            0	            0	            0	280.992.418
-13	392	102	FOMENTO À ECONOMIA DA CRIATIVIDADE	6.874.515	            0	193.604.392	4.490.573	            0	            0	            0	204.969.480
-13	392	103	ESPAÇOS CULTURAIS, CORPOS ARTÍSTICOS E ÓRGÃOS COLEGIADOS	18.575.384	            0	49.692.146	            0	            0	            0	            0	68.267.530
+13	391	106	PROTEÇÃO E SALVAGUARDA DE ACERVOS E BENS CULTURAIS	5.652.331	            0	7.734.130	250.000	            0	            0	            0	13.636.461
+13	392		DIFUSÃO CULTURAL	27.105.223	            0	245.991.780	10.040.573	            0	            0	            0	283.137.576
+13	392	102	FOMENTO À ECONOMIA DA CRIATIVIDADE	6.874.515	            0	194.949.550	4.890.573	            0	            0	            0	206.714.638
+13	392	103	ESPAÇOS CULTURAIS, CORPOS ARTÍSTICOS E ÓRGÃOS COLEGIADOS	18.575.384	            0	49.692.146	400.000	            0	            0	            0	68.667.530
 13	392	105	FORMAÇÃO E CAPACITAÇÃO TÉCNICO-CULTURAL	1.655.324	            0	1.350.084	4.750.000	            0	            0	            0	7.755.408
 13	573		DIFUSÃO DO CONHECIMENTO CIENTÍFICO E TECNOLÓGICO	1.153.223	            0	673.635	            0	            0	            0	            0	1.826.858
 13	573	93	PROMOÇÃO E PRESERVAÇÃO DA MEMÓRIA TÉCNICO-CIENTÍFICA DO ESTADO DE MINAS GERAIS	1.153.223	            0	673.635	            0	            0	            0	            0	1.826.858
 13	722		TELECOMUNICAÇÕES	5.181.199	            0	8.783.297	693	            0	            0	            0	13.965.189
 13	722	121	ACESSO E ALCANCE À COMUNICAÇÃO DE INTERESSE PÚBLICO	5.181.199	            0	8.783.297	693	            0	            0	            0	13.965.189
-14			DIREITOS DA CIDADANIA	31.565.060	            0	34.603.994	6.103.399	            0	            0	            0	72.272.453
+14			DIREITOS DA CIDADANIA	31.565.060	            0	35.619.153	8.033.399	            0	            0	            0	75.217.612
 14	122		ADMINISTRAÇÃO GERAL	554.019	            0	182.998	            0	            0	            0	            0	737.017
 14	122	54	GOVERNANÇA PARA INTEGRIDADE E MELHORES RESULTADOS EM SERVIÇOS PÚBLICOS	554.019	            0	182.998	            0	            0	            0	            0	737.017
 14	126		TECNOLOGIA DA INFORMAÇÃO	455.399	            0	244.209	32.490	            0	            0	            0	732.098
@@ -320,51 +322,51 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 14	241	70	POLÍTICAS DE DIREITOS HUMANOS	             0	            0	4.925.964	            0	            0	            0	            0	4.925.964
 14	243		ASSISTÊNCIA À CRIANÇA E AO ADOLESCENTE	             0	            0	5.000.000	            0	            0	            0	            0	5.000.000
 14	243	70	POLÍTICAS DE DIREITOS HUMANOS	             0	            0	5.000.000	            0	            0	            0	            0	5.000.000
-14	306		ALIMENTAÇÃO E NUTRIÇÃO	1.685.905	            0	1.740.606	3.184.000	            0	            0	            0	6.610.511
-14	306	74	SEGURANÇA ALIMENTAR E NUTRICIONAL SUSTENTÁVEL PARA TODOS OS POVOS DO TERRITÓRIO MINEIRO	1.685.905	            0	832.166	600.000	            0	            0	            0	3.118.071
+14	306		ALIMENTAÇÃO E NUTRIÇÃO	1.685.905	            0	2.255.765	4.114.000	            0	            0	            0	8.055.670
+14	306	74	SEGURANÇA ALIMENTAR E NUTRICIONAL SUSTENTÁVEL PARA TODOS OS POVOS DO TERRITÓRIO MINEIRO	1.685.905	            0	1.347.325	1.530.000	            0	            0	            0	4.563.230
 14	306	83	POLÍTICAS DE PROMOÇÃO AO DESENVOLVIMENTO SOCIAL NO CONTEXTO RURAL - PERCURSOS GERAIS: TRAJETÓRIA PARA AUTONOMIA	             0	            0	908.440	2.584.000	            0	            0	            0	3.492.440
 14	421		CUSTÓDIA E REINTEGRAÇÃO SOCIAL	             0	            0	1.000	            0	            0	            0	            0	1.000
 14	421	141	POLÍTICAS SOBRE DROGAS	             0	            0	1.000	            0	            0	            0	            0	1.000
-14	422		DIREITOS INDIVIDUAIS, COLETIVOS E DIFUSOS	28.585.692	            0	22.383.764	2.886.909	            0	            0	            0	53.856.365
+14	422		DIREITOS INDIVIDUAIS, COLETIVOS E DIFUSOS	28.585.692	            0	22.883.764	3.886.909	            0	            0	            0	55.356.365
 14	422	  1	MINAS ÍNTEGRA E TRANSPARENTE	356.126	            0	128.520	            0	            0	            0	            0	484.646
 14	422	55	CONTROLE SOCIAL ATRAVÉS DA DEFESA DOS USUÁRIOS DE SERVIÇOS PÚBLICOS	7.804.680	            0	2.232.211	            0	            0	            0	            0	10.036.891
-14	422	70	POLÍTICAS DE DIREITOS HUMANOS	14.894.731	            0	15.606.935	2.736.909	            0	            0	            0	33.238.575
-14	422	86	POLÍTICA DOS DIREITOS DAS MULHERES	1.737.061	            0	3.392.438	150.000	            0	            0	            0	5.279.499
+14	422	70	POLÍTICAS DE DIREITOS HUMANOS	14.894.731	            0	15.956.935	3.736.909	            0	            0	            0	34.588.575
+14	422	86	POLÍTICA DOS DIREITOS DAS MULHERES	1.737.061	            0	3.542.438	150.000	            0	            0	            0	5.429.499
 14	422	705	APOIO ÀS POLÍTICAS PÚBLICAS	3.793.094	            0	1.023.660	            0	            0	            0	            0	4.816.754
-15			URBANISMO	17.768.261	            0	12.957.646	711.268.888	            0	            0	            0	741.994.795
+15			URBANISMO	17.768.261	            0	12.957.646	730.772.067	            0	            0	            0	761.497.974
 15	127		ORDENAMENTO TERRITORIAL	3.101.644	            0	6.490.618	20.790	            0	            0	            0	9.613.052
 15	127	77	CAMINHOS PARA O DESENVOLVIMENTO INTEGRADO METROPOLITANO	2.853.044	            0	4.363.525	20.790	            0	            0	            0	7.237.359
 15	127	125	POLÍTICA DE REGULARIZAÇÃO FUNDIÁRIA E DE GESTÃO DE IMÓVEIS	248.600	            0	2.127.093	            0	            0	            0	            0	2.375.693
-15	451		INFRA-ESTRUTURA URBANA	14.666.617	            0	6.467.028	711.248.098	            0	            0	            0	732.381.743
+15	451		INFRA-ESTRUTURA URBANA	14.666.617	            0	6.467.028	730.751.277	            0	            0	            0	751.884.922
 15	451	81	DESENVOLVIMENTO SUSTENTÁVEL DA INFRAESTRUTURA RODOVIÁRIA	             0	            0	             0	206.673.752	            0	            0	            0	206.673.752
-15	451	99	DESENVOLVIMENTO DA INFRAESTRUTURA ESTADUAL, MUNICIPAL E REGIONAL	14.666.617	            0	6.467.028	501.277.406	            0	            0	            0	522.411.051
+15	451	99	DESENVOLVIMENTO DA INFRAESTRUTURA ESTADUAL, MUNICIPAL E REGIONAL	14.666.617	            0	6.467.028	520.780.585	            0	            0	            0	541.914.230
 15	451	128	PROGRAMA DE APOIO A AMPLIAÇÃO E A MELHORIA DOS SISTEMAS PRISIONAL E SOCIOEDUCATIVO	             0	            0	             0	3.296.940	            0	            0	            0	3.296.940
-16			HABITAÇÃO	687.240	            0	2.350.020	125.040.000	33.823.595	            0	            0	161.900.855
+16			HABITAÇÃO	687.240	            0	2.350.020	126.040.000	33.823.595	            0	            0	162.900.855
 16	122		ADMINISTRAÇÃO GERAL	115.585	            0	1.493.977	60.000	16.823.595	            0	            0	18.493.157
 16	122	73	MORADAS GERAIS	115.585	            0	1.493.977	60.000	16.823.595	            0	            0	18.493.157
-16	244		ASSISTÊNCIA COMUNITÁRIA	571.655	            0	417.885	124.980.000	            0	            0	            0	125.969.540
+16	244		ASSISTÊNCIA COMUNITÁRIA	571.655	            0	417.885	125.980.000	            0	            0	            0	126.969.540
 16	244	73	MORADAS GERAIS	530.695	            0	395.298	124.980.000	            0	            0	            0	125.905.993
-16	244	83	POLÍTICAS DE PROMOÇÃO AO DESENVOLVIMENTO SOCIAL NO CONTEXTO RURAL - PERCURSOS GERAIS: TRAJETÓRIA PARA AUTONOMIA	40.960	            0	22.587	            0	            0	            0	            0	63.547
+16	244	83	POLÍTICAS DE PROMOÇÃO AO DESENVOLVIMENTO SOCIAL NO CONTEXTO RURAL - PERCURSOS GERAIS: TRAJETÓRIA PARA AUTONOMIA	40.960	            0	22.587	1.000.000	            0	            0	            0	1.063.547
 16	482		HABITAÇÃO URBANA	             0	            0	438.158	            0	17.000.000	            0	            0	17.438.158
 16	482	  9	PROGRAMA DE APOIO HABITACIONAL AOS MILITARES DO ESTADO DE MINAS GERAIS	             0	            0	437.158	            0	            0	            0	            0	437.158
 16	482	73	MORADAS GERAIS	             0	            0	1.000	            0	            0	            0	            0	1.000
 16	482	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	            0	             0	            0	1.000	            0	            0	1.000
 16	482	765	APOIO HABITACIONAL	             0	            0	             0	            0	16.999.000	            0	            0	16.999.000
-17			SANEAMENTO	10.699.341	            0	21.124.021	21.718.781	1.000	            0	            0	53.543.143
+17			SANEAMENTO	10.699.341	            0	22.524.021	23.868.781	1.000	            0	            0	57.093.143
 17	125		NORMATIZAÇÃO E FISCALIZAÇÃO	9.453.478	            0	3.116.794	42.324	            0	            0	            0	12.612.596
 17	125	10	REGULAÇÃO E FISCALIZAÇÃO DOS SERVIÇOS DE ABASTECIMENTO DE ÁGUA E DE ESGOTAMENTO SANITÁRIO E ATENDIMENTO AOS USUÁRIOS	9.453.478	            0	3.116.794	42.324	            0	            0	            0	12.612.596
-17	511		SANEAMENTO BÁSICO RURAL	594.424	            0	3.822.710	17.382.813	            0	            0	            0	21.799.947
-17	511	56	DESENVOLVIMENTO DA INFRAESTRUTURA DO NORTE E NORDESTE DE MINAS GERAIS	594.424	            0	3.822.710	17.382.813	            0	            0	            0	21.799.947
-17	512		SANEAMENTO BÁSICO URBANO	651.439	            0	14.184.517	4.293.644	1.000	            0	            0	19.130.600
-17	512	21	SANEAMENTO E RESÍDUOS ESPECIAIS	651.439	            0	14.183.517	4.293.644	            0	            0	            0	19.128.600
+17	511		SANEAMENTO BÁSICO RURAL	594.424	            0	5.222.710	18.382.813	            0	            0	            0	24.199.947
+17	511	56	DESENVOLVIMENTO DA INFRAESTRUTURA DO NORTE E NORDESTE DE MINAS GERAIS	594.424	            0	5.222.710	18.382.813	            0	            0	            0	24.199.947
+17	512		SANEAMENTO BÁSICO URBANO	651.439	            0	14.184.517	5.443.644	1.000	            0	            0	20.280.600
+17	512	21	SANEAMENTO E RESÍDUOS ESPECIAIS	651.439	            0	14.183.517	5.443.644	            0	            0	            0	20.278.600
 17	512	125	POLÍTICA DE REGULARIZAÇÃO FUNDIÁRIA E DE GESTÃO DE IMÓVEIS	             0	            0	1.000	            0	            0	            0	            0	1.000
 17	512	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	            0	             0	            0	1.000	            0	            0	1.000
-18			GESTÃO AMBIENTAL	136.351.703	            0	360.573.674	38.715.356	2.114.756	            0	            0	537.755.489
+18			GESTÃO AMBIENTAL	136.351.703	            0	384.890.032	39.515.356	2.114.756	            0	            0	562.871.847
 18	182		DEFESA CIVIL	             0	            0	3.709.425	            0	            0	            0	            0	3.709.425
 18	182	52	PROMOÇÃO DE DEFESA CIVIL	             0	            0	3.709.425	            0	            0	            0	            0	3.709.425
-18	541		PRESERVAÇÃO E CONSERVAÇÃO AMBIENTAL	72.872.599	            0	155.553.910	18.559.294	2.114.756	            0	            0	249.100.559
-18	541	27	GESTÃO AMBIENTAL.	51.208.944	            0	25.258.382	2.615.000	            0	            0	            0	79.082.326
-18	541	31	PROTEÇÃO DAS ÁREAS AMBIENTALMENTE CONSERVADAS, DA FAUNA E DA BIODIVERSIDADE FLORESTAL	19.568.746	            0	121.259.972	15.944.294	2.114.756	            0	            0	158.887.768
+18	541		PRESERVAÇÃO E CONSERVAÇÃO AMBIENTAL	72.872.599	            0	179.870.268	19.359.294	2.114.756	            0	            0	274.216.917
+18	541	27	GESTÃO AMBIENTAL.	51.208.944	            0	49.374.740	3.415.000	            0	            0	            0	103.998.684
+18	541	31	PROTEÇÃO DAS ÁREAS AMBIENTALMENTE CONSERVADAS, DA FAUNA E DA BIODIVERSIDADE FLORESTAL	19.568.746	            0	121.459.972	15.944.294	2.114.756	            0	            0	159.087.768
 18	541	40	RECUPERAÇÃO AMBIENTAL E GESTÃO DE BARRAGENS	2.094.909	            0	2.901.261	            0	            0	            0	            0	4.996.170
 18	541	46	SUPORTE AÉREO AOS SERVIÇOS PÚBLICOS ESTADUAIS	             0	            0	6.134.295	            0	            0	            0	            0	6.134.295
 18	542		CONTROLE AMBIENTAL	36.235.463	            0	36.876.218	5.692.116	            0	            0	            0	78.803.797
@@ -378,21 +380,21 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 18	544		RECURSOS HÍDRICOS	13.142.577	            0	147.195.018	8.990.000	            0	            0	            0	169.327.595
 18	544	47	SUPORTE ÀS AÇÕES DE COMBATE E RESPOSTA AOS DANOS CAUSADOS PELAS CHUVAS	             0	            0	2.800.000	            0	            0	            0	            0	2.800.000
 18	544	65	FORTALECIMENTO DA POLÍTICA ESTADUAL DE RECURSOS HÍDRICOS	13.142.577	            0	144.395.018	8.990.000	            0	            0	            0	166.527.595
-19			CIÊNCIA E TECNOLOGIA	70.968.814	            0	555.451.884	183.673.013	1.200.000	            0	            0	811.293.711
+19			CIÊNCIA E TECNOLOGIA	70.968.814	            0	556.141.885	184.173.013	1.200.000	            0	            0	812.483.712
 19	122		ADMINISTRAÇÃO GERAL	3.445.921	            0	22.566.486	4.999.720	            0	            0	            0	31.012.127
 19	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	3.445.921	            0	22.566.486	4.999.720	            0	            0	            0	31.012.127
-19	571		DESENVOLVIMENTO CIENTÍFICO	65.749.113	            0	355.650.765	133.777.211	1.200.000	            0	            0	556.377.089
-19	571	16	INOVAÇÕES E SOLUÇÕES TECNOLÓGICAS PARA A AGROPECUÁRIA E A AGROINDÚSTRIA	58.505.335	            0	14.823.110	3.592.704	            0	            0	            0	76.921.149
-19	571	22	CONSTRUINDO O FUTURO POR MEIO DA CIÊNCIA, DA TECNOLOGIA E DA INOVAÇÃO	5.955.659	            0	266.520.824	60.335.221	1.200.000	            0	            0	334.011.704
+19	571		DESENVOLVIMENTO CIENTÍFICO	65.749.113	            0	356.340.766	133.777.211	1.200.000	            0	            0	557.067.090
+19	571	16	INOVAÇÕES E SOLUÇÕES TECNOLÓGICAS PARA A AGROPECUÁRIA E A AGROINDÚSTRIA	58.505.335	            0	15.013.110	3.592.704	            0	            0	            0	77.111.149
+19	571	22	CONSTRUINDO O FUTURO POR MEIO DA CIÊNCIA, DA TECNOLOGIA E DA INOVAÇÃO	5.955.659	            0	267.020.825	60.335.221	1.200.000	            0	            0	334.511.705
 19	571	143	MG TECH - POLÍTICAS DE CIÊNCIA, TECNOLOGIA E INOVAÇÃO	1.288.119	            0	74.306.831	69.849.286	            0	            0	            0	145.444.236
 19	572		DESENVOLVIMENTO TECNOLÓGICO E ENGENHARIA	430.052	            0	39.341.356	17.000.000	            0	            0	            0	56.771.408
 19	572	22	CONSTRUINDO O FUTURO POR MEIO DA CIÊNCIA, DA TECNOLOGIA E DA INOVAÇÃO	430.052	            0	39.341.356	17.000.000	            0	            0	            0	56.771.408
-19	573		DIFUSÃO DO CONHECIMENTO CIENTÍFICO E TECNOLÓGICO	1.343.728	            0	137.893.277	27.896.082	            0	            0	            0	167.133.087
+19	573		DIFUSÃO DO CONHECIMENTO CIENTÍFICO E TECNOLÓGICO	1.343.728	            0	137.893.277	28.396.082	            0	            0	            0	167.633.087
 19	573	22	CONSTRUINDO O FUTURO POR MEIO DA CIÊNCIA, DA TECNOLOGIA E DA INOVAÇÃO	505.254	            0	21.703.231	7.500.000	            0	            0	            0	29.708.485
-19	573	143	MG TECH - POLÍTICAS DE CIÊNCIA, TECNOLOGIA E INOVAÇÃO	838.474	            0	116.190.046	20.396.082	            0	            0	            0	137.424.602
-20			AGRICULTURA	461.357.419	            0	150.186.387	90.760.441	            0	            0	            0	702.304.247
-20	127		ORDENAMENTO TERRITORIAL	             0	            0	473.153	20.000.000	            0	            0	            0	20.473.153
-20	127	114	INFRAESTRUTURA RURAL E AGRICULTURA SUSTENTÁVEL	             0	            0	473.153	20.000.000	            0	            0	            0	20.473.153
+19	573	143	MG TECH - POLÍTICAS DE CIÊNCIA, TECNOLOGIA E INOVAÇÃO	838.474	            0	116.190.046	20.896.082	            0	            0	            0	137.924.602
+20			AGRICULTURA	461.357.419	            0	153.599.387	109.405.275	            0	            0	            0	724.362.081
+20	127		ORDENAMENTO TERRITORIAL	             0	            0	473.153	20.500.000	            0	            0	            0	20.973.153
+20	127	114	INFRAESTRUTURA RURAL E AGRICULTURA SUSTENTÁVEL	             0	            0	473.153	20.500.000	            0	            0	            0	20.973.153
 20	304		VIGILÂNCIA SANITÁRIA	50.403.984	            0	10.174.169	            0	            0	            0	            0	60.578.153
 20	304	80	SEGURANÇA DE ALIMENTOS	45.486.522	            0	8.941.581	            0	            0	            0	            0	54.428.103
 20	304	112	CERTIFICAÇÕES E HABILITAÇÕES DE PRODUTOS AGROPECUÁRIOS E AGROINDUSTRIAIS	3.688.096	            0	927.336	            0	            0	            0	            0	4.615.432
@@ -409,28 +411,28 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 20	605		ABASTECIMENTO	             0	            0	625.500	            0	            0	            0	            0	625.500
 20	605	108	ACESSO A MERCADOS	             0	            0	624.500	            0	            0	            0	            0	624.500
 20	605	113	GARANTIA DE CONTINUIDADE DA PRODUÇÃO AGROPECUÁRIA	             0	            0	1.000	            0	            0	            0	            0	1.000
-20	606		EXTENSÃO RURAL	260.738.161	            0	64.206.038	21.939.488	            0	            0	            0	346.883.687
-20	606	90	ASSISTÊNCIA TECNICA E EXTENSÃO RURAL PARA O ESTADO DE MINAS GERAIS	260.738.161	            0	64.191.038	21.939.488	            0	            0	            0	346.868.687
+20	606		EXTENSÃO RURAL	260.738.161	            0	64.206.038	23.139.488	            0	            0	            0	348.083.687
+20	606	90	ASSISTÊNCIA TECNICA E EXTENSÃO RURAL PARA O ESTADO DE MINAS GERAIS	260.738.161	            0	64.191.038	23.139.488	            0	            0	            0	348.068.687
 20	606	110	REGULARIZAÇÃO FUNDIÁRIA - AMPLIAÇÃO DA SEGURANÇA JURÍDICA NO CAMPO	             0	            0	15.000	            0	            0	            0	            0	15.000
-20	607		IRRIGAÇÃO	261.158	            0	1.649.431	            0	            0	            0	            0	1.910.589
-20	607	114	INFRAESTRUTURA RURAL E AGRICULTURA SUSTENTÁVEL	261.158	            0	1.649.431	            0	            0	            0	            0	1.910.589
-20	608		PROMOÇÃO DA PRODUÇÃO AGROPECUÁRIA	2.941.348	            0	36.317.629	47.014.803	            0	            0	            0	86.273.780
-20	608	97	MINAS SEM FOME	             0	            0	7.500	7.500	            0	            0	            0	15.000
-20	608	108	ACESSO A MERCADOS	535.255	            0	474.014	            0	            0	            0	            0	1.009.269
-20	608	111	DESENVOLVIMENTO DAS CADEIAS PRODUTIVAS DA AGROPECUÁRIA	519.243	            0	5.437.878	41.703.111	            0	            0	            0	47.660.232
+20	607		IRRIGAÇÃO	261.158	            0	1.649.431	100.000	            0	            0	            0	2.010.589
+20	607	114	INFRAESTRUTURA RURAL E AGRICULTURA SUSTENTÁVEL	261.158	            0	1.649.431	100.000	            0	            0	            0	2.010.589
+20	608		PROMOÇÃO DA PRODUÇÃO AGROPECUÁRIA	2.941.348	            0	39.730.629	63.859.637	            0	            0	            0	106.531.614
+20	608	97	MINAS SEM FOME	             0	            0	2.940.500	5.292.334	            0	            0	            0	8.232.834
+20	608	108	ACESSO A MERCADOS	535.255	            0	954.014	900.000	            0	            0	            0	2.389.269
+20	608	111	DESENVOLVIMENTO DAS CADEIAS PRODUTIVAS DA AGROPECUÁRIA	519.243	            0	5.437.878	51.563.111	            0	            0	            0	57.520.232
 20	608	112	CERTIFICAÇÕES E HABILITAÇÕES DE PRODUTOS AGROPECUÁRIOS E AGROINDUSTRIAIS	400.290	            0	219.940	            0	            0	            0	            0	620.230
 20	608	113	GARANTIA DE CONTINUIDADE DA PRODUÇÃO AGROPECUÁRIA	             0	            0	5.780.493	            0	            0	            0	            0	5.780.493
 20	608	114	INFRAESTRUTURA RURAL E AGRICULTURA SUSTENTÁVEL	             0	            0	2.747.336	            0	            0	            0	            0	2.747.336
 20	608	116	INOVA AGRO GERAIS	463.094	            0	300.366	            0	            0	            0	            0	763.460
 20	608	118	EDUCAÇÃO E SUCESSÃO RURAL	581.673	            0	187.093	            0	            0	            0	            0	768.766
-20	608	124	PROMOÇÃO DO DESENVOLVIMENTO DO NORTE E NORDESTE DE MINAS GERAIS	441.793	            0	21.163.009	5.304.192	            0	            0	            0	26.908.994
+20	608	124	PROMOÇÃO DO DESENVOLVIMENTO DO NORTE E NORDESTE DE MINAS GERAIS	441.793	            0	21.163.009	6.104.192	            0	            0	            0	27.708.994
 20	609		DEFESA AGROPECUÁRIA	131.622.108	            0	23.319.710	1.708.500	            0	            0	            0	156.650.318
 20	609	78	DEFESA SANITÁRIA	130.392.742	            0	23.015.968	1.701.000	            0	            0	            0	155.109.710
 20	609	97	MINAS SEM FOME	             0	            0	7.500	7.500	            0	            0	            0	15.000
 20	609	108	ACESSO A MERCADOS	1.229.366	            0	296.242	            0	            0	            0	            0	1.525.608
-21			ORGANIZAÇÃO AGRÁRIA	1.624.367	            0	10.339.205	            0	            0	            0	            0	11.963.572
-21	605		ABASTECIMENTO	1.624.367	            0	10.339.205	            0	            0	            0	            0	11.963.572
-21	605	110	REGULARIZAÇÃO FUNDIÁRIA - AMPLIAÇÃO DA SEGURANÇA JURÍDICA NO CAMPO	1.624.367	            0	10.339.205	            0	            0	            0	            0	11.963.572
+21			ORGANIZAÇÃO AGRÁRIA	1.624.367	            0	10.789.205	            0	            0	            0	            0	12.413.572
+21	605		ABASTECIMENTO	1.624.367	            0	10.789.205	            0	            0	            0	            0	12.413.572
+21	605	110	REGULARIZAÇÃO FUNDIÁRIA - AMPLIAÇÃO DA SEGURANÇA JURÍDICA NO CAMPO	1.624.367	            0	10.789.205	            0	            0	            0	            0	12.413.572
 22			INDÚSTRIA	1.631.646	            0	2.261.455	            0	4.000	            0	            0	3.897.101
 22	661		PROMOÇÃO INDUSTRIAL	439.084	            0	414.546	            0	2.000	            0	            0	855.630
 22	661	20	FOMENTO E INCENTIVO DE INVESTIMENTOS	             0	            0	             0	            0	2.000	            0	            0	2.000
@@ -468,7 +470,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 25	753	133	MINAS GERAÇÃO DE VALOR	53.132	            0	2.081.227	            0	            0	            0	            0	2.134.359
 25	754		BIOCOMBUSTÍVEIS	707.771	            0	91.219	            0	            0	            0	            0	798.990
 25	754	133	MINAS GERAÇÃO DE VALOR	707.771	            0	91.219	            0	            0	            0	            0	798.990
-26			TRANSPORTE	79.509.724	            0	93.855.624	1.260.963.833	1.000	            0	            0	1.434.330.181
+26			TRANSPORTE	79.509.724	            0	93.855.624	1.260.964.833	1.000	            0	            0	1.434.331.181
 26	129		ADMINISTRAÇÃO DE RECEITAS	             0	            0	31.603.851	2.000.000	            0	            0	            0	33.603.851
 26	129	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	            0	31.603.851	2.000.000	            0	            0	            0	33.603.851
 26	453		TRANSPORTES COLETIVOS URBANOS	5.994.179	            0	761.385	            0	            0	            0	            0	6.755.564
@@ -477,19 +479,19 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 26	572	117	MOBILIDADE, TRANSPORTES E LOGÍSTICA	             0	            0	1.000	            0	            0	            0	            0	1.000
 26	781		TRANSPORTE AÉREO	             0	            0	14.209.924	            0	            0	            0	            0	14.209.924
 26	781	117	MOBILIDADE, TRANSPORTES E LOGÍSTICA	             0	            0	14.209.924	            0	            0	            0	            0	14.209.924
-26	782		TRANSPORTE RODOVIÁRIO	73.515.545	            0	47.279.464	1.258.963.833	            0	            0	            0	1.379.758.842
+26	782		TRANSPORTE RODOVIÁRIO	73.515.545	            0	47.279.464	1.258.964.833	            0	            0	            0	1.379.759.842
 26	782	47	SUPORTE ÀS AÇÕES DE COMBATE E RESPOSTA AOS DANOS CAUSADOS PELAS CHUVAS	             0	            0	25.000	84.196.803	            0	            0	            0	84.221.803
-26	782	81	DESENVOLVIMENTO SUSTENTÁVEL DA INFRAESTRUTURA RODOVIÁRIA	73.515.545	            0	44.854.464	1.051.811.125	            0	            0	            0	1.170.181.134
+26	782	81	DESENVOLVIMENTO SUSTENTÁVEL DA INFRAESTRUTURA RODOVIÁRIA	73.515.545	            0	44.854.464	1.051.812.125	            0	            0	            0	1.170.182.134
 26	782	82	PROMOÇÃO DA SEGURANÇA VIÁRIA	             0	            0	2.400.000	122.955.905	            0	            0	            0	125.355.905
 26	783		TRANSPORTE FERROVIÁRIO	             0	            0	             0	            0	1.000	            0	            0	1.000
 26	783	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	            0	             0	            0	1.000	            0	            0	1.000
-27			DESPORTO E LAZER	4.925.235	            0	32.478.380	600.049	            0	            0	            0	38.003.664
+27			DESPORTO E LAZER	4.925.235	            0	35.328.380	6.775.844	            0	            0	            0	47.029.459
 27	366		EDUCAÇÃO DE JOVENS E ADULTOS	111.493	            0	9.887.020	520.081	            0	            0	            0	10.518.594
 27	366	69	FOMENTO AO ESPORTE, À ATIVIDADE FÍSICA E AO LAZER	111.493	            0	9.887.020	520.081	            0	            0	            0	10.518.594
 27	811		DESPORTO DE RENDIMENTO	664.698	            0	2.211.428	            0	            0	            0	            0	2.876.126
 27	811	69	FOMENTO AO ESPORTE, À ATIVIDADE FÍSICA E AO LAZER	664.698	            0	2.211.428	            0	            0	            0	            0	2.876.126
-27	812		DESPORTO COMUNITÁRIO	3.181.071	            0	14.541.421	79.968	            0	            0	            0	17.802.460
-27	812	69	FOMENTO AO ESPORTE, À ATIVIDADE FÍSICA E AO LAZER	3.181.071	            0	14.541.421	79.968	            0	            0	            0	17.802.460
+27	812		DESPORTO COMUNITÁRIO	3.181.071	            0	17.391.421	6.255.763	            0	            0	            0	26.828.255
+27	812	69	FOMENTO AO ESPORTE, À ATIVIDADE FÍSICA E AO LAZER	3.181.071	            0	17.391.421	6.255.763	            0	            0	            0	26.828.255
 27	813		LAZER	967.973	            0	5.838.511	            0	            0	            0	            0	6.806.484
 27	813	69	FOMENTO AO ESPORTE, À ATIVIDADE FÍSICA E AO LAZER	967.973	            0	5.838.511	            0	            0	            0	            0	6.806.484
 28			ENCARGOS ESPECIAIS	1.784.204.331	2.959.565.429	1.110.185.444	6.639.987	            0	3.423.157.323	            0	9.283.752.514
@@ -499,7 +501,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 28	844	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	1.000	             0	            0	            0	1.000	            0	2.000
 28	846		OUTROS ENCARGOS ESPECIAIS	1.784.204.331	180.188.160	1.110.185.444	6.639.987	            0	1.097.267.347	            0	4.178.485.269
 28	846	705	APOIO ÀS POLÍTICAS PÚBLICAS	1.784.204.331	180.188.160	1.110.185.444	6.639.987	            0	1.097.267.347	            0	4.178.485.269
-99			RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.060.660.433	1.060.660.433
-99	999		RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.060.660.433	1.060.660.433
-99	999	999	RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.060.660.433	1.060.660.433
-100			TOTAL	77.474.341.557	2.959.565.429	30.188.350.608	6.054.010.815	1.333.404.013	3.423.157.323	1.060.660.433	122.493.490.178
+99			RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.034.854.433	1.034.854.433
+99	999		RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.034.854.433	1.034.854.433
+99	999	999	RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.034.854.433	1.034.854.433
+100			TOTAL	77.474.341.557	2.959.565.429	29.116.146.386	7.158.291.037	1.327.134.013	3.423.157.323	1.034.854.433	122.493.490.178
