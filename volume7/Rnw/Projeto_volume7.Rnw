@@ -1,0 +1,182 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+\renewcommand{\contentsname}{Sumário}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+<<ParametrosRecortes, echo=FALSE, results=hide>>=
+
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_latex = paste0(dir_loa, "/volume7/Rnw")
+  dir_codigosR = paste0(dir_latex, "/CodigosR")
+  dir_utils = paste0(dir_loa, "/utils/")
+  dir_data = paste0(dir_loa, "/volume7/data")
+  dir_bancos = paste0(dir_loa, "/bancos")
+
+  ANO_DOC = as.numeric(readLines(paste(dir_utils, "ano.txt", sep=""), warn = F))
+  ETAPA_ORCAMENTO = readLines(paste(dir_utils, "etapa_orcamento.txt", sep=""), warn = F)
+
+  # Recortes dos arquivos Rnw para obter os códigos em R
+  source(paste(dir_utils, "funcoes.R", sep=""))
+
+  getCodigoR(paste(dir_latex, "/demonstrativo_consolidado_despesav1.Rnw",sep=""), dir_codigosR)
+  getCodigoR(paste(dir_latex, "/QUADRO_DETALHAMENTO_DESPESA.Rnw",sep=""), dir_codigosR)
+  getCodigoR(paste(dir_latex, "/QUADRO_DETALHAMENTO_DESPESA_PROPOSTA_OUTROS_PODERES.Rnw",sep=""), dir_codigosR)
+  getCodigoR(paste(dir_latex, "/ANEXOS.Rnw",sep=""), dir_codigosR)
+  
+@
+
+% Capa
+\begin{titlepage}
+\newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+\includepdf[pages={8}]{capaLOA.pdf}
+\end{titlepage}
+% \capa
+
+% Titulos
+% Pagina com os titulos
+\restoregeometry
+\thispagestyle{empty}
+\newgeometry{top=1cm}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=2cm, height=2cm]{brasao_mg}
+\end{center}
+\end{figure}
+\vspace*{-2em}
+\begin{center}
+\large
+Governo do Estado de Minas Gerais \\
+Secretaria de Estado de Planejamento e Gestão \\
+Subsecretaria de Planejamento e Orçamento \\
+Superintendência Central de Planejamento e Orçamento \\
+
+\vspace*{10em}
+ \fontsize{45pt}{10pt}\selectfont {\textbf{\Sexpr{ETAPA_ORCAMENTO} \Sexpr{ANO_DOC}}}
+
+\vspace*{5em}
+\fontsize{15pt}{12pt}\selectfont {\textbf{VOLUME V}} \\
+\large{QUADROS DE DETALHAMENTO DA DESPESA}
+
+\end{center}
+
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+% Preciso que o sumário comece em uma página ímpar
+
+% \Titulos
+
+% Sumario
+\restoregeometry
+\small
+\tableofcontents
+\newpage
+% \Sumario
+
+% Pagina iniciando DEMONSTRATIVO CONSOLIDADO DA DESPESA
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\phantomsection
+%\addtocontents{toc}{\cftpagenumbersoff{section}}
+\restoregeometry
+\vspace*{9cm}
+\addcontentsline{toc}{section}{ DEMONSTRATIVO CONSOLIDADO DA DESPESA}
+\centering \Huge {\textbf{DEMONSTRATIVO CONSOLIDADO DA DESPESA}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+% \Pagina iniciando DEMONSTRATIVO CONSOLIDADO DA DESPESA
+
+\newgeometry{left=1cm,right=1cm, top=2cm}
+
+\renewcommand*{\arraystretch}{1.9}
+ \scriptsize
+ \color{myblack}
+ \centering
+ 
+\newpage
+<<demonstrativo_consolidado, results=tex, echo=F>>=
+  
+  # INICIO TABELA
+  
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_codigosR = paste0(dir_loa, "/volume7/Rnw/CodigosR")
+  dir_utils = paste0(dir_loa, "/utils/")
+  dir_data = paste0(dir_loa, "/volume7/data")
+  dir_bancos = paste0(dir_loa, "/bancos")
+  source(paste(dir_utils, "funcoes.R", sep=""))
+  ANO_DOC = as.numeric(readLines(paste(dir_utils, "ano.txt", sep=""), warn = F))
+  
+  source(paste(dir_codigosR, "/demonstrativo_consolidado_despesav1.R", sep=""), encoding = "UTF-8")
+@
+
+\newpage
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+
+% Pagina iniciando DEMONSTRATIVOS POR ORGAO E ENTIDADE
+\phantomsection
+\restoregeometry
+\vspace*{9cm}
+\addcontentsline{toc}{section}{ DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}
+\centering \Huge {\textbf{DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+\phantomsection
+% \Pagina iniciando DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE
+
+\newgeometry{left=3pt,right=3pt, top=1cm}
+
+\setlength{\tabcolsep}{2.5pt}
+
+<<quadro_detalhamento_despesa, results=tex, echo=F>>=
+  
+  banco = read.table(paste(dir_data, "/QUADRO_DETALHAMENTO_DESPESA_porUO.txt", sep=""), header = T, 
+                   sep = "\t", quote = NULL,   dec = ",", stringsAsFactors = FALSE)
+
+  registro_orgao =c()
+  registro_poder = c()
+
+  for(codigo_uo in unique(banco$COD_UO)){
+  #codigo_uo = 4121
+    uo = banco[banco$COD_UO==codigo_uo,] # realizar recorte em loop
+    
+    if("valor_proposto" %in% names(uo)){
+      if(as.numeric(gsub("\\.", "", uo$valor_proposto[1])) > 0){
+        source(paste(dir_codigosR, "/QUADRO_DETALHAMENTO_DESPESA_PROPOSTA_OUTROS_PODERES.R", sep=""), encoding = "UTF-8")
+      } else{
+        source(paste(dir_codigosR, "/QUADRO_DETALHAMENTO_DESPESA.R", sep=""), encoding = "UTF-8")
+      }
+    } else{
+      source(paste(dir_codigosR, "/QUADRO_DETALHAMENTO_DESPESA.R", sep=""), encoding = "UTF-8")
+    }
+  
+  }
+  
+  
+@
+
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\phantomsection
+\restoregeometry
+\vspace*{9cm}
+\addtocontents{toc}{\cftpagenumberson{section}}
+\addcontentsline{toc}{section}{GRUPOS DE DESPESA, FONTES DE RECURSO, IDENTIFICADORES DE PROCEDÊNCIA E USO E IDENTIFICADOR DE AÇÃO GOVERNAMENTAL}
+\centering \Huge {\textbf{GRUPOS DE DESPESA, FONTES DE RECURSO, IDENTIFICADORES DE PROCEDÊNCIA E USO E IDENTIFICADOR DE AÇÃO GOVERNAMENTAL}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+
+\newgeometry{left=3pt,right=3pt, top=1cm}
+\renewcommand*{\arraystretch}{1.5}
+<<anexos, results=tex, echo=F>>=
+  source(paste(dir_codigosR, "/ANEXOS.R", sep=""), encoding = "UTF-8")
+  
+  # FIM TABELA
+  
+@
+
+% Contra capa
+% \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+% \includepdf[pages={177},scale=1.1]{06_LOA_Volume_V.pdf}
+% \Contra capa
+
+\end{document}
