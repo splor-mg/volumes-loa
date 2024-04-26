@@ -57,7 +57,7 @@ Superintendência Central de Planejamento e Orçamento \\
  \fontsize{45pt}{10pt}\selectfont {\textbf{\Sexpr{ETAPA_ORCAMENTO} \Sexpr{ANO_DOC}}}
 
 \vspace*{5em}
-\fontsize{15pt}{12pt}\selectfont {\textbf{VOLUME V}} \\
+\fontsize{15pt}{12pt}\selectfont {\textbf{VOLUME VII}} \\
 \large{QUADROS DE DETALHAMENTO DA DESPESA}
 
 \end{center}

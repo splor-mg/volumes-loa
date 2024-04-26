@@ -144,7 +144,7 @@ if(!"valor_proposto" %in% names(banco)) banco[, valor_proposto:=0]
 banco = banco[, list(valor = sum(valor, na.rm=T), valor_proposto = sum(valor_proposto, na.rm = T)), 
               by=list(ANO, COD_ORGAO, ORGAO, COD_UO, UO, NOME_ACAO, FUNCAO, SUB_FUNCAO, PROGRAMA, IDENT_PROJATIV, 
                       PROJ_ATIV, SUB_PROJETO, CATEGORIA, GRUPO_DESPESA, MODALIDADE, ELEMENTO_DESPESA, IAG, FONTE, 
-                      IPU, cod_detalhe,  PODER)]
+                      IPU, cod_detalhe,  PODER, `Instrumento de entrada`)]
 
 # Valor total por UO
 bancoTotal = banco[, list(valor = sum(valor, na.rm=T), valor_proposto = sum(valor_proposto, na.rm = T)), 
@@ -159,9 +159,10 @@ bancoTotal[,NOME_ACAO := "Total"]
 
 agregado = banco[, list(valor = sum(valor, na.rm=T), valor_proposto = sum(valor_proposto, na.rm = T)), 
                  by=list(ANO, COD_ORGAO, ORGAO, COD_UO, UO, FUNCAO, SUB_FUNCAO, PROGRAMA, IDENT_PROJATIV, 
-                         PROJ_ATIV, SUB_PROJETO, NOME_ACAO, PODER)]
+                         PROJ_ATIV, SUB_PROJETO, NOME_ACAO, PODER, `Instrumento de entrada`  )]
 
-agregado[, cod_detalhe := paste0(formatC(FUNCAO, width = 2, flag = "0"),
+agregado[, cod_detalhe := paste0(`Instrumento de entrada`,
+                                formatC(FUNCAO, width = 2, flag = "0"),
                                 formatC(SUB_FUNCAO, width = 3, flag = "0"), 
                                 PROGRAMA, 
                                 IDENT_PROJATIV, 
