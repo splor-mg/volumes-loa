@@ -57,9 +57,8 @@ Superintendência Central de Planejamento e Orçamento \\
  \fontsize{45pt}{10pt}\selectfont {\textbf{\Sexpr{ETAPA_ORCAMENTO} \Sexpr{ANO_DOC}}}
 
 \vspace*{5em}
-\fontsize{15pt}{12pt}\selectfont {\textbf{VOLUME VII}} \\
-\large{QUADROS DE DETALHAMENTO DA DESPESA}
-
+\fontsize{15pt}{12pt}\selectfont {\textbf{VOLUME AUXILIAR}} \\
+\large{Projetos previstos na Fonte 95 - Recursos Recebidos por Danos Advindos de Desastres Socioambientais}
 \end{center}
 
 \afterpage{\null\thispagestyle{empty}\newpage}
