@@ -1,0 +1,119 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\pagestyle{empty}
+\newgeometry{bottom=1cm,top=1cm,left=1.5cm,right=1.5cm}
+
+
+<<results=tex,echo=FALSE>>=
+  
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_data = paste0(dir_loa, "/volume1/data")
+  ANO_DOC = as.numeric(readLines(paste0(dir_loa, "/utils/ano.txt"), warn = F))
+  source(paste0(dir_loa, "/utils/funcoes.R"), encoding = "UTF-8")
+
+  # INICIO TABELA 
+
+  banco = ler_banco_txt(paste0(dir_data, "/T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO.txt"))
+  
+  cat("\\renewcommand*{\\arraystretch}{1.9}\n")
+  cat("\\scriptsize\n")
+  cat("\\color{myblack}\n")
+  cat("\\centering\n")
+
+  cat("\\noindent\\begin{longtable}[c]{m{1cm}|m{2cm}|m{10cm}|m{2cm}|m{1cm}}\n", sep="")
+
+  titulo1= paste0("\\multicolumn{5}{c}{\\cellcolor{gray!50} \\footnotesize ",
+                  "\\textbf{DEMONSTRATIVO DE RECURSOS A SEREM APLICADOS DIRETA OU INDIRETAMENTE EM AÇÕES VOLTADAS}} \\\\\n")
+  
+  titulo2= paste0("\\multicolumn{5}{c}{\\cellcolor{gray!50} \\footnotesize ",
+                  "\\textbf{A POLÍTICAS DE ATENDIMENTO À MULHER}} \\\\\n")
+  
+  titulo3= paste("\\multicolumn{5}{c}{\\cellcolor{gray!50} \\scriptsize",
+                 "\\textbf{",
+                 base_legal("T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO"),
+                 "}}  \\\\\n")
+ 
+  subtitulo = paste("\\multicolumn{2}{l}{\\textbf{Exercício: ",
+                     ANO_DOC , "}} & \\multicolumn{3}{r}{\\textbf{R\\$1,00}} \\\\\n")
+ 
+  cabecalho = paste0("\\multicolumn{1}{C{1cm}|}{\\textbf{ \\footnotesize{UO}}} & ",
+                     "\\multicolumn{1}{C{2cm}|}{ \\textbf{ \\footnotesize{Funcional Programática}}} & ",
+                     "\\multicolumn{1}{C{10cm}|}{ \\textbf{ \\footnotesize{Ação}}} &",
+                     "\\multicolumn{1}{C{2cm}|}{ \\textbf{ \\footnotesize{Valor}}} &",
+                     "\\multicolumn{1}{C{1cm}}{ \\textbf{ \\footnotesize{E/NE(*)}}} \\\\\n")
+                     
+  cat(titulo1)
+  cat(titulo2)
+  cat(titulo3)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(cabecalho)
+  cat("\\hline \\hline\n")
+  cat("\\endfirsthead\n")
+  
+  cat(titulo1)
+  cat(titulo2)
+  cat(titulo3)
+  cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
+  cat(subtitulo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(cabecalho)
+  cat("\\hline \\hline\n")
+  cat("\\endhead\n")
+  
+  cat("\\endfoot\n")
+  cat("\\hline\n")
+  cat("\\hline\\hline\n") 
+  cat("\\endlastfoot\n")
+  
+  for(i in 1:nrow(banco)){
+
+    linha = as.list(banco[i, ])
+
+    if(linha[["UO_COD"]]=="TOTAL"){
+      
+      cat("\\hline\\hline\n")
+
+      cat("\\multicolumn{3}{c|}{ \\textbf{", linha[["UO_COD"]],
+          "}} & \\multicolumn{1}{R{2cm}|}{ \\textbf{", linha[["VL_DESP"]],
+          "}} &  \\\\\n", sep="")
+
+      } else{
+
+        cat("\\multicolumn{1}{C{1cm}|}{", linha[["UO_COD"]], 
+            "} & \\multicolumn{1}{C{2cm}|}{", linha[["FUNCIONAL"]],
+            "} & \\multicolumn{1}{L{10cm}|}{", linha[["ACAO_DESC"]],
+            "} & \\multicolumn{1}{R{2cm}|}{", linha[["VL_DESP"]],
+            "} & \\multicolumn{1}{C{1cm}}{", linha[["EXCLUSIVA"]], "} \\\\\n", sep="")
+        
+      }
+  }
+  
+  cat("\\hline\\hline\n")
+  cat("\\end{longtable}\n")
+
+  # NOTAS DE RODAPÉ
+  
+  cat("\\vspace{-0.4cm} \\raggedright\n")
+  
+  cat("\\fontsize{8pt}{10pt}\\selectfont {*Legenda:} \\\\\n")
+  cat("\\fontsize{8pt}{10pt}\\selectfont {(DR) Diretamente Relacionada e (NE) Indiretamente Relacionada} \\\\\n")
+  
+  cat("\\fontsize{8pt}{10pt}\\selectfont {NOTA:}\\\\\n")
+  
+  cat("\\fontsize{8pt}{10pt}\\selectfont {Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in dolor eget diam eleifend faucibus. Proin faucibus lacus nunc, et facilisis arcu auctor fringilla. Vivamus malesuada, erat rutrum accumsan finibus, velit augue mattis nisi, non tristique erat velit condimentum enim. Suspendisse pretium sollicitudin eleifend. Aenean ac ligula sapien.}\\\\\n")
+  
+  cat("\\fontsize{8pt}{10pt}\\selectfont {Lorem ipsum dolor sit amet",
+      "IBGE - Censo 2010.}\\\\\n")
+  
+  
+  # FIM TABELA
+
+@
+
+\end{document}
