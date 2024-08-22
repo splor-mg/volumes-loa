@@ -24,12 +24,9 @@ setnames(qdd_inv, c(c("ANO","COD_UO", "FUNCAO", "SUB_FUNCAO", "PROGRAMA", "ACAO"
 
 loa_desp = rbind(loa_desp, qdd_inv, fill=T)
 
-# Identificar as ações voltadas para criança e adolescente
-#memoria = readxl::read_excel('bancos/manual/memoria_calculo.xlsx', sheet = 'criança e adolescente')
-#memoria =  dplyr::select(memoria, FUNCAO_COD, SUBFUNCAO_COD, `NE/E`)
-#memoria =  dplyr::rename(memoria, EXCLUSIVA = `NE/E`)
 
-###--------------------------------------------------------------------------------------
+### ===== Load base acoes_monitoramento para obter memoria de calculo ===========
+
 source('utils/helper_ler_bancos.R', encoding = 'utf-8')
 
 acoes_planejamento = load_acoes('bancos/SISOR/acoes_planejamento.txt')
@@ -50,7 +47,7 @@ novos_nomes = c("cod_prog", "nome_prog", "cod_uo",
                 "cod_iag", "exc_acao", "final_acao", "prod_acao",
                 "Produto", "unid_med_prod", "DR/IR")
 
-# VERIFICAR SE É NECEESSÁRIO
+# VERIFICAR SE É NECESSÁRIO
 #if(class(ANO_ANALISE)=="numeric"){
 #  nomes_esperados = c(nomes_esperados, paste0("previsao.fisica.", ANO_ANALISE))
 #  novos_nomes = c(novos_nomes, "valor_prod")
@@ -77,7 +74,7 @@ memoria <- dplyr::distinct(memoria, FUNCAO_COD, SUBFUNCAO_COD, .keep_all = TRUE)
 memoria =  dplyr::rename(memoria, EXCLUSIVA = `DR/IR`)
 
 
-############# ----------------------------------------------------------
+### ------------------------------------------------------------------------------
 
 loa_desp = dplyr::left_join(loa_desp, memoria, by = c("FUNCAO_COD", "SUBFUNCAO_COD"))
 loa_desp = as.data.table(loa_desp)
@@ -88,11 +85,6 @@ loa_desp[!is.na(EXCLUSIVA), ACOES_MULHER := TRUE]
 loa_desp = loa_desp[ACOES_MULHER==T, list(VL_DESP = sum(VL_DESP)), 
                     by=list(UO_COD, FUNCAO_COD, SUBFUNCAO_COD, PROGRAMA_COD, ACAO_COD, ACAO_DESC, EXCLUSIVA)]
 
-# ==============================================================================
-# Ações não exclusivas
-# esse indice sendo multiplicado precisa ser corrigido todo ano (Andrey)
-#===============================================================================
-#loa_desp[EXCLUSIVA == "NE", VL_DESP := VL_DESP *  0.2943099972851574]
 
 loa_desp[, FUNCIONAL:= paste(FUNCAO_COD, formatC(SUBFUNCAO_COD, width = 3, flag="0"),
                              formatC(PROGRAMA_COD, width = 3, flag="0"),
