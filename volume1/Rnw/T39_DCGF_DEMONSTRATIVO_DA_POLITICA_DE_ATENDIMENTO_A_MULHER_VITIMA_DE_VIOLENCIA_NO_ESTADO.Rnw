@@ -44,7 +44,7 @@
                      "\\multicolumn{1}{C{2cm}|}{ \\textbf{ \\footnotesize{Funcional Programática}}} & ",
                      "\\multicolumn{1}{C{10cm}|}{ \\textbf{ \\footnotesize{Ação}}} &",
                      "\\multicolumn{1}{C{2cm}|}{ \\textbf{ \\footnotesize{Valor}}} &",
-                     "\\multicolumn{1}{C{1cm}}{ \\textbf{ \\footnotesize{E/NE(*)}}} \\\\\n")
+                     "\\multicolumn{1}{C{1cm}}{ \\textbf{ \\footnotesize{DR/IR(*)}}} \\\\\n")
                      
   cat(titulo1)
   cat(titulo2)
