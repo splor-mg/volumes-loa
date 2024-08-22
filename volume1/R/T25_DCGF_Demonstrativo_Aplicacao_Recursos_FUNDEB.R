@@ -93,8 +93,8 @@ write.table(demonst1, "volume1/data/T25_DCGF_Demonstrativo_Aplicacao_Recursos_FU
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
 
 
-acoes_magisterio = c(2080, 2081, 2082, 2083, 2085, 2086, 2088, 2089, 2090, 2093, 2094, 2096, 2097) 
-loa_desp_magisterio = loa_desp[ACAO_COD %in% acoes_magisterio & GRUPO_COD==1,]
+loa_desp_magisterio = loa_desp[is_pessoal_fundeb(loa_desp)]
+
 
 loa_desp_magisterio[, cod := paste0(UO_COD, " ", FUNCAO_COD, ".", SUBFUNCAO_COD, ".", 
                                     PROGRAMA_COD, ".", substr(ACAO_COD,1,1), ".", 
