@@ -97,8 +97,7 @@ Em `LOA/volume1/R/T23_DCGF_Demonstrativo_do_Servico_da_divida_publica.R` atualiz
 
 ## Tabela 25 Demonstrativo da Aplicação dos Recursos do Fundo de Desenvolvimento da Educação Básica e Valorização dos Profissionais da Educação
 
-Em `LOA/volume1/R/T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB.R` atualizar:
-1- Verificar se as ações referentes aos profissionais do Magistério estão corretas. Há alertas segundo expressões regulares em `ACAO_DESC`.
+Confirmar com DCAF se a memória de cálculo da função [`relatorios::is_pessoal_fundeb`](https://bitbucket.org/dcgf/relatorios/src/master/R/is_pessoal_fundeb.R) está atualizada.
 
 
 ## Tabela 26 Demonstrativo de Recursos a serem aplicados Direta ou Indiretamente em Ações voltadas para a criança e o adolescente
