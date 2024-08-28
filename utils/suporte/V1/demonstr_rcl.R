@@ -166,7 +166,9 @@ demonstr_rcl = function(rec){
 
   base[is_rcl_divida(base) & !is_rcl_pessoal(base), n2_2:= "37.0.(-) Transf. obrig. da União relativas às emendas de bancada (art. 166, § 16, da CF) (VI)" ]
 
- 
+
+  
+   
   base1 = data.table(espec = "34.0.RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )",
                    VL = (base[n0=="0.0.RECEITAS CORRENTES ( I )", sum(VL_LOA_REC)] -
                                    base[n0d== "27.0.DEDUÇÕES ( II )", sum(VL_LOA_REC)]))
@@ -177,11 +179,18 @@ demonstr_rcl = function(rec){
                      VL = (base1[espec=="34.0.RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )", sum(VL)] -
                              base[n2_2== "35.0.(-) Transf. obrig. da União relativas às emendas individuais (art. 166-A, § 1º, da CF) (IV)", sum(VL_LOA_REC)]))
 
-  base3 = data.table(espec = "38.0.RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (VII) = ( V - VI )",
+  base3 = data.table(espec = "40.0.RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (IX) = (V - VI - VII - VIII)",
                      VL = (base2[espec=="36.0.RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )", sum(VL)] -
                              base[n2_2== "37.0.(-) Transf. obrig. da União relativas às emendas de bancada (art. 166, § 16, da CF) (VI)", sum(VL_LOA_REC)]))
   
   
+  # inclui mudanças do MDF 14 solicitadas pelo TCE
+  MDF14_lines <- data.frame(
+    espec = c("38.0.(-) Transf. da União relativas a remuneração dos agentes comunitários de saúde e de combate às endemias (CF, art. 198, § 11 (VII)", 
+              "39.0.(-) Outras Deduções Constitucionais ou Legais (VIII)"),
+    VL = c(0, 0),
+    stringsAsFactors = FALSE  # Prevent automatic conversion of strings to factors
+  )
   
   
   rcl = rbindlist(list(
@@ -194,16 +203,19 @@ demonstr_rcl = function(rec){
                       base[!is.na(n2_2), list(VL = sum(VL_LOA_REC)), list(espec = n2_2)],
                       base1,
                       base2, 
-                      base3 
+                      base3,
+                      MDF14_lines
                       )
                   )
+
 
   rcl[, ordem:=as.numeric(gsub("(\\d+)\\.(.+)", "\\1", espec))]
   rcl[, nvl := gsub("\\d+\\.(\\d+)\\..+", "\\1", espec)]
   
   rcl[, espec:= gsub("\\d+\\.\\d+\\.(.+)", "\\1", espec)]
   rcl = rcl[order(ordem)]
-  
+
+
   setnames(rcl, "VL", "VL_LOA_REC")
 
   return(rcl)
