@@ -19,7 +19,7 @@
 
   banco = ler_banco_txt(paste0(dir_data, "/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.txt"))
 
-  cat("\\renewcommand*{\\arraystretch}{1.6}\n")
+  cat("\\renewcommand*{\\arraystretch}{1.45}\n")
   cat("\\footnotesize\n")
   cat("\\color{myblack}\n")
   cat("\\centering\n")
