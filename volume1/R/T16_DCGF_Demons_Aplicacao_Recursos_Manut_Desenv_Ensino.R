@@ -49,7 +49,7 @@ mde = rbind(mde, data.table(espec = "A. TOTAL DA RECEITA LÍQUIDA (1 + 2 - 3)",
 mde = mde[, cod:= NA]
 
 # =============== E - DESPESA COM MANUTENÇÃO E DESENVOLVIMENTO DE ENSINO ===
-parteE_desc = "B - DESPESA COM MANUTENÇÃO E DESENVOLVIMENTO DE ENSINO"
+parteE_desc = "B - DESPESAS COM MANUTENÇÃO E DESENVOLVIMENTO DE ENSINO CUSTEADAS COM RECURSOS DE IMPOSTOS"
 
 parteE = loa_desp[is_mde_desp(loa_desp) & FONTE_COD %in% c(10, 71) , ]
 parteE = mergeDT(parteE, sumario, by.x="UO_COD", by.y="COD_UO", all.x=T)
