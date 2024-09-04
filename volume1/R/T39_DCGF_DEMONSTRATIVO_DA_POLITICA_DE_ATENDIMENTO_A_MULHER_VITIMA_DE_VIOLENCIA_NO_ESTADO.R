@@ -39,7 +39,7 @@ nomes_esperados = c("codigo.do.programa", "nome.do.programa", "codigo.da.unidade
                     "codigo.do.tipo.de.acao",  "tipo.de.acao",  "codigo.da.acao",  "titulo.da.acao",
                     "codigo.do.identificador.de.acao.governamental..iag.",  "exclusao.logica.da.acao",  "finalidade.da.acao",  
                     "codigo.do.produto",
-                    "produto",  "unidade.de.medida.do.produto", "pamvv")
+                    "produto",  "unidade.de.medida.do.produto", "politica.para.mulheres")
 
 novos_nomes = c("cod_prog", "nome_prog", "cod_uo", 
                 "FUNCAO_COD", "nome_funcao", "SUBFUNCAO_COD", "nome_subfuncao",
@@ -80,7 +80,7 @@ loa_desp = dplyr::left_join(loa_desp, memoria, by = c("FUNCAO_COD", "SUBFUNCAO_C
 loa_desp = as.data.table(loa_desp)
 
 loa_desp[, ACOES_MULHER := FALSE]
-loa_desp[!is.na(EXCLUSIVA), ACOES_MULHER := TRUE]
+loa_desp[EXCLUSIVA %in% c("Indiretamente relacionada", "Diretamente relacionada") , ACOES_MULHER := TRUE]
 
 loa_desp = loa_desp[ACOES_MULHER==T, list(VL_DESP = sum(VL_DESP)), 
                     by=list(UO_COD, FUNCAO_COD, SUBFUNCAO_COD, PROGRAMA_COD, ACAO_COD, ACAO_DESC, EXCLUSIVA)]
