@@ -27,7 +27,7 @@ if(total_despesas!=loa_desp[is_despesas_previdenciarias(loa_desp), sum(VL_LOA_DE
           formatarNum(total_despesas), "\n")
 }
 
-desp_prev = rbind(data.table(espec = "DESPESAS PREVIDENCIÁRIAS - RPPS", 
+desp_prev = rbind(data.table(espec = "DESPESAS PREVIDENCIÁRIAS", 
                              nvl = 0,
                              VL_LOA = total_despesas),
                   desp_prev)
@@ -50,7 +50,7 @@ if(total_receitas!=loa_rec[is_receitas_previdenciarias(loa_rec), sum(VL_LOA_REC)
 }
 
 
-rec_prev = rbind(data.table(espec = "RECEITAS PREVIDENCIÁRIAS - RPPS", 
+rec_prev = rbind(data.table(espec = "RECEITAS PREVIDENCIÁRIAS", 
                              nvl = 0,
                              VL_LOA = total_receitas),
                   rec_prev)

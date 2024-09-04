@@ -41,7 +41,7 @@ demonstr_despesas_previdenciarias = function(base){
   # N1: OUTRAS DESPESAS PREVIDENCIÁRIAS
 
   base[ACAO_COD == 7016, 
-       c("nvl2", "ordem2") := list("Compensação Previdenciária do RPPS para o RGPS", 11)]
+       c("nvl2", "ordem2") := list("Compensação Previdenciária para o RGPS", 11)]
   
   base[UO_COD %in% c(2011, 2121) & ACAO_COD == 7004, 
        c("nvl2", "ordem2") := list("Demais Despesas Previdenciárias", 12)]
