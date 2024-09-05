@@ -150,7 +150,7 @@ banco = banco[, list(valor = sum(valor, na.rm=T), valor_proposto = sum(valor_pro
 bancoTotal = banco[, list(valor = sum(valor, na.rm=T), valor_proposto = sum(valor_proposto, na.rm = T)), 
                    by=list(ANO, COD_ORGAO, ORGAO, COD_UO, UO, PODER)]
 
-bancoTotal[,cod_detalhe := paste0("9999999999999999", "0000000000")]
+bancoTotal[,cod_detalhe := paste0("Z9999999999999999", "0000000000")]
 bancoTotal[,NOME_ACAO := "Total"]
 
 # agregado representa as linhas que possuem informação até C/A na tabela, com valores apenas na coluna Total
