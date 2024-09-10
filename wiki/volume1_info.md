@@ -15,6 +15,13 @@ Em `/LOA/volume1/R/T14_DEMONSTRATIVO_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_CONFORME_
 
 Demonstrativo testa sua memória com `relatorios::is_rcl()`. Avaliar essa função para identificar possíveis mudanças.
 
+Verificar com a DCAF se as linhas VII e VIII passaram a possuir critérios de identificação (fonte ou código de receita):
+- 38.0.(-) Transf. da União relativas a remuneração dos agentes comunitários de saúde e de combate às endemias (CF, art. 198, § 11 (VII) 
+- 39.0.(-) Outras Deduções Constitucionais ou Legais (VIII)
+
+Se sim, deve ser solicitado à DCAF a criação de funções no pacote `relatorios` com a memória de cálculo adequada e essas serem incluídas no código, retirando a inserção temporária feita pelo dataframe `MDF14_lines`.
+
+
 ## Tabela 9 DEMONSTRATIVO RECEITA ORCAMENTARIA CORRENTE ORDINARIA
 
 Em `/LOA/volume1/R/T9_DEMONSTRATIVO_RECEITA_ORCAMENTARIA_CORRENTE_ORDINARIA.R:` atualizar:
