@@ -133,29 +133,35 @@ demonstr_rcl = function(rec){
 
   base[nat(RECEITA_COD,19,99), n2:= "26.1.Outras Receitas Correntes" ]
   
-#===========================================================================================================
+  #===========================================================================================================
   # Header Deduções (II) virá aqui posteriormente
-#===========================================================================================================
+  #===========================================================================================================
   
   base[is_transf_const_mun_rec(base) & nat(RECEITA_COD, 9) , n2_1:= "28.1.Transferências Constitucionais e Legais" ]
   
-  base[nat(RECEITA_COD, 121501, 121502, 121503, 121550, 121551),   n2_2:= "29.1.Contrib. para o Plano de Previdência do Servidor" ]
-
-  base[nat(RECEITA_COD, 121504, 121552, 121553, 121554, 121555, 121556), n2_2:= "30.1.Contrib. para o Custeio das Pensões Militares" ]
-
-  base[nat(RECEITA_COD, 199903), n2_2:= "31.1.Compensação Financ. entre Regimes Previdência" ]
+  #base[nat(RECEITA_COD, 121501, 121502, 121503, 121550, 121551),   n2_2:= "29.1.Contrib. para o Plano de Previdência do Servidor" ]
+  base[relatorios::is_contrib_prev_servidor(base),   n2_2:= "29.1.Contrib. para o Plano de Previdência do Servidor" ]
+  
+  
+  #base[nat(RECEITA_COD, 121504, 121552, 121553, 121554, 121555, 121556), n2_2:= "30.1.Contrib. para o Custeio das Pensões Militares" ]
+  base[relatorios::is_contrib_prev_serv_militar(base), n2_2:= "30.1.Contrib. para o Custeio das Pensões Militares" ]
+  
+  #base[nat(RECEITA_COD, 199903), n2_2:= "31.1.Compensação Financ. entre Regimes Previdência" ]
+  base[is_rec_prev_compensacao_regimes(base), n2_2:= "31.1.Compensação Financ. entre Regimes Previdência" ]
+  
   
   # Adicionado para LOA 2023
-  base[nat(RECEITA_COD, 132104), n2_2:= "32.1.Rendimentos de Aplicações de Recursos Previdenciários" ]
-
-  base[nat(RECEITA_COD, 9) & FONTE_COD ==23, n2_2:= "33.1.Dedução da Receita Corrente – Formação do FUNDEB" ]
-
+  #base[nat(RECEITA_COD, 132104), n2_2:= "32.1.Rendimentos de Aplicações de Recursos Previdenciários" ]
+  base[is_rec_prev_patrimonial(base), n2_2:= "32.1.Rendimentos de Aplicações de Recursos Previdenciários" ]
+  
+  #base[nat(RECEITA_COD, 9) & FONTE_COD ==23, n2_2:= "33.1.Dedução da Receita Corrente – Formação do FUNDEB" ]
+  base[is_ida_fundeb(base), n2_2:= "33.1.Dedução da Receita Corrente – Formação do FUNDEB" ]
+  
   base[nat(RECEITA_COD, 9) & FONTE_COD %in% c(20,23,51), VL_LOA_REC := -1*VL_LOA_REC]
-
-
+  
   base[nat(RECEITA_COD,1) , n0:= "0.0.RECEITAS CORRENTES ( I )" ]
   base[nat(RECEITA_COD,9)  & !FONTE_COD %in% c(20,23,51), n0:= "0.0.RECEITAS CORRENTES ( I )" ]
-
+  
   base[!is.na(n2_1) | !is.na(n2_2), n0d:= "27.0.DEDUÇÕES ( II )" ]
 
   
