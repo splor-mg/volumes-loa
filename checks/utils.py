@@ -39,6 +39,7 @@ REPORTS = [
         Report('T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS', 'volume1'),
         Report('T37_DCGF_DEMONSTRATIVOS_RECURSOS_APLICADOS_SEGURANCA_ALIMENTAR_NUTRICIONAL', 'volume1'),
         Report('T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS', 'volume1'),
+        Report('T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO', 'volume1'),
         Report('Projeto_volume2A', 'volume2'),
         Report('Projeto_volume2B', 'volume2'),
         Report('Projeto_volume3', 'volume3'),
