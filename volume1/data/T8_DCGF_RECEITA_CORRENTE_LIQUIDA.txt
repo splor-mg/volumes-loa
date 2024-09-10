@@ -1,13 +1,13 @@
 espec	VL_LOA_REC	ordem	nvl
 RECEITAS CORRENTES ( I )	141.617.850.582	 0	0
 Impostos, Taxas e Contribuições de Melhoria	103.007.227.969	 1	1
-Principal	89.694.850.544	 2	2
+Principal	96.768.683.847	 2	2
 ICMS	77.911.920.322	 3	3
 IPVA	10.282.364.778	 4	3
 ITCD	1.500.565.444	 5	3
 IRRF	7.073.833.303	 6	3
 Taxas	4.105.688.797	 7	3
-Acessórias [Dívida Ativa, Multas e Juros]	9.111.382.622	 8	2
+Acessórias [Dívida Ativa, Multas e Juros]	2.037.549.319	 8	2
 ICMS	1.130.241.198	 9	3
 IPVA	761.098.475	10	3
 ITCD	146.209.646	11	3
