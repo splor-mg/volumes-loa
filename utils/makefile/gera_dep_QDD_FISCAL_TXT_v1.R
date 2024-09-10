@@ -9,6 +9,7 @@ dependencias = c("volume1/data/T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEG
                  "volume1/data/T17_DCGF_Demonst_Aplicacao_Recursos_Progr_Saude_Investim.txt",
                  "volume1/data/T23_DCGF_Demonstrativo_do_Servico_da_divida_publica.txt",
                  "volume1/data/T26_DCGF_DEMONSTRATIVO_RECURSOS_APLICADOS_ACOES_PARA_CRIANCA_E_ADOLESCENTE.txt",
+                 "volume1/data/T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO.txt",
                  "volume1/data/T27_DCGF_Demonst_Despesas_UGEPREVI.txt",
                  "volume1/data/T37_DCGF_DEMONSTRATIVOS_RECURSOS_APLICADOS_SEGURANCA_ALIMENTAR_NUTRICIONAL.txt")
 
