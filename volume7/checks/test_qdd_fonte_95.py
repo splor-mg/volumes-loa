@@ -1,3 +1,5 @@
+import sys
+
 import petl as etl
 
 def test_qdd_fonte_95():
@@ -21,4 +23,14 @@ def test_qdd_fonte_95():
 
     comparison_diff = etl.selectne(comparison_table, 'diff', 0)
 
-    assert etl.nrows(comparison_diff) == 0
+    print("- Testando correspondência das bases BASE_QDD_FISCAL_FONTE_95 e BASE_QDD_FISCAL em bancos/SISOR ")
+
+    if etl.nrows(comparison_diff) != 0:
+        print("Foram encontradas divergências nas bases 'BASE_QDD_FISCAL_FONTE_95.xlsx' e 'BASE_QDD_FISCAL.xlsx'")
+        print("O arquivo 'logs/logv7_divergências_bases_qdd_.xlsx' contém as linhas que contém valores divergentes")
+        sys.stderr.write("Foram encontradas divergências nas bases 'BASE_QDD_FISCAL_FONTE_95.xlsx' e 'BASE_QDD_FISCAL.xlsx'")
+        sys.stderr.write("O arquivo 'logs/logv7_divergências_bases_qdd_.xlsx' contém as linhas que contém valores divergentes")
+        sys.stderr.write(str(etl.toxlsx(comparison_diff, filename='logs/logv7_divergências_bases_qdd_.xlsx')))
+        exit(66)
+
+test_qdd_fonte_95()

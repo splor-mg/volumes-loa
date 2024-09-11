@@ -11,6 +11,7 @@ dependencias = c("volume7/data/*.txt",
                  "bancos/manual/desc_fontes_de_recursos.xlsx",
                  "bancos/manual/desc_IAG.xlsx",
                  "bancos/manual/desc_IPU.xlsx",
+                 "bancos/SISOR/BASE_QDD_FISCAL.xlsx",
                  "bancos/SISOR/BASE_QDD_FISCAL_FONTE_95.xlsx")
 
 
