@@ -29,7 +29,7 @@ v5: pdf/Projeto_volume5.pdf ## Gera volume 5
 
 v6: pdf/Projeto_volume6A.pdf ## Gera volume 6
 
-v7: pdf/Projeto_volume7.pdf ## Gera volume 5
+v7: pdf/Projeto_volume7.pdf ## Gera volume 7
 
 clean: ## Organiza os arquivos auxiliares e outputs da compilação latex. Ex. argumento vol=5. origem=1 limpa o dir principal.
 	@Rscript $(VERBOSE) utils/limpaDir.R $(vol) $(origem)
