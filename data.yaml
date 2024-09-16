@@ -7,3 +7,5 @@ resources:
     path: https://raw.githubusercontent.com/splor-mg/volumes-loa-dados/main/datapackage.yaml
   - name: fonte_stn
     path: https://raw.githubusercontent.com/splor-mg/matriz-fonte-stn-dadosmg/main/datapackage.yaml
+  - name: qdd_fiscal_fonte_95
+    path: https://raw.githubusercontent.com/splor-mg/dados-qdd-fonte-95/main/datapackage.yaml
