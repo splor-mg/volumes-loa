@@ -29,6 +29,8 @@ v5: pdf/Projeto_volume5.pdf ## Gera volume 5
 
 v6: pdf/Projeto_volume6A.pdf ## Gera volume 6
 
+v7: pdf/Projeto_volume7.pdf ## Gera volume 7
+
 clean: ## Organiza os arquivos auxiliares e outputs da compilação latex. Ex. argumento vol=5. origem=1 limpa o dir principal.
 	@Rscript $(VERBOSE) utils/limpaDir.R $(vol) $(origem)
 
@@ -91,6 +93,18 @@ bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_FONTE_STN.xlsx: utils/trataBancos/trataRe
 bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte_STN.R bancos/manual/fonte_stn.csv utils/ano.txt
 	@echo "Atualizando $@..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
+
+# Volume 7
+pdf/Projeto_volume7.pdf: $(DEPENDENCIAS_V7)
+	@echo "- Gera logs/warningsV7.Rout"
+	@python3 volume7/checks/test_qdd_fonte_95.py 2> logs/logv7.Rout
+	@Rscript $(VERBOSE) volume7/Rnw/CodigosR/Projeto_volume7.R 2> logs/warningsV7.Rout >&-
+	@Rscript $(VERBOSE) utils/Rnw2Tex.R 7
+	@echo "---------------------------------------------------------------"
+
+volume7/data/*.txt: volume7/R/volume7.R bancos/SISOR/BASE_QDD_FISCAL_FONTE_95.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+	@echo "Atualizando v7/data/ consolidado.txt e QUADRO_DETALHAMENTO_DESPESA_porUO.txt..."
+	@Rscript $(VERBOSE) $< 2>> logs/logv7.Rout
 
 # Volume 5
 pdf/Projeto_volume5.pdf: $(DEPENDENCIAS_V5)

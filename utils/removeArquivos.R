@@ -31,7 +31,7 @@ removeArquivos = function(diretorio){
 }
   
   
-if(args[1] %in% c("2","3","4","5","6")){
+if(args[1] %in% c("2","3","4","5","6", "7")){
   removeArquivos(paste0("volume", args[1], "/data"))
 
 } else if(args[1]=="logs"){
@@ -42,5 +42,5 @@ if(args[1] %in% c("2","3","4","5","6")){
   del = lapply(arquivos, function(x) del_arquivos(x, "volume1/data"))
   
 }else{
-  cat("Diretório não identificado. Espera-se argumento de 1 a 6 ou logs\n")
+  cat("Diretório não identificado. Espera-se argumento de 1 a 7 ou logs\n")
 }
