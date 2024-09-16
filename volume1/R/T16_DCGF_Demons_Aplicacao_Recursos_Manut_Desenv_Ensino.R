@@ -49,7 +49,7 @@ mde = rbind(mde, data.table(espec = "A. TOTAL DA RECEITA LÍQUIDA (1 + 2 - 3)",
 mde = mde[, cod:= NA]
 
 # =============== E - DESPESA COM MANUTENÇÃO E DESENVOLVIMENTO DE ENSINO ===
-parteE_desc = "B - deSPESA COM MANUTENÇÃO E DESENVOLVIMENTO DE ENSINO"
+parteE_desc = "B - DESPESAS COM MANUTENÇÃO E DESENVOLVIMENTO DE ENSINO CUSTEADAS COM RECURSOS DE IMPOSTOS"
 
 parteE = loa_desp[is_mde_desp(loa_desp) & FONTE_COD %in% c(10, 71) , ]
 parteE = mergeDT(parteE, sumario, by.x="UO_COD", by.y="COD_UO", all.x=T)
@@ -86,27 +86,36 @@ vl_transf_fundeb = abs(loa_rec[FONTE_COD == 23 & nat(RECEITA_COD, 9), sum(VL_LOA
 #                           nvl = 0,
 #                           cod = NA)
 
-transf_fundeb = data.table(espec ="TRANSFERÊNCIAS DO ESTADO AO FUNDEB", 
+transf_fundeb = data.table(espec ="C - TRANSFERÊNCIAS DO ESTADO AO FUNDEB", 
                           VL_LOA = vl_transf_fundeb,
                           nvl = 0,
                           cod = NA)
 
+vl_mde = parteE[,sum(VL_LOA)]
 
 
+despesas_lmc_desc = "D - TOTAL DAS DESPESAS PARA FINS DE LIMITE MÍNIMO CONSTITUCIONAL (B+C)"
 
-
-parteE = rbind(parteE, transf_fundeb)
+despesas_lmc = data.table(espec =despesas_lmc_desc, 
+                           VL_LOA = vl_mde + vl_transf_fundeb,
+                           nvl = 0,
+                           cod = NA)
 
 parteE = rbind(data.table(espec = parteE_desc, 
                           VL_LOA = parteE[,sum(VL_LOA)],
                           nvl = 0, cod=NA), 
                parteE)
 
+parteE = rbind(parteE, transf_fundeb)
+parteE = rbind(parteE, despesas_lmc )
+
+
+
 #====================== F ========================
 
-parteF_desc = "C - Percentual de aplicação da receita resultante de impostos e de transferência na manutenção e desenvolvimento do ensino - B/A aplicação mínima 25%"
+parteF_desc = "E - Percentual de aplicação da receita resultante de impostos e de transferência na manutenção e desenvolvimento do ensino - B/A aplicação mínima 25%"
 
-valorE = round(parteE[espec ==parteE_desc, VL_LOA]*100 / total_receita_liquida,2)
+valorE = round(parteE[espec ==despesas_lmc_desc, VL_LOA]*100 / total_receita_liquida,2)
 parteF = data.table(cod = NA, espec = parteF_desc, nvl = 0, VL_LOA = paste0(format(valorE, 
                                                                                    big.mark=".", 
                                                                                    scientific = FALSE, 

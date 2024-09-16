@@ -36,4 +36,6 @@ RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )	96.066.043.212	34	0
 (-) Transf. obrig. da União relativas às emendas individuais (art. 166-A, § 1\degree, da CF) (IV)	69.251.467	35	0
 RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )	95.996.791.745	36	0
 (-) Transf. obrig. da União relativas às emendas de bancada (art. 166, § 16, da CF) (VI)	16.085.761	37	0
-RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (VII) = ( V - VI )	95.980.705.984	38	0
+(-) Transf. da União relativas a remuneração dos agentes comunitários de saúde e de combate às endemias (CF, art. 198, § 11 (VII)	              0	38	0
+(-) Outras Deduções Constitucionais ou Legais (VIII)	              0	39	0
+RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (IX) = (V - VI - VII - VIII)	95.980.705.984	40	0
