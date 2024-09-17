@@ -3,7 +3,8 @@
     cat("\\renewcommand*{\\arraystretch}{1.7}\n") 
     cat("\\scriptsize\n") 
    
-    bancoTodasAcoes = data.table(read.table(paste0(dir_data,"/tabela2/", uo,".txt",sep=""), 
+    tabela2_path <- paste0(dir_data,"/tabela2/", uo,".txt",sep="")
+    bancoTodasAcoes = data.table(read.table(tabela2_path, 
                                  header=T, sep="\t", dec=",", stringsAsFactors = FALSE)) 
    
     cat("\\phantomsection\n")  
