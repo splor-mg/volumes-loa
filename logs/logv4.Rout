@@ -14,3 +14,6 @@ running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume4/R/T2_DETALHAMENTO_INVESTIMENTOS_POR_TERRITORIOS_PLANEJAMENTO_MUNICIPIOS.R'
 
 Warning: The following named parsers don't match the column names: Previsão Orçamentária 2028, Previsão Física 2028
+Warning in trataDetalhe_Obras("bancos/SISOR/BASE_DETALHAMENTO_OBRAS.xlsx",  :
+  trataDetalhe_Obras(): Os seguintes valores se repetem mais de uma vez no campo SIAD: 
+ 9848, 12042
