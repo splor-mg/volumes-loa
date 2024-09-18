@@ -3,6 +3,7 @@
 
 
 dependencias = c("volume3/Rnw/T1_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_DE_RECURSO.Rnw",
+                 "volume3/Rnw/CodigosR/Projeto_volume3.R",
                  "volume3/Rnw/T2_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.Rnw",
                  "volume3/Rnw/T3_INVESTIMENTOS_SEGUNDO_FUNCOES_SUB_PROGRAMAS_PROJETOS_ATIVIDADES.Rnw",
                  "volume3/Rnw/T1_relatorio_por_empresa.Rnw",
