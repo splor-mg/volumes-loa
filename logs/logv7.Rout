@@ -1,4 +1,0 @@
-Error in paste0(`Instrumento de entrada`, formatC(FUNCAO, width = 2, flag = "0"),  : 
-  object 'Instrumento de entrada' not found
-Calls: [ -> [.data.table -> eval -> eval -> paste0
-Execution halted
