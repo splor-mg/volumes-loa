@@ -102,7 +102,7 @@
   cat("\\vspace{-0.4cm} \\raggedright\n")
   
   cat("\\fontsize{8pt}{10pt}\\selectfont {*Legenda:} \\\\\n")
-  cat("\\fontsize{8pt}{10pt}\\selectfont {(DR) Diretamente Relacionada e (NE) Indiretamente Relacionada} \\\\\n")
+  cat("\\fontsize{8pt}{10pt}\\selectfont {(DR) Diretamente Relacionada e (IR) Indiretamente Relacionada} \\\\\n")
   
   cat("\\fontsize{8pt}{10pt}\\selectfont {NOTA:}\\\\\n")
   
