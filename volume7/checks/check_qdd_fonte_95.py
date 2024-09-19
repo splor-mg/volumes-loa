@@ -8,7 +8,7 @@ def to_zero(x):
     """
     return 0 if not x else x
 
-def test_qdd_fonte_95():
+def check_qdd_fonte_95():
     qdd_fonte_95 = etl.fromxlsx("bancos/SISOR/BASE_QDD_FISCAL_FONTE_95.xlsx", sheet="base_qdd_fiscal")
     qdd_fiscal = etl.fromxlsx("bancos/SISOR/BASE_QDD_FISCAL.xlsx", sheet="BASE_QDD_FISCAL")
     qdd_fiscal = etl.selecteq(qdd_fiscal, 'FONTE', 95)
@@ -39,4 +39,4 @@ def test_qdd_fonte_95():
         sys.stderr.write(str(etl.toxlsx(comparison_diff, filename='logs/logv7_divergências_bases_qdd_.xlsx')))
         exit(66)
 
-test_qdd_fonte_95()
+check_qdd_fonte_95()

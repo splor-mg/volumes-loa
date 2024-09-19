@@ -97,7 +97,7 @@ bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte
 # Volume 7
 pdf/Projeto_volume7.pdf: $(DEPENDENCIAS_V7)
 	@echo "- Gera logs/warningsV7.Rout"
-	@python3 volume7/checks/test_qdd_fonte_95.py 2> logs/logv7.Rout
+	@python3 volume7/checks/check_qdd_fonte_95.py 2> logs/logv7.Rout
 	@Rscript $(VERBOSE) volume7/Rnw/CodigosR/Projeto_volume7.R 2> logs/warningsV7.Rout >&-
 	@Rscript $(VERBOSE) utils/Rnw2Tex.R 7
 	@echo "---------------------------------------------------------------"
