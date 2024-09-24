@@ -5,5 +5,5 @@
 "  4"	"129"	"125"	" 4"	"549"							"1.000"	"5"	"O FIIMG TEM COMO OBJETIVO CAPTAR RECURSOS PARA OBRAS E INVESTIMENTOS DO ESTADO, CONFORME DETERMINA A LEI N\degree 22.606/2017."												
 "  4"	"129"	"125"	" 4"	"549"	" 1"						"1.000"	"1"	"FUNDO DE INVESTIMENTOS IMOBILIÁRIOS DE MINAS GERAIS - FIIMG"												
 "  4"	"129"	"125"	" 4"	"549"	" 1"	"90"	" 0"	"10"	" 1"	"1.000"	"1.000"	"7"													
-"  4"	"129"	"125"	" 4"	"549"	" 1"	"91"	" 0"					"8"	"RECEITA NÃO TRIBUTÁRIA ARRECADADA"			"302.000.000"	"R\$ (REAIS)"	"Atividade Fim do Orçamento Fiscal"	"Não"						
+"  4"	"129"	"125"	" 4"	"549"	" 1"	"91"	" 0"					"8"	"RECEITA NÃO TRIBUTÁRIA ARRECADADA"			"304.000.000"	"R\$ (REAIS)"	"Atividade Fim do Orçamento Fiscal"	"Não"						
 "999"										"1.000"	"1.000"	"9"	"TOTAL"												

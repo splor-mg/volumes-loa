@@ -1,13 +1,35 @@
 Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  3041  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' AGRICULTOR/POSSEIRO
 Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 4291 função 10 subfunção 122 programa 705 ação 2087 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
 Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  4291  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIDADES
 Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1451  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' VAGA/PARTICIPAÇÃO/PÚBLICO
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESTUDO/PESQUISA/MONITORAMENTO/AVAL.
 Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/', DEFENSOR/SERVIDOR/CIDADÃO
+Warning: V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL: Para a UO  4031  não há nome da UO e nome do orgao em BASE_QDD_FISCAL 
+
+Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem valores em ações da FUNFIP: 4031
+Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem um quantitativo de inativos, porém apresentam valores superiores a R$ 1.000 nas ações da FUNFIP: 
+ 1071 2281 2351 
+Caso seja necessário inserir o quantitativo de inativos manualmente, criar em bancos/manual/PESSOAL_INATIVO_AUSENTE_SISOR.xlsx. 
+Banco com apenas duas variáveis: cod_uo e quantidade
 Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
 
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4031 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 7311.02.0.1.01.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1051 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1361.01.2.1.01.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  3051 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1717.99.0.1.05.010
+2414.99.0.1.07.010
+2414.99.0.1.07.011
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1251 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1311.02.1.1.01.000
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4451 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 7729.99.0.1.27.000
 
 
 processing file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd
@@ -16,21 +38,7 @@ output file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.md
 sh: 1: xdg-open: not found
 Warning: V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
 
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  3041  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' AGRICULTOR/POSSEIRO
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 4291 função 10 subfunção 122 programa 705 ação 2087 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+Warning: V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
 
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  4291  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIDADES
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1451  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' VAGA/PARTICIPAÇÃO/PÚBLICO
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/', DEFENSOR/SERVIDOR/CIDADÃO
-Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
-
-
-
-processing file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd
-output file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.md
-
-sh: 1: xdg-open: not found
 Warning: V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
 
