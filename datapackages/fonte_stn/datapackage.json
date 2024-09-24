@@ -3,222 +3,10 @@
   "title": "Matriz de correspondências",
   "resources": [
     {
-      "name": "anexo_nt_gtfr_01_2023",
-      "type": "file",
-      "title": "Anexo da Nota Técnica GTFR 01/2023 - SEF/STE - SEPLAG/SPLOR",
-      "profile": "data-resource",
-      "path": "anexo_nt_gtfr_01_2023.pdf",
-      "scheme": "file",
-      "format": "pdf",
-      "mediatype": "application/pdf"
-    },
-    {
-      "name": "matriz_receita",
-      "type": "table",
-      "title": "Matriz de correspondência - Receita",
-      "profile": "tabular-data-resource",
-      "path": "data/matriz_receita.csv",
-      "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "dialect": {
-        "csv": {
-          "delimiter": ";"
-        }
-      },
-      "schema": {
-        "fields": [
-          {
-            "name": "FONTE_STN_COD",
-            "type": "integer",
-            "title": "Fonte de Recurso STN - Código",
-            "description": "Código da Fonte de Recurso conforme estabelecido na Portaria Conjunta STN SOF nº 20/2021 e da Portaria STN n° 710/2021.",
-            "format": "default",
-            "constraints": {
-              "required": true,
-              "minimum": 500,
-              "maximum": 999
-            }
-          },
-          {
-            "name": "ANO",
-            "type": "year",
-            "title": "Ano de Exercício",
-            "description": "Ano de exercício do início da vigência da linha para fins de classificação",
-            "format": "default",
-            "constraints": {
-              "required": true
-            }
-          },
-          {
-            "name": "MES_COD",
-            "type": "integer",
-            "title": "Mês - Número",
-            "description": "Mês numérico do início da vigência da linha para fins de classificação",
-            "format": "default",
-            "constraints": {
-              "required": true,
-              "minimum": 1,
-              "maximum": 12
-            }
-          },
-          {
-            "name": "UO_COD",
-            "type": "string",
-            "title": "Unidade Orçamentária - Código",
-            "format": "default",
-            "constraints": {
-              "required": true,
-              "pattern": "\\d{4}"
-            }
-          },
-          {
-            "name": "FONTE_COD",
-            "type": "integer",
-            "title": "Fonte de Recurso - Código",
-            "description": "Código da Fonte de Recurso utilizada até o exercício de 2022.",
-            "format": "default",
-            "constraints": {
-              "required": true,
-              "minimum": 1,
-              "maximum": 99
-            }
-          },
-          {
-            "name": "RECEITA_COD",
-            "type": "string",
-            "title": "Classificação Receita - Código",
-            "description": "Código completo da classificação econômica da receita",
-            "format": "default",
-            "constraints": {
-              "required": true,
-              "pattern": "\\d{13}"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "name": "matriz_despesa",
-      "type": "table",
-      "title": "Matriz de correspondência - Despesa",
-      "profile": "tabular-data-resource",
-      "path": "data/matriz_despesa.csv",
-      "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "dialect": {
-        "csv": {
-          "delimiter": ";"
-        }
-      },
-      "schema": {
-        "fields": [
-          {
-            "name": "FONTE_STN_COD",
-            "type": "integer",
-            "title": "Fonte de Recurso STN - Código",
-            "description": "Código da Fonte de Recurso conforme estabelecido na Portaria Conjunta STN SOF nº 20/2021 e da Portaria STN n° 710/2021.",
-            "format": "default",
-            "constraints": {
-              "required": true,
-              "minimum": 500,
-              "maximum": 999
-            }
-          },
-          {
-            "name": "ANO",
-            "type": "year",
-            "title": "Ano de Exercício",
-            "description": "Ano de exercício do início da vigência da linha para fins de classificação",
-            "format": "default",
-            "constraints": {
-              "required": true
-            }
-          },
-          {
-            "name": "MES_COD",
-            "type": "integer",
-            "title": "Mês - Número",
-            "description": "Mês numérico do início da vigência da linha para fins de classificação",
-            "format": "default",
-            "constraints": {
-              "required": true,
-              "minimum": 1,
-              "maximum": 12
-            }
-          },
-          {
-            "name": "UO_COD",
-            "type": "string",
-            "title": "Unidade Orçamentária - Código",
-            "format": "default",
-            "constraints": {
-              "required": true,
-              "pattern": "\\d{4}"
-            }
-          },
-          {
-            "name": "ACAO_COD",
-            "type": "string",
-            "title": "Projeto_Atividade - Código",
-            "format": "default",
-            "constraints": {
-              "required": true,
-              "pattern": "\\d{4}"
-            }
-          },
-          {
-            "name": "GRUPO_COD",
-            "type": "integer",
-            "title": "Grupo de Despesa - Código",
-            "format": "default",
-            "constraints": {
-              "required": true,
-              "enum": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                9
-              ]
-            }
-          },
-          {
-            "name": "FONTE_COD",
-            "type": "integer",
-            "title": "Fonte de Recurso - Código",
-            "description": "Código da Fonte de Recurso utilizada até o exercício de 2022.",
-            "format": "default",
-            "constraints": {
-              "required": true,
-              "minimum": 1,
-              "maximum": 99
-            }
-          },
-          {
-            "name": "IPU_COD",
-            "type": "integer",
-            "title": "Identificador de Procedência e Uso - Código",
-            "format": "default",
-            "constraints": {
-              "required": true,
-              "minimum": 1,
-              "maximum": 9
-            }
-          }
-        ]
-      }
-    },
-    {
       "name": "fonte_stn",
       "type": "table",
       "title": "Classificação por fonte ou destinação de recursos para Estados, Distrito Federal e Municípios",
-      "description": "Anexos da [Portaria STN nº 710/2021](https://in.gov.br/en/web/dou/-/portaria-n-710-de-25-de-fevereiro-de-2021-305389863) atualizados de acordo com as seguintes portarias: \n\n- [Portaria STN nº 925, de 08/07/2021](https://in.gov.br/en/web/dou/-/portaria-n-925-de-8-de-julho-de-2021-330973177)\n- [Portaria STN nº 1.141, de 11/11/2021](https://in.gov.br/en/web/dou/-/portaria-n-1.141-de-11-de-novembro-de-2021-359413243)\n- [Portaria STN nº 1.445, de 14/06/2022](https://in.gov.br/en/web/dou/-/portaria-n-1.445-de-14-de-junho-de-2022-408494662)\n- [Portaria STN nº 1.566, de 31/08/2022](https://in.gov.br/en/web/dou/-/portaria-n-1.566-de-31-de-agosto-de-2022-426188569)\n- [Portaria STN nº 10.463, de 07/12/2022](https://in.gov.br/en/web/dou/-/portaria-stn-n-10.463-de-7-de-dezembro-de-2022-449271100)\n- [Portaria STN nº 688, de 06/07/2023](https://www.in.gov.br/en/web/dou/-/portaria-stn/mf-n-688-de-6-de-julho-de-2023-495190675)\n",
+      "description": "Anexos da [Portaria STN nº 710/2021](https://in.gov.br/en/web/dou/-/portaria-n-710-de-25-de-fevereiro-de-2021-305389863) atualizados de acordo com as seguintes portarias: \n\n- [Portaria STN nº 925, de 08/07/2021](https://in.gov.br/en/web/dou/-/portaria-n-925-de-8-de-julho-de-2021-330973177)\n- [Portaria STN nº 1.141, de 11/11/2021](https://in.gov.br/en/web/dou/-/portaria-n-1.141-de-11-de-novembro-de-2021-359413243)\n- [Portaria STN nº 1.445, de 14/06/2022](https://in.gov.br/en/web/dou/-/portaria-n-1.445-de-14-de-junho-de-2022-408494662)\n- [Portaria STN nº 1.566, de 31/08/2022](https://in.gov.br/en/web/dou/-/portaria-n-1.566-de-31-de-agosto-de-2022-426188569)\n- [Portaria STN nº 10.463, de 07/12/2022](https://in.gov.br/en/web/dou/-/portaria-stn-n-10.463-de-7-de-dezembro-de-2022-449271100)\n- [Portaria STN nº 688, de 06/07/2023](https://www.in.gov.br/en/web/dou/-/portaria-stn/mf-n-688-de-6-de-julho-de-2023-495190675)\n- [Portaria STN/MF nº 1.561, de 08/12/2023](https://www.in.gov.br/en/web/dou/-/portaria-stn/mf-n-1.561-de-8-de-dezembro-de-2023-530280652)\n- [Portaria STN/MF nº 1.593, de 15/12/2023](https://www.in.gov.br/en/web/dou/-/portaria-stn/mf-n-1.593-de-15-de-dezembro-de-2023-531782099)\n- [Portaria STN/MF nº 855, de 24/05/2024](https://www.in.gov.br/web/dou/-/portaria-stn/mf-n-855-de-24-de-maio-de-2024-562119930)\n- [Portaria STN/MF nº 1.181, de 18/07/2024](https://www.in.gov.br/web/dou/-/portaria-stn/mf-n-1.181-de-18-de-julho-de-2024-573482649)\n- [Portaria STN/MF nº 1.307, de 19/08/2024](https://www.in.gov.br/web/dou/-/portaria-stn/mf-n-1.307-de-19-de-agosto-de-2024-579509518)\n",
       "profile": "tabular-data-resource",
       "path": "data/fonte_stn.csv",
       "scheme": "file",
@@ -270,5 +58,12 @@
       }
     }
   ],
-  "owner_org": "secretaria-de-estado-de-planejamento-e-gestao-seplag"
+  "owner_org": "secretaria-de-estado-de-planejamento-e-gestao-seplag",
+  "remote": {
+    "host": "raw.githubusercontent.com",
+    "user": "splor-mg",
+    "repo": "matriz-fonte-stn-dadosmg",
+    "ref": "main",
+    "sha": "f1cb9577e1eb5d6e1613ec7aeb1a42b193a5dade"
+  }
 }

@@ -1,0 +1,164 @@
+{
+  "name": "dados-qdd-fonte-95",
+  "resources": [
+    {
+      "name": "base_qdd_fiscal_fonte_95",
+      "type": "table",
+      "path": "data-raw/base_qdd_fiscal_fonte_95.xlsx",
+      "scheme": "file",
+      "format": "xlsx",
+      "mediatype": "application/vnd.ms-excel",
+      "encoding": "utf-8",
+      "dialect": {
+        "excel": {
+          "sheet": "base_qdd_fiscal"
+        }
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "ANO",
+            "type": "integer"
+          },
+          {
+            "name": "COD_ORGAO",
+            "type": "integer"
+          },
+          {
+            "name": "ORGAO",
+            "type": "string"
+          },
+          {
+            "name": "PODER",
+            "type": "integer"
+          },
+          {
+            "name": "SITUACAO",
+            "type": "integer"
+          },
+          {
+            "name": "COD_UO",
+            "type": "integer"
+          },
+          {
+            "name": "UO",
+            "type": "string"
+          },
+          {
+            "name": "CATEGORIA",
+            "type": "integer"
+          },
+          {
+            "name": "GRUPO_DESPESA",
+            "type": "integer"
+          },
+          {
+            "name": "MODALIDADE",
+            "type": "integer"
+          },
+          {
+            "name": "ELEMENTO_DESPESA",
+            "type": "integer"
+          },
+          {
+            "name": "FONTE",
+            "type": "integer"
+          },
+          {
+            "name": "IPU",
+            "type": "integer"
+          },
+          {
+            "name": "SEQ_PROGTRAB",
+            "type": "integer"
+          },
+          {
+            "name": "FUNCAO",
+            "type": "integer"
+          },
+          {
+            "name": "SUB_FUNCAO",
+            "type": "integer"
+          },
+          {
+            "name": "PROGRAMA",
+            "type": "integer"
+          },
+          {
+            "name": "IDENT_PROJATIV",
+            "type": "integer"
+          },
+          {
+            "name": "PROJ_ATIV",
+            "type": "integer"
+          },
+          {
+            "name": "AÇÃO",
+            "type": "integer"
+          },
+          {
+            "name": "SUB_PROJETO",
+            "type": "integer"
+          },
+          {
+            "name": "VALOR UO (R$)",
+            "type": "number",
+            "groupChar": ".",
+            "decimalchar": ","
+          },
+          {
+            "name": "VALOR SCPPO (R$)",
+            "type": "number",
+            "groupChar": ".",
+            "decimalchar": ","
+          },
+          {
+            "name": "VALOR FINAL (R$)",
+            "type": "number",
+            "groupChar": ".",
+            "decimalchar": ","
+          },
+          {
+            "name": "IAG",
+            "type": "integer"
+          },
+          {
+            "name": "NOME_ACAO",
+            "type": "string"
+          },
+          {
+            "name": "NOME_PROGRAMA",
+            "type": "string"
+          },
+          {
+            "name": "Acordo ou decisão",
+            "type": "string"
+          },
+          {
+            "name": "Anexo",
+            "type": "string"
+          },
+          {
+            "name": "Instrumento de entrada",
+            "type": "integer"
+          },
+          {
+            "name": "Projetos do Acordo Judicial e outros detalhamentos",
+            "type": "string"
+          },
+          {
+            "name": "ESPECIFICAÇÃO",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ],
+  "remote": {
+    "host": "raw.githubusercontent.com",
+    "user": "splor-mg",
+    "repo": "dados-qdd-fonte-95",
+    "ref": "main",
+    "sha": "85dbf372a067480455aa72a604fe4679a40205d1"
+  }
+}
