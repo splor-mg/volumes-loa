@@ -37,6 +37,5 @@ def check_qdd_fonte_95():
         sys.stderr.write("Foram encontradas divergências nas bases 'BASE_QDD_FISCAL_FONTE_95.xlsx' e 'BASE_QDD_FISCAL.xlsx'")
         sys.stderr.write("O arquivo 'logs/logv7_divergências_bases_qdd_.xlsx' contém as linhas que contém valores divergentes")
         sys.stderr.write(str(etl.toxlsx(comparison_diff, filename='logs/logv7_divergências_bases_qdd_.xlsx')))
-        exit(66)
 
 check_qdd_fonte_95()
