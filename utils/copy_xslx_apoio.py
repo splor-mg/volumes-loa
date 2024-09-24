@@ -23,7 +23,7 @@ items = [
  (datapackages_dir / 'memoria_calculo.xlsx', manual_dir / 'memoria_calculo.xlsx' ),
  (datapackages_dir / 'desc_base_legal_demonstrativos.xlsx', manual_dir / 'desc_base_legal_demonstrativos.xlsx' ),
  (Path('datapackages/fonte_stn/data/fonte_stn.csv'), manual_dir / 'fonte_stn.csv' ),
- (Path('datapackages/qdd_fiscal_fonte_95/data-raw/base_qdd_fiscal_fonte_95.xlsx'), sisor_dir / 'BASE_QDD_FISCAL_FONTE_95.xlsx'),
+ (Path('datapackages/qdd_fiscal_fonte_95/data/base_qdd_fiscal_fonte_95.xlsx'), sisor_dir / 'BASE_QDD_FISCAL_FONTE_95.xlsx'),
  ]
 
 for item in items:

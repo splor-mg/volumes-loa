@@ -20,5 +20,4 @@ resources = ["fonte_stn"]
 
 [packages.qdd_fiscal_fonte_95]
 
-path = "https://raw.githubusercontent.com/splor-mg/dados-qdd-fonte-95/main/datapackage.yaml"
-
+path = "https://raw.githubusercontent.com/splor-mg/dados-qdd-fonte-95/main/datapackage.json"
