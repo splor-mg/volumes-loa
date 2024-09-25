@@ -1,25 +1,36 @@
-### IMPORTANTE
-#
-# Preciso de uma tabela de apoio indicando as correspondências entre os 4 níveis diferentes de fonte em especificação.
+# Tabela de apoio indicando as correspondências entre os 4 níveis diferentes de fonte em especificação.
 #
 # Exemplo: TESOURO ORDINÁRIO - APLICAÇÃO LIVRE é o nível 4 e tem como nivel 1 AUMENTO DE CAPITAL e como nivel 2.....
 #
-# Essa tabela, em 2016, foi montada com base nas fontes descritas abaixo. Caso surja novas fontes, deve-se
-# ALTERAR O CÓDIGO ABAIXO ou simplemente alterar manualmente a tabela 
-# ...LOA\Volume 3\Bancos\tabela2\apoio\V3_Niveis_de_Referencia_tabela2.txt
+# Classificação das Fontes de investimento (vide https://github.com/splor-mg/volumes-loa/issues/88):
 #
-# FONTES EM 2016:
-#
-# OP CRÉD A CONTRATAR INTERNA - OUTRAS
-# OP CRÉD CONTRAT EXTERNA - KFW
-# OP CRÉD CONTRAT INTERNA - OUTRAS
-# OUTRAS ENTIDADES - BDMG
-# OUTRAS ENTIDADES - COPASA
-# RECURSOS PRÓPRIOS
-# TESOURO ORDINÁRIO - APLICAÇÃO LIVRE
-# TESOURO VINCULADO - FUNDESE
-#
-###
+# 1. AUMENTO DE CAPITAL
+#     2. RECURSOS DO ESTADO (11)
+#         3. TESOURO ORDINÁRIO (111)
+#             4. APLICAÇÃO LIVRE (11101)
+#         3. TESOURO VINCULADO (112)
+#     2. OUTRAS ENTIDADES (12)
+#         3. CEMIG (121)
+#         3. MGI (122)
+#         3. CODEMIG (123)
+#         3. BDMG (124)
+#         3. COPASA (125)
+#         3. OUTRAS (129)
+# 1. OUTROS
+#     2. OPERAÇÃO DE CRÉDITO (2)
+#         3. CONTRATADA (21)
+#             4. CONTRATADA - INTERNA (211)
+#             4. CONTRATADA - EXTERNA (212)
+#         3. A CONTRATAR (22)
+#             4. A CONTRATAR - INTERNA (221)
+#             4. A CONTRATAR - EXTERNA (222)
+#     2. ALIENAÇÃO DE BENS E DIREITOS (3)
+#     2. CONVÊNIOS (4)
+#     2. RECURSOS PRÓPRIOS (5)
+#     2. OUTRAS ORIGENS (6)
+# 
+# Caso surja novas fontes, deve-se alterar o código abaixo.
+library(relatorios)
 options(warn = 1)
 source("utils/funcoes.r", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
@@ -27,18 +38,15 @@ source("utils/trataBancos/trataQDD_Investimento.R", encoding = "UTF-8")
 
 qdd = trataQDD_Investimento("bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx")
 
-ref_niveis = data.table(n4_banco=unique(qdd$FONTE))
-# Nível 1
-# Expectativa
-#
-# OPERAÇÃO DE CRÉDITO = OP CRÉD A CONTRATAR INTERNA - OUTRAS, OP CRÉD CONTRAT EXTERNA - KFW, OP CRÉD CONTRAT INTERNA - OUTRAS
-# RECURSOS PRÓPRIOS = RECURSOS PRÓPRIOS
-# AUMENTO DE CAPITAL = OUTRAS ENTIDADES - BDMG, TESOURO ORDINÁRIO - APLICAÇÃO LIVRE, TESOURO VINCULADO - FUNDESE, TESOURO VINCULADO - OUTROS
+ref_niveis = unique(qdd[, .(COD_FONTE, FONTE)])
+setnames(ref_niveis, "FONTE", "n4_banco")
 
-ref_niveis[, n1 := ifelse(grepl("OP * CR(E|é)D.+", n4_banco, ignore.case = T), "OPERAÇÃO DE CRÉDITO", 
-                   ifelse(grepl("RECURSOS * PR.{1}PRIOS", n4_banco, ignore.case = T), "RECURSOS PRÓPRIOS",
-                   ifelse(grepl("^(OUTRAS|TESOURO).+", n4_banco, ignore.case = T), "AUMENTO DE CAPITAL",
-                          "nao classificado")))]
+#================================================================
+# Nível 1
+
+ref_niveis[nat(COD_FONTE, 1), n1 := "AUMENTO DE CAPITAL"]
+ref_niveis[nat(COD_FONTE, 2, 3, 4, 5, 6), n1 := "OUTROS"]
+ref_niveis[is.na(n1), n1 := "nao classificado"]
 
 if("nao classificado" %in% ref_niveis[, unique(n1)]){
   warning(paste("V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM: Fonte sem correspondência para o nivel 1:", 
@@ -46,20 +54,17 @@ if("nao classificado" %in% ref_niveis[, unique(n1)]){
                  "> Banco Referencias Niveis não salvo. Corrigir manualmente as pendências\n\n"))
 }
 
-
+#================================================================
 # Nível 2
-# Expectativa
-#
-# CONTRATADA = OP CRÉD A CONTRATAR INTERNA - OUTRAS, OP CRÉD CONTRAT EXTERNA - KFW, OP CRÉD CONTRAT INTERNA - OUTRAS
-# "" = RECURSOS PRÓPRIOS
-# OUTRAS ENTIDADES = OUTRAS ENTIDADES - BDMG, OUTRAS ENTIDADES - COPASA
-# RECURSOS DO ESTADO = TESOURO ORDINÁRIO - APLICAÇÃO LIVRE, TESOURO VINCULADO - FUNDESE, TESOURO VINCULADO - OUTROS
 
-ref_niveis[, n2 := ifelse(grepl("OP * CR(E|é)D.+", n4_banco, ignore.case = T), "CONTRATADA", 
-                  ifelse(grepl("RECURSOS * PR.{1}PRIOS", n4_banco, ignore.case = T), "",
-                  ifelse(grepl("^(OUTRAS).+", n4_banco, ignore.case = T), "OUTRAS ENTIDADES",
-                  ifelse(grepl("^(TESOURO).+", n4_banco, ignore.case = T), "RECURSOS DO ESTADO",
-                         "nao classificado"))))]
+ref_niveis[nat(COD_FONTE, 11), n2 := "RECURSOS DO ESTADO"]
+ref_niveis[nat(COD_FONTE, 12), n2 := "OUTRAS ENTIDADES"]
+ref_niveis[nat(COD_FONTE, 2), n2 := "OPERAÇÃO DE CRÉDITO"]
+ref_niveis[nat(COD_FONTE, 3), n2 := "ALIENAÇÃO DE BENS E DIREITOS"]
+ref_niveis[nat(COD_FONTE, 4), n2 := "CONVÊNIOS"]
+ref_niveis[nat(COD_FONTE, 5), n2 := "RECURSOS PRÓPRIOS"]
+ref_niveis[nat(COD_FONTE, 6), n2 := "OUTRAS ORIGENS"]
+ref_niveis[is.na(n2), n2 := "nao classificado"]
 
 if("nao classificado" %in% ref_niveis[, unique(n2)]){
   warning(paste("V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM: Fonte sem correspondência para o nivel 2:", 
@@ -67,37 +72,39 @@ if("nao classificado" %in% ref_niveis[, unique(n2)]){
                 "> Banco Referencias Niveis não salvo. Corrigir manualmente as pendências\n\n"))
 }
 
+#================================================================
 # Nível 3
-# Expectativa
-#
-# INTERNA = OP CRÉD A CONTRATAR INTERNA - OUTRAS, OP CRÉD CONTRAT INTERNA - OUTRAS
-# EXTERNA = OP CRÉD CONTRAT EXTERNA - KFW
-# "" = RECURSOS PRÓPRIOS
-# COPASA = OUTRAS ENTIDADES - COPASA
-# BDMG = OUTRAS ENTIDADES - BDMG
-# TESOURO ORDINÁRIO = TESOURO ORDINÁRIO - APLICAÇÃO LIVRE
-# TESOURO VINCULADO = TESOURO VINCULADO - FUNDESE, TESOURO VINCULADO - OUTROS
 
-ref_niveis[, n3 := ifelse(grepl("OP * CR(E|é)D.+IN.+", n4_banco, ignore.case = T), "INTERNA",
-                   ifelse(grepl("OP * CR(E|é)D.+EX.+", n4_banco, ignore.case = T), "EXTERNA", 
-                   ifelse(grepl("RECURSOS * PR.{1}PRIOS", n4_banco, ignore.case = T), "",
-                   ifelse(grepl("COPASA", n4_banco, ignore.case = T), "COPASA",
-                   ifelse(grepl("BDMG", n4_banco, ignore.case = T), "BDMG",
-                   ifelse(grepl("ORDIN(Á|A)RIO", n4_banco, ignore.case = T), "TESOURO ORDINÁRIO",
-                   ifelse(grepl("VINCULADO", n4_banco, ignore.case = T), "TESOURO VINCULADO",
-                          "nao classificado")))))))]
+ref_niveis[nat(COD_FONTE, 111), n3 := "TESOURO ORDINÁRIO"]
+ref_niveis[nat(COD_FONTE, 112), n3 := "TESOURO VINCULADO"]
+ref_niveis[nat(COD_FONTE, 121), n3 := "CEMIG"]
+ref_niveis[nat(COD_FONTE, 122), n3 := "MGI"]
+ref_niveis[nat(COD_FONTE, 123), n3 := "CODEMIG"]
+ref_niveis[nat(COD_FONTE, 124), n3 := "BDMG"]
+ref_niveis[nat(COD_FONTE, 125), n3 := "COPASA"]
+ref_niveis[nat(COD_FONTE, 129), n3 := "OUTRAS"]
+ref_niveis[nat(COD_FONTE, 129), n3 := "OUTRAS"]
+ref_niveis[nat(COD_FONTE, 21), n3 := "CONTRATADA"]
+ref_niveis[nat(COD_FONTE, 22), n3 := "A CONTRATAR"]
+ref_niveis[nat(COD_FONTE, 3, 4, 5, 6), n3 := ""]
+ref_niveis[is.na(n3), n3 := "nao classificado"]
 
-if("nao classificado" %in% ref_niveis[, unique(n1)]){
+if("nao classificado" %in% ref_niveis[, unique(n3)]){
   warning(paste("V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM: Fonte sem correspondência para o nivel 3:", 
                 "Fonte apresentada no banco (nivel 4) <", paste(ref_niveis[n3=="nao classificado", n4_banco], collapse=", "),
                 "> Banco Referencias Niveis não salvo. Corrigir manualmente as pendências\n\n"))
 }
 
 # Nivel 4 - Label que deve aparecer no relatório
-ref_niveis[, n4_label := gsub(".+ *- *(.+)", "\\1", n4_banco)] # Utiliza como label o nome depois de '-'
-ref_niveis[, n4_label := ifelse(grepl("^(COPASA|BDMG)$", n4_label, ignore.case = T), "", n4_label)]
 
-ref_niveis = as.data.table(ref_niveis)
+ref_niveis[nat(COD_FONTE, 11101), n4_label := "APLICAÇÃO LIVRE"]
+ref_niveis[nat(COD_FONTE, 211), n4_label := "CONTRATADA - INTERNA"]
+ref_niveis[nat(COD_FONTE, 212), n4_label := "CONTRATADA - EXTERNA"]
+ref_niveis[nat(COD_FONTE, 221), n4_label := "A CONTRATAR - INTERNA"]
+ref_niveis[nat(COD_FONTE, 222), n4_label := "A CONTRATAR - EXTERNA"]
+ref_niveis[is.na(n4_label), n4_label := ""]
+
+ref_niveis$COD_FONTE <- NULL
 
 write.table(ref_niveis, "bancos/R/V3_Niveis_de_Referencia_tabela2.txt",quote = FALSE, 
               sep = "\t",  na = "", dec = ",", row.names = FALSE)
@@ -106,42 +113,32 @@ write.table(ref_niveis, "bancos/R/V3_Niveis_de_Referencia_tabela2.txt",quote = F
 ## Parte 2: Determinar a ordem em que os niveis devem aparecer na tabela. Infelizmente, a ordem não segue o alfabeto,
 # ou seja, preciso de um arquivo de suporte para auxiliar na ordenação que as fontes aparecem no relatório final
 
-ref_ordem = rbindlist(list(ref_niveis[, list(fonte = unique(n1))], 
-                           ref_niveis[, list(fonte = unique(n2))], 
-                           ref_niveis[, list(fonte = unique(n3))], 
-                           ref_niveis[, list(fonte = unique(n4_label))]), use.names = T)
-
-ref_ordem = ref_ordem[fonte!="" & fonte!="RECURSOS PRÓPRIOS",]
-
-ref_ordem[, ordem := ifelse(fonte=="APLICAÇÃO LIVRE", 4, 
-                     ifelse(fonte=="AUMENTO DE CAPITAL",1,
-                     
-                     ifelse(fonte=="BDMG",10, 
-                     ifelse(fonte=="CONTRATADA",12, 
-                     ifelse(fonte=="COPASA",9, 
-                     ifelse(fonte=="EXTERNA",16, 
-                     ifelse(fonte=="FUNDESE",6, 
-                     ifelse(fonte=="INTERNA",13, 
-                     ifelse(fonte=="KFW",16, 
-                     ifelse(fonte=="OPERAÇÃO DE CRÉDITO",11, 
-                     ifelse(fonte=="OUTRAS",15, 
-                     ifelse(fonte=="OUTRAS ENTIDADES",8, 
-                     ifelse(fonte=="RECURSOS DO ESTADO",2, 
-                     ifelse(fonte=="TESOURO ORDINÁRIO",3, 
-                     ifelse(fonte=="TESOURO VINCULADO",5, 
-                     ifelse(fonte=="BNDES",14,
-                     ifelse(fonte=="OUTROS",7, 0)))))))))))))))))]
-
-if(0 %in% ref_ordem[, ordem]){
-  
-  warning(paste("V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM: Nova Fonte:", 
-                ref_ordem[ordem==0, paste(fonte, collapse=", ")], 
-                "\n Veja as tabelas 'ORIGENS DE RECURSOS PARA INVESTIMENTOS' no projeto-volume3.pdf gerado.",
-                "As fontes não classificadas aparecem primeiro nesses demonstrativos. Para correção",
-                " necessário atualizar manualmente, indicando a ordem em",
-                "volume3/R/V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM.R linhas ~ 115 a 134 \n\n"))  
-  
-}
+ref_ordem <- tibble::tribble(
+  ~fonte, ~ordem,
+  "AUMENTO DE CAPITAL", 1,
+  "RECURSOS DO ESTADO", 2,
+  "TESOURO ORDINÁRIO", 3,
+  "APLICAÇÃO LIVRE", 4,
+  "TESOURO VINCULADO", 5,
+  "OUTRAS ENTIDADES", 6,
+  "CEMIG", 7,
+  "MGI", 8,
+  "CODEMIG", 9,
+  "BDMG", 10,
+  "COPASA", 11,
+  "OUTRAS", 12,
+  "OUTROS", 13,
+  "OPERAÇÃO DE CRÉDITO", 14,
+  "CONTRATADA", 15,
+  "CONTRATADA - INTERNA", 16,
+  "CONTRATADA - EXTERNA", 17,
+  "A CONTRATAR", 18,
+  "A CONTRATAR - INTERNA", 19,
+  "A CONTRATAR - EXTERNA", 20,
+  "ALIENAÇÃO DE BENS E DIREITOS", 21,
+  "CONVÊNIOS", 22,
+  "RECURSOS PRÓPRIOS", 23,
+  "OUTRAS ORIGENS", 24)
 
 write.table(ref_ordem, "bancos/R/V3_Niveis_Ref_Ordem_tabela2.txt", quote = FALSE, sep = "\t",  na = "", 
             dec = ",", row.names = FALSE)

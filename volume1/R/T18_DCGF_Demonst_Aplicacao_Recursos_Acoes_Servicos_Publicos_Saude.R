@@ -28,7 +28,7 @@ if(total_receita_liquida!= loa_rec[is_asps_rec(loa_rec), sum(VL_LOA_REC)]){
   warning("T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude: Receita asps via ",
           "demonstr_asps_rec ", formatarNum(total_receita_liquida), 
           " é diferente do apresentado em relatorios ",
-          loa_rec[is_asps_rec_3(loa_rec), formatarNum(sum(VL_LOA_REC))], "\n")
+          loa_rec[is_asps_rec(loa_rec), formatarNum(sum(VL_LOA_REC))], "\n")
 }
 
 asps = rbind(data.table(espec = "A. TOTAL DAS RECEITAS PARA APURAÇÃO DA ASPS (I + II - III)",

@@ -15,7 +15,7 @@ volumes: v1 v2 v3 v4 v5 v6 ## Gera todos os volumes
 
 v1: v1_prodemge v1_dcgf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE e DCGF
 
-v1_prodemge: $(DEP_PRODEMGE_PDF_V1) pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.pdf pdf/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.pdf pdf/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.pdf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE
+v1_prodemge: $(DEP_PRODEMGE_PDF_V1) pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.pdf pdf/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.pdf pdf/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.pdf pdf/T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO.pdf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE
 
 v1_dcgf: $(DEP_DCGF_PDF_V1) volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.csv ## Gera tabelas do volume 1 de responsabilidade da DCGF
 
@@ -97,7 +97,7 @@ bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte
 # Volume 7
 pdf/Projeto_volume7.pdf: $(DEPENDENCIAS_V7)
 	@echo "- Gera logs/warningsV7.Rout"
-	@python3 volume7/checks/test_qdd_fonte_95.py 2> logs/logv7.Rout
+	@python3 volume7/checks/check_qdd_fonte_95.py 2> logs/logv7.Rout
 	@Rscript $(VERBOSE) volume7/Rnw/CodigosR/Projeto_volume7.R 2> logs/warningsV7.Rout >&-
 	@Rscript $(VERBOSE) utils/Rnw2Tex.R 7
 	@echo "---------------------------------------------------------------"

@@ -120,8 +120,15 @@ consolidado[, especificacao := correcaoCaracteresEspeciais(especificacao, caract
 write.table(consolidado, "volume7/data/consolidado.txt", quote = FALSE, sep = "\t", 
             na = "", dec = ",", row.names = FALSE)
 
-
+#============================================================
 # Inicio do QUADRO DE DETALHAMENTO DA DESPESA - FISCAL
+
+# No PDF do QDD do volume 7, a coluna 'ESPECIFICAÇÃO' deve ser preenchida
+# com o valor da coluna ESPECIFICACAO da base 'BASE_QDD_FISCAL_FONTE_95.xlsx'
+# que possui valores como 'Acordo Judicial Vale - Anexo IV - 9288155 - Projeto'
+# Como a variavél NOME_ACAO é referenciada em múltiplos locais neste script e
+# bem como nos arquivos .Rnw, a opção foi por substituir o conteúdo da coluna NOME_ACAO
+banco[, NOME_ACAO := ESPECIFICACAO]
 
 banco[, cod_detalhe := paste0(`Instrumento de entrada`,
                               formatC(FUNCAO, width = 2, flag = "0"), 

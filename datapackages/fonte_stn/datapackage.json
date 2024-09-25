@@ -1,0 +1,69 @@
+{
+  "name": "matriz-fonte-stn",
+  "title": "Matriz de correspondências",
+  "resources": [
+    {
+      "name": "fonte_stn",
+      "type": "table",
+      "title": "Classificação por fonte ou destinação de recursos para Estados, Distrito Federal e Municípios",
+      "description": "Anexos da [Portaria STN nº 710/2021](https://in.gov.br/en/web/dou/-/portaria-n-710-de-25-de-fevereiro-de-2021-305389863) atualizados de acordo com as seguintes portarias: \n\n- [Portaria STN nº 925, de 08/07/2021](https://in.gov.br/en/web/dou/-/portaria-n-925-de-8-de-julho-de-2021-330973177)\n- [Portaria STN nº 1.141, de 11/11/2021](https://in.gov.br/en/web/dou/-/portaria-n-1.141-de-11-de-novembro-de-2021-359413243)\n- [Portaria STN nº 1.445, de 14/06/2022](https://in.gov.br/en/web/dou/-/portaria-n-1.445-de-14-de-junho-de-2022-408494662)\n- [Portaria STN nº 1.566, de 31/08/2022](https://in.gov.br/en/web/dou/-/portaria-n-1.566-de-31-de-agosto-de-2022-426188569)\n- [Portaria STN nº 10.463, de 07/12/2022](https://in.gov.br/en/web/dou/-/portaria-stn-n-10.463-de-7-de-dezembro-de-2022-449271100)\n- [Portaria STN nº 688, de 06/07/2023](https://www.in.gov.br/en/web/dou/-/portaria-stn/mf-n-688-de-6-de-julho-de-2023-495190675)\n- [Portaria STN/MF nº 1.561, de 08/12/2023](https://www.in.gov.br/en/web/dou/-/portaria-stn/mf-n-1.561-de-8-de-dezembro-de-2023-530280652)\n- [Portaria STN/MF nº 1.593, de 15/12/2023](https://www.in.gov.br/en/web/dou/-/portaria-stn/mf-n-1.593-de-15-de-dezembro-de-2023-531782099)\n- [Portaria STN/MF nº 855, de 24/05/2024](https://www.in.gov.br/web/dou/-/portaria-stn/mf-n-855-de-24-de-maio-de-2024-562119930)\n- [Portaria STN/MF nº 1.181, de 18/07/2024](https://www.in.gov.br/web/dou/-/portaria-stn/mf-n-1.181-de-18-de-julho-de-2024-573482649)\n- [Portaria STN/MF nº 1.307, de 19/08/2024](https://www.in.gov.br/web/dou/-/portaria-stn/mf-n-1.307-de-19-de-agosto-de-2024-579509518)\n",
+      "profile": "tabular-data-resource",
+      "path": "data/fonte_stn.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "dialect": {
+        "csv": {
+          "delimiter": ";"
+        }
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "FONTE_STN_COD",
+            "type": "integer",
+            "title": "Fonte de Recurso STN - Código",
+            "description": "Código da Fonte de Recurso conforme estabelecido na Portaria Conjunta STN SOF nº 20/2021 e da Portaria STN n° 710/2021.",
+            "format": "default"
+          },
+          {
+            "name": "FONTE_STN_DESCRICAO",
+            "type": "string",
+            "title": "Fonte de Recurso STN",
+            "description": "Descrição da Fonte de Recurso conforme estabelecido na Portaria Conjunta STN SOF nº 20/2021 e da Portaria STN n° 710/2021.",
+            "format": "default"
+          },
+          {
+            "name": "INTERPRETACAO",
+            "type": "string",
+            "title": "Interpretação",
+            "format": "default"
+          },
+          {
+            "name": "DT_INICIO_VIGENCIA",
+            "type": "date",
+            "title": "Data de início da vigência da linha para fins de classificação",
+            "description": "A data 0001-01-01 indica que o início da vigência da classificação estende-se indefinidamente para o passado.",
+            "format": "default"
+          },
+          {
+            "name": "DT_FIM_VIGENCIA",
+            "type": "date",
+            "title": "Data do encerramento da vigência da linha para fins de classificação",
+            "description": "## Intervalo de vigência indefinido\n\nA data 9999-12-31 indica que o fim da vigência da classificação estende-se indefinidamente para o futuro.\n\n## Tipo de intervalo de vigência\n\nO ano-mês de fim da vigência indicado não faz parte da vigência da linha para fins de classificação. Em outras palavras, a vigência é expressa como um intervalo semi-fechado [a, b).\n\nPara o classificador exemplo:\n\n| FONTE_STN_COD | FONTE_STN_DESCRICAO   | INTERPRETACAO               | DT_INICIO_VIGENCIA | DT_FIM_VIGENCIA |\n|---------------|-----------------------|-----------------------------|--------------------|-----------------|\n| 1             | Lorem Ipsum           | dolor sit amet              | 0001-01-01         | 2023-02-01      |\n| 1             | Lorem Ipsum           | consectetur adipiscing elit | 2023-02-01         | 9999-12-01      |\n\nA interpretação vigente para o código 1 no mês de fevereiro/2023 é _\"consectetur adipiscing elit\"_.\n",
+            "format": "default"
+          }
+        ]
+      }
+    }
+  ],
+  "owner_org": "secretaria-de-estado-de-planejamento-e-gestao-seplag",
+  "remote": {
+    "host": "raw.githubusercontent.com",
+    "user": "splor-mg",
+    "repo": "matriz-fonte-stn-dadosmg",
+    "ref": "main",
+    "sha": "f1cb9577e1eb5d6e1613ec7aeb1a42b193a5dade"
+  }
+}

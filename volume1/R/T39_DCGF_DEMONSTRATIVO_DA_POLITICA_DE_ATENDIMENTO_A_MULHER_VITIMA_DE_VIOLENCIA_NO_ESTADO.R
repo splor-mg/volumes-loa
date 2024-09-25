@@ -81,6 +81,8 @@ loa_desp = as.data.table(loa_desp)
 
 loa_desp[, ACOES_MULHER := FALSE]
 loa_desp[EXCLUSIVA %in% c("Indiretamente relacionada", "Diretamente relacionada") , ACOES_MULHER := TRUE]
+loa_desp[EXCLUSIVA == "Indiretamente relacionada", EXCLUSIVA := "IR"]
+loa_desp[EXCLUSIVA == "Diretamente relacionada", EXCLUSIVA := "DR"]
 
 loa_desp = loa_desp[ACOES_MULHER==T, list(VL_DESP = sum(VL_DESP)), 
                     by=list(UO_COD, FUNCAO_COD, SUBFUNCAO_COD, PROGRAMA_COD, ACAO_COD, ACAO_DESC, EXCLUSIVA)]
