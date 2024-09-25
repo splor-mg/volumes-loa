@@ -31,12 +31,13 @@ demonstr_asps_rec = function(loa_rec){
   base[is_fpe_principal(base), c("nvl2", "lvl2"):= list("Cota Parte FPE", 210)]
   base[is_ipi_principal(base), c("nvl2", "lvl2"):= list("Cota Parte IPI Exportação", 220)]
   base[is_lei_kandir_principal(base), c("nvl2", "lvl2"):= list("ICMS Desoneração - LC nº 87/1996", 230)]
+  base[nat(RECEITA_COD, 17196201), c("nvl2", "lvl2"):= list("Compensação Perdas Arrecadação ICMS - LC nº 194/2022", 240)]
   #base[RECEITA_COD %in% c(1718018101000), c("nvl3", "lvl3"):= list("Cota Parte IOF Ouro", 232)]
   
   # base[is_lei_kandir(base), #| RECEITA_COD %in% c(1718018101000), 
   #      c("nvl2", "lvl2"):= list("Compensações Financeiras Provenientes de Impostos e Transferências Governamentais", 230)]
   
-  base[is_fpe_principal(base) | is_lei_kandir_principal(base) | is_ipi_principal(base), #| RECEITA_COD %in% c(1718018101000), 
+  base[is_fpe_principal(base) | is_lei_kandir_principal(base) | is_ipi_principal(base) | nat(RECEITA_COD, 17196201), #| RECEITA_COD %in% c(1718018101000), 
        c("nvl1", "lvl1"):= list("II - RECEITA DE TRANSFERÊNCIAS CONSTITUCIONAIS E LEGAIS", 200)]
   
   # DEDUÇÔES
@@ -53,10 +54,15 @@ demonstr_asps_rec = function(loa_rec){
   base[is_itcd_bruto(base) & FONTE_COD == 20,
        c("nvl2d", "lvl2d"):= list("Parcela do ITCD Repassada aos Municípios", 340)]
   
+  base[nat(RECEITA_COD, 17196201) & FONTE_COD == 20, 
+       c("nvl2d", "lvl2d"):= list("Parcela da LC nº 194/2022 Repassada aos Municípios", 350)]
+  
   base[FONTE_COD == 20 & (is_icms_bruto(base) | 
                             is_ipva_bruto(base) |  
                             is_ipi_principal(base) | 
-                            is_itcd_bruto(base)), 
+                            is_itcd_bruto(base) |
+                            (nat(RECEITA_COD, 17196201) & FONTE_COD == 20)
+                            ), 
        c("nvl1d", "lvl1d"):= list("III - DEDUÇÕES DE TRANSFERÊNCIAS CONSTITUCIONAIS AOS MUNICÍPIOS", 300)]
   
   asps_rec = rbindlist(list(base[!is.na(nvl1), list(nvl=1, VL_LOA = sum(VL_LOA_REC)),
