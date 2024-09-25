@@ -42,7 +42,7 @@ loa_desp = loa_desp[ACOES_CRIANCA==T, list(VL_DESP = sum(VL_DESP)),
 # Ações não exclusivas
 # esse indice sendo multiplicado precisa ser corrigido todo ano (Andrey)
 #===============================================================================
-loa_desp[EXCLUSIVA == "NE", VL_DESP := VL_DESP *  0.2943099972851574]
+loa_desp[EXCLUSIVA == "NE", VL_DESP := VL_DESP *  0.233493163019708]
 
 loa_desp[, FUNCIONAL:= paste(FUNCAO_COD, formatC(SUBFUNCAO_COD, width = 3, flag="0"),
                              formatC(PROGRAMA_COD, width = 3, flag="0"),
