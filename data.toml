@@ -1,0 +1,23 @@
+[packages]
+
+[packages.sisor]
+
+path = "https://raw.githubusercontent.com/splor-mg/dados-sisor-2025/main/datapackage.yaml"
+
+[packages.sigplan]
+
+path = "https://raw.githubusercontent.com/splor-mg/dados-sigplan-planejamento-2025/main/datapackage.yaml"
+resources = ["acoes_planejamento"]
+
+[packages.apoio]
+
+path = "https://raw.githubusercontent.com/splor-mg/dados-volumes-loa/main/datapackage.yaml"
+
+[packages.fonte_stn]
+
+path = "https://raw.githubusercontent.com/splor-mg/matriz-fonte-stn-dadosmg/main/datapackage.yaml"
+resources = ["fonte_stn"]
+
+[packages.qdd_fiscal_fonte_95]
+
+path = "https://raw.githubusercontent.com/splor-mg/dados-qdd-fonte-95/main/datapackage.json"
