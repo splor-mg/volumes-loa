@@ -33,17 +33,6 @@ loa_desp[, ANO:=max(loa_rec$ANO) - 1]
 
 rm(receita, qdd)
 
-## ============================================================================
-## Demonstrativo 1 apresentando apenas as despesas e receitas previdenciarias
-## As demais despesas serão zeradas
-#
-# source("utils/trataBancos/trataQDD_Elemento_Item.R", encoding = "UTF-8")
-# loa_desp = trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx", F)
-# loa_desp[, ANO:=2017]
-# loa_desp[!is_despesas_previdenciarias(loa_desp), VL_LOA_DESP:=0]
-# loa_rec[!is_receitas_previdenciarias(loa_rec), VL_LOA_REC:=0]
-
-
 # ============ Banco LOA Receita =====================================================
 loa_rec[FONTE_COD %in% rec_ordinario, recurso := "ordinaria_rec"]
 loa_rec[!FONTE_COD %in% rec_ordinario, recurso := "vinculada_rec"]

@@ -337,20 +337,6 @@ is_receitas_previdenciarias = function(base){
 
 }
 
-
-is_despesas_previdenciarias = function(base){
-  
-  base[, UGEPREVI:=FALSE]
-  base[UO_COD == 4711, UGEPREVI:=TRUE]
-  base[ACAO_COD==7006 & IPU_COD == 5 & ELEMENTO_COD %in% c(1, 3, 13, 91, 92, 93, 94), UGEPREVI:=TRUE]
-  base[ACAO_COD %in% c(7007, 7002), UGEPREVI:=TRUE]
-  base[UO_COD %in% c(2011, 2121) & ACAO_COD == 7004, UGEPREVI:=TRUE]
-  
-  return(base$UGEPREVI)
-  
-}
-
-
 merge_QDD_v5 = function(banco, uos_proposta){
   
   vl_banco = banco[, sum(valor)]

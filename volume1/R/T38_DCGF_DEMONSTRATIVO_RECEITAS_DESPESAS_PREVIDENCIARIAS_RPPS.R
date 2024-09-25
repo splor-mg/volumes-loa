@@ -19,10 +19,10 @@ desp_prev = demonstr_despesas_previdenciarias(loa_desp)
 
 total_despesas = desp_prev[nvl==1, sum(VL_LOA)]
 
-if(total_despesas!=loa_desp[is_despesas_previdenciarias(loa_desp), sum(VL_LOA_DESP)]){
+if(total_despesas!=loa_desp[is_previdencia_loa(loa_desp), sum(VL_LOA_DESP)]){
   warning("T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de despesas",
           "previdenciarias em funcoes.R ", 
-          loa_desp[is_despesas_previdenciarias(loa_desp), formatarNum(sum(VL_LOA_DESP))],
+          loa_desp[is_previdencia_loa(loa_desp), formatarNum(sum(VL_LOA_DESP))],
           " diferente do valor calculado em demonstr_despesas_previdenciarias ",
           formatarNum(total_despesas), "\n")
 }
