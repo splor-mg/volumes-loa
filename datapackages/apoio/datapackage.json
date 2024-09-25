@@ -602,6 +602,36 @@
         "drive": "Documentos",
         "item": "General/@dcppn/DCPPN 2025/PPAG e LOA 2025/PPAG/material de apoio - gerar dos volumes/2025/desc_Setor_UO_Orgao.xlsx"
       }
+    },
+    {
+      "name": "ficha_tecnica",
+      "type": "table",
+      "path": "data-raw/ficha_tecnica.xlsx",
+      "scheme": "file",
+      "format": "xlsx",
+      "mediatype": "application/vnd.ms-excel",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "servidor",
+            "type": "string"
+          },
+          {
+            "name": "cargo",
+            "type": "string"
+          },
+          {
+            "name": "ordem",
+            "type": "integer"
+          }
+        ]
+      },
+      "sharepoint": {
+        "path": "https://cecad365.sharepoint.com/sites/SPLOR/",
+        "drive": "Documentos",
+        "item": "General/@dcppn/DCPPN 2025/PPAG e LOA 2025/PPAG/material de apoio - gerar dos volumes/2025/ficha_tecnica.xlsx"
+      }
     }
   ],
   "remote": {
@@ -609,6 +639,6 @@
     "user": "splor-mg",
     "repo": "dados-volumes-loa",
     "ref": "main",
-    "sha": "e709bce871cb9f1aceee8441fe27c25440a5a710"
+    "sha": "b88cf227e1fae7c1911f248135a54d4a8b045279"
   }
 }
