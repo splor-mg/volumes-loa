@@ -106,12 +106,8 @@
   
   cat("\\fontsize{8pt}{10pt}\\selectfont {NOTA:}\\\\\n")
   
-  cat("\\fontsize{8pt}{10pt}\\selectfont {Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in dolor eget diam eleifend faucibus. Proin faucibus lacus nunc, et facilisis arcu auctor fringilla. Vivamus malesuada, erat rutrum accumsan finibus, velit augue mattis nisi, non tristique erat velit condimentum enim. Suspendisse pretium sollicitudin eleifend. Aenean ac ligula sapien.}\\\\\n")
-  
-  cat("\\fontsize{8pt}{10pt}\\selectfont {Lorem ipsum dolor sit amet",
-      "IBGE - Censo 2010.}\\\\\n")
-  
-  
+  cat("\\fontsize{8pt}{10pt}\\selectfont {Conforme a Lei nº 22.256, de 26 de julho de 2016, considera-se violência contra a mulher qualquer ação ou omissão baseada no gênero, no âmbito público ou no privado, inclusive a decorrente de discriminação ou desigualdade étnica, que cause morte, dano ou sofrimento físico, sexual ou psicológico à mulher. Considerando o disposto na legislação, cada unidade responsável pela ação assinalou se a ação em análise atua: 1) Diretamente na política de atendimento à mulher vítima de violência no Estado; 2) Indiretamente na política de atendimento à mulher vítima de violência no Estado; 3) Não atua na política de atendimento à mulher vítima de violência no Estado.}\\\\\n")
+
   # FIM TABELA
 
 @
