@@ -51,10 +51,12 @@ demonstr_mde_rec = function(loa_rec){
   
   base[is_fpe_principal(base), c("nvl2", "lvl2"):= list("2.1 - Cota Parte FPE", 210)]
   base[is_lei_kandir_principal(base), c("nvl2", "lvl2"):= list("2.2 - ICMS Desoneração - LC nº 87/1996", 220)]
-  base[is_ipi_principal(base), c("nvl2", "lvl2"):= list("2.3 - Cota Parte IPI Exportação", 230)]
-  base[is_iof_ouro_principal(base), c("nvl2", "lvl2"):= list("2.4 - Cota Parte IOF Ouro", 231)]
-  
-  base[is_fpe_principal(base) | is_lei_kandir_principal(base) | is_ipi_principal(base) | is_iof_ouro_principal(base), 
+  base[is_ipi_principal(base), c("nvl2", "lvl2"):= list("2.2 - Cota Parte IPI Exportação", 230)]
+  base[is_iof_ouro_principal(base), c("nvl2", "lvl2"):= list("2.3 - Cota Parte IOF Ouro", 231)]
+
+  base[nat(RECEITA_COD, 17196201), c("nvl2", "lvl2"):= list("2.4 - Compensação Perdas Arrecadação ICMS - LC nº 194/2022", 240)]
+    
+  base[is_fpe_principal(base) | is_lei_kandir_principal(base) | is_ipi_principal(base) | is_iof_ouro_principal(base) | nat(RECEITA_COD, 17196201), 
        c("nvl1", "lvl1"):= list("2 - RECEITA DE TRANSFERÊNCIAS CONSTITUCIONAIS E LEGAIS", 200)]
   
   # DEDUÇÔES
@@ -70,11 +72,16 @@ demonstr_mde_rec = function(loa_rec){
   
   base[is_itcd_bruto(base) & FONTE_COD == 20,
        c("nvl2d", "lvl2d"):= list("3.2 - Parcela do ITCD Repassada aos Municípios", 340)]
-  
+
+  base[nat(RECEITA_COD, 17196201) & FONTE_COD == 20, 
+       c("nvl2d", "lvl2d"):= list("3.4 - Parcela da LC nº 194/2022 Repassada aos Municípios", 350)]
+    
   base[FONTE_COD == 20 & (is_icms_bruto(base) | 
                           is_ipva_bruto(base) |  
                           is_ipi_principal(base) | 
-                          is_itcd_bruto(base)), 
+                          is_itcd_bruto(base) |
+                          (nat(RECEITA_COD, 17196201) & FONTE_COD == 20)
+                          ), 
        c("nvl1d", "lvl1d"):= list("3 - DEDUÇÕES DE TRANSFERÊNCIAS CONSTITUCIONAIS AOS MUNICÍPIOS", 300)]
   
   mde_rec = rbindlist(list(base[!is.na(nvl1), list(nvl=1, VL_LOA = sum(VL_LOA_REC)),
