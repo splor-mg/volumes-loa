@@ -6,28 +6,23 @@ demonstr_despesas_previdenciarias = function(base){
 
   # N2: BENEFÍCIOS CIVIL
   
-  base[UO_COD == 4711 & !ACAO_COD %in% c(7008, 7016) & ELEMENTO_COD %in% c(1, 13, 91, 92, 94) & !ELEMENTO_ITEM_COD == 1308, c("nvl3", "ordem3") := list("Aposentadorias", 3)]
+  base[UO_COD == 4711 & !ACAO_COD %in% c(7008, 7016) & ELEMENTO_COD %in% c(1, 91, 92, 94), c("nvl3", "ordem3") := list("Aposentadorias", 3)]
   base[UO_COD %in% c(1011, 1021, 1031, 1051, 1091, 1441) & 
-       ACAO_COD == 7006 & IPU_COD == 5 & ELEMENTO_COD %in% c(1, 13, 91, 92, 94) & !ELEMENTO_ITEM_COD == 1308, c("nvl3", "ordem3") := list("Aposentadorias", 3)]
+       ACAO_COD == 7006 & IPU_COD == 5 & ELEMENTO_COD %in% c(1, 91, 92, 94), c("nvl3", "ordem3") := list("Aposentadorias", 3)]
   
-  base[ACAO_COD %in% c(7008, 7023) & (ELEMENTO_COD %in% c(3)| ELEMENTO_ITEM_COD == 1308), c("nvl3", "ordem3") := list("Pensões", 4)] 
-  base[ACAO_COD == 7006  & IPU_COD ==5 & (ELEMENTO_COD %in% c(3) | ELEMENTO_ITEM_COD == 1308), 
+  base[ACAO_COD %in% c(7008, 7023) & ELEMENTO_COD == 3, c("nvl3", "ordem3") := list("Pensões", 4)] 
+  base[ACAO_COD == 7006  & IPU_COD ==5 & ELEMENTO_COD == 3, 
        c("nvl3", "ordem3") := list("Pensões", 4)]
-
-  base[UO_COD %in% c(4711) & !ELEMENTO_COD %in% c(1, 3, 13, 86, 91, 92, 94), 
-       c("nvl3", "ordem3") := list("Outros Benefícios Previdenciários", 5)]
-  base[ACAO_COD %in% c(7006) & IPU_COD == 5 & !ELEMENTO_COD %in% c(1, 3, 13, 91, 92, 94), 
-       c("nvl3", "ordem3") := list("Outros Benefícios Previdenciários", 5)]
 
   base[ordem3 %in% 3:5, c("nvl2", "ordem2") := list("Benefícios -  Civil", 2)]
   
   # N2: BENEFÍCIOS - MILITAR
   
-  base[ACAO_COD == 7007 & ELEMENTO_COD %in% c(1, 13, 91, 92, 94), c("nvl3", "ordem3") := list("Reformas", 7)]
+  base[ACAO_COD == 7007, c("nvl3", "ordem3") := list("Reformas", 7)]
   
-  base[ACAO_COD == 7002 & (ELEMENTO_COD %in% c(3) | ELEMENTO_ITEM_COD == 1308), c("nvl3", "ordem3") := list("Pensões", 8)]
+  base[ACAO_COD == 7002, c("nvl3", "ordem3") := list("Pensões", 8)]
   
-  base[ACAO_COD %in% c(7007,7002) & !ELEMENTO_COD %in% c(1, 3, 13, 91, 92, 94), c("nvl3", "ordem3") := list("Outros Benefícios Previdenciários", 9)]
+  base[UO_COD == 2121 & ACAO_COD %in% c(4010, 4011), c("nvl3", "ordem3") := list("Outros Benefícios Previdenciários", 9)]
 
   base[ordem3 %in% 7:9, c("nvl2", "ordem2") := list("Benefícios - Militar", 6)]
 
@@ -43,7 +38,7 @@ demonstr_despesas_previdenciarias = function(base){
   base[ACAO_COD == 7016, 
        c("nvl2", "ordem2") := list("Compensação Previdenciária para o RGPS", 11)]
   
-  base[UO_COD %in% c(2011, 2121) & ACAO_COD == 7004, 
+  base[UO_COD %in% c(2121) & ACAO_COD == 7004, 
        c("nvl2", "ordem2") := list("Demais Despesas Previdenciárias", 12)]
   
   base[ordem2 %in% 11:12, c("nvl1", "ordem1") := list("Outras Despesas Previdenciárias", 10)]

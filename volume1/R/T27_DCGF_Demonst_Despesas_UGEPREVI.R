@@ -27,7 +27,7 @@ if("Apenas no Banco X" %in% loa_desp[, unique(merge)]){
 #loa_desp = geraLoa_desp(qdd)
 #setnames(loa_desp, "VL_LOA_DESP", "VL_DESP")
 
-loa_desp = loa_desp[is_despesas_previdenciarias(loa_desp),
+loa_desp = loa_desp[is_previdencia_loa(loa_desp),
                     list(valor = sum(VL_LOA_DESP)), by=list(UO_COD, ACAO_COD, ACAO_DESC)]
 
 #loa_desp = loa_desp[UGEPREVI==T, ]
