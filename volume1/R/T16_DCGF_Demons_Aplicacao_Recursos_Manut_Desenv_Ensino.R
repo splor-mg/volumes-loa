@@ -11,16 +11,8 @@ source("utils/suporte/V1/demonstr_mde_rec.R", encoding = "UTF-8")
 # ====== LOAD das funções para abertura dos bancos necessários ===================
 source("utils/trataBancos/trataReceita_Fiscal.R", encoding = "UTF-8")
 source("utils/trataBancos/trataQDD_Elemento_Item.R", encoding = "UTF-8")
-#source("utils/trataBancos/trataQDD_Fiscal.R", encoding = "UTF-8")
-
-
-#qdd = trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F) # versão anterior 2022
-ano_exercicio = as.numeric(readLines("utils/ano.txt", warn = F))
-
-#loa_desp = geraLoa_desp(qdd_item) #antes da alteração para incluir elemento
 
 loa_desp = trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx", F)
-loa_desp[, ANO:=ano_exercicio]
 setnames(loa_desp, "VL_LOA_DESP", "VL_DESP")
 
 #andrey #apagar #receitas mudança governo aqui deve ser a forma que é tratada quando a forma das receitas muda

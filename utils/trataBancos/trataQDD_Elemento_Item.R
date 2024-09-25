@@ -50,6 +50,9 @@ trataQDD_Elemento_Item = function(caminho, realizarTeste = TRUE){
               ") é diferente de BASE_ORCAM_DESPESA_ITEM_FISCAL (", formatarNum(qdd[, sum(VL_LOA_DESP)]), ") \n")
     }
   }
+
+  ano_exercicio = as.numeric(readLines("utils/ano.txt", warn = F))
+  qdd$ANO <- ano_exercicio
   
   return(qdd)
   
