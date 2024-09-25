@@ -55,7 +55,7 @@ loa_rec = geraLoa_rec(receita)
 setnames(loa_rec, "VL_LOA_REC", "VL_REC")
 
 loa_desp = trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx", T)
-loa_desp[, ANO := receita[1, ANO]]
+
 setnames(loa_desp, "VL_LOA_DESP", "VL_DESP")
 
 # =============== A - Receita Corrente Líquida =========================
