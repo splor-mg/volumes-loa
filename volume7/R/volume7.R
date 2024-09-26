@@ -130,7 +130,12 @@ write.table(consolidado, "volume7/data/consolidado.txt", quote = FALSE, sep = "\
 # bem como nos arquivos .Rnw, a opção foi por substituir o conteúdo da coluna NOME_ACAO
 banco[, NOME_ACAO := ESPECIFICACAO]
 
-banco[, cod_detalhe := paste0(`Instrumento de entrada`,
+banco[,
+   SEQUENCIAL_INICIATIVA := rleid(NOME_ACAO),
+   .(COD_ORGAO, COD_UO, FUNCAO, SUB_FUNCAO, PROGRAMA, ACAO)
+]
+
+banco[, cod_detalhe := paste0(SEQUENCIAL_INICIATIVA,
                               formatC(FUNCAO, width = 2, flag = "0"), 
                               formatC(SUB_FUNCAO, width = 3, flag = "0"),
                               PROGRAMA, 
@@ -151,7 +156,7 @@ if(!"valor_proposto" %in% names(banco)) banco[, valor_proposto:=0]
 banco = banco[, list(valor = sum(valor, na.rm=T), valor_proposto = sum(valor_proposto, na.rm = T)), 
               by=list(ANO, COD_ORGAO, ORGAO, COD_UO, UO, NOME_ACAO, FUNCAO, SUB_FUNCAO, PROGRAMA, IDENT_PROJATIV, 
                       PROJ_ATIV, SUB_PROJETO, CATEGORIA, GRUPO_DESPESA, MODALIDADE, ELEMENTO_DESPESA, IAG, FONTE, 
-                      IPU, cod_detalhe,  PODER, `Instrumento de entrada`)]
+                      IPU, cod_detalhe,  PODER, SEQUENCIAL_INICIATIVA)]
 
 # Valor total por UO
 bancoTotal = banco[, list(valor = sum(valor, na.rm=T), valor_proposto = sum(valor_proposto, na.rm = T)), 
@@ -166,9 +171,9 @@ bancoTotal[,NOME_ACAO := "Total"]
 
 agregado = banco[, list(valor = sum(valor, na.rm=T), valor_proposto = sum(valor_proposto, na.rm = T)), 
                  by=list(ANO, COD_ORGAO, ORGAO, COD_UO, UO, FUNCAO, SUB_FUNCAO, PROGRAMA, IDENT_PROJATIV, 
-                         PROJ_ATIV, SUB_PROJETO, NOME_ACAO, PODER, `Instrumento de entrada`  )]
+                         PROJ_ATIV, SUB_PROJETO, NOME_ACAO, PODER, SEQUENCIAL_INICIATIVA  )]
 
-agregado[, cod_detalhe := paste0(`Instrumento de entrada`,
+agregado[, cod_detalhe := paste0(SEQUENCIAL_INICIATIVA,
                                 formatC(FUNCAO, width = 2, flag = "0"),
                                 formatC(SUB_FUNCAO, width = 3, flag = "0"), 
                                 PROGRAMA, 
