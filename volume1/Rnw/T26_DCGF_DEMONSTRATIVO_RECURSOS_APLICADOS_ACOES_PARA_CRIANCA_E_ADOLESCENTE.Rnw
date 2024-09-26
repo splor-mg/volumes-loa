@@ -112,7 +112,7 @@
       "crianças e adolescentes (0 a 18 anos).}\\\\\n")
   
   cat("\\fontsize{8pt}{10pt}\\selectfont {Cálculo da população de crianças e adolescentes segundo dados do",
-      "IBGE - Censo 2010.}\\\\\n")
+      "IBGE - Censo 2022.}\\\\\n")
   
   
   # FIM TABELA
