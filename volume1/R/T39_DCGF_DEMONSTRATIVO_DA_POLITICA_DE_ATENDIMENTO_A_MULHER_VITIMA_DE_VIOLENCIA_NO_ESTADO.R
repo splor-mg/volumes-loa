@@ -1,5 +1,5 @@
 # =================================================================================================
-# Organização de T26. DEMONSTRATIVO DA POLÍTICA DE ATENDIMENTO A MULHER VÍTIMA DE VIOLÊNCIA NO ESTADO
+# Organização de T39. DEMONSTRATIVO DA POLÍTICA DE ATENDIMENTO A MULHER VÍTIMA DE VIOLÊNCIA NO ESTADO
 options(warn=1, scipen = 999)
 suppressMessages(require(relatorios))
 
@@ -69,14 +69,14 @@ verificaTipoVariaveis(acoes_planejamento, c("nome_prog", "nome_funcao", "nome_su
                                             "final_acao", "prod_acao","Produto", "unid_med_prod", "DR/IR"))
 
 
-memoria =  dplyr::select(acoes_planejamento, cod_acao, FUNCAO_COD, SUBFUNCAO_COD, `DR/IR`)
-memoria <- dplyr::distinct(memoria, cod_acao, FUNCAO_COD, SUBFUNCAO_COD, .keep_all = TRUE)
-memoria =  dplyr::rename(memoria, EXCLUSIVA = `DR/IR`, ACAO_COD = cod_acao)
+memoria =  dplyr::select(acoes_planejamento, cod_uo, cod_acao, FUNCAO_COD, SUBFUNCAO_COD, `DR/IR`)
+memoria <- dplyr::distinct(memoria, cod_uo, cod_acao, FUNCAO_COD, SUBFUNCAO_COD, .keep_all = TRUE)
+memoria =  dplyr::rename(memoria, EXCLUSIVA = `DR/IR`, ACAO_COD = cod_acao, UO_COD = cod_uo)
 
 
 ### ------------------------------------------------------------------------------
 
-loa_desp = dplyr::left_join(loa_desp, memoria, by = c("ACAO_COD", "FUNCAO_COD", "SUBFUNCAO_COD"))
+loa_desp = dplyr::left_join(loa_desp, memoria, by = c("UO_COD", "ACAO_COD", "FUNCAO_COD", "SUBFUNCAO_COD"))
 loa_desp = as.data.table(loa_desp)
 
 loa_desp[, ACOES_MULHER := FALSE]
