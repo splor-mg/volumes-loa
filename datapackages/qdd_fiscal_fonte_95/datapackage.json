@@ -149,9 +149,9 @@
             "source": "NOME_PROGRAMA"
           },
           {
-            "name": "Acordo ou decisão",
+            "name": "Acordo ou Decisão",
             "type": "string",
-            "source": "Acordo ou decisão"
+            "source": "Acordo ou Decisão"
           },
           {
             "name": "Anexo",
@@ -160,29 +160,28 @@
           },
           {
             "name": "Instrumento de entrada",
-            "type": "integer",
+            "type": "any",
             "source": "Instrumento de entrada"
           },
           {
-            "name": "Projetos do Acordo Judicial e outros detalhamentos",
+            "name": "Iniciativa",
             "type": "string",
-            "source": "Projetos do Acordo Judicial e outros detalhamentos"
+            "source": "Iniciativa"
           },
           {
             "name": "ESPECIFICAÇÃO",
-            "type": "string",
-            "source": "ESPECIFICAÇÃO"
+            "type": "string"
           }
         ]
       }
     }
   ],
-  "updated_at": "2024-09-13T15:08:29",
+  "updated_at": "2024-09-26T23:27:18",
   "remote": {
     "host": "raw.githubusercontent.com",
     "user": "splor-mg",
     "repo": "dados-qdd-fonte-95",
     "ref": "main",
-    "sha": "b679e8834855ea700bdb119e3db66e75da9f3637"
+    "sha": "430526ebdc43d9753e9941e0c7c7aee7dcbc2ee2"
   }
 }
