@@ -26,7 +26,7 @@ desp[, CATEGORIA_DESC := ifelse(CATEGORIA_COD==3, "Despesas Correntes",
                          ifelse(CATEGORIA_COD==9, "Reserva de Contigência", "ign")))]
 
 desp[, recurso := "outras"]
-desp[FONTE_COD==10 | FONTE_COD==11 | FONTE_COD==12 | FONTE_COD==15 , recurso := "tesouro"]
+desp[FONTE_COD %in% c(10,11,12,15,19) , recurso := "tesouro"]
 
 desp_n1 = desp[MODALIDADE_COD!=91, list(VL_DESP = sum(VL_DESP)), 
                by=list(ordem = CATEGORIA_COD*10, espec = CATEGORIA_DESC, recurso)]

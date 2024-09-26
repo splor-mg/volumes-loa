@@ -12,7 +12,7 @@ source("utils/suporte/V1/demonstr_consolidado.R", encoding = "UTF-8")
 source("utils/trataBancos/trataReceita_Fiscal.R", encoding = "UTF-8")
 source("utils/trataBancos/trataQDD_Fiscal.R", encoding = "UTF-8")
 
-rec_ordinario = c(10,11,12,15)
+rec_ordinario = c(10,11,12,15,19)
 
 receita = trataReceita_Fiscal("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx", F)
 loa_rec = geraLoa_rec(receita)
