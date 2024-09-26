@@ -27,10 +27,10 @@
   cat("\\noindent\\begin{longtable}[c]{m{1cm}|m{2cm}|m{10cm}|m{2cm}|m{1cm}}\n", sep="")
 
   titulo1= paste0("\\multicolumn{5}{c}{\\cellcolor{gray!50} \\footnotesize ",
-                  "\\textbf{DEMONSTRATIVO DE RECURSOS A SEREM APLICADOS DIRETA OU INDIRETAMENTE EM AÇÕES VOLTADAS}} \\\\\n")
+                  "\\textbf{DEMONSTRATIVO DOS RECURSOS A SEREM APLICADOS, DIRETA OU INDIRETAMENTE,}} \\\\\n")
   
   titulo2= paste0("\\multicolumn{5}{c}{\\cellcolor{gray!50} \\footnotesize ",
-                  "\\textbf{A POLÍTICAS DE ATENDIMENTO À MULHER}} \\\\\n")
+                  "\\textbf{NA EXECUÇÃO DA POLÍTICA DE ATENDIMENTO À MULHER VÍTIMA DE VIOLÊNCIA NO ESTADO}} \\\\\n")
   
   titulo3= paste("\\multicolumn{5}{c}{\\cellcolor{gray!50} \\scriptsize",
                  "\\textbf{",
