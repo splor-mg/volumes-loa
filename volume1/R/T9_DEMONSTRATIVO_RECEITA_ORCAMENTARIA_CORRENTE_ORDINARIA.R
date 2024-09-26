@@ -9,7 +9,7 @@ source("utils/trataBancos/trataReceita_Fiscal.R", encoding = "UTF-8")
 # ============================================================================
 # Definir parâmetros
 
-rec_ordinario = c(10, 15) #São considerados somente fonte 10 e 15 para obtenção de base de cálculo da FAPEMIG
+rec_ordinario = c(10, 15, 19) #São considerados somente fonte 10 e 15 para obtenção de base de cálculo da FAPEMIG
 # ============================================================================
 
 receita = trataReceita_Fiscal("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx", TRUE)
