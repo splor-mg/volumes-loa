@@ -112,6 +112,7 @@ Confirmar com DCAF se a memória de cálculo da função [`relatorios::is_pessoa
 Em `LOA/volume1/R/T26_DCGF_DEMONSTRATIVO_RECURSOS_APLICADOS_ACOES_PARA_CRIANCA_E_ADOLESCENTE.R` atualizar:
 
 1- Verificar se as regras que identificam ações para criança e adolescente bem como as ações exclusivas necessitam de atualização.
+2- Solictar o índice da população de criança e adolescente para substítuilo no script.
 
 
 ## Tabela 27 Demonstrativo  das  despesas  da  Unidade  de  Gestão Previdenciária  Integrada  -  UGEPREVI
