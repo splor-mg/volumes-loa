@@ -69,14 +69,14 @@ verificaTipoVariaveis(acoes_planejamento, c("nome_prog", "nome_funcao", "nome_su
                                             "final_acao", "prod_acao","Produto", "unid_med_prod", "DR/IR"))
 
 
-memoria =  dplyr::select(acoes_planejamento, FUNCAO_COD, SUBFUNCAO_COD, `DR/IR`)
-memoria <- dplyr::distinct(memoria, FUNCAO_COD, SUBFUNCAO_COD, .keep_all = TRUE)
-memoria =  dplyr::rename(memoria, EXCLUSIVA = `DR/IR`)
+memoria =  dplyr::select(acoes_planejamento, cod_acao, FUNCAO_COD, SUBFUNCAO_COD, `DR/IR`)
+memoria <- dplyr::distinct(memoria, cod_acao, FUNCAO_COD, SUBFUNCAO_COD, .keep_all = TRUE)
+memoria =  dplyr::rename(memoria, EXCLUSIVA = `DR/IR`, ACAO_COD = cod_acao)
 
 
 ### ------------------------------------------------------------------------------
 
-loa_desp = dplyr::left_join(loa_desp, memoria, by = c("FUNCAO_COD", "SUBFUNCAO_COD"))
+loa_desp = dplyr::left_join(loa_desp, memoria, by = c("ACAO_COD", "FUNCAO_COD", "SUBFUNCAO_COD"))
 loa_desp = as.data.table(loa_desp)
 
 loa_desp[, ACOES_MULHER := FALSE]
