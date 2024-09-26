@@ -48,7 +48,7 @@ total_despesa_corrente = loa_desp[MODALIDADE_COD!=91 & CATEGORIA_COD==3, sum(VL_
 deficit_corrente = total_receita_corrente - total_despesa_corrente
 
 painel_desp = rbind(painel_desp, 
-                    data.table(DESPESA_DESC="Déficit do Orçamento Corrente", 
+                    data.table(DESPESA_DESC="Resultado do Orçamento Corrente", 
                                vl_desp_total = deficit_corrente,
                                ordem="10"),fill=T)
 
@@ -107,7 +107,7 @@ painel_rec = rbind(painel_rec,
                               ordem="20"), fill=T)
 
 painel_rec = rbind(painel_rec,
-                   data.table(RECEITA_DESC ="Déficit do Orçamento Corrente", 
+                   data.table(RECEITA_DESC ="Resultado do Orçamento Corrente", 
                               vl_rec_total = deficit_corrente,
                               ordem="30"), fill=T)
 
