@@ -78,7 +78,7 @@ POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG	13.795.874.012	            0	9
 PROCURADORIA GERAL DE JUSTIÇA - PGJ	3.354.067.814	            0	656.281.008	72.850.000	5.000.000	            0	            0	4.088.198.822
 RESERVA DE CONTINGÊNCIA - RC	             0	            0	             0	            0	            0	            0	1.053.098.607	1.053.098.607
 SECRETARIA DE ESTADO DA CASA CIVIL - SCC	7.391.806	            0	5.231.414	79.959	            0	            0	            0	12.703.179
-SECRETARIA DE ESTADO DE AGRICULTURA, PECUÁRIA E ABASTECIMENTO - SEAPA - SEAPA	20.261.072	            0	42.898.080	66.139.000	            0	            0	            0	129.298.152
+SECRETARIA DE ESTADO DE AGRICULTURA, PECUÁRIA E ABASTECIMENTO - SEAPA	20.261.072	            0	42.898.080	66.139.000	            0	            0	            0	129.298.152
 SECRETARIA DE ESTADO DE COMUNICAÇÃO SOCIAL - SECOM	10.626.803	            0	159.327.645	            0	            0	            0	            0	169.954.448
 SECRETARIA DE ESTADO DE CULTURA E TURISMO - SECULT	24.721.051	            0	222.903.984	32.350.000	            0	            0	            0	279.975.035
 SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - SEDE	21.257.215	            0	66.947.919	68.059.603	            0	            0	            0	156.264.737

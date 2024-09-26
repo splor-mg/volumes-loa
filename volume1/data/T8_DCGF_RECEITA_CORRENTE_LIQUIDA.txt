@@ -18,13 +18,13 @@ Rendimentos de Aplicação Financeira	2.690.453.689	15	2
 Outras Receitas Patrimoniais	2.587.576.523	16	2
 Receita Agropecuária	11.488.331	17	1
 Receita Industrial	599.521.808	18	1
-Receita de Serviços	1.495.711.217	19	1
+Receita de Serviços	1.389.471.708	19	1
 Receita de Transferências Correntes	27.602.918.081	20	1
 Cota-Parte do FPE	9.280.345.241	21	2
 Transferências da LC 61/1989	980.733.948	23	2
 Transferências do FUNDEB	12.704.682.660	24	2
 Outras Transferências Correntes	4.200.903.538	25	2
-Outras Receitas Correntes	1.607.919.829	26	1
+Outras Receitas Correntes	1.714.159.338	26	1
 DEDUÇÕES ( II )	49.610.330.737	27	0
 Transferências Constitucionais e Legais	27.567.408.991	28	1
 Contrib. para o Plano de Previdência do Servidor	3.694.896.077	29	1
