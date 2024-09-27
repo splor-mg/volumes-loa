@@ -50,7 +50,7 @@ demonstrativo_consolidado_rec = function(loa_rec){
   base[nat(RECEITA_COD, 171250), c("nvl3", "desc3") := list(9,"COTA -PARTE DA COMP. FINANCEIRA - RECURSOS HÍDRICOS")]
   base[nat(RECEITA_COD, 171251), c("nvl3", "desc3") := list(10,"COTA -PARTE DA COMP. FINANCEIRA - RECURSOS MINERAIS")]
   base[nat(RECEITA_COD, 171252), c("nvl3", "desc3") := list(11,"COTA -PARTE ROYALTIES - COMP. FINANC. - PROD. DE PETRÓLEO")]
-  base[desc2 == "TRANSFERÊNCIAS DA UNIÃO" & is.na(desc3), c("nvl3", "desc3") :=list(12,"OUTRAS TRANSFERÊNCIAS DA UNIÀO")]
+  base[desc2 == "TRANSFERÊNCIAS DA UNIÃO" & is.na(desc3), c("nvl3", "desc3") :=list(12,"OUTRAS TRANSFERÊNCIAS DA UNIÃO")]
   
   # ==== OUTRAS RECEITAS CORRENTES [nat(RECEITA_COD, 13, 14, 15, 16, 19)] =========================
   # Receita patrimonial, agropecuária, industrial e de serviços mantém dívida ativa, juros e mora e restituições
