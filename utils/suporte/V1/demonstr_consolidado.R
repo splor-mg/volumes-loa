@@ -103,7 +103,7 @@ demonstrativo_consolidado_rec = function(loa_rec){
   base[nat(RECEITA_COD, 971154), c("nvl3", "desc3") :=list(33,"CIDE - MUNICÍPIOS")]
   
   #base[nat(RECEITA_COD, 9) & is.na(desc3), c("nvl3", "desc3") :=list(34,"CESSÃO DE DIREITOS CREDITÓRIOS")]
-  base[nat(RECEITA_COD, 9911010103003) & is.na(desc3), c("nvl3", "desc3") :=list(34,"FUNSET")]
+  base[nat(RECEITA_COD, 9911010103003, 9911010103004) & is.na(desc3), c("nvl3", "desc3") :=list(34,"FUNSET")]
   base[nat(RECEITA_COD, 9) & is.na(desc3) , c("nvl3", "desc3") :=list(35,"OUTRAS DEDUÇÕES")]
   
   
