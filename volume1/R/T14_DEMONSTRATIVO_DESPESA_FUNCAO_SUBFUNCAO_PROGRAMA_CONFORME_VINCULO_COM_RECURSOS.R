@@ -9,7 +9,7 @@ source("utils/trataBancos/trataQDD_Fiscal.R", encoding = "UTF-8")
 
 # ============================================================================
 # Definir parâmetros
-rec_ordinarios = c(10, 11, 12, 15)
+rec_ordinarios = c(10, 11, 12, 15, 19)
 rec_diretamente_arrec = c(60, 61) 
 # ============================================================================
 

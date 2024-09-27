@@ -76,7 +76,7 @@ def diff(report_name: Annotated[str, typer.Argument(callback=validate_report_nam
 
 
 @app.command()
-def snapshot(report_names: Annotated[Optional[List[str]], typer.Argument(callback=validate_report_name)] = None):
+def snapshot(report_names: Annotated[Optional[List[str]], typer.Argument()] = None):
     """
     Save tex and pdf files of reports for golden test
     """
