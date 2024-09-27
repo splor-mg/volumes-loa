@@ -14,7 +14,7 @@ source("utils/trataBancos/trataTransferencias.R", encoding = "UTF-8")
 # Definir parâmetros
 
 desconsiderarUO = c(9901)
-lista_recurso_ordinario = c(10, 11, 12, 15)
+lista_recurso_ordinario = c(10, 11, 12, 15, 19)
 uo_caso_especial = c(1091) # Caso em que aparece determinada fonte em RECEITA PRÓPRIA e REPASSE DO TESOURO, mas o 
                            # valor NÃO deve ser desconsiderado em REPASSE DO TESOURO ESTADUAL, mas sim somado
 funfip = 4711
