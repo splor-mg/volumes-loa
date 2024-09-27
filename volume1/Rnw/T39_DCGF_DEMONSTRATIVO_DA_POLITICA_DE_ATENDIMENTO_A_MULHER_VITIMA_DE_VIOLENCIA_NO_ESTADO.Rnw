@@ -75,7 +75,7 @@
 
     linha = as.list(banco[i, ])
 
-    if(linha[["UO_COD"]]=="TOTAL"){
+    if(linha[["UO_COD"]] %in% c("TOTAL", "TOTAL DR", "TOTAL IR")){
       
       cat("\\hline\\hline\n")
 
