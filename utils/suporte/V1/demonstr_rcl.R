@@ -129,7 +129,7 @@ demonstr_rcl = function(rec){
   base[is_ipi_principal(base), n3:= "23.2.Transferências da LC 61/1989" ]
   base[is_ipi_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23,51), n3:= "23.2.Transferências da LC 61/1989" ]
   base[is_volta_fundeb(base), n3:= "24.2.Transferências do FUNDEB" ]
-  base[nat(RECEITA_COD,17,97) & !FONTE_COD %in% c(20,23,51) & is.na(n3), n3:= "25.2.Outras Transferências Correntes" ]
+  base[nat(RECEITA_COD,17) & is.na(n3), n3:= "25.2.Outras Transferências Correntes" ]
 
   base[nat(RECEITA_COD,19,99), n2:= "26.1.Outras Receitas Correntes" ]
   
