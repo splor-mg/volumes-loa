@@ -11,7 +11,7 @@ help:
 validate:
 	python3 -m frictionless validate datapackage.yaml
 
-volumes: v1 v2 v3 v4 v5 v6 ## Gera todos os volumes
+volumes: v7 v6 v5 v4 v3 v2 v1 ## Gera todos os volumes
 
 v1: v1_prodemge v1_dcgf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE e DCGF
 
