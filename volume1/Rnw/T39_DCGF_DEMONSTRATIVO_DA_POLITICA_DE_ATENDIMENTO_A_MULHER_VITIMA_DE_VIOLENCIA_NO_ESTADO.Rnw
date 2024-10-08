@@ -82,6 +82,12 @@
       cat("\\multicolumn{3}{c|}{ \\textbf{", linha[["UO_COD"]],
           "}} & \\multicolumn{1}{R{2cm}|}{ \\textbf{", linha[["VL_DESP"]],
           "}} &  \\\\\n", sep="")
+      cat("\\hline\\hline\n")
+      
+      # Insere linha abaixo do total intermediário DR
+#      if (linha[["UO_COD"]] == "TOTAL DR") {
+#          cat("\\specialrule{1.5pt}{0pt}{0pt}\n")
+#      }
 
       } else{
 
