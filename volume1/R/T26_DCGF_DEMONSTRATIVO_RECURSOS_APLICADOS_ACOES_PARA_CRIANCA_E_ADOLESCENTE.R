@@ -42,7 +42,10 @@ loa_desp = loa_desp[ACOES_CRIANCA==T, list(VL_DESP = sum(VL_DESP)),
 # Ações não exclusivas
 # esse indice sendo multiplicado precisa ser corrigido todo ano (Andrey)
 #===============================================================================
-loa_desp[EXCLUSIVA == "NE", VL_DESP := VL_DESP *  0.233493163019708]
+
+options(digits = 15)
+indice_crianca_adolescente <- as.numeric(readLines("utils/volume1/indice_crianca_adolescente.txt"))
+loa_desp[EXCLUSIVA == "NE", VL_DESP := VL_DESP *  indice_crianca_adolescente]
 
 loa_desp[, FUNCIONAL:= paste(FUNCAO_COD, formatC(SUBFUNCAO_COD, width = 3, flag="0"),
                              formatC(PROGRAMA_COD, width = 3, flag="0"),
