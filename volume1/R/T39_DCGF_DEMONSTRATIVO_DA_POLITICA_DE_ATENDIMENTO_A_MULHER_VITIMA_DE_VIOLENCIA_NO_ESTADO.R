@@ -99,8 +99,27 @@ setorderv(loa_desp, cols = c('EXCLUSIVA', 'UO_COD', 'FUNCAO_COD',
 loa_desp = loa_desp[, list(UO_COD, FUNCIONAL, ACAO_DESC, VL_DESP, EXCLUSIVA)]
 
 loa_desp = rbind(loa_desp, data.table(UO_COD="TOTAL", VL_DESP = loa_desp[, sum(VL_DESP)]), fill=T)
-loa_desp[, VL_DESP:=formatarNum(round(VL_DESP, 0))]
 
+# Número das linhas finais com IR e DR e soma de cada grupo
+last_dr_id <- max(which(loa_desp$EXCLUSIVA == "DR"))
+last_ir_id <- max(which(loa_desp$EXCLUSIVA == "IR"))
+total_dr <- round(sum(loa_desp[EXCLUSIVA == "DR", VL_DESP]), 0)
+total_ir <- round(sum(loa_desp[EXCLUSIVA == "IR", VL_DESP]), 0)
+
+
+if (last_dr_id < last_ir_id) {
+
+  total_dr_row <- data.table(UO_COD = "TOTAL DR", FUNCIONAL = NA_character_, 
+                             ACAO_DESC = NA_character_, VL_DESP = total_dr, EXCLUSIVA = NA_character_)
+  total_ir_row <- data.table(UO_COD = "TOTAL IR", FUNCIONAL = NA_character_, 
+                             ACAO_DESC = NA_character_, VL_DESP = total_ir, EXCLUSIVA = NA_character_)
+  
+  # insere linhas de totais DR e IR após cada grupo.
+  loa_desp <- rbind(loa_desp[1:last_dr_id], total_dr_row, loa_desp[(last_dr_id + 1):last_ir_id], total_ir_row, loa_desp[(last_ir_id + 1):.N], fill = TRUE)
+}
+
+
+loa_desp[, VL_DESP:=formatarNum(round(VL_DESP, 0))]
 loa_desp[, ACAO_DESC := correcaoCaracteresEspeciais(ACAO_DESC, caracteres)]
 
 write.table(loa_desp, "volume1/data/T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO.txt", 
