@@ -99,7 +99,7 @@ demonstr_rcl = function(rec){
 
   base[is_impostos_acessorias(base) & nat(RECEITA_COD,1), n2 := "8.2.Acessórias [Dívida Ativa, Multas e Juros]"]
   base[is_impostos_acessorias(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n2 := "8.2.Acessórias [Dívida Ativa, Multas e Juros]"]
-  base[is_taxas_acessorias(base), n2 := "2.3.Acessórias"]
+  base[is_taxas_acessorias(base), n2 := "8.2.Acessórias [Dívida Ativa, Multas e Juros]"]
   
   base[is_icms_acessorias(base) & nat(RECEITA_COD,1), n3 := "9.3.ICMS"]
   base[is_icms_acessorias(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "9.3.ICMS"]
