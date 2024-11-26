@@ -57,7 +57,7 @@ if(length(loa_desp[, unique(merge)])>1){
 # =============== B. DESPESA COM SAÚDE ============
 parteB_desc =  "B. DESPESA COM SAÚDE"
 
-loa_desp = loa_desp[is_asps_desp(loa_desp, "ACAO_COD"),]
+loa_desp = loa_desp[is_asps_desp(loa_desp, "ELEMENTO_ITEM_COD"),]
 loa_desp = loa_desp[!(MODALIDADE_COD==91 & ELEMENTO_COD == 41)]
 
 parteB = loa_desp[, list(VL_LOA = sum(VL_DESP), nvl=1), 
