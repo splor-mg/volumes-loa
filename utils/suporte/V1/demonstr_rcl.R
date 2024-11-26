@@ -85,7 +85,8 @@ demonstr_rcl = function(rec){
 
   base[is_impostos_principal(base) & nat(RECEITA_COD,1), n2 := "2.2.Principal"]
   base[is_impostos_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n2 := "2.2.Principal"]
-
+  base[is_taxas_principal(base), n2 := "2.2.Principal"]
+  
   base[is_icms_principal(base) & nat(RECEITA_COD,1), n3 := "3.3.ICMS"]
   base[is_icms_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "3.3.ICMS"]
   base[is_ipva_principal(base) & nat(RECEITA_COD,1), n3 := "4.3.IPVA"]
@@ -98,7 +99,8 @@ demonstr_rcl = function(rec){
 
   base[is_impostos_acessorias(base) & nat(RECEITA_COD,1), n2 := "8.2.Acessórias [Dívida Ativa, Multas e Juros]"]
   base[is_impostos_acessorias(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n2 := "8.2.Acessórias [Dívida Ativa, Multas e Juros]"]
-
+  base[is_taxas_acessorias(base), n2 := "2.3.Acessórias"]
+  
   base[is_icms_acessorias(base) & nat(RECEITA_COD,1), n3 := "9.3.ICMS"]
   base[is_icms_acessorias(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "9.3.ICMS"]
   base[is_ipva_acessorias(base) & nat(RECEITA_COD,1), n3 := "10.3.IPVA"]
