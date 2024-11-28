@@ -39,8 +39,15 @@ asps = rbind(data.table(espec = "A. TOTAL DAS RECEITAS PARA APURAÇÃO DA ASPS (
 asps = asps[, cod:= NA]
 
 
-qdd = trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F)
-loa_desp = geraLoa_desp(qdd)
+
+
+
+
+qdd = trataQDD_Item_Fiscal("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx", FALSE)
+
+
+loa_desp = geraLoa_item_desp(qdd)
+
 setnames(loa_desp, "VL_LOA_DESP", "VL_DESP")
 
 loa_desp = mergeDT(loa_desp, sumario, by.x="UO_COD", by.y="COD_UO", all.x=T)
@@ -57,10 +64,12 @@ if(length(loa_desp[, unique(merge)])>1){
 # =============== B. DESPESA COM SAÚDE ============
 parteB_desc =  "B. DESPESA COM SAÚDE"
 
-# [Andrey] altera nome da coluna devido a restrição de nomes do pacote relatorios, retornando o nome original posteriormente.
-setnames(loa_desp, "ELEMENTO_COD", "ELEMENTO_ITEM_COD")
 loa_desp = loa_desp[is_asps_desp(loa_desp, "ELEMENTO_ITEM_COD"),]
-setnames(loa_desp, "ELEMENTO_ITEM_COD", "ELEMENTO_COD")
+
+cols_to_keep <- setdiff(names(loa_desp), c("ELEMENTO_ITEM_COD", "VL_DESP"))
+loa_desp[, ELEMENTO_ITEM_COD := NULL]
+loa_desp = loa_desp[, .(VL_DESP = sum(VL_DESP, na.rm = TRUE)), by = cols_to_keep]
+
 
 loa_desp = loa_desp[!(MODALIDADE_COD==91 & ELEMENTO_COD == 41)]
 
