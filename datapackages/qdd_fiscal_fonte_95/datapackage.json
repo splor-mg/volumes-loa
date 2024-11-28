@@ -1,188 +1,164 @@
 {
   "name": "dados-qdd-fonte-95",
-  "profile": "tabular-data-package",
   "resources": [
     {
       "name": "base_qdd_fiscal_fonte_95",
       "type": "table",
-      "profile": "tabular-data-resource",
-      "path": "data/base_qdd_fiscal_fonte_95.xlsx",
+      "path": "data-raw/base_qdd_fiscal_fonte_95.xlsx",
       "scheme": "file",
       "format": "xlsx",
       "mediatype": "application/vnd.ms-excel",
       "encoding": "utf-8",
+      "dialect": {
+        "excel": {
+          "sheet": "base_qdd_fiscal"
+        }
+      },
       "schema": {
         "fields": [
           {
             "name": "ANO",
-            "type": "integer",
-            "source": "ANO"
+            "type": "integer"
           },
           {
             "name": "COD_ORGAO",
-            "type": "integer",
-            "source": "COD_ORGAO"
+            "type": "integer"
           },
           {
             "name": "ORGAO",
-            "type": "string",
-            "source": "ORGAO"
+            "type": "string"
           },
           {
             "name": "PODER",
-            "type": "integer",
-            "source": "PODER"
+            "type": "integer"
           },
           {
             "name": "SITUACAO",
-            "type": "integer",
-            "source": "SITUACAO"
+            "type": "integer"
           },
           {
             "name": "COD_UO",
-            "type": "integer",
-            "source": "COD_UO"
+            "type": "integer"
           },
           {
             "name": "UO",
-            "type": "string",
-            "source": "UO"
+            "type": "string"
           },
           {
             "name": "CATEGORIA",
-            "type": "integer",
-            "source": "CATEGORIA"
+            "type": "integer"
           },
           {
             "name": "GRUPO_DESPESA",
-            "type": "integer",
-            "source": "GRUPO_DESPESA"
+            "type": "integer"
           },
           {
             "name": "MODALIDADE",
-            "type": "integer",
-            "source": "MODALIDADE"
+            "type": "integer"
           },
           {
             "name": "ELEMENTO_DESPESA",
-            "type": "integer",
-            "source": "ELEMENTO_DESPESA"
+            "type": "integer"
           },
           {
             "name": "FONTE",
-            "type": "integer",
-            "source": "FONTE"
+            "type": "integer"
           },
           {
             "name": "IPU",
-            "type": "integer",
-            "source": "IPU"
+            "type": "integer"
           },
           {
             "name": "SEQ_PROGTRAB",
-            "type": "integer",
-            "source": "SEQ_PROGTRAB"
+            "type": "integer"
           },
           {
             "name": "FUNCAO",
-            "type": "integer",
-            "source": "FUNCAO"
+            "type": "integer"
           },
           {
             "name": "SUB_FUNCAO",
-            "type": "integer",
-            "source": "SUB_FUNCAO"
+            "type": "integer"
           },
           {
             "name": "PROGRAMA",
-            "type": "integer",
-            "source": "PROGRAMA"
+            "type": "integer"
           },
           {
             "name": "IDENT_PROJATIV",
-            "type": "integer",
-            "source": "IDENT_PROJATIV"
+            "type": "integer"
           },
           {
             "name": "PROJ_ATIV",
-            "type": "integer",
-            "source": "PROJ_ATIV"
+            "type": "integer"
           },
           {
             "name": "AÇÃO",
-            "type": "integer",
-            "source": "AÇÃO"
+            "type": "integer"
           },
           {
             "name": "SUB_PROJETO",
-            "type": "integer",
-            "source": "SUB_PROJETO"
+            "type": "integer"
           },
           {
             "name": "VALOR UO (R$)",
             "type": "number",
-            "source": "VALOR UO (R$)"
+            "groupChar": ".",
+            "decimalchar": ","
           },
           {
             "name": "VALOR SCPPO (R$)",
             "type": "number",
-            "source": "VALOR SCPPO (R$)"
+            "groupChar": ".",
+            "decimalchar": ","
           },
           {
             "name": "VALOR FINAL (R$)",
             "type": "number",
-            "source": "VALOR FINAL (R$)"
+            "groupChar": ".",
+            "decimalchar": ","
           },
           {
             "name": "IAG",
-            "type": "integer",
-            "source": "IAG"
+            "type": "integer"
           },
           {
             "name": "NOME_ACAO",
-            "type": "string",
-            "source": "NOME_ACAO"
+            "type": "string"
           },
           {
             "name": "NOME_PROGRAMA",
-            "type": "string",
-            "source": "NOME_PROGRAMA"
+            "type": "string"
           },
           {
             "name": "Acordo ou decisão",
-            "type": "string",
-            "source": "Acordo ou decisão"
+            "type": "string"
           },
           {
             "name": "Anexo",
-            "type": "string",
-            "source": "Anexo"
+            "type": "string"
           },
           {
             "name": "Instrumento de entrada",
-            "type": "integer",
-            "source": "Instrumento de entrada"
+            "type": "integer"
           },
           {
             "name": "Projetos do Acordo Judicial e outros detalhamentos",
-            "type": "string",
-            "source": "Projetos do Acordo Judicial e outros detalhamentos"
+            "type": "string"
           },
           {
             "name": "ESPECIFICAÇÃO",
-            "type": "string",
-            "source": "ESPECIFICAÇÃO"
+            "type": "string"
           }
         ]
       }
     }
   ],
-  "updated_at": "2024-09-13T15:08:29",
   "remote": {
     "host": "raw.githubusercontent.com",
     "user": "splor-mg",
     "repo": "dados-qdd-fonte-95",
-    "ref": "main",
+    "ref": "b679e8834855ea700bdb119e3db66e75da9f3637",
     "sha": "b679e8834855ea700bdb119e3db66e75da9f3637"
   }
 }
