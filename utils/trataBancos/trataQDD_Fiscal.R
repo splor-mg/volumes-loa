@@ -35,7 +35,46 @@ trataQDD_Fiscal = function(caminho, realizarTeste = TRUE){
   }
 
 
+trataQDD_Item_Fiscal = function(caminho, realizarTeste = TRUE){
+  
+  #==============================================================================
+  # Função para abir o banco BASE_ORCAM_DESPESA_ITEM_FISCAL volume 1
+  #==============================================================================
+  
+  avisoNumAbas(caminho)
+  
+  qdd_item = as.data.table(read_excel(caminho, sheet=1))
 
+  novos_nomes = c("COD_ORGAO", "ORGAO", "COD_UO", "UO", "FUNCAO", "SUB_FUNCAO", "PROGRAMA", "IDENT_PROJATIV", "PROJ_ATIV",
+                  "ACAO","SUB_PROJETO", "CATEGORIA", "GRUPO_DESPESA", 
+                  "MODALIDADE", "ELEMENTO_DESPESA", "ITEM_DESPESA", "FONTE", "IPU", "IAG", "NOME_ACAO", "valor")
+  
+  names(qdd_item) <- unlist(novos_nomes)
+  
+  names(qdd_item) = stringi::stri_trans_general(names(qdd_item), "latin-ascii")
+  
+  ano_valor = as.numeric(readLines(paste( "utils/ano.txt", sep=""), warn = F)) 
+  
+  # [Andrey forcei a coluna ano igual ao ano atual por requisito do geraloa_dep issue https://github.com/splor-mg/volumes-loa/issues/154]
+  qdd_item[, ANO := ano_valor]
+  
+  nomes_diferentes = setdiff(novos_nomes, names(qdd_item))
+  
+  if(length(nomes_diferentes)>0){
+    warning(paste("BASE_QDD_FISCAL: Há nomes diferentes no banco. Os seguintes nomes de campos não estão no banco atual: {{",
+                  paste(nomes_diferentes, collapse=", ")," }}"))
+  } 
+  
+  if(TRUE %in% (qdd_item$valor<0)){
+    warning(paste("BASE_QDD_FISCAL: Há valores negativos na linha ", paste0(which(qdd_item$valor<0)+1, collapse=", ")))
+  } 
+  
+  if(TRUE %in% (qdd_item$valor==0)){
+    warning(paste("BASE_QDD_FISCAL: Há valores iguais a zero na linha ", paste0(which(qdd_item$valor==0)+1, collapse=", ")))
+  }
+  
+  return(data.table(qdd_item))
+}
 
 avisoNumAbas = function(caminho){
   if(length(excel_sheets(caminho))>1){
@@ -181,3 +220,29 @@ geraLoa_desp = function(qdd){
 
 }
 
+geraLoa_item_desp = function(qdd){
+  
+  #=========================================================================================
+  # Transforma o banco BASE_QDD_FISCAL.xlsx no formato loa_desp do pacote execucao
+  #=========================================================================================
+  
+  if(sum(c("COD_UO", "FUNCAO", "SUB_FUNCAO", "PROGRAMA", "ACAO", "CATEGORIA", "GRUPO_DESPESA", "MODALIDADE", 
+           "ELEMENTO_DESPESA", "FONTE", "IPU", "valor", "NOME_ACAO", "IAG") %in% names(qdd))!=14){
+    
+    stop("Alguma das variáveis COD_UO, FUNCAO, SUB_FUNCAO, PROGRAMA, ACAO, CATEGORIA, GRUPO_DESPESA, MODALIDADE,", 
+         " ELEMENTO_DESPESA, FONTE, IPU, ou valor não está presente no banco\n",
+         "Dica: rodar trataQDD_Fiscal( ) primeiro.")
+  }
+  
+  setnames(qdd, c("COD_UO", "FUNCAO", "SUB_FUNCAO", "PROGRAMA", "ACAO", "CATEGORIA", "GRUPO_DESPESA", "MODALIDADE", 
+                  "ELEMENTO_DESPESA", "ITEM_DESPESA", "FONTE", "IPU", "valor", "NOME_ACAO", "IAG"), 
+           c("UO_COD", "FUNCAO_COD", "SUBFUNCAO_COD", "PROGRAMA_COD", "ACAO_COD", "CATEGORIA_COD", "GRUPO_COD", 
+             "MODALIDADE_COD", "ELEMENTO_COD", "ELEMENTO_ITEM_COD", "FONTE_COD", "IPU_COD", "VL_LOA_DESP", "ACAO_DESC", "IAG_COD" ))
+  
+  
+  
+  return(qdd[, c("ANO", "UO_COD", "FUNCAO_COD", "SUBFUNCAO_COD", "PROGRAMA_COD", 
+                 "ACAO_COD", "ACAO_DESC", "CATEGORIA_COD", "GRUPO_COD", 
+                 "MODALIDADE_COD", "ELEMENTO_COD", "ELEMENTO_ITEM_COD", "FONTE_COD", "IPU_COD", "IAG_COD", "VL_LOA_DESP" ), with=F])
+  
+}
