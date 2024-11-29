@@ -1,0 +1,6 @@
+Warning in file(filename, "r", encoding = encoding) :
+  cannot open file 'utils/funcoes.r': No such file or directory
+Error in file(filename, "r", encoding = encoding) : 
+  cannot open the connection
+Calls: source -> file
+Execution halted
