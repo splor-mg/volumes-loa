@@ -1,6 +1,6 @@
 # Organização do banco T5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL - Volume 1
 options(warn = 1)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
@@ -19,9 +19,9 @@ pessoal <- dcast(pessoal, cod_uo ~ classificacao, value.var = "quantidade", fill
 #====================================Condicional para quando não houver terceirizado em BASE_QDD_FISCAL.xlsx=======================
 #
 #  Verificação adicionada em 22/09/2021 pelo fato de que neste ano os terceirizados não precisariam mais ser discriminados no SISOR.
-#  Caso a coluna não exista ela é criada, caso ela já exista nada muda, mantendo o código funcional em futuros exercícios quando essa 
+#  Caso a coluna não exista ela é criada, caso ela já exista nada muda, mantendo o código funcional em futuros exercícios quando essa
 #  discriminação de quantidades voltar a ser necessária. (Andrey)
-#  
+#
 #==================================================================================================================================
 if( !("terceirizado" %in% colnames(pessoal)) ){
   pessoal[,Terceirizado:=0];
@@ -37,10 +37,10 @@ pessoal = pessoal[merge=="Em ambos os bancos",]
 if(4291 %in% pessoal[, unique(cod_uo)]){
   warning(paste("V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE",
                 "(UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)\n"))
-  
+
   pessoal[cod_uo==4291, c("cod_uo", "orgao") := list(1320, "SECRETARIA DE ESTADO DE SAÚDE - SES")]
-  
-  
+
+
 }
 
 

@@ -1,7 +1,7 @@
 # =================================================================================================
 # Organização de T14 DEMONSTRATIVO DESPESA FUNCAO SUBFUNCAO PROGRAMA CONFORME VINCULO COM RECURSOS
 options(warn = 1)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
@@ -10,7 +10,7 @@ source("utils/trataBancos/trataQDD_Fiscal.R", encoding = "UTF-8")
 # ============================================================================
 # Definir parâmetros
 rec_ordinarios = c(10, 11, 12, 15, 19)
-rec_diretamente_arrec = c(60, 61) 
+rec_diretamente_arrec = c(60, 61)
 # ============================================================================
 
 funcao = data.table(read_excel("bancos/manual/desc_funcao.xlsx",sheet=1))
@@ -29,7 +29,7 @@ qdd_funcao[, c("SUB_FUNCAO", "PROGRAMA"):=0]
 qdd_funcao = mergeDT(qdd_funcao, funcao, by.x="FUNCAO", by.y="codigo", all=T)
 
 if("Apenas no Banco X" %in% qdd_funcao[, unique(merge)]){
-  warning(paste("T14_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_VINCULO_COM_RECURSOS: Há códigos de FUNÇÃO em ", 
+  warning(paste("T14_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_VINCULO_COM_RECURSOS: Há códigos de FUNÇÃO em ",
                 "BASE_QDD_FISCAL que não possuem uma correspondência em banco_apoio.",
                 "Os codigos são ", paste(qdd_funcao[merge=="Apenas no Banco X", unique(FUNCAO)], collapse=", "),
                 "\nCorreção: inserir esses códigos e sua descrição em banco_apoio na aba Função\n"))
@@ -48,8 +48,8 @@ qdd_subfuncao = mergeDT(qdd_subfuncao, subfuncao, by.x="SUB_FUNCAO", by.y="codig
 setnames(qdd_subfuncao, "subfuncao", "especificacao")
 
 if("Apenas no Banco X" %in% qdd_subfuncao[, unique(merge)]){
-  warning(paste("T14_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_VINCULO_COM_RECURSOS: Há códigos de sub-função em ", 
-                "BASE_QDD_FISCAL que não possuem uma correspondência em banco apoio. Os codigos são ", 
+  warning(paste("T14_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_VINCULO_COM_RECURSOS: Há códigos de sub-função em ",
+                "BASE_QDD_FISCAL que não possuem uma correspondência em banco apoio. Os codigos são ",
                  paste(qdd_subfuncao[merge=="Apenas no Banco X", unique(SUB_FUNCAO)], collapse=", "),
                  "\nCorreção: inserir esses códigos e sua descrição em banco apoio na aba Subfunção\n"))
 }
@@ -58,7 +58,7 @@ qdd_subfuncao = qdd_subfuncao[merge=="Em ambos os bancos",]
 qdd_subfuncao[, merge := NULL]
 
 # ======= Banco por Programa =================
-qdd_prog= qdd[, list(valor = sum(valor, na.rm=T)), 
+qdd_prog= qdd[, list(valor = sum(valor, na.rm=T)),
                by=list(FUNCAO, SUB_FUNCAO, PROGRAMA, especificacao = NOME_PROGRAMA, recurso_tipo)]
 
 # ======= União dos bancos =================
@@ -91,6 +91,6 @@ final[, especificacao := correcaoCaracteresEspeciais(especificacao, caracteres)]
 names(final) = tolower(names(final))
 setnames(final, "sub_funcao", "subfuncao")
 
-write.table(final, 
+write.table(final,
             "volume1/data/T14_DEMONSTRATIVO_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_CONFORME_VINCULO_COM_RECURSOS.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)

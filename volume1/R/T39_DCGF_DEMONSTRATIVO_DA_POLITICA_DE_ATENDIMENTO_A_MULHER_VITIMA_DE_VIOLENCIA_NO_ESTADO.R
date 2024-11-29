@@ -3,7 +3,7 @@
 options(warn=1, scipen = 999)
 suppressMessages(require(relatorios))
 
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
@@ -19,7 +19,7 @@ qdd_inv = trataQDD_Investimento("bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx")
 
 novas_vars_inv = c("ANO","UO_COD", "FUNCAO_COD", "SUBFUNCAO_COD", "PROGRAMA_COD", "ACAO_COD", "ACAO_DESC")
 
-setnames(qdd_inv, c(c("ANO","COD_UO", "FUNCAO", "SUB_FUNCAO", "PROGRAMA", "ACAO", "NOME_ACAO"), "valor"), 
+setnames(qdd_inv, c(c("ANO","COD_UO", "FUNCAO", "SUB_FUNCAO", "PROGRAMA", "ACAO", "NOME_ACAO"), "valor"),
          c(novas_vars_inv, "VL_DESP"))
 
 loa_desp = rbind(loa_desp, qdd_inv, fill=T)
@@ -37,11 +37,11 @@ acoes_planejamento = acoes_planejamento[exclusao.logica.da.acao=='Não',]
 nomes_esperados = c("codigo.do.programa", "nome.do.programa", "codigo.da.unidade.orcamentaria.responsavel.pela.acao",
                     "codigo.da.funcao", "funcao",  "codigo.da.subfuncao",  "subfuncao",
                     "codigo.do.tipo.de.acao",  "tipo.de.acao",  "codigo.da.acao",  "titulo.da.acao",
-                    "codigo.do.identificador.de.acao.governamental..iag.",  "exclusao.logica.da.acao",  "finalidade.da.acao",  
+                    "codigo.do.identificador.de.acao.governamental..iag.",  "exclusao.logica.da.acao",  "finalidade.da.acao",
                     "codigo.do.produto",
                     "produto",  "unidade.de.medida.do.produto", "politica.para.mulheres")
 
-novos_nomes = c("cod_prog", "nome_prog", "cod_uo", 
+novos_nomes = c("cod_prog", "nome_prog", "cod_uo",
                 "FUNCAO_COD", "nome_funcao", "SUBFUNCAO_COD", "nome_subfuncao",
                 "cod_tipo_acao", "tipo_acao", "cod_acao", "titulo_acao",
                 "cod_iag", "exc_acao", "final_acao", "prod_acao",
@@ -56,7 +56,7 @@ novos_nomes = c("cod_prog", "nome_prog", "cod_uo",
 varEsperadas_naoIndentificadas = setdiff(nomes_esperados, names(acoes_planejamento))
 
 if(length(varEsperadas_naoIndentificadas) > 0){
-  stop("Em ler_acoes_planejamento(): Variável(is) ", 
+  stop("Em ler_acoes_planejamento(): Variável(is) ",
        paste(varEsperadas_naoIndentificadas, collapse=" "), "não encontrada(s) no banco")
 }
 
@@ -64,8 +64,8 @@ setnames(acoes_planejamento, nomes_esperados, novos_nomes)
 
 acoes_planejamento = acoes_planejamento[, novos_nomes, with=F]
 
-verificaTipoVariaveis(acoes_planejamento, c("nome_prog", "nome_funcao", "nome_subfuncao", 
-                                            "tipo_acao", "titulo_acao", "exc_acao", 
+verificaTipoVariaveis(acoes_planejamento, c("nome_prog", "nome_funcao", "nome_subfuncao",
+                                            "tipo_acao", "titulo_acao", "exc_acao",
                                             "final_acao", "prod_acao","Produto", "unid_med_prod", "DR/IR"))
 
 
@@ -84,7 +84,7 @@ loa_desp[EXCLUSIVA %in% c("Indiretamente relacionada", "Diretamente relacionada"
 loa_desp[EXCLUSIVA == "Indiretamente relacionada", EXCLUSIVA := "IR"]
 loa_desp[EXCLUSIVA == "Diretamente relacionada", EXCLUSIVA := "DR"]
 
-loa_desp = loa_desp[ACOES_MULHER==T, list(VL_DESP = sum(VL_DESP)), 
+loa_desp = loa_desp[ACOES_MULHER==T, list(VL_DESP = sum(VL_DESP)),
                     by=list(UO_COD, FUNCAO_COD, SUBFUNCAO_COD, PROGRAMA_COD, ACAO_COD, ACAO_DESC, EXCLUSIVA)]
 
 
@@ -103,5 +103,5 @@ loa_desp[, VL_DESP:=formatarNum(round(VL_DESP, 0))]
 
 loa_desp[, ACAO_DESC := correcaoCaracteresEspeciais(ACAO_DESC, caracteres)]
 
-write.table(loa_desp, "volume1/data/T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO.txt", 
+write.table(loa_desp, "volume1/data/T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)

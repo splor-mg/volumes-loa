@@ -1,10 +1,10 @@
 # =================================================================================================
-# Organização de T26. DEMONSTRATIVO DE RECURSOS A SEREM APLICADOS DIRETA OU INDIRETAMENTE EM AÇÕES 
+# Organização de T26. DEMONSTRATIVO DE RECURSOS A SEREM APLICADOS DIRETA OU INDIRETAMENTE EM AÇÕES
 # VOLTADAS PRA A CRIANÇA E O ADOLESCENTE
 options(warn=1, scipen = 999)
 suppressMessages(require(relatorios))
 
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
@@ -19,7 +19,7 @@ qdd_inv = trataQDD_Investimento("bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx")
 
 novas_vars_inv = c("ANO","UO_COD", "FUNCAO_COD", "SUBFUNCAO_COD", "PROGRAMA_COD", "ACAO_COD", "ACAO_DESC")
 
-setnames(qdd_inv, c(c("ANO","COD_UO", "FUNCAO", "SUB_FUNCAO", "PROGRAMA", "ACAO", "NOME_ACAO"), "valor"), 
+setnames(qdd_inv, c(c("ANO","COD_UO", "FUNCAO", "SUB_FUNCAO", "PROGRAMA", "ACAO", "NOME_ACAO"), "valor"),
          c(novas_vars_inv, "VL_DESP"))
 
 loa_desp = rbind(loa_desp, qdd_inv, fill=T)
@@ -31,11 +31,11 @@ memoria =  dplyr::rename(memoria, EXCLUSIVA = `NE/E`)
 
 loa_desp = dplyr::left_join(loa_desp, memoria, by = c("FUNCAO_COD", "SUBFUNCAO_COD"))
 loa_desp = as.data.table(loa_desp)
-  
+
 loa_desp[, ACOES_CRIANCA := FALSE]
 loa_desp[!is.na(EXCLUSIVA), ACOES_CRIANCA := TRUE]
 
-loa_desp = loa_desp[ACOES_CRIANCA==T, list(VL_DESP = sum(VL_DESP)), 
+loa_desp = loa_desp[ACOES_CRIANCA==T, list(VL_DESP = sum(VL_DESP)),
                     by=list(UO_COD, FUNCAO_COD, SUBFUNCAO_COD, PROGRAMA_COD, ACAO_COD, ACAO_DESC, EXCLUSIVA)]
 
 # ==============================================================================
@@ -59,5 +59,5 @@ loa_desp[, VL_DESP:=formatarNum(round(VL_DESP, 0))]
 
 loa_desp[, ACAO_DESC := correcaoCaracteresEspeciais(ACAO_DESC, caracteres)]
 
-write.table(loa_desp, "volume1/data/T26_DCGF_DEMONSTRATIVO_RECURSOS_APLICADOS_ACOES_PARA_CRIANCA_E_ADOLESCENTE.txt", 
+write.table(loa_desp, "volume1/data/T26_DCGF_DEMONSTRATIVO_RECURSOS_APLICADOS_ACOES_PARA_CRIANCA_E_ADOLESCENTE.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)

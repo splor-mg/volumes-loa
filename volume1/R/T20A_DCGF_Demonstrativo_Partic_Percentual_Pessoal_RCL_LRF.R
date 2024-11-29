@@ -9,7 +9,7 @@ options(warn=1, scipen = 999)
 
 suppressMessages(require(relatorios))
 
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 source("utils/suporte/V1/DTP.R", encoding = "UTF-8")
 
@@ -70,25 +70,25 @@ parteB = data.table(cod=2, espec = parteB_desc, perc = NA, valor=NA)
 
 # =============== B - Legislativo e TCE ===============================================
 desc_legisl = "Poder Legislativo (inclusive Tribunal de Contas)"
-vl_legisl = loa_desp[is_dtp(loa_desp) & 
-            (is_legislativo(loa_desp) | is_tce(loa_desp)), 
+vl_legisl = loa_desp[is_dtp(loa_desp) &
+            (is_legislativo(loa_desp) | is_tce(loa_desp)),
              sum(VL_DESP)]
 perc_legisl = 0.03
 
-parte_legisl = data.table(cod=c(3,4), 
-                          espec=c(desc_legisl, percent_orc), 
+parte_legisl = data.table(cod=c(3,4),
+                          espec=c(desc_legisl, percent_orc),
                           perc = c(geraPerc(perc_legisl), geraPerc(vl_legisl / vl_rcl)),
                           valor = c(perc_legisl*vl_rcl, vl_legisl)
                           )
 
 # =============== B - Judiciário ======================================================
 desc_jud = "Poder Judiciário"
-vl_jud = loa_desp[is_dtp(loa_desp) & 
+vl_jud = loa_desp[is_dtp(loa_desp) &
                     (is_judiciario(loa_desp)), sum(VL_DESP)]
 perc_jud = 0.06
 
 parte_jud = data.table(cod=c(5,6),
-                       espec=c(desc_jud, percent_orc), 
+                       espec=c(desc_jud, percent_orc),
                        perc = c(geraPerc(perc_jud), geraPerc(vl_jud / vl_rcl)),
                        valor = c(perc_jud*vl_rcl, vl_jud)
                       )
@@ -99,7 +99,7 @@ vl_pgj = loa_desp[is_dtp(loa_desp) & (is_pgj(loa_desp)), sum(VL_DESP)]
 perc_pgj = 0.02
 
 parte_pgj = data.table(cod=c(7,8),
-                       espec=c(desc_pgj, percent_orc), 
+                       espec=c(desc_pgj, percent_orc),
                        perc = c(geraPerc(perc_pgj), geraPerc(vl_pgj / vl_rcl)),
                        valor = c(perc_pgj*vl_rcl, vl_pgj)
                       )
@@ -107,7 +107,7 @@ parte_pgj = data.table(cod=c(7,8),
 
 # =============== B - Poder Executivo ==================================================
 desc_executivo = "Poder Executivo (inclusive Defensoria Pública)"
-vl_executivo = loa_desp[is_dtp(loa_desp) & !(is_pgj(loa_desp) | is_legislativo(loa_desp) | 
+vl_executivo = loa_desp[is_dtp(loa_desp) & !(is_pgj(loa_desp) | is_legislativo(loa_desp) |
                                                is_tce(loa_desp) | is_judiciario(loa_desp)), sum(VL_DESP)]
 perc_executivo = 0.49
 parte_executivo = data.table(cod=c(9,10),
@@ -130,12 +130,12 @@ parte_total = data.table(cod = c(11, 12, 13),
 
 
 # ============== Agregando... ===========================================================================
-demonstr = rbindlist(list(parteA, 
-                          parteB, 
-                          parte_legisl, 
-                          parte_jud, 
-                          parte_pgj, 
-                          parte_executivo, 
+demonstr = rbindlist(list(parteA,
+                          parteB,
+                          parte_legisl,
+                          parte_jud,
+                          parte_pgj,
+                          parte_executivo,
                           parte_total), use.names = T)
 
 demonstr = demonstr[,lapply(.SD, formatarNum)]

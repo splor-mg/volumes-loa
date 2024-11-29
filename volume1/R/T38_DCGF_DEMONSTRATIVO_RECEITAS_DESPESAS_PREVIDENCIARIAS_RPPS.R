@@ -1,10 +1,10 @@
 # =================================================================================================
-# Organização de T38. Demonstrativo das Receitas e Despesas Previdenciárias do Regime Próprio de 
+# Organização de T38. Demonstrativo das Receitas e Despesas Previdenciárias do Regime Próprio de
 # Previdência dos Servidores
 options(warn = 1, scipen = 999)
 
 suppressMessages(require(relatorios))
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 source("utils/suporte/V1/demonstr_despesas_previdenciarias.R", encoding = "UTF-8")
 source("utils/suporte/V1/demonstr_receitas_previdenciarias.R", encoding = "UTF-8")
@@ -21,13 +21,13 @@ total_despesas = desp_prev[nvl==1, sum(VL_LOA)]
 
 if(total_despesas!=loa_desp[is_prev_loa_desp(loa_desp), sum(VL_LOA_DESP)]){
   warning("T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de despesas",
-          "previdenciarias em relatorios::is_prev_loa_desp ", 
+          "previdenciarias em relatorios::is_prev_loa_desp ",
           loa_desp[is_prev_loa_desp(loa_desp), formatarNum(sum(VL_LOA_DESP))],
           " diferente do valor calculado em utils/suporte/V1/demonstr_despesas_previdenciarias.R ",
           formatarNum(total_despesas), "\n")
 }
 
-desp_prev = rbind(data.table(espec = "DESPESAS PREVIDENCIÁRIAS", 
+desp_prev = rbind(data.table(espec = "DESPESAS PREVIDENCIÁRIAS",
                              nvl = 0,
                              VL_LOA = total_despesas),
                   desp_prev)
@@ -43,14 +43,14 @@ total_receitas = rec_prev[nvl==1, sum(VL_LOA)]
 
 if(total_receitas!=loa_rec[is_receitas_previdenciarias(loa_rec), sum(VL_LOA_REC)]){
   warning("T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitas",
-          "previdenciarias em funcoes.R ", 
+          "previdenciarias em funcoes.R ",
           loa_rec[is_receitas_previdenciarias(loa_rec), formatarNum(sum(VL_LOA_REC))],
           " diferente do valor calculado em demonstr_receitas_previdenciarias ",
           formatarNum(total_receitas), "\n")
 }
 
 
-rec_prev = rbind(data.table(espec = "RECEITAS PREVIDENCIÁRIAS", 
+rec_prev = rbind(data.table(espec = "RECEITAS PREVIDENCIÁRIAS",
                              nvl = 0,
                              VL_LOA = total_receitas),
                   rec_prev)
@@ -65,7 +65,6 @@ demonstrativo = rbind(demonstrativo,
 demonstrativo[, espec := correcaoCaracteresEspeciais(espec, caracteres)]
 demonstrativo[, VL_LOA := negativoContabil(formatarNum(VL_LOA))]
 
-write.table(demonstrativo, 
+write.table(demonstrativo,
             "volume1/data/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
-

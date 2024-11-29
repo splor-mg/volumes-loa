@@ -2,7 +2,7 @@
 # Organização de T15_PROGRAMA_TRABALHO_GOVERNO
 # DEMONSTRATIVO DA DESPESA POR FUNÇÕES, SUBFUNÇÕES E PROGRAMAS CONFORME OS GRUPOS DE DESPESA
 options(warn = 1)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
@@ -24,8 +24,8 @@ qdd_funcao[, c("SUB_FUNCAO", "PROGRAMA"):=0]
 qdd_funcao = mergeDT(qdd_funcao, funcao, by.x="FUNCAO", by.y="codigo", all=T)
 
 if("Apenas no Banco X" %in% qdd_funcao[, unique(merge)]){
-  warning(paste("T15_PROGRAMA_TRABALHO_GOVERNO: Há códigos de FUNÇÃO em BASE_QDD_FISCAL", 
-                "que não possuem uma correspondência em desc_funcao.xlsx. Os codigos são ", 
+  warning(paste("T15_PROGRAMA_TRABALHO_GOVERNO: Há códigos de FUNÇÃO em BASE_QDD_FISCAL",
+                "que não possuem uma correspondência em desc_funcao.xlsx. Os codigos são ",
                 paste(qdd_funcao[merge=="Apenas no Banco X", unique(FUNCAO)], collapse=", "),
                 "\nCorreção: inserir esses códigos e sua descrição em banco_apoio na aba Função\n"))
 }
@@ -44,7 +44,7 @@ setnames(qdd_subfuncao, "subfuncao", "especificacao")
 
 if("Apenas no Banco X" %in% qdd_subfuncao[, unique(merge)]){
   warning(paste("T15_PROGRAMA_TRABALHO_GOVERNO: Há códigos de sub-função em BASE_QDD_FISCAL",
-                "que não possuem uma correspondência em desc_subfuncao.xlsx. Os codigos são ", 
+                "que não possuem uma correspondência em desc_subfuncao.xlsx. Os codigos são ",
                 paste(qdd_subfuncao[merge=="Apenas no Banco X", unique(SUB_FUNCAO)], collapse=", "),
                 "\nCorreção: inserir esses códigos e sua descrição em banco_apoio na aba Subfunção\n"))
 }
@@ -54,7 +54,7 @@ qdd_subfuncao[, merge := NULL]
 
 # ======= Banco por Programa =================
 
-qdd_prog = qdd[, list(valor = sum(valor, na.rm=T)), 
+qdd_prog = qdd[, list(valor = sum(valor, na.rm=T)),
                by=list(FUNCAO, SUB_FUNCAO, PROGRAMA, especificacao = NOME_PROGRAMA, GRUPO_DESPESA)]
 
 # ======= União dos bancos =================
@@ -65,10 +65,10 @@ final = rbind(final, qdd_prog)
 final = mergeDT(final, grupo_despesa, by.x="GRUPO_DESPESA", by.y="codigo", all=T)
 final[, nome_g_despesa := toupper(nome_g_despesa)]
 
-final[GRUPO_DESPESA == 9 & is.na(especificacao), 
+final[GRUPO_DESPESA == 9 & is.na(especificacao),
       especificacao := ""]
 
-final <- dcast(final, FUNCAO + SUB_FUNCAO + PROGRAMA + especificacao ~ nome_g_despesa, 
+final <- dcast(final, FUNCAO + SUB_FUNCAO + PROGRAMA + especificacao ~ nome_g_despesa,
                value.var = "valor", fill=0, fun.aggregate = sum)
 
 setcolorder(final, c("FUNCAO", "SUB_FUNCAO", "PROGRAMA", "especificacao", "PESSOAL E ENCARGOS SOCIAIS",
@@ -96,12 +96,12 @@ final[, especificacao := correcaoCaracteresEspeciais(especificacao, caracteres)]
 
 names(final) = tolower(names(final))
 
-setnames(final, c("sub_funcao", "pessoal e encargos sociais", "juros e encargos da dívida", 
-                  "outras despesas correntes", "investimentos", "inversões financeiras", 
+setnames(final, c("sub_funcao", "pessoal e encargos sociais", "juros e encargos da dívida",
+                  "outras despesas correntes", "investimentos", "inversões financeiras",
                   "amortização da dívida", "reserva de contingência"),
-                c("subfuncao", "pessoal", "juros", 
-                  "outras", "investimentos", "inversoes", 
+                c("subfuncao", "pessoal", "juros",
+                  "outras", "investimentos", "inversoes",
                   "amort", "reserva"))
 
-write.table(final, "volume1/data/T15_PROGRAMA_TRABALHO_GOVERNO.txt", quote = F, 
+write.table(final, "volume1/data/T15_PROGRAMA_TRABALHO_GOVERNO.txt", quote = F,
             sep = "\t", na = "", dec = ",", row.names = FALSE)

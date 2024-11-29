@@ -1,7 +1,7 @@
 # =================================================================================
 # Organização de T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA
 options(warn = 1)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
@@ -17,12 +17,12 @@ qdd = qdd[, list(valor = sum(valor, na.rm=T)), by=list(COD_UO, UO, GRUPO_DESPESA
 qdd = mergeDT(qdd, grupo_despesa, by.x="GRUPO_DESPESA", by.y="codigo", all=T)
 
 if("Apenas no Banco X" %in% qdd[, unique(merge)]){
-  
+
   warning(paste("T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA: Há códigos",
-                "de grupo de despesa em BASE_QDD_FISCAL que não possuem uma correspondência em ", 
-                "desc_grupos_de_despesa.xlsx. Os codigos são ", 
+                "de grupo de despesa em BASE_QDD_FISCAL que não possuem uma correspondência em ",
+                "desc_grupos_de_despesa.xlsx. Os codigos são ",
                 paste(qdd[merge=="Apenas no Banco X", unique(GRUPO_DESPESA)], collapse=", "),
-                "\nCorreção: inserir esses códigos e sua descrição em banco apoio", 
+                "\nCorreção: inserir esses códigos e sua descrição em banco apoio",
                 "na aba Grupos de despesa\n"))
 }
 
@@ -32,8 +32,8 @@ qdd <- dcast(qdd, COD_UO + UO ~ especificacao, value.var = "valor", fill=0, fun.
 
 qdd = qdd[order(UO)]
 
-setcolorder(qdd , c("COD_UO", "UO", "PESSOAL E ENCARGOS SOCIAIS", "JUROS E ENCARGOS DA DÍVIDA", 
-                    "OUTRAS DESPESAS CORRENTES", "INVESTIMENTOS", "INVERSÕES FINANCEIRAS", 
+setcolorder(qdd , c("COD_UO", "UO", "PESSOAL E ENCARGOS SOCIAIS", "JUROS E ENCARGOS DA DÍVIDA",
+                    "OUTRAS DESPESAS CORRENTES", "INVESTIMENTOS", "INVERSÕES FINANCEIRAS",
                     "AMORTIZAÇÃO DA DÍVIDA", "RESERVA DE CONTINGÊNCIA"))
 
 qdd$total = apply(qdd[, c(3:9), with = F],1,sum)
@@ -48,11 +48,10 @@ qdd[, UO := correcaoCaracteresEspeciais(UO, caracteres)]
 
 setnames(qdd, c("UO", "PESSOAL E ENCARGOS SOCIAIS", "JUROS E ENCARGOS DA DÍVIDA", "OUTRAS DESPESAS CORRENTES",
                 "INVESTIMENTOS", "INVERSÕES FINANCEIRAS", "AMORTIZAÇÃO DA DÍVIDA", "RESERVA DE CONTINGÊNCIA"),
-              c("orgaos", "pessoal", "juros", "outras", 
+              c("orgaos", "pessoal", "juros", "outras",
                 "investimentos", "inversoes", "amort", "reserva"))
 
 qdd[, COD_UO := NULL]
 
-write.table(qdd, "volume1/data/T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA.txt", quote = F, 
+write.table(qdd, "volume1/data/T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA.txt", quote = F,
             sep = "\t", na = "", dec = ",", row.names = FALSE)
-

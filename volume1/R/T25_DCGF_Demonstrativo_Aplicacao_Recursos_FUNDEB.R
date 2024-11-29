@@ -1,10 +1,10 @@
 # =================================================================================================
-# Organização de T25. Demonstrativo da Aplicação dos Recursos do Fundo de Desenvolvimento da 
+# Organização de T25. Demonstrativo da Aplicação dos Recursos do Fundo de Desenvolvimento da
 # Educação Básica e Valorização dos Profissionais da Educação
 options(warn=1, scipen = 999)
 suppressMessages(require(relatorios))
 
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
@@ -27,11 +27,11 @@ geraPerc = function(x) return(gsub("\\.", ",", round(x,2)))
 
 # =============== RECEITA ================================================================
 # Recorte para a FONTE 23
-#	Fundo de Manutenção e Desenvolvimento da Educação Básica - Fundeb	
+#	Fundo de Manutenção e Desenvolvimento da Educação Básica - Fundeb
 #
-# Recursos vinculados ao Fundo de Manutenção E Desenvolvimento da Educação Básica e de 
-# Valorização dos Profissionais da Educação - Fundeb resultante da parcela do ICMS, IPVA, 
-# ITCD, com as respectivas multas e dívida ativa e transferência de impostos federais. 
+# Recursos vinculados ao Fundo de Manutenção E Desenvolvimento da Educação Básica e de
+# Valorização dos Profissionais da Educação - Fundeb resultante da parcela do ICMS, IPVA,
+# ITCD, com as respectivas multas e dívida ativa e transferência de impostos federais.
 # ========================================================================================
 
 parteA_desc =  "RECEITA"
@@ -43,9 +43,9 @@ parteA = loa_rec[UO_COD == 1261 & ( FONTE_COD==23 | FONTE_COD==13), ]
 #parteA = adiciona_desc(parteA, "RECEITA")
 parteA = parteA[, list(valor = sum(VL_REC)), by=list(cod = RECEITA_COD, espec = RECEITA_DESC)][order(cod)]
 
-parteA = rbind(data.table(cod=NA, 
-                          espec = parteA_desc, 
-                          valor = sum(parteA[,valor])), 
+parteA = rbind(data.table(cod=NA,
+                          espec = parteA_desc,
+                          valor = sum(parteA[,valor])),
                parteA)
 
 
@@ -68,11 +68,11 @@ if(length(intersect(loa_desp[, unique(SUBFUNCAO_COD)], subf_esperadas)) != lengt
 }
 
 
-parteB = loa_desp[, list(valor = sum(VL_DESP)), by=list(cod = paste(UO_COD, SUBFUNCAO_COD), 
+parteB = loa_desp[, list(valor = sum(VL_DESP)), by=list(cod = paste(UO_COD, SUBFUNCAO_COD),
                                                         espec)]
 
-parteB = rbind(data.table(cod=NA, 
-                          espec = parteB_desc, 
+parteB = rbind(data.table(cod=NA,
+                          espec = parteB_desc,
                           valor = sum(parteB[,valor])),
                parteB)
 
@@ -89,17 +89,17 @@ if(total_despesa!=total_receita){
 demonst1[, espec := correcaoCaracteresEspeciais(espec, caracteres)]
 demonst1 = demonst1[, lapply(.SD, formatarNum)]
 
-write.table(demonst1, "volume1/data/T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB.txt", 
+write.table(demonst1, "volume1/data/T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
 
 
 loa_desp_magisterio = loa_desp[is_pessoal_fundeb(loa_desp),]
 
-loa_desp_magisterio[, cod := paste0(UO_COD, " ", FUNCAO_COD, ".", SUBFUNCAO_COD, ".", 
-                                    PROGRAMA_COD, ".", substr(ACAO_COD,1,1), ".", 
+loa_desp_magisterio[, cod := paste0(UO_COD, " ", FUNCAO_COD, ".", SUBFUNCAO_COD, ".",
+                                    PROGRAMA_COD, ".", substr(ACAO_COD,1,1), ".",
                                     substr(ACAO_COD,2,4))]
 
-loa_desp_magisterio = loa_desp_magisterio[, list(valor = sum(VL_DESP)), 
+loa_desp_magisterio = loa_desp_magisterio[, list(valor = sum(VL_DESP)),
                                           by=list(cod, espec)]
 
 total_desp_magisterio = loa_desp_magisterio[, sum(valor)]
@@ -113,6 +113,5 @@ demonst2 = rbind(data.table(cod=NA, espec = "DESPESA COM PESSOAL", valor = forma
 
 demonst2[, espec := correcaoCaracteresEspeciais(espec, caracteres)]
 
-write.table(demonst2, "volume1/data/T25_DCGF_PT2_PESSOAL_MAGISTERIO_RELATIVO_RECEITA_FUNDEB.txt", 
+write.table(demonst2, "volume1/data/T25_DCGF_PT2_PESSOAL_MAGISTERIO_RELATIVO_RECEITA_FUNDEB.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
-

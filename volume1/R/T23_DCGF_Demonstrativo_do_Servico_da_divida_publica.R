@@ -3,7 +3,7 @@
 options(warn=1, scipen = 999)
 suppressMessages(require(relatorios))
 
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
@@ -24,26 +24,25 @@ interna_acessorio = loa_desp[GRUPO_COD==2 & ACAO_COD %in% acoes_divida_interna, 
 externa_acessorio = loa_desp[GRUPO_COD==2 & ACAO_COD==acoes_divida_externa, sum(VL_DESP)]
 
 
-relatorio = data.table(espec = "Interna", 
+relatorio = data.table(espec = "Interna",
                        principal = interna_principal,
-                       acessorio = interna_acessorio, 
+                       acessorio = interna_acessorio,
                        total = interna_principal + interna_acessorio)
-                
-relatorio = rbind(relatorio, 
-                  data.table(espec = "Externa", 
+
+relatorio = rbind(relatorio,
+                  data.table(espec = "Externa",
                              principal = externa_principal,
-                             acessorio = externa_acessorio, 
+                             acessorio = externa_acessorio,
                              total = externa_principal + externa_acessorio))
-                  
-relatorio = rbind(relatorio, 
-                  data.table(espec = "Total", 
-                             principal = externa_principal + interna_principal, 
-                             acessorio = externa_acessorio + interna_acessorio, 
+
+relatorio = rbind(relatorio,
+                  data.table(espec = "Total",
+                             principal = externa_principal + interna_principal,
+                             acessorio = externa_acessorio + interna_acessorio,
                              total = externa_principal + externa_acessorio + interna_principal + interna_acessorio))
 
 relatorio[, espec := correcaoCaracteresEspeciais(espec, caracteres)]
 relatorio = relatorio[,lapply(.SD, formatarNum)]
 
-write.table(relatorio, "volume1/data/T23_DCGF_Demonstrativo_do_Servico_da_divida_publica.txt", 
+write.table(relatorio, "volume1/data/T23_DCGF_Demonstrativo_do_Servico_da_divida_publica.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
-

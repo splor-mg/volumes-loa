@@ -3,7 +3,7 @@ options(warn=1, scipen = 999)
 
 suppressMessages(require(relatorios))
 
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 source("volume1/R/T28_DCGF_Demonstrativo_programas_financiados_com_recursos_provenientes_Uniao.R")
 
@@ -16,12 +16,12 @@ exec_rec = reest::ler_exec_rec("bancos/SISOR/exec_rec.xlsx")
 exec_rec = exec_rec[VL_EFET_AJUST != 0, ]
 
 
-loa_rec = loa_rec[FONTE_COD %in% fontes_uniao, 
-                  list(VL_LOA_REC = sum(VL_LOA_REC)), 
+loa_rec = loa_rec[FONTE_COD %in% fontes_uniao,
+                  list(VL_LOA_REC = sum(VL_LOA_REC)),
                   by=list(RECEITA_COD, RECEITA_DESC)]
 
-exec_rec = exec_rec[FONTE_COD %in% fontes_uniao & MES_COD <= mes, 
-                    list(VL_EFET_AJUST = round(sum(VL_EFET_AJUST),0)), 
+exec_rec = exec_rec[FONTE_COD %in% fontes_uniao & MES_COD <= mes,
+                    list(VL_EFET_AJUST = round(sum(VL_EFET_AJUST),0)),
                     by=list(RECEITA_COD, RECEITA_DESC)]
 
 receita = mergeDT(loa_rec, exec_rec, by="RECEITA_COD", all=T)
@@ -42,4 +42,3 @@ receita[1,c("ANO", "MES", "FONTE_EXEC") := list(as.character(ano_exercicio), mes
 
 write.table(receita, "volume1/data/T28_DCGF_PT1_Receita_prevista_e_realizada.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
-

@@ -4,7 +4,7 @@
 options(warn=1, scipen = 999)
 suppressMessages(require(relatorios))
 
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 source("volume1/R/T28_DCGF_Demonstrativo_programas_financiados_com_recursos_provenientes_Uniao.R")
 
@@ -15,18 +15,18 @@ desp_real = data.table(read_excel("bancos/SISOR/exec_desp_realizada.xlsx", sheet
 # No BO copiei um exec_desp e inseri a coluna de "Valor Despesa Realizada"
 # ==========================================
 
-loa_desp = loa_desp[FONTE_COD %in% fontes_uniao, 
-                    list(VL_LOA_DESP = sum(VL_LOA_DESP)), 
+loa_desp = loa_desp[FONTE_COD %in% fontes_uniao,
+                    list(VL_LOA_DESP = sum(VL_LOA_DESP)),
                     by=list(UO_COD, PROGRAMA_COD, ANO)]
 
-# desp_real = desp_real[FONTE_COD %in% fontes_uniao & MES_COD <= mes, 
-#                       list(VL_DESP_REALIZ = round(sum(`Valor Despesa Realizada`), 0)), 
+# desp_real = desp_real[FONTE_COD %in% fontes_uniao & MES_COD <= mes,
+#                       list(VL_DESP_REALIZ = round(sum(`Valor Despesa Realizada`), 0)),
 #                       by=list(UO_COD, PROGRAMA_COD, ANO)]
 
 
 #mudança de valor de despesa realizada, gerou erro na LOA 2023
-desp_real = desp_real[FONTE_COD %in% fontes_uniao & MES_COD <= mes, 
-                      list(VL_DESP_REALIZ = round(sum(VL_DESP_REALIZADA), 0)), 
+desp_real = desp_real[FONTE_COD %in% fontes_uniao & MES_COD <= mes,
+                      list(VL_DESP_REALIZ = round(sum(VL_DESP_REALIZADA), 0)),
                       by=list(UO_COD, PROGRAMA_COD, ANO)]
 
 
@@ -47,5 +47,5 @@ indice_vl = which(grepl("VL.+", names(despesa)))
 despesa = despesa[, (indice_vl) := lapply(.SD, formatarNum), .SDcols=indice_vl]
 despesa[, PROGRAMA_DESC := correcaoCaracteresEspeciais(PROGRAMA_DESC, caracteres)]
 
-write.table(despesa, "volume1/data/T28_DCGF_PT2_Despesa_prevista_e_realizada.txt", 
+write.table(despesa, "volume1/data/T28_DCGF_PT2_Despesa_prevista_e_realizada.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE, fileEncoding = "UTF-8")

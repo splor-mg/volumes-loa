@@ -4,7 +4,7 @@ options(warn=1, scipen = 999)
 
 suppressMessages(require(relatorios))
 
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 source("utils/suporte/V1/demonstr_rcl.R", encoding = "UTF-8")
 
@@ -29,8 +29,8 @@ vl_rcl_relatorios = rec[is_rcl_pessoal(rec), sum(VL_LOA_REC)]
 
 
 if(vl_rcl_relatorios!=rcl[nrow(rcl), VL_LOA_REC]){
-  warning("Valor de RCL pelo pkg relatorios (", formatarNum(vl_rcl_relatorios), 
-          ") é diferente do apresentado no demonstrativo (", formatarNum(rcl[nrow(rcl), VL_LOA_REC]), 
+  warning("Valor de RCL pelo pkg relatorios (", formatarNum(vl_rcl_relatorios),
+          ") é diferente do apresentado no demonstrativo (", formatarNum(rcl[nrow(rcl), VL_LOA_REC]),
           "). Avaliar o demonstrativo em utils/rcl.R")
 }
 
@@ -38,6 +38,5 @@ rcl = rcl[,lapply(.SD, formatarNum)]
 rcl[, espec := correcaoCaracteresEspeciais(espec, caracteres, is_maiscula = F)]
 rcl[, nvl := as.numeric(nvl)]
 
-write.table(rcl, "volume1/data/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.txt", 
+write.table(rcl, "volume1/data/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
-
