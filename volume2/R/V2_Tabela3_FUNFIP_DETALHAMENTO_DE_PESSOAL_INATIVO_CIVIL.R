@@ -1,6 +1,6 @@
 # Organização do banco DETALHAMENTO DA CATEGORIA DE PESSOAL CASO FUNFIP - Volume 2
 options(warn=1)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
@@ -28,15 +28,15 @@ uo_inativos_folha <- uo_inativos_folha[!uo_inativos_folha %in% uo_militar_com_ci
 #criar regra para retirar as UO 1251 e 1401 de uo_inativos_folha
 
 
-lista_uo = qdd[, list(x=1), 
-               by=list(COD_UO, nome_uo = paste0(substr(COD_UO,1,1), ".", substr(COD_UO,2,3), ".", 
+lista_uo = qdd[, list(x=1),
+               by=list(COD_UO, nome_uo = paste0(substr(COD_UO,1,1), ".", substr(COD_UO,2,3), ".",
                                                 substr(COD_UO,4,4), " - ", toupper(UO)), PODER)]
 
 lista_uo = mergeDT(lista_uo, codigo_poderes, by.x="PODER", by.y="cod_poder", all=T)
 
 
 if("Apenas no Banco Y" %in% lista_uo[, unique(merge)]){
-  warning(paste("V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: Não há UO's para o poder ", 
+  warning(paste("V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: Não há UO's para o poder ",
                     lista_uo[merge=="Apenas no Banco Y", unique(poder)]))
 }
 lista_uo = lista_uo[, c("x", "merge") := NULL]
@@ -44,7 +44,7 @@ lista_uo = lista_uo[, c("x", "merge") := NULL]
 
 nomes_antigos = read_excel("bancos/manual/Nome_UO_antigas.xlsx", sheet=1)
 
-qdd = qdd[COD_UO==cod_funfip & GRUPO_DESPESA==1 & IPU!=9, ] 
+qdd = qdd[COD_UO==cod_funfip & GRUPO_DESPESA==1 & IPU!=9, ]
 
 cod_orgao = qdd[1, COD_ORGAO]
 nome_orgao = qdd[1, ORGAO]
@@ -60,17 +60,17 @@ acoes_funfip = read_excel("bancos/manual/FFP_acoes.xlsx", sheet=1)
 qdd = mergeDT(qdd, acoes_funfip, by.x="ACAO", by.y="ACAO", all=T)
 
 if("Apenas no Banco X" %in% qdd[, unique(merge)]){
-  
+
   warning(paste("V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: Há códigos no banco BASE_QDD_FISCAL",
                 "(com filtro para UO FUNFIP, GRUPO de despesa =1 e IPU diferente de 9)",
                 "que não econtraram correspondência na planilha FUNFIP ações.xlsx.",
                 "É o caso da ação código", paste(qdd[merge=="Apenas no Banco X", unique(ACAO)], collapse=", "),
                 ". Atualizar o banco FUNFIP_acoes.xlsx com as ações presentes em /manual/novasAcoes_FUNFIP.csv",
                 "e em sequência DELETAR /manual/novasAcoes_FUNFIP.csv"))
-  
+
   novas_acoes = qdd[merge=="Apenas no Banco X", list(COD_UO), list(ACAO, DESCRITIVO_ACAO = NOME_ACAO)]
   novas_acoes[, list(COD_UO, ACAO, DESCRITIVO_ACAO)]
-  
+
   write.csv2(novas_acoes, "bancos/manual/novasAcoes_FUNFIP.csv", row.names = F)
 }
 
@@ -86,13 +86,13 @@ if("Apenas no Banco Y" %in% qdd[, unique(merge)]){
 nomes_acao_diff = which(!(qdd[merge=="Em ambos os bancos", NOME_ACAO==DESCRITIVO_ACAO]))
 
 if(length(nomes_acao_diff)>0){
-  
+
   warning(paste("V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: Há nomes de ações",
                 "que diferem entre o banco BASE_QDD_FISCAL (com filtro para UO FUNFIP, GRUPO",
                 "de despesa =1 e IPU diferente de 9) que traz o nome atual e o banco FUNFIP",
                 "ações.xlsx que traz o nome esperado. Analisar os seguintes casos:\n",
-                "qdd_fiscal: NOME_ACAO == ", qdd[merge=="Em ambos os bancos", NOME_ACAO][nomes_acao_diff], 
-                "---- FUNFIP ações.xlsx : NOME ACAO ==", 
+                "qdd_fiscal: NOME_ACAO == ", qdd[merge=="Em ambos os bancos", NOME_ACAO][nomes_acao_diff],
+                "---- FUNFIP ações.xlsx : NOME ACAO ==",
                 qdd[merge=="Em ambos os bancos", DESCRITIVO_ACAO][nomes_acao_diff],"\n"))
 }
 
@@ -102,7 +102,7 @@ pessoal = pessoal[grepl("INATIVO CIVIL", pessoal$categoria, ignore.case = T) & !
 
 
 
-pessoal = pessoal[!(cod_uo %in% desconsiderar_uo), 
+pessoal = pessoal[!(cod_uo %in% desconsiderar_uo),
                   list(quantidade = sum(quantidade, na.rm=T)), by=list(cod_uo)]
 
 if(file.exists("bancos/manual/PESSOAL_INATIVO_AUSENTE_SISOR.xlsx")){
@@ -118,7 +118,7 @@ pessoal = mergeDT(pessoal, qdd, by.x="cod_uo", by.y="COD_UO", all=T)
 
 if("Apenas no Banco X" %in% pessoal[, unique(merge)]){
   warning(paste("V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes",
-                "UO's não possuem valores em ações da FUNFIP:", 
+                "UO's não possuem valores em ações da FUNFIP:",
                 paste(pessoal[merge=="Apenas no Banco X", cod_uo], collapse = " ")))
 }
 
@@ -144,23 +144,23 @@ pessoal = pessoal[merge!="Apenas no Banco Y",]
 if(4291 %in% pessoal[, unique(cod_uo)]){
   warning(paste("V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO ESTADUAL DE SAÚDE",
                 "(UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)\n"))
-  
+
   pessoal[cod_uo==4291, c("cod_uo", "nome_uo") := list(1320, NA)]
   pessoal[cod_uo==1320, poder := "PODER EXECUTIVO"]
-  
+
 }
 
 pessoal = mergeDT(pessoal, nomes_antigos, by.x="cod_uo", by.y="cod_uo", all=T)
 pessoal = pessoal[merge!="Apenas no Banco Y",]
 
-pessoal[is.na(nome_uo) & !is.na(nome), nome_uo := paste0(substr(cod_uo,1,1), ".", substr(cod_uo,2,3), ".", 
+pessoal[is.na(nome_uo) & !is.na(nome), nome_uo := paste0(substr(cod_uo,1,1), ".", substr(cod_uo,2,3), ".",
                                                          substr(cod_uo,4,4), " - ", toupper(nome))]
 
 if(TRUE %in% is.na(pessoal$nome_uo)){
-  warning(paste("V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: O codigo uo", 
+  warning(paste("V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: O codigo uo",
                 paste(pessoal[is.na(nome_uo), unique(cod_uo)], collapse=", "),
                 "não está em BASE_QDD_FISCAL e no arquivo bancos/manual/Nome_UO_antigas.xlsx \n"))
-  
+
   pessoal[is.na(nome_uo), nome_uo := paste0(cod_uo, " - ", toupper(nome))]
 }
 
@@ -171,14 +171,14 @@ pessoal[, adm := ifelse(grepl("1\\.\\d{2}\\.\\d{1}.+", nome_uo), "ADMINISTRAÇÃ
                         "ADMINISTRAÇÃO INDIRETA")]
 
 pessoal[poder!="PODER EXECUTIVO", adm :=NA]
-                                                       
-pessoal_adm = pessoal[!is.na(adm), list(poder = "PODER EXECUTIVO", 
-                                        quantidade = sum(quantidade, na.rm=T), 
+
+pessoal_adm = pessoal[!is.na(adm), list(poder = "PODER EXECUTIVO",
+                                        quantidade = sum(quantidade, na.rm=T),
                                         valor = sum(valor, na.rm=T)), by=list(nome_uo=adm)]
 
 pessoal_adm[, cod_uo := ifelse(grepl("(.+) DIRETA", nome_uo), 1000, 2000)]
 
-pessoal_poder = pessoal[,list(qtdePoder = sum(quantidade, na.rm=T), valorPoder = sum(valor, na.rm=T)), 
+pessoal_poder = pessoal[,list(qtdePoder = sum(quantidade, na.rm=T), valorPoder = sum(valor, na.rm=T)),
                          by=list(poder)]
 
 pessoal = mergeDT(pessoal, pessoal_poder, by.x="poder", by.y="poder", all=T)
@@ -191,16 +191,16 @@ pessoal[,c("merge", "PODER", "adm"):=NULL]
 pessoal$qtdePoder[1] = pessoal$qtdePoder[2]
 pessoal$valorPoder[1] = pessoal$valorPoder[2]
 
-linhas_na = union(which(pessoal[, poder=="PODER EXECUTIVO"])[-1], 
+linhas_na = union(which(pessoal[, poder=="PODER EXECUTIVO"])[-1],
                   (max(which(pessoal[, poder=="PODER EXECUTIVO"]))+2):length(pessoal$poder))
 
 pessoal[linhas_na, c("poder", "qtdePoder", "valorPoder"):=NA]
 
 pessoal[, c("uo_funfip", "nome_orgao") := NA_character_]
-pessoal$uo_funfip[1] = paste0(substr(cod_funfip,1,1), ".", substr(cod_funfip,2,3), ".", 
+pessoal$uo_funfip[1] = paste0(substr(cod_funfip,1,1), ".", substr(cod_funfip,2,3), ".",
                               substr(cod_funfip,4,4), " - ", toupper(funfip_uo))
 
-pessoal$nome_orgao[1] = paste0(substr(cod_orgao,1,1), ".", substr(cod_orgao,2,3), ".", 
+pessoal$nome_orgao[1] = paste0(substr(cod_orgao,1,1), ".", substr(cod_orgao,2,3), ".",
                                substr(cod_orgao,4,4), " - ",  toupper(nome_orgao))
 
 pessoal = rbind(pessoal, linha_total, fill=T)
@@ -215,4 +215,3 @@ pessoal[, poder := correcaoCaracteresEspeciais(poder, caracteres)]
 pessoal[as.numeric(quantidade)==0, quantidade := "-"]
 
 write.csv2(pessoal, paste0("volume2/data/tabela3/", cod_funfip,".csv"),  na = "", row.names = FALSE)
-

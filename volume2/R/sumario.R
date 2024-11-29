@@ -1,5 +1,5 @@
 options(warn = 1)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
@@ -15,15 +15,15 @@ poderes = read_excel("bancos/manual/codigosPoder.xlsx", sheet=1)
 sumario = mergeDT(sumario, poderes, by.x="PODER", by.y="cod_poder", all=T)
 
 if("Apenas no Banco X" %in% sumario[, unique(merge)]){
-  warning(paste("sumario_v2: O codigo de poder ", 
-                paste(sumario[merge=="Apenas no Banco X", unique(PODER)], collapse=", "), 
+  warning(paste("sumario_v2: O codigo de poder ",
+                paste(sumario[merge=="Apenas no Banco X", unique(PODER)], collapse=", "),
                 " não possuem uma correspodência no banco codigosPoder.xlsx. ",
                 "Alterar esse banco de codigosPoder.xlsx"))
 }
 
 if("Apenas no Banco Y" %in% sumario[, unique(merge)]){
-  warning(paste("sumario_v2: O poder ", 
-                paste(sumario[merge=="Apenas no Banco Y", unique(poder)], collapse=", "), 
+  warning(paste("sumario_v2: O poder ",
+                paste(sumario[merge=="Apenas no Banco Y", unique(poder)], collapse=", "),
                 " não possui uma UO no QDD Fiscal. Desconsiderar esse poder do banco."))
 }
 
