@@ -1,6 +1,6 @@
 # Organização do banco DETALHAMENTO DOS INVESTIMENTOS por UO - Volume 3
 options(warn = 1)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
@@ -15,7 +15,7 @@ qdd = trataQDD_Investimento("bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx")
 
 if(FALSE %in% qdd[, grepl("(\\d+) *- *(.+)", CATEGORIA)]){
   stop(paste0("V3_T4_DETALHAMENTO_DOS_INVESTIMENTOS: Variável CATEGORIA não segue um padrão \\d{4} - DESCRIÇÃO ",
-              "(Ex.: 4510 - PARTICIPAÇÃO SOCIETÁRIA)\nCasos: ", 
+              "(Ex.: 4510 - PARTICIPAÇÃO SOCIETÁRIA)\nCasos: ",
               paste0(qdd[!grepl("(\\d+) *- *(.+)", CATEGORIA), CATEGORIA], collapse = ",\n ")))
 }
 
@@ -49,7 +49,7 @@ ordem = ordem[order(id)]
 
 
 for(codigo_uo in qdd[, unique(COD_UO)]){
-  
+
   uo = qdd[COD_UO==codigo_uo,]
 
   uo_nat = uo[, list(valor=sum(valor, na.rm=T)), by=list(NATUREZA)]
@@ -70,26 +70,26 @@ for(codigo_uo in qdd[, unique(COD_UO)]){
   # Apenas no Banco Y - Aceitável dado que as UO podem não ter valor para determinada NATUREZA ou CATEGORIA
 
   if("Apenas no Banco X" %in% uo_total[, unique(merge)]){
-  
+
     warning(paste0("V3_T4_DETALHAMENTO_DOS_INVESTIMENTOS: Especificação ",
                    uo_total[merge=="Apenas no Banco X", paste(unique(especificacao), collapse=", ")],
                     " no banco de uo_total não encontrada no banco de ordem. Verificar a origem do ERRO na UO "))
   }
 
   uo_total = uo_total[merge!="Apenas no Banco Y",]
-  
+
   uo_total = uo_total[!(especificacao=="OUTRAS APLICAÇÕES" & !is.na(total) & nivel==2), ]
   uo_total = uo_total[!(especificacao=="OUTRAS APLICAÇÕES" & !is.na(valor) & nivel==1), ]
-  
+
   uo_total[, merge:=NULL]
   uo_total = uo_total[order(id)]
 
-  uo_total[1, orgao := paste0(substr(uo$COD_ORGAO[1],1,1), ".", substr(uo$COD_ORGAO[1],2,3), ".", 
+  uo_total[1, orgao := paste0(substr(uo$COD_ORGAO[1],1,1), ".", substr(uo$COD_ORGAO[1],2,3), ".",
                               substr(uo$COD_ORGAO[1],4,4), " - ",  toupper(uo$ORGAO[1]))]
-  
-  uo_total[1, uo := paste0(substr(uo$COD_UO[1],1,1), ".", substr(uo$COD_UO[1],2,3), ".", 
+
+  uo_total[1, uo := paste0(substr(uo$COD_UO[1],1,1), ".", substr(uo$COD_UO[1],2,3), ".",
                            substr(uo$COD_UO[1],4,4), " - ",  toupper(uo$UO[1]))]
-  
+
   uo_total[2:nrow(uo_total), c("uo", "orgao"):=NA]
   uo_total$id=NULL
 
@@ -99,7 +99,7 @@ for(codigo_uo in qdd[, unique(COD_UO)]){
 
   uo_total = uo_total[,lapply(.SD, formatarNum)]
 
-   write.table(uo_total, paste0("volume3/data/tabela4/", codigo_uo,".txt"), quote = FALSE, 
+   write.table(uo_total, paste0("volume3/data/tabela4/", codigo_uo,".txt"), quote = FALSE,
                sep = "\t", na = "", dec = ",", row.names = FALSE)
 
 }

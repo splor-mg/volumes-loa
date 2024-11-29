@@ -28,11 +28,11 @@
 #     2. CONVÊNIOS (4)
 #     2. RECURSOS PRÓPRIOS (5)
 #     2. OUTRAS ORIGENS (6)
-# 
+#
 # Caso surja novas fontes, deve-se alterar o código abaixo.
 library(relatorios)
 options(warn = 1)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 source("utils/trataBancos/trataQDD_Investimento.R", encoding = "UTF-8")
 
@@ -49,7 +49,7 @@ ref_niveis[nat(COD_FONTE, 2, 3, 4, 5, 6), n1 := "OUTROS"]
 ref_niveis[is.na(n1), n1 := "nao classificado"]
 
 if("nao classificado" %in% ref_niveis[, unique(n1)]){
-  warning(paste("V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM: Fonte sem correspondência para o nivel 1:", 
+  warning(paste("V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM: Fonte sem correspondência para o nivel 1:",
                  "Fonte apresentada no banco (nivel 4) <", paste(ref_niveis[n1=="nao classificado", n4_banco], collapse=", "),
                  "> Banco Referencias Niveis não salvo. Corrigir manualmente as pendências\n\n"))
 }
@@ -67,7 +67,7 @@ ref_niveis[nat(COD_FONTE, 6), n2 := "OUTRAS ORIGENS"]
 ref_niveis[is.na(n2), n2 := "nao classificado"]
 
 if("nao classificado" %in% ref_niveis[, unique(n2)]){
-  warning(paste("V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM: Fonte sem correspondência para o nivel 2:", 
+  warning(paste("V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM: Fonte sem correspondência para o nivel 2:",
                 "Fonte apresentada no banco (nivel 4) <", paste(ref_niveis[n2=="nao classificado", n4_banco], collapse=", "),
                 "> Banco Referencias Niveis não salvo. Corrigir manualmente as pendências\n\n"))
 }
@@ -90,7 +90,7 @@ ref_niveis[nat(COD_FONTE, 3, 4, 5, 6), n3 := ""]
 ref_niveis[is.na(n3), n3 := "nao classificado"]
 
 if("nao classificado" %in% ref_niveis[, unique(n3)]){
-  warning(paste("V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM: Fonte sem correspondência para o nivel 3:", 
+  warning(paste("V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM: Fonte sem correspondência para o nivel 3:",
                 "Fonte apresentada no banco (nivel 4) <", paste(ref_niveis[n3=="nao classificado", n4_banco], collapse=", "),
                 "> Banco Referencias Niveis não salvo. Corrigir manualmente as pendências\n\n"))
 }
@@ -106,7 +106,7 @@ ref_niveis[is.na(n4_label), n4_label := ""]
 
 ref_niveis$COD_FONTE <- NULL
 
-write.table(ref_niveis, "bancos/R/V3_Niveis_de_Referencia_tabela2.txt",quote = FALSE, 
+write.table(ref_niveis, "bancos/R/V3_Niveis_de_Referencia_tabela2.txt",quote = FALSE,
               sep = "\t",  na = "", dec = ",", row.names = FALSE)
 
 
@@ -140,5 +140,5 @@ ref_ordem <- tibble::tribble(
   "RECURSOS PRÓPRIOS", 23,
   "OUTRAS ORIGENS", 24)
 
-write.table(ref_ordem, "bancos/R/V3_Niveis_Ref_Ordem_tabela2.txt", quote = FALSE, sep = "\t",  na = "", 
+write.table(ref_ordem, "bancos/R/V3_Niveis_Ref_Ordem_tabela2.txt", quote = FALSE, sep = "\t",  na = "",
             dec = ",", row.names = FALSE)

@@ -1,11 +1,11 @@
 # Organização dos bancos consolidados volume 3
-# 1. INVESTIMENTOS POR EMPRESA SEGUNDO FONTES DE RECURSO 
+# 1. INVESTIMENTOS POR EMPRESA SEGUNDO FONTES DE RECURSO
 # 2. INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS
 # 3. INVESTIMENTOS SEGUNDO FUNÇÕES, SUBFUNÇÕES E PROGRAMAS POR PROJETOS E ATIVIDADES
 
 options(warn = 1)
 library(relatorios)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
@@ -28,11 +28,11 @@ acoes = trataAcoesPlanejamento("bancos/SISOR/acoes_planejamento", ANO_ANALISE)
 sumario = data.table(unique(cbind(qdd$COD_UO, qdd$UO)))
 setnames(sumario, c("V1", "V2"), c("cod_uo", "uo"))
 sumario = sumario[order(cod_uo)]
-write.table(sumario, "volume3/data/consolidado/sumario_v3.txt", quote = FALSE, sep = "\t", na = "", dec = ",", 
+write.table(sumario, "volume3/data/consolidado/sumario_v3.txt", quote = FALSE, sep = "\t", na = "", dec = ",",
             row.names = FALSE)
 
 #=========================================================================================
-# 1. INVESTIMENTOS POR EMPRESA SEGUNDO FONTES DE RECURSO 
+# 1. INVESTIMENTOS POR EMPRESA SEGUNDO FONTES DE RECURSO
 #=========================================================================================
 
 t1 = qdd[,list(valor = sum(valor, na.rm=T)), by=list(UO, COD_FONTE)]
@@ -76,7 +76,7 @@ setnames(t1, c("UO"), c("orgaos"))
 t1[, orgaos := correcaoCaracteresEspeciais(orgaos, caracteres)]
 t1 = t1[, lapply(.SD, formatarNum)]
 
-write.table(t1, "volume3/data/consolidado/T1_INVESTIMENTO_POR_EMPRESA.txt", append = FALSE, quote = FALSE, 
+write.table(t1, "volume3/data/consolidado/T1_INVESTIMENTO_POR_EMPRESA.txt", append = FALSE, quote = FALSE,
             sep = "\t", na = "", dec = ",", row.names = FALSE)
 
 #=========================================================================================
@@ -115,12 +115,12 @@ var_esperadas = c("valor.outras", "valor.societaria", "valor.imob", "valor.amort
 
 if(length(setdiff(var_esperadas, names(t2)))>0){
   # Cria a categoria caso não haja essa coluna em var_esperadas
-  
+
   warning(paste0("V3_bancos_consolidados: A Tabela 2 INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS ",
                   "não apresenta a categoria representada pelas variaveis, ",
                   paste(setdiff(var_esperadas, names(t2)), collapse=", "),
                   "O total dessa tabela será realizado sem essa var e essa variaveis serão zeradas."))
-  
+
   t2[,setdiff(var_esperadas, names(t2)):=0 ]
 }
 
@@ -131,7 +131,7 @@ setnames(t2, c("UO", "valor.outras", "valor.societaria", "valor.imob", "valor.am
              c("empresas", "outras", "societaria", "imob", "amort"))
 
 t2[, empresas := correcaoCaracteresEspeciais(empresas, caracteres)]
-write.table(t2, "volume3/data/consolidado/T2_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO.txt", 
+write.table(t2, "volume3/data/consolidado/T2_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO.txt",
             quote = FALSE, sep = "\t", na = "", dec = ",", row.names = FALSE)
 
 #=========================================================================================
@@ -140,12 +140,12 @@ write.table(t2, "volume3/data/consolidado/T2_INVESTIMENTOS_EMPRESA_SEGUNDO_DETAL
 
 # Considera apenas as ações que iniciam com 3 (Projeto) ou que iniciam com mais de 6 (Atividade)
 
-t3_atividade = qdd[IDENT_PROJATIV>=6, 
-                   list(atividade = sum(valor, na.rm=T)), 
+t3_atividade = qdd[IDENT_PROJATIV>=6,
+                   list(atividade = sum(valor, na.rm=T)),
                    by=list(FUNCAO, SUB_FUNCAO, PROGRAMA, especificacao = NOME_PROGRAMA)]
 
-t3_projeto = qdd[IDENT_PROJATIV==3, 
-                 list(projeto = sum(valor, na.rm=T)), 
+t3_projeto = qdd[IDENT_PROJATIV==3,
+                 list(projeto = sum(valor, na.rm=T)),
                  by=list(FUNCAO, SUB_FUNCAO, PROGRAMA, especificacao = NOME_PROGRAMA)]
 
 t3_n3 = mergeDT(t3_atividade, t3_projeto, by=c("FUNCAO", "SUB_FUNCAO", "PROGRAMA", "especificacao"), all=T)
@@ -158,7 +158,7 @@ acoes = acoes[, .N, by=.(FUNCAO = cod_funcao, nome_funcao, SUB_FUNCAO = cod_subf
 
 # Valores totais por função Ex. 04.000.00 ADMINISTRAÇÃO
 
-t3_n1 = t3_n3[, list(atividade = sum(atividade, na.rm=T), projeto = sum(projeto, na.rm=T)), 
+t3_n1 = t3_n3[, list(atividade = sum(atividade, na.rm=T), projeto = sum(projeto, na.rm=T)),
               by=list(FUNCAO)]
 
 # Merge "manual", linha a linha, inserindo para cada código de função sua respectiva descrição
@@ -167,7 +167,7 @@ t3_n1 = mergeDT(t3_n1, acoes[, list(x=1), by=list(FUNCAO, especificacao = nome_f
 #browser()
 if("Apenas no Banco X" %in% t3_n1[, unique(merge)]) {
   warning(paste("V3_bancos_consolidados.R: Código da função",
-                paste(t3_n1[merge=="Apenas no Banco X", FUNCAO],collapse=", "), 
+                paste(t3_n1[merge=="Apenas no Banco X", FUNCAO],collapse=", "),
                 "não encontrado na variável cod_funcao no banco de acoes. Verificar o problema!"))
 }
 
@@ -176,15 +176,15 @@ t3_n1[, c("SUB_FUNCAO", "PROGRAMA") := 0]
 
 # Valores totais por subfunção Ex. 04.122.00 ADMINISTRAÇÃO GERAL
 
-t3_n2 = t3_n3[, list(atividade = sum(atividade, na.rm=T), 
+t3_n2 = t3_n3[, list(atividade = sum(atividade, na.rm=T),
                      projeto = sum(projeto, na.rm=T)), by=list(FUNCAO, SUB_FUNCAO)]
 
-t3_n2 = mergeDT(t3_n2, acoes[, list(FUNCAO, SUB_FUNCAO, especificacao = nome_subfuncao)], 
+t3_n2 = mergeDT(t3_n2, acoes[, list(FUNCAO, SUB_FUNCAO, especificacao = nome_subfuncao)],
                 by=c("FUNCAO", "SUB_FUNCAO"), all.x=T)
 
 if("Apenas no Banco X" %in% t3_n2[, unique(merge)]) {
   warning(paste("V3_bancos_consolidados.R: Código da subfunção",
-                paste(t3_n2[merge=="Apenas no Banco X", SUB_FUNCAO],collapse=", "), 
+                paste(t3_n2[merge=="Apenas no Banco X", SUB_FUNCAO],collapse=", "),
                 "não encontrado na variável cod_subfuncao no banco de acoes. Verificar o problema!"))
 }
 
@@ -209,5 +209,5 @@ t3 = t3[,list(codigo, especificacao,  projeto, atividade, total)]
 t3 = t3[, lapply(.SD, formatarNum)]
 t3[, especificacao := correcaoCaracteresEspeciais(especificacao, caracteres)]
 
-write.table(t3, "volume3/data/consolidado/T3_INVESTIMENTOS_SEGUNDO_FUNCOES_SUB_PROGRAMAS_PROJETOS_ATIVIDADES.txt", 
+write.table(t3, "volume3/data/consolidado/T3_INVESTIMENTOS_SEGUNDO_FUNCOES_SUB_PROGRAMAS_PROJETOS_ATIVIDADES.txt",
             quote = FALSE, sep = "\t", na = "", dec = ",", row.names = FALSE)
