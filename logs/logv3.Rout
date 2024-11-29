@@ -1,1 +1,8 @@
 Warning: V3_bancos_consolidados: A Tabela 2 INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS não apresenta a categoria representada pelas variaveis, valor.amortO total dessa tabela será realizado sem essa var e essa variaveis serão zeradas.
+Warning in file(filename, "r", encoding = encoding) :
+  cannot open file 'utils/funcoes.r': No such file or directory
+Error in file(filename, "r", encoding = encoding) : 
+  cannot open the connection
+Calls: source -> file
+Execution halted
+Warning: V3_bancos_consolidados: A Tabela 2 INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS não apresenta a categoria representada pelas variaveis, valor.amortO total dessa tabela será realizado sem essa var e essa variaveis serão zeradas.
