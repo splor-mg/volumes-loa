@@ -2,22 +2,22 @@
 
 [packages.sisor]
 
-path = "https://raw.githubusercontent.com/splor-mg/dados-sisor-2025/main/datapackage.yaml"
+path = "https://raw.githubusercontent.com/splor-mg/dados-sisor-2025/d1cc582c241cc8858f206dd32a8e1868142f23ae/datapackage.yaml"
 
 [packages.sigplan]
 
-path = "https://raw.githubusercontent.com/splor-mg/dados-sigplan-planejamento-2025/main/datapackage.yaml"
+path = "https://raw.githubusercontent.com/splor-mg/dados-sigplan-planejamento-2025/b8a3c975dc196f4a943d6f4a95def1a1cc19bace/datapackage.yaml"
 resources = ["acoes_planejamento"]
 
 [packages.apoio]
 
-path = "https://raw.githubusercontent.com/splor-mg/dados-volumes-loa/main/datapackage.yaml"
+path = "https://raw.githubusercontent.com/splor-mg/dados-volumes-loa/f1977aa8379130a775ac7ce3c5d53a455ca205c0/datapackage.yaml"
 
 [packages.fonte_stn]
 
-path = "https://raw.githubusercontent.com/splor-mg/matriz-fonte-stn-dadosmg/main/datapackage.yaml"
+path = "https://raw.githubusercontent.com/splor-mg/matriz-fonte-stn-dadosmg/8984217d8551cdfab34f03cfd49155fd602f34b1/datapackage.yaml"
 resources = ["fonte_stn"]
 
 [packages.qdd_fiscal_fonte_95]
 
-path = "https://raw.githubusercontent.com/splor-mg/dados-qdd-fonte-95/main/datapackage.json"
+path = "https://raw.githubusercontent.com/splor-mg/dados-qdd-fonte-95/430526ebdc43d9753e9941e0c7c7aee7dcbc2ee2/datapackage.json"
