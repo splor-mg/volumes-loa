@@ -1,8 +1,8 @@
 # =============================================================
-# Gera arquivo .Rnw do volume final. 
+# Gera arquivo .Rnw do volume final.
 # Esse script não foi desenvolvido para rodar os Rnw de layouts
 #
-# Apresenta avisos no bash referente a presença de conteúdo em 
+# Apresenta avisos no bash referente a presença de conteúdo em
 # logs/log.Rout e logs/warningsV\d{1}.Rout
 # =============================================================
 
@@ -26,27 +26,27 @@ if(dir_vol!="1"){
   avisosRnw = readLines(paste0("logs/warningsV", args[1],".Rout"))
 
   if(length(avisosRnw)>0){
-    cat("!-- Codigo R em volume", args[1], 
+    cat("!-- Codigo R em volume", args[1],
         ".Rnw apresenta warnings(). Verificar logs/warningsV", args[1],".Rout\n", sep = "")
   }
-  
-  copia_capa = file.copy(paste0("volume", dir_vol ,"/Rnw/capaLOA.pdf"), ".")
+
+  copia_capa = file.copy(paste0("volume", dir_vol ,"/Rnw/CapaLOA.pdf"), ".")
   cat("-- Iniciando volume", args[1], ".pdf ...\n", sep = "")
-  
+
   gera_pdf = system(paste0("R CMD Sweave --encoding=utf-8 --pdf volume", dir_vol ,
                            "/Rnw/Projeto_volume", args[1] ,".Rnw"))
-  
-  remove_capa = file.remove("capaLOA.pdf")
+
+  remove_capa = file.remove("CapaLOA.pdf")
 
 }else{
-  
+
   file_rnw = paste0(args[1], ".Rnw")
-  
+
   #cat("-- Iniciando ", gsub("(.+)\\.Rnw", "\\1", file_rnw), ".pdf ...\n", sep = "")
-  
+
   gera_pdf = system(paste0("R CMD Sweave --encoding=utf-8 --pdf volume", dir_vol ,"/Rnw/", file_rnw))
 
 }
-  
+
 remove_load_bbt = file.remove("load_bibliotecas.tex")
 limpadir = system(paste0("Rscript utils/limpaDir.R ", dir_vol, " 1"))
