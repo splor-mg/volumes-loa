@@ -40,9 +40,6 @@ asps = asps[, cod:= NA]
 
 
 
-
-
-
 qdd = trataQDD_Item_Fiscal("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx", FALSE)
 
 

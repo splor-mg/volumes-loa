@@ -227,7 +227,7 @@ geraLoa_item_desp = function(qdd){
   #=========================================================================================
   
   if(sum(c("COD_UO", "FUNCAO", "SUB_FUNCAO", "PROGRAMA", "ACAO", "CATEGORIA", "GRUPO_DESPESA", "MODALIDADE", 
-           "ELEMENTO_DESPESA", "FONTE", "IPU", "valor", "NOME_ACAO", "IAG") %in% names(qdd))!=14){
+           "ELEMENTO_DESPESA", "ITEM_DESPESA", "FONTE", "IPU", "valor", "NOME_ACAO", "IAG") %in% names(qdd))!=15){
     
     stop("Alguma das variáveis COD_UO, FUNCAO, SUB_FUNCAO, PROGRAMA, ACAO, CATEGORIA, GRUPO_DESPESA, MODALIDADE,", 
          " ELEMENTO_DESPESA, FONTE, IPU, ou valor não está presente no banco\n",
