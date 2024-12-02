@@ -29,7 +29,7 @@ elif [ $1 == "T5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL" ]
 then vol="volume1"
 elif [ $1 == "T6_DCGF_Demonstrativo_Evolucao_Receita_por_Categoria_Economica" ]
 then vol="volume1"
-elif [ $1 == "T7_QUADRO_GERAL_DA_RECEITA" ]
+elif [ $1 == "T7_Quadro_Geral_da_Receita" ]
 then vol="volume1"
 elif [ $1 == "T8_DCGF_RECEITA_CORRENTE_LIQUIDA" ]
 then vol="volume1"

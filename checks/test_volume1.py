@@ -26,7 +26,7 @@ def test_volume1_t6():
     assert report.test_pdf()
 
 def test_volume1_t7():
-    report = Report('T7_QUADRO_GERAL_DA_RECEITA', 'volume1')
+    report = Report('T7_Quadro_Geral_da_Receita', 'volume1')
     assert report.test_tex()
     assert report.test_pdf()
 

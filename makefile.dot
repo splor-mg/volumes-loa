@@ -1,0 +1,5 @@
+digraph G {
+n3 [label="Makefile", color="forestgreen"];
+n2 [label="config.mk", color="forestgreen"];
+n4 [label="expanded_makefile", color="forestgreen"];
+}

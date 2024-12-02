@@ -51,10 +51,10 @@ REPORTS = [
 
 def validate_report_name(report_names: str):
     all_report_names = [report.name for report in REPORTS]
-    
+
     if isinstance(report_names, str):
         report_names = [report_names]  # Convert to a single-item list
-    
+
     if report_names:
         for report_name in report_names:
             if report_name not in all_report_names:
