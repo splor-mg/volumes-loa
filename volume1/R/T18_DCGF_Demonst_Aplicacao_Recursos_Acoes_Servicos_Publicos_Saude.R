@@ -10,7 +10,9 @@ source("utils/suporte/V1/demonstr_asps_rec.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
 source("utils/trataBancos/trataReceita_Fiscal.R", encoding = "UTF-8")
-source("utils/trataBancos/trataQDD_Fiscal.R", encoding = "UTF-8")
+#source("utils/trataBancos/trataQDD_Fiscal.R", encoding = "UTF-8")
+source("utils/trataBancos/trataQDD_Elemento_Item.R", encoding = "UTF-8")
+
 
 sumario = data.table(read.table("volume2/data/sumario.txt", header=T, sep="\t",stringsAsFactors =F))
 
@@ -40,10 +42,10 @@ asps = asps[, cod:= NA]
 
 
 
-qdd = trataQDD_Item_Fiscal("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx", FALSE)
+loa_desp = trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx", FALSE)
 
 
-loa_desp = geraLoa_item_desp(qdd)
+#loa_desp = geraLoa_item_desp(qdd)
 
 setnames(loa_desp, "VL_LOA_DESP", "VL_DESP")
 
@@ -63,9 +65,9 @@ parteB_desc =  "B. DESPESA COM SAÚDE"
 
 loa_desp = loa_desp[is_asps_desp(loa_desp, "ELEMENTO_ITEM_COD"),]
 
-cols_to_keep <- setdiff(names(loa_desp), c("ELEMENTO_ITEM_COD", "VL_DESP"))
-loa_desp[, ELEMENTO_ITEM_COD := NULL]
-loa_desp = loa_desp[, .(VL_DESP = sum(VL_DESP, na.rm = TRUE)), by = cols_to_keep]
+#cols_to_keep <- setdiff(names(loa_desp), c("ELEMENTO_ITEM_COD", "VL_DESP"))
+#loa_desp[, ELEMENTO_ITEM_COD := NULL]
+#loa_desp = loa_desp[, .(VL_DESP = sum(VL_DESP, na.rm = TRUE)), by = cols_to_keep]
 
 
 loa_desp = loa_desp[!(MODALIDADE_COD==91 & ELEMENTO_COD == 41)]
