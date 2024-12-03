@@ -97,7 +97,7 @@
 
   titulo1= paste0("\\multicolumn{3}{C{19cm}}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
                   "\\textbf{PERCENTUAL DE APLICAÇÃO DA RECEITA DO FUNDEB NA REMUNERAÇÃO DOS PROFISSIONAIS \\newline ",
-                  "DO MAGISTÉRIO DA EDUCAÇÃO BÁSICA}}} \\\\\n")
+                  "DA EDUCAÇÃO BÁSICA}}} \\\\\n")
   
   titulo2= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
                   "\\textbf{(Inciso XII do Art. 60 ADCT/CR)}}} \\\\\n")
