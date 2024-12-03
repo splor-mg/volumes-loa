@@ -30,7 +30,7 @@ if(length(loa_desp[, unique(merge)])>1){
 # =============== A. Programa de Saúde =======================================
 parteA_desc =  "A. Programa de Saúde"
 
-#desp = loa_desp[is_asps_desp(loa_desp, detalhe = "ACAO_COD"),]
+#desp = loa_desp[is_asps_desp(loa_desp, detalhe = "ELEMENTO_ITEM_COD"),]
 
 parteA = loa_desp[FUNCAO_COD==10, ]
 
