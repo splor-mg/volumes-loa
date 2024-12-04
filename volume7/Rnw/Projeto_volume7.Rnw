@@ -58,7 +58,7 @@ Superintendência Central de Planejamento e Orçamento \\
 
 \vspace*{5em}
 \fontsize{15pt}{12pt}\selectfont {\textbf{VOLUME VI}} \\
-\large{Detalhamento dos recursos previstos na Fonte 95 - Recursos Recebidos por Danos Advindos de Desastres Socioambientais}
+\large{Recursos Recebidos por Danos Advindos de Desastres Socioambientais}
 \end{center}
 
 \afterpage{\null\thispagestyle{empty}\newpage}
