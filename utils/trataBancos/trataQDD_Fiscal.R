@@ -169,3 +169,11 @@ geraLoa_desp = function(qdd){
                  "MODALIDADE_COD", "ELEMENTO_COD", "FONTE_COD", "IPU_COD", "IAG_COD", "VL_LOA_DESP" ), with=F])
 
 }
+
+avisoNumAbas = function(caminho){
+  if(length(excel_sheets(caminho))>1){
+    return(warning(paste("Aviso: o banco ", caminho,
+                         " possui mais de 1 aba. A aba que será aberta é sempre a primeira nesse caso a aba",
+                         excel_sheets(caminho)[1])), immediate. = T)
+  }
+}
