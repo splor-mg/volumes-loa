@@ -41,7 +41,7 @@
 "18"	"541"	"31"	" 4"	"59"	" 1"	"90"	" 0"	"61"	" 1"		"1.150.000"	"1.500.000"		"2.650.000"	"7"										
 "18"	"541"	"31"	" 4"	"59"	" 1"	"90"	" 0"	"72"	" 1"		"40.491.884"			"40.491.884"	"7"										
 "18"	"541"	"31"	" 4"	"59"	" 1"	"90"	" 0"	"72"	" 3"			"10.000"		"10.000"	"7"										
-"18"	"541"	"31"	" 4"	"59"	" 1"	"90"	" 0"	"95"	" 1"		"200.149.234"			"200.149.234"	"7"										
+"18"	"541"	"31"	" 4"	"59"	" 1"	"90"	" 0"	"80"	" 1"		"200.149.234"			"200.149.234"	"7"										
 "18"	"541"	"31"	" 4"	"59"	" 1"	"91"	" 0"								"8"	"PLANO DE MANEJO ELABORADO OU REVISADO"			"     7"	"UNIDADE"	"Atividade Fim do Orçamento Fiscal"	"Não"			
 "18"	"541"	"31"	" 4"	"500"										"16.150.000"	"5"	"A AÇÃO POSSUI FINALIDADE DE REGULARIZAÇÃO FUNDIÁRIA NO INTERIOR DAS UNIDADES DE CONSERVAÇÃO ESTADUAIS PARA AS QUAIS SE FAZ NECESSÁRIA A POSSE E DOMÍNIO PÚBLICOS."									
 "18"	"541"	"31"	" 4"	"500"	" 1"									"16.150.000"	"1"	"REGULARIZAÇÃO FUNDIÁRIA DE UNIDADES DE CONSERVAÇÃO"									

@@ -11,6 +11,6 @@
 					"Total"	" 1"	"         0"	"2.972.986"	"32.000.000"	"34.972.986"
 		" 2"		"69 - CONVÊNIOS COM OS ESTADOS E O DISTRITO FEDERAL"	" 0"	" 1"	"         0"	"21.451.000"	"         0"	"21.451.000"
 					"Total"	" 1"	"         0"	"21.451.000"	"         0"	"21.451.000"
-		" 2"		"95 - RECURSOS RECEBIDOS POR DANOS ADVINDOS DE DESASTRES SOCIOAMBIENTAIS"	" 0"	" 1"	"         0"	"11.202.039"	"         0"	"11.202.039"
+		" 2"		"80 - RECURSOS DO ACORDO DE REPACTUAÇÃO DO RIO DOCE"	" 0"	" 1"	"         0"	"11.202.039"	"         0"	"11.202.039"
 					"Total"	" 1"	"         0"	"11.202.039"	"         0"	"11.202.039"
 				"TOTAL"	" 1"	"14"	"24.721.051"	"222.903.984"	"32.350.000"	"279.975.035"
