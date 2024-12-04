@@ -60,7 +60,7 @@
 "  6"	"181"	"32"	" 4"	"60"	" 1"	"90"	" 0"	" 9"	" 1"			"387.000"	"387.000"	"7"											
 "  6"	"181"	"32"	" 4"	"60"	" 1"	"90"	" 0"	"10"	" 1"		"102.238.086"	"24.694.170"	"126.932.256"	"7"											
 "  6"	"181"	"32"	" 4"	"60"	" 1"	"90"	" 0"	"24"	" 1"		"207.331"	"5.965.513"	"6.172.844"	"7"											
-"  6"	"181"	"32"	" 4"	"60"	" 1"	"90"	" 0"	"95"	" 1"			"14.445.369"	"14.445.369"	"7"											
+"  6"	"181"	"32"	" 4"	"60"	" 1"	"90"	" 0"	"80"	" 1"			"14.445.369"	"14.445.369"	"7"											
 "  6"	"181"	"32"	" 4"	"60"	" 1"	"91"	" 0"							"8"	"PROCEDIMENTO CONCLUÍDO"			"310.000"	"PROCEDIMENTO"	"Atividade Fim do Orçamento Fiscal"	"Não"				
 "  6"	"181"	"32"	" 4"	"61"									"20.003.254"	"5"	"ENCONTRAR OU PROPORCIONAR A CHAMADA PROVA MATERIAL, OU PROVA PERICIAL, MEDIANTE A ANÁLISE CIENTÍFICA DE VESTÍGIOS PRODUZIDOS E DEIXADOS NA PRÁTICA DE DELITOS, EM PESSOAS, OBJETOS, INFORMAÇÕES OU LUGARES, VISANDO QUALIFICAR A INVESTIGAÇÃO CRIMINAL."										
 "  6"	"181"	"32"	" 4"	"61"	" 1"								"20.003.254"	"1"	"PERÍCIAS TÉCNICO-CIENTÍFICAS"										

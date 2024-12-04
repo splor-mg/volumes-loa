@@ -49,7 +49,7 @@
 "23"	"694"	"705"	" 7"	"752"							"110.110.000"	"5"	"VIABILIZAR O APORTE DE RECURSOS NO BANCO DE DESENVOLVIMENTO DE MINAS GERAIS - BDMG, TENDO EM VISTA CAPITALIZAR A EMPRESA E GARANTIR O ALCANCE DOS RESPECTIVOS OBJETIVOS INSTITUCIONAIS."												
 "23"	"694"	"705"	" 7"	"752"	" 1"						"110.110.000"	"1"	"PROGRAMAÇÃO A CARGO DO ESTADO PARA O BANCO DE DESENVOLVIMENTO DE MINAS GERAIS - BDMG"												
 "23"	"694"	"705"	" 7"	"752"	" 1"	"90"	" 0"	"61"	" 2"	"110.000"	"110.000"	"7"													
-"23"	"694"	"705"	" 7"	"752"	" 1"	"90"	" 0"	"95"	" 1"	"110.000.000"	"110.000.000"	"7"													
+"23"	"694"	"705"	" 7"	"752"	" 1"	"90"	" 0"	"80"	" 1"	"110.000.000"	"110.000.000"	"7"													
 "23"	"694"	"705"	" 7"	"752"	" 1"	"91"	" 0"					"8"	"APORTE REALIZADO"			"12"	"APORTE"	"Operação Especial"	"Não"						
 "25"											"1.000"	"1"	"ENERGIA"												
 "25"	"752"										"1.000"	"1"	"ENERGIA ELÉTRICA"												

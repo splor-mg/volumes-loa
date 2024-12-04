@@ -11,6 +11,6 @@
 					"Total"	"13"	"16.989.653"	"22.995.347"	"10.015.000"	"50.000.000"
 		" 2"		"67 - ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM OS MUNICÍPIOS"	" 0"	" 1"	"47.230.958"	"52.879.042"	"         0"	"100.110.000"
 					"Total"	" 1"	"47.230.958"	"52.879.042"	"         0"	"100.110.000"
-		" 2"		"95 - RECURSOS RECEBIDOS POR DANOS ADVINDOS DE DESASTRES SOCIOAMBIENTAIS"	" 0"	" 1"	"          0"	"63.496.554"	"         0"	"63.496.554"
+		" 2"		"80 - RECURSOS DO ACORDO DE REPACTUAÇÃO DO RIO DOCE"	" 0"	" 1"	"          0"	"63.496.554"	"         0"	"63.496.554"
 					"Total"	" 1"	"          0"	"63.496.554"	"         0"	"63.496.554"
 				"TOTAL"	" 0"	"18"	"295.413.050"	"146.037.843"	"13.177.045"	"454.627.938"

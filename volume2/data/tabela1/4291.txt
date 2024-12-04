@@ -83,7 +83,7 @@
 "10"	"301"	"60"	" 4"	"125"	" 1"	"41"	" 0"	"10"	" 1"		"178.000.000"		"178.000.000"	"7"											
 "10"	"301"	"60"	" 4"	"125"	" 1"	"45"	" 0"	"10"	" 1"		"257.000.000"		"257.000.000"	"7"											
 "10"	"301"	"60"	" 4"	"125"	" 1"	"90"	" 0"	"10"	" 1"		"5.337.363"		"5.337.363"	"7"											
-"10"	"301"	"60"	" 4"	"125"	" 1"	"90"	" 0"	"95"	" 1"			"110.000.000"	"110.000.000"	"7"											
+"10"	"301"	"60"	" 4"	"125"	" 1"	"90"	" 0"	"80"	" 1"			"110.000.000"	"110.000.000"	"7"											
 "10"	"301"	"60"	" 4"	"125"	" 1"	"91"	" 0"							"8"	"MUNICÍPIO BENEFICIADO"			"853"	"MUNICÍPIO"	"Atividade Fim do Orçamento Fiscal"	"Não"				
 "10"	"301"	"60"	" 4"	"126"									"119.835.831"	"5"	"DESENVOLVER E IMPLEMENTAR AÇÕES E PROGRAMAS DE PROMOÇÃO DA SAÚDE, BEM COMO AS POLÍTICAS E ESTRATÉGIAS PARA A REDUÇÃO DAS INIQUIDADES EM SAÚDE NO ÂMBITO DA ATENÇÃO PRIMÁRIA À SAÚDE NOS MUNICÍPIOS DE MINAS GERAIS, EM CONSONÂNCIA COM AS DIRETRIZES DO PLANO ESTADUAL DE SAÚDE (2024 A 2027)."										
 "10"	"301"	"60"	" 4"	"126"	" 1"								"119.835.831"	"1"	"PROMOÇÃO À SAÚDE E POLÍTICAS DE EQUIDADE"										
