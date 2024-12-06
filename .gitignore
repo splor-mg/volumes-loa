@@ -20,3 +20,4 @@ __pycache__
 datapackages/**/*.*
 !datapackages/**/datapackage.json
 *t2d
+pdf/diff/*
