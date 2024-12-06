@@ -100,21 +100,20 @@ base = copy(loa_rec)
 
 
 
-# Patronal do militar
- #  base[nat(RECEITA_COD, 7218021101002, 7218021101001), 
- #       c("nvl4", "lvl4"):= list("Ativo Militar", 1221)]
-
-  base[nat(RECEITA_COD, 72155311, -7215531101000), 
-            c("nvl4", "lvl4"):= list("Ativo Militar", 1221)]
+# Outras Receitas Correntes
   
- #  base[nat(RECEITA_COD, 7218025101002, 7218025101001), 
- #       c("nvl4", "lvl4"):= list("Inativo Militar", 1222)]
+     #  base[UO_COD== 4711 & RECEITA_COD == 1990031101000, 
+     #       c("nvl3", "lvl3"):= list("Compensação Previdenciária do RGPS para o RPPS", 1510)]
 
-  base[nat(RECEITA_COD, 72155321, -7215532101000), 
-            c("nvl4", "lvl4"):= list("Inativo Militar", 1222)]
   
-  base[lvl4 %in% c(1221, 1222), 
-           c("nvl3", "lvl3"):= list("Militar", 1220)]
+     #  base[UO_COD==4711 & RECEITA_COD %in% c(1922991199000, 1990991101000, 1990991101000), 
+     #       c("nvl3", "lvl3"):= list("Demais Receitas Correntes", 1520)]
+
+     #  base[UO_COD==2121 & RECEITA_COD %in% c(1990991199000),
+     #       c("nvl3", "lvl3"):= list("Demais Receitas Correntes", 1520)]
+
+     #  base[lvl3 %in% c(1510, 1520), 
+     #                 c("nvl2", "lvl2"):= list("Outras Receitas Correntes", 1500)]
 
 
   base[is_rec_prev_compensacao_regimes(base), 
@@ -202,15 +201,21 @@ base = copy(loa_rec)
      base[lvl4 %in% c(1211, 1212), 
             c("nvl3", "lvl3"):= list("Civil", 1210)]
   
-# Patronal do militar está extinta
+# Patronal do militar
      #  base[nat(RECEITA_COD, 7218021101002, 7218021101001), 
      #       c("nvl4", "lvl4"):= list("Ativo Militar", 1221)]
+
+     base[nat(RECEITA_COD, 72155311, -7215531101000), 
+            c("nvl4", "lvl4"):= list("Ativo Militar", 1221)]
   
      #  base[nat(RECEITA_COD, 7218025101002, 7218025101001), 
      #       c("nvl4", "lvl4"):= list("Inativo Militar", 1222)]
+
+     base[nat(RECEITA_COD, 72155321, -7215532101000), 
+            c("nvl4", "lvl4"):= list("Inativo Militar", 1222)]
   
-     #  base[lvl4 %in% c(1221, 1222), 
-     #       c("nvl3", "lvl3"):= list("Militar", 1220)]
+     base[lvl4 %in% c(1221, 1222), 
+           c("nvl3", "lvl3"):= list("Militar", 1220)]
   
 
 #Patronal em Regime de Parcelamento de Débitos
