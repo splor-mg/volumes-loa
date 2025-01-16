@@ -11,7 +11,7 @@ def to_zero(x):
 def check_qdd_fonte_95():
     qdd_fonte_95 = etl.fromxlsx("bancos/SISOR/BASE_QDD_FISCAL_FONTE_95.xlsx", sheet="base_qdd_fiscal")
     qdd_fiscal = etl.fromxlsx("bancos/SISOR/BASE_QDD_FISCAL.xlsx", sheet="BASE_QDD_FISCAL")
-    qdd_fiscal = etl.selecteq(qdd_fiscal, 'FONTE', 95)
+    qdd_fiscal = etl.select(qdd_fiscal, lambda row: row.get('FONTE') in [80, 95])
 
     keys = ['ANO', 'COD_ORGAO', 'ORGAO', 'PODER',
             'SITUACAO', 'COD_UO', 'UO', 'CATEGORIA',

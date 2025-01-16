@@ -27,7 +27,7 @@
 "20"	"606"	"90"	" 4"	"235"	" 1"	"90"	" 0"	"60"	" 1"		"22.127.267"	"9.881.062"	"32.008.329"	"7"											
 "20"	"606"	"90"	" 4"	"235"	" 1"	"90"	" 0"	"60"	" 3"		"136.817"	"118.938"	"255.755"	"7"											
 "20"	"606"	"90"	" 4"	"235"	" 1"	"90"	" 0"	"67"	" 1"		"51.019.988"		"51.019.988"	"7"											
-"20"	"606"	"90"	" 4"	"235"	" 1"	"90"	" 0"	"95"	" 1"		"63.496.554"		"63.496.554"	"7"											
+"20"	"606"	"90"	" 4"	"235"	" 1"	"90"	" 0"	"80"	" 1"		"63.496.554"		"63.496.554"	"7"											
 "20"	"606"	"90"	" 4"	"235"	" 1"	"91"	" 0"							"8"	"PRODUTOR ATENDIDO"			"350.000"	"PRODUTOR"	"Atividade Fim do Orçamento Fiscal"	"Não"				
 "20"	"606"	"110"											"15.000"	"1"	"REGULARIZAÇÃO FUNDIÁRIA - AMPLIAÇÃO DA SEGURANÇA JURÍDICA NO CAMPO"										
 "20"	"606"	"110"	" 1"	"45"									"15.000"	"5"	"CADASTRAMENTO DE AGRICULTORES/POSSEIROS E DE SEUS RESPECTIVOS IMÓVEIS RURAIS NO ÂMBITO DO PROGRAMA DE REGULARIZAÇÃO FUNDIÁRIA DA SEAPA"										

@@ -201,15 +201,21 @@ base = copy(loa_rec)
      base[lvl4 %in% c(1211, 1212), 
             c("nvl3", "lvl3"):= list("Civil", 1210)]
   
-# Patronal do militar está extinta
+# Patronal do militar
      #  base[nat(RECEITA_COD, 7218021101002, 7218021101001), 
      #       c("nvl4", "lvl4"):= list("Ativo Militar", 1221)]
+
+     base[nat(RECEITA_COD, 72155311, -7215531101000), 
+            c("nvl4", "lvl4"):= list("Ativo Militar", 1221)]
   
      #  base[nat(RECEITA_COD, 7218025101002, 7218025101001), 
      #       c("nvl4", "lvl4"):= list("Inativo Militar", 1222)]
+
+     base[nat(RECEITA_COD, 72155321, -7215532101000), 
+            c("nvl4", "lvl4"):= list("Inativo Militar", 1222)]
   
-     #  base[lvl4 %in% c(1221, 1222), 
-     #       c("nvl3", "lvl3"):= list("Militar", 1220)]
+     base[lvl4 %in% c(1221, 1222), 
+           c("nvl3", "lvl3"):= list("Militar", 1220)]
   
 
 #Patronal em Regime de Parcelamento de Débitos
