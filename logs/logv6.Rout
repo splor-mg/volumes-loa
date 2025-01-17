@@ -4,3 +4,5 @@ Warning: T7_QUADRO_GERAL_DA_RECEITA.R: Há um código de receita que não está 
 7215.53.1.1.03.000
 7215.53.2.1.02.000
 7215.53.2.1.03.000
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx") :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  2408, 3594
