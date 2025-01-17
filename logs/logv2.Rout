@@ -94,3 +94,7 @@ processing file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd
 output file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.md
 
 sh: 1: xdg-open: not found
+Warning in trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", FALSE) :
+  BASE_QDD_FISCAL: Há valores iguais a zero na linha  2408, 3594
+Warning: V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
+
