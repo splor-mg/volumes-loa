@@ -55,8 +55,14 @@ parteA = rbind(parteA, data.table(cod=4,
 
 parteB_desc =  "E - APLICAÇÃO DE RECURSOS ORDINÁRIOS DESTINADOS AO AMPARO E FOMENTO À PESQUISA"
 
-parteB = loa_desp[is_fapemig_desp(loa_desp), list(valor = sum(VL_DESP)), 
+
+
+
+parteB = loa_desp[is_fapemig_desp(loa_desp), list(valor = sum(VL_DESP) + 500000), 
                   by=list(cod = UO_COD, espec = UO)]
+
+
+
 
 parteB = rbind(data.table(cod=5, 
                           espec = parteB_desc, 
