@@ -97,6 +97,10 @@
   cat("\\raggedright\n")
   cat("\\fontsize{7pt}{10pt}\\selectfont {FONTE: Armazém Sisor.} \\\\\n")
   cat("\\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
+  cat("\\fontsize{7pt}{10pt}\\selectfont {NOTA EXPLICATIVA: Atualização do Demonstrativo da Aplicação de Recursos no Amparo e Fomento à Pesquisa para evidenciar a desvinculação dos 30\\% de impostos, taxas e multas, conforme disposto na Emenda Constitucional 93/2016 e na Emenda Constitucional 132/2023.}\\\\\n")
+  
+  
+  
   
 
   # FIM TABELA

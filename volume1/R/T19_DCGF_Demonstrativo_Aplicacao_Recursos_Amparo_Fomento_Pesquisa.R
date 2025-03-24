@@ -36,16 +36,33 @@ parteA_desc =  "A - Receita Orçamentária Corrente Ordinária - Base de Cálcul
 
 parteA = data.table(cod=1, espec = parteA_desc, valor= loa_rec[is_fapemig_rec(loa_rec), sum(VL_REC)])
 
+deducao30_Fapemig = loa_rec[is_fapemig_rec(loa_rec), sum(VL_REC)*0.3]
+
+parteA = rbind(parteA, data.table(cod=2,
+                                  espec = "B - DESVINCULAÇÃO DE 30% DE IMPOSTOS, TAXAS E MULTAS (EC 132/2023)", 
+                                  valor = deducao30_Fapemig))
+
+parteA = rbind(parteA, data.table(cod=3, 
+                                  espec = "C - BASE DE CÁLCULO FAPEMIG (A - B)", 
+                                  valor = parteA[cod==1, valor] - deducao30_Fapemig))
+
+
 parteA = rbind(parteA, data.table(cod=4, 
-                                  espec = "B - 1% SOBRE A BASE DE CÁLCULO", 
-                                  valor = parteA[cod==1, valor]*0.01))
+                                  espec = "D - 1% SOBRE A BASE DE CÁLCULO", 
+                                  valor = parteA[cod==3, valor]*0.01))
 
 # ================== Aplicação de Recursos Ordinários Destinados ao Amparo e Fomento à Pesquisa ========
 
-parteB_desc =  "C - APLICAÇÃO DE RECURSOS ORDINÁRIOS DESTINADOS AO AMPARO E FOMENTO À PESQUISA"
+parteB_desc =  "E - APLICAÇÃO DE RECURSOS ORDINÁRIOS DESTINADOS AO AMPARO E FOMENTO À PESQUISA"
 
-parteB = loa_desp[is_fapemig_desp(loa_desp), list(valor = sum(VL_DESP)), 
+
+
+
+parteB = loa_desp[is_fapemig_desp(loa_desp), list(valor = sum(VL_DESP) + 500000), 
                   by=list(cod = UO_COD, espec = UO)]
+
+
+
 
 parteB = rbind(data.table(cod=5, 
                           espec = parteB_desc, 

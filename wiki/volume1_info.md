@@ -70,7 +70,9 @@ Demonstrativo testa sua memória com `relatorios::is_asps_rec()`. Avaliar essa f
 
 ## Tabela 19 Demonstrativo da Aplicação de Recursos no Amparo e Fomento à Pesquisa
 
-Utiliza em seu cálculo `relatorios::is_fapemig_rec()` e `relatorios::is_fapemig_desp()`. Avaliar essa função para identificar possíveis mudanças.
+- Utiliza em seu cálculo `relatorios::is_fapemig_rec()` e `relatorios::is_fapemig_desp()`. Avaliar essa função para identificar possíveis mudanças.
+
+- Nos anos de 2023 e 2025 a linha "APLICAÇÃO DE RECURSOS ORDINÁRIOS DESTINADOS AO AMPARO E FOMENTO À PESQUISA" teve um ajuste aditivo absoluto de 500.000. Isso deve ser observado a cada ano se esse ajuste deve ser mantido ou removido. Mais informações, ver https://github.com/splor-mg/volumes-loa/issues/170.
 
 
 ## Tabela 20A Demonstrativo da Participação Percentual de Pessoal na Receita Corrente Líquida
