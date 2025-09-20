@@ -55,21 +55,21 @@ resources:
           type: string
         - name: MUNICÍPIO
           type: string
-        - name: VALOR TESOURO 2024 (R$)
+        - name: VALOR TESOURO 2024 # ANO_LOA-1 (R$)
           type: integer
-        - name: VALOR OUTROS 2024 (R$)
+        - name: VALOR OUTROS 2024 # ANO_LOA-1 (R$)
           type: integer
-        - name: VALOR TESOURO 2025 (R$)
+        - name: VALOR TESOURO 2025 # ANO_LOA (R$)
           type: integer
-        - name: VALOR OUTROS 2025 (R$)
+        - name: VALOR OUTROS 2025 # ANO_LOA (R$)
           type: integer
-        - name: VALOR TESOURO 2026 (R$)
+        - name: VALOR TESOURO 2026 # ANO_LOA+1 (R$)
           type: integer
-        - name: VALOR OUTROS 2026 (R$)
+        - name: VALOR OUTROS 2026 # ANO_LOA+1 (R$)
           type: integer
-        - name: VALOR TESOURO 2027 (R$)
+        - name: VALOR TESOURO 2027 # ANO_LOA+2 (R$)
           type: integer
-        - name: VALOR OUTROS 2027 (R$)
+        - name: VALOR OUTROS 2027 # ANO_LOA+2 (R$)
           type: integer
   - name: base_orcam_despesa_item_fiscal
     path: bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx
@@ -446,13 +446,13 @@ resources:
           type: string
         - name: ACAO
           type: string
-        - name: VALOR (R$) 2024
+        - name: VALOR (R$) 2024 # ANO_LOA-1
           type: integer
-        - name: VALOR (R$) 2025
+        - name: VALOR (R$) 2025 # ANO_LOA
           type: integer
-        - name: VALOR (R$) 2026
+        - name: VALOR (R$) 2026 # ANO_LOA+1
           type: integer
-        - name: VALOR (R$) 2027
+        - name: VALOR (R$) 2027 # ANO_LOA+2
           type: integer
   - name: base_repasse_recursos
     path: bancos/SISOR/BASE_REPASSE_RECURSOS.xlsx
@@ -574,21 +574,21 @@ resources:
         type: integer
       - name: Unidade de Medida do Produto
         type: string
-      - name: Previsão Orçamentária 2024
+      - name: Previsão Orçamentária 2024 # ANO_LOA-1
         type: number
-      - name: Previsão Orçamentária 2025
+      - name: Previsão Orçamentária 2025 # ANO_LOA
         type: number
-      - name: Previsão Orçamentária 2026
+      - name: Previsão Orçamentária 2026 # ANO_LOA+1
         type: number
-      - name: Previsão Orçamentária 2027
+      - name: Previsão Orçamentária 2027 # ANO_LOA+2
         type: number
-      - name: Previsão Física 2024
+      - name: Previsão Física 2024 # ANO_LOA-1
         type: integer
-      - name: Previsão Física 2025
+      - name: Previsão Física 2025 # ANO_LOA
         type: integer
-      - name: Previsão Física 2026
+      - name: Previsão Física 2026 # ANO_LOA+1
         type: integer
-      - name: Previsão Física 2027
+      - name: Previsão Física 2027 # ANO_LOA+2
         type: integer
       - name: Ação Transposta
         type: boolean
