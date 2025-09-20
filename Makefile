@@ -1,4 +1,4 @@
-.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker v1_dcgf v1_prodemge validate check rm-all
+.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker docker-pull v1_dcgf v1_prodemge validate check rm-all datapackage-update config
 
 include config.mk
 
@@ -7,6 +7,10 @@ include config.mk
 
 help: 
 	@grep -E '^[a-zA-Z_0-9]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-10s\033[0m %s\n", $$1, $$2}'
+
+config: datapackage-update ## Extrai versões da imagem Docker e atualiza configurações
+	@echo "Executando configuração do projeto..."
+	@python3 utils/config.py
 
 validate:
 	python3 -m frictionless validate datapackage.yaml
@@ -51,7 +55,16 @@ rm-all: ## Remove todos os arquivos de todos os volumes incluindo logs
 	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) 5
 	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) logs
 
-docker:
+
+datapackage-update: ## Valida e corrige anos no datapackage.yaml baseado no ANO_LOA
+	@echo "Validando datapackage.yaml..."
+	@python3 utils/datapackage_update.py
+
+docker-pull: ## Baixa a imagem Docker do Docker Hub
+	@echo "Baixando imagem $(DOCKER_IMAGE_FULL)..."
+	@docker pull $(DOCKER_IMAGE_FULL)
+
+docker: docker-pull ## Cria um container para geração dos PDFs
 	@if [ TRUE ]; then \
 		$(DOCKER_RUN_CMD); \
 	fi
@@ -285,4 +298,6 @@ volume1/data/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.txt: volume1/R/T8_DCGF_RECEITA_COR
 volume1/data/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.txt: volume1/R/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx utils/suporte/V1/demonstr_despesas_previdenciarias.R utils/suporte/V1/demonstr_receitas_previdenciarias.R bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx
 	@echo "Atualizando volume1/data/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.txt..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv1.Rout
+
+
 
