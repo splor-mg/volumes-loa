@@ -1,4 +1,9 @@
 # .env must exist otherwise we get ".env: No such file or directory" error
+# Versões extraídas da imagem Docker - 2025
+RELATORIOS_VERSION=v0.7.99
+EXECUCAO_VERSION=v0.5.27
+REEST_VERSION=v0.2.8
+
 $(shell touch .env )
 include .env
 
@@ -34,4 +39,22 @@ else
 	DOCKER_SRC_DIR := "c:$(DOCKER_SRC_DIR)"
 endif
 
-DOCKER_RUN_CMD = $(shell echo $(WINPTY) docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(DOCKER_SRC_DIR),target=/home/rstudio --name volumes-loa splormg/volumes:ploa2025.2 bash)
+# ====================================================================
+# CONFIGURAÇÕES FLUIDAS (atualizadas via make config)
+# ====================================================================
+ANO_LOA=2025
+DOCKER_TAG=ploa2025
+DOCKER_USER=aidsplormg
+DOCKER_IMAGE=volumes
+
+# Versões extraídas da imagem Docker
+RELATORIOS_VERSION=v0.7.99
+EXECUCAO_VERSION=v0.5.27
+REEST_VERSION=v0.2.8
+
+# ====================================================================
+# CONFIGURAÇÕES ESTRUTURAIS (não alteradas via make config)
+# ====================================================================
+
+DOCKER_IMAGE_FULL = $(DOCKER_USER)/$(DOCKER_IMAGE):$(DOCKER_TAG)
+DOCKER_RUN_CMD = $(shell echo $(WINPTY) docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(DOCKER_SRC_DIR),target=/home/rstudio --name volumes-loa $(DOCKER_IMAGE_FULL) bash)
