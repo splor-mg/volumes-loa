@@ -5,30 +5,29 @@ AGÊNCIA DE DESENVOLVIMENTO DA REGIÃO METROPOLITANA DO VALE DO AÇO - ARMVA	1.9
 AGÊNCIA REGULADORA DE SERVIÇOS DE ABASTECIMENTO DE ÁGUA E DE ESGOTAMENTO SANITÁRIO DO ESTADO DE MINAS GERAIS - ARSAE -MG	14.685.588	            0	4.445.493	            0	            0	            0	            0	19.131.081
 ASSEMBLEIA LEGISLATIVA DO ESTADO DE MINAS GERAIS - ALMG	1.777.394.832	            0	344.434.932	11.226.000	11.953.000	            0	            0	2.145.008.764
 CONTROLADORIA-GERAL DO ESTADO - CGE	64.318.757	            0	6.527.875	2.135.577	            0	            0	            0	72.982.209
-CORPO DE BOMBEIROS MILITAR DO ESTADO DE MINAS GERAIS - CBMMG	1.792.598.573	            0	144.764.758	67.624.858	            0	            0	            0	2.004.988.189
+CORPO DE BOMBEIROS MILITAR DO ESTADO DE MINAS GERAIS - CBMMG	1.792.598.573	            0	146.614.758	84.495.858	            0	            0	            0	2.023.709.189
 DEFENSORIA PUBLICA DO ESTADO DE MINAS GERAIS - DEF PUB	882.031.820	            0	203.609.840	19.350.000	            0	            0	            0	1.104.991.660
-DEPARTAMENTO DE ESTRADAS DE RODAGEM DO ESTADO DE MINAS GERAIS - DER-MG	154.547.322	            0	148.457.902	1.697.474.171	            0	            0	            0	2.000.479.395
+DEPARTAMENTO DE ESTRADAS DE RODAGEM DO ESTADO DE MINAS GERAIS - DER-MG	154.547.322	            0	148.457.902	1.697.479.171	            0	            0	            0	2.000.484.395
 EGE SEC.FAZENDA-ENCARGOS DIVERSOS - EGE - SEF	             0	            0	892.765.071	            0	            0	            0	            0	892.765.071
 EGE-SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO - EGE-SEPLAG	209.392.623	            0	2.453.208	            0	            0	            0	            0	211.845.831
-EMPRESA DE ASSISTÊNCIA TÉCNICA E EXTENSÃO RURAL DO ESTADO DE MINAS GERAIS - EMATER	295.413.050	            0	146.037.843	13.177.045	            0	            0	            0	454.627.938
-EMPRESA DE PESQUISA AGROPECUÁRIA DE MINAS GERAIS - EPAMIG	109.294.915	            0	33.605.527	20.867.573	            0	            0	            0	163.768.015
+EMPRESA DE ASSISTÊNCIA TÉCNICA E EXTENSÃO RURAL DO ESTADO DE MINAS GERAIS - EMATER	295.413.050	            0	154.926.343	28.800.045	            0	            0	            0	479.139.438
+EMPRESA DE PESQUISA AGROPECUÁRIA DE MINAS GERAIS - EPAMIG	109.294.915	            0	33.705.527	21.367.573	            0	            0	            0	164.368.015
 EMPRESA MINEIRA DE COMUNICAÇÃO - EMC	13.950.160	            0	21.158.803	            0	            0	            0	            0	35.108.963
 ENCARGOS GERAIS DO ESTADO - INSTRUMENTOS DE ENTRADA DE RECURSOS - EGE - CASA CIVIL	             0	            0	120.498.418	11.702.339	            0	            0	            0	132.200.757
 ESCOLA DE SAÚDE PÚBLICA DO ESTADO DE MINAS GERAIS - ESP MG	15.601.413	            0	7.509.352	1.800.000	            0	            0	            0	24.910.765
-FUNDAÇÃO CENTRO DE HEMATOLOGIA E HEMOTERAPIA DE MINAS GERAIS - HEMOMINAS	170.217.050	            0	203.894.256	30.692.386	            0	            0	            0	404.803.692
+FUNDAÇÃO CENTRO DE HEMATOLOGIA E HEMOTERAPIA DE MINAS GERAIS - HEMOMINAS	170.217.050	            0	203.894.256	31.443.386	            0	            0	            0	405.554.692
 FUNDAÇÃO CLÓVIS SALGADO - FCS	21.902.520	            0	34.403.299	            0	            0	            0	            0	56.305.819
-FUNDAÇÃO DE AMPARO À PESQUISA DO ESTADO DE MINAS GERAIS - FAPEMIG	10.551.177	            0	417.466.536	123.132.764	350.000	            0	            0	551.500.477
+FUNDAÇÃO DE AMPARO À PESQUISA DO ESTADO DE MINAS GERAIS - FAPEMIG	10.551.177	            0	417.966.536	123.132.764	350.000	            0	            0	552.000.477
 FUNDAÇÃO DE ARTE DE OURO PRETO - FAOP	2.389.655	            0	2.940.463	4.683.680	            0	            0	            0	10.013.798
 FUNDAÇÃO DE EDUCAÇÃO PARA O TRABALHO DE MINAS GERAIS - UTRAMIG	2.009.908	            0	4.387.728	1.240.353	            0	            0	            0	7.637.989
 FUNDAÇÃO EDUCACIONAL CAIO MARTINS - FUCAM	4.062.509	            0	7.025.337	77.082	            0	            0	            0	11.164.928
-FUNDAÇÃO ESTADUAL DO MEIO AMBIENTE - FEAM	41.197.611	            0	29.966.533	2.113.427	            0	            0	            0	73.277.571
+FUNDAÇÃO ESTADUAL DO MEIO AMBIENTE - FEAM	41.197.611	            0	29.969.533	2.113.427	            0	            0	            0	73.280.571
 FUNDAÇÃO EZEQUIEL DIAS - FUNED	104.508.339	            0	417.021.879	102.066.500	            0	            0	            0	623.596.718
-FUNDAÇÃO HELENA ANTIPOFF - FHA	37.216.466	            0	49.458.734	1.623.000	            0	            0	            0	88.298.200
+FUNDAÇÃO HELENA ANTIPOFF - FHA	37.216.466	            0	49.758.734	1.623.000	            0	            0	            0	88.598.200
 FUNDAÇÃO HOSPITALAR DO ESTADO DE MINAS GERAIS - FHEMIG	1.314.045.392	            0	930.639.975	181.472.298	            0	            0	            0	2.426.157.665
 FUNDAÇÃO JOÃO PINHEIRO - FJP	52.717.616	            0	22.003.603	36.597	            0	            0	            0	74.757.816
 FUNDAÇÃO TV MINAS CULTURAL E EDUCATIVA - TV MINAS	6.659.578	            0	9.024.492	            0	            0	            0	            0	15.684.070
 FUNDO DE APOIO HABITACIONAL AOS MILITARES DO ESTADO DE MINAS GERAIS - FAHMEMG	             0	            0	454.863	            0	            0	            0	            0	454.863
-FUNDO DE APOIO HABITACIONAL DA ASSEMBLEIA LEGISLATIVA DE MINAS GERAIS - FUNDHAB	             0	            0	1.000	            0	17.999.000	            0	            0	18.000.000
 FUNDO DE ASSISTÊNCIA AO PECÚLIO DOS SERVIDORES DO ESTADO DE MINAS GERAIS - FUNAPEC	             0	            0	139.163.817	            0	            0	            0	            0	139.163.817
 FUNDO DE ASSISTÊNCIA AO TURISMO - FASTUR	             0	            0	1.000	            0	            0	            0	            0	1.000
 FUNDO DE ATIVOS IMOBILIÁRIOS DE MINAS GERAIS - FAIMG	             0	            0	1.000	            0	            0	            0	            0	1.000
@@ -40,10 +39,11 @@ FUNDO DE INVESTIMENTOS IMOBILIÁRIOS DE MINAS GERAIS - FIIMG	             0	    
 FUNDO DE PAGAMENTO DE PARCERIAS PÚBLICO - PRIVADAS DE MINAS GERAIS - FPP - MG	             0	            0	200.028.096	            0	1.235.322.821	            0	            0	1.435.350.917
 FUNDO DE RECUPERAÇÃO, PROTEÇÃO E DESENVOLVIMENTO SUSTENTÁVEL DAS BACIAS HIDROGRÁFICAS DO ESTADO DE MINAS GERAIS - FHIDRO	             0	            0	30.456.503	677.004	            0	            0	            0	31.133.507
 FUNDO DO TRIBUNAL DE CONTAS DO ESTADO DE MINAS GERAIS - FUNCONTAS	             0	            0	3.000.000	3.000.000	            0	            0	            0	6.000.000
+FUNDO ESPECIAL DA ASSEMBLEIA LEGISLATIVA DO ESTADO DE MINAS GERAIS - FUNDALEMG	             0	            0	1.000	            0	17.999.000	            0	            0	18.000.000
 FUNDO ESPECIAL DE CRÉDITOS INADIMPLIDOS E DÍVIDA ATIVA - FECIDAT	             0	            0	2.000	            0	            0	            0	            0	2.000
 FUNDO ESPECIAL DO MINISTÉRIO PÚBLICO DO ESTADO DE MINAS GERAIS - FUNEMP	             0	            0	24.000.000	26.000.000	            0	            0	            0	50.000.000
 FUNDO ESPECIAL DO PODER JUDICIÁRIO DO ESTADO DE MINAS GERAIS - FEPJ	             0	            0	2.853.289.903	762.045.248	            0	            0	            0	3.615.335.151
-FUNDO ESTADUAL DE ASSISTÊNCIA SOCIAL - FEAS	             0	            0	175.416.056	2.895.367	            0	            0	            0	178.311.423
+FUNDO ESTADUAL DE ASSISTÊNCIA SOCIAL - FEAS	             0	            0	176.866.056	5.495.367	            0	            0	            0	182.361.423
 FUNDO ESTADUAL DE CULTURA - FEC	             0	            0	17.962.294	4.490.573	            0	            0	            0	22.452.867
 FUNDO ESTADUAL DE DEFESA DE DIREITOS DIFUSOS - FUNDIF	             0	            0	465.300	4.187.700	            0	            0	            0	4.653.000
 FUNDO ESTADUAL DE DESENVOLVIMENTO DE TRANSPORTES - FUNTRANS	             0	            0	25.263.473	131.190.000	            0	            0	            0	156.453.473
@@ -51,49 +51,49 @@ FUNDO ESTADUAL DE HABITAÇÃO - FEH	             0	            0	1.391.000	     
 FUNDO ESTADUAL DE PREVENÇÃO, FISCALIZAÇÃO E REPRESSÃO DE ENTORPECENTES - FUNPREN	             0	            0	1.000	            0	            0	            0	            0	1.000
 FUNDO ESTADUAL DE PREVIDÊNCIA DO ESTADO DE MINAS GERAIS - FEPREMG	             0	            0	1.000	            0	            0	            0	            0	1.000
 FUNDO ESTADUAL DE PROTEÇÃO E DEFESA DO CONSUMIDOR - FEPDC	             0	            0	25.000.000	20.000.000	            0	            0	            0	45.000.000
-FUNDO ESTADUAL DE SAÚDE - FES	411.988.323	            0	11.078.978.077	791.332.679	            0	            0	            0	12.282.299.079
+FUNDO ESTADUAL DE SAÚDE - FES	411.988.323	            0	10.943.729.276	1.003.815.458	            0	            0	            0	12.359.533.057
 FUNDO ESTADUAL DE SEGURANÇA PÚBLICA DE MINAS GERAIS - FESP-MG	             0	            0	34.781.860	58.154.341	            0	            0	            0	92.936.201
 FUNDO ESTADUAL DO TRABALHO DE MINAS GERAIS - FET-MG	             0	            0	15.676.532	2.530.048	            0	            0	            0	18.206.580
 FUNDO ESTADUAL DOS DIREITOS DO IDOSO - FEI	             0	            0	6.330.000	            0	            0	            0	            0	6.330.000
 FUNDO FINANCEIRO DE PREVIDÊNCIA DO ESTADO DE MINAS GERAIS - FFP - MG	19.100.957.271	            0	7.563.054	            0	            0	            0	            0	19.108.520.325
 FUNDO PARA A INFÂNCIA E A ADOLESCÊNCIA - FIA	             0	            0	4.639.000	            0	            0	            0	            0	4.639.000
 FUNDO PENITENCIÁRIO ESTADUAL - FPE	             0	            0	6.916.034	8.723.497	            0	            0	            0	15.639.531
-GABINETE MILITAR DO GOVERNADOR DO ESTADO DE MINAS GERAIS - GABINETE MILITAR	7.849.923	            0	39.547.454	655.000	            0	            0	            0	48.052.377
+GABINETE MILITAR DO GOVERNADOR DO ESTADO DE MINAS GERAIS - GABINETE MILITAR	7.849.923	            0	40.547.454	2.051.300	            0	            0	            0	50.448.677
 GESTÃO DA DÍVIDA PÚBLICA ESTADUAL - GDPE - SEF	             0	2.229.686.144	             0	            0	1.000	5.331.501.222	            0	7.561.188.366
-INSTITUTO DE DESENVOLVIMENTO DO NORTE E NORDESTE DE MINAS GERAIS - IDENE	8.415.298	            0	39.866.410	27.039.771	            0	            0	            0	75.321.479
+INSTITUTO DE DESENVOLVIMENTO DO NORTE E NORDESTE DE MINAS GERAIS - IDENE	8.415.298	            0	47.257.410	31.109.771	            0	            0	            0	86.782.479
 INSTITUTO DE METROLOGIA E QUALIDADE DO ESTADO DE MINAS GERAIS - IPEMMG	13.817.264	            0	23.231.700	1.150.000	            0	            0	            0	38.198.964
 INSTITUTO DE PREVIDÊNCIA DO LEGISLATIVO DO ESTADO DE MINAS GERAIS - IPLEMG	1.241.000	            0	84.181.613	7.237.137	16.854.750	            0	            0	109.514.500
 INSTITUTO DE PREVIDÊNCIA DOS SERVIDORES DO ESTADO DE MINAS GERAIS - IPSEMG	431.019.687	            0	1.172.812.755	32.827.445	            0	            0	            0	1.636.659.887
 INSTITUTO DE PREVIDÊNCIA DOS SERVIDORES MILITARES DO ESTADO DE MINAS GERAIS - IPSM	2.278.427.313	            0	975.575.606	263.585	            0	            0	            0	3.254.266.504
-INSTITUTO ESTADUAL DE FLORESTAS - IEF	127.554.724	            0	296.440.955	2.103.136	16.150.000	            0	            0	442.248.815
-INSTITUTO ESTADUAL DO PATRIMÔNIO HISTÓRICO E ARTÍSTICO DE MINAS GERAIS - IEPHA	10.397.247	            0	11.548.613	3.939.813	            0	            0	            0	25.885.673
+INSTITUTO ESTADUAL DE FLORESTAS - IEF	127.554.724	            0	297.645.955	3.103.136	16.150.000	            0	            0	444.453.815
+INSTITUTO ESTADUAL DO PATRIMÔNIO HISTÓRICO E ARTÍSTICO DE MINAS GERAIS - IEPHA	10.397.247	            0	12.148.613	3.939.813	            0	            0	            0	26.485.673
 INSTITUTO MINEIRO DE AGROPECUÁRIA - IMA	230.910.811	            0	56.814.699	608.294	            0	            0	            0	288.333.804
-INSTITUTO MINEIRO DE GESTÃO DAS ÁGUAS - IGAM	28.024.408	            0	154.619.991	328.255	            0	            0	            0	182.972.654
+INSTITUTO MINEIRO DE GESTÃO DAS ÁGUAS - IGAM	28.024.408	            0	154.624.991	328.255	            0	            0	            0	182.977.654
 JUNTA COMERCIAL DO ESTADO DE MINAS GERAIS - JUCEMG	16.606.166	            0	13.875.524	8.551.488	            0	            0	            0	39.033.178
 LOTERIA DO ESTADO DE MINAS GERAIS - LEMG	2.082.400	            0	2.740.035	29.520	            0	            0	            0	4.851.955
 OUVIDORIA-GERAL DO ESTADO DE MINAS GERAIS - OGE	13.980.241	            0	3.889.209	28.630	            0	            0	            0	17.898.080
 PARTICIPAÇÃO NO AUMENTO DO CAPITAL SOCIAL DE EMPRESAS - PARTICIPAÇÃO EMPRESAS	             0	            0	             0	            0	110.119.000	            0	            0	110.119.000
-POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG	2.661.827.632	            0	319.300.422	74.563.328	            0	            0	            0	3.055.691.382
-POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG	16.253.619.335	            0	900.354.287	171.351.454	            0	            0	            0	17.325.325.076
+POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG	2.661.827.632	            0	319.928.822	99.444.147	            0	            0	            0	3.081.200.601
+POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG	16.253.619.335	            0	903.875.287	203.973.837	            0	            0	            0	17.361.468.459
 PROCURADORIA GERAL DE JUSTIÇA - PGJ	3.354.067.814	            0	656.281.008	72.850.000	5.000.000	            0	            0	4.088.198.822
-RESERVA DE CONTINGÊNCIA - RC	             0	            0	             0	            0	            0	            0	1.053.098.607	1.053.098.607
+RESERVA DE CONTINGÊNCIA - RC	             0	            0	15.035.000	            0	            0	            0	1.038.063.607	1.053.098.607
 SECRETARIA DE ESTADO DA CASA CIVIL - SCC	7.391.806	            0	5.231.414	79.959	            0	            0	            0	12.703.179
-SECRETARIA DE ESTADO DE AGRICULTURA, PECUÁRIA E ABASTECIMENTO - SEAPA	20.261.072	            0	42.898.080	66.139.000	            0	            0	            0	129.298.152
+SECRETARIA DE ESTADO DE AGRICULTURA, PECUÁRIA E ABASTECIMENTO - SEAPA	20.261.072	            0	49.234.816	102.711.960	            0	            0	            0	172.207.848
 SECRETARIA DE ESTADO DE COMUNICAÇÃO SOCIAL - SECOM	10.626.803	            0	159.327.645	            0	            0	            0	            0	169.954.448
-SECRETARIA DE ESTADO DE CULTURA E TURISMO - SECULT	24.721.051	            0	222.903.984	32.350.000	            0	            0	            0	279.975.035
-SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - SEDE	21.257.215	            0	66.947.919	68.059.603	            0	            0	            0	156.264.737
-SECRETARIA DE ESTADO DE DESENVOLVIMENTO SOCIAL - SEDESE	65.958.117	            0	146.269.474	76.090.200	            0	            0	            0	288.317.791
-SECRETARIA DE ESTADO DE EDUCAÇÃO - SEE	14.288.810.672	            0	4.152.349.877	1.052.908.090	            0	            0	            0	19.494.068.639
+SECRETARIA DE ESTADO DE CULTURA E TURISMO - SECULT	24.721.051	            0	258.192.282	39.120.000	            0	            0	            0	322.033.333
+SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - SEDE	21.257.215	            0	67.547.919	68.059.603	            0	            0	            0	156.864.737
+SECRETARIA DE ESTADO DE DESENVOLVIMENTO SOCIAL - SEDESE	65.958.117	            0	244.884.377	139.488.861	            0	            0	            0	450.331.355
+SECRETARIA DE ESTADO DE EDUCAÇÃO - SEE	14.288.810.672	            0	4.161.009.877	1.152.424.923	            0	            0	            0	19.602.245.472
 SECRETARIA DE ESTADO DE FAZENDA - SEF	1.447.189.391	            0	406.707.610	41.737.252	            0	            0	            0	1.895.634.253
-SECRETARIA DE ESTADO DE GOVERNO - SEGOV	45.987.084	            0	1.318.061.285	359.068.058	            0	            0	            0	1.723.116.427
-SECRETARIA DE ESTADO DE INFRAESTRUTURA, MOBILIDADE E PARCERIAS - SEINFRA	45.040.425	            0	99.288.566	2.144.174.285	            0	            0	            0	2.288.503.276
-SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP	2.690.829.211	            0	1.403.022.712	125.990.347	            0	            0	            0	4.219.842.270
-SECRETARIA DE ESTADO DE MEIO AMBIENTE E DESENVOLVIMENTO SUSTENTÁVEL - SEMAD	124.832.131	            0	80.927.663	85.279.876	            0	            0	            0	291.039.670
+SECRETARIA DE ESTADO DE GOVERNO - SEGOV	45.987.084	            0	92.856.660	968.727.202	            0	            0	            0	1.107.570.946
+SECRETARIA DE ESTADO DE INFRAESTRUTURA, MOBILIDADE E PARCERIAS - SEINFRA	45.040.425	            0	99.448.566	2.156.635.653	            0	            0	            0	2.301.124.644
+SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP	2.690.829.211	            0	1.404.022.712	131.571.248	            0	            0	            0	4.226.423.171
+SECRETARIA DE ESTADO DE MEIO AMBIENTE E DESENVOLVIMENTO SUSTENTÁVEL - SEMAD	124.832.131	            0	107.837.104	89.268.876	            0	            0	            0	321.938.111
 SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO - SEPLAG	276.954.681	            0	645.722.233	58.152.679	            0	            0	            0	980.829.593
 SECRETARIA-GERAL - SEC. GERAL	8.250.294	            0	2.398.836	4.500	            0	            0	            0	10.653.630
 TRIBUNAL DE CONTAS DO ESTADO DE MINAS GERAIS - TCEMG	1.135.830.744	            0	206.028.235	28.300.626	            0	            0	            0	1.370.159.605
 TRIBUNAL DE JUSTIÇA DO ESTADO DE MINAS GERAIS - TJMG	10.197.999.123	            0	912.262.729	            0	            0	            0	            0	11.110.261.852
 TRIBUNAL DE JUSTIÇA MILITAR DO ESTADO DE MINAS GERAIS - TJMMG	136.396.768	            0	25.360.769	8.720.333	            0	            0	            0	170.477.870
-UNIVERSIDADE DO ESTADO DE MINAS GERAIS - UEMG	249.400.146	            0	183.853.857	8.226.724	            0	            0	            0	441.480.727
-UNIVERSIDADE ESTADUAL DE MONTES CLAROS - UNIMONTES	320.907.965	            0	233.640.262	11.318.186	            0	            0	            0	565.866.413
-TOTAL	84.511.976.123	2.229.686.144	34.306.424.077	8.681.072.781	1.430.578.166	5.331.501.222	1.053.098.607	137.544.337.120
+UNIVERSIDADE DO ESTADO DE MINAS GERAIS - UEMG	249.400.146	            0	185.673.857	9.047.724	            0	            0	            0	444.121.727
+UNIVERSIDADE ESTADUAL DE MONTES CLAROS - UNIMONTES	320.907.965	            0	235.690.262	11.318.186	            0	            0	            0	567.916.413
+TOTAL	84.511.976.123	2.229.686.144	33.169.886.929	9.832.644.929	1.430.578.166	5.331.501.222	1.038.063.607	137.544.337.120

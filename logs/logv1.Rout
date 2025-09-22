@@ -1,54 +1,5 @@
-
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
-Traceback:
- 1: gsum(VL_DESP)
- 2: gforce(thisEnv, jsub, o__, f__, len__, irows)
- 3: `[.data.table`(loa_desp, is_fapemig_desp(loa_desp) + 500000,     list(valor = sum(VL_DESP)), by = list(cod = UO_COD, espec = UO))
- 4: loa_desp[is_fapemig_desp(loa_desp) + 500000, list(valor = sum(VL_DESP)),     by = list(cod = UO_COD, espec = UO)]
-An irrecoverable exception occurred. R is aborting now ...
-
-Traceback:
- 1: gsum(VL_DESP)
- 2: gforce(thisEnv, jsub, o__, f__, len__, irows)
- 3: `[.data.table`(loa_desp, is_fapemig_desp(loa_desp) + 500000,     list(valor = sum(VL_DESP)), by = list(cod = UO_COD, espec = UO))
- 4: loa_desp[is_fapemig_desp(loa_desp) + 500000, list(valor = sum(VL_DESP)),     by = list(cod = UO_COD, espec = UO)]
-An irrecoverable exception occurred. R is aborting now ...
-
-Traceback:
- 1: gsum(VL_DESP)
- 2: gforce(thisEnv, jsub, o__, f__, len__, irows)
- 3: `[.data.table`(loa_desp, is_fapemig_desp(loa_desp) + 500000,     list(valor = sum(VL_DESP)), by = list(cod = UO_COD, espec = UO))
- 4: loa_desp[is_fapemig_desp(loa_desp) + 500000, list(valor = sum(VL_DESP)),     by = list(cod = UO_COD, espec = UO)]
-An irrecoverable exception occurred. R is aborting now ...
-
-Traceback:
-
-Traceback:
-
-Traceback:
- 1: gsum(VL_DESP)
-Segmentation fault (core dumped)
+Warning in trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx",  :
+  trataQDD_Elemento_Item: Há valores iguais a zero na linha  5451, 7667
+Warning in trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx",  :
+  trataQDD_Elemento_Item: Há valores iguais a zero na linha  5451, 7667
+Warning: T27_DCGF_Demonst_Despesas_UGEPREVI.R: ACAO_COD presente em BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx mas AUSENTE em BASE_QDD_FISCAL.xlsx: 2046, 2087

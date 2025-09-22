@@ -1,6 +1,6 @@
 # Organização do banco T9 DEMONSTRATIVO RECEITA ORCAMENTARIA CORRENTE ORDINARIA - Volume 1 
 options(warn = 1, scipen = 999)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
