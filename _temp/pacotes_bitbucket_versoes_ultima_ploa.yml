@@ -1,0 +1,17 @@
+# Versões dos pacotes R a instalar a partir do Bitbucket
+# As credenciais devem estar no .env: BITBUCKET_AUTH_USER e BITBUCKET_APP_PASSWORD
+
+repositorio_base: "bitbucket.org/splormg"
+
+pacotes:
+  - nome: "relatorios"
+    versao: "v0.7.64"
+    repo: "relatorios"
+  - nome: "execucao"
+    versao: "v0.5.27"
+    repo: "execucao"
+  - nome: "reest"
+    versao: "v0.2.8"
+    repo: "reest"
+
+
