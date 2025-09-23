@@ -58,3 +58,4 @@ REEST_VERSION=v0.2.8
 
 DOCKER_IMAGE_FULL = $(DOCKER_USER)/$(DOCKER_IMAGE):$(DOCKER_TAG)
 DOCKER_RUN_CMD = $(shell echo $(WINPTY) docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(DOCKER_SRC_DIR),target=/home/rstudio --name volumes-loa $(DOCKER_IMAGE_FULL) bash)
+

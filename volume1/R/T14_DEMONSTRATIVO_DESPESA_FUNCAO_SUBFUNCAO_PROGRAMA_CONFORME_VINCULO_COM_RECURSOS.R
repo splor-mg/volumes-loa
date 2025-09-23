@@ -1,7 +1,7 @@
 # =================================================================================================
 # Organização de T14 DEMONSTRATIVO DESPESA FUNCAO SUBFUNCAO PROGRAMA CONFORME VINCULO COM RECURSOS
 options(warn = 1)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
