@@ -11,6 +11,11 @@ help:
 validate:
 	python3 -m frictionless validate datapackage.yaml
 
+snapshot: ## Cria snapshot dos volumes gerados para conferência posterior via pytest
+	python3 checks/utils.py snapshot
+	@echo "Arquivos pdf e .tex copiados para checks/assets/"
+
+
 volumes: v7 v6 v5 v4 v3 v2 v1 ## Gera todos os volumes
 
 v1: v1_prodemge v1_dcgf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE e DCGF
