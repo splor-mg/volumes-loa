@@ -5,12 +5,13 @@ include config.mk
 #====================================================================
 # PHONY TARGETS
 
-help: 
+help:
 	@grep -E '^[a-zA-Z_0-9]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-10s\033[0m %s\n", $$1, $$2}'
 
-config: datapackage-update ## Extrai versões da imagem Docker e atualiza configurações
+config: ## Extrai versões da imagem Docker e atualiza configurações e datapackage
 	@echo "Executando configuração do projeto..."
 	@python3 utils/config.py
+	@$(MAKE) --no-print-directory datapackage-update
 
 validate:
 	python3 -m frictionless validate datapackage.yaml
@@ -53,16 +54,26 @@ rm-all: ## Remove todos os arquivos de todos os volumes incluindo logs
 	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) 3
 	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) 4
 	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) 5
+	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) 6
+	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) 7
 	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) logs
 
 
 datapackage-update: ## Valida e corrige anos no datapackage.yaml baseado no ANO_LOA
-	@echo "Validando datapackage.yaml..."
+	@printf '\n%s\n' '==============================================='
+	@printf '%s\n' 'Validação do datapackage.yaml'
+	@printf '%s\n' '-----------------------------------------------'
+	@printf '%s\n' "- Conferindo colunas: 'VALOR TESOURO' e 'VALOR OUTROS'"
+	@printf '%s\n' '- Faixas de ano: ANO_LOA-1, ANO_LOA, ANO_LOA+1, ANO_LOA+2'
+	@printf '%s\n' '- Referência: ANO_LOA definido em config.mk'
+	@printf '%s\n' '(Corrige automaticamente nomes/anos quando necessário)'
+	@printf '%s\n\n' '=============================================='
 	@python3 utils/datapackage_update.py
 
 docker-pull: ## Baixa a imagem Docker do Docker Hub
-	@echo "Baixando imagem $(DOCKER_IMAGE_FULL)..."
-	@docker pull $(DOCKER_IMAGE_FULL)
+	@mkdir -p logs
+	@DOCKER_IMAGE_FULL="$(DOCKER_IMAGE_FULL)" USE_LOCAL_ON_FAIL="$(USE_LOCAL_ON_FAIL)" \
+		bash utils/docker_pull.sh
 
 docker: docker-pull ## Cria um container para geração dos PDFs
 	@if [ TRUE ]; then \
@@ -298,6 +309,3 @@ volume1/data/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.txt: volume1/R/T8_DCGF_RECEITA_COR
 volume1/data/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.txt: volume1/R/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx utils/suporte/V1/demonstr_despesas_previdenciarias.R utils/suporte/V1/demonstr_receitas_previdenciarias.R bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx
 	@echo "Atualizando volume1/data/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.txt..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv1.Rout
-
-
-
