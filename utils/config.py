@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Script para extrair informações de versões da imagem Docker
+Script interativo para configurar as variáveis Docker no config.mk
 """
 
 import os
-import shutil
-import subprocess
+import re
 import sys
-import json
+import subprocess
 from pathlib import Path
+from datetime import datetime
 
 # Cores para output
 class Colors:
@@ -21,76 +21,173 @@ class Colors:
 
 def print_header():
     print(f"{Colors.BLUE}{Colors.BOLD}")
-    print("Extraindo informações da imagem Docker...")
-    print("=" * 50)
+    print("Configurando variáveis Docker...")
+    print("=" * 40)
     print(f"{Colors.END}")
 
-def get_docker_image_info(docker_user, docker_image, docker_tag):
-    """Extrai informações da imagem Docker usando labels"""
-    image_name = f"{docker_user}/{docker_image}:{docker_tag}"
+def read_config_file():
+    """Lê o arquivo config.mk atual e extrai os valores"""
+    config_path = Path("config.mk")
+    values = {}
+    
+    if config_path.exists():
+        with open(config_path, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if '=' in line and not line.startswith('#'):
+                    key, value = line.split('=', 1)
+                    key = key.strip()
+                    value = value.strip()
+                    # Remove comentários inline
+                    if '#' in value:
+                        value = value.split('#')[0].strip()
+                    values[key] = value
+    
+    return values
+
+def validate_docker_tag(tag):
+    """Valida se a tag do Docker é válida"""
+    # Tag deve conter apenas letras, números, pontos, hífens e underscores
+    return re.match(r'^[a-zA-Z0-9._-]+$', tag) is not None
+
+def get_git_info():
+    """Obtém informações do Git (commit hash, branch, etc.)"""
+    try:
+        commit_hash = subprocess.check_output(
+            ['git', 'rev-parse', '--short', 'HEAD'],
+            stderr=subprocess.DEVNULL
+        ).decode().strip()
+        
+        branch = subprocess.check_output(
+            ['git', 'rev-parse', '--abbrev-ref', 'HEAD'],
+            stderr=subprocess.DEVNULL
+        ).decode().strip()
+        
+        return {
+            'commit': commit_hash,
+            'branch': branch if branch != 'HEAD' else 'detached',
+            'is_git_repo': True
+        }
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return {
+            'commit': None,
+            'branch': None,
+            'is_git_repo': False
+        }
+
+def validate_git_status():
+    """Valida o status do repositório Git com UX melhorada"""
+    if not os.path.exists('.git'):
+        print(f"{Colors.YELLOW}ℹ️  Aviso: Não é um repositório Git{Colors.END}")
+        return True
     
     try:
-        # Verifica disponibilidade do docker no ambiente
-        if shutil.which('docker') is None:
-            raise FileNotFoundError("docker CLI não encontrado no PATH")
-        # Comando para extrair labels da imagem
-        cmd = [
-            'docker', 'inspect', image_name,
-            '--format={{json .Config.Labels}}'
-        ]
+        # Verifica se há mudanças não commitadas
+        result = subprocess.run(
+            ['git', 'status', '--porcelain'],
+            capture_output=True,
+            text=True
+        )
         
-        result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-        labels = json.loads(result.stdout)
+        if result.stdout.strip():
+            print(f"\n{Colors.YELLOW}⚠️  Atenção: Existem alterações não commitadas neste repositório{Colors.END}")
+            print(f"{Colors.BLUE}Para prosseguir com a configuração, você precisa primeiro resolver essas alterações.{Colors.END}")
+            print(f"\n{Colors.YELLOW}📋 Arquivos modificados:{Colors.END}")
+            
+            # Mostra as mudanças de forma organizada
+            for line in result.stdout.strip().split('\n'):
+                if len(line) < 3:
+                    continue
+                
+                # Extrai status e arquivo corretamente
+                if line.startswith(' M'):  # Modificado no working directory
+                    file = line[3:].strip()
+                    print(f"  📝 {file}")
+                elif line.startswith('M '):  # Modificado no staging
+                    file = line[2:].strip()
+                    print(f"  📝 {file}")
+                elif line.startswith('A '):  # Adicionado
+                    file = line[2:].strip()
+                    print(f"  ➕ {file}")
+                elif line.startswith('D '):  # Deletado
+                    file = line[2:].strip()
+                    print(f"  🗑️  {file}")
+                elif line.startswith('??'):  # Não rastreado
+                    file = line[2:].strip()
+                    print(f"  ❓ {file}")
+                else:
+                    # Para outros casos, tenta extrair a partir da posição 3
+                    file = line[3:].strip()
+                    print(f"  🔄 {file}")
+            
+            print(f"\n{Colors.BLUE}💡 Opções disponíveis:{Colors.END}")
+            print(f"  {Colors.GREEN}• Fazer commit: git add . && git commit -m 'Sua mensagem'{Colors.END}")
+            print(f"  {Colors.GREEN}• Descartar alterações: git checkout -- <arquivo>{Colors.END}")
+            print(f"  {Colors.GREEN}• Salvar temporariamente: git stash{Colors.END}")
+            print(f"\n{Colors.YELLOW}Depois execute 'make config' novamente.{Colors.END}")
+            return False
         
-        return labels
+        # Verifica se está na branch main/master
+        branch_info = get_git_info()
+        if branch_info['branch'] not in ['main', 'master']:
+            print(f"\n{Colors.YELLOW}⚠️  Aviso: Você está na branch '{branch_info['branch']}'{Colors.END}")
+            print(f"{Colors.BLUE}💡 Recomendado: Use a branch 'main' ou 'master' para configurações{Colors.END}")
+            confirm = input(f"\n{Colors.YELLOW}Continuar mesmo assim? (y/N): {Colors.END}").strip().lower()
+            if confirm not in ['y', 'yes', 's', 'sim']:
+                print(f"{Colors.BLUE}💡 Para mudar de branch: git checkout main{Colors.END}")
+                return False
+        
+        return True
         
     except subprocess.CalledProcessError as e:
-        print(f"{Colors.RED}Erro ao extrair informações da imagem {image_name}:{Colors.END}")
-        print(f"{Colors.RED}{e.stderr}{Colors.END}")
-        return None
-    except FileNotFoundError as e:
-        print(f"{Colors.YELLOW}Docker indisponível ou execução dentro do container (docker CLI não encontrado no PATH). Detalhe: {e}{Colors.END}")
-        return None
-    except json.JSONDecodeError as e:
-        print(f"{Colors.RED}Erro ao decodificar JSON: {e}{Colors.END}")
-        return None
+        print(f"\n{Colors.RED}❌ Erro ao verificar status do Git: {e}{Colors.END}")
+        print(f"{Colors.BLUE}💡 Verifique se o Git está instalado e configurado corretamente{Colors.END}")
+        return False
 
-def extract_versions(labels):
-    """Extrai versões dos labels da imagem"""
-    versions = {}
+def get_last_update_info():
+    """Gera informação de última atualização com commit hash"""
+    current_date = datetime.now().strftime("%Y-%m-%d")
+    git_info = get_git_info()
     
-    # Mapeamento dos labels para variáveis
-    label_mapping = {
-        'relatorios.version': 'RELATORIOS_VERSION',
-        'execucao.version': 'EXECUCAO_VERSION', 
-        'reest.version': 'REEST_VERSION',
-        'ano.loa': 'ANO_LOA'
-    }
-    
-    for label_key, var_name in label_mapping.items():
-        if label_key in labels and labels[label_key]:
-            versions[var_name] = labels[label_key]
+    if git_info['is_git_repo'] and git_info['commit']:
+        return f"{current_date} (commit: {git_info['commit']})"
+    else:
+        return current_date
+
+def get_user_input(prompt, current_value, validator=None):
+    """Pede input do usuário com valor padrão e validação"""
+    while True:
+        if current_value:
+            user_input = input(f"{prompt}: [{current_value}] ").strip()
+            if not user_input:
+                user_input = current_value
         else:
-            versions[var_name] = 'unknown'
-            print(f"{Colors.YELLOW}Aviso: Label '{label_key}' não encontrado{Colors.END}")
-    
-    return versions
+            user_input = input(f"{prompt}: ").strip()
+        
+        if not user_input:
+            print(f"{Colors.RED}Este campo é obrigatório!{Colors.END}")
+            continue
+            
+        if validator and not validator(user_input):
+            print(f"{Colors.RED}Formato inválido!{Colors.END}")
+            continue
+            
+        return user_input
 
-def get_versions_from_env():
-    """Lê versões do ambiente, retorna dicionário apenas com chaves presentes."""
-    env_keys = ['RELATORIOS_VERSION', 'EXECUCAO_VERSION', 'REEST_VERSION', 'ANO_LOA']
-    env_values = {}
-    for key in env_keys:
-        val = os.environ.get(key)
-        if val is not None and str(val).strip() != "":
-            env_values[key] = str(val).strip()
-    return env_values
+def show_preview(new_values):
+    """Mostra preview das configurações antes de salvar"""
+    print(f"\n{Colors.YELLOW}{Colors.BOLD}Preview das configurações Docker:{Colors.END}")
+    print("-" * 40)
+    for key, value in new_values.items():
+        print(f"{key:20} = {value}")
+    print("-" * 40)
 
-def update_config_mk(versions, config_path="config.mk"):
-    """Atualiza ANO_LOA e versões na seção 'CONFIGURAÇÕES FLUIDAS' do config.mk."""
+def update_config_mk(values):
+    """Atualiza apenas as variáveis Docker no config.mk"""
+    config_path = Path("config.mk")
     
-    if not Path(config_path).exists():
-        print(f"{Colors.RED}Arquivo {config_path} não encontrado!{Colors.END}")
+    if not config_path.exists():
+        print(f"{Colors.RED}Arquivo config.mk não encontrado!{Colors.END}")
         return False
     
     with open(config_path, 'r') as f:
@@ -110,142 +207,245 @@ def update_config_mk(versions, config_path="config.mk"):
             break
 
     if start_idx is None:
-        print(f"{Colors.RED}Seção 'CONFIGURAÇÕES FLUIDAS' não encontrada em {config_path}!{Colors.END}")
+        print(f"{Colors.RED}Seção 'CONFIGURAÇÕES FLUIDAS' não encontrada em config.mk!{Colors.END}")
         return False
     
-    # Mapear posições existentes das chaves dentro do intervalo
-    keys = ['ANO_LOA', 'RELATORIOS_VERSION', 'EXECUCAO_VERSION', 'REEST_VERSION']
-    key_to_idx = {k: None for k in keys}
+    # Mapear posições existentes das chaves Docker dentro do intervalo
+    docker_keys = ['DOCKER_TAG', 'DOCKER_USER', 'DOCKER_IMAGE']
+    key_to_idx = {k: None for k in docker_keys}
     for idx in range(start_idx, end_idx):
         line = lines[idx]
-        for k in keys:
+        for k in docker_keys:
             if line.startswith(f"{k}="):
                 key_to_idx[k] = idx
 
-    # Atualizar ou inserir valores
-    def ensure_kv(key, value, anchor_comment):
-        line_value = f"{key}={value}\n"
-        if key_to_idx[key] is not None:
-            lines[key_to_idx[key]] = line_value
-        else:
-            # Inserir após o comentário de versões extraídas ou após o cabeçalho da seção
-            insert_pos = start_idx + 1
-            # procurar bloco "# Versões extraídas da imagem Docker"
-            for idx in range(start_idx, end_idx):
-                if lines[idx].strip().startswith(anchor_comment):
-                    insert_pos = idx + 1
-                    break
-            lines.insert(insert_pos, line_value)
-            # Ajustar índices seguintes
-            for k2 in keys:
-                if key_to_idx[k2] is not None and key_to_idx[k2] >= insert_pos:
-                    key_to_idx[k2] += 1
-
-    # Garantir presença do cabeçalho de versões
-    header_present = False
-    header_line = '# Versões extraídas da imagem Docker\n'
-    for idx in range(start_idx, end_idx):
-        if lines[idx].strip().startswith('# Versões extraídas da imagem Docker'):
-            header_present = True
-            break
-    if not header_present:
-        # Inserir header logo após a sub-seção de parâmetros (se existir) ou após o título da seção
-        insert_pos = start_idx + 1
-        for idx in range(start_idx, min(end_idx, start_idx + 15)):
-            if lines[idx].strip().startswith('# Versões extraídas'):
-                header_present = True
-                break
-            if lines[idx].strip().startswith('# Parâmetros da imagem Docker'):
-                insert_pos = idx + 1
-        lines.insert(insert_pos, header_line)
-        # Ajustar end_idx
-        end_idx += 1
-
-    # Atualizar os quatro valores
-    ensure_kv('ANO_LOA', versions.get('ANO_LOA', 'unknown'), '# Versões extraídas')
-    ensure_kv('RELATORIOS_VERSION', versions.get('RELATORIOS_VERSION', 'unknown'), '# Versões extraídas')
-    ensure_kv('EXECUCAO_VERSION', versions.get('EXECUCAO_VERSION', 'unknown'), '# Versões extraídas')
-    ensure_kv('REEST_VERSION', versions.get('REEST_VERSION', 'unknown'), '# Versões extraídas')
+    # Atualizar valores Docker
+    for key, value in values.items():
+        if key in key_to_idx and key_to_idx[key] is not None:
+            lines[key_to_idx[key]] = f"{key}={value}\n"
 
     with open(config_path, 'w') as f:
         f.writelines(lines)
     
     return True
 
-def show_versions(versions, source="desconhecida"):
-    """Mostra as versões extraídas"""
-    print(f"\n{Colors.GREEN}{Colors.BOLD}Versões de referência ({source}):{Colors.END}")
+def get_commit_info():
+    """Coleta informações para o commit"""
+    print(f"\n{Colors.BLUE}{Colors.BOLD}Configuração de Commit{Colors.END}")
+    print("-" * 30)
+    
+    # Git add
+    add_confirm = input("git add config.mk (Y/n): ").strip().lower()
+    if add_confirm in ['n', 'no']:
+        return None
+    
+    # Issue information
+    print(f"\n{Colors.YELLOW}qual issue?{Colors.END}")
+    org = input('org: "splor-mg" [splor-mg]: ').strip() or 'splor-mg'
+    repo = input('repo: "volumes-loa" [volumes-loa]: ').strip() or 'volumes-loa'
+    number = input('number: [opcional]: ').strip()
+    
+    return {
+        'org': org,
+        'repo': repo,
+        'number': number
+    }
+
+def build_commit_message(values, commit_info):
+    """Constrói a mensagem de commit melhorada"""
+    # Monta o link do issue se fornecido
+    issue_link = ""
+    if commit_info['number']:
+        issue_link = f"\n\nSee https://github.com/{commit_info['org']}/{commit_info['repo']}/issues/{commit_info['number']}"
+    
+    # Obtém informações do Git
+    git_info = get_git_info()
+    
+    # Monta os parâmetros Docker
+    params = []
+    param_order = ['DOCKER_TAG', 'DOCKER_USER', 'DOCKER_IMAGE']
+    
+    for param in param_order:
+        if param in values:
+            params.append(f"  {param.lower()}: {values[param]}")
+    
+    params_text = "\n".join(params)
+    
+    # Informações adicionais
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    git_info_text = ""
+    if git_info['is_git_repo'] and git_info['commit']:
+        git_info_text = f"\n\nGenerated by: {git_info['commit']} ({git_info['branch']})"
+    
+    commit_message = f"""chore(config): update docker variables
+
+Updated Docker configuration:
+{params_text}
+
+Timestamp: {timestamp}{git_info_text}{issue_link}"""
+    
+    return commit_message
+
+def show_commit_preview(commit_message):
+    """Mostra preview da mensagem de commit"""
+    print(f"\n{Colors.YELLOW}{Colors.BOLD}Preview da mensagem de commit:{Colors.END}")
     print("-" * 50)
-    for key, value in versions.items():
-        status = f"{Colors.GREEN}✓{Colors.END}" if value != 'unknown' else f"{Colors.RED}✗{Colors.END}"
-        print(f"{status} {key:20} = {value}")
+    print(commit_message)
     print("-" * 50)
+
+def make_commit(commit_message):
+    """Executa o commit com validações"""
+    try:
+        # Git add
+        print(f"{Colors.BLUE}Adicionando config.mk ao staging...{Colors.END}")
+        subprocess.run(['git', 'add', 'config.mk'], check=True)
+        
+        # Git commit
+        print(f"{Colors.BLUE}Executando commit...{Colors.END}")
+        subprocess.run(['git', 'commit', '-m', commit_message], check=True)
+        
+        print(f"\n{Colors.GREEN}{Colors.BOLD}✅ Commit realizado com sucesso!{Colors.END}")
+        
+        # Ações pós-commit
+        post_commit_actions()
+        
+        return True
+    except subprocess.CalledProcessError as e:
+        print(f"\n{Colors.RED}❌ Erro ao fazer commit: {e}{Colors.END}")
+        return False
+
+def post_commit_actions():
+    """Executa ações pós-commit"""
+    git_info = get_git_info()
+    
+    if not git_info['is_git_repo']:
+        return
+    
+    # Pergunta se quer fazer push
+    push_choice = input(f"\n{Colors.YELLOW}Quer fazer push para o repositório remoto? (Y/n): {Colors.END}").strip().lower()
+    
+    if push_choice not in ['n', 'no']:
+        try:
+            print(f"{Colors.BLUE}Fazendo push...{Colors.END}")
+            subprocess.run(['git', 'push'], check=True)
+            print(f"{Colors.GREEN}✅ Push realizado com sucesso!{Colors.END}")
+        except subprocess.CalledProcessError as e:
+            print(f"{Colors.RED}❌ Erro ao fazer push: {e}{Colors.END}")
 
 def main():
+    # Verifica se é modo commit-only
+    commit_only = '--commit-only' in sys.argv
+    
+    if commit_only:
+        print(f"{Colors.BLUE}{Colors.BOLD}Modo Commit-Only{Colors.END}")
+        print("=" * 40)
+        print(f"{Colors.END}")
+    
     print_header()
     
-    # Lê configurações do config.mk atual
-    config_path = Path("config.mk")
-    if not config_path.exists():
-        print(f"{Colors.RED}Arquivo config.mk não encontrado!{Colors.END}")
-        sys.exit(1)
-    
-    # Lê valores atuais do config.mk
-    current_values = {}
-    with open(config_path, 'r') as f:
-        for line in f:
-            line = line.strip()
-            if '=' in line and not line.startswith('#'):
-                key, value = line.split('=', 1)
-                key = key.strip()
-                value = value.strip()
-                if '#' in value:
-                    value = value.split('#')[0].strip()
-                current_values[key] = value
-    
-    # Usa valores atuais ou padrões
-    docker_user = current_values.get('DOCKER_USER', 'aidsplormg')
-    docker_image = current_values.get('DOCKER_IMAGE', 'volumes')
-    docker_tag = current_values.get('DOCKER_TAG', 'ploa2025')
-    
-    print(f"Extraindo informações de: {docker_user}/{docker_image}:{docker_tag}")
-    
-    # Fonte 1: Docker (preferencial)
-    versions = None
-    source = "docker inspect"
-    labels = get_docker_image_info(docker_user, docker_image, docker_tag)
-    if labels:
-        versions = extract_versions(labels)
-    else:
-        # Fonte 2: Ambiente
-        env_vals = get_versions_from_env()
-        if env_vals:
-            # Completa com valores atuais, sobrescrevendo pelas variáveis de ambiente presentes
-            versions = {
-                'ANO_LOA': env_vals.get('ANO_LOA', current_values.get('ANO_LOA', 'unknown')),
-                'RELATORIOS_VERSION': env_vals.get('RELATORIOS_VERSION', current_values.get('RELATORIOS_VERSION', 'unknown')),
-                'EXECUCAO_VERSION': env_vals.get('EXECUCAO_VERSION', current_values.get('EXECUCAO_VERSION', 'unknown')),
-                'REEST_VERSION': env_vals.get('REEST_VERSION', current_values.get('REEST_VERSION', 'unknown')),
-            }
-            source = "variáveis de ambiente"
+    # Tratamento de erro mais elegante
+    try:
+        # Validações iniciais
+        if not validate_git_status():
+            print(f"\n{Colors.RED}❌ Validações falharam. Abortando...{Colors.END}")
+            print(f"{Colors.BLUE}💡 Resolva os problemas acima e tente novamente.{Colors.END}")
+            sys.exit(1)
+        
+        # Lê valores atuais
+        current_values = read_config_file()
+        
+        # Define valores padrão se não existirem
+        defaults = {
+            'DOCKER_TAG': 'ploa2026',
+            'DOCKER_USER': 'aidsplormg',
+            'DOCKER_IMAGE': 'volumes'
+        }
+        
+        # Mescla valores atuais com padrões
+        for key, default_value in defaults.items():
+            if key not in current_values:
+                current_values[key] = default_value
+        
+        if not commit_only:
+            # Coleta inputs do usuário
+            new_values = {}
+            
+            print("Configure as variáveis Docker:")
+            print(f"{Colors.YELLOW}(Pressione Enter para aceitar o valor padrão ou digite o valor correto){Colors.END}\n")
+            
+            new_values['DOCKER_TAG'] = get_user_input(
+                "Tag da imagem Docker", 
+                current_values.get('DOCKER_TAG'), 
+                validate_docker_tag
+            )
+            
+            new_values['DOCKER_USER'] = get_user_input(
+                "Usuário do Docker Hub", 
+                current_values.get('DOCKER_USER')
+            )
+            
+            new_values['DOCKER_IMAGE'] = get_user_input(
+                "Nome da imagem Docker", 
+                current_values.get('DOCKER_IMAGE')
+            )
+            
+            # Mostra preview
+            show_preview(new_values)
+            
+            # Confirmação
+            confirm = input(f"\n{Colors.YELLOW}Salvar configurações? (y/N): {Colors.END}").strip().lower()
+            
+            if confirm in ['y', 'yes', 's', 'sim']:
+                if update_config_mk(new_values):
+                    print(f"\n{Colors.GREEN}{Colors.BOLD}Configuração salva em config.mk!{Colors.END}")
+                else:
+                    print(f"\n{Colors.RED}Falha ao salvar configuração.{Colors.END}")
+                    sys.exit(1)
+            else:
+                print(f"\n{Colors.RED}Configuração cancelada.{Colors.END}")
+                sys.exit(1)
         else:
-            # Fonte 3: config.mk (atual)
-            versions = {
-                'ANO_LOA': current_values.get('ANO_LOA', 'unknown'),
-                'RELATORIOS_VERSION': current_values.get('RELATORIOS_VERSION', 'unknown'),
-                'EXECUCAO_VERSION': current_values.get('EXECUCAO_VERSION', 'unknown'),
-                'REEST_VERSION': current_values.get('REEST_VERSION', 'unknown'),
-            }
-            source = "config.mk (valores atuais)"
-
-    # Mostra versões e fonte
-    show_versions(versions, source)
+            # Modo commit-only: usa valores atuais do config.mk
+            new_values = {k: v for k, v in current_values.items() if k in ['DOCKER_TAG', 'DOCKER_USER', 'DOCKER_IMAGE']}
+            print(f"{Colors.GREEN}Usando configurações atuais do config.mk{Colors.END}")
+        
+        # Pergunta se quer fazer commit
+        commit_choice = input(f"\n{Colors.YELLOW}Quer fazer commit das alterações? (Y/n): {Colors.END}").strip().lower()
+        
+        if commit_choice not in ['n', 'no']:
+            commit_info = get_commit_info()
+            if commit_info:
+                commit_message = build_commit_message(new_values, commit_info)
+                show_commit_preview(commit_message)
+                
+                commit_confirm = input(f"\n{Colors.YELLOW}Fazer commit? (Y/n): {Colors.END}").strip().lower()
+                if commit_confirm not in ['n', 'no']:
+                    success = make_commit(commit_message)
+                    if success:
+                        print(f"\n{Colors.GREEN}{Colors.BOLD}🎉 Configuração atualizada e commitada com sucesso!{Colors.END}")
+                    else:
+                        print(f"\n{Colors.RED}❌ Falha no processo de commit.{Colors.END}")
+                else:
+                    print(f"\n{Colors.RED}Commit cancelado.{Colors.END}")
+            else:
+                print(f"\n{Colors.RED}Commit cancelado.{Colors.END}")
+        else:
+            print(f"\n{Colors.BLUE}Commit não solicitado.{Colors.END}")
+            print(f"{Colors.GREEN}✅ Configuração salva em config.mk!{Colors.END}")
+        
+        # Mensagem informativa sobre próximos passos
+        print(f"\n{Colors.BLUE}{Colors.BOLD}Próximos passos:{Colors.END}")
+        print(f"1. {Colors.GREEN}make docker{Colors.END} - Baixa a imagem Docker configurada")
+        print(f"2. {Colors.GREEN}make info{Colors.END} - Extrai versões da imagem e atualiza config.mk")
+        print(f"\n{Colors.YELLOW}ℹ️  As informações de ANO_LOA e versões dos pacotes são extraídas automaticamente da imagem Docker.{Colors.END}")
     
-    # Atualiza config.mk
-    if update_config_mk(versions):
-        print(f"\n{Colors.GREEN}{Colors.BOLD}Configurações atualizadas em config.mk!{Colors.END}")
-    else:
-        print(f"\n{Colors.RED}Falha ao atualizar config.mk!{Colors.END}")
+    except KeyboardInterrupt:
+        print(f"\n\n{Colors.YELLOW}⚠️  Operação cancelada pelo usuário{Colors.END}")
+        print(f"{Colors.BLUE}💡 Nenhuma alteração foi feita.{Colors.END}")
+        sys.exit(0)
+    except Exception as e:
+        print(f"\n{Colors.RED}❌ Erro inesperado: {e}{Colors.END}")
+        print(f"{Colors.BLUE}💡 Verifique os logs e tente novamente.{Colors.END}")
         sys.exit(1)
 
 if __name__ == "__main__":

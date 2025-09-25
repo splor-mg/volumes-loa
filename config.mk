@@ -39,15 +39,15 @@ endif
 # CONFIGURAÇÕES FLUIDAS (atualizadas via make config)
 # ====================================================================
 # Parâmetros da imagem Docker
-DOCKER_TAG=ploa2025
+DOCKER_TAG=ploa2024
 DOCKER_USER=splormg
 DOCKER_IMAGE=volumes
 
 # Versões extraídas da imagem Docker
-ANO_LOA=2025
-RELATORIOS_VERSION=v0.7.99
-EXECUCAO_VERSION=v0.5.27
-REEST_VERSION=v0.2.8
+ANO_LOA=2026
+RELATORIOS_VERSION=v0.7.00
+EXECUCAO_VERSION=v0.4.00
+REEST_VERSION=v0.2.0
 
 # ====================================================================
 # CONFIGURAÇÕES ESTRUTURAIS (não alteradas via make config)

@@ -1,4 +1,4 @@
-.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker docker-pull v1_dcgf v1_prodemge validate check rm-all datapackage-update config
+.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker docker-pull v1_dcgf v1_prodemge validate check rm-all datapackage-update config info
 
 include config.mk
 
@@ -8,9 +8,13 @@ include config.mk
 help:
 	@grep -E '^[a-zA-Z_0-9]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-10s\033[0m %s\n", $$1, $$2}'
 
-config: ## Extrai versões da imagem Docker e atualiza configurações e datapackage
-	@echo "Executando configuração do projeto..."
+config: ## Configura interativamente as variáveis Docker (DOCKER_TAG, DOCKER_USER, DOCKER_IMAGE)
+	@echo "Configurando variáveis Docker..."
 	@python3 utils/config.py
+
+info: ## Extrai versões da imagem Docker e atualiza configurações e datapackage
+	@echo "Extraindo informações da imagem Docker..."
+	@python3 utils/info.py
 	@$(MAKE) --no-print-directory datapackage-update
 
 validate:
@@ -75,7 +79,7 @@ docker-pull: ## Baixa a imagem Docker do Docker Hub
 	@DOCKER_IMAGE_FULL="$(DOCKER_IMAGE_FULL)" USE_LOCAL_ON_FAIL="$(USE_LOCAL_ON_FAIL)" \
 		bash utils/docker_pull.sh
 
-docker: docker-pull ## Cria um container para geração dos PDFs
+docker: docker-pull info ## Cria um container para geração dos PDFs e extrai informações da imagem
 	@if [ TRUE ]; then \
 		$(DOCKER_RUN_CMD); \
 	fi

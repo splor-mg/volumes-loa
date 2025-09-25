@@ -55,25 +55,34 @@ Essas etapas devem ser realizadas com a imagem docker atualizada.
    # Edite o arquivo .env com suas credenciais
    ```
 
-2. Crie um container para geração dos PDFs:
-
-   ```bash
-   make docker
-   ```
-   
-   **Nota:** O comando `make docker` automaticamente baixa a imagem Docker configurada nas variáveis de ambiente (`$(DOCKER_USER)/$(DOCKER_IMAGE):$(DOCKER_TAG)`) do Docker Hub se ela não existir localmente.
-
-3. Configure o projeto:
+2. Configure as variáveis Docker:
 
    ```bash
    make config
    ```
    
-   **Nota:** O comando `make config` extrai a informação sobre as versões da imagem Docker e atualiza configurações do projeto. O projeto inclui uma ferramenta para validar e corrigir automaticamente os anos no `datapackage.yaml` baseado na variável `ANO_LOA` através do comando `make datapackage-update`. O script verifica se os anos nas linhas com comentários `# ANO_LOA-1`, `# ANO_LOA`, `# ANO_LOA+1`, `# ANO_LOA+2` correspondem aos valores esperados. Se encontrar divergências, informa no prompt e corrige automaticamente. Se tudo estiver correto, apenas valida sem fazer alterações.
+   **Nota:** O comando `make config` configura interativamente as variáveis Docker (`DOCKER_TAG`, `DOCKER_USER`, `DOCKER_IMAGE`) no arquivo `config.mk`. Essas variáveis definem qual imagem Docker será utilizada.
+
+3. Crie um container para geração dos PDFs:
+
+   ```bash
+   make docker
+   ```
+   
+   **Nota:** O comando `make docker` automaticamente:
+   - Baixa a imagem Docker conforme configurada no arquivo `config.mk`
+   - Extrai as versões dos pacotes R e o ano da LOA das labels da imagem
+   - Atualiza as configurações do projeto no `config.mk`
+   - Valida e corrige automaticamente os anos no `datapackage.yaml` baseado na variável `ANO_LOA`
+   
+   O projeto inclui uma ferramenta para validar e corrigir automaticamente os anos no `datapackage.yaml` através do comando `make datapackage-update`. O script verifica se os anos nas linhas com comentários `# ANO_LOA-1`, `# ANO_LOA`, `# ANO_LOA+1`, `# ANO_LOA+2` correspondem aos valores esperados. Se encontrar divergências, informa no prompt e corrige automaticamente. Se tudo estiver correto, apenas valida sem fazer alterações.
 
 ### Comandos Docker disponíveis
 
-- `make docker-pull` - Baixa a imagem Docker do Docker Hub
+- `make config` - Configura interativamente as variáveis Docker (DOCKER_TAG, DOCKER_USER, DOCKER_IMAGE)
+- `make docker` - Baixa a imagem Docker, extrai versões e cria container (comando principal)
+- `make docker-pull` - Baixa apenas a imagem Docker do Docker Hub
+- `make info` - Extrai versões da imagem Docker e atualiza configurações e datapackage
 - `make rstudio` - Inicia sessão do RStudio em http://localhost:8787/ (usuário: rstudio, senha: splor)
 
 
