@@ -39,7 +39,7 @@ fi
 if ! command -v docker >/dev/null 2>&1; then
   warn "Docker CLI indisponível; assumindo execução dentro do container. Rodando instalação diretamente."
   mkdir -p logs
-  Rscript _temp/install_packages_from_bitbucket.R "$CONF" | tee -a logs/install_r_pkgs.log
+  Rscript _temp/pacotes_bitbucket_install.R "$CONF" | tee -a logs/install_r_pkgs.log
   ok "Processo concluído. Veja logs em logs/install_r_pkgs.log"
   exit 0
 fi
@@ -71,7 +71,7 @@ docker exec \
   -e R_PKGS_CONFIG="$CONF" \
   -w "$WORKDIR" \
   "$CONTAINER_NAME" \
-  bash -lc "Rscript _temp/install_packages_from_bitbucket.R '$CONF' | tee -a logs/install_r_pkgs.log"
+  bash -lc "Rscript _temp/pacotes_bitbucket_install.R '$CONF' | tee -a logs/install_r_pkgs.log"
 
 ok "Processo concluído. Veja logs em logs/install_r_pkgs.log"
 

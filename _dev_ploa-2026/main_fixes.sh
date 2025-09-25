@@ -37,7 +37,7 @@ show_protocols() {
   echo ""
   echo "4.  Normalização de Capas"
   echo "    - Padroniza nomes de capaLOA.pdf"
-  echo "    - Script: normalize_covers.sh"
+  echo "    - Script: fix_normalize_covers.sh"
   echo ""
   echo "5.  Correção de Scripts .R"
   echo "    - Alinha nomes dos scripts .R com Makefile"
@@ -59,7 +59,7 @@ show_protocols() {
   echo ""
   echo "9.  Instalar Pacotes R do Bitbucket"
   echo "    - Instala versões específicas dos pacotes R"
-  echo "    - Script: instacao_pacotes_bitbucket_ultima_ploa.sh"
+  echo "    - Script: pacotes_bitbucket_wrapper.sh"
   echo "    - ⚠️  ATENÇÃO: Esta operação deve ser executada com a imagem Docker rodando"
   echo "    - Execute 'make docker' antes de prosseguir"
   echo ""
@@ -128,12 +128,12 @@ echo "  chmod +x _temp/test_all_volumes.sh"
 chmod +x _temp/check_current_state.sh
 chmod +x _temp/fix_case_sensitivity.sh
 chmod +x _temp/fix_filename_according_to_makefile.sh
-chmod +x _temp/normalize_covers.sh
+chmod +x _temp/fix_normalize_covers.sh
 chmod +x _temp/fix_R_script_filenames_according_to_makefile.sh
 chmod +x _temp/fix_checks_filenames.sh
 chmod +x _temp/datapckgs_retorno_commits_referencia.sh
 chmod +x _temp/checks_retorno_commits_referencia.sh
-chmod +x _temp/install_pacotes_bitbucket_ultima_ploa.sh
+chmod +x _temp/pacotes_bitbucket_wrapper.sh
 chmod +x _temp/test_all_volumes.sh
 
 # Divisória antes de iniciar a sequência de protocolos
@@ -174,7 +174,7 @@ execute_protocol() {
       echo "  - Lê alvos em 'utils/makefile/' e propõe renomear variações em 'volume1/Rnw/'"
       echo "Observação: Atualmente focado no Volume 1"
       ;;
-    normalize_covers.sh)
+    fix_normalize_covers.sh)
       echo "Objetivo: Padronizar capas para 'capaLOA.pdf' em 'volume*/Rnw/'."
       echo "O que faz:"
       echo "  - Detecta variações (case-insensitive) e renomeia com confirmação"
@@ -204,7 +204,7 @@ execute_protocol() {
       echo "  - Oferece criar backup em diretório _backup_TIMESTAMP"
       echo "Configuração: _temp/checks_commits_referencia.yml"
       ;;
-    install_pacotes_bitbucket_ultima_ploa.sh)
+    pacotes_bitbucket_wrapper.sh)
       echo "Objetivo: Instalar versões específicas dos pacotes R a partir do Bitbucket."
       echo "O que faz:"
       echo "  - Executa Rscript no container Docker e registra logs em 'logs/install_r_pkgs.log'"
@@ -235,12 +235,12 @@ if [ "$start_option" -eq 0 ]; then
   execute_protocol "1" "Verificação do Estado Atual" "check_current_state.sh" ""
   execute_protocol "2" "Correção de Case Sensitivity" "fix_case_sensitivity.sh" ""
   execute_protocol "3" "Correção de Nomes de Arquivos .Rnw" "fix_filename_according_to_makefile.sh" ""
-  execute_protocol "4" "Normalização de Capas" "normalize_covers.sh" ""
+  execute_protocol "4" "Normalização de Capas" "fix_normalize_covers.sh" ""
   execute_protocol "5" "Correção de Scripts .R" "fix_R_script_filenames_according_to_makefile.sh" ""
   execute_protocol "6" "Alinhamento de Nomes dos Checks" "fix_checks_filenames.sh" ""
   execute_protocol "7" "Reverter Datapackages para LOA 2025" "datapckgs_retorno_commits_referencia.sh" "Esta operação irá reverter arquivos para commits específicos. Faça backup se necessário."
   execute_protocol "8" "Reverter Checks para LOA 2025" "checks_retorno_commits_referencia.sh" "Esta operação irá reverter arquivos para commit específico. Faça backup se necessário."
-  execute_protocol "9" "Instalar Pacotes R do Bitbucket" "install_pacotes_bitbucket_ultima_ploa.sh" "Esta operação deve ser executada com a imagem Docker rodando. Execute 'make docker' antes de prosseguir."
+  execute_protocol "9" "Instalar Pacotes R do Bitbucket" "pacotes_bitbucket_wrapper.sh" "Esta operação deve ser executada com a imagem Docker rodando. Execute 'make docker' antes de prosseguir."
   execute_protocol "10" "Testes/Checagens Pós-Correção" "test_all_volumes.sh" ""
   
 else
@@ -249,12 +249,12 @@ else
     1) execute_protocol "1" "Verificação do Estado Atual" "check_current_state.sh" "" ;;
     2) execute_protocol "2" "Correção de Case Sensitivity" "fix_case_sensitivity.sh" "" ;;
     3) execute_protocol "3" "Correção de Nomes de Arquivos .Rnw" "fix_filename_according_to_makefile.sh" "" ;;
-    4) execute_protocol "4" "Normalização de Capas" "normalize_covers.sh" "" ;;
+    4) execute_protocol "4" "Normalização de Capas" "fix_normalize_covers.sh" "" ;;
     5) execute_protocol "5" "Correção de Scripts .R" "fix_R_script_filenames_according_to_makefile.sh" "" ;;
     6) execute_protocol "6" "Alinhamento de Nomes dos Checks" "fix_checks_filenames.sh" "" ;;
     7) execute_protocol "7" "Reverter Datapackages para LOA 2025" "datapckgs_retorno_commits_referencia.sh" "Esta operação irá reverter arquivos para commits específicos. Faça backup se necessário." ;;
     8) execute_protocol "8" "Reverter Checks para LOA 2025" "checks_retorno_commits_referencia.sh" "Esta operação irá reverter arquivos para commit específico. Faça backup se necessário." ;;
-    9) execute_protocol "9" "Instalar Pacotes R do Bitbucket" "install_pacotes_bitbucket_ultima_ploa.sh" "Esta operação deve ser executada com a imagem Docker rodando. Execute 'make docker' antes de prosseguir." ;;
+    9) execute_protocol "9" "Instalar Pacotes R do Bitbucket" "pacotes_bitbucket_wrapper.sh" "Esta operação deve ser executada com a imagem Docker rodando. Execute 'make docker' antes de prosseguir." ;;
     10) execute_protocol "10" "Testes/Checagens Pós-Correção" "test_all_volumes.sh" "" ;;
   esac
 fi
