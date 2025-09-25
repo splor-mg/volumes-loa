@@ -1,5 +1,15 @@
 # Scripts para Correções Amplas no Projeto Volumes-LOA
 
+Este README tem como objetivo documentar, de forma clara e reproduzível, todas as ações realizadas com apoio de inteligência artificial (IA) para diagnosticar e corrigir problemas enfrentados no projeto no intuito de . Cada correção/ajuste deve trazer o racional, os comandos utilizados e o contexto de execução, permitindo auditoria e reexecução passo a passo.
+
+Importante: algumas etapas — especialmente a definição/validação de itens em `datapackages/` e a verificação/instalação das versões dos pacotes R utilizados — devem ser feitas dentro do container Docker. Inicie o ambiente conforme o guia principal do repositório:
+
+```bash
+make docker
+```
+
+Leia as instruções completas no README principal (seção Docker): ../README.md
+
 Este diretório contém scripts para corrigir problemas que afetam todos os 7 volumes do projeto.
 
 ## Problema Identificado

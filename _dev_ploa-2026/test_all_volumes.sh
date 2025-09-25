@@ -5,6 +5,9 @@
 
 set -euo pipefail
 
+mkdir -p _temp
+LOG_FILE="_temp/volume7_test_output.log"
+{
 echo "=== TESTANDO/CHECANDO TODOS OS VOLUMES (MODO INFORMATIVO) ==="
 echo ""
 
@@ -84,3 +87,4 @@ fi
 
 echo ""
 echo "=== FIM DAS CHECAGENS ==="
+} | tee "$LOG_FILE"

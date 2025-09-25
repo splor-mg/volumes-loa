@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 # Script para verificar o estado atual do projeto
 # Mostra quais arquivos têm o problema de case sensitivity
 

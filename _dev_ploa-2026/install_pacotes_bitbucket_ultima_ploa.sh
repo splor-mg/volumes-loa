@@ -35,6 +35,16 @@ if [ -z "${BITBUCKET_AUTH_USER}" ] || [ -z "${BITBUCKET_APP_PASSWORD}" ]; then
   exit 1
 fi
 
+# Se docker não existir (provável execução dentro do container), roda direto
+if ! command -v docker >/dev/null 2>&1; then
+  warn "Docker CLI indisponível; assumindo execução dentro do container. Rodando instalação diretamente."
+  mkdir -p logs
+  Rscript _temp/install_packages_from_bitbucket.R "$CONF" | tee -a logs/install_r_pkgs.log
+  ok "Processo concluído. Veja logs em logs/install_r_pkgs.log"
+  exit 0
+fi
+
+# Caminho via docker (host)
 CONTAINER_NAME="volumes-loa"
 if ! docker ps --format '{{.Names}}' | grep -qx "$CONTAINER_NAME"; then
   err "Container '$CONTAINER_NAME' não está em execução. Rode 'make docker' antes."
@@ -54,6 +64,7 @@ if ! docker exec "$CONTAINER_NAME" bash -lc "[ -d '$WORKDIR' ]"; then
 fi
 
 info "Instalando pacotes conforme $CONF dentro do container $CONTAINER_NAME ..."
+mkdir -p logs
 docker exec \
   -e BITBUCKET_AUTH_USER="$BITBUCKET_AUTH_USER" \
   -e BITBUCKET_APP_PASSWORD="$BITBUCKET_APP_PASSWORD" \

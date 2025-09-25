@@ -8,9 +8,9 @@ set -euo pipefail
 
 confirm() {
   local prompt_msg="$1"
-  local default_answer="N"
+  local default_answer="n"
   local answer
-  read -r -p "$prompt_msg [y/N]: " answer || true
+  read -r -p "$prompt_msg (y/n): " answer || true
   answer=${answer:-$default_answer}
   case "$answer" in
     y|Y|yes|YES) return 0 ;;

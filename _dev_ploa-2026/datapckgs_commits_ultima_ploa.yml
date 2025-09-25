@@ -1,7 +1,7 @@
 # Últimos hashes de commits (SHAs) dos bancos de dados no fechamento da LOA 2025
 # Os valores abaixo são hashes de commits Git (SHAs) a serem usados para restaurar as bases
 
-bases_de_apoio:
+datapackages:
   apoio: 5809e03dd5e052561d7ae896c62d3ad9e79403bb
   fonte_stn: 5809e03dd5e052561d7ae896c62d3ad9e79403bb
   qdd_fiscal_fonte_95: 5809e03dd5e052561d7ae896c62d3ad9e79403bb

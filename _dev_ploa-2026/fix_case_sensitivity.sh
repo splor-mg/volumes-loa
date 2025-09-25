@@ -7,9 +7,9 @@ set -euo pipefail
 
 confirm() {
   local prompt_msg="$1"
-  local default_answer="N"
+  local default_answer="n"
   local answer
-  read -r -p "$prompt_msg [y/N]: " answer || true
+  read -r -p "$prompt_msg (y/n): " answer || true
   answer=${answer:-$default_answer}
   case "$answer" in
     y|Y|yes|YES) return 0 ;;
@@ -34,13 +34,21 @@ echo "Arquivos que serão modificados:"
 find . -name "*.R" -type f -exec grep -l "funcoes\\.r" {} \;
 
 echo ""
-echo "Comando que será executado para aplicar a correção:"
-echo "  find . -name \"*.R\" -type f -exec sed -i 's/funcoes\\.r/funcoes.R/g' {} \\;"
+echo "Comando que será executado para aplicar a correção (com backup .bak):"
+echo "  find . -name \"*.R\" -type f -exec sed -i.bak 's/funcoes\\.r/funcoes.R/g' {} \\;"
 
 if confirm "Deseja aplicar a correção agora?"; then
   echo "Executando correção..."
-  find . -name "*.R" -type f -exec sed -i 's/funcoes\\.r/funcoes.R/g' {} \;
+  find . -name "*.R" -type f -exec sed -i.bak 's/funcoes\\.r/funcoes.R/g' {} \;
   echo "Correção concluída!"
+  echo ""
+  echo "Backups criados com extensão .bak."
+  if confirm "Deseja remover todos os arquivos .bak gerados agora?"; then
+    find . -name "*.R.bak" -type f -print -delete
+    echo "Backups .bak removidos."
+  else
+    echo "Backups mantidos conforme solicitado."
+  fi
 else
   echo "Correção cancelada a pedido do usuário."
   exit 0

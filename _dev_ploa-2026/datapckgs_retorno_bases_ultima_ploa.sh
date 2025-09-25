@@ -36,10 +36,21 @@ if [ ! -d "datapackages" ]; then
     exit 1
 fi
 
-# Verificar se o git está inicializado
+# Verificar se o git está inicializado e contornar 'dubious ownership'
 if ! git rev-parse --git-dir > /dev/null 2>&1; then
-    print_error "Este não é um repositório Git válido."
-    exit 1
+    # Tenta detectar se é o erro de ownership dúbio
+    if git rev-parse --is-inside-work-tree 2>&1 | grep -qi 'dubious ownership'; then
+        print_warning "Repositório com 'dubious ownership'. Configurando como safe.directory..."
+        git config --global --add safe.directory "$(pwd)" || true
+        # Tenta novamente
+        if ! git rev-parse --git-dir > /dev/null 2>&1; then
+            print_error "Este não é um repositório Git válido."
+            exit 1
+        fi
+    else
+        print_error "Este não é um repositório Git válido."
+        exit 1
+    fi
 fi
 
 print_info "=== REVERTENDO DATAPACKAGES PARA VERSÕES LOA 2025 ==="
@@ -61,7 +72,7 @@ while IFS= read -r line; do
     line=$(echo "$line" | sed 's/\t/    /g')
     [[ -z "$line" ]] && continue
     [[ "$line" =~ ^# ]] && continue
-    if echo "$line" | grep -q "^bases_de_apoio:"; then in_section=1; continue; fi
+    if echo "$line" | grep -q "^datapackages:"; then in_section=1; continue; fi
     if [ $in_section -eq 1 ]; then
         if echo "$line" | grep -q "^[^[:space:]]"; then in_section=0; continue; fi
         if echo "$line" | grep -q "^[[:space:]]\{2,\}[A-Za-z0-9_.-]\+:\s*[0-9a-f]\{7,40\}\s*$"; then
@@ -100,17 +111,15 @@ for datapackage in "${!commits[@]}"; do
 done
 echo
 
-read -p "Deseja continuar? (s/N): " -n 1 -r
-echo
-if [[ ! $REPLY =~ ^[Ss]$ ]]; then
+read -r -p "Deseja continuar? (y/n): " REPLY
+if [[ ! $REPLY =~ ^([Yy]|[Yy][Ee][Ss])$ ]]; then
     print_info "Operação cancelada pelo usuário."
     exit 0
 fi
 
 # Fazer backup opcional
-read -p "Deseja fazer backup dos arquivos atuais antes de reverter? (S/n): " -n 1 -r
-echo
-if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+read -r -p "Deseja fazer backup dos arquivos atuais antes de reverter? (y/n): " REPLY
+if [[ $REPLY =~ ^([Yy]|[Yy][Ee][Ss])$ ]]; then
     backup_dir="_backup_$(date +%Y%m%d_%H%M%S)"
     print_info "Criando backup em $backup_dir..."
     mkdir -p "$backup_dir"
@@ -154,24 +163,8 @@ if [ $(git status --porcelain | wc -l) -gt 20 ]; then
 fi
 echo
 
-# Perguntar se deseja commitar
-read -p "Deseja fazer commit das alterações agora? (S/n): " -n 1 -r
-echo
-if [[ ! $REPLY =~ ^[Nn]$ ]]; then
-    print_info "Fazendo commit das alterações..."
-    git add datapackages/
-    git commit -m "Reverte datapackages para versões LOA 2025
-
-- apoio: 5809e03dd5e052561d7ae896c62d3ad9e79403bb
-- fonte_stn: 5809e03dd5e052561d7ae896c62d3ad9e79403bb  
-- qdd_fiscal_fonte_95: 5809e03dd5e052561d7ae896c62d3ad9e79403bb
-- sigplan: 102725e474ae03472103ecf042daa534f39e7304
-- sisor: 6cc1cbd112fef85824e4099ce12a3f02e8c346f9"
-    
-    print_success "Commit realizado com sucesso!"
-else
-    print_info "Alterações não foram commitadas. Use 'git add' e 'git commit' quando desejar."
-fi
+# Não fazer commit automaticamente - deixar para o usuário decidir
+print_info "Alterações não foram commitadas. Use 'git add' e 'git commit' quando desejar."
 
 echo
 print_success "=== SCRIPT CONCLUÍDO ==="

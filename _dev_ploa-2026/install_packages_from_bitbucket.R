@@ -21,9 +21,16 @@ if (is.na(bb_user) || is.na(bb_pass) || nchar(bb_user) == 0 || nchar(bb_pass) ==
 install_one <- function(nome, repo, versao) {
   user_enc <- utils::URLencode(bb_user, reserved = TRUE)
   pass_enc <- utils::URLencode(bb_pass, reserved = TRUE)
-  ref <- sprintf("https://%s:%s@%s/%s@%s", user_enc, pass_enc, repo_base, repo, versao)
+  url_git <- sprintf("https://%s:%s@%s/%s.git", user_enc, pass_enc, repo_base, repo)
   message(sprintf("[INFO] Instalando %s (%s) de %s ...", nome, versao, repo))
-  remotes::install_git(ref, upgrade = "never", quiet = TRUE)
+  # Pré-checagem para diagnosticar erros de auth/tag
+  chk <- tryCatch({
+    system2("git", c("ls-remote", url_git, versao), stdout = TRUE, stderr = TRUE)
+  }, error = function(e) e)
+  if (inherits(chk, "error")) {
+    message(sprintf("[ERRO] git ls-remote falhou para %s %s: %s", repo, versao, chk$message))
+  }
+  remotes::install_git(url_git, ref = versao, upgrade = "never", quiet = TRUE)
 }
 
 ok <- TRUE
@@ -37,5 +44,8 @@ for (p in pkgs) {
 }
 
 if (!ok) quit(status = 1) else message("[OK] Pacotes instalados com sucesso.")
+
+
+
 
 
