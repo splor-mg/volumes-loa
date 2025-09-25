@@ -55,15 +55,7 @@ Essas etapas devem ser realizadas com a imagem docker atualizada.
    # Edite o arquivo .env com suas credenciais
    ```
 
-2. Configure o projeto:
-
-   ```bash
-   make config
-   ```
-   
-   **Nota:** O comando `make config` extrai versões da imagem Docker e atualiza configurações do projeto. Este comando deve ser executado **no host** (fora do container). O projeto inclui uma ferramenta para validar e corrigir automaticamente os anos no `datapackage.yaml` baseado na variável `ANO_LOA` através do comando `make datapackage-update`. O script verifica se os anos nas linhas com comentários `# ANO_LOA-1`, `# ANO_LOA`, `# ANO_LOA+1`, `# ANO_LOA+2` correspondem aos valores esperados. Se encontrar divergências, informa no prompt e corrige automaticamente. Se tudo estiver correto, apenas valida sem fazer alterações.
-
-3. Crie um container para geração dos PDFs:
+2. Crie um container para geração dos PDFs:
 
    ```bash
    make docker
@@ -71,10 +63,17 @@ Essas etapas devem ser realizadas com a imagem docker atualizada.
    
    **Nota:** O comando `make docker` automaticamente baixa a imagem Docker configurada nas variáveis de ambiente (`$(DOCKER_USER)/$(DOCKER_IMAGE):$(DOCKER_TAG)`) do Docker Hub se ela não existir localmente.
 
+3. Configure o projeto:
+
+   ```bash
+   make config
+   ```
+   
+   **Nota:** O comando `make config` extrai a informação sobre as versões da imagem Docker e atualiza configurações do projeto. O projeto inclui uma ferramenta para validar e corrigir automaticamente os anos no `datapackage.yaml` baseado na variável `ANO_LOA` através do comando `make datapackage-update`. O script verifica se os anos nas linhas com comentários `# ANO_LOA-1`, `# ANO_LOA`, `# ANO_LOA+1`, `# ANO_LOA+2` correspondem aos valores esperados. Se encontrar divergências, informa no prompt e corrige automaticamente. Se tudo estiver correto, apenas valida sem fazer alterações.
+
 ### Comandos Docker disponíveis
 
 - `make docker-pull` - Baixa a imagem Docker do Docker Hub
-- `make docker` - Cria um container para geração dos PDFs (inclui docker-pull)
 - `make rstudio` - Inicia sessão do RStudio em http://localhost:8787/ (usuário: rstudio, senha: splor)
 
 
@@ -116,28 +115,6 @@ Essas etapas devem ser realizadas com a imagem docker atualizada.
 
 Se for necessário informação sobre qual script estava sendo executado para rastrear algum erro durante a geração dos volumes defina a variável de ambiente `VERBOSE="--verbose"` no arquivo `.env` e gere o volume novamente.
 
-### Variáveis de ambiente
-
-O projeto utiliza as seguintes variáveis de ambiente (configuradas no arquivo `.env`):
-
-- `ANO_LOA` - Ano da LOA (Lei Orçamentária Anual) - ex.: 2025 (padrão: 2025)
-- `GITHUB_TOKEN` - Token do GitHub para instalação de pacotes R privados
-- `VERBOSE` - Modo verbose para debug (opcional, valores: `--verbose` ou vazio)
-- `PATH_SCPPO` - Caminho para diretório SCPPO (opcional, usado pela função `copy_scppo()`)
-- `DOCKER_USER` - Usuário do Docker Hub (padrão: `aidsplormg`)
-- `DOCKER_IMAGE` - Nome da imagem Docker (padrão: `volumes`)
-- `DOCKER_TAG` - Tag da imagem Docker (padrão: `ploa2025`)
-
-**Exemplo de arquivo `.env`:**
-```bash
-ANO_LOA=2025
-GITHUB_TOKEN=seu_token_github_aqui
-VERBOSE=
-PATH_SCPPO=/caminho/para/scppo
-DOCKER_USER=aidsplormg
-DOCKER_IMAGE=volumes
-DOCKER_TAG=ploa2025
-```
 
 ## Golden Tests
 
