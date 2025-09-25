@@ -49,20 +49,25 @@ show_protocols() {
   echo ""
   echo "7.  Reverter Datapackages para LOA 2025"
   echo "    - Reverte datapackages para commits específicos"
-  echo "    - Script: datapckgs_retorno_bases_ultima_ploa.sh"
+  echo "    - Script: datapckgs_retorno_commits_referencia.sh"
   echo "    - ⚠️  ATENÇÃO: Esta operação irá reverter arquivos para commits específicos"
   echo ""
-  echo "8.  Instalar Pacotes R do Bitbucket"
+  echo "8.  Reverter Checks para LOA 2025"
+  echo "    - Reverte pasta checks para commit específico"
+  echo "    - Script: checks_retorno_commits_referencia.sh"
+  echo "    - ⚠️  ATENÇÃO: Esta operação irá reverter arquivos para commit específico"
+  echo ""
+  echo "9.  Instalar Pacotes R do Bitbucket"
   echo "    - Instala versões específicas dos pacotes R"
   echo "    - Script: instacao_pacotes_bitbucket_ultima_ploa.sh"
   echo "    - ⚠️  ATENÇÃO: Esta operação deve ser executada com a imagem Docker rodando"
   echo "    - Execute 'make docker' antes de prosseguir"
   echo ""
-  echo "9.  Testes/Checagens Pós-Correção"
+  echo "10. Testes/Checagens Pós-Correção"
   echo "    - Testa todos os volumes após as correções"
   echo "    - Script: test_all_volumes.sh"
   echo ""
-  echo "0.  Executar Todos os Protocolos (1-9)"
+  echo "0.  Executar Todos os Protocolos (1-10)"
   echo "    - Executa todos os protocolos na ordem recomendada"
   echo ""
 }
@@ -71,21 +76,21 @@ get_start_option() {
   local start_option
   while true; do
     if [ -t 0 ]; then
-      printf "A partir de qual protocolo deseja começar? (1-9, 0=executar todos): " 1>&2
+      printf "A partir de qual protocolo deseja começar? (1-10, 0=executar todos): " 1>&2
       read -r start_option
     else
-      read -r -p "A partir de qual protocolo deseja começar? (1-9, 0=executar todos): " start_option
+      read -r -p "A partir de qual protocolo deseja começar? (1-10, 0=executar todos): " start_option
     fi
     case $start_option in
       [0-9]) 
-        if [ "$start_option" -ge 0 ] && [ "$start_option" -le 9 ]; then
+        if [ "$start_option" -ge 0 ] && [ "$start_option" -le 10 ]; then
           echo "$start_option"
           return
         else
-          echo "Opção inválida. Digite um número entre 0 e 9."
+          echo "Opção inválida. Digite um número entre 0 e 10."
         fi
         ;;
-      *) echo "Opção inválida. Digite um número entre 0 e 9." ;;
+      *) echo "Opção inválida. Digite um número entre 0 e 10." ;;
     esac
   done
 }
@@ -126,7 +131,8 @@ chmod +x _temp/fix_filename_according_to_makefile.sh
 chmod +x _temp/normalize_covers.sh
 chmod +x _temp/fix_R_script_filenames_according_to_makefile.sh
 chmod +x _temp/fix_checks_filenames.sh
-chmod +x _temp/datapckgs_retorno_bases_ultima_ploa.sh
+chmod +x _temp/datapckgs_retorno_commits_referencia.sh
+chmod +x _temp/checks_retorno_commits_referencia.sh
 chmod +x _temp/install_pacotes_bitbucket_ultima_ploa.sh
 chmod +x _temp/test_all_volumes.sh
 
@@ -184,12 +190,19 @@ execute_protocol() {
       echo "O que faz:"
       echo "  - Lê nomes via Report('NAME', ...) nos testes e renomeia em 'checks/assets/tex/'"
       ;;
-    datapckgs_retorno_bases_ultima_ploa.sh)
+    datapckgs_retorno_commits_referencia.sh)
       echo "Objetivo: Reverter 'datapackages/*' para versões da LOA 2025."
       echo "O que faz:"
-      echo "  - Lê SHAs em '_temp/datapckgs_commits_ultima_ploa.yml' e faz 'git checkout' dirigido por pasta"
+      echo "  - Lê SHAs em '_temp/datapckgs_commits_referencia.yml' e faz 'git checkout' dirigido por pasta"
       echo "  - Oferece criar backup em diretório _backup_TIMESTAMP"
-      echo "Configuração: _temp/datapckgs_commits_ultima_ploa.yml"
+      echo "Configuração: _temp/datapckgs_commits_referencia.yml"
+      ;;
+    checks_retorno_commits_referencia.sh)
+      echo "Objetivo: Reverter pasta 'checks/' para versão da LOA 2025."
+      echo "O que faz:"
+      echo "  - Lê SHA em '_temp/checks_commits_referencia.yml' e faz 'git checkout' da pasta checks/"
+      echo "  - Oferece criar backup em diretório _backup_TIMESTAMP"
+      echo "Configuração: _temp/checks_commits_referencia.yml"
       ;;
     install_pacotes_bitbucket_ultima_ploa.sh)
       echo "Objetivo: Instalar versões específicas dos pacotes R a partir do Bitbucket."
@@ -225,9 +238,10 @@ if [ "$start_option" -eq 0 ]; then
   execute_protocol "4" "Normalização de Capas" "normalize_covers.sh" ""
   execute_protocol "5" "Correção de Scripts .R" "fix_R_script_filenames_according_to_makefile.sh" ""
   execute_protocol "6" "Alinhamento de Nomes dos Checks" "fix_checks_filenames.sh" ""
-  execute_protocol "7" "Reverter Datapackages para LOA 2025" "datapckgs_retorno_bases_ultima_ploa.sh" "Esta operação irá reverter arquivos para commits específicos. Faça backup se necessário."
-  execute_protocol "8" "Instalar Pacotes R do Bitbucket" "install_pacotes_bitbucket_ultima_ploa.sh" "Esta operação deve ser executada com a imagem Docker rodando. Execute 'make docker' antes de prosseguir."
-  execute_protocol "9" "Testes/Checagens Pós-Correção" "test_all_volumes.sh" ""
+  execute_protocol "7" "Reverter Datapackages para LOA 2025" "datapckgs_retorno_commits_referencia.sh" "Esta operação irá reverter arquivos para commits específicos. Faça backup se necessário."
+  execute_protocol "8" "Reverter Checks para LOA 2025" "checks_retorno_commits_referencia.sh" "Esta operação irá reverter arquivos para commit específico. Faça backup se necessário."
+  execute_protocol "9" "Instalar Pacotes R do Bitbucket" "install_pacotes_bitbucket_ultima_ploa.sh" "Esta operação deve ser executada com a imagem Docker rodando. Execute 'make docker' antes de prosseguir."
+  execute_protocol "10" "Testes/Checagens Pós-Correção" "test_all_volumes.sh" ""
   
 else
   # Executar a partir do protocolo escolhido
@@ -238,9 +252,10 @@ else
     4) execute_protocol "4" "Normalização de Capas" "normalize_covers.sh" "" ;;
     5) execute_protocol "5" "Correção de Scripts .R" "fix_R_script_filenames_according_to_makefile.sh" "" ;;
     6) execute_protocol "6" "Alinhamento de Nomes dos Checks" "fix_checks_filenames.sh" "" ;;
-    7) execute_protocol "7" "Reverter Datapackages para LOA 2025" "datapckgs_retorno_bases_ultima_ploa.sh" "Esta operação irá reverter arquivos para commits específicos. Faça backup se necessário." ;;
-    8) execute_protocol "8" "Instalar Pacotes R do Bitbucket" "install_pacotes_bitbucket_ultima_ploa.sh" "Esta operação deve ser executada com a imagem Docker rodando. Execute 'make docker' antes de prosseguir." ;;
-    9) execute_protocol "9" "Testes/Checagens Pós-Correção" "test_all_volumes.sh" "" ;;
+    7) execute_protocol "7" "Reverter Datapackages para LOA 2025" "datapckgs_retorno_commits_referencia.sh" "Esta operação irá reverter arquivos para commits específicos. Faça backup se necessário." ;;
+    8) execute_protocol "8" "Reverter Checks para LOA 2025" "checks_retorno_commits_referencia.sh" "Esta operação irá reverter arquivos para commit específico. Faça backup se necessário." ;;
+    9) execute_protocol "9" "Instalar Pacotes R do Bitbucket" "install_pacotes_bitbucket_ultima_ploa.sh" "Esta operação deve ser executada com a imagem Docker rodando. Execute 'make docker' antes de prosseguir." ;;
+    10) execute_protocol "10" "Testes/Checagens Pós-Correção" "test_all_volumes.sh" "" ;;
   esac
 fi
 
