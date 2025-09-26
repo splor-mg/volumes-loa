@@ -25,6 +25,54 @@ def print_header():
     print("=" * 40)
     print(f"{Colors.END}")
 
+def prepare_config_mk():
+    """Prepara o config.mk para funcionar sem R instalado"""
+    config_path = Path("config.mk")
+    
+    if not config_path.exists():
+        return True
+    
+    # Lê o arquivo atual
+    with open(config_path, 'r') as f:
+        content = f.read()
+    
+    # Verifica se já foi preparado
+    if "# PREPARED_FOR_CONFIG" in content:
+        return True
+    
+    # Faz backup
+    backup_path = Path("config.mk.backup")
+    if not backup_path.exists():
+        backup_path.write_text(content)
+    
+    # Comenta as linhas problemáticas
+    lines = content.split('\n')
+    prepared_lines = []
+    
+    for line in lines:
+        if line.strip().startswith('DEP_') or line.strip().startswith('acoes_planejamento'):
+            prepared_lines.append(f"# {line}  # Temporarily disabled for config")
+        else:
+            prepared_lines.append(line)
+    
+    # Adiciona marcador
+    prepared_lines.append("# PREPARED_FOR_CONFIG")
+    
+    # Salva versão preparada
+    config_path.write_text('\n'.join(prepared_lines))
+    return True
+
+def restore_config_mk():
+    """Restaura o config.mk original"""
+    backup_path = Path("config.mk.backup")
+    config_path = Path("config.mk")
+    
+    if backup_path.exists() and config_path.exists():
+        config_path.write_text(backup_path.read_text())
+        backup_path.unlink()
+        return True
+    return False
+
 def read_config_file():
     """Lê o arquivo config.mk atual e extrai os valores"""
     config_path = Path("config.mk")
@@ -345,6 +393,11 @@ def main():
     
     # Tratamento de erro mais elegante
     try:
+        # NOVA FUNCIONALIDADE: Preparar config.mk para funcionar sem R
+        if not prepare_config_mk():
+            print(f"{Colors.RED}❌ Erro ao preparar config.mk{Colors.END}")
+            sys.exit(1)
+        
         # Validações iniciais
         if not validate_git_status():
             print(f"\n{Colors.RED}❌ Validações falharam. Abortando...{Colors.END}")
@@ -442,11 +495,16 @@ def main():
     except KeyboardInterrupt:
         print(f"\n\n{Colors.YELLOW}⚠️  Operação cancelada pelo usuário{Colors.END}")
         print(f"{Colors.BLUE}💡 Nenhuma alteração foi feita.{Colors.END}")
+        restore_config_mk()  # Restaura config.mk original
         sys.exit(0)
     except Exception as e:
         print(f"\n{Colors.RED}❌ Erro inesperado: {e}{Colors.END}")
         print(f"{Colors.BLUE}💡 Verifique os logs e tente novamente.{Colors.END}")
+        restore_config_mk()  # Restaura config.mk original
         sys.exit(1)
+    finally:
+        # Sempre restaura o config.mk original no final
+        restore_config_mk()
 
 if __name__ == "__main__":
     main()
