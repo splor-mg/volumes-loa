@@ -3,24 +3,32 @@
 include config.mk
 
 #====================================================================
+# PLATFORM DETECTION
+
+# Detectar plataforma e aplicar configuração de fonte
+detect-platform:
+	@echo "Detectando plataforma e aplicando configuração de fonte..."
+	@poetry run detect-platform
+	@poetry run replace-font-config
+
+#====================================================================
 # PHONY TARGETS
 
 help:
 	@grep -E '^[a-zA-Z_0-9]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-10s\033[0m %s\n", $$1, $$2}'
 
 config: ## Configura interativamente as variáveis Docker (DOCKER_TAG, DOCKER_USER, DOCKER_IMAGE)
-	@echo "Configurando variáveis Docker..."
-	@python3 utils/config.py
+	@poetry run config
 
 info: ## Extrai versões da imagem Docker e atualiza configurações e datapackage
 	@echo "Extraindo informações da imagem Docker..."
-	@python3 utils/info.py
+	@poetry run info
 	@$(MAKE) --no-print-directory datapackage-update
 
 validate:
-	python3 -m frictionless validate datapackage.yaml
+	poetry run python -m frictionless validate datapackage.yaml
 
-volumes: v7 v6 v5 v4 v3 v2 v1 ## Gera todos os volumes
+volumes: detect-platform v7 v6 v5 v4 v3 v2 v1 ## Gera todos os volumes
 
 v1: v1_prodemge v1_dcgf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE e DCGF
 
@@ -67,12 +75,10 @@ datapackage-update: ## Valida e corrige anos no datapackage.yaml baseado no ANO_
 	@printf '\n%s\n' '==============================================='
 	@printf '%s\n' 'Validação do datapackage.yaml'
 	@printf '%s\n' '-----------------------------------------------'
-	@printf '%s\n' "- Conferindo colunas: 'VALOR TESOURO' e 'VALOR OUTROS'"
-	@printf '%s\n' '- Faixas de ano: ANO_LOA-1, ANO_LOA, ANO_LOA+1, ANO_LOA+2'
+	@printf '%s\n' "- Atualizando colunas com ANO_LOA no nome"
 	@printf '%s\n' '- Referência: ANO_LOA definido em config.mk'
-	@printf '%s\n' '(Corrige automaticamente nomes/anos quando necessário)'
 	@printf '%s\n\n' '=============================================='
-	@python3 utils/datapackage_update.py
+	@poetry run datapackage-update
 
 docker-pull: ## Baixa a imagem Docker do Docker Hub
 	@mkdir -p logs
@@ -88,7 +94,7 @@ rstudio: ## Inicia sessão do Rstudio em http://localhost:8787/ (usuário: rstud
 	@docker exec -d -e PASSWORD=splor volumes-loa /init
 
 check:
-	python3 -m pytest
+	poetry run pytest
 
 # ===================================================================
 # TARGETS

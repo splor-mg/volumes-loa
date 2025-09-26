@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "volumes-loa"
+version = "0.1.0"
+description = "Sistema automatizado para geração de PDFs dos volumes da Lei Orçamentária Anual (LOA)"
+authors = ["Splor MG <contato@splor.mg>"]
+readme = "README.md"
+packages = [{include = "utils"}]
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+frictionless = {extras = ["excel", "html"], version = "^4.0.0"}
+pandas = {extras = ["excel", "html"], version = "^2.0.0"}
+tomli = "^2.0.0"
+typer = "^0.9.0"
+pyyaml = "^6.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.0.0"
+flake8 = "^6.0.0"
+mypy = "^1.0.0"
+pytest = "^7.0.0"
+
+[tool.poetry.scripts]
+# Scripts de detecção de plataforma e fontes
+detect-platform = "utils.detect_plattform:main"
+replace-font-config = "utils.replace_font_config:main"
+
+# Scripts de configuração
+config = "utils.config:main"
+info = "utils.info:main"
+datapackage-update = "utils.datapackage_update:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true

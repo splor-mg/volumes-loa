@@ -7,10 +7,11 @@ import re
 from pathlib import Path
 
 def load_env_vars():
-    """Carrega variáveis do arquivo .env"""
+    """Carrega variáveis do arquivo .env e config.mk"""
     env_vars = {}
-    env_file = Path('.env')
     
+    # Carrega do .env
+    env_file = Path('.env')
     if env_file.exists():
         with open(env_file, 'r', encoding='utf-8') as f:
             for line in f:
@@ -19,18 +20,31 @@ def load_env_vars():
                     key, value = line.split('=', 1)
                     env_vars[key.strip()] = value.strip()
     
+    # Carrega do config.mk (sobrescreve valores do .env se existirem)
+    config_file = Path('config.mk')
+    if config_file.exists():
+        with open(config_file, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#') and '=' in line:
+                    key, value = line.split('=', 1)
+                    # Remove comentários inline
+                    if '#' in value:
+                        value = value.split('#')[0].strip()
+                    env_vars[key.strip()] = value.strip()
+    
     return env_vars
 
 def calculate_expected_year(ano_loa, comment):
     """Calcula o ano esperado baseado no comentário"""
     if 'ANO_LOA-1' in comment:
         return ano_loa - 1
-    elif 'ANO_LOA' in comment and '+' not in comment and '-' not in comment:
-        return ano_loa
     elif 'ANO_LOA+1' in comment:
         return ano_loa + 1
     elif 'ANO_LOA+2' in comment:
         return ano_loa + 2
+    elif 'ANO_LOA' in comment and 'ANO_LOA+' not in comment and 'ANO_LOA-' not in comment:
+        return ano_loa
     return None
 
 def process_datapackage():
@@ -74,28 +88,19 @@ def process_datapackage():
                 if expected_year is not None:
                     lines_processed += 1
                     
-                    if current_year == expected_year:
-                        print(f"✅ Linha {i+1}: {line.strip()} - OK")
-                    else:
-                        print(f"⚠️  Linha {i+1}: {line.strip()}")
-                        print(f"   ❌ Ano incorreto: {current_year} (esperado: {expected_year})")
-                        
+                    if current_year != expected_year:
                         # Substitui o ano na linha
                         new_line = re.sub(r'\d{4}', str(expected_year), line)
                         lines[i] = new_line
                         changes_made = True
-                        
-                        print(f"   ✅ Corrigido para: {new_line.strip()}")
     
     # Salva o arquivo se houve mudanças
     if changes_made:
         with open(datapackage_file, 'w', encoding='utf-8') as f:
             f.writelines(lines)
-        print(f"\n✅ Datapackage atualizado com sucesso! (ANO_LOA={ano_loa})")
+        print(f"✅ Datapackage atualizado com sucesso! (ANO_LOA={ano_loa})")
     else:
-        print(f"\n✅ Datapackage validado com sucesso! (ANO_LOA={ano_loa})")
-    
-    print(f"📊 Linhas processadas: {lines_processed}")
+        print(f"✅ Datapackage validado com sucesso! (ANO_LOA={ano_loa})")
     
     return True
 
