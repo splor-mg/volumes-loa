@@ -30,6 +30,10 @@ config = "utils.config:main"
 info = "utils.info:main"
 datapackage-update = "utils.datapackage_update:main"
 
+# Scripts de processamento
+unicode-replace = "utils.unicode_replace:main"
+check-qdd-fonte-95 = "volume7.checks.check_qdd_fonte_95:main"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
