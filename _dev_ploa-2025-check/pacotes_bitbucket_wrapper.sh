@@ -10,7 +10,7 @@ err(){ echo -e "${RED}[ERROR]${NC} $*"; }
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT_DIR"
 
-CONF_DEFAULT="_dev_ploa-2026/pacotes_bitbucket_versoes_ultima_ploa.yml"
+CONF_DEFAULT="_dev_ploa-2025-checkpacotes_bitbucket_versoes_ultima_ploa.yml"
 CONF="${1:-$CONF_DEFAULT}"
 
 if [ ! -f "$CONF" ]; then
@@ -39,7 +39,7 @@ fi
 if ! command -v docker >/dev/null 2>&1; then
   warn "Docker CLI indisponível; assumindo execução dentro do container. Rodando instalação diretamente."
   mkdir -p logs
-  Rscript _dev_ploa-2026/pacotes_bitbucket_install.R "$CONF" | tee -a logs/install_r_pkgs.log
+  Rscript _dev_ploa-2025-checkpacotes_bitbucket_install.R "$CONF" | tee -a logs/install_r_pkgs.log
   ok "Processo concluído. Veja logs em logs/install_r_pkgs.log"
   exit 0
 fi
@@ -71,7 +71,7 @@ docker exec \
   -e R_PKGS_CONFIG="$CONF" \
   -w "$WORKDIR" \
   "$CONTAINER_NAME" \
-  bash -lc "Rscript _dev_ploa-2026/pacotes_bitbucket_install.R '$CONF' | tee -a logs/install_r_pkgs.log"
+  bash -lc "Rscript _dev_ploa-2025-checkpacotes_bitbucket_install.R '$CONF' | tee -a logs/install_r_pkgs.log"
 
 ok "Processo concluído. Veja logs em logs/install_r_pkgs.log"
 

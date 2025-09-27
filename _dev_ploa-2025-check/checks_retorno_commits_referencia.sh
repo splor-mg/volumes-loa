@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Script para reverter datapackages conforme _dev_ploa-2026/datapckgs_commits_referencia.yml
+# Script para reverter checks conforme _dev_ploa-2025-checkchecks_commits_referencia.yml
 # =============================================================================
 
 set -e  # Para o script em caso de erro
@@ -31,8 +31,8 @@ print_error() {
 }
 
 # Verificar se estamos no diretório correto
-if [ ! -d "datapackages" ]; then
-    print_error "Diretório 'datapackages' não encontrado. Execute este script na raiz do projeto."
+if [ ! -d "checks" ]; then
+    print_error "Diretório 'checks' não encontrado. Execute este script na raiz do projeto."
     exit 1
 fi
 
@@ -53,46 +53,45 @@ if ! git rev-parse --git-dir > /dev/null 2>&1; then
     fi
 fi
 
-print_info "=== REVERTENDO DATAPACKAGES PARA VERSÕES LOA 2025 ==="
+print_info "=== REVERTENDO CHECKS PARA VERSÃO LOA 2025 ==="
 echo
 
-# Ler commits do YAML
-COMMITS_FILE="_dev_ploa-2026/datapckgs_commits_referencia.yml"
+# Ler commit do YAML
+COMMITS_FILE="_dev_ploa-2025-checkchecks_commits_referencia.yml"
 [ -n "$1" ] && COMMITS_FILE="$1"
 if [ ! -f "$COMMITS_FILE" ]; then
     print_error "Arquivo de commits não encontrado: $COMMITS_FILE"
     exit 1
 fi
 
-print_info "Lendo commits de: $COMMITS_FILE"
+print_info "Lendo commit de: $COMMITS_FILE"
 
-declare -A commits
-in_section=0
+# Extrair o commit da seção checks
+commit=""
 while IFS= read -r line; do
     line=$(echo "$line" | sed 's/\t/    /g')
     [[ -z "$line" ]] && continue
     [[ "$line" =~ ^# ]] && continue
-    if echo "$line" | grep -q "^datapackages:"; then in_section=1; continue; fi
-    if [ $in_section -eq 1 ]; then
-        if echo "$line" | grep -q "^[^[:space:]]"; then in_section=0; continue; fi
-        if echo "$line" | grep -q "^[[:space:]]\{2,\}[A-Za-z0-9_.-]\+:\s*[0-9a-f]\{7,40\}\s*$"; then
-            name=$(echo "$line" | sed -E 's/^[[:space:]]+([^:]+):.*/\1/' | xargs)
-            sha=$(echo  "$line" | sed -E 's/^[^:]+:\s*([0-9a-f]{7,40}).*/\1/' | xargs)
-            [ -n "$name" ] && [ -n "$sha" ] && commits["$name"]="$sha"
-        fi
+    if echo "$line" | grep -q "^checks:"; then
+        commit=$(echo "$line" | sed -E 's/^checks:\s*([0-9a-f]{7,40}).*/\1/' | xargs)
+        break
     fi
 done < "$COMMITS_FILE"
 
-# Verificar se os commits existem
-print_info "Verificando se os commits existem..."
-for datapackage in "${!commits[@]}"; do
-    commit="${commits[$datapackage]}"
-    if ! git cat-file -e "$commit^{commit}" 2>/dev/null; then
-        print_error "Commit $commit para $datapackage não encontrado no repositório."
-        exit 1
-    fi
-done
-print_success "Todos os commits foram encontrados."
+if [ -z "$commit" ]; then
+    print_error "Commit não encontrado na seção 'checks:' do arquivo $COMMITS_FILE"
+    exit 1
+fi
+
+print_info "Commit encontrado: $commit"
+
+# Verificar se o commit existe
+print_info "Verificando se o commit existe..."
+if ! git cat-file -e "$commit^{commit}" 2>/dev/null; then
+    print_error "Commit $commit não encontrado no repositório."
+    exit 1
+fi
+print_success "Commit foi encontrado."
 echo
 
 # Mostrar status atual
@@ -104,11 +103,7 @@ fi
 echo
 
 # Perguntar confirmação
-print_warning "ATENÇÃO: Este script irá reverter os seguintes datapackages:"
-for datapackage in "${!commits[@]}"; do
-    commit="${commits[$datapackage]}"
-    echo "  - $datapackage -> $commit"
-done
+print_warning "ATENÇÃO: Este script irá reverter a pasta 'checks/' para o commit: $commit"
 echo
 
 read -r -p "Deseja continuar? (y/n): " REPLY
@@ -123,34 +118,21 @@ if [[ $REPLY =~ ^([Yy]|[Yy][Ee][Ss])$ ]]; then
     backup_dir="_backup_$(date +%Y%m%d_%H%M%S)"
     print_info "Criando backup em $backup_dir..."
     mkdir -p "$backup_dir"
-    cp -r datapackages "$backup_dir/"
+    cp -r checks "$backup_dir/"
     print_success "Backup criado em $backup_dir/"
     echo
 fi
 
-# Reverter cada datapackage
-print_info "Iniciando reversão dos datapackages..."
-echo
+# Reverter pasta checks
+print_info "Revertendo pasta 'checks/' para commit $commit..."
 
-for datapackage in "${!commits[@]}"; do
-    commit="${commits[$datapackage]}"
-    
-    print_info "Revertendo $datapackage para commit $commit..."
-    
-    # Verificar se a pasta existe
-    if [ ! -d "datapackages/$datapackage" ]; then
-        print_warning "Pasta datapackages/$datapackage não existe. Pulando..."
-        continue
-    fi
-    
-    # Fazer checkout dos arquivos
-    if git checkout "$commit" -- "datapackages/$datapackage/"; then
-        print_success "✓ $datapackage revertido com sucesso"
-    else
-        print_error "✗ Falha ao reverter $datapackage"
-        exit 1
-    fi
-done
+# Fazer checkout dos arquivos
+if git checkout "$commit" -- "checks/"; then
+    print_success "✓ Pasta 'checks/' revertida com sucesso"
+else
+    print_error "✗ Falha ao reverter pasta 'checks/'"
+    exit 1
+fi
 
 echo
 print_success "Reversão concluída!"
@@ -168,4 +150,4 @@ print_info "Alterações não foram commitadas. Use 'git add' e 'git commit' qua
 
 echo
 print_success "=== SCRIPT CONCLUÍDO ==="
-print_info "Para desfazer as alterações, use: git checkout HEAD -- datapackages/"
+print_info "Para desfazer as alterações, use: git checkout HEAD -- checks/"

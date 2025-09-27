@@ -6,7 +6,7 @@
 set -euo pipefail
 
 mkdir -p _temp
-LOG_FILE="_dev_ploa-2026/volume7_test_output.log"
+LOG_FILE="_dev_ploa-2025-checkvolume7_test_output.log"
 {
 echo "=== TESTANDO/CHECANDO TODOS OS VOLUMES (MODO INFORMATIVO) ==="
 echo ""

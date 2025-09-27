@@ -4,7 +4,7 @@ suppressPackageStartupMessages({
 })
 
 args <- commandArgs(trailingOnly = TRUE)
-cfg_path <- if (length(args) >= 1) args[1] else Sys.getenv("R_PKGS_CONFIG", unset = "_dev_ploa-2026/pacotes_bitbucket_versoes_ultima_ploa.yml")
+cfg_path <- if (length(args) >= 1) args[1] else Sys.getenv("R_PKGS_CONFIG", unset = "_dev_ploa-2025-checkpacotes_bitbucket_versoes_ultima_ploa.yml")
 message("[INFO] Lendo configuração de pacotes em ", cfg_path, " ...")
 cfg <- yaml::read_yaml(cfg_path)
 

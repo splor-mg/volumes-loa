@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Script para reverter datapackages conforme _dev_ploa-2026/datapckgs_commits_referencia.yml
+# Script para reverter datapackages conforme _dev_ploa-2025-checkdatapckgs_commits_referencia.yml
 # =============================================================================
 
 set -e  # Para o script em caso de erro
@@ -57,7 +57,7 @@ print_info "=== REVERTENDO DATAPACKAGES PARA VERSÕES LOA 2025 ==="
 echo
 
 # Ler commits do YAML
-COMMITS_FILE="_dev_ploa-2026/datapckgs_commits_referencia.yml"
+COMMITS_FILE="_dev_ploa-2025-checkdatapckgs_commits_referencia.yml"
 [ -n "$1" ] && COMMITS_FILE="$1"
 if [ ! -f "$COMMITS_FILE" ]; then
     print_error "Arquivo de commits não encontrado: $COMMITS_FILE"
