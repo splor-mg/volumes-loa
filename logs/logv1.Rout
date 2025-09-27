@@ -1,54 +1,26 @@
+Warning: T7_QUADRO_GERAL_DA_RECEITA.R: Há um código de receita que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1741.99.0.1.40.001
+1921.99.0.1.99.000
+Warning: T9_DEMONSTRATIVO_RECEITA_ORCAMENTARIA_CORRENTE_ORDINARIA.R: Há um código de receita que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1921.99.0.1.99.000
+Warning: The following named parsers don't match the column names: Previsão Orçamentária 2025, Previsão Física 2025
+Error: Sheet 'criança e adolescente' not found
+Execution halted
+Warning: T7_QUADRO_GERAL_DA_RECEITA.R: Há um código de receita que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1741.99.0.1.40.001
+1921.99.0.1.99.000
+Warning: T9_DEMONSTRATIVO_RECEITA_ORCAMENTARIA_CORRENTE_ORDINARIA.R: Há um código de receita que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1921.99.0.1.99.000
+Warning: The following named parsers don't match the column names: Previsão Orçamentária 2025, Previsão Física 2025
+Warning in adiciona_desc(despesa, columns = c("UO", "PROGRAMA")) :
+  Os seguintes pares ANO-PROGRAMA_COD nao foram classificados: 
+  2024-23
+Warning: T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitasprevidenciarias em funcoes.R 11.376.685.177 diferente do valor calculado em demonstr_receitas_previdenciarias 12.386.426.566
 
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
- *** caught segfault ***
-address 0x55b45639ee98, cause 'memory not mapped'
-
-Traceback:
- 1: gsum(VL_DESP)
- 2: gforce(thisEnv, jsub, o__, f__, len__, irows)
- 3: `[.data.table`(loa_desp, is_fapemig_desp(loa_desp) + 500000,     list(valor = sum(VL_DESP)), by = list(cod = UO_COD, espec = UO))
- 4: loa_desp[is_fapemig_desp(loa_desp) + 500000, list(valor = sum(VL_DESP)),     by = list(cod = UO_COD, espec = UO)]
-An irrecoverable exception occurred. R is aborting now ...
-
-Traceback:
- 1: gsum(VL_DESP)
- 2: gforce(thisEnv, jsub, o__, f__, len__, irows)
- 3: `[.data.table`(loa_desp, is_fapemig_desp(loa_desp) + 500000,     list(valor = sum(VL_DESP)), by = list(cod = UO_COD, espec = UO))
- 4: loa_desp[is_fapemig_desp(loa_desp) + 500000, list(valor = sum(VL_DESP)),     by = list(cod = UO_COD, espec = UO)]
-An irrecoverable exception occurred. R is aborting now ...
-
-Traceback:
- 1: gsum(VL_DESP)
- 2: gforce(thisEnv, jsub, o__, f__, len__, irows)
- 3: `[.data.table`(loa_desp, is_fapemig_desp(loa_desp) + 500000,     list(valor = sum(VL_DESP)), by = list(cod = UO_COD, espec = UO))
- 4: loa_desp[is_fapemig_desp(loa_desp) + 500000, list(valor = sum(VL_DESP)),     by = list(cod = UO_COD, espec = UO)]
-An irrecoverable exception occurred. R is aborting now ...
-
-Traceback:
-
-Traceback:
-
-Traceback:
- 1: gsum(VL_DESP)
-Segmentation fault (core dumped)
+Warning in adiciona_desc(despesa, columns = c("UO", "PROGRAMA")) :
+  Os seguintes pares ANO-PROGRAMA_COD nao foram classificados: 
+  2024-23
