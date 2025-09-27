@@ -1,0 +1,9 @@
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume4/R/sumario_v4.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume4/R/T1_OBRAS_POR_UNIDADE_ORCAMENTARIA.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume4/R/T2_DETALHAMENTO_INVESTIMENTOS_POR_TERRITORIOS_PLANEJAMENTO_MUNICIPIOS.R'
+

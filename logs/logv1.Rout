@@ -1,5 +1,89 @@
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T14_DEMONSTRATIVO_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_CONFORME_VINCULO_COM_RECURSOS.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T15_PROGRAMA_TRABALHO_GOVERNO.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T7_QUADRO_GERAL_DA_RECEITA.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T9_DEMONSTRATIVO_RECEITA_ORCAMENTARIA_CORRENTE_ORDINARIA.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T12_DCGF_Demonstrativo_Evolucao_Despesa_Categoria_Economica.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T13_DCGF_Demonstrativo_Consolidado_Despesa.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T17_DCGF_Demonst_Aplicacao_Recursos_Progr_Saude_Investim.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T19_DCGF_Demonstrativo_Aplicacao_Recursos_Amparo_Fomento_Pesquisa.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.R'
+
 Warning in trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx",  :
   trataQDD_Elemento_Item: Há valores iguais a zero na linha  5451, 7667
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T23_DCGF_Demonstrativo_do_Servico_da_divida_publica.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T26_DCGF_DEMONSTRATIVO_RECURSOS_APLICADOS_ACOES_PARA_CRIANCA_E_ADOLESCENTE.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T27_DCGF_Demonst_Despesas_UGEPREVI.R'
+
 Warning in trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx",  :
   trataQDD_Elemento_Item: Há valores iguais a zero na linha  5451, 7667
 Warning: T27_DCGF_Demonst_Despesas_UGEPREVI.R: ACAO_COD presente em BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx mas AUSENTE em BASE_QDD_FISCAL.xlsx: 2046, 2087
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T28_DCGF_PT1_Receita_prevista_e_realizada.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T28_DCGF_PT2_Despesa_prevista_e_realizada.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T28_DCGF_PT3_Receita_prevista_LOA.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T28_DCGF_PT4_Despesa_prevista_LOA.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T37_DCGF_DEMONSTRATIVOS_RECURSOS_APLICADOS_SEGURANCA_ALIMENTAR_NUTRICIONAL.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T6_DCGF_Demonstrativo_Evolucao_Receita_por_Categoria_Economica.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T1_DCGF_Demonstrativo_Consolidado_Orcamento_Fiscal.R'
+

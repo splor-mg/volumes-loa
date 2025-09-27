@@ -16,17 +16,44 @@ class Colors:
     GREEN = '\033[92m'
     YELLOW = '\033[93m'
     RED = '\033[91m'
+    CYAN = '\033[96m'
     BOLD = '\033[1m'
     END = '\033[0m'
 
 def print_header():
     print(f"{Colors.BLUE}{Colors.BOLD}")
-    print("Configurando variáveis Docker...")
-    print("=" * 40)
+    print("🔧 CONFIGURAÇÃO DE VARIÁVEIS DOCKER")
+    print("=" * 50)
     print(f"{Colors.END}")
 
+import hashlib
+
+def get_file_hash(file_path):
+    """Calcula hash MD5 de um arquivo"""
+    try:
+        with open(file_path, 'rb') as f:
+            return hashlib.md5(f.read()).hexdigest()
+    except FileNotFoundError:
+        return None
+
+def create_backup():
+    """Cria backup do config.mk e retorna o caminho do backup"""
+    config_path = Path("config.mk")
+    backup_path = Path("config.mk.backup")
+    
+    if not config_path.exists():
+        return None
+    
+    # Lê o arquivo original
+    with open(config_path, 'r') as f:
+        content = f.read()
+    
+    # Salva backup
+    backup_path.write_text(content)
+    return backup_path
+
 def prepare_config_mk():
-    """Prepara o config.mk para funcionar sem R instalado"""
+    """Prepara o config.mk comentando linhas que usam R"""
     config_path = Path("config.mk")
     
     if not config_path.exists():
@@ -36,42 +63,180 @@ def prepare_config_mk():
     with open(config_path, 'r') as f:
         content = f.read()
     
-    # Verifica se já foi preparado
-    if "# PREPARED_FOR_CONFIG" in content:
+    # Comenta as linhas problemáticas usando sed
+    import subprocess
+    
+    try:
+        # Comenta linhas DEP_ e DEPENDENCIAS_
+        subprocess.run(['sed', '-i', 's/^DEP_/#DEP_/g', str(config_path)], check=True)
+        subprocess.run(['sed', '-i', 's/^DEPENDENCIAS_/#DEPENDENCIAS_/g', str(config_path)], check=True)
+        # Comenta linha acoes_planejamento
+        subprocess.run(['sed', '-i', 's/^acoes_planejamento/#acoes_planejamento/g', str(config_path)], check=True)
         return True
-    
-    # Faz backup
-    backup_path = Path("config.mk.backup")
-    if not backup_path.exists():
-        backup_path.write_text(content)
-    
-    # Comenta as linhas problemáticas
-    lines = content.split('\n')
-    prepared_lines = []
-    
-    for line in lines:
-        if line.strip().startswith('DEP_') or line.strip().startswith('acoes_planejamento'):
-            prepared_lines.append(f"# {line}  # Temporarily disabled for config")
-        else:
-            prepared_lines.append(line)
-    
-    # Adiciona marcador
-    prepared_lines.append("# PREPARED_FOR_CONFIG")
-    
-    # Salva versão preparada
-    config_path.write_text('\n'.join(prepared_lines))
-    return True
+    except subprocess.CalledProcessError:
+        return False
 
-def restore_config_mk():
-    """Restaura o config.mk original"""
-    backup_path = Path("config.mk.backup")
+def restore_config_mk_lines():
+    """Restaura as linhas R comentadas (descomenta)"""
     config_path = Path("config.mk")
     
-    if backup_path.exists() and config_path.exists():
-        config_path.write_text(backup_path.read_text())
+    if not config_path.exists():
+        return True
+    
+    import subprocess
+    
+    try:
+        # Descomenta linhas DEP_ e DEPENDENCIAS_
+        subprocess.run(['sed', '-i', 's/^#DEP_/DEP_/g', str(config_path)], check=True)
+        subprocess.run(['sed', '-i', 's/^#DEPENDENCIAS_/DEPENDENCIAS_/g', str(config_path)], check=True)
+        # Descomenta linha acoes_planejamento
+        subprocess.run(['sed', '-i', 's/^#acoes_planejamento/acoes_planejamento/g', str(config_path)], check=True)
+        return True
+    except subprocess.CalledProcessError:
+        return False
+
+def validate_config_integrity(backup_path, original_hash):
+    """Valida se apenas as configurações fluidas foram alteradas usando git diff config.mk"""
+    try:
+        # Executa git diff config.mk
+        result = subprocess.run(
+            ['git', 'diff', 'config.mk'],
+            capture_output=True,
+            text=True
+        )
+        
+        # git diff retorna 1 quando há diferenças (normal), 0 quando são iguais
+        if result.returncode not in [0, 1]:
+            print(f"{Colors.RED}❌ Erro no git diff: {result.stderr}{Colors.END}")
+            return False
+        
+        diff_output = result.stdout
+        
+        # Padrões esperados de mudança (usando regex com .* para qualquer texto)
+        expected_patterns = [
+            r'^-DOCKER_TAG=.*',
+            r'^\+DOCKER_TAG=.*',
+            r'^-DOCKER_USER=.*',
+            r'^\+DOCKER_USER=.*',
+            r'^-DOCKER_IMAGE=.*',
+            r'^\+DOCKER_IMAGE=.*'
+        ]
+        
+        # Compila os padrões regex
+        compiled_patterns = [re.compile(pattern) for pattern in expected_patterns]
+        
+        # Verifica se todas as mudanças são esperadas
+        lines = diff_output.split('\n')
+        unexpected_changes = []
+        
+        for line in lines:
+            # Pula linhas de contexto do diff e linhas vazias
+            if (line.startswith('+++') or line.startswith('---') or 
+                line.startswith('@@') or line.startswith('\\') or
+                line.strip() == ''):
+                continue
+            
+            # Verifica apenas linhas que começam com + ou -
+            if line.startswith('+') or line.startswith('-'):
+                # Verifica se a linha corresponde a algum padrão esperado
+                is_expected = False
+                for pattern in compiled_patterns:
+                    if pattern.match(line):
+                        is_expected = True
+                        break
+                
+                if not is_expected:
+                    unexpected_changes.append(line)
+        
+        # Se há mudanças inesperadas, falha na validação
+        if unexpected_changes:
+            print(f"{Colors.RED}❌ Mudanças inesperadas detectadas:{Colors.END}")
+            for change in unexpected_changes:
+                print(f"  {Colors.YELLOW}{change}{Colors.END}")
+            return False
+        
+        return True
+        
+    except Exception as e:
+        print(f"{Colors.RED}❌ Erro na validação: {e}{Colors.END}")
+        return False
+
+def cleanup_backup(backup_path):
+    """Remove o arquivo de backup"""
+    if backup_path and backup_path.exists():
         backup_path.unlink()
         return True
     return False
+
+def restore_from_backup(backup_path):
+    """Restaura o config.mk a partir do backup"""
+    if not backup_path or not backup_path.exists():
+        return False
+    
+    config_path = Path("config.mk")
+    with open(backup_path, 'r') as f:
+        content = f.read()
+    
+    config_path.write_text(content)
+    return True
+
+def safe_config_update():
+    """Implementa o protocolo de conferência completo"""
+    # 1. Backup (ANTES de comentar as linhas R)
+    backup_path = create_backup()
+    if not backup_path:
+        print(f"{Colors.RED}❌ Erro: config.mk não encontrado{Colors.END}")
+        return False, None, None
+    
+    original_hash = get_file_hash("config.mk")
+    
+    try:
+        # 2. Preparação (comenta linhas R)
+        if not prepare_config_mk():
+            print(f"{Colors.RED}❌ Erro ao preparar config.mk{Colors.END}")
+            return False, None, None
+        
+        # 3. Coleta de dados (será feita na função main)
+        # Esta função apenas prepara o ambiente
+        
+        return True, backup_path, original_hash
+        
+    except Exception as e:
+        print(f"{Colors.RED}❌ Erro durante preparação: {e}{Colors.END}")
+        restore_from_backup(backup_path)
+        return False, None, None
+
+def finalize_config_update(new_values, backup_path, original_hash):
+    """Finaliza o protocolo de conferência após coleta dos dados"""
+    try:
+        # 4. Persistência
+        if not update_config_mk(new_values):
+            print(f"{Colors.RED}❌ Erro ao salvar configurações{Colors.END}")
+            return False
+        
+        # 5. Restauração das linhas R
+        if not restore_config_mk_lines():
+            print(f"{Colors.RED}❌ Erro ao restaurar linhas R{Colors.END}")
+            return False
+        
+        # 6. Validação
+        if validate_config_integrity(backup_path, original_hash):
+            # 7a. Sucesso - remove backup
+            cleanup_backup(backup_path)
+            return True
+        else:
+            # 7b. Falha - restaura backup
+            print(f"{Colors.RED}❌ Validação falhou - restaurando backup{Colors.END}")
+            restore_from_backup(backup_path)
+            cleanup_backup(backup_path)
+            return False
+            
+    except Exception as e:
+        # 7c. Erro - restaura backup
+        print(f"{Colors.RED}❌ Erro durante finalização: {e}{Colors.END}")
+        restore_from_backup(backup_path)
+        cleanup_backup(backup_path)
+        return False
 
 def read_config_file():
     """Lê o arquivo config.mk atual e extrai os valores"""
@@ -123,74 +288,6 @@ def get_git_info():
             'is_git_repo': False
         }
 
-def validate_git_status():
-    """Valida o status do repositório Git com UX melhorada"""
-    if not os.path.exists('.git'):
-        print(f"{Colors.YELLOW}ℹ️  Aviso: Não é um repositório Git{Colors.END}")
-        return True
-    
-    try:
-        # Verifica se há mudanças não commitadas
-        result = subprocess.run(
-            ['git', 'status', '--porcelain'],
-            capture_output=True,
-            text=True
-        )
-        
-        if result.stdout.strip():
-            print(f"\n{Colors.YELLOW}⚠️  Atenção: Existem alterações não commitadas neste repositório{Colors.END}")
-            print(f"{Colors.BLUE}Para prosseguir com a configuração, você precisa primeiro resolver essas alterações.{Colors.END}")
-            print(f"\n{Colors.YELLOW}📋 Arquivos modificados:{Colors.END}")
-            
-            # Mostra as mudanças de forma organizada
-            for line in result.stdout.strip().split('\n'):
-                if len(line) < 3:
-                    continue
-                
-                # Extrai status e arquivo corretamente
-                if line.startswith(' M'):  # Modificado no working directory
-                    file = line[3:].strip()
-                    print(f"  📝 {file}")
-                elif line.startswith('M '):  # Modificado no staging
-                    file = line[2:].strip()
-                    print(f"  📝 {file}")
-                elif line.startswith('A '):  # Adicionado
-                    file = line[2:].strip()
-                    print(f"  ➕ {file}")
-                elif line.startswith('D '):  # Deletado
-                    file = line[2:].strip()
-                    print(f"  🗑️  {file}")
-                elif line.startswith('??'):  # Não rastreado
-                    file = line[2:].strip()
-                    print(f"  ❓ {file}")
-                else:
-                    # Para outros casos, tenta extrair a partir da posição 3
-                    file = line[3:].strip()
-                    print(f"  🔄 {file}")
-            
-            print(f"\n{Colors.BLUE}💡 Opções disponíveis:{Colors.END}")
-            print(f"  {Colors.GREEN}• Fazer commit: git add . && git commit -m 'Sua mensagem'{Colors.END}")
-            print(f"  {Colors.GREEN}• Descartar alterações: git checkout -- <arquivo>{Colors.END}")
-            print(f"  {Colors.GREEN}• Salvar temporariamente: git stash{Colors.END}")
-            print(f"\n{Colors.YELLOW}Depois execute 'make config' novamente.{Colors.END}")
-            return False
-        
-        # Verifica se está na branch main/master
-        branch_info = get_git_info()
-        if branch_info['branch'] not in ['main', 'master']:
-            print(f"\n{Colors.YELLOW}⚠️  Aviso: Você está na branch '{branch_info['branch']}'{Colors.END}")
-            print(f"{Colors.BLUE}💡 Recomendado: Use a branch 'main' ou 'master' para configurações{Colors.END}")
-            confirm = input(f"\n{Colors.YELLOW}Continuar mesmo assim? (y/N): {Colors.END}").strip().lower()
-            if confirm not in ['y', 'yes', 's', 'sim']:
-                print(f"{Colors.BLUE}💡 Para mudar de branch: git checkout main{Colors.END}")
-                return False
-        
-        return True
-        
-    except subprocess.CalledProcessError as e:
-        print(f"\n{Colors.RED}❌ Erro ao verificar status do Git: {e}{Colors.END}")
-        print(f"{Colors.BLUE}💡 Verifique se o Git está instalado e configurado corretamente{Colors.END}")
-        return False
 
 def get_last_update_info():
     """Gera informação de última atualização com commit hash"""
@@ -224,11 +321,11 @@ def get_user_input(prompt, current_value, validator=None):
 
 def show_preview(new_values):
     """Mostra preview das configurações antes de salvar"""
-    print(f"\n{Colors.YELLOW}{Colors.BOLD}Preview das configurações Docker:{Colors.END}")
-    print("-" * 40)
+    print(f"\n{Colors.YELLOW}{Colors.BOLD}📋 PREVIEW DAS CONFIGURAÇÕES{Colors.END}")
+    print(f"{Colors.YELLOW}{'─' * 35}{Colors.END}")
     for key, value in new_values.items():
-        print(f"{key:20} = {value}")
-    print("-" * 40)
+        print(f"{Colors.CYAN}{key:20}{Colors.END} = {Colors.GREEN}{value}{Colors.END}")
+    print(f"{Colors.YELLOW}{'─' * 35}{Colors.END}")
 
 def update_config_mk(values):
     """Atualiza apenas as variáveis Docker no config.mk"""
@@ -247,7 +344,7 @@ def update_config_mk(values):
     for idx, line in enumerate(lines):
         if line.strip().startswith('# ====================================================================') and idx + 1 < len(lines):
             next_line = lines[idx + 1].strip()
-            if next_line.startswith('# CONFIGURAÇÕES FLUIDAS'):
+            if next_line.startswith('# CONFIGURAÇÕES FLUIDAS') or next_line.startswith('# CONFIGURAÇÕES FLIDAS'):
                 start_idx = idx
                 continue
         if start_idx is not None and line.strip().startswith('# CONFIGURAÇÕES ESTRUTURAIS'):
@@ -277,131 +374,23 @@ def update_config_mk(values):
     
     return True
 
-def get_commit_info():
-    """Coleta informações para o commit"""
-    print(f"\n{Colors.BLUE}{Colors.BOLD}Configuração de Commit{Colors.END}")
-    print("-" * 30)
-    
-    # Git add
-    add_confirm = input("git add config.mk (Y/n): ").strip().lower()
-    if add_confirm in ['n', 'no']:
-        return None
-    
-    # Issue information
-    print(f"\n{Colors.YELLOW}qual issue?{Colors.END}")
-    org = input('org: "splor-mg" [splor-mg]: ').strip() or 'splor-mg'
-    repo = input('repo: "volumes-loa" [volumes-loa]: ').strip() or 'volumes-loa'
-    number = input('number: [opcional]: ').strip()
-    
-    return {
-        'org': org,
-        'repo': repo,
-        'number': number
-    }
-
-def build_commit_message(values, commit_info):
-    """Constrói a mensagem de commit melhorada"""
-    # Monta o link do issue se fornecido
-    issue_link = ""
-    if commit_info['number']:
-        issue_link = f"\n\nSee https://github.com/{commit_info['org']}/{commit_info['repo']}/issues/{commit_info['number']}"
-    
-    # Obtém informações do Git
-    git_info = get_git_info()
-    
-    # Monta os parâmetros Docker
-    params = []
-    param_order = ['DOCKER_TAG', 'DOCKER_USER', 'DOCKER_IMAGE']
-    
-    for param in param_order:
-        if param in values:
-            params.append(f"  {param.lower()}: {values[param]}")
-    
-    params_text = "\n".join(params)
-    
-    # Informações adicionais
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    git_info_text = ""
-    if git_info['is_git_repo'] and git_info['commit']:
-        git_info_text = f"\n\nGenerated by: {git_info['commit']} ({git_info['branch']})"
-    
-    commit_message = f"""chore(config): update docker variables
-
-Updated Docker configuration:
-{params_text}
-
-Timestamp: {timestamp}{git_info_text}{issue_link}"""
-    
-    return commit_message
-
-def show_commit_preview(commit_message):
-    """Mostra preview da mensagem de commit"""
-    print(f"\n{Colors.YELLOW}{Colors.BOLD}Preview da mensagem de commit:{Colors.END}")
-    print("-" * 50)
-    print(commit_message)
-    print("-" * 50)
-
-def make_commit(commit_message):
-    """Executa o commit com validações"""
-    try:
-        # Git add
-        print(f"{Colors.BLUE}Adicionando config.mk ao staging...{Colors.END}")
-        subprocess.run(['git', 'add', 'config.mk'], check=True)
-        
-        # Git commit
-        print(f"{Colors.BLUE}Executando commit...{Colors.END}")
-        subprocess.run(['git', 'commit', '-m', commit_message], check=True)
-        
-        print(f"\n{Colors.GREEN}{Colors.BOLD}✅ Commit realizado com sucesso!{Colors.END}")
-        
-        # Ações pós-commit
-        post_commit_actions()
-        
-        return True
-    except subprocess.CalledProcessError as e:
-        print(f"\n{Colors.RED}❌ Erro ao fazer commit: {e}{Colors.END}")
-        return False
-
-def post_commit_actions():
-    """Executa ações pós-commit"""
-    git_info = get_git_info()
-    
-    if not git_info['is_git_repo']:
-        return
-    
-    # Pergunta se quer fazer push
-    push_choice = input(f"\n{Colors.YELLOW}Quer fazer push para o repositório remoto? (Y/n): {Colors.END}").strip().lower()
-    
-    if push_choice not in ['n', 'no']:
-        try:
-            print(f"{Colors.BLUE}Fazendo push...{Colors.END}")
-            subprocess.run(['git', 'push'], check=True)
-            print(f"{Colors.GREEN}✅ Push realizado com sucesso!{Colors.END}")
-        except subprocess.CalledProcessError as e:
-            print(f"{Colors.RED}❌ Erro ao fazer push: {e}{Colors.END}")
 
 def main():
-    # Verifica se é modo commit-only
-    commit_only = '--commit-only' in sys.argv
-    
-    if commit_only:
-        print(f"{Colors.BLUE}{Colors.BOLD}Modo Commit-Only{Colors.END}")
-        print("=" * 40)
-        print(f"{Colors.END}")
+    # Verifica se é modo não-interativo
+    non_interactive = '--non-interactive' in sys.argv or not sys.stdin.isatty()
     
     print_header()
     
+    # Variáveis para o protocolo de conferência
+    backup_path = None
+    original_hash = None
+    
     # Tratamento de erro mais elegante
     try:
-        # NOVA FUNCIONALIDADE: Preparar config.mk para funcionar sem R
-        if not prepare_config_mk():
-            print(f"{Colors.RED}❌ Erro ao preparar config.mk{Colors.END}")
-            sys.exit(1)
-        
-        # Validações iniciais
-        if not validate_git_status():
-            print(f"\n{Colors.RED}❌ Validações falharam. Abortando...{Colors.END}")
-            print(f"{Colors.BLUE}💡 Resolva os problemas acima e tente novamente.{Colors.END}")
+        # PROTOCOLO DE CONFERÊNCIA: Inicia preparação
+        success, backup_path, original_hash = safe_config_update()
+        if not success:
+            print(f"{Colors.RED}❌ Falha no protocolo de conferência{Colors.END}")
             sys.exit(1)
         
         # Lê valores atuais
@@ -419,12 +408,11 @@ def main():
             if key not in current_values:
                 current_values[key] = default_value
         
-        if not commit_only:
-            # Coleta inputs do usuário
+        if not non_interactive:
+            # Coleta inputs do usuário (modo interativo)
             new_values = {}
             
-            print("Configure as variáveis Docker:")
-            print(f"{Colors.YELLOW}(Pressione Enter para aceitar o valor padrão ou digite o valor correto){Colors.END}\n")
+            print(f"{Colors.YELLOW}💡 Pressione Enter para aceitar o valor padrão ou digite o valor correto{Colors.END}\n")
             
             new_values['DOCKER_TAG'] = get_user_input(
                 "Tag da imagem Docker", 
@@ -446,65 +434,70 @@ def main():
             show_preview(new_values)
             
             # Confirmação
-            confirm = input(f"\n{Colors.YELLOW}Salvar configurações? (y/N): {Colors.END}").strip().lower()
+            print(f"\n{Colors.BLUE}{Colors.BOLD}💾 CONFIRMAÇÃO{Colors.END}")
+            print(f"{Colors.BLUE}{'─' * 15}{Colors.END}")
+            confirm = input(f"{Colors.YELLOW}Salvar configurações? (y/N): {Colors.END}").strip().lower()
             
-            if confirm in ['y', 'yes', 's', 'sim']:
-                if update_config_mk(new_values):
-                    print(f"\n{Colors.GREEN}{Colors.BOLD}Configuração salva em config.mk!{Colors.END}")
-                else:
-                    print(f"\n{Colors.RED}Falha ao salvar configuração.{Colors.END}")
-                    sys.exit(1)
-            else:
+            if confirm not in ['y', 'yes', 's', 'sim']:
                 print(f"\n{Colors.RED}Configuração cancelada.{Colors.END}")
+                # Restaura backup e limpa
+                if backup_path and backup_path.exists():
+                    restore_from_backup(backup_path)
+                    cleanup_backup(backup_path)
                 sys.exit(1)
         else:
-            # Modo commit-only: usa valores atuais do config.mk
+            # Modo não-interativo: usa valores atuais do config.mk
             new_values = {k: v for k, v in current_values.items() if k in ['DOCKER_TAG', 'DOCKER_USER', 'DOCKER_IMAGE']}
-            print(f"{Colors.GREEN}Usando configurações atuais do config.mk{Colors.END}")
+            print(f"{Colors.BLUE}{Colors.BOLD}⚡ MODO NÃO-INTERATIVO{Colors.END}")
+            print(f"{Colors.BLUE}{'─' * 20}{Colors.END}")
+            print(f"{Colors.GREEN}Usando configurações atuais do config.mk{Colors.END}\n")
         
-        # Pergunta se quer fazer commit
-        commit_choice = input(f"\n{Colors.YELLOW}Quer fazer commit das alterações? (Y/n): {Colors.END}").strip().lower()
-        
-        if commit_choice not in ['n', 'no']:
-            commit_info = get_commit_info()
-            if commit_info:
-                commit_message = build_commit_message(new_values, commit_info)
-                show_commit_preview(commit_message)
-                
-                commit_confirm = input(f"\n{Colors.YELLOW}Fazer commit? (Y/n): {Colors.END}").strip().lower()
-                if commit_confirm not in ['n', 'no']:
-                    success = make_commit(commit_message)
-                    if success:
-                        print(f"\n{Colors.GREEN}{Colors.BOLD}🎉 Configuração atualizada e commitada com sucesso!{Colors.END}")
-                    else:
-                        print(f"\n{Colors.RED}❌ Falha no processo de commit.{Colors.END}")
-                else:
-                    print(f"\n{Colors.RED}Commit cancelado.{Colors.END}")
-            else:
-                print(f"\n{Colors.RED}Commit cancelado.{Colors.END}")
+        # PROTOCOLO DE CONFERÊNCIA: Finaliza com validação
+        if finalize_config_update(new_values, backup_path, original_hash):
+            print(f"\n{Colors.GREEN}🎉 Configuração atualizada com sucesso!{Colors.END}")
         else:
-            print(f"\n{Colors.BLUE}Commit não solicitado.{Colors.END}")
-            print(f"{Colors.GREEN}✅ Configuração salva em config.mk!{Colors.END}")
+            print(f"\n{Colors.RED}❌ Falha na validação - configuração não foi salva{Colors.END}")
+            sys.exit(1)
         
-        # Mensagem informativa sobre próximos passos
-        print(f"\n{Colors.BLUE}{Colors.BOLD}Próximos passos:{Colors.END}")
-        print(f"1. {Colors.GREEN}make docker{Colors.END} - Baixa a imagem Docker configurada")
-        print(f"2. {Colors.GREEN}make info{Colors.END} - Extrai versões da imagem e atualiza config.mk")
-        print(f"\n{Colors.YELLOW}ℹ️  As informações de ANO_LOA e versões dos pacotes são extraídas automaticamente da imagem Docker.{Colors.END}")
+        # Mensagem informativa sobre próximo passo
+        print(f"\n{Colors.BLUE}{Colors.BOLD}🚀 PRÓXIMO PASSO{Colors.END}")
+        print(f"{Colors.BLUE}{'─' * 20}{Colors.END}")
+        print(f"{Colors.GREEN}make docker{Colors.END} - Baixa a imagem Docker configurada")
+        
+        # Pergunta se quer executar
+        if not non_interactive:
+            print(f"\n{Colors.YELLOW}Executar make docker agora? (y/N): {Colors.END}", end="")
+            try:
+                response = input().strip().lower()
+                if response in ['y', 'yes', 's', 'sim']:
+                    print(f"\n{Colors.BLUE}Executando make docker...{Colors.END}")
+                    import subprocess
+                    result = subprocess.run(['make', 'docker'], capture_output=False)
+                    if result.returncode == 0:
+                        print(f"{Colors.GREEN}✅ make docker executado com sucesso!{Colors.END}")
+                    else:
+                        print(f"{Colors.RED}❌ Erro ao executar make docker{Colors.END}")
+                else:
+                    print(f"{Colors.BLUE}make docker não executado.{Colors.END}")
+            except KeyboardInterrupt:
+                print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
+        else:
+            print(f"\n{Colors.BLUE}💡 Execute 'make docker' para baixar a imagem Docker configurada{Colors.END}")
     
     except KeyboardInterrupt:
         print(f"\n\n{Colors.YELLOW}⚠️  Operação cancelada pelo usuário{Colors.END}")
-        print(f"{Colors.BLUE}💡 Nenhuma alteração foi feita.{Colors.END}")
-        restore_config_mk()  # Restaura config.mk original
+        print(f"{Colors.BLUE}💡 Restaurando estado original...{Colors.END}")
+        if backup_path and backup_path.exists():
+            restore_from_backup(backup_path)
+            cleanup_backup(backup_path)
         sys.exit(0)
     except Exception as e:
         print(f"\n{Colors.RED}❌ Erro inesperado: {e}{Colors.END}")
-        print(f"{Colors.BLUE}💡 Verifique os logs e tente novamente.{Colors.END}")
-        restore_config_mk()  # Restaura config.mk original
+        print(f"{Colors.BLUE}💡 Restaurando estado original...{Colors.END}")
+        if backup_path and backup_path.exists():
+            restore_from_backup(backup_path)
+            cleanup_backup(backup_path)
         sys.exit(1)
-    finally:
-        # Sempre restaura o config.mk original no final
-        restore_config_mk()
 
 if __name__ == "__main__":
     main()

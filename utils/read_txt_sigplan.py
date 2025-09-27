@@ -8,3 +8,11 @@ with open(filename, 'r', encoding='latin1') as source:
 
 with open(save_path, 'w', encoding='utf-8') as destination:
   destination.write(content)
+
+def main():
+    """Função principal para execução via Poetry"""
+    # O código principal já está executando no nível do módulo
+    pass
+
+if __name__ == "__main__":
+    main()

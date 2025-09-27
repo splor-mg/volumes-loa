@@ -52,10 +52,10 @@ clean: ## Organiza os arquivos auxiliares e outputs da compilação latex. Ex. a
 	@Rscript $(VERBOSE) utils/limpaDir.R $(vol) $(origem)
 
 format: ## Formata bancos brutos .xls, html e .txt
-	@python3 utils/read_html_sisor.py
-	@python3 utils/read_txt_sigplan.py
-	@python3 utils/copy_xslx_apoio.py
-	@poetry run unicode-replace
+	@python3 -m utils.read_html_sisor
+	@python3 -m utils.read_txt_sigplan
+	@python3 -m utils.copy_xslx_apoio
+	@python3 utils/unicode_replace.py
 	@Rscript $(VERBOSE) utils/formataBancos.R
 
 rm: ## Remove todos os arquivos de um volume Ex. argumento vol=logs
@@ -131,7 +131,7 @@ bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte
 # Volume 7
 pdf/Projeto_volume7.pdf: $(DEPENDENCIAS_V7)
 	@echo "- Gera logs/warningsV7.Rout"
-	@poetry run check-qdd-fonte-95 2> logs/logv7.Rout
+	@python3 -m volume7.checks.check_qdd_fonte_95 2> logs/logv7.Rout
 	@Rscript $(VERBOSE) volume7/Rnw/CodigosR/Projeto_volume7.R 2> logs/warningsV7.Rout >&-
 	@Rscript $(VERBOSE) utils/Rnw2Tex.R 7
 	@echo "---------------------------------------------------------------"

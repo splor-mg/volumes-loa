@@ -28,3 +28,11 @@ items = [
 
 for item in items:
     shutil.copy(item[0], item[1])
+
+def main():
+    """Função principal para execução via Poetry"""
+    # O código principal já está executando no nível do módulo
+    pass
+
+if __name__ == "__main__":
+    main()

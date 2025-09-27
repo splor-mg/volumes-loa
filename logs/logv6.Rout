@@ -1,0 +1,22 @@
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=utils/trataBancos/trataDescFonte_STN.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=utils/trataBancos/trataReceita_Fiscal_Fonte_STN.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume6/R/volume6B.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=utils/trataBancos/trataQDD_Fiscal_Fonte_STN.R'
+
+Error in verifica_base(base, colunas_obrigatorias) : 
+Coluna FUNCAO_COD nao encontrada. Verifique sua base de dados.
+Calls: <Anonymous> -> verifica_base
+Execution halted
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=utils/trataBancos/trataQDD_Fiscal_Fonte_STN.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume6/R/volume6A.R'
+

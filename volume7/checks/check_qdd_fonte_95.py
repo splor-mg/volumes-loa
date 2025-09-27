@@ -38,4 +38,9 @@ def check_qdd_fonte_95():
         sys.stderr.write("O arquivo 'logs/logv7_divergências_bases_qdd_.xlsx' contém as linhas que contém valores divergentes")
         sys.stderr.write(str(etl.toxlsx(comparison_diff, filename='logs/logv7_divergências_bases_qdd_.xlsx')))
 
-check_qdd_fonte_95()
+def main():
+    """Função principal para execução via Poetry"""
+    check_qdd_fonte_95()
+
+if __name__ == "__main__":
+    main()

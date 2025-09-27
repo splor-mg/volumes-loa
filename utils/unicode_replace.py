@@ -83,4 +83,5 @@ def main(dry_run: Annotated[bool, typer.Option(help="Show which characters would
                 file.writelines(modified_lines)
 
 if __name__ == "__main__":
-    typer.run(main)
+    # Executar diretamente sem typer para evitar problemas de compatibilidade
+    main()

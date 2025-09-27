@@ -21,3 +21,11 @@ for resource_name in resource_names:
   output_path = str(Path('bancos/SISOR/') / f'{resource_name.upper()}.xlsx')
   resource.write(output_path, control = excel_control)
   print(f"Arquivo salvo em {output_path}")
+
+def main():
+    """Função principal para execução via Poetry"""
+    # O código principal já está executando no nível do módulo
+    pass
+
+if __name__ == "__main__":
+    main()

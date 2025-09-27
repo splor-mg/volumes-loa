@@ -49,9 +49,10 @@
 \setlength{\cftbeforesubsecskip}{6pt} % Aumenta o espacamento antes do item subsecao na tabela de contents (sumario)
 \setlength{\cftbeforesecskip}{18pt} % Aumenta o espacamento antes do item secao na tabela de contents (sumario)
 
-% Alterar a fonte para Arial
+% Alterar a fonte para Arial - Compatibilidade Windows/Linux
 \usepackage[T1]{fontenc}
-\usepackage{uarial}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 %\usepackage{helvet}
 %\usepackage{arial}
 \renewcommand{\familydefault}{\sfdefault}

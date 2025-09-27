@@ -1,1 +1,22 @@
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume3/R/V3_bancos_consolidados.R'
+
 Warning: V3_bancos_consolidados: A Tabela 2 INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS não apresenta a categoria representada pelas variaveis, valor.amortO total dessa tabela será realizado sem essa var e essa variaveis serão zeradas.
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume3/R/V3_T1_PROGRAMA_DE_INVESTIMENTO.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume3/R/V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume3/R/V3_T2_ORIGENS_RECURSOS_INVESTIMENTOS.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume3/R/V3_T3_RECURSOS_FINANCEIROS_FONTE_RECURSOS_APLICACAO_INVESTIMENTO.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume3/R/V3_T4_DETALHAMENTO_DOS_INVESTIMENTOS.R'
+
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume3/R/V3_T5_QUADRO_DE_DETALHAMENTO_INVESTIMENTO.R'
+

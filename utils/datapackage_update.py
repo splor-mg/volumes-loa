@@ -104,6 +104,10 @@ def process_datapackage():
     
     return True
 
-if __name__ == '__main__':
+def main():
+    """Função principal para execução via Poetry"""
     success = process_datapackage()
     exit(0 if success else 1)
+
+if __name__ == '__main__':
+    main()
