@@ -4,6 +4,7 @@ Script interativo para configurar as variáveis Docker no config.mk
 """
 
 import os
+import shutil
 import re
 import sys
 import subprocess
@@ -25,6 +26,9 @@ def print_header():
     print("🔧 CONFIGURAÇÃO DE VARIÁVEIS DOCKER")
     print("=" * 50)
     print(f"{Colors.END}")
+    print()
+    print(f"{Colors.YELLOW}💡 Pressione Enter para aceitar o valor padrão ou digite o valor correto{Colors.END}")
+    print()
 
 import hashlib
 
@@ -114,12 +118,27 @@ def validate_config_integrity(backup_path, original_hash):
         
         # Padrões esperados de mudança (usando regex com .* para qualquer texto)
         expected_patterns = [
+            r'^-ANO_LOA=.*',
+            r'^\+ANO_LOA=.*',
+            r'^-ETAPA_ORCAMENTO=.*',
+            r'^\+ETAPA_ORCAMENTO=.*',
+            r'^-ANO_LOA_IMAGEM=.*',
+            r'^\+ANO_LOA_IMAGEM=.*',
             r'^-DOCKER_TAG=.*',
             r'^\+DOCKER_TAG=.*',
             r'^-DOCKER_USER=.*',
             r'^\+DOCKER_USER=.*',
             r'^-DOCKER_IMAGE=.*',
-            r'^\+DOCKER_IMAGE=.*'
+            r'^\+DOCKER_IMAGE=.*',
+            # Padrões para comentários que podem mudar
+            r'^-# CONFIGURAÇÕES FLUIDAS.*',
+            r'^\+# CONFIGURAÇÕES FLUIDAS.*',
+            r'^-# Parâmetros.*',
+            r'^\+# Parâmetros.*',
+            r'^-# Versões extraídas.*',
+            r'^\+# Informações extraídas.*',
+            r'^-# CONFIGURAÇÕES ESTRUTURAIS.*',
+            r'^\+# CONFIGURAÇÕES ESTRUTURAIS.*'
         ]
         
         # Compila os padrões regex
@@ -263,6 +282,68 @@ def validate_docker_tag(tag):
     # Tag deve conter apenas letras, números, pontos, hífens e underscores
     return re.match(r'^[a-zA-Z0-9._-]+$', tag) is not None
 
+def validate_etapa_orcamento(etapa):
+    """Valida se a etapa orçamentária é válida"""
+    etapas_validas = ['1', '2', '3', 'PROJETO DE LEI ORÇAMENTÁRIA', 'SUBSTITUTIVO PLOA', 'LEI ORÇAMENTÁRIA']
+    return etapa.upper() in etapas_validas
+
+def get_etapa_orcamento_display():
+    """Retorna as opções de etapa orçamentária para exibição"""
+    return {
+        '1': 'PROJETO DE LEI ORÇAMENTÁRIA',
+        '2': 'SUBSTITUTIVO PLOA', 
+        '3': 'LEI ORÇAMENTÁRIA'
+    }
+
+def get_etapa_orcamento_by_number(numero):
+    """Converte número para etapa orçamentária"""
+    etapas = get_etapa_orcamento_display()
+    return etapas.get(numero, numero)
+
+def get_etapa_orcamento_number(etapa):
+    """Converte etapa orçamentária para número"""
+    etapas = get_etapa_orcamento_display()
+    for num, nome in etapas.items():
+        if nome.upper() == etapa.upper():
+            return num
+    return etapa
+
+def get_etapa_orcamento_input(current_value):
+    """Captura entrada de etapa orçamentária com enumeração"""
+    etapas = get_etapa_orcamento_display()
+    
+    # Remove aspas do valor atual se existirem
+    clean_value = current_value
+    if clean_value:
+        if clean_value.startswith('"') and clean_value.endswith('"'):
+            clean_value = clean_value[1:-1]
+        elif clean_value.startswith("'") and clean_value.endswith("'"):
+            clean_value = clean_value[1:-1]
+    
+    # Converte valor atual para número se necessário
+    current_num = get_etapa_orcamento_number(clean_value) if clean_value else '1'
+    
+    print(f"\n{Colors.BLUE}As seguintes são as etapas do ciclo orçamentário:{Colors.END}")
+    for num, nome in etapas.items():
+        print(f"  {num} - {nome}")
+    
+    while True:
+        try:
+            user_input = input(f"Etapa do ciclo orçamentário atual: [{current_num}] ").strip()
+            if not user_input:
+                user_input = current_num
+            
+            # Valida se é um número válido
+            if user_input in etapas:
+                return get_etapa_orcamento_by_number(user_input)
+            else:
+                print(f"{Colors.RED}Opção inválida. Escolha 1, 2 ou 3.{Colors.END}")
+        except EOFError:
+            return get_etapa_orcamento_by_number(current_num)
+        except KeyboardInterrupt:
+            print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
+            sys.exit(1)
+
 def get_git_info():
     """Obtém informações do Git (commit hash, branch, etc.)"""
     try:
@@ -323,8 +404,18 @@ def show_preview(new_values):
     """Mostra preview das configurações antes de salvar"""
     print(f"\n{Colors.YELLOW}{Colors.BOLD}📋 PREVIEW DAS CONFIGURAÇÕES{Colors.END}")
     print(f"{Colors.YELLOW}{'─' * 35}{Colors.END}")
+    
+    # Mapear nomes amigáveis para as variáveis
+    friendly_names = {
+        'ANO_LOA': 'ANO_LOA',
+        'DOCKER_TAG': 'DOCKER_TAG',
+        'DOCKER_USER': 'DOCKER_USER', 
+        'DOCKER_IMAGE': 'DOCKER_IMAGE'
+    }
+    
     for key, value in new_values.items():
-        print(f"{Colors.CYAN}{key:20}{Colors.END} = {Colors.GREEN}{value}{Colors.END}")
+        friendly_name = friendly_names.get(key, key)
+        print(f"{Colors.CYAN}{friendly_name:20}{Colors.END} = {Colors.GREEN}{value}{Colors.END}")
     print(f"{Colors.YELLOW}{'─' * 35}{Colors.END}")
 
 def update_config_mk(values):
@@ -356,7 +447,7 @@ def update_config_mk(values):
         return False
     
     # Mapear posições existentes das chaves Docker dentro do intervalo
-    docker_keys = ['DOCKER_TAG', 'DOCKER_USER', 'DOCKER_IMAGE']
+    docker_keys = ['ANO_LOA', 'ETAPA_ORCAMENTO', 'DOCKER_TAG', 'DOCKER_USER', 'DOCKER_IMAGE']
     key_to_idx = {k: None for k in docker_keys}
     for idx in range(start_idx, end_idx):
         line = lines[idx]
@@ -367,7 +458,10 @@ def update_config_mk(values):
     # Atualizar valores Docker
     for key, value in values.items():
         if key in key_to_idx and key_to_idx[key] is not None:
-            lines[key_to_idx[key]] = f"{key}={value}\n"
+            if key == 'ETAPA_ORCAMENTO':
+                lines[key_to_idx[key]] = f"{key}='{value}'\n"
+            else:
+                lines[key_to_idx[key]] = f"{key}={value}\n"
 
     with open(config_path, 'w') as f:
         f.writelines(lines)
@@ -375,9 +469,10 @@ def update_config_mk(values):
     return True
 
 
+
 def main():
     # Verifica se é modo não-interativo
-    non_interactive = '--non-interactive' in sys.argv or not sys.stdin.isatty()
+    non_interactive = '--non-interactive' in sys.argv
     
     print_header()
     
@@ -398,6 +493,7 @@ def main():
         
         # Define valores padrão se não existirem
         defaults = {
+            'ANO_LOA': '2026',
             'DOCKER_TAG': 'ploa2026',
             'DOCKER_USER': 'aidsplormg',
             'DOCKER_IMAGE': 'volumes'
@@ -412,7 +508,14 @@ def main():
             # Coleta inputs do usuário (modo interativo)
             new_values = {}
             
-            print(f"{Colors.YELLOW}💡 Pressione Enter para aceitar o valor padrão ou digite o valor correto{Colors.END}\n")
+            new_values['ANO_LOA'] = get_user_input(
+                "Ano de vigência da (P)LOA", 
+                current_values.get('ANO_LOA')
+            )
+            
+            new_values['ETAPA_ORCAMENTO'] = get_etapa_orcamento_input(
+                current_values.get('ETAPA_ORCAMENTO')
+            )
             
             new_values['DOCKER_TAG'] = get_user_input(
                 "Tag da imagem Docker", 
@@ -447,7 +550,7 @@ def main():
                 sys.exit(1)
         else:
             # Modo não-interativo: usa valores atuais do config.mk
-            new_values = {k: v for k, v in current_values.items() if k in ['DOCKER_TAG', 'DOCKER_USER', 'DOCKER_IMAGE']}
+            new_values = {k: v for k, v in current_values.items() if k in ['ANO_LOA', 'ETAPA_ORCAMENTO', 'DOCKER_TAG', 'DOCKER_USER', 'DOCKER_IMAGE']}
             print(f"{Colors.BLUE}{Colors.BOLD}⚡ MODO NÃO-INTERATIVO{Colors.END}")
             print(f"{Colors.BLUE}{'─' * 20}{Colors.END}")
             print(f"{Colors.GREEN}Usando configurações atuais do config.mk{Colors.END}\n")
@@ -459,33 +562,134 @@ def main():
             print(f"\n{Colors.RED}❌ Falha na validação - configuração não foi salva{Colors.END}")
             sys.exit(1)
         
+        # Pergunta se quer atualizar o utils/ano.txt
+        if not non_interactive:
+            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAR UTILS/ANO.TXT{Colors.END}")
+            print(f"{Colors.YELLOW}{'─' * 27}{Colors.END}")
+            print(f"{Colors.BLUE}Isso substituirá o valor de ano em `utils/ano.txt` conforme ANO_LOA [{new_values.get('ANO_LOA', 'N/A')}].{Colors.END}")
+            print(f"\n{Colors.YELLOW}Deseja atualizar? (y/N): {Colors.END}", end="")
+            try:
+                response = input().strip().lower()
+                if response in ['y', 'yes', 's', 'sim']:
+                    print(f"\n{Colors.BLUE}Atualizando `utils/ano.txt`...{Colors.END}")
+                    import subprocess
+                    result = subprocess.run(['poetry', 'run', 'config-ano-loa'], capture_output=True, text=True)
+                    if result.returncode == 0:
+                        print(f"{Colors.GREEN}✅ `utils/ano.txt` atualizado com sucesso! (ANO_LOA={new_values.get('ANO_LOA', 'N/A')}){Colors.END}")
+                    else:
+                        print(f"{Colors.YELLOW}⚠️  Falha na sincronização de `utils/ano.txt`{Colors.END}")
+                        if result.stderr:
+                            print(result.stderr)
+                else:
+                    print(f"{Colors.BLUE}`utils/ano.txt` não foi atualizado.{Colors.END}")
+            except KeyboardInterrupt:
+                print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
+        else:
+            print(f"\n{Colors.BLUE}💡 Execute 'make config-ano-loa' para atualizar utils/ano.txt{Colors.END}")
+        
         # Pergunta se quer atualizar o data.toml
         if not non_interactive:
             print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAR DATA.TOML{Colors.END}")
             print(f"{Colors.YELLOW}{'─' * 25}{Colors.END}")
-            print(f"{Colors.BLUE}Deseja processar o arquivo data.toml e substituir variáveis?{Colors.END}")
-            print(f"{Colors.BLUE}Isso substituirá ${Colors.BOLD}ANO_LOA${Colors.END}{Colors.BLUE} e outras variáveis do config.mk{Colors.END}")
-            print(f"\n{Colors.YELLOW}Atualizar data.toml? (y/N): {Colors.END}", end="")
+            print(f"{Colors.BLUE}Deseja processar o arquivo `data.toml` e substituir variáveis de ano?{Colors.END}")
+            print(f"\n{Colors.YELLOW}Atualizar `data.toml`? (y/N): {Colors.END}", end="")
             try:
                 response = input().strip().lower()
                 if response in ['y', 'yes', 's', 'sim']:
-                    print(f"\n{Colors.BLUE}Processando data.toml...{Colors.END}")
-                    import subprocess
+                    print(f"\n{Colors.BLUE}Processando `data.toml`...{Colors.END}")
                     result = subprocess.run(['poetry', 'run', 'data-toml-update'], capture_output=True, text=True)
                     if result.returncode == 0:
-                        print(f"{Colors.GREEN}✅ data.toml atualizado com sucesso!{Colors.END}")
-                        if result.stdout:
-                            print(result.stdout)
+                        print(f"{Colors.GREEN}✅ `data.toml` atualizado com sucesso!{Colors.END}")
+                        # Remover logs detalhados - apenas mostrar sucesso
                     else:
-                        print(f"{Colors.RED}❌ Erro ao processar data.toml{Colors.END}")
+                        print(f"{Colors.RED}❌ Erro ao processar `data.toml`{Colors.END}")
                         if result.stderr:
                             print(result.stderr)
                 else:
-                    print(f"{Colors.BLUE}data.toml não foi atualizado.{Colors.END}")
+                    print(f"{Colors.BLUE}`data.toml` não foi atualizado.{Colors.END}")
             except KeyboardInterrupt:
                 print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
         else:
             print(f"\n{Colors.BLUE}💡 Execute 'make data-toml-update' para processar o data.toml{Colors.END}")
+
+        # Pergunta se quer atualizar utils/etapa_orcamento.txt
+        if not non_interactive:
+            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAR UTILS/ETAPA_ORCAMENTO.TXT{Colors.END}")
+            print(f"{Colors.YELLOW}{'─' * 35}{Colors.END}")
+            print(f"{Colors.BLUE}Isso substituirá o valor de etapa em `utils/etapa_orcamento.txt` conforme ETAPA_ORCAMENTO [{new_values.get('ETAPA_ORCAMENTO', 'N/A')}].{Colors.END}")
+            print(f"\n{Colors.YELLOW}Deseja atualizar? (y/N): {Colors.END}", end="")
+            try:
+                response = input().strip().lower()
+                if response in ['y', 'yes', 's', 'sim']:
+                    print(f"\n{Colors.BLUE}Atualizando `utils/etapa_orcamento.txt`...{Colors.END}")
+                    import subprocess
+                    result = subprocess.run(['poetry', 'run', 'config-etapa-orcamento'], capture_output=True, text=True)
+                    if result.returncode == 0:
+                        print(f"{Colors.GREEN}✅ `utils/etapa_orcamento.txt` atualizado com sucesso! (ETAPA_ORCAMENTO={new_values.get('ETAPA_ORCAMENTO', 'N/A')}){Colors.END}")
+                    else:
+                        print(f"{Colors.YELLOW}⚠️  Falha na sincronização de `utils/etapa_orcamento.txt`{Colors.END}")
+                        if result.stderr:
+                            print(result.stderr)
+                else:
+                    print(f"{Colors.BLUE}`utils/etapa_orcamento.txt` não foi atualizado.{Colors.END}")
+            except KeyboardInterrupt:
+                print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
+
+        # Pergunta se quer atualizar datapackage.yaml
+        if not non_interactive:
+            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAR DATAPACKAGE.YAML{Colors.END}")
+            print(f"{Colors.YELLOW}{'─' * 30}{Colors.END}")
+            print(f"{Colors.BLUE}Isso validará e corrigirá anos no `datapackage.yaml` baseado no ANO_LOA [{new_values.get('ANO_LOA', 'N/A')}].{Colors.END}")
+            print(f"\n{Colors.YELLOW}Deseja atualizar? (y/N): {Colors.END}", end="")
+            try:
+                response = input().strip().lower()
+                if response in ['y', 'yes', 's', 'sim']:
+                    print(f"\n{Colors.BLUE}Atualizando `datapackage.yaml`...{Colors.END}")
+                    import subprocess
+                    result = subprocess.run(['poetry', 'run', 'config-datapackage'], capture_output=True, text=True)
+                    if result.returncode == 0:
+                        print(f"{Colors.GREEN}✅ `datapackage.yaml` atualizado com sucesso!{Colors.END}")
+                        if result.stdout:
+                            print(result.stdout)
+                    else:
+                        print(f"{Colors.YELLOW}⚠️  Falha na atualização de `datapackage.yaml`{Colors.END}")
+                        if result.stderr:
+                            print(result.stderr)
+                else:
+                    print(f"{Colors.BLUE}`datapackage.yaml` não foi atualizado.{Colors.END}")
+            except KeyboardInterrupt:
+                print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
+
+        # Pergunta se quer atualizar capa dos volumes
+        if not non_interactive:
+            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAR CAPA DOS VOLUMES{Colors.END}")
+            print(f"{Colors.YELLOW}{'─' * 27}{Colors.END}")
+            print(f"{Colors.BLUE}A nova capa enviada pela DCPPN deve ser salva em `capas/capaLOA.pdf`.{Colors.END}")
+            print(f"{Colors.BLUE}Se já fez isso, podemos atualizar as referências de capa em cada volume.{Colors.END}")
+            print(f"\n{Colors.YELLOW}Deseja atualizar? (y/N): {Colors.END}", end="")
+            try:
+                response = input().strip().lower()
+                if response in ['y', 'yes', 's', 'sim']:
+                    source_cover = Path('capas/capaLOA.pdf')
+                    if not source_cover.exists():
+                        print(f"{Colors.RED}❌ Arquivo `capas/capaLOA.pdf` não encontrado. Coloque a nova capa nessa pasta e tente novamente.{Colors.END}")
+                    else:
+                        print(f"\n{Colors.BLUE}Atualizando capas dos volumes...{Colors.END}")
+                        volumes = ['volume1', 'volume2', 'volume3', 'volume4', 'volume5', 'volume6', 'volume7']
+                        for vol in volumes:
+                            dest = Path(vol) / 'Rnw' / 'capaLOA.pdf'
+                            try:
+                                # Garante diretório existente
+                                dest.parent.mkdir(parents=True, exist_ok=True)
+                                shutil.copyfile(source_cover, dest)
+                                print(f"{Colors.GREEN}✓ {dest.as_posix()} atualizado{Colors.END}")
+                            except Exception as e:
+                                print(f"{Colors.YELLOW}⚠️  Falha ao atualizar {dest.as_posix()}: {e}{Colors.END}")
+                        print(f"{Colors.GREEN}✅ Capas atualizadas em todos os volumes disponíveis.{Colors.END}")
+                else:
+                    print(f"{Colors.BLUE}Capas dos volumes não foram atualizadas.{Colors.END}")
+            except KeyboardInterrupt:
+                print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
         
         # Mensagem informativa sobre próximo passo
         print(f"\n{Colors.BLUE}{Colors.BOLD}🚀 PRÓXIMO PASSO{Colors.END}")

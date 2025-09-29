@@ -109,12 +109,6 @@ def process_data_toml():
     
     # Verifica se houve mudanças
     if changes_made:
-        # Cria backup
-        backup_file = Path('data.toml.backup')
-        with open(backup_file, 'w', encoding='utf-8') as f:
-            f.writelines(original_lines)
-        print(f"✅ Backup criado: {backup_file}")
-        
         # Salva o arquivo atualizado
         with open(data_toml_file, 'w', encoding='utf-8') as f:
             f.writelines(lines)
@@ -126,16 +120,6 @@ def process_data_toml():
         if not is_valid:
             print(f"❌ ERRO: Arquivo TOML inválido após atualização!")
             print(f"❌ Detalhes do erro: {error_msg}")
-            print(f"🔄 Restaurando backup...")
-            
-            # Restaura o backup
-            with open(data_toml_file, 'w', encoding='utf-8') as f:
-                f.writelines(original_lines)
-            
-            # Remove o backup
-            backup_file.unlink()
-            
-            print(f"✅ Arquivo restaurado do backup")
             print(f"❌ Atualização abortada - estrutura TOML inválida")
             return False
         
