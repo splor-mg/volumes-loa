@@ -1,6 +1,6 @@
 # LOA
 
-Este projeto tem por finalidade gerar os pdfs dos volumes 2, 3, 4, 5 e 6 bem como diversos demonstrativos do volume 1, referentes a [LEI ORÇAMENTÁRIA ANUAL](http://planejamento.mg.gov.br/planejamento-e-orcamento/orcamento-do-estado-de-minas-gerais).
+Este projeto tem por finalidade gerar os pdfs dos volumes 2, 3, 4, 5, 6 e 7 bem como diversos demonstrativos do volume 1, referentes a [LEI ORÇAMENTÁRIA ANUAL](http://planejamento.mg.gov.br/planejamento-e-orcamento/orcamento-do-estado-de-minas-gerais).
 
 Para se familiarizar com o projeto os seguintes documentos são úteis:
 
@@ -12,12 +12,10 @@ Para se familiarizar com o projeto os seguintes documentos são úteis:
 
 ### Atualização de informações e ambiente computacional
 
-A criação dos volumes depende da atualização de uma série de informações. Os passos para a atualização dos volumes que são de perspectiva geral são:
+A criação dos volumes depende da atualização de uma série de informações. Em termos gerais, os passos para a atualização dos volumes são:
 
-1. Solicitar para a DCPPN a atualização das tabelas de apoio armazenadas no conjunto de dados [volumes-loa-dados](https://github.com/splor-mg/volumes-loa-dados) e atualizar o mesmo no Github;
-1. Atualizar `utils/ano.txt` com o ano de referência da LOA;
-1. Atualizar `utils/etapa_orcamento.txt` com o etapa do ciclo orçamentário (ie. `PROJETO DE LEI ORÇAMENTÁRIA` ou `LEI ORÇAMENTÁRIA`)
-1. Demandar o arquivo `.pdf` com as capas dos volumes. Renomear para `capaLOA.pdf` e inserir esse arquivo em todas as pastas `LOA\volume#\Rnw`. Ainda é necessário alterar as páginas de capa utilizadas nos arquivos `Projeto_volume#.Rnw`. Exemplo de alteração para `Projeto_volume5.Rnw`:
+1. Solicitar à DCPPN a atualização das tabelas de apoio armazenadas no conjunto de dados [dados-volumes-loa](https://github.com/splor-mg/dados-volumes-loa);
+1. Solicitar à DCPPN o arquivo `.pdf` com as capas dos volumes. Renomear para `capaLOA.pdf` e salvar esse arquivo na pasta `capas/`. Ainda é necessário confirmar se houve alteração das páginas da capa de cada volume, definidas nos arquivos `Projeto_volume#.Rnw`. Exemplo de alteração para `Projeto_volume5.Rnw`:
 
    ```latex
    [...]
@@ -30,9 +28,12 @@ A criação dos volumes depende da atualização de uma série de informações.
    [...]
    ```
 
-1. Alinhar com a DCAF quais versões do pacote `relatorios`, `reest` e `execucao` devem ser utilizados e atualizar as [volumes-docker](https://github.com/splor-mg/volumes-docker).
+1. Alinhar com a DCAF quais versões do pacote `relatorios`, `reest` e `execucao` devem ser utilizados e verificar necessidade de atualizar as respectivas versões em [volumes-docker](https://github.com/splor-mg/volumes-docker/config.mk).
 
-   **Importante:** O repositório `volumes-docker` é responsável por construir e publicar a imagem Docker `aidsplormg/volumes:ploa2025` no Docker Hub. O `volumes-loa` apenas utiliza essa imagem pronta.
+   **Importante:** O repositório `volumes-docker` é responsável por construir e publicar a imagem Docker `aidsplormg/volumes:ploaAAAA` no Docker Hub. O `volumes-loa` apenas utiliza essa imagem pronta.
+
+Caso necessário, utilize o comando `make install-pacotes` para instalar versão específica de algum desses pacotes.
+
 
 1. Demandar a atualização das seguintes informações: 
 
@@ -55,13 +56,30 @@ Essas etapas devem ser realizadas com a imagem docker atualizada.
    # Edite o arquivo .env com suas credenciais
    ```
 
-2. Configure as variáveis Docker:
+2. Configure as informações centrais do projeto:
 
    ```bash
    make config
    ```
    
-   **Nota:** O comando `make config` configura interativamente as variáveis Docker (`DOCKER_TAG`, `DOCKER_USER`, `DOCKER_IMAGE`) no arquivo `config.mk`. Essas variáveis definem qual imagem Docker será utilizada.
+   **Nota:** O comando `make config` constrói interativamente o arquivo `config.mk` com as seguintes informações:
+   
+   **Parâmetros informados pelo usuário:**
+   - `ANO_LOA` → Ano de vigência da (P)LOA (ex: 2026)
+   - `ETAPA_ORCAMENTO` → Etapa do ciclo orçamentário:
+     - 1 - PROJETO DE LEI ORÇAMENTÁRIA
+     - 2 - SUBSTITUTIVO PLOA  
+     - 3 - LEI ORÇAMENTÁRIA
+   - `DOCKER_TAG` → Tag da imagem Docker (ex: ploa2026)
+   - `DOCKER_USER` → Usuário do Docker Hub (ex: aidsplormg)
+   - `DOCKER_IMAGE` → Nome da imagem Docker (ex: volumes)
+   
+   **Etapas interativas adicionais:**
+   - Atualização de `utils/ano.txt` com o valor de `ANO_LOA`
+   - Processamento de `data.toml` para substituir variáveis de ano
+   - Atualização de `utils/etapa_orcamento.txt` com a etapa selecionada
+   - Atualização de `datapackage.yaml` para validar e corrigir anos
+   - Atualização das capas dos volumes (copia `capas/capaLOA.pdf` para `volume*/Rnw/`)
 
 3. Crie um container para geração dos PDFs:
 
