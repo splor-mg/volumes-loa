@@ -1,5 +1,0 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"ADMINISTRATIVA"	"157"	"213"	"21.257.215"	"100"	"1.22.1 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - SEDE"	"1.22.0 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - SEDE"
-	"DIREÇÃO E ASSESSORAMENTO"	"48"					
-	"DIREÇÃO SUPERIOR"	"  8"					
-"TOTAL"			"213"	"21.257.215"	"100"		

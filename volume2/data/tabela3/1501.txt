@@ -1,5 +1,0 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"ADMINISTRATIVA"	"1.106"	"1.341"	"276.954.681"	"100"	"1.50.1 - SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO - SEPLAG"	"1.50.0 - SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO - SEPLAG"
-	"DIREÇÃO E ASSESSORAMENTO"	"234"					
-	"DIREÇÃO SUPERIOR"	"    1"					
-"TOTAL"			"1.341"	"276.954.681"	"100"		

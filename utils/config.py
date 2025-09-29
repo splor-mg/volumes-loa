@@ -459,6 +459,34 @@ def main():
             print(f"\n{Colors.RED}❌ Falha na validação - configuração não foi salva{Colors.END}")
             sys.exit(1)
         
+        # Pergunta se quer atualizar o data.toml
+        if not non_interactive:
+            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAR DATA.TOML{Colors.END}")
+            print(f"{Colors.YELLOW}{'─' * 25}{Colors.END}")
+            print(f"{Colors.BLUE}Deseja processar o arquivo data.toml e substituir variáveis?{Colors.END}")
+            print(f"{Colors.BLUE}Isso substituirá ${Colors.BOLD}ANO_LOA${Colors.END}{Colors.BLUE} e outras variáveis do config.mk{Colors.END}")
+            print(f"\n{Colors.YELLOW}Atualizar data.toml? (y/N): {Colors.END}", end="")
+            try:
+                response = input().strip().lower()
+                if response in ['y', 'yes', 's', 'sim']:
+                    print(f"\n{Colors.BLUE}Processando data.toml...{Colors.END}")
+                    import subprocess
+                    result = subprocess.run(['poetry', 'run', 'data-toml-update'], capture_output=True, text=True)
+                    if result.returncode == 0:
+                        print(f"{Colors.GREEN}✅ data.toml atualizado com sucesso!{Colors.END}")
+                        if result.stdout:
+                            print(result.stdout)
+                    else:
+                        print(f"{Colors.RED}❌ Erro ao processar data.toml{Colors.END}")
+                        if result.stderr:
+                            print(result.stderr)
+                else:
+                    print(f"{Colors.BLUE}data.toml não foi atualizado.{Colors.END}")
+            except KeyboardInterrupt:
+                print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
+        else:
+            print(f"\n{Colors.BLUE}💡 Execute 'make data-toml-update' para processar o data.toml{Colors.END}")
+        
         # Mensagem informativa sobre próximo passo
         print(f"\n{Colors.BLUE}{Colors.BOLD}🚀 PRÓXIMO PASSO{Colors.END}")
         print(f"{Colors.BLUE}{'─' * 20}{Colors.END}")

@@ -1,5 +1,0 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"ADMINISTRATIVA"	"58"	"85"	"10.460.634"	"100"	"2.07.1 - FUNDAÇÃO DE AMPARO À PESQUISA DO ESTADO DE MINAS GERAIS - FAPEMIG"	"1.22.0 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - SEDE"
-	"DIREÇÃO E ASSESSORAMENTO"	"24"					
-	"DIREÇÃO SUPERIOR"	" 3"					
-"TOTAL"			"85"	"10.460.634"	"100"		

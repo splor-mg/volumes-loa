@@ -1,7 +1,0 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"ADMINISTRATIVA"	"11"	"58"	"2.388.655"	"100"	"2.17.1 - FUNDAÇÃO DE ARTE DE OURO PRETO - FAOP"	"1.27.0 - SECRETARIA DE ESTADO DE CULTURA E TURISMO - SECULT"
-	"DIREÇÃO E ASSESSORAMENTO"	"25"					
-	"DIREÇÃO SUPERIOR"	" 1"					
-	"DOCENTE"	"16"					
-	"OUTRAS"	" 5"					
-"TOTAL"			"58"	"2.388.655"	"100"		

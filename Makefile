@@ -80,6 +80,15 @@ datapackage-update: ## Valida e corrige anos no datapackage.yaml baseado no ANO_
 	@printf '%s\n\n' '=============================================='
 	@poetry run datapackage-update
 
+data-toml-update: ## Processa data.toml e substitui variáveis baseadas no config.mk
+	@printf '\n%s\n' '==============================================='
+	@printf '%s\n' 'Processamento do data.toml'
+	@printf '%s\n' '-----------------------------------------------'
+	@printf '%s\n' "- Substituindo variáveis do config.mk"
+	@printf '%s\n' '- Referência: ANO_LOA definido em config.mk'
+	@printf '%s\n\n' '=============================================='
+	@poetry run data-toml-update
+
 docker-pull: ## Baixa a imagem Docker do Docker Hub
 	@mkdir -p logs
 	@DOCKER_IMAGE_FULL="$(DOCKER_IMAGE_FULL)" USE_LOCAL_ON_FAIL="$(USE_LOCAL_ON_FAIL)" \

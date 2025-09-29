@@ -75,7 +75,9 @@ Essas etapas devem ser realizadas com a imagem docker atualizada.
    - Atualiza as configurações do projeto no `config.mk`
    - Valida e corrige automaticamente os anos no `datapackage.yaml` baseado na variável `ANO_LOA`
    
-   O projeto inclui uma ferramenta para validar e corrigir automaticamente os anos no `datapackage.yaml` através do comando `make datapackage-update`. O script verifica se os anos nas linhas com comentários `# ANO_LOA-1`, `# ANO_LOA`, `# ANO_LOA+1`, `# ANO_LOA+2` correspondem aos valores esperados. Se encontrar divergências, informa no prompt e corrige automaticamente. Se tudo estiver correto, apenas valida sem fazer alterações.
+   O projeto inclui ferramentas para validar e corrigir automaticamente os anos no `datapackage.yaml` através do comando `make datapackage-update`. O script verifica se os anos nas linhas com comentários `# ANO_LOA-1`, `# ANO_LOA`, `# ANO_LOA+1`, `# ANO_LOA+2` correspondem aos valores esperados. Se encontrar divergências, informa no prompt e corrige automaticamente. Se tudo estiver correto, apenas valida sem fazer alterações.
+
+   **Novo:** O comando `make config` agora inclui uma opção para processar o arquivo `data.toml` e substituir variáveis como `${ANO_LOA}` baseadas nas configurações do `config.mk`. Isso permite manter URLs dinâmicas que se atualizam automaticamente quando o ano da LOA muda.
 
 ### Comandos Docker disponíveis
 
@@ -83,6 +85,7 @@ Essas etapas devem ser realizadas com a imagem docker atualizada.
 - `make docker` - Baixa a imagem Docker, extrai versões e cria container (comando principal)
 - `make docker-pull` - Baixa apenas a imagem Docker do Docker Hub
 - `make info` - Extrai versões da imagem Docker e atualiza configurações e datapackage
+- `make data-toml-update` - Processa data.toml e substitui variáveis baseadas no config.mk
 - `make rstudio` - Inicia sessão do RStudio em http://localhost:8787/ (usuário: rstudio, senha: splor)
 
 

@@ -1,3 +1,0 @@
-"cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
-""	""	""	"0"	"0"	"0"	"1.72.1 - SECRETARIA DE ESTADO DA CASA CIVIL - SCC"	"1.72.0 - SECRETARIA DE ESTADO DA CASA CIVIL - SCC"
-""	""	"SUBTOTAL 1"	"0"	"0"	"0"		

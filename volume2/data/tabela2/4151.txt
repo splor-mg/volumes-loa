@@ -1,4 +1,0 @@
-"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"OUTRAS DESPESAS CORRENTES"	"Total"
-"1.27.0 - SECRETARIA DE ESTADO DE CULTURA E TURISMO - SECULT"	"4.15.1 - FUNDO DE ASSISTÊNCIA AO TURISMO - FASTUR"	" 2"		"10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS"	" 0"	"1"	"1.000"	"1.000"
-					"Total"	"1"	"1.000"	"1.000"
-				"TOTAL"	" 0"	"1"	"1.000"	"1.000"

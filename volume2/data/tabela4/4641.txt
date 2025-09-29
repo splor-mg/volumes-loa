@@ -1,3 +1,0 @@
-"cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
-""	""	""	"0"	"0"	"0"	"4.64.1 - FUNDO DE GARANTIAS DE PARCERIAS PÚBLICO - PRIVADAS DE MINAS GERAIS - FGP - MG"	"1.30.0 - SECRETARIA DE ESTADO DE INFRAESTRUTURA, MOBILIDADE E PARCERIA - SEINFRA"
-""	""	"SUBTOTAL 1"	"0"	"0"	"0"		

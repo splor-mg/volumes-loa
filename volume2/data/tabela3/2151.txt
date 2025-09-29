@@ -1,8 +1,0 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"ADMINISTRATIVA"	"213"	"594"	"37.216.466"	"100"	"2.15.1 - FUNDAÇÃO HELENA ANTIPOFF - FHA"	"1.26.0 - SECRETARIA DE ESTADO DE EDUCAÇÃO - SEE"
-	"DIREÇÃO E ASSESSORAMENTO"	"23"					
-	"DIREÇÃO SUPERIOR"	"  1"					
-	"DOCENTE"	"284"					
-	"ESPECIALIZADA"	"49"					
-	"TÉCNICA"	"24"					
-"TOTAL"			"594"	"37.216.466"	"100"		

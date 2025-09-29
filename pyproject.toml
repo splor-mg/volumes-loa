@@ -33,6 +33,7 @@ datapackage-update = "utils.datapackage_update:main"
 # Scripts de processamento
 unicode-replace = "utils.unicode_replace:main"
 check-qdd-fonte-95 = "volume7.checks.check_qdd_fonte_95:main"
+data-toml-update = "utils.data_toml_update:main"
 
 [build-system]
 requires = ["poetry-core"]

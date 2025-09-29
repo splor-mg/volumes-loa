@@ -1,7 +1,0 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"ADMINISTRATIVA"	" 3"	"150"	"6.658.578"	"100"	"2.21.1 - FUNDAÇÃO TV MINAS CULTURAL E EDUCATIVA - TV MINAS"	"1.71.0 - SECRETARIA DE ESTADO DE COMUNICAÇÃO SOCIAL - SECOM"
-	"DIREÇÃO E ASSESSORAMENTO"	" 4"					
-	"ESPECIALIZADA"	"71"					
-	"OUTRAS"	"48"					
-	"TÉCNICA"	"24"					
-"TOTAL"			"150"	"6.658.578"	"100"		

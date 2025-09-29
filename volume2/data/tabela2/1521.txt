@@ -1,7 +1,0 @@
-"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"PESSOAL E ENCARGOS SOCIAIS"	"OUTRAS DESPESAS CORRENTES"	"INVESTIMENTOS"	"Total"
-"1.52.0 - CONTROLADORIA-GERAL DO ESTADO - CGE"	"1.52.1 - CONTROLADORIA-GERAL DO ESTADO - CGE"	" 3"	" 2"	"10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS"	" 0"	"1"	"64.318.757"	"2.808.334"	"2.135.577"	"69.262.668"
-						"7"	"         0"	"3.689.541"	"        0"	"3.689.541"
-					"Total"	"8"	"64.318.757"	"6.497.875"	"2.135.577"	"72.952.209"
-		" 2"		"59 - OUTROS RECURSOS VINCULADOS"	" 0"	"1"	"         0"	"30.000"	"        0"	"30.000"
-					"Total"	"1"	"         0"	"30.000"	"        0"	"30.000"
-				"TOTAL"	" 0"	"9"	"64.318.757"	"6.527.875"	"2.135.577"	"72.982.209"

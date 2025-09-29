@@ -1,3 +1,0 @@
-"cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
-""	""	""	"0"	"0"	"0"	"1.08.1 - ADVOCACIA GERAL DO ESTADO - AGE"	"1.08.0 - ADVOCACIA GERAL DO ESTADO - AGE"
-""	""	"SUBTOTAL 1"	"0"	"0"	"0"		

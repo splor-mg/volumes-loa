@@ -1,8 +1,0 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"ADMINISTRATIVA"	"  6"	"1.157"	"722.000.000"	"81,86"	"1.44.1 - DEFENSORIA PUBLICA DO ESTADO DE MINAS GERAIS - DEF PUB"	"1.44.0 - DEFENSORIA PUBLICA DO ESTADO DE MINAS GERAIS - DEF PUB"
-	"DIREÇÃO E ASSESSORAMENTO"	"105"					
-	"DIREÇÃO SUPERIOR"	"  4"					
-	"ESPECIALIZADA"	"80"					
-	"TÉCNICA"	"962"					
-"PESSOAL INATIVO"	"INATIVO CIVIL"	"394"	"394"	"160.030.820"	"18,14"		
-"TOTAL"			"1.551"	"882.030.820"	"100,00"		

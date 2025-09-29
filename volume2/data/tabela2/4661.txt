@@ -1,4 +1,0 @@
-"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"OUTRAS DESPESAS CORRENTES"	"Total"
-"1.22.0 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - SEDE"	"4.66.1 - FUNDO DE ATIVOS IMOBILIÁRIOS DE MINAS GERAIS - FAIMG"	" 2"		"60 - RECURSOS DIRETAMENTE ARRECADADOS"	" 0"	"1"	"1.000"	"1.000"
-					"Total"	"1"	"1.000"	"1.000"
-				"TOTAL"	" 0"	"1"	"1.000"	"1.000"

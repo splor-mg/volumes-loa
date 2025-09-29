@@ -1,8 +1,0 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"ADMINISTRATIVA"	"291"	"1.852"	"295.378.100"	"100"	"3.04.1 - EMPRESA DE ASSISTÊNCIA TÉCNICA E EXTENSÃO RURAL DO ESTADO DE MINAS GERAIS - EMATER"	"1.23.0 - SECRETARIA DE ESTADO DE AGRICULTURA, PECUÁRIA E ABASTECIMENTO - SEAPA"
-	"DIREÇÃO E ASSESSORAMENTO"	"40"					
-	"DIREÇÃO SUPERIOR"	"  4"					
-	"ESPECIALIZADA"	"875"					
-	"OUTRAS"	"134"					
-	"TÉCNICA"	"508"					
-"TOTAL"			"1.852"	"295.378.100"	"100"		

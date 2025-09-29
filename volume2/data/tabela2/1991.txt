@@ -1,6 +1,0 @@
-"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"OUTRAS DESPESAS CORRENTES"	"RESERVA DE CONTINGÊNCIA"	"Total"
-"1.99.0 - RESERVA DE CONTINGÊNCIA - RC"	"1.99.1 - RESERVA DE CONTINGÊNCIA - RC"	" 2"		"10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS"	" 0"	"1"	"         0"	"1.038.063.607"	"1.038.063.607"
-					"Total"	"1"	"         0"	"1.038.063.607"	"1.038.063.607"
-		" 2"		"15 - RECURSOS ORDINÁRIOS - OUTROS RECURSOS NÃO VINCULADOS"	" 0"	"8"	"15.035.000"	"            0"	"15.035.000"
-					"Total"	"8"	"15.035.000"	"            0"	"15.035.000"
-				"TOTAL"	" 0"	"9"	"15.035.000"	"1.038.063.607"	"1.053.098.607"

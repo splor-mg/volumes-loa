@@ -129,10 +129,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 1,
         "CmNomePlanilha": "BASE_ORCAM_DESPESA_ITEM_FISCAL.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 1
       }
     },
@@ -247,28 +247,28 @@
             "target": "acao_desc"
           },
           {
-            "name": "VALOR (R$) 2025",
+            "name": "VALOR (R$) 2026",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_loa_desp_ano0"
           },
           {
-            "name": "VALOR (R$) 2026",
+            "name": "VALOR (R$) 2027",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_loa_desp_ano1"
           },
           {
-            "name": "VALOR (R$) 2027",
+            "name": "VALOR (R$) 2028",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_loa_desp_ano2"
           },
           {
-            "name": "VALOR (R$) 2028",
+            "name": "VALOR (R$) 2029",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
@@ -278,10 +278,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 9,
         "CmNomePlanilha": "BASE_QDD_PLURIANUAL.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 9
       }
     },
@@ -384,28 +384,28 @@
             "target": "acao_desc"
           },
           {
-            "name": "VALOR (R$) 2025",
+            "name": "VALOR (R$) 2026",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_loa_desp_invest_ano0"
           },
           {
-            "name": "VALOR (R$) 2026",
+            "name": "VALOR (R$) 2027",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_loa_desp_invest_ano1"
           },
           {
-            "name": "VALOR (R$) 2027",
+            "name": "VALOR (R$) 2028",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_loa_desp_invest_ano2"
           },
           {
-            "name": "VALOR (R$) 2028",
+            "name": "VALOR (R$) 2029",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
@@ -415,10 +415,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 16,
         "CmNomePlanilha": "BASE_QDD_PLURIANUAL_INVEST.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 16
       }
     },
@@ -523,28 +523,28 @@
             "type": "string"
           },
           {
-            "name": "Valor (R$) 2025",
+            "name": "Valor (R$) 2026",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_loa_desp_invest_ano0"
           },
           {
-            "name": "Valor (R$) 2026",
+            "name": "Valor (R$) 2027",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_loa_desp_invest_ano1"
           },
           {
-            "name": "Valor (R$) 2027",
+            "name": "Valor (R$) 2028",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_loa_desp_invest_ano2"
           },
           {
-            "name": "Valor (R$) 2028",
+            "name": "Valor (R$) 2029",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
@@ -554,10 +554,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 2,
         "CmNomePlanilha": "BASE_ORCAM_DESPESA_INVESTIMENTO.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 2
       }
     },
@@ -653,56 +653,56 @@
             "type": "string"
           },
           {
-            "name": "VALOR TESOURO 2025 (R$)",
+            "name": "VALOR TESOURO 2026 (R$)",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_tesouro_ano0"
           },
           {
-            "name": "VALOR OUTROS 2025 (R$)",
+            "name": "VALOR OUTROS 2026 (R$)",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_outros_ano0"
           },
           {
-            "name": "VALOR TESOURO 2026 (R$)",
+            "name": "VALOR TESOURO 2027 (R$)",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_tesouro_ano1"
           },
           {
-            "name": "VALOR OUTROS 2026 (R$)",
+            "name": "VALOR OUTROS 2027 (R$)",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_outros_ano1"
           },
           {
-            "name": "VALOR TESOURO 2027 (R$)",
+            "name": "VALOR TESOURO 2028 (R$)",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_tesouro_ano2"
           },
           {
-            "name": "VALOR OUTROS 2027 (R$)",
+            "name": "VALOR OUTROS 2028 (R$)",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_outros_ano2"
           },
           {
-            "name": "VALOR TESOURO 2028 (R$)",
+            "name": "VALOR TESOURO 2029 (R$)",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_tesouro_ano3"
           },
           {
-            "name": "VALOR OUTROS 2028 (R$)",
+            "name": "VALOR OUTROS 2029 (R$)",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
@@ -712,10 +712,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 3,
         "CmNomePlanilha": "BASE_DETALHAMENTO_OBRAS.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 3
       }
     },
@@ -879,10 +879,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 4,
         "CmNomePlanilha": "BASE_QDD_FISCAL.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 4
       }
     },
@@ -1017,10 +1017,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 5,
         "CmNomePlanilha": "BASE_QDD_INVESTIMENTO.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 5
       }
     },
@@ -1155,10 +1155,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 6,
         "CmNomePlanilha": "BASE_ORCAM_RECEITA_FISCAL.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 6
       }
     },
@@ -1251,10 +1251,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 7,
         "CmNomePlanilha": "BASE_ORCAM_RECEITA_INVESTIMENTO.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 7
       }
     },
@@ -1321,10 +1321,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 11,
         "CmNomePlanilha": "BASE_OBRAS_SIAD.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 11
       }
     },
@@ -1371,10 +1371,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 12,
         "CmNomePlanilha": "BASE_CATEGORIA_PESSOAL.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 12
       }
     },
@@ -1446,10 +1446,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 13,
         "CmNomePlanilha": "BASE_REPASSE_RECURSOS.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 13
       }
     },
@@ -1500,14 +1500,14 @@
             "target": "iag_cod"
           },
           {
-            "name": "Valor Limite 2025",
+            "name": "Valor Limite 2026",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_limite_ano0"
           },
           {
-            "name": "Valor Utilizado 2025",
+            "name": "Valor Utilizado 2026",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
@@ -1521,42 +1521,42 @@
             "target": "vlr_transferido"
           },
           {
-            "name": "Valor Limite 2026",
+            "name": "Valor Limite 2027",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_limite_ano1"
           },
           {
-            "name": "Valor Utilizado 2026",
+            "name": "Valor Utilizado 2027",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_utilizado_ano1"
           },
           {
-            "name": "Valor Limite 2027",
+            "name": "Valor Limite 2028",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_limite_ano2"
           },
           {
-            "name": "Valor Utilizado 2027",
+            "name": "Valor Utilizado 2028",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_utilizado_ano2"
           },
           {
-            "name": "Valor Limite 2028",
+            "name": "Valor Limite 2029",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
             "target": "vlr_limite_ano3"
           },
           {
-            "name": "Valor Utilizado 2028",
+            "name": "Valor Utilizado 2029",
             "type": "number",
             "decimalChar": ",",
             "groupChar": ".",
@@ -1566,10 +1566,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 14,
         "CmNomePlanilha": "BASE_LIMITE_COTA.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 14
       }
     },
@@ -1618,10 +1618,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 17,
         "CmNomePlanilha": "BASE_INTRA_ORCAMENTARIA_DETALHAMENTO.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 17
       }
     },
@@ -1699,10 +1699,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 18,
         "CmNomePlanilha": "BASE_INTRA_ORCAMENTARIA_REPASSE.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 18
       }
     },
@@ -1744,10 +1744,10 @@
       },
       "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
       "payload": {
-        "sAnoSelecao": 2025,
+        "sAnoSelecao": 2026,
         "sTabelaSelec": 21,
         "CmNomePlanilha": "BASE_UNIDADES_ORCAMENTARIA_VERSOES.xls",
-        "selecaoAno": 2025,
+        "selecaoAno": 2026,
         "sBaseSelec": 21
       }
     }
@@ -1755,8 +1755,8 @@
   "remote": {
     "host": "raw.githubusercontent.com",
     "user": "splor-mg",
-    "repo": "dados-sisor-2025",
+    "repo": "dados-sisor-2026",
     "ref": "main",
-    "sha": "d1cc582c241cc8858f206dd32a8e1868142f23ae"
+    "sha": "af756773f37f0d8f71424de588f071be75d7c940"
   }
 }

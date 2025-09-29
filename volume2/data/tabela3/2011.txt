@@ -1,7 +1,0 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"ADMINISTRATIVA"	"907"	"2.429"	"289.848.941"	"100"	"2.01.1 - INSTITUTO DE PREVIDÊNCIA DOS SERVIDORES DO ESTADO DE MINAS GERAIS - IPSEMG"	"1.50.0 - SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO - SEPLAG"
-	"DIREÇÃO E ASSESSORAMENTO"	"75"					
-	"DIREÇÃO SUPERIOR"	"  2"					
-	"ESPECIALIZADA"	"917"					
-	"TÉCNICA"	"528"					
-"TOTAL"			"2.429"	"289.848.941"	"100"		
