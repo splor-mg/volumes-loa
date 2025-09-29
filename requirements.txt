@@ -1,0 +1,7 @@
+frictionless[excel,html]
+git+https://github.com/splor-mg/dpm.git@main#egg=dpm
+lxml==4.9.3
+openpyxl==3.1.2
+pandas[excel,html]
+tomli
+typer

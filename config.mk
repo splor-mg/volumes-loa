@@ -36,21 +36,23 @@ else
 endif
 
 # ====================================================================
-# CONFIGURAÇÕES FLUIDAS (atualizadas via make config)
+# Versões extraídas da imagem Docker
+# CONFIGURAÇÕES FLUIDAS (alteradas via 'make config' e 'make extract-info')
 # ====================================================================
-# Parâmetros da imagem Docker
+# Parâmetros informados pelo usuário
+ANO_LOA=2026
+ETAPA_ORCAMENTO='PROJETO DE LEI ORÇAMENTÁRIA'
 DOCKER_TAG=ploa2026
 DOCKER_USER=aidsplormg
 DOCKER_IMAGE=volumes
 
-# Versões extraídas da imagem Docker
-ANO_LOA=2026
-RELATORIOS_VERSION=v0.7.99
+ANO_LOA_IMAGEM=2026
+RELATORIOS_VERSION=v0.7.98
 EXECUCAO_VERSION=v0.5.27
-REEST_VERSION=v0.2.8
+REEST_VERSION=v0.2.5
 
 # ====================================================================
-# CONFIGURAÇÕES ESTRUTURAIS (não alteradas via make config)
+# CONFIGURAÇÕES ESTRUTURAIS 
 # ====================================================================
 
 DOCKER_IMAGE_FULL = $(DOCKER_USER)/$(DOCKER_IMAGE):$(DOCKER_TAG)
