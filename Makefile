@@ -20,6 +20,10 @@ help:
 config: ## Configura interativamente as variáveis Docker (DOCKER_TAG, DOCKER_USER, DOCKER_IMAGE)
 	@poetry run config
 
+snapshot: ## Cria snapshot dos volumes gerados para conferência posterior via pytest
+	python3 checks/utils.py snapshot
+	@echo "Arquivos pdf e .tex copiados para checks/assets/"
+
 info: ## Extrai versões da imagem Docker e atualiza configurações e datapackage
 	@echo "Extraindo informações da imagem Docker..."
 	@poetry run info
