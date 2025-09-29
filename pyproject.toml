@@ -1,3 +1,16 @@
+# ====================================================================
+# Volumes LOA - pyproject
+# Descrição: Configuração do Poetry e scripts de CLI
+# Uso rápido: poetry run <script>
+# --------------------------------------------------------------------
+# TOC (comentada)
+# 1) Metadados do projeto
+# 2) Dependências (runtime e dev)
+# 3) Scripts CLI (agrupados por tema)
+# 4) Build system
+# 5) Ferramentas (black, flake8, mypy)
+# ====================================================================
+
 [tool.poetry]
 name = "volumes-loa"
 version = "0.1.0"
@@ -21,19 +34,34 @@ mypy = "^1.0.0"
 pytest = "^7.0.0"
 
 [tool.poetry.scripts]
-# Scripts de detecção de plataforma e fontes
+
+# ====================================================================
+# 3) Scripts CLI (agrupados por tema)
+# ====================================================================
+
+# --------------------------------------------------------------------
+# 3.1) Detecção de plataforma e fontes
+# --------------------------------------------------------------------
 detect-platform = "utils.detect_plattform:main"
 replace-font-config = "utils.replace_font_config:main"
 
-# Scripts de configuração
+# --------------------------------------------------------------------
+# 3.2) Configuração e informações
+# --------------------------------------------------------------------
 config = "utils.config:main"
 info = "utils.info:main"
-datapackage-update = "utils.datapackage_update:main"
 
-# Scripts de processamento
+# --------------------------------------------------------------------
+# 3.3) Datapackage & data.toml
+# --------------------------------------------------------------------
+datapackage-update = "utils.datapackage_update:main"
+data-toml-update = "utils.data_toml_update:main"
+
+# --------------------------------------------------------------------
+# 3.4) Processamento e checks
+# --------------------------------------------------------------------
 unicode-replace = "utils.unicode_replace:main"
 check-qdd-fonte-95 = "volume7.checks.check_qdd_fonte_95:main"
-data-toml-update = "utils.data_toml_update:main"
 
 [build-system]
 requires = ["poetry-core"]

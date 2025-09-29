@@ -1,8 +1,28 @@
+# ====================================================================
+# Volumes LOA - Makefile
+# Descrição: Orquestra geração de PDFs e dados por volume
+# Uso rápido: `make` ou `make help`
+# --------------------------------------------------------------------
+# TOC (comentada)
+# 1) Inclui configuração básica
+# 2) Utilitários (help, config, snapshot, info, validate)
+# 3) Datapackage & data.toml
+# 4) Docker & RStudio
+# 5) Housekeeping
+# 6) Geração de volumes
+# 6.1) Targets por Volume (7 → 1)
+# ====================================================================
+
+.DEFAULT_GOAL := help
+
 .PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker docker-pull v1_dcgf v1_prodemge validate check rm-all datapackage-update config info
 
+# ====================================================================
+# 1) Inclui configuração básica contida no arquivo config.mk
+# ====================================================================
 include config.mk
 
-#====================================================================
+# ====================================================================
 # PLATFORM DETECTION
 
 # Detectar plataforma e aplicar configuração de fonte
@@ -11,11 +31,12 @@ detect-platform:
 	@poetry run detect-platform
 	@poetry run replace-font-config
 
-#====================================================================
-# PHONY TARGETS
+# ====================================================================
+# 2) Utilitários (help, config, snapshot, info, validate)
+# ====================================================================
 
 help:
-	@grep -E '^[a-zA-Z_0-9]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-10s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z_0-9]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-22s\033[0m %s\n", $$1, $$2}'
 
 config: ## Configura interativamente as variáveis Docker (DOCKER_TAG, DOCKER_USER, DOCKER_IMAGE)
 	@poetry run config
@@ -32,25 +53,47 @@ info: ## Extrai versões da imagem Docker e atualiza configurações e datapacka
 validate:
 	poetry run python -m frictionless validate datapackage.yaml
 
-volumes: detect-platform v7 v6 v5 v4 v3 v2 v1 ## Gera todos os volumes
+# ====================================================================
+# 3) Datapackage & data.toml
+# ====================================================================
+datapackage-update: ## Valida e corrige anos no datapackage.yaml baseado no ANO_LOA
+	@printf '\n%s\n' '==============================================='
+	@printf '%s\n' 'Validação do datapackage.yaml'
+	@printf '%s\n' '-----------------------------------------------'
+	@printf '%s\n' "- Atualizando colunas com ANO_LOA no nome"
+	@printf '%s\n' '- Referência: ANO_LOA definido em config.mk'
+	@printf '%s\n\n' '=============================================='
+	@poetry run datapackage-update
 
-v1: v1_prodemge v1_dcgf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE e DCGF
+data-toml-update: ## Processa data.toml e substitui variáveis baseadas no config.mk
+	@printf '\n%s\n' '==============================================='
+	@printf '%s\n' 'Processamento do data.toml'
+	@printf '%s\n' '-----------------------------------------------'
+	@printf '%s\n' "- Substituindo variáveis do config.mk"
+	@printf '%s\n' '- Referência: ANO_LOA definido em config.mk'
+	@printf '%s\n\n' '=============================================='
+	@poetry run data-toml-update
 
-v1_prodemge: $(DEP_PRODEMGE_PDF_V1) pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.pdf pdf/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.pdf pdf/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.pdf pdf/T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO.pdf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE
+# ====================================================================
+# 4) Docker & RStudio
+# ====================================================================
 
-v1_dcgf: $(DEP_DCGF_PDF_V1) volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.csv ## Gera tabelas do volume 1 de responsabilidade da DCGF
+docker-pull: ## Baixa a imagem Docker do Docker Hub
+	@mkdir -p logs
+	@DOCKER_IMAGE_FULL="$(DOCKER_IMAGE_FULL)" USE_LOCAL_ON_FAIL="$(USE_LOCAL_ON_FAIL)" \
+		bash utils/docker_pull.sh
 
-v2: pdf/Projeto_volume2A.pdf pdf/Projeto_volume2B.pdf ## Gera volume 2
+docker: docker-pull info ## Cria um container para geração dos PDFs e extrai informações da imagem
+	@if [ TRUE ]; then \
+		$(DOCKER_RUN_CMD); \
+	fi
 
-v3: pdf/Projeto_volume3.pdf ## Gera volume 3
+rstudio: ## Inicia sessão do Rstudio em http://localhost:8787/ (usuário: rstudio, senha: splor)
+	@docker exec -d -e PASSWORD=splor volumes-loa /init
 
-v4: pdf/Projeto_volume4.pdf ## Gera volume 4
-
-v5: pdf/Projeto_volume5.pdf ## Gera volume 5
-
-v6: pdf/Projeto_volume6A.pdf ## Gera volume 6
-
-v7: pdf/Projeto_volume7.pdf ## Gera volume 7
+# ====================================================================
+# 5) Housekeeping
+# ====================================================================
 
 clean: ## Organiza os arquivos auxiliares e outputs da compilação latex. Ex. argumento vol=5. origem=1 limpa o dir principal.
 	@Rscript $(VERBOSE) utils/limpaDir.R $(vol) $(origem)
@@ -74,45 +117,60 @@ rm-all: ## Remove todos os arquivos de todos os volumes incluindo logs
 	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) 7
 	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) logs
 
+# ====================================================================
+# 6) Geração de volumes
+# ====================================================================
 
-datapackage-update: ## Valida e corrige anos no datapackage.yaml baseado no ANO_LOA
-	@printf '\n%s\n' '==============================================='
-	@printf '%s\n' 'Validação do datapackage.yaml'
-	@printf '%s\n' '-----------------------------------------------'
-	@printf '%s\n' "- Atualizando colunas com ANO_LOA no nome"
-	@printf '%s\n' '- Referência: ANO_LOA definido em config.mk'
-	@printf '%s\n\n' '=============================================='
-	@poetry run datapackage-update
+volumes: detect-platform v7 v6 v5 v4 v3 v2 v1 ## Gera todos os volumes
 
-data-toml-update: ## Processa data.toml e substitui variáveis baseadas no config.mk
-	@printf '\n%s\n' '==============================================='
-	@printf '%s\n' 'Processamento do data.toml'
-	@printf '%s\n' '-----------------------------------------------'
-	@printf '%s\n' "- Substituindo variáveis do config.mk"
-	@printf '%s\n' '- Referência: ANO_LOA definido em config.mk'
-	@printf '%s\n\n' '=============================================='
-	@poetry run data-toml-update
+v1: v1_prodemge v1_dcgf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE e DCGF
 
-docker-pull: ## Baixa a imagem Docker do Docker Hub
-	@mkdir -p logs
-	@DOCKER_IMAGE_FULL="$(DOCKER_IMAGE_FULL)" USE_LOCAL_ON_FAIL="$(USE_LOCAL_ON_FAIL)" \
-		bash utils/docker_pull.sh
+v1_prodemge: $(DEP_PRODEMGE_PDF_V1) pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.pdf pdf/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.pdf pdf/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.pdf pdf/T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO.pdf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE
 
-docker: docker-pull info ## Cria um container para geração dos PDFs e extrai informações da imagem
-	@if [ TRUE ]; then \
-		$(DOCKER_RUN_CMD); \
-	fi
+v1_dcgf: $(DEP_DCGF_PDF_V1) volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.csv ## Gera tabelas do volume 1 de responsabilidade da DCGF
 
-rstudio: ## Inicia sessão do Rstudio em http://localhost:8787/ (usuário: rstudio, senha: splor)
-	@docker exec -d -e PASSWORD=splor volumes-loa /init
+v2: pdf/Projeto_volume2A.pdf pdf/Projeto_volume2B.pdf ## Gera volume 2
+
+v3: pdf/Projeto_volume3.pdf ## Gera volume 3
+
+v4: pdf/Projeto_volume4.pdf ## Gera volume 4
+
+v5: pdf/Projeto_volume5.pdf ## Gera volume 5
+
+v6: pdf/Projeto_volume6A.pdf ## Gera volume 6
+
+v7: pdf/Projeto_volume7.pdf ## Gera volume 7
+
+# --------------------------------------------------------------------
+# Check
+# --------------------------------------------------------------------
 
 check:
 	poetry run pytest
 
-# ===================================================================
-# TARGETS
+# ====================================================================
+# 6.1) Targets por Volume (7 → 1)
+# ====================================================================
 
+# --------------------------------------------------------------------
+# Volume 7
+# --------------------------------------------------------------------
+pdf/Projeto_volume7.pdf: $(DEPENDENCIAS_V7)
+	@echo "- Gera logs/warningsV7.Rout"
+	@python3 -m volume7.checks.check_qdd_fonte_95 2> logs/logv7.Rout
+	@Rscript $(VERBOSE) volume7/Rnw/CodigosR/Projeto_volume7.R 2> logs/warningsV7.Rout >&-
+	@Rscript $(VERBOSE) utils/Rnw2Tex.R 7
+	@echo "---------------------------------------------------------------"
+
+volume7/data/*.txt: volume7/R/volume7.R bancos/SISOR/BASE_QDD_FISCAL_FONTE_95.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+	@echo "Atualizando v7/data/ consolidado.txt e QUADRO_DETALHAMENTO_DESPESA_porUO.txt..."
+	@Rscript $(VERBOSE) $< 2>> logs/logv7.Rout
+
+
+# --------------------------------------------------------------------
 # Volume 6
+# --------------------------------------------------------------------
+
 pdf/Projeto_volume6A.pdf: volume6/data/receita_fonte_stn.txt volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt volume6/Rnw/ANEXOS.Rnw volume6/Rnw/capaLOA.pdf \
 						 volume6/Rnw/load_bibliotecas.tex volume6/Rnw/Projeto_volume6A.Rnw volume6/Rnw/QUADRO_DETALHAMENTO_DESPESA.Rnw \
 						 bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_fontes_de_recursos_stn.xlsx bancos/manual/desc_IAG.xlsx bancos/manual/desc_IPU.xlsx
@@ -141,19 +199,10 @@ bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte
 	@echo "Atualizando $@..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
 
-# Volume 7
-pdf/Projeto_volume7.pdf: $(DEPENDENCIAS_V7)
-	@echo "- Gera logs/warningsV7.Rout"
-	@python3 -m volume7.checks.check_qdd_fonte_95 2> logs/logv7.Rout
-	@Rscript $(VERBOSE) volume7/Rnw/CodigosR/Projeto_volume7.R 2> logs/warningsV7.Rout >&-
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R 7
-	@echo "---------------------------------------------------------------"
 
-volume7/data/*.txt: volume7/R/volume7.R bancos/SISOR/BASE_QDD_FISCAL_FONTE_95.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
-	@echo "Atualizando v7/data/ consolidado.txt e QUADRO_DETALHAMENTO_DESPESA_porUO.txt..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv7.Rout
-
+# --------------------------------------------------------------------
 # Volume 5
+# --------------------------------------------------------------------
 pdf/Projeto_volume5.pdf: $(DEPENDENCIAS_V5)
 	@echo "- Gera logs/warningsV5.Rout"
 	@Rscript $(VERBOSE) volume5/Rnw/CodigosR/Projeto_volume5.R 2> logs/warningsV5.Rout >&-
@@ -165,7 +214,9 @@ volume5/data/*.txt: volume5/R/volume5.R bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos
 	@Rscript $(VERBOSE) $< 2>> logs/logv5.Rout
 
 
+# --------------------------------------------------------------------
 # Volume 4
+# --------------------------------------------------------------------
 pdf/Projeto_volume4.pdf: $(DEPENDENCIAS_V4)
 	@echo "- Gera logs/warningsV4.Rout"
 	@Rscript $(VERBOSE) volume4/Rnw/CodigosR/Projeto_volume4.R 2> logs/warningsV4.Rout >&-
@@ -185,7 +236,10 @@ volume4/data/tabela2/*.txt: volume4/R/T2_DETALHAMENTO_INVESTIMENTOS_POR_TERRITOR
 	@Rscript $(VERBOSE) $< 2>> logs/logv4.Rout
 
 
+# --------------------------------------------------------------------
 # Volume 3
+# --------------------------------------------------------------------
+
 pdf/Projeto_volume3.pdf: $(DEPENDENCIAS_V3)
 	@echo "- Gera logs/warningsV3.Rout"
 	@Rscript $(VERBOSE) volume3/Rnw/CodigosR/Projeto_volume3.R 2> logs/warningsV3.Rout >&-
@@ -221,7 +275,10 @@ volume3/data/tabela5/*.txt: volume3/R/V3_T5_QUADRO_DE_DETALHAMENTO_INVESTIMENTO.
 	@Rscript $(VERBOSE) $< 2>> logs/logv3.Rout
 
 
+# --------------------------------------------------------------------
 # Volume 2
+# --------------------------------------------------------------------
+
 pdf/Projeto_volume2A.pdf: $(DEPENDENCIAS_V2)
 	@Rscript $(VERBOSE) utils/Rnw2Tex.R 2A 2> logs/warningsV2A.Rout
 	@echo "---------------------------------------------------------------"
@@ -258,7 +315,11 @@ volume2/data/tabela5/*.txt: volume2/R/V2_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINA
 	@echo "Atualizando volume2/data/tabela5/*.txt..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv2.Rout
 
+
+# --------------------------------------------------------------------
 # Volume 1
+# --------------------------------------------------------------------
+
 $(DEP_PRODEMGE_PDF_V1): pdf/%.pdf: volume1/Rnw/%.Rnw volume1/data/%.txt
 	@Rscript $(VERBOSE) utils/Rnw2Tex.R $*
 	@echo "---------------------------------------------------------------"
