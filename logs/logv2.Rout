@@ -31,6 +31,3 @@ sh: 1: xdg-open: not found
 Warning: The following named parsers don't match the column names: Previsão Orçamentária 2025, Previsão Física 2025
 Warning: V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
 
-Warning: The following named parsers don't match the column names: Previsão Orçamentária 2025, Previsão Física 2025
-Warning: V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
-
