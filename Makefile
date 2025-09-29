@@ -15,12 +15,19 @@
 
 .DEFAULT_GOAL := help
 
-.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker docker-pull v1_dcgf v1_prodemge validate check rm-all datapackage-update config info
+.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker docker-pull v1_dcgf v1_prodemge validate check rm-all datapackage-update config extract-info
 
 # ====================================================================
 # 1) Inclui configuração básica contida no arquivo config.mk
 # ====================================================================
 include config.mk
+
+# ====================================================================
+# 1.1) Geração de arquivos de configuração
+# ====================================================================
+utils/ano.txt: config.mk
+	@echo "$(ANO_LOA_IMAGEM)" > $@
+	@echo "Atualizado $@ com ANO_LOA_IMAGEM=$(ANO_LOA_IMAGEM)"
 
 # ====================================================================
 # PLATFORM DETECTION
@@ -41,41 +48,27 @@ help:
 config: ## Configura interativamente as variáveis Docker (DOCKER_TAG, DOCKER_USER, DOCKER_IMAGE)
 	@poetry run config
 
-snapshot: ## Cria snapshot dos volumes gerados para conferência posterior via pytest
-	python3 checks/utils.py snapshot
-	@echo "Arquivos pdf e .tex copiados para checks/assets/"
+config-ano-loa: ## Atualiza utils/ano.txt com ANO_LOA do config.mk
+	@poetry run config-ano-loa
 
-info: ## Extrai versões da imagem Docker e atualiza configurações e datapackage
-	@echo "Extraindo informações da imagem Docker..."
-	@poetry run info
-	@$(MAKE) --no-print-directory datapackage-update
+config-etapa-orcamento: ## Atualiza utils/etapa_orcamento.txt com ETAPA_ORCAMENTO do config.mk
+	@poetry run config-etapa-orcamento
+
+config-data-toml: ## Processa data.toml e substitui variáveis baseadas no config.mk
+	@poetry run data-toml-update
+
+config-datapackage: ## Atualiza datapackage.yaml baseado nas configurações do config.mk
+	@poetry run config-datapackage
+
+snapshot: ## Cria snapshot dos volumes gerados para conferência posterior via pytest
+	@poetry run snapshot
+	@echo "Arquivos pdf e .tex copiados para checks/assets/"
 
 validate:
 	poetry run python -m frictionless validate datapackage.yaml
 
 # ====================================================================
-# 3) Datapackage & data.toml
-# ====================================================================
-datapackage-update: ## Valida e corrige anos no datapackage.yaml baseado no ANO_LOA
-	@printf '\n%s\n' '==============================================='
-	@printf '%s\n' 'Validação do datapackage.yaml'
-	@printf '%s\n' '-----------------------------------------------'
-	@printf '%s\n' "- Atualizando colunas com ANO_LOA no nome"
-	@printf '%s\n' '- Referência: ANO_LOA definido em config.mk'
-	@printf '%s\n\n' '=============================================='
-	@poetry run datapackage-update
-
-data-toml-update: ## Processa data.toml e substitui variáveis baseadas no config.mk
-	@printf '\n%s\n' '==============================================='
-	@printf '%s\n' 'Processamento do data.toml'
-	@printf '%s\n' '-----------------------------------------------'
-	@printf '%s\n' "- Substituindo variáveis do config.mk"
-	@printf '%s\n' '- Referência: ANO_LOA definido em config.mk'
-	@printf '%s\n\n' '=============================================='
-	@poetry run data-toml-update
-
-# ====================================================================
-# 4) Docker & RStudio
+# 3) Docker & RStudio
 # ====================================================================
 
 docker-pull: ## Baixa a imagem Docker do Docker Hub
@@ -83,16 +76,24 @@ docker-pull: ## Baixa a imagem Docker do Docker Hub
 	@DOCKER_IMAGE_FULL="$(DOCKER_IMAGE_FULL)" USE_LOCAL_ON_FAIL="$(USE_LOCAL_ON_FAIL)" \
 		bash utils/docker_pull.sh
 
-docker: docker-pull info ## Cria um container para geração dos PDFs e extrai informações da imagem
+docker: docker-pull extract-info ## Cria um container para geração dos PDFs e extrai informações da imagem
 	@if [ TRUE ]; then \
 		$(DOCKER_RUN_CMD); \
 	fi
+
+extract-info: ## Extrai versões da imagem Docker e atualiza configurações e datapackage
+	@echo "Extraindo informações da imagem Docker..."
+	@poetry run extract-info
+	@$(MAKE) --no-print-directory datapackage-update
+
+install-pacotes: ## Instala versões específicas dos pacotes DCAF
+	@poetry run install-pacotes
 
 rstudio: ## Inicia sessão do Rstudio em http://localhost:8787/ (usuário: rstudio, senha: splor)
 	@docker exec -d -e PASSWORD=splor volumes-loa /init
 
 # ====================================================================
-# 5) Housekeeping
+# 4) Housekeeping
 # ====================================================================
 
 clean: ## Organiza os arquivos auxiliares e outputs da compilação latex. Ex. argumento vol=5. origem=1 limpa o dir principal.
@@ -118,7 +119,7 @@ rm-all: ## Remove todos os arquivos de todos os volumes incluindo logs
 	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) logs
 
 # ====================================================================
-# 6) Geração de volumes
+# 5) Geração de volumes
 # ====================================================================
 
 volumes: detect-platform v7 v6 v5 v4 v3 v2 v1 ## Gera todos os volumes
@@ -149,7 +150,7 @@ check:
 	poetry run pytest
 
 # ====================================================================
-# 6.1) Targets por Volume (7 → 1)
+# 5.1) Targets por Volume (7 → 1)
 # ====================================================================
 
 # --------------------------------------------------------------------

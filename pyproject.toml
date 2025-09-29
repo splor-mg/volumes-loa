@@ -23,8 +23,10 @@ packages = [{include = "utils"}]
 python = "^3.8.1"
 frictionless = {extras = ["excel", "html"], version = "^4.0.0"}
 pandas = {extras = ["excel", "html"], version = "^2.0.0"}
+numpy = "^1.24.0"
 tomli = "^2.0.0"
 typer = "^0.9.0"
+typing-extensions = "^4.0.0"
 pyyaml = "^6.0.0"
 
 [tool.poetry.group.dev.dependencies]
@@ -36,32 +38,41 @@ pytest = "^7.0.0"
 [tool.poetry.scripts]
 
 # ====================================================================
-# 3) Scripts CLI (agrupados por tema)
+# 3) Scripts CLI (agrupados por tema - espelhando Makefile)
 # ====================================================================
 
 # --------------------------------------------------------------------
-# 3.1) Detecção de plataforma e fontes
+# 3.1) Utilitários (help, config, snapshot, info, validate)
+# --------------------------------------------------------------------
+config = "utils.config:main"
+config-ano-loa = "utils.config_ano_loa:main"
+config-etapa-orcamento = "utils.config_etapa_orcamento:main"
+config-data-toml = "utils.config_data_toml:main"
+config-datapackage = "utils.config_datapackage:main"
+snapshot = "checks.utils:snapshot"
+
+# --------------------------------------------------------------------
+# 3.2) Docker & RStudio
+# --------------------------------------------------------------------
+extract-info = "utils.extract_info:main"
+install-pacotes = "utils.install_pacotes:main"
+
+# --------------------------------------------------------------------
+# 3.3) Housekeeping
+# --------------------------------------------------------------------
+unicode-replace = "utils.unicode_replace:main"
+
+# --------------------------------------------------------------------
+# 3.4) Detecção de plataforma e fontes
 # --------------------------------------------------------------------
 detect-platform = "utils.detect_plattform:main"
 replace-font-config = "utils.replace_font_config:main"
 
 # --------------------------------------------------------------------
-# 3.2) Configuração e informações
+# 3.5) Processamento e checks
 # --------------------------------------------------------------------
-config = "utils.config:main"
-info = "utils.info:main"
-
-# --------------------------------------------------------------------
-# 3.3) Datapackage & data.toml
-# --------------------------------------------------------------------
-datapackage-update = "utils.datapackage_update:main"
-data-toml-update = "utils.data_toml_update:main"
-
-# --------------------------------------------------------------------
-# 3.4) Processamento e checks
-# --------------------------------------------------------------------
-unicode-replace = "utils.unicode_replace:main"
 check-qdd-fonte-95 = "volume7.checks.check_qdd_fonte_95:main"
+diff-report = "checks.utils:diff"
 
 [build-system]
 requires = ["poetry-core"]
