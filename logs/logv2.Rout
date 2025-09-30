@@ -31,14 +31,13 @@ running
 processing file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd
 output file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.md
 
-Error in loadNamespace(x) : there is no package called ‘markdown’
-Calls: fecharLog ... loadNamespace -> withRestarts -> withOneRestart -> doWithOneRestart
-Execution halted
-running
-  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume2/R/V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL.R'
-
-Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
-
+/usr/bin/xdg-open: 882: www-browser: not found
+/usr/bin/xdg-open: 882: links2: not found
+/usr/bin/xdg-open: 882: elinks: not found
+/usr/bin/xdg-open: 882: links: not found
+/usr/bin/xdg-open: 882: lynx: not found
+/usr/bin/xdg-open: 882: w3m: not found
+xdg-open: no method available for opening 'file:///home/rstudio/logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.html'
 running
   '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume1/R/T30_INVESTIMENTOS_SEGUNDO_FUNCOES.R'
 
