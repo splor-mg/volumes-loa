@@ -67,6 +67,9 @@ config-data-toml: ## Processa data.toml e substitui variáveis baseadas no confi
 config-datapackage: ## Atualiza datapackage.yaml baseado nas configurações do config.mk
 	@poetry run config-datapackage
 
+config-project-id: ## Remove ProjectId do arquivo LOA.Rproj (idempotente)
+	@poetry run config-project-id
+
 config-capa: ## Atualiza capas dos volumes
 	@poetry run config-capa
 
