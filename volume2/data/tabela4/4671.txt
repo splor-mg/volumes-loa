@@ -1,0 +1,3 @@
+"cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
+""	""	""	"0"	"0"	"0"	"4.67.1 - FUNDO DE INVESTIMENTOS IMOBILIÁRIOS DE MINAS GERAIS - FIIMG"	"1.22.0 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - SEDE"
+""	""	"SUBTOTAL 1"	"0"	"0"	"0"		

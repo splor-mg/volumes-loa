@@ -39,7 +39,7 @@ endif
 # CONFIGURAÇÕES FLUIDAS (alteradas via 'make config' e 'make extract-info')
 # ====================================================================
 # Parâmetros informados pelo usuário
-ANO_LOA=2029
+ANO_LOA=2026
 ETAPA_ORCAMENTO='PROJETO DE LEI ORÇAMENTÁRIA'
 DOCKER_TAG=ploa2026
 DOCKER_USER=aidsplormg
@@ -47,9 +47,9 @@ DOCKER_IMAGE=volumes
 
 # Versões extraídas da imagem Docker
 ANO_LOA_IMAGEM=2026
-RELATORIOS_VERSION=v0.7.98
+RELATORIOS_VERSION=v0.8.00
 EXECUCAO_VERSION=v0.5.27
-REEST_VERSION=v0.2.5
+REEST_VERSION=v0.2.8
 
 # ====================================================================
 # CONFIGURAÇÕES ESTRUTURAIS 

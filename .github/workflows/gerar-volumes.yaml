@@ -1,0 +1,99 @@
+name: Gerar Volumes LOA (disparado pelo volumes-docker)
+
+on:
+  repository_dispatch:
+    types: [gerar-volumes]
+
+jobs:
+  gerar:
+    name: Gerar Volumes
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      issues: write
+    steps:
+      - name: Checkout volumes-loa (ref do dispatch se houver)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.client_payload.ref }}
+
+      - name: Exibir contexto
+        run: |
+          echo "source: ${{ github.event.client_payload.source }}"
+          echo "ref:    ${{ github.event.client_payload.ref }}"
+          echo "sha:    ${{ github.event.client_payload.sha }}"
+
+      - name: Preparar logs
+        run: mkdir -p logs && touch logs/ci.log
+
+      - name: make docker
+        run: |
+          set -e
+          make docker 2>&1 | tee -a logs/ci.log
+
+      - name: make format
+        run: |
+          set -e
+          make format 2>&1 | tee -a logs/ci.log
+
+      - name: make rm-all
+        run: |
+          set -e
+          make rm-all 2>&1 | tee -a logs/ci.log
+
+      - name: make v7..v1
+        run: |
+          set -e
+          make v7 2>&1 | tee -a logs/ci.log
+          make v6 2>&1 | tee -a logs/ci.log
+          make v5 2>&1 | tee -a logs/ci.log
+          make v4 2>&1 | tee -a logs/ci.log
+          make v3 2>&1 | tee -a logs/ci.log
+          make v2 2>&1 | tee -a logs/ci.log
+          make v1 2>&1 | tee -a logs/ci.log
+
+      - name: make check
+        run: |
+          set -e
+          make check 2>&1 | tee -a logs/ci.log
+
+      - name: Upload logs (sempre)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gerar-volumes-logs
+          path: |
+            logs/**
+
+  report:
+    name: Reportar falha (abre issue)
+    needs: [gerar]
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Definir variáveis de contexto
+        id: ctx
+        run: |
+          echo "RUN_URL=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_ENV
+          echo "REF=${{ github.event.client_payload.ref }}" >> $GITHUB_ENV
+          echo "SHA=${{ github.event.client_payload.sha }}" >> $GITHUB_ENV
+          echo "SOURCE=${{ github.event.client_payload.source }}" >> $GITHUB_ENV
+
+      - name: Abrir issue (JasonEtco/create-an-issue)
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ env.RUN_URL }}
+          REF: ${{ env.REF }}
+          SHA: ${{ env.SHA }}
+          SOURCE: ${{ env.SOURCE }}
+        with:
+          filename: .github/workflow-failure.md
+

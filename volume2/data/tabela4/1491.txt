@@ -1,0 +1,3 @@
+"cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
+""	""	""	"0"	"0"	"0"	"1.49.1 - SECRETARIA DE ESTADO DE GOVERNO - SEGOV"	"1.49.0 - SECRETARIA DE ESTADO DE GOVERNO - SEGOV"
+""	""	"SUBTOTAL 1"	"0"	"0"	"0"		

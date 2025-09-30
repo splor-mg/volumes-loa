@@ -1,3 +1,6 @@
+running
+  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=utils/Rnw2Tex.R --args 2A'
+
 Warning in eval(expr, .GlobalEnv) :
   Volume2A A última UO considerada nesse relatório será  4641 -- FUNDO DE GARANTIAS DE PARCERIAS PÚBLICO - PRIVADAS DE MINAS GERAIS - FGP - MG que fecha o orgao SECRETARIA DE ESTADO DE INFRAESTRUTURA, MOBILIDADE E PARCERIA - SEINFRA 
 
