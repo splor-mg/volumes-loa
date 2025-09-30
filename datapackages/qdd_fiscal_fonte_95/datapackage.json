@@ -176,12 +176,12 @@
       }
     }
   ],
-  "updated_at": "2025-09-29T20:58:27",
+  "updated_at": "2025-09-30T14:36:21",
   "remote": {
     "host": "raw.githubusercontent.com",
     "user": "splor-mg",
     "repo": "dados-qdd-fonte-95",
     "ref": "main",
-    "sha": "cd9eafeb7a7282ae0fcf039b87e80f1fae5492d5"
+    "sha": "81b045187147cdc44a5e138286b43d89de58bc4f"
   }
 }
