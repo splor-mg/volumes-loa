@@ -1,0 +1,7 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	" 2"	"43"	"9.190.097"	"100"	"1.63.1 - SECRETARIA-GERAL - SEC. GERAL"	"1.63.0 - GOVERNADORIA DO ESTADO - GOVERNADORIA"
+	"DIREÇÃO E ASSESSORAMENTO"	"32"					
+	"DIREÇÃO SUPERIOR"	" 3"					
+	"ESPECIALIZADA"	" 4"					
+	"MEMBROS DE PODER"	" 2"					
+"TOTAL"			"43"	"9.190.097"	"100"		

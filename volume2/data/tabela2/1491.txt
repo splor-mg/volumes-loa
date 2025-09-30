@@ -1,0 +1,6 @@
+"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"PESSOAL E ENCARGOS SOCIAIS"	"OUTRAS DESPESAS CORRENTES"	"INVESTIMENTOS"	"Total"
+"1.49.0 - SECRETARIA DE ESTADO DE GOVERNO - SEGOV"	"1.49.1 - SECRETARIA DE ESTADO DE GOVERNO - SEGOV"	" 4"	" 2"	"10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS"	" 0"	"1"	"48.354.448"	"1.439.078.135"	"12.849.678"	"1.500.282.261"
+						"7"	"         0"	"5.041.792"	"         0"	"5.041.792"
+					" 1"	"1"	"         0"	"1.000"	"         0"	"1.000"
+					"Total"	"9"	"48.354.448"	"1.444.120.927"	"12.849.678"	"1.505.325.053"
+				"TOTAL"	" 1"	"9"	"48.354.448"	"1.444.120.927"	"12.849.678"	"1.505.325.053"

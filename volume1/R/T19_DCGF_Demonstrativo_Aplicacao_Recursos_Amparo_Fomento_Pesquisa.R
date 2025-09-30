@@ -58,7 +58,7 @@ parteB_desc =  "E - APLICAÇÃO DE RECURSOS ORDINÁRIOS DESTINADOS AO AMPARO E F
 
 
 
-parteB = loa_desp[is_fapemig_desp(loa_desp), list(valor = sum(VL_DESP) + 500000), 
+parteB = loa_desp[is_fapemig_desp(loa_desp), list(valor = sum(VL_DESP)), 
                   by=list(cod = UO_COD, espec = UO)]
 
 

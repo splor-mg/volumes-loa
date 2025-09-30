@@ -1,0 +1,7 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"30"	"146"	"16.730.326"	"100"	"3.15.1 - EMPRESA MINEIRA DE COMUNICAÇÃO - EMC"	"1.71.0 - SECRETARIA DE ESTADO DE COMUNICAÇÃO SOCIAL - SECOM"
+	"DIREÇÃO E ASSESSORAMENTO"	"16"					
+	"DIREÇÃO SUPERIOR"	" 7"					
+	"ESPECIALIZADA"	"56"					
+	"TÉCNICA"	"37"					
+"TOTAL"			"146"	"16.730.326"	"100"		

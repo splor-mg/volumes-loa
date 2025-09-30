@@ -1,0 +1,6 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"10"	"16"	"1.241.000"	"100"	"2.36.1 - INSTITUTO DE PREVIDÊNCIA DO LEGISLATIVO DO ESTADO DE MINAS GERAIS - IPLEMG"	"1.01.0 - ASSEMBLEIA LEGISLATIVA DO ESTADO DE MINAS GERAIS - ALMG"
+	"DIREÇÃO E ASSESSORAMENTO"	" 1"					
+	"DIREÇÃO SUPERIOR"	" 4"					
+	"ESPECIALIZADA"	" 1"					
+"TOTAL"			"16"	"1.241.000"	"100"		

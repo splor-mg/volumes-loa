@@ -1,8 +1,1 @@
-running
-  '/usr/local/lib/R/bin/R --no-echo --no-restore --file=volume3/R/V3_bancos_consolidados.R'
-
-Warning: The following named parsers don't match the column names: Previsão Orçamentária 2025, Previsão Física 2025
-Error in trataAcoesPlanejamento_txt(caminho, ANO_ANALISE) : 
-  Em ler_acoes_planejamento(): Variável(is) previsao.fisica.2025não encontrada(s) no banco
-Calls: trataAcoesPlanejamento -> trataAcoesPlanejamento_txt
-Execution halted
+Warning: V3_bancos_consolidados: A Tabela 2 INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS não apresenta a categoria representada pelas variaveis, valor.amortO total dessa tabela será realizado sem essa var e essa variaveis serão zeradas.

@@ -1,0 +1,8 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"142"	"731"	"68.372.974"	"100"	"1.48.1 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO SOCIAL - SEDESE"	"1.48.0 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO SOCIAL - SEDESE"
+	"DIREÇÃO E ASSESSORAMENTO"	"287"					
+	"DIREÇÃO SUPERIOR"	"11"					
+	"DOCENTE"	"  2"					
+	"ESPECIALIZADA"	"147"					
+	"TÉCNICA"	"142"					
+"TOTAL"			"731"	"68.372.974"	"100"		

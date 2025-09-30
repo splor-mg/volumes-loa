@@ -1,0 +1,4 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"1.067"	"11.147"	"2.808.906.677"	"100"	"1.51.1 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG"	"1.51.0 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG"
+	"OUTRAS"	"10.080"					
+"TOTAL"			"11.147"	"2.808.906.677"	"100"		

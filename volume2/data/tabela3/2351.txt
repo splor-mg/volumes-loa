@@ -1,0 +1,7 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"183"	"2.291"	"279.176.598"	"100"	"2.35.1 - UNIVERSIDADE DO ESTADO DE MINAS GERAIS - UEMG"	"1.26.0 - SECRETARIA DE ESTADO DE EDUCAÇÃO - SEE"
+	"DIREÇÃO E ASSESSORAMENTO"	"21"					
+	"DIREÇÃO SUPERIOR"	"    7"					
+	"DOCENTE"	"1.696"					
+	"ESPECIALIZADA"	"384"					
+"TOTAL"			"2.291"	"279.176.598"	"100"		

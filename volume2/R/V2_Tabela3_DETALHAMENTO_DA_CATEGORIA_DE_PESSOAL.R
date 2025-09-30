@@ -11,7 +11,7 @@ source("utils/trataBancos/trataPessoal.R", encoding = "UTF-8")
 # Definir parâmetros
 
 codigo_inativos = c(7007, 7006)
-desconsiderarUO = c(9207, 1111, 1461, 2391, 2401, 2451)
+desconsiderarUO = c(1111, 1461, 2391, 2401, 2451, 9207)
 uo_militar_com_civis_inativos = c(1251, 1401)
 # ============================================================================
 

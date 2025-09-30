@@ -1,0 +1,8 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"949"	"3.667"	"422.746.677"	"100"	"4.29.1 - FUNDO ESTADUAL DE SAÚDE - FES"	"1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES"
+	"DIREÇÃO E ASSESSORAMENTO"	"84"					
+	"DIREÇÃO SUPERIOR"	"10"					
+	"ESPECIALIZADA"	"1.925"					
+	"OUTRAS"	"449"					
+	"TÉCNICA"	"250"					
+"TOTAL"			"3.667"	"422.746.677"	"100"		

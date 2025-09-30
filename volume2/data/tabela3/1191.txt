@@ -1,0 +1,6 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"570"	"2.848"	"1.597.708.079"	"100"	"1.19.1 - SECRETARIA DE ESTADO DE FAZENDA - SEF"	"1.19.0 - SECRETARIA DE ESTADO DE FAZENDA - SEF"
+	"DIREÇÃO E ASSESSORAMENTO"	"767"					
+	"DIREÇÃO SUPERIOR"	"    5"					
+	"ESPECIALIZADA"	"1.506"					
+"TOTAL"			"2.848"	"1.597.708.079"	"100"		

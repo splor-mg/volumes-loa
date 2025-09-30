@@ -1,0 +1,8 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"239"	"852"	"106.487.799"	"100"	"2.26.1 - FUNDAÇÃO EZEQUIEL DIAS - FUNED"	"1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES"
+	"DIREÇÃO E ASSESSORAMENTO"	"26"					
+	"DIREÇÃO SUPERIOR"	"  1"					
+	"ESPECIALIZADA"	"284"					
+	"OUTRAS"	"100"					
+	"TÉCNICA"	"202"					
+"TOTAL"			"852"	"106.487.799"	"100"		

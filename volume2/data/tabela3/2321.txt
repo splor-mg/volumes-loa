@@ -1,0 +1,8 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"65"	"1.605"	"192.809.892"	"100"	"2.32.1 - FUNDAÇÃO CENTRO DE HEMATOLOGIA E HEMOTERAPIA DE MINAS GERAIS - HEMOMINAS"	"1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES"
+	"DIREÇÃO E ASSESSORAMENTO"	"229"					
+	"DIREÇÃO SUPERIOR"	"  1"					
+	"ESPECIALIZADA"	"281"					
+	"OUTRAS"	"307"					
+	"TÉCNICA"	"722"					
+"TOTAL"			"1.605"	"192.809.892"	"100"		

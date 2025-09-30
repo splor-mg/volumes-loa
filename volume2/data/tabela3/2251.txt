@@ -1,0 +1,8 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"13"	"205"	"18.471.158"	"100"	"2.25.1 - JUNTA COMERCIAL DO ESTADO DE MINAS GERAIS - JUCEMG"	"1.22.0 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - SEDE"
+	"DIREÇÃO E ASSESSORAMENTO"	"25"					
+	"DIREÇÃO SUPERIOR"	"  3"					
+	"ESPECIALIZADA"	"26"					
+	"OUTRAS"	"35"					
+	"TÉCNICA"	"103"					
+"TOTAL"			"205"	"18.471.158"	"100"		

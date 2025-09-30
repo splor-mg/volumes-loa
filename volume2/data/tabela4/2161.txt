@@ -1,0 +1,3 @@
+"cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
+""	""	""	"0"	"0"	"0"	"2.16.1 - FUNDAÇÃO EDUCACIONAL CAIO MARTINS - FUCAM"	"1.26.0 - SECRETARIA DE ESTADO DE EDUCAÇÃO - SEE"
+""	""	"SUBTOTAL 1"	"0"	"0"	"0"		
