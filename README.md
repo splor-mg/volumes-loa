@@ -77,11 +77,16 @@ Essas etapas devem ser realizadas com a imagem docker atualizada.
       - `DOCKER_IMAGE` → Nome da imagem Docker (ex: volumes)
    
    **Etapas interativas adicionais:**
-      - Atualização de `utils/ano.txt` com o valor de `ANO_LOA`
-      - Processamento de `data.toml` para substituir variáveis de ano
-      - Atualização de `utils/etapa_orcamento.txt` com a etapa selecionada
-      - Atualização de `datapackage.yaml` para validar e corrigir anos
+      - Atualização de `utils/ano.txt` com o valor de `ANO_LOA` (make config-ano-loa)
+      - Processamento de `data.toml` substituindo variáveis de ano (make config-data-toml)
+      - Atualização de `utils/etapa_orcamento.txt` com a etapa selecionada (make config-etapa-orcamento)
+      - Validação e atualização dos anos no `datapackage.yaml` conforme `ANO_LOA` (make config-datapackage)
       - Atualização das capas dos volumes (copia `capas/capaLOA.pdf` para `volume*/Rnw/`)
+        - se preferir pular no wizard, execute depois: `make config-capa`
+      - Normalização do ProjectId do RStudio (remove a linha `ProjectId` do `LOA.Rproj`)
+        - útil ao iniciar um novo ciclo/ano para regenerar metadados no RStudio
+        - pode ser executado separadamente: `make config-project-id`
+
 
 3. Crie um container para geração dos PDFs:
 
@@ -93,25 +98,21 @@ Essas etapas devem ser realizadas com a imagem docker atualizada.
    - Baixa a imagem Docker conforme configurada no arquivo `config.mk`
    - Extrai as versões dos pacotes R e o ano da LOA das labels da imagem
    - Atualiza as configurações do projeto no `config.mk`
-   - Valida e corrige automaticamente os anos no `datapackage.yaml` baseado na variável `ANO_LOA`
    
-   O projeto inclui ferramentas para validar e corrigir automaticamente os anos no `datapackage.yaml` através do comando `make datapackage-update`. O script verifica se os anos nas linhas com comentários `# ANO_LOA-1`, `# ANO_LOA`, `# ANO_LOA+1`, `# ANO_LOA+2` correspondem aos valores esperados. Se encontrar divergências, informa no prompt e corrige automaticamente. Se tudo estiver correto, apenas valida sem fazer alterações.
-
-   **Novo:** O comando `make config` agora inclui uma opção para processar o arquivo `data.toml` e substituir variáveis como `${ANO_LOA}` baseadas nas configurações do `config.mk`. Isso permite manter URLs dinâmicas que se atualizam automaticamente quando o ano da LOA muda.
-
+   
 ### Comandos Docker disponíveis
 
 - `make config` - Configura interativamente as variáveis Docker (DOCKER_TAG, DOCKER_USER, DOCKER_IMAGE)
 - `make docker` - Baixa a imagem Docker, extrai versões e cria container (comando principal)
 - `make docker-pull` - Baixa apenas a imagem Docker do Docker Hub
-- `make info` - Extrai versões da imagem Docker e atualiza configurações e datapackage
-- `make data-toml-update` - Processa data.toml e substitui variáveis baseadas no config.mk
+- `make extract-info` - Extrai versões da imagem Docker e atualiza configurações e datapackage
+- `make config-data-toml` - Processa data.toml e substitui variáveis baseadas no config.mk
 - `make rstudio` - Inicia sessão do RStudio em http://localhost:8787/ (usuário: rstudio, senha: splor)
 
 
 ### Geração dos volumes
 
-1. Faça download das dependências de dados especificadas em `data.yaml`: 
+1. Faça download das dependências de dados especificadas em `data.toml`: 
 
    ```bash
    dpm install
@@ -207,4 +208,55 @@ python3 checks/utils.py snapshot Projeto_volume2A Projeto_volume2B # snapshot de
 python3 checks/utils.py snapshot # snapshot de todos os demonstrativos
 ```
 
+## Informações Complementares
 
+### Estrutura do repositório
+
+- pasta `volume1/` … `volume7/`
+  - Conteúdo: scripts R (`R/`), templates (`Rnw/`), dados intermediários (`data/`).
+  - Responsável por gerar: usuário via `make v1` … `make v7` (chamam scripts R).
+  - Saída: PDFs em `pdf/` e artefatos auxiliares em `volume*/`.
+
+- pasta `utils/`
+  - Conteúdo: utilitários Python/R e scripts do wizard:
+    - `config.py`: wizard interativo do `make config` (usuário conduz; script escreve `config.mk`, aciona subtarefas).
+    - `config_ano_loa.py`, `config_data_toml.py`, `config_etapa_orcamento.py`, `config_datapackage.py`: tarefas chamadas pelo wizard ou via `make`.
+    - `config_capa.py`: copia `capas/capaLOA.pdf` para `volume*/Rnw/capaLOA.pdf` (script; usuário decide quando).
+    - `config_rstudio_id.py`: remove `ProjectId` do `LOA.Rproj` (script; usuário opta).
+  - Responsável: scripts (acionados por usuário via `make`/`poetry`).
+
+- arquivo `config.mk`
+  - Conteúdo: parâmetros de execução (ANO_LOA, ETAPA_ORCAMENTO, tag Docker, etc.) e metadados extraídos da imagem.
+  - Responsável: `make config` (script), `extract-info` (script). Usuário só confirma/edita via wizard.
+
+- arquivo `data.toml`
+  - Conteúdo: fontes de dados (URLs, datapackages) com placeholders de ano.
+  - Atualização: `make config-data-toml` (script processa ano). Usuário decide rodar.
+
+- arquivo `datapackage.yaml`
+  - Conteúdo: manifesto tabular de dados.
+  - Atualização/validação: `make config-datapackage` (script ajusta anos e valida). Usuário decide rodar.
+
+- pasta `capas/`
+  - Conteúdo: `capaLOA.pdf` fornecido pela DCPPN.
+  - Responsável: usuário (prover arquivo). Cópia ocorre via `make config-capa` (script).
+
+- pasta `pdf/`
+  - Conteúdo: PDFs gerados dos volumes.
+  - Responsável: usuário via `make v*` (scripts R fazem a composição).
+
+- arquivo `README.md`
+  - Conteúdo: documentação de uso.
+  - Responsável: equipe (manutenção manual).
+
+- arquivo `LOA.Rproj`
+  - Conteúdo: preferências do RStudio.
+  - Responsável: RStudio (gera/atualiza). Limpeza opcional via `make config-project-id`.
+
+- `pyproject.toml` / `poetry.lock`
+  - Conteúdo: CLI e dependências Python.
+  - Responsável: equipe (manutenção), execução via `poetry run …` (scripts).
+
+- `Makefile`
+  - Conteúdo: orquestração (help, config, docker, tarefas por volume).
+  - Responsável: usuário (dispara), scripts (executam).
