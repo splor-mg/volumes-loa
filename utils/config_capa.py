@@ -25,9 +25,7 @@ def update_volume_covers():
         print(f"{Colors.YELLOW}💡 Coloque a nova capa na pasta `capas/` e tente novamente.{Colors.END}")
         return False
     
-    print(f"{Colors.BLUE}📄 Atualizando capas dos volumes...{Colors.END}")
-    print(f"{Colors.CYAN}Origem: {source_cover.as_posix()}{Colors.END}")
-    print()
+    # Saída minimalista: apenas linhas de arquivo atualizado por volume
     
     volumes = ['volume1', 'volume2', 'volume3', 'volume4', 'volume5', 'volume6', 'volume7']
     success_count = 0
@@ -47,27 +45,17 @@ def update_volume_covers():
         except Exception as e:
             print(f"{Colors.YELLOW}⚠️  Falha ao atualizar {dest.as_posix()}: {e}{Colors.END}")
     
-    print()
-    if success_count == total_volumes:
-        print(f"{Colors.GREEN}✅ Capas atualizadas em todos os volumes disponíveis ({success_count}/{total_volumes}){Colors.END}")
-        return True
-    else:
-        print(f"{Colors.YELLOW}⚠️  Capas atualizadas em {success_count}/{total_volumes} volumes{Colors.END}")
-        return success_count > 0
+    # Sem resumo verboso; retorna apenas status
+    return success_count == total_volumes
 
 def main():
     """Função principal"""
-    print(f"{Colors.BLUE}{Colors.BOLD}📄 ATUALIZAÇÃO DE CAPAS DOS VOLUMES{Colors.END}")
-    print(f"{Colors.BLUE}{'─' * 35}{Colors.END}")
-    print(f"{Colors.CYAN}A nova capa enviada pela DCPPN deve estar em `capas/capaLOA.pdf`{Colors.END}")
-    print()
+    # Não imprimir cabeçalho para manter logs concisos
     
     try:
         success = update_volume_covers()
-        if success:
-            print(f"\n{Colors.GREEN}🎉 Atualização de capas concluída!{Colors.END}")
-        else:
-            print(f"\n{Colors.RED}❌ Falha na atualização de capas{Colors.END}")
+        if not success:
+            print(f"{Colors.YELLOW}⚠️  Nem todas as capas foram atualizadas{Colors.END}")
             exit(1)
     except Exception as e:
         print(f"\n{Colors.RED}❌ Erro inesperado: {e}{Colors.END}")
