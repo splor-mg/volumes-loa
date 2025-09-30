@@ -60,6 +60,9 @@ config-data-toml: ## Processa data.toml e substitui variáveis baseadas no confi
 config-datapackage: ## Atualiza datapackage.yaml baseado nas configurações do config.mk
 	@poetry run config-datapackage
 
+config-capa: ## Atualiza capas dos volumes
+	@poetry run config-capa
+
 snapshot: ## Cria snapshot dos volumes gerados para conferência posterior via pytest
 	@poetry run snapshot
 	@echo "Arquivos pdf e .tex copiados para checks/assets/"
