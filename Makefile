@@ -15,7 +15,7 @@
 
 .DEFAULT_GOAL := help
 
-.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker docker-pull v1_dcgf v1_prodemge validate check rm-all datapackage-update config extract-info
+.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker docker-pull v1_dcgf v1_prodemge validate check rm-all config extract-info
 
 # ====================================================================
 # 1) Inclui configuração básica contida no arquivo config.mk
@@ -33,7 +33,7 @@ utils/ano.txt: config.mk
 # PLATFORM DETECTION
 
 # Detectar plataforma e aplicar configuração de fonte
-detect-platform:
+detect-platform: ## Detecta plataforma e aplica configuração de fonte
 	@echo "Detectando plataforma e aplicando configuração de fonte..."
 	@poetry run detect-platform
 	@poetry run replace-font-config
@@ -43,7 +43,14 @@ detect-platform:
 # ====================================================================
 
 help:
-	@grep -E '^[a-zA-Z_0-9]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-22s\033[0m %s\n", $$1, $$2}'
+	@echo "Comandos disponíveis:"; \
+	awk 'BEGIN { FS=":.*?## " } \
+	/^[ \t]*# [0-9]+\) / { sec=$$0; gsub(/^[ \t]*# /, "", sec); next } \
+	/^[a-zA-Z0-9_-]+:.*## .*$$/ { \
+	  if (sec == "") sec="Outros"; \
+	  if (!printed[sec]) { printf "\n\033[1m%s\033[0m\n", sec; printed[sec]=1 } \
+	  printf "\033[36m%-22s\033[0m %s\n", $$1, $$2 \
+	}' Makefile
 
 config: ## Configura interativamente as variáveis Docker (DOCKER_TAG, DOCKER_USER, DOCKER_IMAGE)
 	@poetry run config
@@ -67,7 +74,7 @@ snapshot: ## Cria snapshot dos volumes gerados para conferência posterior via p
 	@poetry run snapshot
 	@echo "Arquivos pdf e .tex copiados para checks/assets/"
 
-validate:
+validate: ## Valida datapackage.yaml com frictionless
 	poetry run python -m frictionless validate datapackage.yaml
 
 # ====================================================================
@@ -87,7 +94,7 @@ docker: docker-pull extract-info ## Cria um container para geração dos PDFs e 
 extract-info: ## Extrai versões da imagem Docker e atualiza configurações e datapackage
 	@echo "Extraindo informações da imagem Docker..."
 	@poetry run extract-info
-	@$(MAKE) --no-print-directory datapackage-update
+	@$(MAKE) --no-print-directory
 
 install-pacotes: ## Instala versões específicas dos pacotes DCAF
 	@poetry run install-pacotes
@@ -149,7 +156,7 @@ v7: pdf/Projeto_volume7.pdf ## Gera volume 7
 # Check
 # --------------------------------------------------------------------
 
-check:
+check: ## Executa testes com pytest
 	poetry run pytest
 
 # ====================================================================
