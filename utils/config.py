@@ -136,6 +136,8 @@ def validate_config_integrity(backup_path, original_hash):
             r'^-# Parâmetros.*',
             r'^\+# Parâmetros.*',
             r'^-# Versões extraídas.*',
+            r'^\+# Versões extraídas.*',
+            r'^-# Informações extraídas.*',
             r'^\+# Informações extraídas.*',
             r'^-# CONFIGURAÇÕES ESTRUTURAIS.*',
             r'^\+# CONFIGURAÇÕES ESTRUTURAIS.*'
@@ -231,11 +233,17 @@ def finalize_config_update(new_values, backup_path, original_hash):
         # 4. Persistência
         if not update_config_mk(new_values):
             print(f"{Colors.RED}❌ Erro ao salvar configurações{Colors.END}")
+            print(f"{Colors.YELLOW}🔄 Restaurando backup e abortando processo...{Colors.END}")
+            restore_from_backup(backup_path)
+            cleanup_backup(backup_path)
             return False
         
         # 5. Restauração das linhas R
         if not restore_config_mk_lines():
             print(f"{Colors.RED}❌ Erro ao restaurar linhas R{Colors.END}")
+            print(f"{Colors.YELLOW}🔄 Restaurando backup e abortando processo...{Colors.END}")
+            restore_from_backup(backup_path)
+            cleanup_backup(backup_path)
             return False
         
         # 6. Validação
@@ -246,6 +254,7 @@ def finalize_config_update(new_values, backup_path, original_hash):
         else:
             # 7b. Falha - restaura backup
             print(f"{Colors.RED}❌ Validação falhou - restaurando backup{Colors.END}")
+            print(f"{Colors.YELLOW}🔄 Abortando processo e limpando backup...{Colors.END}")
             restore_from_backup(backup_path)
             cleanup_backup(backup_path)
             return False
@@ -253,6 +262,7 @@ def finalize_config_update(new_values, backup_path, original_hash):
     except Exception as e:
         # 7c. Erro - restaura backup
         print(f"{Colors.RED}❌ Erro durante finalização: {e}{Colors.END}")
+        print(f"{Colors.YELLOW}🔄 Restaurando backup e abortando processo...{Colors.END}")
         restore_from_backup(backup_path)
         cleanup_backup(backup_path)
         return False
@@ -444,7 +454,18 @@ def update_config_mk(values):
 
     if start_idx is None:
         print(f"{Colors.RED}Seção 'CONFIGURAÇÕES FLUIDAS' não encontrada em config.mk!{Colors.END}")
-        return False
+        print(f"{Colors.YELLOW}Procurando por padrões alternativos...{Colors.END}")
+        
+        # Tentar encontrar a seção com padrões mais flexíveis
+        for idx, line in enumerate(lines):
+            if 'CONFIGURAÇÕES FLUIDAS' in line or 'CONFIGURAÇÕES FLIDAS' in line:
+                start_idx = idx - 1  # Linha anterior com separador
+                print(f"{Colors.GREEN}Encontrada seção na linha {idx + 1}{Colors.END}")
+                break
+        
+        if start_idx is None:
+            print(f"{Colors.RED}❌ Não foi possível localizar a seção de configurações fluidas!{Colors.END}")
+            return False
     
     # Mapear posições existentes das chaves Docker dentro do intervalo
     docker_keys = ['ANO_LOA', 'ETAPA_ORCAMENTO', 'DOCKER_TAG', 'DOCKER_USER', 'DOCKER_IMAGE']
@@ -560,6 +581,7 @@ def main():
             print(f"\n{Colors.GREEN}🎉 Configuração atualizada com sucesso!{Colors.END}")
         else:
             print(f"\n{Colors.RED}❌ Falha na validação - configuração não foi salva{Colors.END}")
+            print(f"{Colors.YELLOW}💡 O backup foi restaurado e deletado automaticamente{Colors.END}")
             sys.exit(1)
         
         # Pergunta se quer atualizar o utils/ano.txt
@@ -597,7 +619,7 @@ def main():
                 response = input().strip().lower()
                 if response in ['y', 'yes', 's', 'sim']:
                     print(f"\n{Colors.BLUE}Processando `data.toml`...{Colors.END}")
-                    result = subprocess.run(['poetry', 'run', 'data-toml-update'], capture_output=True, text=True)
+                    result = subprocess.run(['poetry', 'run', 'config-data-toml'], capture_output=True, text=True)
                     if result.returncode == 0:
                         print(f"{Colors.GREEN}✅ `data.toml` atualizado com sucesso!{Colors.END}")
                         # Remover logs detalhados - apenas mostrar sucesso
@@ -639,7 +661,7 @@ def main():
         if not non_interactive:
             print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAR DATAPACKAGE.YAML{Colors.END}")
             print(f"{Colors.YELLOW}{'─' * 30}{Colors.END}")
-            print(f"{Colors.BLUE}Isso validará e corrigirá anos no `datapackage.yaml` baseado no ANO_LOA [{new_values.get('ANO_LOA', 'N/A')}].{Colors.END}")
+            print(f"{Colors.BLUE}Isso validará e atualizará os valores de anos no `datapackage.yaml` conforme ANO_LOA [{new_values.get('ANO_LOA', 'N/A')}].{Colors.END}")
             print(f"\n{Colors.YELLOW}Deseja atualizar? (y/N): {Colors.END}", end="")
             try:
                 response = input().strip().lower()
@@ -662,32 +684,28 @@ def main():
 
         # Pergunta se quer atualizar capa dos volumes
         if not non_interactive:
-            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAR CAPA DOS VOLUMES{Colors.END}")
-            print(f"{Colors.YELLOW}{'─' * 27}{Colors.END}")
+            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAÇÃO DE CAPAS DOS VOLUMES{Colors.END}")
+            print(f"{Colors.YELLOW}{'─' * 35}{Colors.END}")
             print(f"{Colors.BLUE}A nova capa enviada pela DCPPN deve ser salva em `capas/capaLOA.pdf`.{Colors.END}")
             print(f"{Colors.BLUE}Se já fez isso, podemos atualizar as referências de capa em cada volume.{Colors.END}")
-            print(f"\n{Colors.YELLOW}Deseja atualizar? (y/N): {Colors.END}", end="")
+            print(f"\n{Colors.YELLOW}Deseja atualizar as capas agora? (y/N): {Colors.END}", end="")
             try:
                 response = input().strip().lower()
                 if response in ['y', 'yes', 's', 'sim']:
-                    source_cover = Path('capas/capaLOA.pdf')
-                    if not source_cover.exists():
-                        print(f"{Colors.RED}❌ Arquivo `capas/capaLOA.pdf` não encontrado. Coloque a nova capa nessa pasta e tente novamente.{Colors.END}")
+                    print(f"\n{Colors.BLUE}Executando atualização de capas...{Colors.END}")
+                    import subprocess
+                    result = subprocess.run(['poetry', 'run', 'config-capa'], capture_output=True, text=True)
+                    if result.returncode == 0:
+                        print(f"{Colors.GREEN}✅ Capas atualizadas com sucesso!{Colors.END}")
+                        if result.stdout:
+                            print(result.stdout)
                     else:
-                        print(f"\n{Colors.BLUE}Atualizando capas dos volumes...{Colors.END}")
-                        volumes = ['volume1', 'volume2', 'volume3', 'volume4', 'volume5', 'volume6', 'volume7']
-                        for vol in volumes:
-                            dest = Path(vol) / 'Rnw' / 'capaLOA.pdf'
-                            try:
-                                # Garante diretório existente
-                                dest.parent.mkdir(parents=True, exist_ok=True)
-                                shutil.copyfile(source_cover, dest)
-                                print(f"{Colors.GREEN}✓ {dest.as_posix()} atualizado{Colors.END}")
-                            except Exception as e:
-                                print(f"{Colors.YELLOW}⚠️  Falha ao atualizar {dest.as_posix()}: {e}{Colors.END}")
-                        print(f"{Colors.GREEN}✅ Capas atualizadas em todos os volumes disponíveis.{Colors.END}")
+                        print(f"{Colors.RED}❌ Erro ao atualizar capas{Colors.END}")
+                        if result.stderr:
+                            print(result.stderr)
                 else:
                     print(f"{Colors.BLUE}Capas dos volumes não foram atualizadas.{Colors.END}")
+                    print(f"{Colors.CYAN}💡 Execute 'make config-capa' quando necessário{Colors.END}")
             except KeyboardInterrupt:
                 print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
         
@@ -718,17 +736,19 @@ def main():
     
     except KeyboardInterrupt:
         print(f"\n\n{Colors.YELLOW}⚠️  Operação cancelada pelo usuário{Colors.END}")
-        print(f"{Colors.BLUE}💡 Restaurando estado original...{Colors.END}")
+        print(f"{Colors.BLUE}💡 Restaurando estado original e limpando backup...{Colors.END}")
         if backup_path and backup_path.exists():
             restore_from_backup(backup_path)
             cleanup_backup(backup_path)
+            print(f"{Colors.GREEN}✅ Backup restaurado e deletado{Colors.END}")
         sys.exit(0)
     except Exception as e:
         print(f"\n{Colors.RED}❌ Erro inesperado: {e}{Colors.END}")
-        print(f"{Colors.BLUE}💡 Restaurando estado original...{Colors.END}")
+        print(f"{Colors.BLUE}💡 Restaurando estado original e limpando backup...{Colors.END}")
         if backup_path and backup_path.exists():
             restore_from_backup(backup_path)
             cleanup_backup(backup_path)
+            print(f"{Colors.GREEN}✅ Backup restaurado e deletado{Colors.END}")
         sys.exit(1)
 
 if __name__ == "__main__":
