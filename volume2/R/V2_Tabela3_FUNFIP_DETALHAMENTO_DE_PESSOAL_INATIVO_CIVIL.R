@@ -9,9 +9,9 @@ source("utils/trataBancos/trataPessoal.R", encoding = "UTF-8")
 
 # ============================================================================
 # Definir parâmetros
-codigo_desconsiderar = c(7008, 7023, 7016)
+codigo_desconsiderar = c(7008, 7016, 7023)
 cod_funfip = 4711
-desconsiderar_uo = c(9207, 1111, 1461, 2391, 2401, 2451)
+desconsiderar_uo = c(1111, 1461, 2391, 2401, 2451, 9207)
 codigo_inativos = c(7007, 7006)
 uo_militar_com_civis_inativos = c(1251, 1401) #criado para tratar a excessão dos das UO em códigos_inativos que tem inativos civis (PMMG e CBMMG)
 # ============================================================================

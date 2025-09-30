@@ -1,41 +1,41 @@
 espec	VL_LOA_REC	ordem	nvl
-RECEITAS CORRENTES ( I )	154.479.863.446	 0	0
-Impostos, Taxas e Contribuições de Melhoria	111.886.720.447	 1	1
-Principal	109.396.508.099	 2	2
-ICMS	83.330.428.461	 3	3
-IPVA	11.449.511.179	 4	3
-ITCD	1.932.807.142	 5	3
-IRRF	7.790.417.687	 6	3
-Taxas	4.893.343.630	 7	3
-Acessórias [Dívida Ativa, Multas e Juros]	2.490.212.348	 8	2
-ICMS	1.348.631.494	 9	3
-IPVA	866.341.502	10	3
-ITCD	180.065.606	11	3
-Taxas	95.173.746	12	3
-Receitas de Contribuições	5.997.553.521	13	1
-Receita Patrimonial	5.278.030.212	14	1
-Rendimentos de Aplicação Financeira	2.690.453.689	15	2
-Outras Receitas Patrimoniais	2.587.576.523	16	2
-Receita Agropecuária	11.488.331	17	1
-Receita Industrial	599.521.808	18	1
-Receita de Serviços	1.389.471.708	19	1
-Receita de Transferências Correntes	27.602.918.081	20	1
-Cota-Parte do FPE	9.280.345.241	21	2
-Transferências da LC 61/1989	980.733.948	23	2
-Transferências do FUNDEB	12.704.682.660	24	2
-Outras Transferências Correntes	4.637.156.232	25	2
-Outras Receitas Correntes	1.714.159.338	26	1
-DEDUÇÕES ( II )	49.170.002.821	27	0
-Transferências Constitucionais e Legais	27.567.408.991	28	1
-Contrib. para o Plano de Previdência do Servidor	3.694.896.077	29	1
-Contrib. para o Custeio das Pensões Militares	1.278.060.966	30	1
-Compensação Financ. entre Regimes Previdência	41.641.705	31	1
-Rendimentos de Aplicações de Recursos Previdenciários	52.369.759	32	1
-Dedução da Receita Corrente – Formação do FUNDEB	16.535.625.323	33	1
-RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )	105.309.860.625	34	0
-(-) Transf. obrig. da União relativas às emendas individuais (art. 166-A, § 1\degree, da CF) (IV)	79.582.247	35	0
-RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )	105.230.278.378	36	0
-(-) Transf. obrig. da União relativas às emendas de bancada (art. 166, § 16, da CF) (VI)	18.222.646	37	0
+RECEITAS CORRENTES ( I )	171.685.893.968	 0	0
+Impostos, Taxas e Contribuições de Melhoria	124.197.706.667	 1	1
+Principal	121.065.396.796	 2	2
+ICMS	91.800.255.754	 3	3
+IPVA	13.177.428.728	 4	3
+ITCD	2.164.143.438	 5	3
+IRRF	8.380.623.258	 6	3
+Taxas	5.542.945.618	 7	3
+Acessórias [Dívida Ativa, Multas e Juros]	3.132.309.871	 8	2
+ICMS	1.628.676.236	 9	3
+IPVA	1.209.978.371	10	3
+ITCD	207.894.333	11	3
+Taxas	85.760.931	12	3
+Receitas de Contribuições	6.834.221.505	13	1
+Receita Patrimonial	8.195.024.510	14	1
+Rendimentos de Aplicação Financeira	2.987.112.860	15	2
+Outras Receitas Patrimoniais	5.207.911.650	16	2
+Receita Agropecuária	13.939.043	17	1
+Receita Industrial	396.902.303	18	1
+Receita de Serviços	1.583.980.866	19	1
+Receita de Transferências Correntes	28.466.146.753	20	1
+Cota-Parte do FPE	10.210.359.074	21	2
+Transferências da LC 61/1989	1.268.112.884	23	2
+Transferências do FUNDEB	13.490.396.315	24	2
+Outras Transferências Correntes	3.497.278.480	25	2
+Outras Receitas Correntes	1.997.972.321	26	1
+DEDUÇÕES ( II )	53.952.634.684	27	0
+Transferências Constitucionais e Legais	30.653.289.783	28	1
+Contrib. para o Plano de Previdência do Servidor	3.941.300.432	29	1
+Contrib. para o Custeio das Pensões Militares	1.009.741.389	30	1
+Compensação Financ. entre Regimes Previdência	81.000.000	31	1
+Rendimentos de Aplicações de Recursos Previdenciários	55.463.500	32	1
+Dedução da Receita Corrente – Formação do FUNDEB	18.211.839.580	33	1
+RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )	117.733.259.284	34	0
+(-) Transf. obrig. da União relativas às emendas individuais (art. 166-A, § 1\degree, da CF) (IV)	20.762.514	35	0
+RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )	117.712.496.770	36	0
+(-) Transf. obrig. da União relativas às emendas de bancada (art. 166, § 16, da CF) (VI)	17.797.057	37	0
 (-) Transf. da União relativas a remuneração dos agentes comunitários de saúde e de combate às endemias (CF, art. 198, § 11 (VII)	              0	38	0
 (-) Outras Deduções Constitucionais ou Legais (VIII)	              0	39	0
-RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (IX) = (V - VI - VII - VIII)	105.212.055.732	40	0
+RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (IX) = (V - VI - VII - VIII)	117.694.699.713	40	0

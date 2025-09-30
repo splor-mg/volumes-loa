@@ -1,0 +1,2 @@
+Warning in trataDetalhe_Obras("bancos/SISOR/BASE_DETALHAMENTO_OBRAS.xlsx",  :
+  trataDetalhe_Obras(): Na linha  70, 71, 72, 73, 74, 154  há um valor igual a zero para a soma de valor tesouro e valor outros

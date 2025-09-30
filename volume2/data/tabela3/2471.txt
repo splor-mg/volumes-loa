@@ -1,0 +1,6 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	" 2"	"38"	"6.117.900"	"100"	"2.47.1 - AGÊNCIA REGULADORA DE TRANSPORTES DO ESTADO DE MINAS GERAIS - ARTEMIG"	"1.30.0 - SECRETARIA DE ESTADO DE INFRAESTRUTURA, MOBILIDADE E PARCERIA - SEINFRA"
+	"DIREÇÃO E ASSESSORAMENTO"	"12"					
+	"DIREÇÃO SUPERIOR"	" 4"					
+	"ESPECIALIZADA"	"20"					
+"TOTAL"			"38"	"6.117.900"	"100"		

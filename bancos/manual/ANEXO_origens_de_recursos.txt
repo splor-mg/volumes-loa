@@ -14,4 +14,3 @@ cod	descricao
 4	KFW
 1	Recursos Próprios
 4	Recursos Próprios
-

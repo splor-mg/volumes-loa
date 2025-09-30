@@ -96,5 +96,11 @@ Warning in eval(expr, .GlobalEnv) :
   V2B T3: Para a UO 4451 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
 
 Warning in eval(expr, .GlobalEnv) :
+  V2B T3: Para a UO 4731 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
+
+Warning in eval(expr, .GlobalEnv) :
   V2B T5: Para a UO 1441 NÃO existe o banco  T5 DEMONSTRATIVO DOS RECURSOS FINANCEIROS TABELA DEMAIS RECURSOS
+Warning in eval(expr, .GlobalEnv) :
+  V2B T3: Para a UO 4741 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
+
 Output file:  Projeto_volume2B.pdf
