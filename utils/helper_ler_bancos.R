@@ -50,14 +50,14 @@ load_acoes = function(base) {
         `Especificação do Produto`                                = readr::col_character(),
         `Código da Unidade de Medida do Produto`                  = readr::col_integer(),
         `Unidade de Medida do Produto`                            = readr::col_character(),
-        `Previsão Orçamentária 2025`                              = readr::col_double(),
         `Previsão Orçamentária 2026`                              = readr::col_double(),
         `Previsão Orçamentária 2027`                              = readr::col_double(),
         `Previsão Orçamentária 2028`                              = readr::col_double(),
-        `Previsão Física 2025`                                    = readr::col_double(),
+        `Previsão Orçamentária 2029`                              = readr::col_double(),
         `Previsão Física 2026`                                    = readr::col_double(),
         `Previsão Física 2027`                                    = readr::col_double(),
         `Previsão Física 2028`                                    = readr::col_double(),
+        `Previsão Física 2029`                                    = readr::col_double(),
         `Ação Transposta`                                         = readr::col_character(),
         `Setor de Governo`                                        = readr::col_character()
       )
