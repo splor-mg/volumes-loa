@@ -73,6 +73,9 @@ config-project-id: ## Remove ProjectId do arquivo LOA.Rproj (idempotente)
 config-capa: ## Atualiza capas dos volumes
 	@poetry run config-capa
 
+check-ano-loa: ## Verifica se o ano da LOA é o mesmo do ano da imagem Docker
+	@poetry run check-ano-loa
+
 snapshot: ## Cria snapshot dos volumes gerados para conferência posterior via pytest
 	@poetry run snapshot
 	@echo "Arquivos pdf e .tex copiados para checks/assets/"
@@ -91,13 +94,14 @@ docker-pull: ## Baixa a imagem Docker do Docker Hub
 
 docker: docker-pull extract-info ## Cria um container para geração dos PDFs e extrai informações da imagem
 	@if [ TRUE ]; then \
-		$(DOCKER_RUN_CMD); \
+		$(DOCKER_RUN_CMD) -c "poetry install && bash"; \
 	fi
 
 extract-info: ## Extrai versões da imagem Docker e atualiza configurações e datapackage
 	@echo "Extraindo informações da imagem Docker..."
 	@poetry run extract-info
-	@$(MAKE) --no-print-directory
+	@poetry run config-ano-loa
+	
 
 install-pacotes: ## Instala versões específicas dos pacotes DCAF
 	@poetry run install-pacotes
