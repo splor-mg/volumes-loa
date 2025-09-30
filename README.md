@@ -82,14 +82,13 @@ Essas etapas devem ser realizadas com a imagem docker atualizada.
    make v2
    make v1
    ```
-
 **IMPORTANTE:** Se for necessário informação **sobre qual script estava sendo executado para rastrear algum erro** durante a geração dos volumes defina a variável de ambiente `VERBOSE="--verbose"` no arquivo `.env` e gere o volume novamente.
 
 1. Após todos os volumes gerados e conferidos. Para atualizar todos os assets do testes de pdf execute:
-```
-make snapshot
-```
-Os arquivos das pastas `checks/assets/pdf` e `checks/assets/tex` serão atualizados para os dos pdf atuais.
+   ```
+   make snapshot
+   ```
+   Os arquivos das pastas `checks/assets/pdf` e `checks/assets/tex` serão atualizados para os dos pdf atuais.
 
 1. Com a LOA validada e entregue, criar um commit com o nome checkpoint <etapa_da_loa> para marcar o ponto de referência para os testes de snapshot em futuras atualizações da LOA.
 Etapas atuais: `"checkpoint ploa2026"`, `"checkpoint substitutivo2026"`, `"checkpoint loa2026"`
