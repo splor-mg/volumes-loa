@@ -15,7 +15,7 @@
 name = "volumes-loa"
 version = "0.1.0"
 description = "Sistema automatizado para geração de PDFs dos volumes da Lei Orçamentária Anual (LOA)"
-authors = ["Splor MG <contato@splor.mg>"]
+authors = ["Splor MG <aid@planejamento.mg.gov.br>"]
 readme = "README.md"
 packages = [{include = "utils"}]
 
@@ -49,6 +49,7 @@ config-ano-loa = "utils.config_ano_loa:main"
 config-etapa-orcamento = "utils.config_etapa_orcamento:main"
 config-data-toml = "utils.config_data_toml:main"
 config-datapackage = "utils.config_datapackage:main"
+config-capa = "utils.config_capa:main"
 snapshot = "checks.utils:snapshot"
 
 # --------------------------------------------------------------------
