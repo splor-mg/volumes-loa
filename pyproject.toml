@@ -50,6 +50,7 @@ config-etapa-orcamento = "utils.config_etapa_orcamento:main"
 config-data-toml = "utils.config_data_toml:main"
 config-datapackage = "utils.config_datapackage:main"
 config-capa = "utils.config_capa:main"
+config-project-id = "utils.config_rstudio_id:main"
 snapshot = "checks.utils:snapshot"
 
 # --------------------------------------------------------------------
