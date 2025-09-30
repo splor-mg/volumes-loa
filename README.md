@@ -14,19 +14,21 @@ Para se familiarizar com o projeto os seguintes documentos são úteis:
 
 A criação dos volumes depende da atualização de uma série de informações. Em termos gerais, os passos para a atualização dos volumes são:
 
-1. Solicitar à DCPPN a atualização das tabelas de apoio armazenadas no conjunto de dados [dados-volumes-loa](https://github.com/splor-mg/dados-volumes-loa);
-1. Solicitar à DCPPN o arquivo `.pdf` com as capas dos volumes. Renomear para `capaLOA.pdf` e salvar esse arquivo na pasta `capas/`. Ainda é necessário confirmar se houve alteração das páginas da capa de cada volume, definidas nos arquivos `Projeto_volume#.Rnw`. Exemplo de alteração para `Projeto_volume5.Rnw`:
+1. Solicitar à DCPPN: 
+  - a atualização das tabelas de apoio armazenadas no conjunto de dados [dados-volumes-loa](https://github.com/splor-mg/dados-volumes-loa);
+  
+  - o arquivo `.pdf` com as capas dos volumes. Renomear para `capaLOA.pdf` e salvar esse arquivo na pasta `capas/`. Ainda é necessário confirmar se houve alteração das páginas da capa de cada volume, definidas nos arquivos `Projeto_volume#.Rnw`. Exemplo de alteração para `Projeto_volume5.Rnw`:
 
-   ```latex
-   [...]
-   % Capa
-   \begin{titlepage}
-   \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
-   \includepdf[pages={6},scale=1.1]{capaLOA.pdf} % No arquivo capaLOA.pdf a capa do volume 5 está na página 6.
-   \end{titlepage}
-   % \capa
-   [...]
-   ```
+      ```latex
+      [...]
+      % Capa
+      \begin{titlepage}
+      \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+      \includepdf[pages={6},scale=1.1]{capaLOA.pdf} % No arquivo capaLOA.pdf a capa do volume 5 está na página 6.
+      \end{titlepage}
+      % \capa
+      [...]
+      ```
 
 1. Alinhar com a DCAF quais versões do pacote `relatorios`, `reest` e `execucao` devem ser utilizados e verificar necessidade de atualizar as respectivas versões em [volumes-docker](https://github.com/splor-mg/volumes-docker/config.mk).
 
@@ -65,21 +67,21 @@ Essas etapas devem ser realizadas com a imagem docker atualizada.
    **Nota:** O comando `make config` constrói interativamente o arquivo `config.mk` com as seguintes informações:
    
    **Parâmetros informados pelo usuário:**
-   - `ANO_LOA` → Ano de vigência da (P)LOA (ex: 2026)
-   - `ETAPA_ORCAMENTO` → Etapa do ciclo orçamentário:
-     - 1 - PROJETO DE LEI ORÇAMENTÁRIA
-     - 2 - SUBSTITUTIVO PLOA  
-     - 3 - LEI ORÇAMENTÁRIA
-   - `DOCKER_TAG` → Tag da imagem Docker (ex: ploa2026)
-   - `DOCKER_USER` → Usuário do Docker Hub (ex: aidsplormg)
-   - `DOCKER_IMAGE` → Nome da imagem Docker (ex: volumes)
+      - `ANO_LOA` → Ano de vigência da (P)LOA (ex: 2026)
+      - `ETAPA_ORCAMENTO` → Etapa do ciclo orçamentário:
+      - 1 - PROJETO DE LEI ORÇAMENTÁRIA
+      - 2 - SUBSTITUTIVO PLOA  
+      - 3 - LEI ORÇAMENTÁRIA
+      - `DOCKER_TAG` → Tag da imagem Docker (ex: ploa2026)
+      - `DOCKER_USER` → Usuário do Docker Hub (ex: aidsplormg)
+      - `DOCKER_IMAGE` → Nome da imagem Docker (ex: volumes)
    
    **Etapas interativas adicionais:**
-   - Atualização de `utils/ano.txt` com o valor de `ANO_LOA`
-   - Processamento de `data.toml` para substituir variáveis de ano
-   - Atualização de `utils/etapa_orcamento.txt` com a etapa selecionada
-   - Atualização de `datapackage.yaml` para validar e corrigir anos
-   - Atualização das capas dos volumes (copia `capas/capaLOA.pdf` para `volume*/Rnw/`)
+      - Atualização de `utils/ano.txt` com o valor de `ANO_LOA`
+      - Processamento de `data.toml` para substituir variáveis de ano
+      - Atualização de `utils/etapa_orcamento.txt` com a etapa selecionada
+      - Atualização de `datapackage.yaml` para validar e corrigir anos
+      - Atualização das capas dos volumes (copia `capas/capaLOA.pdf` para `volume*/Rnw/`)
 
 3. Crie um container para geração dos PDFs:
 
