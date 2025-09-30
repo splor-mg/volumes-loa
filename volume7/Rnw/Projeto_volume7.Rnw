@@ -59,7 +59,7 @@ Superintendência Central de Planejamento e Orçamento \\
 \vspace*{5em}
 \fontsize{15pt}{12pt}\selectfont {\textbf{VOLUME VI}} \\
 \large{Recursos Recebidos por Danos Advindos de Desastres Socioambientais \\
-Recursos Recebidos por Danos Advindos de Desastres}
+Recursos do acordo de repactuação do Rio Doce}
 \end{center}
 
 \afterpage{\null\thispagestyle{empty}\newpage}
