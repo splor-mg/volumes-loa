@@ -36,16 +36,16 @@ else
 endif
 
 # ====================================================================
-# Versões extraídas da imagem Docker
 # CONFIGURAÇÕES FLUIDAS (alteradas via 'make config' e 'make extract-info')
 # ====================================================================
 # Parâmetros informados pelo usuário
-ANO_LOA=2026
+ANO_LOA=2029
 ETAPA_ORCAMENTO='PROJETO DE LEI ORÇAMENTÁRIA'
 DOCKER_TAG=ploa2026
 DOCKER_USER=aidsplormg
 DOCKER_IMAGE=volumes
 
+# Versões extraídas da imagem Docker
 ANO_LOA_IMAGEM=2026
 RELATORIOS_VERSION=v0.7.98
 EXECUCAO_VERSION=v0.5.27
