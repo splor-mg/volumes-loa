@@ -75,6 +75,7 @@ replace-font-config = "utils.replace_font_config:main"
 # --------------------------------------------------------------------
 check-qdd-fonte-95 = "volume7.checks.check_qdd_fonte_95:main"
 diff-report = "checks.utils:diff"
+check-ano-loa = "utils.check_ano_loa:main"
 
 [build-system]
 requires = ["poetry-core"]
