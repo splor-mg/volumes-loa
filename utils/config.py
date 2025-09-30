@@ -255,6 +255,7 @@ def finalize_config_update(new_values, backup_path, original_hash):
             # 7b. Falha - restaura backup
             print(f"{Colors.RED}❌ Validação falhou - restaurando backup{Colors.END}")
             print(f"{Colors.YELLOW}🔄 Abortando processo e limpando backup...{Colors.END}")
+            print(f"{Colors.BLUE}💡 Dica:{Colors.END} há alterações prévias/não esperadas no `config.mk`. Faça o commit dessas mudanças antes de rodar `make config`.")
             restore_from_backup(backup_path)
             cleanup_backup(backup_path)
             return False
@@ -351,8 +352,7 @@ def get_etapa_orcamento_input(current_value):
         except EOFError:
             return get_etapa_orcamento_by_number(current_num)
         except KeyboardInterrupt:
-            print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
-            sys.exit(1)
+            raise
 
 def get_git_info():
     """Obtém informações do Git (commit hash, branch, etc.)"""
@@ -579,6 +579,8 @@ def main():
         # PROTOCOLO DE CONFERÊNCIA: Finaliza com validação
         if finalize_config_update(new_values, backup_path, original_hash):
             print(f"\n{Colors.GREEN}🎉 Configuração atualizada com sucesso!{Colors.END}")
+            print("\n------------------------------------------\n")
+            step_num = 1
         else:
             print(f"\n{Colors.RED}❌ Falha na validação - configuração não foi salva{Colors.END}")
             print(f"{Colors.YELLOW}💡 O backup foi restaurado e deletado automaticamente{Colors.END}")
@@ -586,9 +588,9 @@ def main():
         
         # Pergunta se quer atualizar o utils/ano.txt
         if not non_interactive:
-            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAR UTILS/ANO.TXT{Colors.END}")
+            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 {step_num}. ATUALIZAR UTILS/ANO.TXT{Colors.END}")
             print(f"{Colors.YELLOW}{'─' * 27}{Colors.END}")
-            print(f"{Colors.BLUE}Isso substituirá o valor de ano em `utils/ano.txt` conforme ANO_LOA [{new_values.get('ANO_LOA', 'N/A')}].{Colors.END}")
+            print(f"{Colors.BLUE}Substitui a informação de ano em `utils/ano.txt` conforme ANO_LOA [{new_values.get('ANO_LOA', 'N/A')}].{Colors.END}")
             print(f"\n{Colors.YELLOW}Deseja atualizar? (y/N): {Colors.END}", end="")
             try:
                 response = input().strip().lower()
@@ -605,16 +607,18 @@ def main():
                 else:
                     print(f"{Colors.BLUE}`utils/ano.txt` não foi atualizado.{Colors.END}")
             except KeyboardInterrupt:
-                print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
+                raise
         else:
             print(f"\n{Colors.BLUE}💡 Execute 'make config-ano-loa' para atualizar utils/ano.txt{Colors.END}")
+        print("\n\n", end="")
         
         # Pergunta se quer atualizar o data.toml
+        step_num += 1
         if not non_interactive:
-            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAR DATA.TOML{Colors.END}")
+            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 {step_num}. ATUALIZAR DATA.TOML{Colors.END}")
             print(f"{Colors.YELLOW}{'─' * 25}{Colors.END}")
-            print(f"{Colors.BLUE}Deseja processar o arquivo `data.toml` e substituir variáveis de ano?{Colors.END}")
-            print(f"\n{Colors.YELLOW}Atualizar `data.toml`? (y/N): {Colors.END}", end="")
+            print(f"{Colors.BLUE}Substitui variáveis de ano no arquivo `data.toml` conforme ANO_LOA [{new_values.get('ANO_LOA', 'N/A')}].{Colors.END}")
+            print(f"\n{Colors.YELLOW}Deseja atualizar? (y/N): {Colors.END}", end="")
             try:
                 response = input().strip().lower()
                 if response in ['y', 'yes', 's', 'sim']:
@@ -630,15 +634,17 @@ def main():
                 else:
                     print(f"{Colors.BLUE}`data.toml` não foi atualizado.{Colors.END}")
             except KeyboardInterrupt:
-                print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
+                raise
         else:
             print(f"\n{Colors.BLUE}💡 Execute 'make data-toml-update' para processar o data.toml{Colors.END}")
+        print("\n\n", end="")
 
         # Pergunta se quer atualizar utils/etapa_orcamento.txt
+        step_num += 1
         if not non_interactive:
-            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAR UTILS/ETAPA_ORCAMENTO.TXT{Colors.END}")
+            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 {step_num}. ATUALIZAR UTILS/ETAPA_ORCAMENTO.TXT{Colors.END}")
             print(f"{Colors.YELLOW}{'─' * 35}{Colors.END}")
-            print(f"{Colors.BLUE}Isso substituirá o valor de etapa em `utils/etapa_orcamento.txt` conforme ETAPA_ORCAMENTO [{new_values.get('ETAPA_ORCAMENTO', 'N/A')}].{Colors.END}")
+            print(f"{Colors.BLUE}Substitui a etapa do ciclo orçamentário em `utils/etapa_orcamento.txt` para [{new_values.get('ETAPA_ORCAMENTO', 'N/A')}].{Colors.END}")
             print(f"\n{Colors.YELLOW}Deseja atualizar? (y/N): {Colors.END}", end="")
             try:
                 response = input().strip().lower()
@@ -655,13 +661,15 @@ def main():
                 else:
                     print(f"{Colors.BLUE}`utils/etapa_orcamento.txt` não foi atualizado.{Colors.END}")
             except KeyboardInterrupt:
-                print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
+                raise
+        print("\n\n", end="")
 
         # Pergunta se quer atualizar datapackage.yaml
         if not non_interactive:
-            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAR DATAPACKAGE.YAML{Colors.END}")
+            step_num += 1
+            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 {step_num}. ATUALIZAR DATAPACKAGE.YAML{Colors.END}")
             print(f"{Colors.YELLOW}{'─' * 30}{Colors.END}")
-            print(f"{Colors.BLUE}Isso validará e atualizará os valores de anos no `datapackage.yaml` conforme ANO_LOA [{new_values.get('ANO_LOA', 'N/A')}].{Colors.END}")
+            print(f"{Colors.BLUE}Valida e atualiza os valores `ano` no `datapackage.yaml` conforme ANO_LOA [{new_values.get('ANO_LOA', 'N/A')}].{Colors.END}")
             print(f"\n{Colors.YELLOW}Deseja atualizar? (y/N): {Colors.END}", end="")
             try:
                 response = input().strip().lower()
@@ -680,14 +688,17 @@ def main():
                 else:
                     print(f"{Colors.BLUE}`datapackage.yaml` não foi atualizado.{Colors.END}")
             except KeyboardInterrupt:
-                print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
+                raise
+        print("\n\n", end="")
 
         # Pergunta se quer atualizar capa dos volumes
         if not non_interactive:
-            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 ATUALIZAÇÃO DE CAPAS DOS VOLUMES{Colors.END}")
+            step_num += 1
+            print(f"\n{Colors.YELLOW}{Colors.BOLD}📄 {step_num}. ATUALIZAÇÃO DE CAPAS DOS VOLUMES{Colors.END}")
             print(f"{Colors.YELLOW}{'─' * 35}{Colors.END}")
             print(f"{Colors.BLUE}A nova capa enviada pela DCPPN deve ser salva em `capas/capaLOA.pdf`.{Colors.END}")
             print(f"{Colors.BLUE}Se já fez isso, podemos atualizar as referências de capa em cada volume.{Colors.END}")
+            print(f"\n{Colors.YELLOW}(💡 se ainda não fez, pule esta etapa e depois rode `make config-capa`){Colors.END}")
             print(f"\n{Colors.YELLOW}Deseja atualizar as capas agora? (y/N): {Colors.END}", end="")
             try:
                 response = input().strip().lower()
@@ -707,8 +718,38 @@ def main():
                     print(f"{Colors.BLUE}Capas dos volumes não foram atualizadas.{Colors.END}")
                     print(f"{Colors.CYAN}💡 Execute 'make config-capa' quando necessário{Colors.END}")
             except KeyboardInterrupt:
-                print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
+                raise
+        print("\n\n", end="")
         
+        # Etapa final: normalizar ProjectId do RStudio (idempotente)
+        try:
+            if not non_interactive:
+                step_num += 1
+                print(f"\n{Colors.YELLOW}{Colors.BOLD}🧹 {step_num}. NORMALIZAR RSTUDIO PROJECT ID{Colors.END}")
+                print(f"{Colors.YELLOW}{'─' * 30}{Colors.END}")
+                print(f"{Colors.BLUE}Remover a linha 'ProjectId' do arquivo `LOA.Rproj` força o RStudio a regenerar metadados do projeto (útil no início de um novo ciclo/ano).{Colors.END}")
+                print(f"\n{Colors.YELLOW}Deseja remover o ProjectId agora? (y/N): {Colors.END}", end="")
+                response = input().strip().lower()
+                if response in ['y', 'yes', 's', 'sim']:
+                    import subprocess
+                    result = subprocess.run(['poetry', 'run', 'config-project-id'], capture_output=True, text=True)
+                    if result.stdout:
+                        print(result.stdout.strip())
+                    if result.returncode != 0:
+                        print(f"{Colors.YELLOW}⚠️  Falha ao normalizar ProjectId (prosseguindo mesmo assim).{Colors.END}")
+                        if result.stderr:
+                            print(result.stderr.strip())
+                else:
+                    print(f"{Colors.BLUE}ProjectId não foi alterado.{Colors.END}")
+            else:
+                # Modo não-interativo: não altera por padrão
+                print(f"\n{Colors.BLUE}💡 Para regenerar metadados do RStudio, rode 'make config-project-id' quando necessário{Colors.END}")
+        except KeyboardInterrupt:
+            raise
+        except Exception as e:
+            print(f"{Colors.YELLOW}⚠️  Não foi possível executar 'config-project-id': {e}{Colors.END}")
+        print("\n\n", end="")
+
         # Mensagem informativa sobre próximo passo
         print(f"\n{Colors.BLUE}{Colors.BOLD}🚀 PRÓXIMO PASSO{Colors.END}")
         print(f"{Colors.BLUE}{'─' * 20}{Colors.END}")
@@ -730,10 +771,10 @@ def main():
                 else:
                     print(f"{Colors.BLUE}make docker não executado.{Colors.END}")
             except KeyboardInterrupt:
-                print(f"\n{Colors.YELLOW}Operação cancelada.{Colors.END}")
+                raise
         else:
             print(f"\n{Colors.BLUE}💡 Execute 'make docker' para baixar a imagem Docker configurada{Colors.END}")
-    
+
     except KeyboardInterrupt:
         print(f"\n\n{Colors.YELLOW}⚠️  Operação cancelada pelo usuário{Colors.END}")
         print(f"{Colors.BLUE}💡 Restaurando estado original e limpando backup...{Colors.END}")
