@@ -75,6 +75,7 @@ Essas etapas devem ser realizadas com a imagem docker atualizada.
 1. Atualizar todos os bancos `.txt` e gerar os arquivos dos volumes `.pdf`. Esse passo pode ser realizado pelos comandos make. Sugere-se montar volume por volume, do mais fácil para o mais dificil segundo a orgem abaixo:
 
    ```
+   make v7
    make v6
    make v5
    make v4
