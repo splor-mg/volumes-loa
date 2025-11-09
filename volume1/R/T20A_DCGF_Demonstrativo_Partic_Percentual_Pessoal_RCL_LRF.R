@@ -60,7 +60,9 @@ setnames(loa_desp, "VL_LOA_DESP", "VL_DESP")
 
 # =============== A - Receita Corrente Líquida =========================
 parteA_desc =  "A - Receita Corrente Líquida para Cálculo de Despesa de Pessoal"
-vl_rcl = sum(loa_rec[is_rcl_pessoal(loa_rec), VL_REC])
+
+setnames(loa_rec, tolower(names(loa_rec)))
+vl_rcl = sum(loa_rec[is_rcl_pessoal(loa_rec), vl_rec])
 parteA = data.table(cod=1, espec = parteA_desc, perc = NA, valor= vl_rcl)
 
 # =============== B - Limite das Despesas com Pessoal, Disciplinado pela Lei 101/2000 ========
@@ -70,9 +72,11 @@ parteB = data.table(cod=2, espec = parteB_desc, perc = NA, valor=NA)
 
 # =============== B - Legislativo e TCE ===============================================
 desc_legisl = "Poder Legislativo (inclusive Tribunal de Contas)"
+
+setnames(loa_desp, tolower(names(loa_desp)))
 vl_legisl = loa_desp[is_dtp(loa_desp) & 
             (is_legislativo(loa_desp) | is_tce(loa_desp)), 
-             sum(VL_DESP)]
+             sum(vl_desp)]
 perc_legisl = 0.03
 
 parte_legisl = data.table(cod=c(3,4), 
@@ -84,7 +88,7 @@ parte_legisl = data.table(cod=c(3,4),
 # =============== B - Judiciário ======================================================
 desc_jud = "Poder Judiciário"
 vl_jud = loa_desp[is_dtp(loa_desp) & 
-                    (is_judiciario(loa_desp)), sum(VL_DESP)]
+                    (is_judiciario(loa_desp)), sum(vl_desp)]
 perc_jud = 0.06
 
 parte_jud = data.table(cod=c(5,6),
@@ -95,7 +99,7 @@ parte_jud = data.table(cod=c(5,6),
 
 # =============== B - Ministério Público ===============================================
 desc_pgj = "Poder Ministério Público"
-vl_pgj = loa_desp[is_dtp(loa_desp) & (is_pgj(loa_desp)), sum(VL_DESP)]
+vl_pgj = loa_desp[is_dtp(loa_desp) & (is_pgj(loa_desp)), sum(vl_desp)]
 perc_pgj = 0.02
 
 parte_pgj = data.table(cod=c(7,8),
@@ -108,7 +112,7 @@ parte_pgj = data.table(cod=c(7,8),
 # =============== B - Poder Executivo ==================================================
 desc_executivo = "Poder Executivo (inclusive Defensoria Pública)"
 vl_executivo = loa_desp[is_dtp(loa_desp) & !(is_pgj(loa_desp) | is_legislativo(loa_desp) | 
-                                               is_tce(loa_desp) | is_judiciario(loa_desp)), sum(VL_DESP)]
+                                               is_tce(loa_desp) | is_judiciario(loa_desp)), sum(vl_desp)]
 perc_executivo = 0.49
 parte_executivo = data.table(cod=c(9,10),
                              espec=c(desc_executivo, percent_orc),
@@ -119,7 +123,7 @@ parte_executivo = data.table(cod=c(9,10),
 # =============== B - Total de pessoal do Estado =======================================
 desc_total_pessoal = "Total Pessoal do Estado"
 desc_lrf = "Lei de Responsabilidade Fiscal"
-vl_total = loa_desp[is_dtp(loa_desp), sum(VL_DESP)]
+vl_total = loa_desp[is_dtp(loa_desp), sum(vl_desp)]
 perc_total = 0.6
 
 parte_total = data.table(cod = c(11, 12, 13),
@@ -143,3 +147,4 @@ demonstr[, espec := correcaoCaracteresEspeciais(espec, caracteres)]
 
 write.table(demonstr, "volume1/data/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
+

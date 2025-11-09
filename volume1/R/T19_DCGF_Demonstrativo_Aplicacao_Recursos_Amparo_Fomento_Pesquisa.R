@@ -34,9 +34,11 @@ if(length(loa_desp[, unique(merge)])>1){
 # =================== Receita Orçamentária Corrente Ordinária - Base de Cálculo =========================
 parteA_desc =  "A - Receita Orçamentária Corrente Ordinária - Base de Cálculo"
 
-parteA = data.table(cod=1, espec = parteA_desc, valor= loa_rec[is_fapemig_rec(loa_rec), sum(VL_REC)])
 
-deducao30_Fapemig = loa_rec[is_fapemig_rec(loa_rec), sum(VL_REC)*0.3]
+setnames(loa_rec, tolower(names(loa_rec)))
+parteA = data.table(cod=1, espec = parteA_desc, valor= loa_rec[is_fapemig_rec(loa_rec), sum(vl_rec)])
+
+deducao30_Fapemig = loa_rec[is_fapemig_rec(loa_rec), sum(vl_rec)*0.3]
 
 parteA = rbind(parteA, data.table(cod=2,
                                   espec = "B - DESVINCULAÇÃO DE 30% DE IMPOSTOS, TAXAS E MULTAS (EC 132/2023)", 
@@ -57,9 +59,9 @@ parteB_desc =  "E - APLICAÇÃO DE RECURSOS ORDINÁRIOS DESTINADOS AO AMPARO E F
 
 
 
-
-parteB = loa_desp[is_fapemig_desp(loa_desp), list(valor = sum(VL_DESP)), 
-                  by=list(cod = UO_COD, espec = UO)]
+setnames(loa_desp, tolower(names(loa_desp)))
+parteB = loa_desp[is_fapemig_desp(loa_desp), list(valor = sum(vl_desp)), 
+                  by=list(cod = uo_cod, espec = uo)]
 
 
 

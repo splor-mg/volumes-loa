@@ -1,4 +1,35 @@
-Warning: T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitasprevidenciarias em funcoes.R 14.669.803.451 diferente do valor calculado em demonstr_receitas_previdenciarias 12.309.060.693
-
-Warning: T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitasprevidenciarias em funcoes.R 14.669.803.451 diferente do valor calculado em demonstr_receitas_previdenciarias 5.090.196.095
-
+Error: 
+Coluna ano nao encontrada. Verifique sua base de dados.
+Coluna receita_cod nao encontrada. Verifique sua base de dados.
+Execution halted
+Error: 
+Coluna ano nao encontrada. Verifique sua base de dados.
+Coluna receita_cod nao encontrada. Verifique sua base de dados.
+Execution halted
+Error: 
+Coluna receita_cod nao encontrada. Verifique sua base de dados.
+Coluna fonte_cod nao encontrada. Verifique sua base de dados.
+Execution halted
+Error: 
+Coluna receita_cod nao encontrada. Verifique sua base de dados.
+Coluna fonte_cod nao encontrada. Verifique sua base de dados.
+Execution halted
+Error: 
+Coluna ano nao encontrada. Verifique sua base de dados.
+Coluna fonte_cod nao encontrada. Verifique sua base de dados.
+Execution halted
+Error: 
+Coluna ano nao encontrada. Verifique sua base de dados.
+Coluna funcao_cod nao encontrada. Verifique sua base de dados.
+Coluna fonte_cod nao encontrada. Verifique sua base de dados.
+Coluna grupo_cod nao encontrada. Verifique sua base de dados.
+Coluna acao_cod nao encontrada. Verifique sua base de dados.
+Execution halted
+Error: 
+Coluna acao_cod nao encontrada. Verifique sua base de dados.
+Coluna grupo_cod nao encontrada. Verifique sua base de dados.
+Execution halted
+Error in adiciona_desc(despesa, columns = c("UO", "PROGRAMA")) : 
+  ano_desc %in% names(base) is not TRUE
+Calls: adiciona_desc -> stopifnot
+Execution halted

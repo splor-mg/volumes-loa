@@ -24,12 +24,14 @@ loa_rec = geraLoa_rec(receita)
 
 sumario = data.table(read.table("volume2/data/sumario.txt", header=T, sep="\t",stringsAsFactors =F))
 
+# tolower para colocar nomes no padrão do pacote relatorios
+setnames(loa_rec, tolower(names(loa_rec)))
 mde = demonstr_mde_rec(loa_rec)
 
-total_receita_liquida = mde[nvl==1 & !grepl("^3.+", espec), sum(VL_LOA)] - 
-  mde[nvl==1 & grepl("^3 - DEDUÇÕES.+", espec), sum(VL_LOA)]
+total_receita_liquida = mde[nvl==1 & !grepl("^3.+", espec), sum(vl_loa)] - 
+  mde[nvl==1 & grepl("^3 - DEDUÇÕES.+", espec), sum(vl_loa)]
 
-if(total_receita_liquida!= loa_rec[is_mde_rec(loa_rec), sum(VL_LOA_REC)]){
+if(total_receita_liquida!= loa_rec[is_mde_rec(loa_rec), sum(vl_loa_rec)]){
   warning("T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino: Receita mde via demonstr_mde_rec ",
           formatarNum(total_receita_liquida), " é diferente do apresentado em relatorios ",
           loa_rec[is_mde_rec(loa_rec), formatarNum(sum(VL_LOA_REC))], "\n")
@@ -37,27 +39,29 @@ if(total_receita_liquida!= loa_rec[is_mde_rec(loa_rec), sum(VL_LOA_REC)]){
 
 mde = rbind(mde, data.table(espec = "A. TOTAL DA RECEITA LÍQUIDA (1 + 2 - 3)",
                             nvl = 0,
-                            VL_LOA = total_receita_liquida))
+                            vl_loa = total_receita_liquida))
 mde = mde[, cod:= NA]
 
 # =============== E - DESPESA COM MANUTENÇÃO E DESENVOLVIMENTO DE ENSINO ===
 parteE_desc = "B - DESPESAS COM MANUTENÇÃO E DESENVOLVIMENTO DE ENSINO CUSTEADAS COM RECURSOS DE IMPOSTOS"
 
-parteE = loa_desp[is_mde_desp(loa_desp) & FONTE_COD %in% c(10, 71) , ]
-parteE = mergeDT(parteE, sumario, by.x="UO_COD", by.y="COD_UO", all.x=T)
+# tolower para colocar nomes no padrão do pacote relatorios
+setnames(loa_desp, tolower(names(loa_desp)))
+parteE = loa_desp[is_mde_desp(loa_desp) & fonte_cod %in% c(10, 71) , ]
+parteE = mergeDT(parteE, sumario, by.x="uo_cod", by.y="COD_UO", all.x=T)
 
 if(length(parteE[, unique(merge)])>1){
   stop("T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino: Há UO's que não possuem seu descritivo ",
        "em volume2/data/sumario.txt. É o caso de:",
-       paste(parteE[merge!="Em ambos os bancos", unique(UO_COD)], collapse=", "), "\n")
+       paste(parteE[merge!="Em ambos os bancos", unique(uo_cod)], collapse=", "), "\n")
 }
 
-parteE = parteE[, list(VL_LOA = sum(VL_DESP), nvl = 1), 
-                by=list(cod = paste0(UO_COD, " . ", FUNCAO_COD), espec = UO)]
+parteE = parteE[, list(vl_loa = sum(vl_desp), nvl = 1), 
+                by=list(cod = paste0(uo_cod, " . ", funcao_cod), espec = UO)]
 
 #vl_perda_fundeb = abs(loa_rec[is_perda_fundeb(loa_rec), sum(VL_LOA_REC)])
 
-vl_transf_fundeb = abs(loa_rec[FONTE_COD == 23 & nat(RECEITA_COD, 9), sum(VL_LOA_REC)])
+vl_transf_fundeb = abs(loa_rec[fonte_cod == 23 & nat(receita_cod, 9), sum(vl_loa_rec)])
 
 
 #adicionado para LOA 2021.
@@ -79,22 +83,22 @@ vl_transf_fundeb = abs(loa_rec[FONTE_COD == 23 & nat(RECEITA_COD, 9), sum(VL_LOA
 #                           cod = NA)
 
 transf_fundeb = data.table(espec ="C - TRANSFERÊNCIAS DO ESTADO AO FUNDEB", 
-                          VL_LOA = vl_transf_fundeb,
+                          vl_loa = vl_transf_fundeb,
                           nvl = 0,
                           cod = NA)
 
-vl_mde = parteE[,sum(VL_LOA)]
+vl_mde = parteE[,sum(vl_loa)]
 
 
 despesas_lmc_desc = "D - TOTAL DAS DESPESAS PARA FINS DE LIMITE MÍNIMO CONSTITUCIONAL (B+C)"
 
 despesas_lmc = data.table(espec =despesas_lmc_desc, 
-                           VL_LOA = vl_mde + vl_transf_fundeb,
+                           vl_loa = vl_mde + vl_transf_fundeb,
                            nvl = 0,
                            cod = NA)
 
 parteE = rbind(data.table(espec = parteE_desc, 
-                          VL_LOA = parteE[,sum(VL_LOA)],
+                          vl_loa = parteE[,sum(vl_loa)],
                           nvl = 0, cod=NA), 
                parteE)
 
@@ -107,8 +111,8 @@ parteE = rbind(parteE, despesas_lmc )
 
 parteF_desc = "E - Percentual de aplicação da receita resultante de impostos e de transferência na manutenção e desenvolvimento do ensino - B/A aplicação mínima 25%"
 
-valorE = round(parteE[espec ==despesas_lmc_desc, VL_LOA]*100 / total_receita_liquida,2)
-parteF = data.table(cod = NA, espec = parteF_desc, nvl = 0, VL_LOA = paste0(format(valorE, 
+valorE = round(parteE[espec ==despesas_lmc_desc, vl_loa]*100 / total_receita_liquida,2)
+parteF = data.table(cod = NA, espec = parteF_desc, nvl = 0, vl_loa = paste0(format(valorE, 
                                                                                    big.mark=".", 
                                                                                    scientific = FALSE, 
                                                                                    decimal.mark = ",", 
@@ -121,7 +125,7 @@ demonstr = demonstr[,lapply(.SD, formatarNum)]
 
 demonstr = rbind(demonstr, parteF, use.names = T)
 
-setcolorder(demonstr, c("cod", "nvl", "espec", "VL_LOA"))
+setcolorder(demonstr, c("cod", "nvl", "espec", "vl_loa"))
 
 demonstr[, espec := correcaoCaracteresEspeciais(espec, caracteres)]
 

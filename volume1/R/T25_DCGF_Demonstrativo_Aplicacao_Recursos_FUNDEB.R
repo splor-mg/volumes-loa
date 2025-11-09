@@ -51,24 +51,25 @@ parteA = rbind(data.table(cod=NA,
 
 # =============== DESPESA =======================
 parteB_desc =  "DESPESA"
-loa_desp = loa_desp[ (FONTE_COD==23 |  FONTE_COD==13) , ]
+setnames(loa_desp, tolower(names(loa_desp)))
+loa_desp = loa_desp[ (fonte_cod==23 |  fonte_cod==13) , ]
 
-loa_desp = mergeDT(loa_desp, subfuncao_desc, by.x="SUBFUNCAO_COD", by.y="codigo", all.x=T)
+loa_desp = mergeDT(loa_desp, subfuncao_desc, by.x="subfuncao_cod", by.y="codigo", all.x=T)
 setnames(loa_desp, "subfuncao", "espec")
 loa_desp[, merge:=NULL]
 
 subf_esperadas = c(361, 363, 362, 366, 367, 368) # Códigos de subfunção que apareceram em 2023
 
-if(length(intersect(loa_desp[, unique(SUBFUNCAO_COD)], subf_esperadas)) != length(loa_desp[, unique(SUBFUNCAO_COD)])){
+if(length(intersect(loa_desp[, unique(subfuncao_cod)], subf_esperadas)) != length(loa_desp[, unique(subfuncao_cod)])){
   warning(paste0("T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB: ",
-                 "setdiff(loa_desp[, unique(SUBFUNCAO_COD)], subfun_esperadas): ",
-                 setdiff(loa_desp[, unique(SUBFUNCAO_COD)], subf_esperadas),
-                 "\n setdiff(subfun_esperadas, loa_desp[, unique(SUBFUNCAO_COD)]): ",
-                 setdiff(subf_esperadas, loa_desp[, unique(SUBFUNCAO_COD)])))
+                 "setdiff(loa_desp[, unique(subfuncao_cod)], subfun_esperadas): ",
+                 setdiff(loa_desp[, unique(subfuncao_cod)], subf_esperadas),
+                 "\n setdiff(subfun_esperadas, loa_desp[, unique(subfuncao_cod)]): ",
+                 setdiff(subf_esperadas, loa_desp[, unique(subfuncao_cod)])))
 }
 
 
-parteB = loa_desp[, list(valor = sum(VL_DESP)), by=list(cod = paste(UO_COD, SUBFUNCAO_COD), 
+parteB = loa_desp[, list(valor = sum(vl_desp)), by=list(cod = paste(uo_cod, subfuncao_cod), 
                                                         espec)]
 
 parteB = rbind(data.table(cod=NA, 
@@ -93,13 +94,14 @@ write.table(demonst1, "volume1/data/T25_DCGF_Demonstrativo_Aplicacao_Recursos_FU
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
 
 
+setnames(loa_desp, tolower(names(loa_desp)))
 loa_desp_magisterio = loa_desp[is_pessoal_fundeb(loa_desp),]
 
-loa_desp_magisterio[, cod := paste0(UO_COD, " ", FUNCAO_COD, ".", SUBFUNCAO_COD, ".", 
-                                    PROGRAMA_COD, ".", substr(ACAO_COD,1,1), ".", 
-                                    substr(ACAO_COD,2,4))]
+loa_desp_magisterio[, cod := paste0(uo_cod, " ", funcao_cod, ".", subfuncao_cod, ".", 
+                                    programa_cod, ".", substr(acao_cod,1,1), ".", 
+                                    substr(acao_cod,2,4))]
 
-loa_desp_magisterio = loa_desp_magisterio[, list(valor = sum(VL_DESP)), 
+loa_desp_magisterio = loa_desp_magisterio[, list(valor = sum(vl_desp)), 
                                           by=list(cod, espec)]
 
 total_desp_magisterio = loa_desp_magisterio[, sum(valor)]

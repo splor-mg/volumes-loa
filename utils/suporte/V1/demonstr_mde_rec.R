@@ -54,51 +54,54 @@ demonstr_mde_rec = function(loa_rec){
   base[is_ipi_principal(base), c("nvl2", "lvl2"):= list("2.2 - Cota Parte IPI Exportação", 230)]
   base[is_iof_ouro_principal(base), c("nvl2", "lvl2"):= list("2.3 - Cota Parte IOF Ouro", 231)]
 
-  base[nat(RECEITA_COD, 17196201), c("nvl2", "lvl2"):= list("2.4 - Compensação Perdas Arrecadação ICMS - LC nº 194/2022", 240)]
+  base[nat(receita_cod, 17196201), c("nvl2", "lvl2"):= list("2.4 - Compensação Perdas Arrecadação ICMS - LC nº 194/2022", 240)]
     
-  base[is_fpe_principal(base) | is_lei_kandir_principal(base) | is_ipi_principal(base) | is_iof_ouro_principal(base) | nat(RECEITA_COD, 17196201), 
+  base[is_fpe_principal(base) | is_lei_kandir_principal(base) | is_ipi_principal(base) | is_iof_ouro_principal(base) | nat(receita_cod, 17196201), 
        c("nvl1", "lvl1"):= list("2 - RECEITA DE TRANSFERÊNCIAS CONSTITUCIONAIS E LEGAIS", 200)]
   
   # DEDUÇÔES
   
-  base[is_icms_bruto(base) & FONTE_COD == 20,
+  base[is_icms_bruto(base) & fonte_cod == 20,
        c("nvl2d", "lvl2d"):= list("3.1 - Parcela do ICMS Repassada aos Municípios", 310)]
   
-  base[is_ipva_bruto(base) & FONTE_COD == 20,
+  base[is_ipva_bruto(base) & fonte_cod == 20,
        c("nvl2d", "lvl2d"):= list("3.2 - Parcela do IPVA Repassada aos Municípios", 320)]
   
-  base[is_ipi_principal(base) & FONTE_COD == 20,
+  base[is_ipi_principal(base) & fonte_cod == 20,
        c("nvl2d", "lvl2d"):= list("3.3 - Parcela da Cota Parte do IPI Exportação Repassada aos Municípios", 330)]
   
-  base[is_itcd_bruto(base) & FONTE_COD == 20,
+  base[is_itcd_bruto(base) & fonte_cod == 20,
        c("nvl2d", "lvl2d"):= list("3.2 - Parcela do ITCD Repassada aos Municípios", 340)]
 
-  base[nat(RECEITA_COD, 17196201) & FONTE_COD == 20, 
+  base[nat(receita_cod, 17196201) & fonte_cod == 20, 
        c("nvl2d", "lvl2d"):= list("3.4 - Parcela da LC nº 194/2022 Repassada aos Municípios", 350)]
     
-  base[FONTE_COD == 20 & (is_icms_bruto(base) | 
+  base[fonte_cod == 20 & (is_icms_bruto(base) | 
                           is_ipva_bruto(base) |  
                           is_ipi_principal(base) | 
                           is_itcd_bruto(base) |
-                          (nat(RECEITA_COD, 17196201) & FONTE_COD == 20)
+                          (nat(receita_cod, 17196201) & fonte_cod == 20)
                           ), 
        c("nvl1d", "lvl1d"):= list("3 - DEDUÇÕES DE TRANSFERÊNCIAS CONSTITUCIONAIS AOS MUNICÍPIOS", 300)]
   
-  mde_rec = rbindlist(list(base[!is.na(nvl1), list(nvl=1, VL_LOA = sum(VL_LOA_REC)),
+  mde_rec = rbindlist(list(base[!is.na(nvl1), list(nvl=1, VL_LOA = sum(vl_loa_rec)),
                                 by=list(espec=nvl1, ordem = lvl1)],
-                           base[!is.na(nvl1d), list(nvl=1, VL_LOA = sum(VL_LOA_REC)),
+                           base[!is.na(nvl1d), list(nvl=1, VL_LOA = sum(vl_loa_rec)),
                                      by=list(espec=nvl1d, ordem = lvl1d)],
-                           base[!is.na(nvl2d), list(nvl=2, VL_LOA = sum(VL_LOA_REC)),
+                           base[!is.na(nvl2d), list(nvl=2, VL_LOA = sum(vl_loa_rec)),
                                      by=list(espec=nvl2d, ordem = lvl2d)],
-                           base[!is.na(nvl2), list(nvl=2, VL_LOA = sum(VL_LOA_REC)), 
+                           base[!is.na(nvl2), list(nvl=2, VL_LOA = sum(vl_loa_rec)), 
                                 by=list(espec=nvl2, ordem = lvl2)],
-                           base[!is.na(nvl3), list(nvl=3, VL_LOA = sum(VL_LOA_REC)), 
+                           base[!is.na(nvl3), list(nvl=3, VL_LOA = sum(vl_loa_rec)), 
                                 by=list(espec=nvl3, ordem = lvl3)]
                            )
                      )
   
   mde_rec = mde_rec[order(ordem)]
   mde_rec[, ordem:=NULL]
+  
+  setnames(mde_rec, tolower(names(mde_rec)))
+
   
   return(mde_rec)
   
