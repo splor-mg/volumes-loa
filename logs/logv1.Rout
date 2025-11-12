@@ -1,35 +1,4 @@
-Error: 
-Coluna ano nao encontrada. Verifique sua base de dados.
-Coluna receita_cod nao encontrada. Verifique sua base de dados.
-Execution halted
-Error: 
-Coluna ano nao encontrada. Verifique sua base de dados.
-Coluna receita_cod nao encontrada. Verifique sua base de dados.
-Execution halted
-Error: 
-Coluna receita_cod nao encontrada. Verifique sua base de dados.
-Coluna fonte_cod nao encontrada. Verifique sua base de dados.
-Execution halted
-Error: 
-Coluna receita_cod nao encontrada. Verifique sua base de dados.
-Coluna fonte_cod nao encontrada. Verifique sua base de dados.
-Execution halted
-Error: 
-Coluna ano nao encontrada. Verifique sua base de dados.
-Coluna fonte_cod nao encontrada. Verifique sua base de dados.
-Execution halted
-Error: 
-Coluna ano nao encontrada. Verifique sua base de dados.
-Coluna funcao_cod nao encontrada. Verifique sua base de dados.
-Coluna fonte_cod nao encontrada. Verifique sua base de dados.
-Coluna grupo_cod nao encontrada. Verifique sua base de dados.
-Coluna acao_cod nao encontrada. Verifique sua base de dados.
-Execution halted
-Error: 
-Coluna acao_cod nao encontrada. Verifique sua base de dados.
-Coluna grupo_cod nao encontrada. Verifique sua base de dados.
-Execution halted
-Error in adiciona_desc(despesa, columns = c("UO", "PROGRAMA")) : 
-  ano_desc %in% names(base) is not TRUE
-Calls: adiciona_desc -> stopifnot
+Error in `[.data.table`(tbl, index, desc[i], with = FALSE) : 
+  column(s) not found: UO_desc
+Calls: adiciona_desc -> [ -> [.data.table
 Execution halted

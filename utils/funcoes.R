@@ -327,9 +327,9 @@ ultimo_banco_modificado = function(caminho){
 is_receitas_previdenciarias = function(base){
   base[, RECEITAS_PREV := FALSE]
   
-  base[nat(RECEITA_COD, 121501, 121552, 1219991103005, 1219991103006, 1219991110001, 7215021, 7219991205, 72155311, 72155321, -7215531101000,  -7215532101000, 
+  base[nat(receita_cod, 121501, 121552, 1219991103005, 1219991103006, 1219991110001, 7215021, 7219991205, 72155311, 72155321, -7215531101000,  -7215532101000, 
            7219991103055, 7219991103056, 7219991110051, 7219991110052), RECEITAS_PREV := TRUE]
-  base[UO_COD %in% c(4711) & nat(RECEITA_COD, 131, 132, 16, 19, 22, 23, 24, 25, 29, 
+  base[uo_cod %in% c(4711) & nat(receita_cod, 131, 132, 16, 19, 22, 23, 24, 25, 29, 
                                  931, 932, 96, 99), RECEITAS_PREV := TRUE]
   
   return(base$RECEITAS_PREV)

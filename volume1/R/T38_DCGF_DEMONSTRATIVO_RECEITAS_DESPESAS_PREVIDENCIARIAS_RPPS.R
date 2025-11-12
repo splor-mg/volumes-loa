@@ -19,10 +19,12 @@ desp_prev = demonstr_despesas_previdenciarias(loa_desp)
 
 total_despesas = desp_prev[nvl==1, sum(VL_LOA)]
 
-if(total_despesas!=loa_desp[is_prev_loa_desp(loa_desp), sum(VL_LOA_DESP)]){
+setnames(loa_desp, tolower(names(loa_desp)))
+
+if(total_despesas!=loa_desp[is_prev_loa_desp(loa_desp), sum(vl_loa_desp)]){
   warning("T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de despesas",
           "previdenciarias em relatorios::is_prev_loa_desp ", 
-          loa_desp[is_prev_loa_desp(loa_desp), formatarNum(sum(VL_LOA_DESP))],
+          loa_desp[is_prev_loa_desp(loa_desp), formatarNum(sum(vl_loa_desp))],
           " diferente do valor calculado em utils/suporte/V1/demonstr_despesas_previdenciarias.R ",
           formatarNum(total_despesas), "\n")
 }
@@ -37,14 +39,16 @@ receita = trataReceita_Fiscal("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx", F)
 loa_rec = geraLoa_rec(receita)
 loa_rec[, RECEITA_COD_2 := RECEITA_COD]
 
+setnames(loa_rec, tolower(names(loa_rec)))
+
 rec_prev = demonstr_receitas_previdenciarias(loa_rec)
 
 total_receitas = rec_prev[nvl==1, sum(VL_LOA)]
 
-if(total_receitas!=loa_rec[is_receitas_previdenciarias(loa_rec), sum(VL_LOA_REC)]){
+if(total_receitas!=loa_rec[is_receitas_previdenciarias(loa_rec), sum(vl_loa_rec)]){
   warning("T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitas",
           "previdenciarias em funcoes.R ", 
-          loa_rec[is_receitas_previdenciarias(loa_rec), formatarNum(sum(VL_LOA_REC))],
+          loa_rec[is_receitas_previdenciarias(loa_rec), formatarNum(sum(vl_loa_rec))],
           " diferente do valor calculado em demonstr_receitas_previdenciarias ",
           formatarNum(total_receitas), "\n")
 }

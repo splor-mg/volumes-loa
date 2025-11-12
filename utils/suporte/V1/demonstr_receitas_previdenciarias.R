@@ -111,7 +111,7 @@ base = copy(loa_rec)
 
 # Patronal do Ativo Civil
 
-  base[nat(RECEITA_COD, 72150211), c("nvl4", "lvl4"):= list("Ativo Civil", 1611)]
+  base[nat(receita_cod, 72150211), c("nvl4", "lvl4"):= list("Ativo Civil", 1611)]
 
 # Patronal do Ativo Civil no IPSM
 
@@ -124,7 +124,7 @@ base = copy(loa_rec)
   
 
      
-  base[nat(RECEITA_COD, 7219991103052),
+  base[nat(receita_cod, 7219991103052),
        c("nvl4", "lvl4"):= list("Inativo Civil", 1612)]
   
      #parece ser aqui o motivo de nao estar aparecendo ativo civil no nivel  Receita de Contribuições Patronais (AML 25/01/2020)
@@ -133,10 +133,10 @@ base = copy(loa_rec)
   
 # Patronal do militar
 
-     base[nat(RECEITA_COD, 7219991103055, 7219991110051, -7215531101000), 
+     base[nat(receita_cod, 7219991103055, 7219991110051, -7215531101000), 
             c("nvl4", "lvl4"):= list("Ativo Militar", 1621)]
   
-     base[nat(RECEITA_COD, 7219991103056, 7219991110052, -7215532101000), 
+     base[nat(receita_cod, 7219991103056, 7219991110052, -7215532101000), 
             c("nvl4", "lvl4"):= list("Inativo Militar", 1622)]
   
      base[lvl4 %in% c(1621, 1622), 
@@ -166,13 +166,13 @@ base = copy(loa_rec)
   
   
   
-  demonstr_rec_prev = rbindlist(list(base[!is.na(nvl1), list(nvl=1, VL_LOA = sum(VL_LOA_REC)),
+  demonstr_rec_prev = rbindlist(list(base[!is.na(nvl1), list(nvl=1, VL_LOA = sum(vl_loa_rec)),
                                           by=list(espec=nvl1, ordem = lvl1)],
-                                     base[!is.na(nvl2), list(nvl=2, VL_LOA = sum(VL_LOA_REC)), 
+                                     base[!is.na(nvl2), list(nvl=2, VL_LOA = sum(vl_loa_rec)), 
                                           by=list(espec=nvl2, ordem = lvl2)],
-                                     base[!is.na(nvl3), list(nvl=3, VL_LOA = sum(VL_LOA_REC)), 
+                                     base[!is.na(nvl3), list(nvl=3, VL_LOA = sum(vl_loa_rec)), 
                                           by=list(espec=nvl3, ordem = lvl3)],
-                                     base[!is.na(nvl4), list(nvl=4, VL_LOA = sum(VL_LOA_REC)), 
+                                     base[!is.na(nvl4), list(nvl=4, VL_LOA = sum(vl_loa_rec)), 
                                           by=list(espec=nvl4, ordem = lvl4)]
                                     )
                                 )
