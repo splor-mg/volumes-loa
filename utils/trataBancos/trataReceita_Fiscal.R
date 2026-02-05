@@ -12,7 +12,7 @@ trataReceita_Fiscal = function(caminho, realizarTeste = TRUE){
   
   receita = data.table(receita)
   
-  setnames(receita, c("TIPO DE RECEITA", "VALOR FINAL (R$)"), c("TIPO", "valor"))
+  setnames(receita, c("TIPO_RECEITA", "VALOR FINAL (R$)"), c("TIPO", "valor"))
   
   if(realizarTeste){
     

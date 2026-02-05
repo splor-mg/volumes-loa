@@ -1,5 +1,6 @@
 {
-  "name": "sisor-dados",
+  "name": "dados-sisor-2026",
+  "title": "Sistema Orçamentário - SISOR 2026",
   "resources": [
     {
       "name": "base_orcam_despesa_item_fiscal",
@@ -1077,7 +1078,7 @@
             "type": "integer"
           },
           {
-            "name": "ESPÉCIE",
+            "name": "ESPECIE",
             "type": "integer"
           },
           {
@@ -1093,7 +1094,7 @@
             "type": "integer"
           },
           {
-            "name": "TIPO DE RECEITA",
+            "name": "TIPO_RECEITA",
             "type": "integer"
           },
           {
@@ -1256,76 +1257,6 @@
         "CmNomePlanilha": "BASE_ORCAM_RECEITA_INVESTIMENTO.xls",
         "selecaoAno": 2026,
         "sBaseSelec": 7
-      }
-    },
-    {
-      "name": "base_obras_siad",
-      "type": "table",
-      "title": "Registro de Obras no SIAD",
-      "path": "data-raw/base_obras_siad.html",
-      "scheme": "file",
-      "format": "html",
-      "mediatype": "text/html",
-      "encoding": "windows-1252",
-      "hash": "sha256:df73c4811a4e34b6dd027d219138f09c9027768193f2faa07bc93664179e0c0a",
-      "dialect": {
-        "html": {
-          "selector": "table"
-        }
-      },
-      "schema": {
-        "fields": [
-          {
-            "name": "ORGAO_COD",
-            "type": "string"
-          },
-          {
-            "name": "UNIDADE_ADIMINISTRATIVA_COD",
-            "type": "string"
-          },
-          {
-            "name": "Número da Obra SIAD",
-            "type": "integer"
-          },
-          {
-            "name": "Número de Referência da UO",
-            "type": "string"
-          },
-          {
-            "name": "Situação",
-            "type": "string"
-          },
-          {
-            "name": "Descrição",
-            "type": "string"
-          },
-          {
-            "name": "Data de Início",
-            "type": "string"
-          },
-          {
-            "name": "Data de Término",
-            "type": "string"
-          },
-          {
-            "name": "Ano de Exercício",
-            "type": "integer"
-          },
-          {
-            "name": "Valor Global (R$)",
-            "type": "number",
-            "decimalChar": ",",
-            "groupChar": "."
-          }
-        ]
-      },
-      "api_url": "https://www.orcamento.mg.gov.br/aoad/AtGeraBaseExcelNova.jsp",
-      "payload": {
-        "sAnoSelecao": 2026,
-        "sTabelaSelec": 11,
-        "CmNomePlanilha": "BASE_OBRAS_SIAD.xls",
-        "selecaoAno": 2026,
-        "sBaseSelec": 11
       }
     },
     {
@@ -1752,11 +1683,12 @@
       }
     }
   ],
+  "owner_org": "secretaria-de-estado-de-planejamento-e-gestao-seplag",
   "remote": {
     "host": "raw.githubusercontent.com",
     "user": "splor-mg",
     "repo": "dados-sisor-2026",
-    "ref": "b2b4ac32b30e3c537bda591b760251034cf4d76f",
-    "sha": "b2b4ac32b30e3c537bda591b760251034cf4d76f"
+    "ref": "main",
+    "sha": "994a561862861a8ddfd77db8cb87b13c3a49ed0a"
   }
 }
