@@ -116,8 +116,8 @@
   
   cat("\\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
   
-  cat("\\fontsize{7pt}{10pt}\\selectfont {NOTAS: \\newline
-      (1) Com intuito de evitar a dupla contagem na elaboração desse relatório, foram desconsiderados os valores referentes às operações intra-orçamentárias.}\\\\\n")
+  cat("\\fontsize{7pt}{10pt}\\selectfont {NOTA: \\newline
+      Com intuito de evitar a dupla contagem na elaboração desse relatório, foram desconsiderados os valores referentes às operações intra-orçamentárias.}\\\\\n")
   
   # FIM TABELA
 
