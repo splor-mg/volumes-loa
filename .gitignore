@@ -21,3 +21,5 @@ datapackages/**/*.*
 !datapackages/**/datapackage.json
 *t2d
 pdf/diff/*
+.TinyTeX/
+.bash_history
