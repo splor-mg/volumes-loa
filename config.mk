@@ -21,11 +21,14 @@ acoes_planejamento := $(shell Rscript $(VERBOSE) utils/makefile/ultimo_banco_mod
 # vide https://github.com/splor-mg/volumes-loa/issues/24
 DOCKER_SRC_DIR := $(CURDIR)
 WINPTY := ''
+DOCKER_USER_FLAGS := ''
 
 ifeq ($(shell uname), Darwin)
 # default works
 else ifeq ($(shell uname), Linux)
-# default works
+# on Linux, bind mounts preserve host uids: run as the host user so files
+# created inside the container aren't owned by root on the host
+	DOCKER_USER_FLAGS := '--user $(shell id -u):$(shell id -g)'
 else ifeq ($(shell uname | head -c 5) , MINGW)
 # git bash needs prefixing with winpty
 	WINPTY := 'winpty '
@@ -34,4 +37,4 @@ else
 	DOCKER_SRC_DIR := "c:$(DOCKER_SRC_DIR)"
 endif
 
-DOCKER_RUN_CMD = $(shell echo $(WINPTY) docker run --rm -ti -p 8787:8787 --mount type=bind,source=$(DOCKER_SRC_DIR),target=/home/rstudio --name volumes-loa aidsplormg/volumes:loa2027.1 bash)
+DOCKER_RUN_CMD = $(shell echo $(WINPTY) docker run --rm -ti -p 8787:8787 $(DOCKER_USER_FLAGS) --mount type=bind,source=$(DOCKER_SRC_DIR),target=/home/rstudio --name volumes-loa aidsplormg/volumes:loa2027.1 bash)
