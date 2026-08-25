@@ -4,7 +4,7 @@
 # Os .txt gerados alimentam volume3/Rnw/T1_relatorio_por_empresa.Rnw
 
 options(warn = 1, scipen = 999)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================

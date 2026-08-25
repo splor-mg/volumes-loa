@@ -1,7 +1,7 @@
 # Organização do banco DEMONSTRATIVO DOS RECURSOS FINANCEIROS - Volume 2
 
 options(warn=1, scipen = 999)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================

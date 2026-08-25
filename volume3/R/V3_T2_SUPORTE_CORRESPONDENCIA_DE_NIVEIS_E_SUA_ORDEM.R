@@ -32,7 +32,7 @@
 # Caso surja novas fontes, deve-se alterar o código abaixo.
 library(relatorios)
 options(warn = 1)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 source("utils/trataBancos/trataQDD_Investimento.R", encoding = "UTF-8")
 

@@ -4,7 +4,7 @@
 # P1 - Montar um dataframe com o "DEMONSTRATIVO CONSOLIDADO DA DESPESA"
 # P2 - Montar QUADRO DE DETALHAMENTO DA DESPESA - FISCAL
 options(warn = 1)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
