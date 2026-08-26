@@ -3,7 +3,7 @@
 options(warn=1, scipen = 999)
 suppressMessages(require(relatorios))
 
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 source("volume1/R/T28_DCGF_Demonstrativo_programas_financiados_com_recursos_provenientes_Uniao.R", encoding = "UTF-8")
 

@@ -2,7 +2,7 @@
 # Organização de T15_PROGRAMA_TRABALHO_GOVERNO
 # DEMONSTRATIVO DA DESPESA POR FUNÇÕES, SUBFUNÇÕES E PROGRAMAS CONFORME OS GRUPOS DE DESPESA
 options(warn = 1)
-source("utils/funcoes.r", encoding = "UTF-8")
+source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
