@@ -2,11 +2,20 @@
 
 [packages.sisor]
 
-path = "https://raw.githubusercontent.com/splor-mg/dados-sisor-2026/c20d4848f07e1dc77fd0415412572138be38b8d0/datapackage.yaml"
+path = "https://raw.githubusercontent.com/splor-mg/dados-ppo-2027/main/datapackage.json"
+resources = [
+  "base_categoria_pessoal",
+  "base_detalhamento_obras",
+  "base_orcam_despesa_item_fiscal",
+  "base_orcam_receita_fiscal",
+  "base_qdd_fiscal",
+  "base_qdd_investimento",
+  "base_repasse_recursos"
+]
 
 [packages.sigplan]
 
-path = "https://raw.githubusercontent.com/splor-mg/dados-sigplan-planejamento-2026/b0ae78a8f65792433a728ea45a02d26afac181d8/datapackage.yaml"
+path = "https://raw.githubusercontent.com/splor-mg/dados-ppo-2027/main/datapackage.json"
 resources = ["acoes_planejamento"]
 
 [packages.apoio]
