@@ -10,7 +10,6 @@ resource_names = [
                   "base_orcam_receita_fiscal",
                   "base_qdd_fiscal",
                   "base_qdd_investimento",
-                  "base_qdd_plurianual_invest",
                   "base_repasse_recursos",
                  ]
 
