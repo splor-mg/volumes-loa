@@ -1,7 +1,0 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"ADMINISTRATIVA"	"41"	"94"	"15.149.831"	"100"	"1.10.1 - OUVIDORIA-GERAL DO ESTADO DE MINAS GERAIS - OGE"	"1.10.0 - OUVIDORIA-GERAL DO ESTADO DE MINAS GERAIS - OGE"
-	"DIREÇÃO E ASSESSORAMENTO"	"23"					
-	"DIREÇÃO SUPERIOR"	" 2"					
-	"ESPECIALIZADA"	"15"					
-	"TÉCNICA"	"13"					
-"TOTAL"			"94"	"15.149.831"	"100"		

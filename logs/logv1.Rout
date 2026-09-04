@@ -1,0 +1,12 @@
+Warning: The following named parsers don't match the column names: Previsão Orçamentária 2026, Previsão Física 2026
+Warning: T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino: Receita mde via demonstr_mde_rec 101.862.068.909 é diferente do apresentado em relatorios 102.060.070.781
+
+Warning: T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude: Receita asps via demonstr_asps_rec 101.862.019.148 é diferente do apresentado em relatorios 102.055.259.652
+
+Warning: T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB: Valor total da receita (13.993.694.483) é diferente do valor total da despesa (14.016.124.251). Verificar!
+Warning in adiciona_desc(despesa, columns = c("UO", "PROGRAMA")) :
+  Os seguintes pares ANO-PROGRAMA_COD nao foram classificados: 
+  2024-101
+Warning: T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitasprevidenciarias em funcoes.R 15.292.030.023 diferente do valor calculado em demonstr_receitas_previdenciarias 15.292.031.023
+
+Warning: Valor de RCL pelo pkg relatorios (118.982.509.469) é diferente do apresentado no demonstrativo (119.079.129.720). Avaliar o demonstrativo em utils/rcl.R

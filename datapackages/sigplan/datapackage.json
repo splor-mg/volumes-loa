@@ -1,15 +1,22 @@
 {
-  "name": "ppag2026-dadosmg",
+  "name": "dados_ppo_2027",
+  "title": "Portal de Planejamento e Orçamento - PPO-MG",
+  "profile": "tabular-data-package",
   "resources": [
     {
       "name": "acoes_planejamento",
       "type": "table",
-      "title": "Relatórios e Bases do Planejamento - Ações",
-      "path": "data-raw/acoes_planejamento.txt",
+      "title": "acoes_planejamento",
+      "profile": "tabular-data-resource",
+      "path": "data/acoes_planejamento.txt",
       "scheme": "file",
       "format": "csv",
       "mediatype": "text/csv",
-      "encoding": "windows-1252",
+      "encoding": "utf-8",
+      "hash": "sha256:fce7e7b3f64322955deaacde3d24e9e10c0bfa786b2b00da755fbf159827ab58",
+      "bytes": 2118898,
+      "fields": 49,
+      "rows": 1021,
       "dialect": {
         "csv": {
           "delimiter": "|"
@@ -19,353 +26,211 @@
         "fields": [
           {
             "name": "Código do Programa",
-            "type": "integer",
-            "target": "programa_cod"
+            "type": "string"
           },
           {
             "name": "Nome do Programa",
-            "type": "string",
-            "target": "programa_desc"
+            "type": "string"
           },
           {
             "name": "Código da Área Temática",
-            "type": "string",
-            "target": "area_tematica_cod"
+            "type": "string"
           },
           {
             "name": "Área Temática",
-            "type": "string",
-            "target": "area_tematica_desc"
+            "type": "string"
           },
           {
             "name": "Exclusão Lógica do Programa",
-            "type": "boolean",
-            "trueValues": [
-              "Sim"
-            ],
-            "falseValues": [
-              "Não"
-            ],
-            "target": "is_deleted_programa"
+            "type": "string"
           },
           {
             "name": "Programa Novo",
-            "type": "boolean",
-            "trueValues": [
-              "Sim"
-            ],
-            "falseValues": [
-              "Não"
-            ],
-            "target": "is_new_programa"
+            "type": "string"
           },
           {
             "name": "Justificativa de Inclusão ou Exclusão do Programa",
-            "type": "string",
-            "target": "justificativa_is_new_programa"
+            "type": "string"
           },
           {
             "name": "Código da Unidade Orçamentária Responsável pelo Programa",
-            "type": "integer",
-            "target": "uo_programa_cod"
+            "type": "string"
           },
           {
             "name": "Unidade Orçamentária Responsável pelo Programa",
-            "type": "string",
-            "target": "uo_programa_nome"
+            "type": "string"
           },
           {
             "name": "Código da Unidade Orçamentária Responsável pela Ação",
-            "type": "integer",
-            "target": "uo_acao_cod"
+            "type": "string"
           },
           {
             "name": "Unidade Orçamentária Responsável pela Ação",
-            "type": "string",
-            "target": "uo_acao_nome"
+            "type": "string"
           },
           {
             "name": "Código da Função",
-            "type": "integer",
-            "target": "funcao_cod"
+            "type": "string"
           },
           {
             "name": "Função",
-            "type": "string",
-            "target": "funcao_desc"
+            "type": "string"
           },
           {
             "name": "Código da Subfunção",
-            "type": "integer",
-            "target": "subfuncao_cod"
+            "type": "string"
           },
           {
             "name": "Subfunção",
-            "type": "string",
-            "target": "subfuncao_desc"
+            "type": "string"
           },
           {
             "name": "Código do Tipo de Ação",
-            "type": "integer",
-            "description": "As ações classificam-se nos seguintes tipos:\na) Projeto: é instrumento de programação orientado para alcançar o objetivo de um programa.  Envolve um conjunto de operações,  limitadas no tempo,  das quais resulta um produto que concorre para a expansão ou aperfeiçoamento das ações de governo.  Os tipos de projetos existentes no Estado são:\n- Projeto do Orçamento Fiscal (Código 1) - Projeto do Orçamento de Investimento (Código 3)\nb) Atividade: é o instrumento de programação orientado para alcançar o objetivo de um programa,  envolvendo um conjunto de operações que se realizam de modo contínuo e permanente,  das quais resulta um produto necessário à manutenção das ações de Governo.  Os tipos de atividades existentes no Estado são:\n- Atividade meio do Orçamento Fiscal (Código 2) - Atividade fim do Orçamento Fiscal (Código 4) - Atividade meio de Empresa (Código 6) - Atividade fim de Empresa (Código 8)\nc) Operação Especial (Código 7): é o instrumento de programação que envolve um conjunto de operações das quais resulta uma transferência financeira,  não gerando contraprestação direta sob a forma de bens e serviços.  Dessa forma,  abarcam despesas que não contribuem para a manutenção, expansão ou aperfeiçoamento das ações do governo estadual.\nEm regra,  as operações especiais integram o programa padronizado Obrigações Especiais. Contudo,  poderão compor algum programa finalístico ou de apoio a políticas públicas,  quando efetivamente contribuam para a consecução de seus objetivos.  Nessas hipóteses,  o produto poderá ser expresso pela quantidade de pessoas ou entidades (municípios, empresas, organizações civis) que se beneficiam diretamente com a transferência financeira (ex.: município atendido), ou pelo número de transferências realizadas (ex.: auxílio previdenciário concedido, financiamento concedido).\nPor fim, cita-se os principais exemplos de despesa que serão financiadas por ações dessa natureza: \n- as despesas relativas a transferências constitucionais obrigatórias a municípios,  - o pagamento de proventos de inativos, precatórios e requisições de pequeno valor,  - o adimplemento de obrigações relativas ao pagamento da dívida pública fundada interna e externa.\nd) Não-Orçamentária (Código 5): é instrumento de programação orientado para alcançar o objetivo de um programa,  envolvendo um conjunto de operações de natureza não orçamentária,  das quais resulta um produto necessário à solução ou mitigação da situação-problema.  Cabe considerar que,  embora não demandem a alocação específica e direta de recursos orçamentários para sua execução,  as ações não orçamentárias articulam recursos gerenciais,  tecnológicos,  humanos,  materiais,  institucionais,  etc.\n",
-            "target": "identificador_tipo_acao_cod",
-            "contraints": {
-              "enum": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9
-              ]
-            },
-            "notes": [
-              "A coluna `identificador_tipo_acao_cod` pode ser utilizada para segregação das ações percententes aos: \n\n- __Orçamento fiscal__ (1, 2, 4, 7, 9)\n- __Orçamento de investimento das empresas controladas__ (3, 6, 8)\n- __Ações não orçamentárias__ (5)\n"
-            ]
+            "type": "string"
           },
           {
             "name": "Tipo de Ação",
-            "type": "string",
-            "target": "identificador_tipo_acao_desc",
-            "enum": [
-              "Projeto do Orçamento Fiscal",
-              "Atividade Meio do Orçamento Fiscal",
-              "Projeto do Orçamento de Investimento",
-              "Atividade Fim do Orçamento Fiscal",
-              "Não Orçamentário",
-              "Atividade Meio de Empresa",
-              "Operação Especial",
-              "Atividade Fim de Empresa",
-              "Reserva de Contingência"
-            ]
+            "type": "string"
           },
           {
             "name": "Código da Ação",
-            "type": "integer",
-            "target": "acao_cod"
+            "type": "string"
           },
           {
             "name": "Título da Ação",
-            "type": "string",
-            "target": "acao_desc"
+            "type": "string"
           },
           {
             "name": "Código do Identificador de Ação Governamental (IAG)",
-            "type": "integer",
-            "target": "iag_cod"
+            "type": "string"
           },
           {
             "name": "Identificador de Ação Governamental (IAG)",
-            "type": "string",
-            "target": "iag_desc"
+            "type": "string"
           },
           {
             "name": "Código do Projeto Estratégico",
-            "type": "string",
-            "target": "projeto_estrategico_cod"
+            "type": "string"
           },
           {
             "name": "Projeto Estratégico",
-            "type": "string",
-            "target": "projeto_estrategico"
+            "type": "string"
           },
           {
             "name": "Exclusão Lógica da Ação",
-            "type": "boolean",
-            "trueValues": [
-              "Sim"
-            ],
-            "falseValues": [
-              "Não"
-            ],
-            "target": "is_deleted_acao"
+            "type": "string"
           },
           {
             "name": "Nova Ação",
-            "type": "boolean",
-            "trueValues": [
-              "Sim"
-            ],
-            "falseValues": [
-              "Não"
-            ],
-            "target": "is_new_acao"
+            "type": "string"
           },
           {
             "name": "Justificativa de Inclusão ou Exclusão da Ação",
-            "type": "string",
-            "target": "justificativa_is_new_acao"
+            "type": "string"
           },
           {
             "name": "Transferida para o SISOR",
-            "type": "boolean",
-            "trueValues": [
-              "Sim"
-            ],
-            "falseValues": [
-              "Não"
-            ],
-            "target": "is_transferida_sisor"
+            "type": "string"
           },
           {
             "name": "Unidade Administrativa Responsável pela Ação",
-            "type": "string",
-            "target": "ua_acao_nome"
+            "type": "string"
           },
           {
             "name": "Base legal",
-            "type": "string",
-            "target": "base_legal"
+            "type": "string"
           },
           {
             "name": "Finalidade da Ação",
-            "type": "string",
-            "target": "acao_finalidade"
+            "type": "string"
           },
           {
             "name": "Descrição da Ação",
-            "type": "string",
-            "target": "acao_descricao"
+            "type": "string"
           },
           {
             "name": "Código do Público-alvo",
-            "type": "integer",
-            "target": "publico_alvo_cod"
+            "type": "string"
           },
           {
             "name": "Público-Alvo",
-            "type": "string",
-            "target": "publico_alvo_desc"
+            "type": "string"
           },
           {
             "name": "Código do Produto",
-            "type": "integer",
-            "target": "produto_cod"
+            "type": "string"
           },
           {
             "name": "Produto",
-            "type": "string",
-            "target": "produto_desc"
+            "type": "string"
           },
           {
             "name": "Especificação do Produto",
-            "type": "string",
-            "target": "produto_especificacao"
+            "type": "string"
           },
           {
             "name": "Código da Unidade de Medida do Produto",
-            "type": "integer",
-            "target": "produto_unidade_medida_cod"
+            "type": "string"
           },
           {
             "name": "Unidade de Medida do Produto",
-            "type": "string",
-            "target": "produto_unidade_medida_desc"
-          },
-          {
-            "name": "Previsão Orçamentária 2026",
-            "type": "number",
-            "target": "vr_meta_orcamentaria_ano0"
+            "type": "string"
           },
           {
             "name": "Previsão Orçamentária 2027",
-            "type": "number",
-            "target": "vr_meta_orcamentaria_ano1"
+            "type": "string"
           },
           {
             "name": "Previsão Orçamentária 2028",
-            "type": "number",
-            "target": "vr_meta_orcamentaria_ano2"
+            "type": "string"
           },
           {
             "name": "Previsão Orçamentária 2029",
-            "type": "number",
-            "target": "vr_meta_orcamentaria_ano3"
+            "type": "string"
           },
           {
-            "name": "Previsão Física 2026",
-            "type": "integer",
-            "target": "vr_meta_fisica_ano0"
+            "name": "Previsão Orçamentária 2030",
+            "type": "string"
           },
           {
             "name": "Previsão Física 2027",
-            "type": "integer",
-            "target": "vr_meta_fisica_ano1"
+            "type": "string"
           },
           {
             "name": "Previsão Física 2028",
-            "type": "integer",
-            "target": "vr_meta_fisica_ano2"
+            "type": "string"
           },
           {
             "name": "Previsão Física 2029",
-            "type": "integer",
-            "target": "vr_meta_fisica_ano3"
+            "type": "string"
+          },
+          {
+            "name": "Previsão Física 2030",
+            "type": "string"
           },
           {
             "name": "Ação Transposta",
-            "type": "boolean",
-            "trueValues": [
-              "Sim"
-            ],
-            "falseValues": [
-              "Não"
-            ],
-            "target": "is_acao_transposta"
+            "type": "string"
           },
           {
             "name": "Setor de Governo",
-            "type": "string",
-            "target": "setor_governo"
+            "type": "string"
           },
           {
             "name": "Política para mulheres",
-            "type": "string",
-            "target": "politica_mulheres"
-          }
-        ],
-        "primaryKey": [
-          "Código da Unidade Orçamentária Responsável pela Ação",
-          "Código da Ação",
-          "Exclusão Lógica da Ação"
-        ],
-        "foreignKeys": [
-          {
-            "fields": [
-              "Código da Unidade Orçamentária Responsável pelo Programa"
-            ],
-            "reference": {
-              "fields": [
-                "Código da Unidade Orçamentária Responsável pelo Programa"
-              ],
-              "resource": "programas_planejamento"
-            }
-          },
-          {
-            "fields": [
-              "Código do Programa"
-            ],
-            "reference": {
-              "fields": [
-                "Código do Programa"
-              ],
-              "resource": "programas_planejamento"
-            }
+            "type": "string"
           }
         ]
-      },
-      "api_url": "https://www.sigplan.mg.gov.br/v4/Relatorios/base_acoes_planejamento.asp?tipo_saida=2&mostraSQL=N&periodo=undefined",
-      "download_url": "https://www.sigplan.mg.gov.br/BasesTxt/acoes_planejamento.txt"
+      }
     }
   ],
+  "owner_org": "secretaria-de-estado-de-planejamento-e-gestao-seplag",
+  "updated_at": "2026-09-03T08:36:24",
   "remote": {
     "host": "raw.githubusercontent.com",
     "user": "splor-mg",
-    "repo": "dados-sigplan-planejamento-2026",
+    "repo": "dados-ppo-2027",
     "ref": "main",
-    "sha": "b0ae78a8f65792433a728ea45a02d26afac181d8"
+    "sha": "98299cde0238557101dc524eadfc3a65a40ed76a"
   }
 }

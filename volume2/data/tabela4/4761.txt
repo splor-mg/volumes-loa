@@ -1,0 +1,3 @@
+"cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
+""	""	""	"0"	"0"	"0"	"4.76.1 - FUNDO ESTADUAL DE SANEAMENTO BÁSICO DE MINAS GERAIS - FUNESB-MG"	"1.37.0 - SECRETARIA DE ESTADO DE MEIO AMBIENTE E DESENVOLVIMENTO SUSTENTÁVEL - FUNESB-MG"
+""	""	"SUBTOTAL 1"	"0"	"0"	"0"		

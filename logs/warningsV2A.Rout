@@ -1,11 +1,11 @@
 Warning in eval(expr, .GlobalEnv) :
-  Volume2A A última UO considerada nesse relatório será  4641 -- FUNDO DE GARANTIAS DE PARCERIAS PÚBLICO - PRIVADAS DE MINAS GERAIS - FGP - MG que fecha o orgao SECRETARIA DE ESTADO DE INFRAESTRUTURA, MOBILIDADE E PARCERIA - SEINFRA 
+  Volume2A A última UO considerada nesse relatório será  4291 -- FUNDO ESTADUAL DE SAÚDE - FES que fecha o orgao SECRETARIA DE ESTADO DE SAÚDE - FES 
 
 Warning in eval(expr, .GlobalEnv) :
   V2A T3: Para a UO 4121 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
 
 Warning in eval(expr, .GlobalEnv) :
-  V2A T3: Para a UO 4611 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
+  V2A T3: Para a UO 1021 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
 
 Warning in eval(expr, .GlobalEnv) :
   V2A T3: Para a UO 4031 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
@@ -14,13 +14,10 @@ Warning in eval(expr, .GlobalEnv) :
   V2A T3: Para a UO 4751 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
 
 Warning in eval(expr, .GlobalEnv) :
+  V2A T3: Para a UO 1101 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
+
+Warning in eval(expr, .GlobalEnv) :
   V2A T3: Para a UO 4621 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
-
-Warning in eval(expr, .GlobalEnv) :
-  V2A T3: Para a UO 4651 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
-
-Warning in eval(expr, .GlobalEnv) :
-  V2A T3: Para a UO 4721 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
 
 Warning in eval(expr, .GlobalEnv) :
   V2A T3: Para a UO 4111 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
@@ -33,6 +30,12 @@ Warning in eval(expr, .GlobalEnv) :
 
 Warning in eval(expr, .GlobalEnv) :
   V2A T3: Para a UO 4541 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
+
+Warning in eval(expr, .GlobalEnv) :
+  V2A T3: Para a UO 2161 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
+
+Warning in eval(expr, .GlobalEnv) :
+  V2A T3: Para a UO 2171 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
 
 Warning in eval(expr, .GlobalEnv) :
   V2A T3: Para a UO 4151 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL

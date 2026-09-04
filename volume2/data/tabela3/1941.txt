@@ -1,0 +1,3 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"TOTAL"			" 0"	"200.686.029"	"100"	"1.94.1 - EGE-SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO - EGE-SEPLAG"	"1.94.0 - ENCARGOS GERAIS DO ESTADO - SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO - EGE-SEPLAG"
+"PESSOAL ATIVO"				"200.686.029"	"100"		

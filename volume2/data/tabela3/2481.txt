@@ -1,0 +1,6 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"38"	"220"	"74.353.681"	"100"	"2.48.1 - DEPARTAMENTO ESTADUAL DE TRÂNSITO DE MINAS GERAIS - DETRAN-MG"	"1.50.0 - SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO - DETRAN-MG"
+	"DIREÇÃO E ASSESSORAMENTO"	"32"					
+	"DIREÇÃO SUPERIOR"	"  1"					
+	"ESPECIALIZADA"	"149"					
+"TOTAL"			"220"	"74.353.681"	"100"		
