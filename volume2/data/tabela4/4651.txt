@@ -1,3 +1,0 @@
-"cod_texto"	"COD_FONTE"	"descricao"	"valor_desdobramento"	"valor_especie"	"valor_categoria"	"nome_uo"	"nome_orgao"
-""	""	""	"0"	"0"	"0"	"4.65.1 - FUNDO ESPECIAL DE CRÉDITOS INADIMPLIDOS E DÍVIDA ATIVA - FECIDAT"	"1.19.0 - SECRETARIA DE ESTADO DE FAZENDA - SEF"
-""	""	"SUBTOTAL 1"	"0"	"0"	"0"		

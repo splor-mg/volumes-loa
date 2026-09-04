@@ -1,12 +1,27 @@
-Warning in file(filename, "r", encoding = encoding) :
-  cannot open file 'utils/funcoes.r': No such file or directory
-Error in file(filename, "r", encoding = encoding) : 
-  cannot open the connection
-Calls: source -> file
-Execution halted
-Warning in file(filename, "r", encoding = encoding) :
-  cannot open file 'utils/funcoes.r': No such file or directory
-Error in file(filename, "r", encoding = encoding) : 
-  cannot open the connection
-Calls: source -> file
-Execution halted
+Warning: T7_QUADRO_GERAL_DA_RECEITA.R: Há um código de receita que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1116.50.0.1.01.000
+1116.50.0.1.02.000
+1116.50.0.1.03.000
+1116.50.0.1.04.000
+1121.01.0.1.07.000
+1121.01.0.1.08.000
+1121.01.0.1.09.000
+1121.01.0.1.10.000
+1713.51.2.1.01.999
+1715.53.0.1.01.000
+1717.99.0.1.20.999
+1719.99.0.1.15.002
+1751.50.0.1.12.000
+1922.03.0.1.01.000
+1922.51.0.1.02.000
+1922.51.0.1.99.000
+1999.99.2.1.19.000
+2414.50.0.1.03.000
+2414.51.0.1.08.000
+2414.53.0.1.04.000
+2441.99.0.1.18.004
+7511.01.0.1.01.004
+9116.50.0.1.02.000
+9116.50.0.1.03.000
+9116.50.0.1.04.000

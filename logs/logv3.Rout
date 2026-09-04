@@ -1,1 +1,25 @@
+Warning: The following named parsers don't match the column names: Previsão Orçamentária 2026, Previsão Física 2026
 Warning: V3_bancos_consolidados: A Tabela 2 INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS não apresenta a categoria representada pelas variaveis, valor.amortO total dessa tabela será realizado sem essa var e essa variaveis serão zeradas.
+Warning: The following named parsers don't match the column names: Previsão Orçamentária 2026, Previsão Física 2026
+Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
+  there are records with missing times, which will be dropped.
+Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
+  there are records with missing times, which will be dropped.
+Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
+  there are records with missing times, which will be dropped.
+Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
+  there are records with missing times, which will be dropped.
+Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
+  there are records with missing times, which will be dropped.
+Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
+  there are records with missing times, which will be dropped.
+Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
+  there are records with missing times, which will be dropped.
+Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
+  there are records with missing times, which will be dropped.
+Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
+  there are records with missing times, which will be dropped.
+Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
+  there are records with missing times, which will be dropped.
+Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
+  there are records with missing times, which will be dropped.
