@@ -1,12 +1,43 @@
+Warning: T7_QUADRO_GERAL_DA_RECEITA.R: Há um código de receita que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1116.50.0.1.01.000
+1116.50.0.1.02.000
+1116.50.0.1.03.000
+1116.50.0.1.04.000
+1121.01.0.1.07.000
+1121.01.0.1.08.000
+1121.01.0.1.09.000
+1121.01.0.1.10.000
+1713.51.2.1.01.999
+1715.53.0.1.01.000
+1717.99.0.1.20.999
+1719.99.0.1.15.002
+1751.50.0.1.12.000
+1922.03.0.1.01.000
+1922.51.0.1.02.000
+1922.51.0.1.99.000
+1999.99.2.1.19.000
+2414.50.0.1.03.000
+2414.51.0.1.08.000
+2414.53.0.1.04.000
+2441.99.0.1.18.004
+7511.01.0.1.01.004
+9116.50.0.1.02.000
+9116.50.0.1.03.000
+9116.50.0.1.04.000
+Warning: T9_DEMONSTRATIVO_RECEITA_ORCAMENTARIA_CORRENTE_ORDINARIA.R: Há um código de receita que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 1116.50.0.1.01.000
+1922.03.0.1.01.000
 Warning: The following named parsers don't match the column names: Previsão Orçamentária 2026, Previsão Física 2026
-Warning: T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino: Receita mde via demonstr_mde_rec 101.862.068.909 é diferente do apresentado em relatorios 102.060.070.781
+Warning: T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino: Receita mde via demonstr_mde_rec 101.862.068.909 é diferente do apresentado em relatorios 102.060.070.784
 
-Warning: T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude: Receita asps via demonstr_asps_rec 101.862.019.148 é diferente do apresentado em relatorios 102.055.259.652
+Warning: T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude: Receita asps via demonstr_asps_rec 101.862.019.148 é diferente do apresentado em relatorios 102.055.259.655
 
 Warning: T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB: Valor total da receita (13.993.694.483) é diferente do valor total da despesa (14.016.124.251). Verificar!
 Warning in adiciona_desc(despesa, columns = c("UO", "PROGRAMA")) :
   Os seguintes pares ANO-PROGRAMA_COD nao foram classificados: 
   2024-101
-Warning: T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitasprevidenciarias em funcoes.R 15.292.030.023 diferente do valor calculado em demonstr_receitas_previdenciarias 15.292.031.023
+Warning: T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitasprevidenciarias em funcoes.R 15.394.818.589 diferente do valor calculado em demonstr_receitas_previdenciarias 15.394.819.589
 
-Warning: Valor de RCL pelo pkg relatorios (118.982.509.469) é diferente do apresentado no demonstrativo (119.079.129.720). Avaliar o demonstrativo em utils/rcl.R
+Warning: Valor de RCL pelo pkg relatorios (119.112.510.472) é diferente do apresentado no demonstrativo (119.209.130.725). Avaliar o demonstrativo em utils/rcl.R

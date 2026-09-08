@@ -1,0 +1,8 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"8.398"	"14.634"	" 0"	"NaN"		
+	"DIREÇÃO E ASSESSORAMENTO"	"3.781"					
+	"DIREÇÃO SUPERIOR"	"    5"					
+	"ESPECIALIZADA"	"1.258"					
+	"MEMBROS DE PODER"	"1.085"					
+	"TÉCNICA"	"107"					
+"TOTAL"			"14.634"	" 0"	"  0"		

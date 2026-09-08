@@ -1,3 +1,3 @@
-Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  3.3.90.52 
+Warning: volume5.R banco consolidado: Há códigos de despesa em BASE_QDD_FISCAL.xlsx que não possuem uma correspondência em desc_classificacao_economica_despesa.xslx. Os codigos são  3.3.90.52, 4.4.46.42 
 Correção: inserir esses códigos e sua descrição na tabela.
 

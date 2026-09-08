@@ -11,7 +11,7 @@
 "  4"	"121"	"95"	" 4"	"250"	" 1"								"1.174.280"	"1"	"FOMENTO À AVALIAÇÃO DE POLÍTICAS PÚBLICAS"										
 "  4"	"121"	"95"	" 4"	"250"	" 1"	"90"	" 0"	"10"	" 1"		"1.111.451"		"1.111.451"	"7"											
 "  4"	"121"	"95"	" 4"	"250"	" 1"	"90"	" 0"	"60"	" 1"		"62.829"		"62.829"	"7"											
-"  4"	"121"	"95"	" 4"	"250"	" 1"	"91"	" 0"							"8"	"RELATÓRIO DE AVALIAÇÃO ELABORADO"			"10"	"UNIDADE"	"Atividade Fim do Orçamento Fiscal"	"Não"				
+"  4"	"121"	"95"	" 4"	"250"	" 1"	"91"	" 0"							"8"	"RELATÓRIO DE AVALIAÇÃO ELABORADO"			"15"	"UNIDADE"	"Atividade Fim do Orçamento Fiscal"	"Não"				
 "  4"	"121"	"95"	" 4"	"251"									"526.128"	"5"	"SUBSIDIAR, COM DADOS E ESTUDOS TÉCNICO-CIENTÍFICOS, A DECISÃO E AÇÃO DE ÓRGÃOS DE GOVERNO, EM ESPECIAL DA ADMINISTRAÇÃO ESTADUAL MINEIRA, DE ORGANIZAÇÕES PRIVADAS E DA SOCIEDADE CIVIL NO PLANEJAMENTO, GESTÃO E AVALIAÇÃO DE POLÍTICAS PÚBLICAS."										
 "  4"	"121"	"95"	" 4"	"251"	" 1"								"526.128"	"1"	"PESQUISAS EM POLÍTICAS PÚBLICAS"										
 "  4"	"121"	"95"	" 4"	"251"	" 1"	"90"	" 0"	"10"	" 1"		"501.945"		"501.945"	"7"											

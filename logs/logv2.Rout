@@ -1,78 +1,12 @@
 Warning: sumario_v2: O poder  DEFENSORIA PÚBLICA  não possui uma UO no QDD Fiscal. Desconsiderar esse poder do banco.
 Warning: The following named parsers don't match the column names: Previsão Orçamentária 2026, Previsão Física 2026
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1021 função 1 subfunção 32 programa 746 ação 4445 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1021 função 1 subfunção 122 programa 746 ação 2009 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1021 função 1 subfunção 128 programa 760 ação 2145 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1021 função 9 subfunção 272 programa 705 ação 7006 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
 Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  3041  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' AGRICULTOR/POSSEIRO
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2161 função 12 subfunção 122 programa 104 ação 4515 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2161 função 12 subfunção 122 programa 705 ação 2417 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2161 função 12 subfunção 242 programa 5 ação 1011 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é PROJETO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2161 função 12 subfunção 242 programa 5 ação 1030 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é PROJETO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2161 função 12 subfunção 334 programa 104 ação 4285 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2161 função 12 subfunção 361 programa 104 ação 4277 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2161 função 12 subfunção 362 programa 104 ação 4282 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2161 função 12 subfunção 363 programa 104 ação 4283 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2161 função 28 subfunção 846 programa 705 ação 7004 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2351 função 12 subfunção 122 programa 705 ação 2500 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2351 função 28 subfunção 846 programa 705 ação 7004 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é OPERAÇÃO ESPECIAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
 Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 4631 função 10 subfunção 130 programa 85 ação 4936 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2261 função 10 subfunção 122 programa 705 ação 2500 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2261 função 10 subfunção 303 programa 154 ação 4459 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2261 função 10 subfunção 303 programa 154 ação 4460 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2261 função 10 subfunção 571 programa 150 ação 4455 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2261 função 10 subfunção 571 programa 152 ação 4456 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2271 função 10 subfunção 302 programa 19 ação 4032 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 2101 função 18 subfunção 541 programa 31 ação 4500 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
-
-
 Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1451  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' PARTICIPAÇÃO/PÚBLICO', ATENDIDO/MUNICÍPIO', VAGA/PARTICIPAÇÃO/PÚBLICO
 Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESTUDO/PESQUISA/MONITORAMENTO/AVAL.
+Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 3151 função 13 subfunção 131 programa 102 ação 4424 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE FIM DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
+
+
 Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Para a UO 1091 função 3 subfunção 122 programa 703 ação 2009 há um Produto da ação no banco de ações que não tem uma correspondência em BASE_QDD_FISCAL. Para esse produto o tipo de ação é ATIVIDADE MEIO DO ORÇAMENTO FISCAL e a exclusão lógica da ação é NÃO. Era para o BASE_QDD_FISCAL apresentar linhas com função, subfunção programa, ação e o descritivo, bem como linhas com apenas modalidade IAG, fonte e IPU antes dessa ação. Reportar o erro. 
 
 
@@ -86,20 +20,20 @@ Warning: V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL: No banco BASE_CATEGORI
 
 Warning: V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL: Para a UO  1441  não há nome da UO e nome do orgao em BASE_QDD_FISCAL 
 
-Warning: V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL: Para a UO  1031  não há nome da UO e nome do orgao em BASE_QDD_FISCAL 
-
 Warning: V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL: Para a UO  1091  não há nome da UO e nome do orgao em BASE_QDD_FISCAL 
+
+Warning: V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL: Para a UO  4031  não há nome da UO e nome do orgao em BASE_QDD_FISCAL 
 
 Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: Não há UO's para o poder  DEFENSORIA PÚBLICA
 Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: Há códigos no banco BASE_QDD_FISCAL (com filtro para UO FUNFIP, GRUPO de despesa =1 e IPU diferente de 9) que não econtraram correspondência na planilha FUNFIP ações.xlsx. É o caso da ação código 7417 . Atualizar o banco FUNFIP_acoes.xlsx com as ações presentes em /manual/novasAcoes_FUNFIP.csv e em sequência DELETAR /manual/novasAcoes_FUNFIP.csv
-Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem valores em ações da FUNFIP: 1941
+Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem valores em ações da FUNFIP: 1941 4031
 Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem um quantitativo de inativos, porém apresentam valores superiores a R$ 1.000 nas ações da FUNFIP: 
- 1101 1541 2161 2171 2351 
+ 1101 1541 2171 2351 
 Caso seja necessário inserir o quantitativo de inativos manualmente, criar em bancos/manual/PESSOAL_INATIVO_AUSENTE_SISOR.xlsx. 
 Banco com apenas duas variáveis: cod_uo e quantidade
 Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
 
-Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: O codigo uo NA, 1031, 1441 não está em BASE_QDD_FISCAL e no arquivo bancos/manual/Nome_UO_antigas.xlsx 
+Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: O codigo uo NA, 1441 não está em BASE_QDD_FISCAL e no arquivo bancos/manual/Nome_UO_antigas.xlsx 
 
 Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1221 que não está disponível 
  DETALHES: (não pode desconsiderar) 
@@ -166,15 +100,21 @@ trataQDD_Ajustado(): Os códigos foram criados considerando a IPU 2 e IPU 5 para
 Número de IPU que aparecem no banco (expectativa 2 e 5): 1
 
 Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1031  no grupo de despesa  1  fonte  43  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  901779260 ) e BASE_REPASSE_RECURSO (valor =  880513540 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1031  no grupo de despesa  1  fonte  42  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  1186551659 ) e BASE_REPASSE_RECURSO (valor =  1131169707 ) . O ajuste será realizado do mesmo jeito.
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): Sem correspondência para UO 1441 Grupo 1 Fonte 43 IPU 5 . O repasse não será deduzido.
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): Sem correspondência para UO 1441 Grupo 1 Fonte 42 IPU 5 . O repasse não será deduzido.
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
   trataQDD_Ajustado(): Sem correspondência para UO 1091 Grupo 1 Fonte 43 IPU 5 . O repasse não será deduzido.
 Warning in trataQDD_Ajustado(qdd, transf, funfip) :
   trataQDD_Ajustado(): Sem correspondência para UO 1091 Grupo 1 Fonte 42 IPU 5 . O repasse não será deduzido.
 Warning in trataQDD_Ajustado(qdd, transf, funfip) :
-  trataQDD_Ajustado(): Sem correspondência para UO 1021 Grupo 1 Fonte 43 IPU 5 . O repasse não será deduzido.
-Warning in trataQDD_Ajustado(qdd, transf, funfip) :
-  trataQDD_Ajustado(): Sem correspondência para UO 1021 Grupo 1 Fonte 42 IPU 5 . O repasse não será deduzido.
-Warning in trataQDD_Ajustado(qdd, transf, funfip) :
-  trataQDD_Ajustado(): O Valor deduzido das UO's beneficiadas ( 572.139.330 ) é diferente do valor somado as UO's financiadoras ( 1.569.100.697 ). Ver logs/erro_qdd_ajustado.csv.
+  trataQDD_Ajustado(): O Valor deduzido das UO's beneficiadas ( 2.916.013.003 ) é diferente do valor somado as UO's financiadoras ( 3.765.503.104 ). Ver logs/erro_qdd_ajustado.csv.
 
 
 
@@ -182,3 +122,6 @@ processing file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd
 output file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.md
 
 sh: 1: xdg-open: not found
+Warning: The following named parsers don't match the column names: Previsão Orçamentária 2026, Previsão Física 2026
+Warning: V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
+
