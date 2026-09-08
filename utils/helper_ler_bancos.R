@@ -7,10 +7,10 @@ suppressWarnings(suppressMessages(require(readxl)))
 load_acoes = function(base) {
   x = readr::read_delim(
     file = base,
-    delim = '|', 
+    delim = '|',
     quote = '',
     na = '',
-    col_types = 
+    col_types =
       readr::cols(
         `Código do Programa`                                      = readr::col_integer(),
         `Nome do Programa`                                        = readr::col_character(),
@@ -50,14 +50,14 @@ load_acoes = function(base) {
         `Especificação do Produto`                                = readr::col_character(),
         `Código da Unidade de Medida do Produto`                  = readr::col_integer(),
         `Unidade de Medida do Produto`                            = readr::col_character(),
-        `Previsão Orçamentária 2026`                              = readr::col_double(),
         `Previsão Orçamentária 2027`                              = readr::col_double(),
         `Previsão Orçamentária 2028`                              = readr::col_double(),
         `Previsão Orçamentária 2029`                              = readr::col_double(),
-        `Previsão Física 2026`                                    = readr::col_double(),
+        `Previsão Orçamentária 2030`                              = readr::col_double(),
         `Previsão Física 2027`                                    = readr::col_double(),
         `Previsão Física 2028`                                    = readr::col_double(),
         `Previsão Física 2029`                                    = readr::col_double(),
+        `Previsão Física 2030`                                    = readr::col_double(),
         `Ação Transposta`                                         = readr::col_character(),
         `Setor de Governo`                                        = readr::col_character()
       )
@@ -66,99 +66,99 @@ load_acoes = function(base) {
 }
 
 # removeAcentos = function(vetor){
-#   
+#
 #   #===================================================================================
 #   # Remove acentos de um vetor, considerando se o Encoding deste é UTF-8 ou unknown.
 #   # Outros tipos de enconding não foram considerados
 #   #===================================================================================
-#   
+#
 #   retiraAcentos <- function(vetor, is_utf8) {
 #     switch(is_utf8, "TRUE" = tolower(iconv(vetor, from="UTF-8", to="ASCII//TRANSLIT")),
 #            "FALSE" = tolower(iconv(vetor, to="ASCII//TRANSLIT")))
 #   }
-#   
+#
 #   return(retiraAcentos(vetor, as.character("UTF-8" %in% Encoding(vetor))))
 # }
 
 
 removeAcentos = function(vetor){
-  
+
   #===================================================================================
   # Remove acentos de um vetor, considerando se o Encoding deste é UTF-8 ou unknown.
   # Outros tipos de enconding não foram considerados
   #===================================================================================
-  
+
   removeAcentoEncoding = function(texto, encoding){
     tolower(stringi::stri_trans_general(texto, "latin-ascii"))
   }
-  
+
   return(unlist(lapply(vetor, function(x) removeAcentoEncoding(x))))
-  
+
 }
 
 
 verificaTipoVariaveis = function(base, varsTextoEsperadas){
-  
+
   #=====================================================================================
   # Verifica se as variáveis possuem as classes esperadas
   #
   # Motivação:
   # Bancos do SIGPLAN extensão .txt possuem textos com muitos caracteres especiais.
   # Há um risco de algum caracter gerar um efeito semelhante ao tab no excel,
-  # o que faria com que o número de variáveis aumentasse bem como variáveis 
+  # o que faria com que o número de variáveis aumentasse bem como variáveis
   # numéricas venham a conter textos.
   #=====================================================================================
-  
+
   varsTexto = unlist(lapply(base, class))
   varsTexto = names(varsTexto)[varsTexto=="character"]
-  
+
   if(length(setdiff(varsTexto, varsTextoEsperadas))>0){
-    stop("Variáveis ", paste(setdiff(varsTexto, varsTextoEsperadas), collapse=" "), " foram iniciadas como texto. 
+    stop("Variáveis ", paste(setdiff(varsTexto, varsTextoEsperadas), collapse=" "), " foram iniciadas como texto.
          A expectativa é que fossem númericas.")
   }
 }
 
 removeEspacos = function(vetor){
-  
+
   # ============================================================================
   # Remove espaços no final e substitui espaços no meio de expressões por ponto
   # utilizado para padronizar nomes de bancos .xlsx para o padrão de .txt
   # ============================================================================
-  
+
   vetor = gsub("(.+) $", "\\1", vetor)
   return(gsub(" ", ".", vetor))
-  
+
 }
 
 trata_exc_logica = function(base, prefixo="exc"){
-  
+
   # ===========================================================================================
   # Trata variáveis de exclusao logica 0 e 1, ou Não e Sim transformando-as em "FALSE" e "TRUE"
   # ===========================================================================================
-  
+
   ExclusaoLogicaBoleano = function(variavel){
-    
+
     if(1 %in% unique(variavel)){
         return(as.character(as.logical(variavel)))
-      
+
     } else if(!F %in% grepl("sim|n.o", tolower(variavel))){
         return(ifelse(grepl("sim", variavel, ignore.case = T), "TRUE", "FALSE"))
-      
+
     } else if(!F %in% grepl("fals.|verd.+", tolower(variavel))){
         return(ifelse(grepl("verd.+", variavel, ignore.case = T), "TRUE", "FALSE"))
-      
+
     } else if(!F %in% grepl("false|true", tolower(variavel))){
        return(toupper(variavel))
-        
+
     }else{
         stop("Variável de exclusão lógica com valores não mapeados por trata_exc_logica().",
              "Valores apresentados: ", paste(unique(variavel), collapse=", "), "\n")
     }
   }
-  
+
     vars_exc = names(base)[grepl(paste0("^",prefixo), names(base), ignore.case = T)]
     ind_exc = which(names(base) %in% vars_exc)
-    
+
     base  = base[, (vars_exc):= lapply(.SD, ExclusaoLogicaBoleano), .SDcols = ind_exc]
     return(base)
 }
