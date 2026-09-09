@@ -1,25 +1,21 @@
-Warning: The following named parsers don't match the column names: Previsão Orçamentária 2026, Previsão Física 2026
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume3/R/V3_bancos_consolidados.R'
+
 Warning: V3_bancos_consolidados: A Tabela 2 INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS não apresenta a categoria representada pelas variaveis, valor.amortO total dessa tabela será realizado sem essa var e essa variaveis serão zeradas.
-Warning: The following named parsers don't match the column names: Previsão Orçamentária 2026, Previsão Física 2026
-Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
-  there are records with missing times, which will be dropped.
-Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
-  there are records with missing times, which will be dropped.
-Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
-  there are records with missing times, which will be dropped.
-Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
-  there are records with missing times, which will be dropped.
-Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
-  there are records with missing times, which will be dropped.
-Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
-  there are records with missing times, which will be dropped.
-Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
-  there are records with missing times, which will be dropped.
-Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
-  there are records with missing times, which will be dropped.
-Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
-  there are records with missing times, which will be dropped.
-Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
-  there are records with missing times, which will be dropped.
-Warning in reshapeWide(data, idvar = idvar, timevar = timevar, varying = varying,  :
-  there are records with missing times, which will be dropped.
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume3/R/V3_T1_PROGRAMA_DE_INVESTIMENTO.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume3/R/V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume3/R/V3_T2_ORIGENS_RECURSOS_INVESTIMENTOS.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume3/R/V3_T3_RECURSOS_FINANCEIROS_FONTE_RECURSOS_APLICACAO_INVESTIMENTO.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume3/R/V3_T4_DETALHAMENTO_DOS_INVESTIMENTOS.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume3/R/V3_T5_QUADRO_DE_DETALHAMENTO_INVESTIMENTO.R'

@@ -7,6 +7,4 @@
 					"Total"	" 2"	"        0"	"1.000"	"1.000"
 		" 2"		"60 - RECURSOS DIRETAMENTE ARRECADADOS"	" 0"	" 1"	"        0"	"100.000"	"100.000"
 					"Total"	" 1"	"        0"	"100.000"	"100.000"
-		" 2"		"9 - TERMOS DE AJUSTAMENTO, DOAÇÕES CONTROLADAS POR INSTRUMENTO JURÍDICO E CONGÊNERES"	" 0"	" 1"	"        0"	"1.000"	"1.000"
-					"Total"	" 1"	"        0"	"1.000"	"1.000"
-				"TOTAL"	" 1"	"21"	"2.916.824"	"2.797.305"	"5.714.129"
+				"TOTAL"	" 1"	"20"	"2.916.824"	"2.796.305"	"5.713.129"

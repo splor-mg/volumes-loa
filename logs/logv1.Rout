@@ -1,3 +1,15 @@
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T14_DEMONSTRATIVO_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_CONFORME_VINCULO_COM_RECURSOS.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T15_PROGRAMA_TRABALHO_GOVERNO.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T7_QUADRO_GERAL_DA_RECEITA.R'
+
 Warning: T7_QUADRO_GERAL_DA_RECEITA.R: Há um código de receita que não está disponível 
  DETALHES: (não pode desconsiderar) 
  1116.50.0.1.01.000
@@ -25,19 +37,90 @@ Warning: T7_QUADRO_GERAL_DA_RECEITA.R: Há um código de receita que não está 
 9116.50.0.1.02.000
 9116.50.0.1.03.000
 9116.50.0.1.04.000
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T9_DEMONSTRATIVO_RECEITA_ORCAMENTARIA_CORRENTE_ORDINARIA.R'
+
 Warning: T9_DEMONSTRATIVO_RECEITA_ORCAMENTARIA_CORRENTE_ORDINARIA.R: Há um código de receita que não está disponível 
  DETALHES: (não pode desconsiderar) 
  1116.50.0.1.01.000
 1922.03.0.1.01.000
-Warning: The following named parsers don't match the column names: Previsão Orçamentária 2026, Previsão Física 2026
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T12_DCGF_Demonstrativo_Evolucao_Despesa_Categoria_Economica.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T13_DCGF_Demonstrativo_Consolidado_Despesa.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino.R'
+
 Warning: T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino: Receita mde via demonstr_mde_rec 101.862.068.909 é diferente do apresentado em relatorios 102.060.070.784
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T17_DCGF_Demonst_Aplicacao_Recursos_Progr_Saude_Investim.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude.R'
 
 Warning: T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude: Receita asps via demonstr_asps_rec 101.862.019.148 é diferente do apresentado em relatorios 102.055.259.655
 
-Warning: T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB: Valor total da receita (13.993.694.483) é diferente do valor total da despesa (14.016.124.251). Verificar!
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T19_DCGF_Demonstrativo_Aplicacao_Recursos_Amparo_Fomento_Pesquisa.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T23_DCGF_Demonstrativo_do_Servico_da_divida_publica.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB.R'
+
+Warning: T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB: Valor total da receita (13.993.694.483) é diferente do valor total da despesa (14.016.124.252). Verificar!
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T26_DCGF_DEMONSTRATIVO_RECURSOS_APLICADOS_ACOES_PARA_CRIANCA_E_ADOLESCENTE.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T27_DCGF_Demonst_Despesas_UGEPREVI.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T28_DCGF_PT1_Receita_prevista_e_realizada.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T28_DCGF_PT2_Despesa_prevista_e_realizada.R'
+
 Warning in adiciona_desc(despesa, columns = c("UO", "PROGRAMA")) :
   Os seguintes pares ANO-PROGRAMA_COD nao foram classificados: 
   2024-101
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T28_DCGF_PT3_Receita_prevista_LOA.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T28_DCGF_PT4_Despesa_prevista_LOA.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T37_DCGF_DEMONSTRATIVOS_RECURSOS_APLICADOS_SEGURANCA_ALIMENTAR_NUTRICIONAL.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R'
+
 Warning: T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitasprevidenciarias em funcoes.R 15.394.818.589 diferente do valor calculado em demonstr_receitas_previdenciarias 15.394.819.589
 
-Warning: Valor de RCL pelo pkg relatorios (119.112.510.472) é diferente do apresentado no demonstrativo (119.209.130.725). Avaliar o demonstrativo em utils/rcl.R
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T6_DCGF_Demonstrativo_Evolucao_Receita_por_Categoria_Economica.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.R'
+
+Warning: Valor de RCL pelo pkg relatorios (118.982.508.472) é diferente do apresentado no demonstrativo (119.079.128.725). Avaliar o demonstrativo em utils/rcl.R
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T1_DCGF_Demonstrativo_Consolidado_Orcamento_Fiscal.R'
+

@@ -1,0 +1,3 @@
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume3/Rnw/CodigosR/Projeto_volume3.R'
+

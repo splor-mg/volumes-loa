@@ -1,3 +1,6 @@
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=utils/Rnw2Tex.R --args 2A'
+
 Warning in eval(expr, .GlobalEnv) :
   Volume2A A última UO considerada nesse relatório será  4641 -- FUNDO DE GARANTIAS DE PARCERIAS PÚBLICO - PRIVADAS DE MINAS GERAIS - FGP - MG que fecha o orgao SECRETARIA DE ESTADO DE INFRAESTRUTURA, MOBILIDADE E PARCERIA - FGP - MG 
 
@@ -18,6 +21,9 @@ Warning in eval(expr, .GlobalEnv) :
 
 Warning in eval(expr, .GlobalEnv) :
   V2A T3: Para a UO 4621 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
+
+Warning in eval(expr, .GlobalEnv) :
+  V2A T3: Para a UO 4721 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
 
 Warning in eval(expr, .GlobalEnv) :
   V2A T3: Para a UO 4111 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
