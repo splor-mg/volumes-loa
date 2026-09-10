@@ -4,6 +4,6 @@
 "  3"	"122"	"703"										"116.000.000"	"1"	"PROCESSO JUDICIÁRIO"											
 "  3"	"122"	"703"	" 2"	"72"								"116.000.000"	"5"	"PROMOVER A MODERNIZAÇÃO, A ESTRUTURAÇÃO E O APRIMORAMENTO DAS ATIVIDADES INSTITUCIONAIS DO MPMG."											
 "  3"	"122"	"703"	" 2"	"72"	" 1"							"116.000.000"	"1"	"APRIMORAMENTO INSTITUCIONAL"											
-"  3"	"122"	"703"	" 2"	"72"	" 1"	"90"	" 0"	"59"	" 1"	"86.000.000"	"30.000.000"	"116.000.000"	"7"												
+"  3"	"122"	"703"	" 2"	"72"	" 1"	"90"	" 0"	"59"	" 1"	"100.000.000"	"16.000.000"	"116.000.000"	"7"												
 "  3"	"122"	"703"	" 2"	"72"	" 1"	"91"	" 0"						"8"	"AÇÃO ADMINISTRATIVA REALIZADA"			" 1"	"AÇÃO"	"Atividade Meio do Orçamento Fiscal"	"Não"					
-"999"										"86.000.000"	"30.000.000"	"116.000.000"	"9"	"TOTAL"											
+"999"										"100.000.000"	"16.000.000"	"116.000.000"	"9"	"TOTAL"											

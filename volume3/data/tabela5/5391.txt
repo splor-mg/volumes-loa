@@ -11,9 +11,9 @@ funcao	subfuncao	prog	id	proj	iag	especificacao	detalhamento	fontes	valor	total	
 25	752	92	 3	 9	 0	INVESTIMENTOS PARTICIPAÇÕES SOCIETÁRIAS DA TRANSMISSÃO				56.493.213		
 							MÁQUINAS, APARELHOS E EQUIPAMENTOS			56.493.213		
 								RECURSOS PRÓPRIOS	56.493.213			
-25	752	94	 3	 1	 0	EXPANSÃO DO SISTEMA DE GERAÇÃO				            1		
-							OBRAS E INSTALAÇÕES			            1		
-								RECURSOS PRÓPRIOS	            1			
+25	752	94	 3	 1	 0	EXPANSÃO DO SISTEMA DE GERAÇÃO				1.000		
+							OBRAS E INSTALAÇÕES			1.000		
+								RECURSOS PRÓPRIOS	1.000			
 25	752	94	 3	 7	 0	REFORMAS, MELHORIAS E AMPLIAÇÕES DE USINAS				121.588.957		
 							MÁQUINAS, APARELHOS E EQUIPAMENTOS			121.588.957		
 								RECURSOS PRÓPRIOS	121.588.957			
@@ -23,4 +23,4 @@ funcao	subfuncao	prog	id	proj	iag	especificacao	detalhamento	fontes	valor	total	
 25	752	94	 3	14	 0	INVESTIMENTOS EM PARTICIPAÇÕES SOCIETÁRIAS DA GERAÇÃO				1.080.197.578		
 							MÁQUINAS, APARELHOS E EQUIPAMENTOS			1.080.197.578		
 								RECURSOS PRÓPRIOS	1.080.197.578			
-26	752	94	 3	14	 0	TOTAL				1.974.438.121		
+26	752	94	 3	14	 0	TOTAL				1.974.439.120		
