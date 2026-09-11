@@ -3,5 +3,5 @@
 	"DIREÇÃO E ASSESSORAMENTO"	" 1"					
 	"DIREÇÃO SUPERIOR"	" 6"					
 	"TÉCNICA"	" 4"					
-"TOTAL"			"28"	"1.211.000"	"100"		
 "PESSOAL MÃO DE OBRA TEMPORÁRIA"	"TERCEIRIZADO"	" 6"	" 6"				
+"TOTAL"			"28"	"1.211.000"	"100"		

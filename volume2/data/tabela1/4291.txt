@@ -42,7 +42,7 @@
 "10"	"122"	"705"	" 2"	"417"	" 1"	"90"	" 0"	"57"	" 1"	"59.411"			"59.411"	"7"											
 "10"	"122"	"705"	" 2"	"417"	" 1"	"91"	" 0"	"10"	" 1"	"103.460.278"			"103.460.278"	"7"											
 "10"	"122"	"705"	" 2"	"417"	" 1"	"91"	" 0"	"57"	" 1"	"19.163"			"19.163"	"7"											
-"10"	"122"	"705"	" 2"	"417"	" 1"	"92"	" 0"							"8"	"PESSOA REMUNERADA"			"396"	"UNIDADE"	"Atividade Meio do Orçamento Fiscal"	"Não"				
+"10"	"122"	"705"	" 2"	"417"	" 1"	"92"	" 0"							"8"	"PESSOA REMUNERADA"			"3.616"	"UNIDADE"	"Atividade Meio do Orçamento Fiscal"	"Não"				
 "10"	"122"	"705"	" 2"	"500"									"293.885.509"	"5"	"VIABILIZAR A EXECUÇÃO DE SERVIÇOS TÉCNICOS-ADMINISTRATIVOS DE GERENCIAMENTO E SUPORTE DA ÁREA MEIO DOS ÓRGÃOS E ENTIDADES, ELENCANDO OS RECURSOS QUE NÃO PODEM SER DIRETAMENTE DISTRIBUÍDOS NAS AÇÕES FINALÍSTICAS."										
 "10"	"122"	"705"	" 2"	"500"	" 1"								"293.885.509"	"1"	"ASSESSORAMENTO E GERENCIAMENTO DE POLÍTICAS PÚBLICAS"										
 "10"	"122"	"705"	" 2"	"500"	" 1"	"50"	" 0"	"57"	" 1"		"2.500.000"		"2.500.000"	"7"											
