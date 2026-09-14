@@ -6,9 +6,6 @@ running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume3/R/V3_T1_PROGRAMA_DE_INVESTIMENTO.R'
 
 running
-  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume3/R/V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM.R'
-
-running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume3/R/V3_T2_ORIGENS_RECURSOS_INVESTIMENTOS.R'
 
 running

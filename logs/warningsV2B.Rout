@@ -2,7 +2,7 @@ running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=utils/Rnw2Tex.R --args 2B'
 
 Warning in eval(expr, .GlobalEnv) :
-  V2B A primeira UO considerada nesse relatório será  2261 -- FUNDAÇÃO EZEQUIEL DIAS - FUNED  que inicia o órgão  SECRETARIA DE ESTADO DE SAÚDE - FUNED
+  V2B A primeira UO considerada nesse relatório será  1371 -- SECRETARIA DE ESTADO DE MEIO AMBIENTE E DESENVOLVIMENTO SUSTENTÁVEL - SEMAD  que inicia o órgão  SECRETARIA DE ESTADO DE MEIO AMBIENTE E DESENVOLVIMENTO SUSTENTÁVEL - SEMAD
 Warning in eval(expr, .GlobalEnv) :
   V2B T5: Para a UO 1371 NÃO existe o banco  T5 DEMONSTRATIVO DOS RECURSOS FINANCEIROS TABELA DEMAIS RECURSOS
 Warning in eval(expr, .GlobalEnv) :
@@ -80,6 +80,11 @@ Warning in eval(expr, .GlobalEnv) :
 Warning in eval(expr, .GlobalEnv) :
   V2B T5: Para a UO 1915 NÃO existe o banco  T5 DEMONSTRATIVO DOS RECURSOS FINANCEIROS TABELA DEMAIS RECURSOS
 Warning in eval(expr, .GlobalEnv) :
+  V2B T3: Para a UO 1916 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
+
+Warning in eval(expr, .GlobalEnv) :
+  V2B T5: Para a UO 1916 NÃO existe o banco  T5 DEMONSTRATIVO DOS RECURSOS FINANCEIROS TABELA DEMAIS RECURSOS
+Warning in eval(expr, .GlobalEnv) :
   V2B T5: Para a UO 1941 NÃO existe o banco  T5 DEMONSTRATIVO DOS RECURSOS FINANCEIROS TABELA DEMAIS RECURSOS
 Warning in eval(expr, .GlobalEnv) :
   V2B T3: Para a UO 1951 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
@@ -96,5 +101,10 @@ Warning in eval(expr, .GlobalEnv) :
 
 Warning in eval(expr, .GlobalEnv) :
   V2B T3: Para a UO 4731 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
+
+Warning in eval(expr, .GlobalEnv) :
+  V2B T5: Para a UO 1441 NÃO existe o banco  T5 DEMONSTRATIVO DOS RECURSOS FINANCEIROS TABELA DEMAIS RECURSOS
+Warning in eval(expr, .GlobalEnv) :
+  V2B T3: Para a UO 4741 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
 
 Output file:  Projeto_volume2B.pdf

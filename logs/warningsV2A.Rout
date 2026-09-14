@@ -2,7 +2,7 @@ running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=utils/Rnw2Tex.R --args 2A'
 
 Warning in eval(expr, .GlobalEnv) :
-  Volume2A A última UO considerada nesse relatório será  4641 -- FUNDO DE GARANTIAS DE PARCERIAS PÚBLICO - PRIVADAS DE MINAS GERAIS - FGP - MG que fecha o orgao SECRETARIA DE ESTADO DE INFRAESTRUTURA, MOBILIDADE E PARCERIA - FGP - MG 
+  Volume2A A última UO considerada nesse relatório será  4291 -- FUNDO ESTADUAL DE SAÚDE - FES que fecha o orgao SECRETARIA DE ESTADO DE SAÚDE - FES 
 
 Warning in eval(expr, .GlobalEnv) :
   V2A T3: Para a UO 4121 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
