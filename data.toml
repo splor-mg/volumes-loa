@@ -20,13 +20,13 @@ resources = ["acoes_planejamento"]
 
 [packages.apoio]
 
-path = "https://raw.githubusercontent.com/splor-mg/dados-volumes-loa/df90c8ff5747a1964f8f1bc693b882c31b3dbf31/datapackage.yaml"
+path = "https://raw.githubusercontent.com/splor-mg/dados-volumes-loa/main/datapackage.yaml"
 
 [packages.fonte_stn]
 
-path = "https://raw.githubusercontent.com/splor-mg/matriz-fonte-stn-dadosmg/6b09828d6489eb0342188013b57219b9d9f236c9/datapackage.yaml"
+path = "https://raw.githubusercontent.com/splor-mg/matriz-fonte-stn-dadosmg/main/datapackage.yaml"
 resources = ["fonte_stn"]
 
 [packages.qdd_fiscal_fonte_95]
 
-path = "https://raw.githubusercontent.com/splor-mg/dados-qdd-fonte-95/9a55eecaa2c2f404a6bc5e63d865c0df00275a01/datapackage.json"
+path = "https://raw.githubusercontent.com/splor-mg/dados-qdd-fonte-95/main/datapackage.json"
