@@ -93,16 +93,7 @@ running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume2/R/V2_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.R'
 
 Warning in trataQDD_Ajustado(qdd, transf, funfip) :
-  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1031  no grupo de despesa  1  fonte  43  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  901779260 ) e BASE_REPASSE_RECURSO (valor =  901779262 ) . O ajuste será realizado do mesmo jeito.
-
-Warning in trataQDD_Ajustado(qdd, transf, funfip) :
-  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1441  no grupo de despesa  1  fonte  43  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  72 ) e BASE_REPASSE_RECURSO (valor =  72184243 ) . O ajuste será realizado do mesmo jeito.
-
-Warning in trataQDD_Ajustado(qdd, transf, funfip) :
-  trataQDD_Ajustado(): O Valor apresentado na funfip e direcionado para a UO  1441  no grupo de despesa  1  fonte  42  e IPU  5  é DIFERENTE entre os bancos BASE_QDD_FISCAL (valor =  105 ) e BASE_REPASSE_RECURSO (valor =  105515757 ) . O ajuste será realizado do mesmo jeito.
-
-Warning in trataQDD_Ajustado(qdd, transf, funfip) :
-  trataQDD_Ajustado(): O Valor deduzido das UO's beneficiadas ( 3.664.477.279 ) é diferente do valor somado as UO's financiadoras ( 3.842.150.778 ). Ver logs/erro_qdd_ajustado.csv.
+  trataQDD_Ajustado(): O Valor deduzido das UO's beneficiadas ( 3.842.177.104 ) é diferente do valor somado as UO's financiadoras ( 3.842.150.778 ). Ver logs/erro_qdd_ajustado.csv.
 
 
 

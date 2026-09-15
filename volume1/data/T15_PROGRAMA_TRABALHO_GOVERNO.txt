@@ -23,17 +23,17 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   2	127	77	CAMINHOS PARA O DESENVOLVIMENTO INTEGRADO METROPOLITANO	             0	            0	764.472	            0	          0	            0	 0	764.472
   2	128		FORMAÇÃO DE RECURSOS HUMANOS	             0	            0	17.429.782	            0	          0	            0	 0	17.429.782
   2	128	706	PRESTAÇÃO JURISDICIONAL	             0	            0	17.429.782	            0	          0	            0	 0	17.429.782
-  3			ESSENCIAL À JUSTIÇA	3.439.871.396	            0	1.117.093.688	173.960.488	3.000.000	            0	 0	4.733.925.572
+  3			ESSENCIAL À JUSTIÇA	4.240.501.578	            0	1.384.860.660	187.587.688	3.000.000	            0	 0	5.815.949.926
   3	61		AÇÃO JUDICIÁRIA	             0	            0	37.390.140	35.662.860	          0	            0	 0	73.053.000
   3	61	738	PROTEÇÃO E DEFESA DO CONSUMIDOR	             0	            0	37.390.140	35.662.860	          0	            0	 0	73.053.000
   3	62		DEFESA DO INTERESSE PÚBLICO NO PROCESSO JUDICIÁRIO	1.623.866.500	            0	92.001.086	27.663.914	3.000.000	            0	 0	1.746.531.500
   3	62	703	PROCESSO JUDICIÁRIO	1.623.866.500	            0	90.001.086	1.202.939	          0	            0	 0	1.715.070.525
   3	62	714	AQUISIÇÃO, CONSTRUÇÃO, REPAROS DE BENS IMÓVEIS	             0	            0	2.000.000	26.460.975	3.000.000	            0	 0	31.460.975
-  3	92		REPRESENTAÇÃO JUDICIAL E EXTRAJUDICIAL	1.918	            0	120.879.906	27.285.445	          0	            0	 0	148.167.269
+  3	92		REPRESENTAÇÃO JUDICIAL E EXTRAJUDICIAL	800.632.100	            0	388.646.878	40.912.645	          0	            0	 0	1.230.191.623
   3	92	43	DESJUDICIALIZA MINAS	             0	            0	396.000	            0	          0	            0	 0	396.000
   3	92	44	REPRESENTAÇÃO JURÍDICA DO ESTADO E ENTIDADES	             0	            0	15.311.558	7.249.432	          0	            0	 0	22.560.990
   3	92	79	MODERNIZAÇÃO E APRIMORAMENTO INSTITUCIONAL	             0	            0	9.632.500	2.367.500	          0	            0	 0	12.000.000
-  3	92	726	ACESSO À JUSTIÇA	1.918	            0	95.539.848	17.668.513	          0	            0	 0	113.210.279
+  3	92	726	ACESSO À JUSTIÇA	800.632.100	            0	363.306.820	31.295.713	          0	            0	 0	1.195.234.633
   3	122		ADMINISTRAÇÃO GERAL	1.816.002.978	            0	866.422.556	83.348.269	          0	            0	 0	2.765.773.803
   3	122	703	PROCESSO JUDICIÁRIO	1.420.800.000	            0	797.791.676	46.000.000	          0	            0	 0	2.264.591.676
   3	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	395.202.978	            0	37.965.430	112.719	          0	            0	 0	433.281.127
@@ -101,9 +101,9 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   4	131	109	GESTÃO DE CERIMONIAL E EVENTOS	             0	            0	16.748.716	            0	          0	            0	 0	16.748.716
   4	274		PREVIDÊNCIA ESPECIAL	200.686.029	            0	             0	            0	          0	            0	 0	200.686.029
   4	274	705	APOIO ÀS POLÍTICAS PÚBLICAS	200.686.029	            0	             0	            0	          0	            0	 0	200.686.029
-  6			SEGURANÇA PÚBLICA	26.256.094.775	            0	4.367.065.272	326.454.114	1.000	            0	 0	30.949.615.161
-  6	122		ADMINISTRAÇÃO GERAL	6.677.579.726	            0	1.005.295.054	1.306.001	          0	            0	 0	7.684.180.781
-  6	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	6.677.579.726	            0	1.005.295.054	1.306.001	          0	            0	 0	7.684.180.781
+  6			SEGURANÇA PÚBLICA	26.155.536.870	            0	4.367.065.272	326.454.114	1.000	            0	 0	30.849.057.256
+  6	122		ADMINISTRAÇÃO GERAL	6.677.579.727	            0	1.005.295.054	1.306.001	          0	            0	 0	7.684.180.782
+  6	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	6.677.579.727	            0	1.005.295.054	1.306.001	          0	            0	 0	7.684.180.782
   6	123		ADMINISTRAÇÃO FINANCEIRA	             0	            0	50.138.066	            0	          0	            0	 0	50.138.066
   6	123	134	GESTÃO INTEGRADA DE SEGURANÇA PÚBLICA	             0	            0	50.138.066	            0	          0	            0	 0	50.138.066
   6	128		FORMAÇÃO DE RECURSOS HUMANOS	50.022.251	            0	27.187.056	2.250.358	          0	            0	 0	79.459.665
@@ -111,12 +111,12 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   6	128	52	PROMOÇÃO DE DEFESA CIVIL	50.022.251	            0	23.894.676	25.000	          0	            0	 0	73.941.927
   6	130		ADMINISTRAÇÃO DE CONCESSÕES	             0	            0	             0	            0	1.000	            0	 0	1.000
   6	130	85	PROMOÇÃO DE CONCESSÕES E PARCERIAS	             0	            0	             0	            0	1.000	            0	 0	1.000
-  6	181		POLICIAMENTO	6.050.132.280	            0	1.780.905.739	199.897.222	          0	            0	 0	8.030.935.241
+  6	181		POLICIAMENTO	5.949.574.373	            0	1.780.905.739	199.897.222	          0	            0	 0	7.930.377.334
   6	181	32	INVESTIGAÇÃO	             0	            0	128.486.916	63.272.452	          0	            0	 0	191.759.368
-  6	181	46	SUPORTE AÉREO AOS SERVIÇOS PÚBLICOS ESTADUAIS	34.128.544	            0	32.830.366	800.000	          0	            0	 0	67.758.910
+  6	181	46	SUPORTE AÉREO AOS SERVIÇOS PÚBLICOS ESTADUAIS	34.128.545	            0	32.830.366	800.000	          0	            0	 0	67.758.911
   6	181	134	GESTÃO INTEGRADA DE SEGURANÇA PÚBLICA	             0	            0	54.571.268	993.939	          0	            0	 0	55.565.207
   6	181	135	PROTEÇÃO SOCIAL DOS MILITARES	             0	            0	175.525	403	          0	            0	 0	175.928
-  6	181	137	POLÍCIA OSTENSIVA	6.016.003.736	            0	1.564.841.664	134.830.428	          0	            0	 0	7.715.675.828
+  6	181	137	POLÍCIA OSTENSIVA	5.915.445.828	            0	1.564.841.664	134.830.428	          0	            0	 0	7.615.117.920
   6	182		DEFESA CIVIL	1.114.497.792	            0	230.519.714	21.068.686	          0	            0	 0	1.366.086.192
   6	182	48	PROTEÇÃO E DEFESA CIVIL	             0	            0	1.655.243	40.750	          0	            0	 0	1.695.993
   6	182	52	PROMOÇÃO DE DEFESA CIVIL	1.114.497.792	            0	223.118.283	21.027.936	          0	            0	 0	1.358.644.011
@@ -129,8 +129,8 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   6	183	134	GESTÃO INTEGRADA DE SEGURANÇA PÚBLICA	             0	            0	352.410	            0	          0	            0	 0	352.410
   6	243		ASSISTÊNCIA À CRIANÇA E AO ADOLESCENTE	             0	            0	24.980.578	29.000.001	          0	            0	 0	53.980.579
   6	243	146	PROMOÇÃO DA POLÍTICA SOCIOEDUCATIVA PARA ATENDIMENTO AOS ADOLESCENTES EM CONFLITO COM A LEI	             0	            0	24.980.578	29.000.001	          0	            0	 0	53.980.579
-  6	272		PREVIDÊNCIA DO REGIME ESTATUTÁRIO	12.363.862.726	            0	             0	            0	          0	            0	 0	12.363.862.726
-  6	272	705	APOIO ÀS POLÍTICAS PÚBLICAS	12.363.862.726	            0	             0	            0	          0	            0	 0	12.363.862.726
+  6	272		PREVIDÊNCIA DO REGIME ESTATUTÁRIO	12.363.862.727	            0	             0	            0	          0	            0	 0	12.363.862.727
+  6	272	705	APOIO ÀS POLÍTICAS PÚBLICAS	12.363.862.727	            0	             0	            0	          0	            0	 0	12.363.862.727
   6	331		PROTEÇÃO E BENEFÍCIOS AO TRABALHADOR	             0	            0	59.673	            0	          0	            0	 0	59.673
   6	331	134	GESTÃO INTEGRADA DE SEGURANÇA PÚBLICA	             0	            0	59.673	            0	          0	            0	 0	59.673
   6	363		ENSINO PROFISSIONAL	             0	            0	8.543.932	18.223	          0	            0	 0	8.562.155
@@ -159,18 +159,18 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   8	511	56	DESENVOLVIMENTO DA INFRAESTRUTURA DO NORTE E NORDESTE DE MINAS GERAIS	             0	            0	1.000	            0	          0	            0	 0	1.000
   8	544		RECURSOS HÍDRICOS	             0	            0	4.362.924	1.777.510	          0	            0	 0	6.140.434
   8	544	101	PROGRAMA ENCONTRO DAS ÁGUAS	             0	            0	4.362.924	1.777.510	          0	            0	 0	6.140.434
-  9			PREVIDÊNCIA SOCIAL	29.395.297.021	            0	540.772.525	3.826.648	12.254.750	            0	 0	29.952.150.944
+  9			PREVIDÊNCIA SOCIAL	29.573.996.845	            0	555.172.511	3.826.648	12.254.750	            0	 0	30.145.250.754
   9	122		ADMINISTRAÇÃO GERAL	10.337.401	            0	32.798.982	77.242	          0	            0	 0	43.213.625
   9	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	10.337.401	            0	32.798.982	77.242	          0	            0	 0	43.213.625
-  9	272		PREVIDÊNCIA DO REGIME ESTATUTÁRIO	29.384.959.620	            0	422.121.092	            0	          0	            0	 0	29.807.080.712
+  9	272		PREVIDÊNCIA DO REGIME ESTATUTÁRIO	29.563.659.444	            0	436.521.078	            0	          0	            0	 0	30.000.180.522
   9	272	  8	PRESTAÇÃO DE SERVIÇOS PREVIDENCIÁRIOS	1.038.052	            0	34.163.318	            0	          0	            0	 0	35.201.370
   9	272	138	CONCESSÃO DE AUXÍLIO FINANCEIRO, SEGURO E PECÚLIO	             0	            0	130.955.045	            0	          0	            0	 0	130.955.045
-  9	272	705	APOIO ÀS POLÍTICAS PÚBLICAS	29.383.921.568	            0	257.002.729	            0	          0	            0	 0	29.640.924.297
+  9	272	705	APOIO ÀS POLÍTICAS PÚBLICAS	29.562.621.392	            0	271.402.715	            0	          0	            0	 0	29.834.024.107
   9	274		PREVIDÊNCIA ESPECIAL	             0	            0	85.852.451	3.749.406	12.254.750	            0	 0	101.856.607
   9	274	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	            0	79.457.271	            0	          0	            0	 0	79.457.271
   9	274	766	BENEFÍCIOS ASSISTENCIAIS	             0	            0	6.395.180	            0	          0	            0	 0	6.395.180
   9	274	767	RESERVA DE BENEFÍCIOS	             0	            0	             0	3.749.406	12.254.750	            0	 0	16.004.156
-10			SAÚDE	3.233.902.774	            0	16.865.956.520	1.409.020.098	1.000	            0	 0	21.508.880.392
+10			SAÚDE	3.233.902.775	            0	16.865.956.520	1.409.020.098	1.000	            0	 0	21.508.880.393
 10	61		AÇÃO JUDICIÁRIA	             0	            0	819.847.511	3.338.000	          0	            0	 0	823.185.511
 10	61	62	ACESSO A SERVIÇOS DE SAÚDE	             0	            0	819.847.511	3.338.000	          0	            0	 0	823.185.511
 10	122		ADMINISTRAÇÃO GERAL	2.545.901.860	            0	1.589.946.033	934.027.309	          0	            0	 0	5.069.875.202
@@ -189,7 +189,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 10	243	146	PROMOÇÃO DA POLÍTICA SOCIOEDUCATIVA PARA ATENDIMENTO AOS ADOLESCENTES EM CONFLITO COM A LEI	23.425.414	            0	8.225.304	368.844	          0	            0	 0	32.019.562
 10	301		ATENÇÃO BÁSICA	             0	            0	573.671.632	128.575.455	          0	            0	 0	702.247.087
 10	301	60	ATENÇÃO PRIMÁRIA À SAÚDE	             0	            0	573.671.632	128.575.455	          0	            0	 0	702.247.087
-10	302		ASSISTÊNCIA HOSPITALAR E AMBULATORIAL	394.843.763	            0	11.535.389.574	275.612.983	          0	            0	 0	12.205.846.320
+10	302		ASSISTÊNCIA HOSPITALAR E AMBULATORIAL	394.843.764	            0	11.535.389.574	275.612.983	          0	            0	 0	12.205.846.321
 10	302	  6	ASSISTÊNCIA À SAÚDE DOS SEGURADOS E DOS SEUS DEPENDENTES	             0	            0	918.707.638	13.103.092	          0	            0	 0	931.810.730
 10	302	  7	EDUCAÇÃO SUPERIOR	             0	            0	81.500.920	4.836.264	          0	            0	 0	86.337.184
 10	302	19	ATENÇÃO HOSPITALAR ESPECIALIZADA	             0	            0	785.571.112	4.035.656	          0	            0	 0	789.606.768
@@ -202,7 +202,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 10	302	62	ACESSO A SERVIÇOS DE SAÚDE	             0	            0	1.119.235.686	6.165.000	          0	            0	 0	1.125.400.686
 10	302	87	ASSISTÊNCIA EM HEMATOLOGIA, HEMOTERAPIA,CÉLULAS E TECIDOS BIOLÓGICOS	             0	            0	202.351.447	19.191.908	          0	            0	 0	221.543.355
 10	302	88	SERVIÇOS DE SAÚDE PRESTADOS PELO IPSEMG NA REDE PRÓPRIA	             0	            0	395.066.179	32.895.348	          0	            0	 0	427.961.527
-10	302	135	PROTEÇÃO SOCIAL DOS MILITARES	358.056.280	            0	184.471.755	15.642.001	          0	            0	 0	558.170.036
+10	302	135	PROTEÇÃO SOCIAL DOS MILITARES	358.056.281	            0	184.471.755	15.642.001	          0	            0	 0	558.170.037
 10	302	166	EXECUÇÃO DESCENTRALIZADA E AUTÔNOMA DAS AÇÕES E SERVIÇOS DE SAÚDE	             0	            0	3.157.172.707	            0	          0	            0	 0	3.157.172.707
 10	302	764	ASSISTÊNCIA COMPLEMENTAR	             0	            0	1.000	            0	          0	            0	 0	1.000
 10	303		SUPORTE PROFILÁTICO E TERAPÊUTICO	113.171.771	            0	1.614.532.147	30.001.564	          0	            0	 0	1.757.705.482
@@ -229,7 +229,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 11	334	83	POLÍTICAS DE PROMOÇÃO AO DESENVOLVIMENTO SOCIAL NO CONTEXTO RURAL - PERCURSOS GERAIS: TRAJETÓRIA PARA AUTONOMIA	             0	            0	17.945	            0	          0	            0	 0	17.945
 11	363		ENSINO PROFISSIONAL	             0	            0	4.621.903	810.354	          0	            0	 0	5.432.257
 11	363	67	REDE DE DESENVOLVIMENTO DA EDUCAÇÃO PROFISSIONAL	             0	            0	4.621.903	810.354	          0	            0	 0	5.432.257
-12			EDUCAÇÃO	17.631.505.989	            0	4.360.608.503	1.026.823.047	27.331.412	            0	 0	23.046.268.951
+12			EDUCAÇÃO	17.632.063.901	            0	4.360.608.503	1.026.823.047	27.331.412	            0	 0	23.046.826.863
 12	122		ADMINISTRAÇÃO GERAL	758.710.924	            0	149.600.557	1.691.527	          0	            0	 0	910.003.008
 12	122	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	1.031.108	16.000	          0	            0	 0	1.047.108
 12	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	758.710.924	            0	148.569.449	1.675.527	          0	            0	 0	908.955.900
@@ -246,17 +246,17 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	306	163	ALIMENTAÇÃO ESCOLAR	             0	            0	701.816.929	            0	          0	            0	 0	701.816.929
 12	334		FOMENTO AO TRABALHO	             0	            0	389.466	960.000	          0	            0	 0	1.349.466
 12	334	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	389.466	960.000	          0	            0	 0	1.349.466
-12	361		ENSINO FUNDAMENTAL	7.689.662.457	            0	204.818.233	201.002.000	          0	            0	 0	8.095.482.690
+12	361		ENSINO FUNDAMENTAL	7.690.220.367	            0	204.818.233	201.002.000	          0	            0	 0	8.096.040.600
 12	361	42	DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	9.854.277	            0	1.452.425	1.000.000	          0	            0	 0	12.306.702
 12	361	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	10.000	            0	          0	            0	 0	10.000
-12	361	136	EDUCAÇÃO ESCOLAR	23.089.170	            0	5.481.143	            0	          0	            0	 0	28.570.313
+12	361	136	EDUCAÇÃO ESCOLAR	23.647.080	            0	5.481.143	            0	          0	            0	 0	29.128.223
 12	361	162	PROGRAMA DE DESENVOLVIMENTO E GESTÃO DE PESSOAS DA REDE ESTADUAL DE ENSINO	7.656.719.010	            0	97.866.665	            0	          0	            0	 0	7.754.585.675
 12	361	167	PROGRAMA ESTADUAL DE DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	100.000.000	            0	          0	            0	 0	100.000.000
 12	361	172	PROGRAMA ESTADUAL DE COOPERACAO ESTADO-MUNICIPIO NA AREA EDUCACIONAL	             0	            0	8.000	200.002.000	          0	            0	 0	200.010.000
-12	362		ENSINO MÉDIO	5.755.455.060	            0	147.907.490	            0	          0	            0	 0	5.903.362.550
+12	362		ENSINO MÉDIO	5.755.455.062	            0	147.907.490	            0	          0	            0	 0	5.903.362.552
 12	362	42	DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	6.362.110	            0	940.592	            0	          0	            0	 0	7.302.702
 12	362	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	20.000	            0	          0	            0	 0	20.000
-12	362	136	EDUCAÇÃO ESCOLAR	192.545.387	            0	36.151.646	            0	          0	            0	 0	228.697.033
+12	362	136	EDUCAÇÃO ESCOLAR	192.545.389	            0	36.151.646	            0	          0	            0	 0	228.697.035
 12	362	162	PROGRAMA DE DESENVOLVIMENTO E GESTÃO DE PESSOAS DA REDE ESTADUAL DE ENSINO	5.556.547.563	            0	85.795.252	            0	          0	            0	 0	5.642.342.815
 12	362	167	PROGRAMA ESTADUAL DE DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	25.000.000	            0	          0	            0	 0	25.000.000
 12	363		ENSINO PROFISSIONAL	101.254.898	            0	790.373.788	5.113.839	          0	            0	 0	896.742.525
@@ -524,5 +524,5 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 28	844	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	387.849.762	             0	            0	          0	1.459.216.590	 0	1.847.066.352
 28	846		OUTROS ENCARGOS ESPECIAIS	1.078.581.102	236.419.530	1.643.759.815	            0	1.000	1.369.781.893	 0	4.328.543.340
 28	846	705	APOIO ÀS POLÍTICAS PÚBLICAS	1.078.581.102	236.419.530	1.643.759.815	            0	1.000	1.369.781.893	 0	4.328.543.340
-100			TOTAL	95.459.351.673	1.185.539.611	41.286.671.691	7.320.109.857	897.622.576	6.437.708.586	 0	152.587.003.994
+100			TOTAL	96.338.681.687	1.185.539.611	41.568.838.649	7.333.737.057	897.622.576	6.437.708.586	 0	153.762.128.166
 				             0	            0	             0	            0	          0	            0		
