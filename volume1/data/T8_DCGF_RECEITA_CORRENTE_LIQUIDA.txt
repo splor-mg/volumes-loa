@@ -5,37 +5,38 @@ Principal	124.056.661.545	 2	2
 ICMS	93.429.607.919	 3	3
 IPVA	13.460.531.240	 4	3
 ITCD	2.347.483.514	 5	3
-IRRF	8.727.036.731	 6	3
-Taxas	5.834.348.132	 7	3
-Acessórias [Dívida Ativa, Multas e Juros]	3.371.640.018	 8	2
-ICMS	1.818.226.121	 9	3
-IPVA	1.233.601.640	10	3
-ITCD	229.604.185	11	3
-Taxas	90.208.072	12	3
-Receitas de Contribuições	7.046.733.128	13	1
-Receita Patrimonial	6.125.104.675	14	1
-Rendimentos de Aplicação Financeira	3.312.648.472	15	2
-Outras Receitas Patrimoniais	2.812.456.203	16	2
-Receita Agropecuária	12.653.800	17	1
-Receita Industrial	638.693.366	18	1
-Receita de Serviços	1.471.825.296	19	1
-Receita de Transferências Correntes	29.453.268.834	20	1
-Cota-Parte do FPE	10.497.799.915	21	2
-Transferências da LC 61/1989	1.320.699.980	23	2
-Transferências do FUNDEB	13.690.598.620	24	2
-Outras Transferências Correntes	3.944.170.319	25	2
-Outras Receitas Correntes	2.213.250.088	26	1
-DEDUÇÕES ( II )	55.271.197.485	27	0
-Transferências Constitucionais e Legais	31.305.183.252	28	1
-Contrib. para o Plano de Previdência do Servidor	4.184.409.138	29	1
-Contrib. para o Custeio das Pensões Militares	977.841.092	30	1
-Compensação Financ. entre Regimes Previdência	81.031.031	31	1
-Rendimentos de Aplicações de Recursos Previdenciários	57.088.386	32	1
-Dedução da Receita Corrente – Formação do FUNDEB	18.665.644.586	33	1
-RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )	119.118.633.265	34	0
-(-) Transf. obrig. da União relativas às emendas individuais (art. 166-A, § 1\degree, da CF) (IV)	14.734.468	35	0
-RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )	119.103.898.797	36	0
-(-) Transf. obrig. da União relativas às emendas de bancada (art. 166, § 16, da CF) (VI)	24.770.072	37	0
-(-) Transf. da União relativas a remuneração dos agentes comunitários de saúde e de combate às endemias (CF, art. 198, § 11 (VII)	              0	38	0
-(-) Outras Deduções Constitucionais ou Legais (VIII)	              0	39	0
-RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (IX) = (V - VI - VII - VIII)	119.079.128.725	40	0
+IBS	257.654.009	 6	3
+IRRF	8.727.036.731	 7	3
+Taxas	5.834.348.132	 8	3
+Acessórias [Dívida Ativa, Multas e Juros]	3.371.640.018	 9	2
+ICMS	1.818.226.121	10	3
+IPVA	1.233.601.640	11	3
+ITCD	229.604.185	12	3
+Taxas	90.208.072	14	3
+Receitas de Contribuições	7.046.733.128	15	1
+Receita Patrimonial	6.125.104.675	16	1
+Rendimentos de Aplicação Financeira	3.312.648.472	17	2
+Outras Receitas Patrimoniais	2.812.456.203	18	2
+Receita Agropecuária	12.653.800	19	1
+Receita Industrial	638.693.366	20	1
+Receita de Serviços	1.471.825.296	21	1
+Receita de Transferências Correntes	29.453.268.834	22	1
+Cota-Parte do FPE	10.497.799.915	23	2
+Transferências da LC 61/1989	1.320.699.980	25	2
+Transferências do FUNDEB	13.690.598.620	26	2
+Outras Transferências Correntes	3.944.170.319	27	2
+Outras Receitas Correntes	2.213.250.088	28	1
+DEDUÇÕES ( II )	55.367.817.738	29	0
+Transferências Constitucionais e Legais	31.401.803.505	30	1
+Contrib. para o Plano de Previdência do Servidor	4.184.409.138	31	1
+Contrib. para o Custeio das Pensões Militares	977.841.092	32	1
+Compensação Financ. entre Regimes Previdência	81.031.031	33	1
+Rendimentos de Aplicações de Recursos Previdenciários	57.088.386	34	1
+Dedução da Receita Corrente – Formação do FUNDEB	18.665.644.586	35	1
+RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )	119.022.013.012	36	0
+(-) Transf. obrig. da União relativas às emendas individuais (art. 166-A, § 1\degree, da CF) (IV)	14.734.468	37	0
+RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )	119.007.278.544	38	0
+(-) Transf. obrig. da União relativas às emendas de bancada (art. 166, § 16, da CF) (VI)	24.770.072	39	0
+(-) Transf. da União relativas a remuneração dos agentes comunitários de saúde e de combate às endemias (CF, art. 198, § 11 (VII)	              0	40	0
+(-) Outras Deduções Constitucionais ou Legais (VIII)	              0	41	0
+RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (IX) = (V - VI - VII - VIII)	118.982.508.472	42	0

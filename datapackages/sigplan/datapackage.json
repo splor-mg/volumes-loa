@@ -13,8 +13,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "hash": "sha256:713bf15403693279d80266e5adc5a877ce612214f53ff92eb649c18eeffe8462",
-      "bytes": 2117906,
+      "hash": "sha256:9b2e02e529ec1b22b27f689161dedc713b9153549043889cb56ec4ad77acc56c",
+      "bytes": 2117860,
       "fields": 49,
       "rows": 1022,
       "dialect": {
@@ -225,12 +225,12 @@
     }
   ],
   "owner_org": "secretaria-de-estado-de-planejamento-e-gestao-seplag",
-  "updated_at": "2026-09-15T11:38:13",
+  "updated_at": "2026-09-16T08:46:16",
   "remote": {
     "host": "raw.githubusercontent.com",
     "user": "splor-mg",
     "repo": "dados-ppo-2027",
     "ref": "main",
-    "sha": "9cb8c5dfe1c88ce7ef28414137796be8825906b7"
+    "sha": "077f8584eeb6b760ffd8ff4bfd3ca05df588c9f5"
   }
 }
