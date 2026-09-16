@@ -56,15 +56,13 @@ running
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino.R'
 
-Warning: T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino: Receita mde via demonstr_mde_rec 101.862.068.909 é diferente do apresentado em relatorios 102.060.070.784
+Warning: T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino: Receita mde via demonstr_mde_rec 101.958.689.163 é diferente do apresentado em relatorios 102.060.070.784
 
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T17_DCGF_Demonst_Aplicacao_Recursos_Progr_Saude_Investim.R'
 
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude.R'
-
-Warning: T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude: Receita asps via demonstr_asps_rec 101.862.019.148 é diferente do apresentado em relatorios 102.055.259.655
 
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T19_DCGF_Demonstrativo_Aplicacao_Recursos_Amparo_Fomento_Pesquisa.R'
@@ -120,7 +118,6 @@ running
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.R'
 
-Warning: Valor de RCL pelo pkg relatorios (118.982.508.472) é diferente do apresentado no demonstrativo (119.079.128.725). Avaliar o demonstrativo em utils/rcl.R
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T1_DCGF_Demonstrativo_Consolidado_Orcamento_Fiscal.R'
 
