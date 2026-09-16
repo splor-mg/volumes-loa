@@ -1,12 +1,12 @@
 
 demonstr_rcl_classificacao_antiga = function(rec){
-  
+
   base = copy(rec)
-  
+
   # ================================================================
   # Monta o demonstrativo de receita corrente líquida considerando
   # a classificação antiga (10 dígitos) da RECEITA
-  
+
   base[nat(RECEITA_COD,11) ,rcl_n2:= "2.2.Receitas Tributárias" ]
   base[nat(RECEITA_COD,1113) ,rcl_n3:= "3.3.ICMS" ]
   base[nat(RECEITA_COD,111205) ,rcl_n3:= "4.3.IPVA" ]
@@ -23,59 +23,59 @@ demonstr_rcl_classificacao_antiga = function(rec){
   base[nat(RECEITA_COD,1721360100, 1721360200) ,rcl_n3:= "15.3.Transferências da LC 87/1996" ]
   base[nat(RECEITA_COD,17210112) ,rcl_n3:= "16.3.Transferências da LC 61/1989" ]
   base[nat(RECEITA_COD,1724) ,rcl_n3:= "17.3.Transferências do FUNDEB" ]
-  base[nat(RECEITA_COD, 17, -1721010101, -1721010102, -1721360100, 
+  base[nat(RECEITA_COD, 17, -1721010101, -1721010102, -1721360100,
           -1721360200, -17210112, -1724),  rcl_n3:= "18.3.Outras Transferências Correntes" ]
   base[nat(RECEITA_COD,19) ,rcl_n2:= "19.2.Outras Receitas Correntes" ]
-  
+
   base[nat(RECEITA_COD, 1721011302) | FONTE_COD ==20 ,rcl_n2_1:= "21.2.Transferências Constitucionais e Legais" ]
-  
+
   # ========= Contrib. para o Plano de Previdência do Servidor ==============================================
-  base[nat(RECEITA_COD, 12102907, -1210290702, 
+  base[nat(RECEITA_COD, 12102907, -1210290702,
           12102909, 12102911, 121050), rcl_n2_2:= "22.2.Contrib. para o Plano de Previdência do Servidor" ]
-  
+
   base[nat(RECEITA_COD, 1210290801, 1210291001), rcl_n2_2:= "23.2.Contrib. para o Custeio das Pensões Militares" ]
   base[nat(RECEITA_COD, 1922100000), rcl_n2_2:= "24.2.Compensação Financ. entre Regimes Previdência" ]
   base[nat(RECEITA_COD, 9), rcl_n2:= "25.2.Dedução da Receita Corrente – Formação do FUNDEB e Cessão de Direitos Creditórios" ]
-  
+
   base[nat(RECEITA_COD,1) ,rcl_n1:= "1.1.RECEITAS CORRENTES ( I )" ]
-  
-  base[between(as.numeric(gsub("^(\\d+).+", "\\1",rcl_n2)), 21,25) | !is.na(rcl_n2_1) | !is.na(rcl_n2_2), 
+
+  base[between(as.numeric(gsub("^(\\d+).+", "\\1",rcl_n2)), 21,25) | !is.na(rcl_n2_1) | !is.na(rcl_n2_2),
       rcl_n1d:= "20.1.DEDUÇÕES ( II )" ]
-  
+
   base_n1 = base[!is.na(rcl_n1), .(VL_LOA_REC = sum(abs(VL_LOA_REC)), nvl=1), by=.(espec = rcl_n1)]
   base_n1d = base[!is.na(rcl_n1d), .(VL_LOA_REC = sum(abs(VL_LOA_REC)), nvl=1), by=.(espec = rcl_n1d)]
-  
-  base_n1rcl = data.table(espec = "30.1.RECEITA CORRENTE LÍQUIDA ( I - II )",  
-                         VL_LOA_REC = base_n1$VL_LOA_REC - base_n1d$VL_LOA_REC, 
+
+  base_n1rcl = data.table(espec = "30.1.RECEITA CORRENTE LÍQUIDA ( I - II )",
+                         VL_LOA_REC = base_n1$VL_LOA_REC - base_n1d$VL_LOA_REC,
                          nvl=1)
-  
+
   base_n2 = base[!is.na(rcl_n2), .(VL_LOA_REC = sum(abs(VL_LOA_REC)), nvl=2), by=.(espec = rcl_n2)]
-  
+
   base_n2 = rbind(base_n2, base[!is.na(rcl_n2_1), .(VL_LOA_REC = sum(abs(VL_LOA_REC)), nvl=2), by=.(espec = rcl_n2_1)])
   base_n2 = rbind(base_n2, base[!is.na(rcl_n2_2), .(VL_LOA_REC = sum(abs(VL_LOA_REC)), nvl=2), by=.(espec = rcl_n2_2)])
-  
+
   base_n3 = base[!is.na(rcl_n3), .(VL_LOA_REC = sum(abs(VL_LOA_REC)), nvl=3), by=.(espec = rcl_n3)]
   rcl = rbindlist(list(base_n1, base_n1d, base_n1rcl, base_n2, base_n3))
-  
+
   rcl[, ordem:=as.numeric(gsub("(\\d+)\\.(.+)", "\\1", espec))]
   rcl[, nvl := gsub("\\d+\\.(\\d+)\\..+", "\\1", espec)]
-  
+
   rcl[, espec:= gsub("\\d+\\.\\d+\\.(.+)", "\\1", espec)]
-  
+
   rcl = rcl[order(ordem)]
-  
+
   return(rcl)
-  
+
 }
 
 demonstr_rcl = function(rec){
-  
+
   # ================================================================
   # Monta o demonstrativo de receita corrente líquida considerando
   # a nova classificação (13 dígitos) da RECEITA
-  
+
   base = copy(rec)
-  
+
   if(prod(unique(nchar(base[, RECEITA_COD])) == 13) != 1){
     stop("demonstr_rcl: Algum código de RECEITA_COD não possui 13 dígitos.")
   }
@@ -86,131 +86,136 @@ demonstr_rcl = function(rec){
   base[is_impostos_principal(base) & nat(RECEITA_COD,1), n2 := "2.2.Principal"]
   base[is_impostos_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n2 := "2.2.Principal"]
   base[is_taxas_principal(base), n2 := "2.2.Principal"]
-  
+
   base[is_icms_principal(base) & nat(RECEITA_COD,1), n3 := "3.3.ICMS"]
   base[is_icms_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "3.3.ICMS"]
   base[is_ipva_principal(base) & nat(RECEITA_COD,1), n3 := "4.3.IPVA"]
   base[is_ipva_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "4.3.IPVA"]
   base[is_itcd_principal(base) & nat(RECEITA_COD,1), n3 := "5.3.ITCD"]
   base[is_itcd_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "5.3.ITCD"]
-  base[is_irrf_principal(base) & nat(RECEITA_COD,1), n3 := "6.3.IRRF"]
-  base[is_irrf_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "6.3.IRRF"]
-  base[is_taxas_principal(base), n3 := "7.3.Taxas"]
+  base[is_ibs_principal(base) & nat(RECEITA_COD,1), n3 := "6.3.IBS"]
+  base[is_ibs_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "6.3.IBS"]
+  base[is_irrf_principal(base) & nat(RECEITA_COD,1), n3 := "7.3.IRRF"]
+  base[is_irrf_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "7.3.IRRF"]
+  base[is_taxas_principal(base), n3 := "8.3.Taxas"]
 
-  base[is_impostos_acessorias(base) & nat(RECEITA_COD,1), n2 := "8.2.Acessórias [Dívida Ativa, Multas e Juros]"]
-  base[is_impostos_acessorias(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n2 := "8.2.Acessórias [Dívida Ativa, Multas e Juros]"]
-  base[is_taxas_acessorias(base), n2 := "8.2.Acessórias [Dívida Ativa, Multas e Juros]"]
-  
-  base[is_icms_acessorias(base) & nat(RECEITA_COD,1), n3 := "9.3.ICMS"]
-  base[is_icms_acessorias(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "9.3.ICMS"]
-  base[is_ipva_acessorias(base) & nat(RECEITA_COD,1), n3 := "10.3.IPVA"]
-  base[is_ipva_acessorias(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "10.3.IPVA"]
-  base[is_itcd_acessorias(base) & nat(RECEITA_COD,1), n3 := "11.3.ITCD"]
-  base[is_itcd_acessorias(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "11.3.ITCD"]
-  base[is_taxas_acessorias(base), n3 := "12.3.Taxas"]
+  base[is_impostos_acessorias(base) & nat(RECEITA_COD,1), n2 := "9.2.Acessórias [Dívida Ativa, Multas e Juros]"]
+  base[is_impostos_acessorias(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n2 := "9.2.Acessórias [Dívida Ativa, Multas e Juros]"]
+  base[is_taxas_acessorias(base), n2 := "9.2.Acessórias [Dívida Ativa, Multas e Juros]"]
 
-  base[nat(RECEITA_COD,12,92), n2:= "13.1.Receitas de Contribuições" ]
-  base[nat(RECEITA_COD,13,93), n2:= "14.1.Receita Patrimonial" ]
+  base[is_icms_acessorias(base) & nat(RECEITA_COD,1), n3 := "10.3.ICMS"]
+  base[is_icms_acessorias(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "10.3.ICMS"]
+  base[is_ipva_acessorias(base) & nat(RECEITA_COD,1), n3 := "11.3.IPVA"]
+  base[is_ipva_acessorias(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "11.3.IPVA"]
+  base[is_itcd_acessorias(base) & nat(RECEITA_COD,1), n3 := "12.3.ITCD"]
+  base[is_itcd_acessorias(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "12.3.ITCD"]
+  base[is_ibs_acessorias(base) & nat(RECEITA_COD,1), n3 := "13.3.IBS"]
+  base[is_ibs_acessorias(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23), n3 := "13.3.IBS"]
+  base[is_taxas_acessorias(base), n3 := "14.3.Taxas"]
+
+  base[nat(RECEITA_COD,12,92), n2:= "15.1.Receitas de Contribuições" ]
+  base[nat(RECEITA_COD,13,93), n2:= "16.1.Receita Patrimonial" ]
 
   #adicionar Rendimentos de aplicação financeira e Outras rec patrimoniais na LOA 2023
-  base[is_aplic_fin(base), n3:= "15.2.Rendimentos de Aplicação Financeira" ]
-  base[!is_aplic_fin(base) & nat(RECEITA_COD,13,93), n3:= "16.2.Outras Receitas Patrimoniais" ] 
+  base[is_aplic_fin(base), n3:= "17.2.Rendimentos de Aplicação Financeira" ]
+  base[!is_aplic_fin(base) & nat(RECEITA_COD,13,93), n3:= "18.2.Outras Receitas Patrimoniais" ]
 
 
-  base[nat(RECEITA_COD,14,94), n2:= "17.1.Receita Agropecuária" ]
-  base[nat(RECEITA_COD,15,95), n2:= "18.1.Receita Industrial" ]
-  base[nat(RECEITA_COD,16,96), n2:= "19.1.Receita de Serviços" ]
+  base[nat(RECEITA_COD,14,94), n2:= "19.1.Receita Agropecuária" ]
+  base[nat(RECEITA_COD,15,95), n2:= "20.1.Receita Industrial" ]
+  base[nat(RECEITA_COD,16,96), n2:= "21.1.Receita de Serviços" ]
 
-  base[nat(RECEITA_COD,17), n2:= "20.1.Receita de Transferências Correntes" ]
-  base[nat(RECEITA_COD,97) & !FONTE_COD %in% c(20,23,51), n2:= "20.1.Receita de Transferências Correntes" ]
+  base[nat(RECEITA_COD,17), n2:= "22.1.Receita de Transferências Correntes" ]
+  base[nat(RECEITA_COD,97) & !FONTE_COD %in% c(20,23,51), n2:= "22.1.Receita de Transferências Correntes" ]
 
-  base[is_fpe_principal(base) & nat(RECEITA_COD,1), n3:= "21.2.Cota-Parte do FPE" ]
-  base[is_fpe_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23,51), n3:= "21.2.Cota-Parte do FPE" ]
-  base[is_lei_kandir_principal(base) & nat(RECEITA_COD,1), n3:= "22.2.Transferências da LC 87/1996" ]
-  base[is_lei_kandir_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23,51), n3:= "22.2.Transferências da LC 87/1996" ]
-  base[is_ipi_principal(base), n3:= "23.2.Transferências da LC 61/1989" ]
-  base[is_ipi_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23,51), n3:= "23.2.Transferências da LC 61/1989" ]
-  base[is_volta_fundeb(base), n3:= "24.2.Transferências do FUNDEB" ]
-  base[nat(RECEITA_COD,17) & is.na(n3), n3:= "25.2.Outras Transferências Correntes" ]
+  base[is_fpe_principal(base) & nat(RECEITA_COD,1), n3:= "23.2.Cota-Parte do FPE" ]
+  base[is_fpe_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23,51), n3:= "23.2.Cota-Parte do FPE" ]
+  base[is_lei_kandir_principal(base) & nat(RECEITA_COD,1), n3:= "24.2.Transferências da LC 87/1996" ]
+  base[is_lei_kandir_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23,51), n3:= "24.2.Transferências da LC 87/1996" ]
+  base[is_ipi_principal(base), n3:= "25.2.Transferências da LC 61/1989" ]
+  base[is_ipi_principal(base, deducoes = TRUE) & nat(RECEITA_COD,9) & !FONTE_COD %in% c(20,23,51), n3:= "25.2.Transferências da LC 61/1989" ]
+  base[is_volta_fundeb(base), n3:= "26.2.Transferências do FUNDEB" ]
+  base[nat(RECEITA_COD,17) & is.na(n3), n3:= "27.2.Outras Transferências Correntes" ]
 
-  base[nat(RECEITA_COD,19,99), n2:= "26.1.Outras Receitas Correntes" ]
-  
+  base[nat(RECEITA_COD,19,99), n2:= "28.1.Outras Receitas Correntes" ]
+
   #===========================================================================================================
   # Header Deduções (II) virá aqui posteriormente
   #===========================================================================================================
-  
-  base[is_transf_const_mun_rec(base) & nat(RECEITA_COD, 9) , n2_1:= "28.1.Transferências Constitucionais e Legais" ]
-  
+
+  base[is_transf_const_mun_rec(base) & nat(RECEITA_COD, 9) , n2_1:= "30.1.Transferências Constitucionais e Legais" ]
+  base[is_ibs_bruto(base, TRUE) & nat(RECEITA_COD, 9) & substr(RECEITA_COD, 10, 10) == "4", n2_1 := "30.1.Transferências Constitucionais e Legais"]
+
   #base[nat(RECEITA_COD, 121501, 121502, 121503, 121550, 121551),   n2_2:= "29.1.Contrib. para o Plano de Previdência do Servidor" ]
-  base[relatorios::is_contrib_prev_servidor(base),   n2_2:= "29.1.Contrib. para o Plano de Previdência do Servidor" ]
-  
-  
+  base[relatorios::is_contrib_prev_servidor(base),   n2_2:= "31.1.Contrib. para o Plano de Previdência do Servidor" ]
+
+
   #base[nat(RECEITA_COD, 121504, 121552, 121553, 121554, 121555, 121556), n2_2:= "30.1.Contrib. para o Custeio das Pensões Militares" ]
-  base[relatorios::is_contrib_prev_serv_militar(base), n2_2:= "30.1.Contrib. para o Custeio das Pensões Militares" ]
-  
+  base[relatorios::is_contrib_prev_serv_militar(base), n2_2:= "32.1.Contrib. para o Custeio das Pensões Militares" ]
+
   #base[nat(RECEITA_COD, 199903), n2_2:= "31.1.Compensação Financ. entre Regimes Previdência" ]
-  base[is_rec_prev_compensacao_regimes(base), n2_2:= "31.1.Compensação Financ. entre Regimes Previdência" ]
-  
-  
+  base[is_rec_prev_compensacao_regimes(base), n2_2:= "33.1.Compensação Financ. entre Regimes Previdência" ]
+
+
   # Adicionado para LOA 2023
   #base[nat(RECEITA_COD, 132104), n2_2:= "32.1.Rendimentos de Aplicações de Recursos Previdenciários" ]
-  base[is_rec_prev_patrimonial(base), n2_2:= "32.1.Rendimentos de Aplicações de Recursos Previdenciários" ]
-  
+  base[is_rec_prev_patrimonial(base), n2_2:= "34.1.Rendimentos de Aplicações de Recursos Previdenciários" ]
+
   #base[nat(RECEITA_COD, 9) & FONTE_COD ==23, n2_2:= "33.1.Dedução da Receita Corrente – Formação do FUNDEB" ]
-  base[is_ida_fundeb(base), n2_2:= "33.1.Dedução da Receita Corrente – Formação do FUNDEB" ]
-  
+  base[is_ida_fundeb(base), n2_2:= "35.1.Dedução da Receita Corrente – Formação do FUNDEB" ]
+
   base[nat(RECEITA_COD, 9) & FONTE_COD %in% c(20,23,51), VL_LOA_REC := -1*VL_LOA_REC]
-  
+
   base[nat(RECEITA_COD,1) , n0:= "0.0.RECEITAS CORRENTES ( I )" ]
   base[nat(RECEITA_COD,9)  & !FONTE_COD %in% c(20,23,51), n0:= "0.0.RECEITAS CORRENTES ( I )" ]
-  
-  base[!is.na(n2_1) | !is.na(n2_2), n0d:= "27.0.DEDUÇÕES ( II )" ]
 
-  
-  
-  
+  base[!is.na(n2_1) | !is.na(n2_2), n0d:= "29.0.DEDUÇÕES ( II )" ]
+
+
+
+
   # incluido mudanças de receita LOA 2023
-  base[is_rcl(base) & !is_rcl_divida(base) , n2_2:= "35.0.(-) Transf. obrig. da União relativas às emendas individuais (art. 166-A, § 1º, da CF) (IV)" ]
+  base[is_rcl(base) & !is_rcl_divida(base) , n2_2:= "37.0.(-) Transf. obrig. da União relativas às emendas individuais (art. 166-A, § 1º, da CF) (IV)" ]
 
-  base[is_rcl_divida(base) & !is_rcl_pessoal(base), n2_2:= "37.0.(-) Transf. obrig. da União relativas às emendas de bancada (art. 166, § 16, da CF) (VI)" ]
+  base[is_rcl_divida(base) & !is_rcl_pessoal(base), n2_2:= "39.0.(-) Transf. obrig. da União relativas às emendas de bancada (art. 166, § 16, da CF) (VI)" ]
 
 
-  
-   
-  base1 = data.table(espec = "34.0.RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )",
+
+
+  base1 = data.table(espec = "36.0.RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )",
                    VL = (base[n0=="0.0.RECEITAS CORRENTES ( I )", sum(VL_LOA_REC)] -
-                                   base[n0d== "27.0.DEDUÇÕES ( II )", sum(VL_LOA_REC)]))
-  
-  
-  # incluido mudanças de receita LOA 2023
-  base2 = data.table(espec = "36.0.RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )",
-                     VL = (base1[espec=="34.0.RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )", sum(VL)] -
-                             base[n2_2== "35.0.(-) Transf. obrig. da União relativas às emendas individuais (art. 166-A, § 1º, da CF) (IV)", sum(VL_LOA_REC)]))
+                                   base[n0d== "29.0.DEDUÇÕES ( II )", sum(VL_LOA_REC)]))
 
-  base3 = data.table(espec = "40.0.RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (IX) = (V - VI - VII - VIII)",
-                     VL = (base2[espec=="36.0.RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )", sum(VL)] -
-                             base[n2_2== "37.0.(-) Transf. obrig. da União relativas às emendas de bancada (art. 166, § 16, da CF) (VI)", sum(VL_LOA_REC)]))
-  
-  
+
+  # incluido mudanças de receita LOA 2023
+  base2 = data.table(espec = "38.0.RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )",
+                     VL = (base1[espec=="36.0.RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )", sum(VL)] -
+                             base[n2_2== "37.0.(-) Transf. obrig. da União relativas às emendas individuais (art. 166-A, § 1º, da CF) (IV)", sum(VL_LOA_REC)]))
+
+  base3 = data.table(espec = "42.0.RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (IX) = (V - VI - VII - VIII)",
+                     VL = (base2[espec=="38.0.RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )", sum(VL)] -
+                             base[n2_2== "39.0.(-) Transf. obrig. da União relativas às emendas de bancada (art. 166, § 16, da CF) (VI)", sum(VL_LOA_REC)]))
+
+
   # inclui mudanças do MDF 14 solicitadas pelo TCE
   MDF14_lines <- data.frame(
-    espec = c("38.0.(-) Transf. da União relativas a remuneração dos agentes comunitários de saúde e de combate às endemias (CF, art. 198, § 11 (VII)", 
-              "39.0.(-) Outras Deduções Constitucionais ou Legais (VIII)"),
+    espec = c("40.0.(-) Transf. da União relativas a remuneração dos agentes comunitários de saúde e de combate às endemias (CF, art. 198, § 11 (VII)",
+              "41.0.(-) Outras Deduções Constitucionais ou Legais (VIII)"),
     VL = c(0, 0),
     stringsAsFactors = FALSE  # Prevent automatic conversion of strings to factors
   )
-  
-  
+
+
   rcl = rbindlist(list(
                       base[n0=="0.0.RECEITAS CORRENTES ( I )", list(VL = sum(VL_LOA_REC)), list(espec = n0)],
-                      base[n0d== "27.0.DEDUÇÕES ( II )", list(VL = sum(VL_LOA_REC)), list(espec = n0d)],
+                      base[n0d== "29.0.DEDUÇÕES ( II )", list(VL = sum(VL_LOA_REC)), list(espec = n0d)],
                       base[!is.na(n1), list(VL = sum(VL_LOA_REC)), list(espec = n1)],
                       base[!is.na(n2), list(VL = sum(VL_LOA_REC)), list(espec = n2)],
                       base[!is.na(n3), list(VL = sum(VL_LOA_REC)), list(espec = n3)],
                       base[!is.na(n2_1), list(VL = sum(VL_LOA_REC)), list(espec = n2_1)],
                       base[!is.na(n2_2), list(VL = sum(VL_LOA_REC)), list(espec = n2_2)],
                       base1,
-                      base2, 
+                      base2,
                       base3,
                       MDF14_lines
                       )
@@ -219,7 +224,7 @@ demonstr_rcl = function(rec){
 
   rcl[, ordem:=as.numeric(gsub("(\\d+)\\.(.+)", "\\1", espec))]
   rcl[, nvl := gsub("\\d+\\.(\\d+)\\..+", "\\1", espec)]
-  
+
   rcl[, espec:= gsub("\\d+\\.\\d+\\.(.+)", "\\1", espec)]
   rcl = rcl[order(ordem)]
 
@@ -227,5 +232,5 @@ demonstr_rcl = function(rec){
   setnames(rcl, "VL", "VL_LOA_REC")
 
   return(rcl)
-  
+
 }
