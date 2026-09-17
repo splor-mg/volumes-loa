@@ -96,7 +96,7 @@ demonstr_mde_rec = function(loa_rec){
                           is_ipva_bruto(base) |
                           is_ipi_principal(base) |
                           is_itcd_bruto(base) |
-                          is_ibs_bruto(base) |
+                          (is_ibs_bruto(base) & substr(RECEITA_COD, 10, 10) == "2") |
                           (nat(RECEITA_COD, 17196201) & FONTE_COD == 20)
                           ),
        c("nvl1d", "lvl1d"):= list("3 - DEDUÇÕES DE TRANSFERÊNCIAS CONSTITUCIONAIS AOS MUNICÍPIOS", 300)]
