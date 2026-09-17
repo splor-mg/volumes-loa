@@ -48,6 +48,21 @@ running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO.R'
 
 running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T6_DCGF_Demonstrativo_Evolucao_Receita_por_Categoria_Economica.R'
+
+running
+  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.R'
+
+running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T12_DCGF_Demonstrativo_Evolucao_Despesa_Categoria_Economica.R'
 
 running
@@ -66,9 +81,6 @@ running
 
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T19_DCGF_Demonstrativo_Aplicacao_Recursos_Amparo_Fomento_Pesquisa.R'
-
-running
-  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL.R'
 
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.R'
@@ -102,22 +114,10 @@ running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T28_DCGF_PT4_Despesa_prevista_LOA.R'
 
 running
-  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas.R'
-
-running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T37_DCGF_DEMONSTRATIVOS_RECURSOS_APLICADOS_SEGURANCA_ALIMENTAR_NUTRICIONAL.R'
 
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R'
 
-Warning: T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitasprevidenciarias em funcoes.R 15.471.466.262 diferente do valor calculado em demonstr_receitas_previdenciarias 15.471.467.262
-
-running
-  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T6_DCGF_Demonstrativo_Evolucao_Receita_por_Categoria_Economica.R'
-
-running
-  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.R'
-
-running
-  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T1_DCGF_Demonstrativo_Consolidado_Orcamento_Fiscal.R'
+Warning: T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitasprevidenciarias em funcoes.R 16.093.105.328 diferente do valor calculado em demonstr_receitas_previdenciarias 16.093.106.328
 
