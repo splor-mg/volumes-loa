@@ -1,0 +1,145 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\pagestyle{empty}
+\newgeometry{bottom=0.4cm,top=0.4cm,left=0.8cm,right=0.8cm}
+
+\begin{landscape}
+
+<<results=tex,echo=FALSE>>=
+
+  dir_loa  = gsub("(.+LOA).*", "\\1", getwd())
+  dir_data = paste0(dir_loa, "/volume1/data")
+  ANO_DOC  = as.numeric(readLines(paste0(dir_loa, "/utils/ano.txt"), warn = F))
+  source(paste0(dir_loa, "/utils/funcoes.R"), encoding = "UTF-8")
+
+  # INICIO TABELA
+
+  banco = read.table(paste0(dir_data, "/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.txt"),
+                     header = TRUE, sep = "\t", stringsAsFactors = FALSE, strip.white = FALSE,
+                     check.names = FALSE, quote = "", comment.char = "",
+                     colClasses = "character", fileEncoding = "UTF-8")
+
+  titulos = gsub("%", "\\\\%", names(banco))
+
+  names(banco) = c("rec_desc",  "rec_ord",  "rec_part_ord",  "rec_vinc",  "rec_part_vinc",  "rec_total",  "rec_part_total",
+                   "desp_desc", "desp_ord", "desp_part_ord", "desp_vinc", "desp_part_vinc", "desp_total", "desp_part_total")
+
+  colunas_rec  = c("rec_ord",  "rec_part_ord",  "rec_vinc",  "rec_part_vinc",  "rec_total",  "rec_part_total")
+  colunas_desp = c("desp_ord", "desp_part_ord", "desp_vinc", "desp_part_vinc", "desp_total", "desp_part_total")
+
+  recuo_rec  = nchar(banco$rec_desc)  - nchar(trimws(banco$rec_desc,  which = "left"))
+  recuo_desp = nchar(banco$desp_desc) - nchar(trimws(banco$desp_desc, which = "left"))
+  nivel_rec  = match(recuo_rec,  sort(unique(recuo_rec)))  - 1
+  nivel_desp = match(recuo_desp, sort(unique(recuo_desp))) - 1
+
+  banco[] = lapply(banco, trimws)
+
+  larg_desc  = "5.95cm"
+  larg_valor = "1.4cm"
+  larg_perc  = "0.75cm"
+  larguras   = c(larg_desc, rep(c(larg_valor, larg_perc), 3))
+  borda_meio = "!{\\vrule width 1pt}"
+
+  strut_total = "\\rule[-1.2ex]{0pt}{3.6ex}"
+
+  formata_valor = function(valor, eh_percentual, negativo_com_sinal) {
+    if (valor == "") return("")
+    valor_fmt = negativoContabil(valor)
+    if (!eh_percentual && !grepl("[1-9]", valor_fmt)) return("-")
+    if (eh_percentual || negativo_com_sinal) return(sub("^\\((.*)\\)$", "-\\1", valor_fmt))
+    valor_fmt
+  }
+
+  gera_lado = function(descricao, valores, nivel, borda_final) {
+    colocarNegrito = as.numeric(nivel <= 1)
+    celulas_valor = vapply(1:6, function(k) aplicaNegrito(formata_valor(valores[k], k %% 2 == 0, FALSE), colocarNegrito), "")
+    paste0("\\multicolumn{1}{", c("L", rep("R", 6)), "{", larguras, "}", c(rep("|", 6), borda_final), "}{",
+           c(paste0("\\hspace*{", nivel, "em}", aplicaNegrito(descricao, colocarNegrito)), celulas_valor),
+           "}", collapse = " & ")
+  }
+
+  cat("\\renewcommand*{\\arraystretch}{1.1}\n")
+  cat("\\setlength{\\tabcolsep}{2pt}\n")
+  cat("\\tiny\n")
+  cat("\\color{myblack}\n")
+  cat("\\centering\n")
+
+  preambulo_lado = paste0("m{", larguras, "}", collapse = "|")
+  cat("\\noindent\\begin{longtable}[c]{", preambulo_lado, borda_meio, preambulo_lado, "}\n", sep = "")
+
+  titulo = paste0("\\multicolumn{14}{c}{\\cellcolor{gray!50} \\parbox[c][1.1cm][c]{25cm}{\\centering \\small \\textcolor{myblack}{",
+                  "\\textbf{DEMONSTRATIVO CONSOLIDADO - ORÇAMENTO FISCAL} \\\\ ",
+                  "\\textbf{(Art. 7º, Inciso I da Lei 24.218/2022 - LDO)}}}} \\\\\n")
+
+  subtitulo = paste0("\\multicolumn{7}{l}{\\fontsize{6.5pt}{8pt}\\selectfont \\textbf{\\textit{EXERCÍCIO: ", ANO_DOC, "}}} & ",
+                     "\\multicolumn{7}{r}{\\fontsize{5.5pt}{7pt}\\selectfont Em R\\$1,00} \\\\\n")
+
+  cabecalho = paste0(
+    paste0("\\multicolumn{1}{C{", larguras, "}", c(rep("|", 6), borda_meio), "}{\\textbf{",
+           c(paste0("\\rule[-0.8ex]{0pt}{2.8ex}", titulos[1]), titulos[2:7]), "}}", collapse = " & "), " & ",
+    paste0("\\multicolumn{1}{C{", larguras, "}", c(rep("|", 6), ""), "}{\\textbf{",
+           titulos[8:14], "}}", collapse = " & "), " \\\\\n")
+
+  cat(titulo)
+  cat("\\multicolumn{14}{c}{} \\\\\n")
+  cat(subtitulo)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+  cat(cabecalho)
+  cat("\\hline\n")
+
+  for(i in 1:nrow(banco)){
+
+    linha = as.list(banco[i, ])
+
+    if(all(unlist(linha) == "")){
+
+      cat(paste(rep("", 14), collapse = " & "), "\\\\\n")
+
+    } else if(grepl("^RESULTADO", linha[["rec_desc"]])){
+
+      cat("\\specialrule{1pt}{0pt}{0pt}\n")
+      cat("\\multicolumn{14}{c}{} \\\\\n")
+      cat("\\cline{1-2}\\cline{4-4}\\cline{6-6}\n")
+      cat("\\multicolumn{1}{|L{", larg_desc, "}|}{", strut_total, "\\textbf{", linha[["rec_desc"]],
+          "}} & \\multicolumn{1}{R{", larg_valor, "}|}{\\textbf{", formata_valor(linha[["rec_ord"]], FALSE, TRUE),
+          "}} & \\multicolumn{1}{c}{} & \\multicolumn{1}{|R{", larg_valor, "}|}{\\textbf{", formata_valor(linha[["rec_vinc"]], FALSE, TRUE),
+          "}} & \\multicolumn{1}{c}{} & \\multicolumn{1}{|R{", larg_valor, "}|}{\\textbf{", formata_valor(linha[["rec_total"]], FALSE, TRUE),
+          "}} & \\multicolumn{8}{c}{} \\\\\n", sep = "")
+      cat("\\cline{1-2}\\cline{4-4}\\cline{6-6}\n")
+
+    } else if(grepl("^TOTAL", linha[["rec_desc"]])){
+
+      if(grepl("^TOTAL", banco[i - 1, "rec_desc"])){
+        cat("\\hline\n")
+      } else{
+        cat("\\specialrule{1pt}{0pt}{0pt}\n")
+      }
+
+      cat(gera_lado(paste0(strut_total, linha[["rec_desc"]]), unlist(linha[colunas_rec]), 0, borda_meio),
+          " & ", gera_lado(linha[["desp_desc"]], unlist(linha[colunas_desp]), 0, ""), " \\\\\n", sep = "")
+
+    } else{
+
+      cat(gera_lado(linha[["rec_desc"]], unlist(linha[colunas_rec]), nivel_rec[i], borda_meio),
+          " & ", gera_lado(linha[["desp_desc"]], unlist(linha[colunas_desp]), nivel_desp[i], ""), " \\\\\n", sep = "")
+    }
+  }
+
+  cat("\\end{longtable}\n")
+
+  cat("\\raggedright\n")
+  cat("\\fontsize{6pt}{8pt}\\selectfont {Fonte: Armazém SISOR}\\\\\n")
+  cat("\\fontsize{6pt}{8pt}\\selectfont {Elaboração: DCAF/SCPPO/SEPLAG}\\\\\n")
+  cat("\\fontsize{6pt}{8pt}\\selectfont {Nota: A partir de 2020 as \"Outras Despesas de Pessoal Decorrentes de Contratos de Terceirização\", assim como os seus respectivos encargos patronais, passarão a ser classificadas no Grupo de Despesa 3 - Outras Despesas Correntes.}\\\\\n")
+
+  # FIM TABELA
+
+@
+
+\end{landscape}
+
+\end{document}

@@ -5,7 +5,7 @@ include config.mk
 #====================================================================
 # PHONY TARGETS
 
-help: 
+help:
 	@grep -E '^[a-zA-Z_0-9]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-10s\033[0m %s\n", $$1, $$2}'
 
 validate:
@@ -22,7 +22,7 @@ v1: v1_prodemge v1_dcgf ## Gera tabelas do volume 1 de responsabilidade da PRODE
 
 v1_prodemge: $(DEP_PRODEMGE_PDF_V1) pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.pdf pdf/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.pdf pdf/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.pdf pdf/T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO.pdf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE
 
-v1_dcgf: $(DEP_DCGF_PDF_V1) volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.csv ## Gera tabelas do volume 1 de responsabilidade da DCGF
+v1_dcgf: $(DEP_DCGF_PDF_V1) volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.txt ## Gera tabelas do volume 1 de responsabilidade da DCGF
 
 v2: pdf/Projeto_volume2A.pdf pdf/Projeto_volume2B.pdf ## Gera volume 2
 
@@ -277,11 +277,10 @@ volume1/data/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.txt: volu
 	@echo "Atualizando volume1/data/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.txt..."
 	@Rscript $(VERBOSE) volume1/R/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.R 2>> logs/logv1.Rout
 
-volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.csv: volume1/R/T1_DCGF_Demonstrativo_Consolidado_Orcamento_Fiscal.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx utils/suporte/V1/demonstr_consolidado.R
-	@echo "Atualizando volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.csv"
-	@echo "<Gerar pdf manualmente utilizando 'volume1/docs/01. Demonstrativo Consolidado do Orçamento Fiscal2018.xlsx' >"
+volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.txt: volume1/R/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx utils/suporte/V1/demonstr_consolidado.R
+	@echo "Atualizando volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.txt..."
 	@echo "------------------------------------------------------------------------"
-	@Rscript $(VERBOSE) volume1/R/T1_DCGF_Demonstrativo_Consolidado_Orcamento_Fiscal.R 2>> logs/logv1.Rout
+	@Rscript $(VERBOSE) volume1/R/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.R 2>> logs/logv1.Rout
 
 volume1/data/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.txt: volume1/R/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx utils/suporte/V1/demonstr_rcl.R
 	@echo "Atualizando volume1/data/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.txt..."
@@ -290,4 +289,3 @@ volume1/data/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.txt: volume1/R/T8_DCGF_RECEITA_COR
 volume1/data/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.txt: volume1/R/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx utils/suporte/V1/demonstr_despesas_previdenciarias.R utils/suporte/V1/demonstr_receitas_previdenciarias.R bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx
 	@echo "Atualizando volume1/data/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.txt..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv1.Rout
-
