@@ -71,7 +71,7 @@ running
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino.R'
 
-Warning: T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino: Receita mde via demonstr_mde_rec 101.958.689.163 é diferente do apresentado em relatorios 102.060.070.784
+Warning: T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino: Receita mde via demonstr_mde_rec 102.055.309.416 é diferente do apresentado em relatorios 102.060.070.784
 
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T17_DCGF_Demonst_Aplicacao_Recursos_Progr_Saude_Investim.R'
@@ -119,5 +119,5 @@ running
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R'
 
-Warning: T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitasprevidenciarias em funcoes.R 16.093.105.328 diferente do valor calculado em demonstr_receitas_previdenciarias 16.093.106.328
+Warning: T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitasprevidenciarias em funcoes.R 16.301.234.776 diferente do valor calculado em demonstr_receitas_previdenciarias 16.301.235.776
 
