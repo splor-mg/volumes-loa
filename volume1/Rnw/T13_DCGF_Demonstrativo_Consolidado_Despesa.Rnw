@@ -9,13 +9,13 @@
 
 
 <<results=tex,echo=FALSE>>=
-  
+
   dir_loa = gsub("(.+LOA).*", "\\1", getwd())
   dir_data = paste0(dir_loa, "/volume1/data")
   ANO_DOC = as.numeric(readLines(paste0(dir_loa, "/utils/ano.txt"), warn = F))
   source(paste0(dir_loa, "/utils/funcoes.R"), encoding = "UTF-8")
 
-  # INICIO TABELA 
+  # INICIO TABELA
 
   banco = ler_banco_txt(paste0(dir_data, "/T13_DCGF_Demonstrativo_Consolidado_Despesa.txt"))
 
@@ -28,19 +28,19 @@
 
   titulo1= paste0("\\multicolumn{4}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\small \\textbf{",
                   "DEMONSTRATIVO CONSOLIDADO DA DESPESA}}} \\\\\n")
- 
+
   titulo2= paste0("\\multicolumn{4}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\small \\textbf{",
                   base_legal("T13_DCGF_Demonstrativo_Consolidado_Despesa"),
                   "}}}  \\\\\n")
- 
+
   subtitulo = paste("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",
                      ANO_DOC , "}}} & \\multicolumn{3}{r}{\\textbf{R\\$1,00}} \\\\\n")
- 
+
   cabecalho = paste0("\\multicolumn{1}{L{5cm}|}{ \\textbf{ESPECIFICAÇÃO}} & ",
                      "\\multicolumn{1}{C{4cm}|}{ \\textbf{RECURSOS DO TESOURO}} & ",
                      "\\multicolumn{1}{C{4cm}|}{ \\textbf{RECURSOS DE OUTRAS FONTES}} & ",
                      "\\multicolumn{1}{C{4cm}}{ \\textbf{TOTAL}} \\\\\n")
-  
+
   cat(titulo1)
   cat(titulo2)
   cat("\\specialrule{1.5pt}{0pt}{0pt}\n")
@@ -48,7 +48,7 @@
   cat("\\specialrule{1pt}{0pt}{0pt}\n")
   cat(cabecalho)
   cat("\\hline\n")
-  
+
   for(i in 1:nrow(banco)){
 
     linha = as.list(banco[i, ])
@@ -61,7 +61,7 @@
           "}} & \\multicolumn{1}{R{4cm}|}{ \\textbf{", negativoContabil(linha[["tesouro"]]),
           "}} & \\multicolumn{1}{R{4cm}|}{ \\textbf{", negativoContabil(linha[["outras"]]),
           "}} & \\multicolumn{1}{R{4cm}}{ \\textbf{", negativoContabil(linha[["total"]]), "}} \\\\\n", sep="")
-          
+
 
       } else{
 
@@ -69,21 +69,21 @@
           "} & \\multicolumn{1}{R{4cm}|}{", negativoContabil(linha[["tesouro"]]),
           "} & \\multicolumn{1}{R{4cm}|}{", negativoContabil(linha[["outras"]]),
           "} & \\multicolumn{1}{R{4cm}}{", negativoContabil(linha[["total"]]), "} \\\\\n", sep="")
-        
+
       }
   }
-  
+
   cat("\\hline\\hline\\hline\n")
-  
+
   cat("\\end{longtable}\n")
 
   # NOTAS DE RODAPÉ
-  
+
   cat("\\raggedright\n")
-  cat("\\fontsize{7pt}{10pt}\\selectfont {FONTE: Armazém Sisor.} \\\\\n")
+  cat("\\fontsize{7pt}{10pt}\\selectfont {Fonte: PPO.} \\\\\n")
   cat("\\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
   cat("\\fontsize{7pt}{10pt}\\selectfont {NOTA: Com intuito de evitar a dupla contagem na elaboração desse relatório, foram desconsiderados os valores referentes às operações intra-orçamentárias.}\\\\\n")
-  
+
   # FIM TABELA
 
 @

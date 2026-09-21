@@ -9,13 +9,13 @@
 
 
 <<results=tex,echo=FALSE>>=
-  
+
   dir_loa = gsub("(.+LOA).*", "\\1", getwd())
   dir_data = paste0(dir_loa, "/volume1/data")
   ANO_DOC = as.numeric(readLines(paste0(dir_loa, "/utils/ano.txt"), warn = F))
   source(paste0(dir_loa, "/utils/funcoes.R"), encoding = "UTF-8")
 
-  # INICIO TABELA 
+  # INICIO TABELA
 
   banco = ler_banco_txt(paste0(dir_data, "/T17_DCGF_Demonst_Aplicacao_Recursos_Progr_Saude_Investim.txt"))
 
@@ -28,25 +28,25 @@
 
   titulo1= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
                   "\\textbf{DEMONSTRATIVO DA APLICAÇÃO DE RECURSOS EM PROGRAMAS DE SAÚDE E}}} \\\\\n")
-  
+
   titulo2= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
                   "\\textbf{INVESTIMENTO EM TRANSPORTE E SISTEMA VIÁRIO}}} \\\\\n")
- 
+
   titulo3= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
                   "\\textbf{",
                   base_legal("T17_DCGF_Demonst_Aplicacao_Recursos_Progr_Saude_Investim"),
                   "}}}  \\\\\n")
- 
+
   subtitulo1 = paste0("\\multicolumn{1}{l}{\\textbf{ORÇAMENTO FISCAL}} & ",
                       "\\multicolumn{2}{r}{\\textbf{RECURSOS DE TODAS AS FONTES}} \\\\\n")
-  
+
   subtitulo2 = paste("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",
                      ANO_DOC , "}}} & \\multicolumn{2}{r}{\\textbf{R\\$1,00}} \\\\\n")
- 
+
   cabecalho = paste0("\\multicolumn{1}{L{3cm}|}{\\textbf{CÓDIGO}} & ",
                      "\\multicolumn{1}{C{12cm}|}{ \\textbf{ESPECIFICAÇÕES}} & ",
                      "\\multicolumn{1}{C{3cm}}{ \\textbf{VALOR}} \\\\\n")
-                     
+
   cat(titulo1)
   cat(titulo2)
   cat(titulo3)
@@ -57,7 +57,7 @@
   cat(cabecalho)
   cat("\\hline\n")
   cat("\\endfirsthead\n")
- 
+
   cat(titulo1)
   cat(titulo2)
   cat(titulo3)
@@ -69,7 +69,7 @@
   cat("\\hline\n")
   cat("\\endhead\n")
   cat("\\endfoot\n")
-  
+
   cat("\\hline\\hline\n")
   cat("\\endlastfoot\n")
 
@@ -78,7 +78,7 @@
     linha = as.list(banco[i, ])
 
     if(linha[["cod"]]==""){
-      
+
       cat("\\hline\n")
 
       cat("\\multicolumn{1}{C{3cm}|}{ \\textbf{", linha[["cod"]],
@@ -93,14 +93,14 @@
 
       }
   }
-  
+
   cat("\\hline\\hline\n")
   cat("\\end{longtable}\n")
 
   # NOTAS DE RODAPÉ
-  
+
   cat("\\raggedright\n")
-  cat("\\fontsize{7pt}{10pt}\\selectfont {FONTE: Armazém Sisor.} \\\\\n")
+  cat("\\fontsize{7pt}{10pt}\\selectfont {Fonte: PPO.} \\\\\n")
   cat("\\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
   cat("\\fontsize{7pt}{10pt}\\selectfont {NOTA: A partir do exercício de 2015, os repasses realizados",
       "pelo Fundo Estadual de Saúde, nos termos do Decreto Estadual n$\\mathbf{^o}$ 46422, de 17 de",

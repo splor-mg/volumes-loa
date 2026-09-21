@@ -9,13 +9,13 @@
 
 
 <<results=tex,echo=FALSE>>=
-  
+
   dir_loa = gsub("(.+LOA).*", "\\1", getwd())
   dir_data = paste0(dir_loa, "/volume1/data")
   ANO_DOC = as.numeric(readLines(paste0(dir_loa, "/utils/ano.txt"), warn = F))
   source(paste0(dir_loa, "/utils/funcoes.R"), encoding = "UTF-8")
 
-  # INICIO TABELA 
+  # INICIO TABELA
 
   banco = ler_banco_txt(paste0(dir_data, "/T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB.txt"))
   banco_pt2 = ler_banco_txt(paste0(dir_data, "/T25_DCGF_PT2_PESSOAL_MAGISTERIO_RELATIVO_RECEITA_FUNDEB.txt"))
@@ -29,25 +29,25 @@
 
   titulo1= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize{ ",
                   "\\textbf{DEMONSTRATIVO DA APLICAÇÃO DE RECURSOS DO FUNDO DE MANUTENÇÃO E DESENVOLVIMENTO}}}} \\\\\n")
-  
+
   titulo2= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
                   "\\textbf{DA EDUCAÇÃO BÁSICA E DE VALORIZAÇÃO DOS PROFISSIONAIS DA EDUCAÇÃO}}} \\\\\n")
-  
-  
+
+
   titulo3= paste("\\multicolumn{3}{C{19cm}}{\\cellcolor{gray!50} \\textcolor{myblack} {\\scriptsize",
                  "\\textbf{",
                  base_legal("T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB"),
                  "}}}  \\\\\n")
-                                                                                                           
+
   subtitulo1 = paste0("\\multicolumn{3}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n")
-  
+
   subtitulo2 = paste("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",
                      ANO_DOC , "}}} & \\multicolumn{2}{r}{\\textbf{R\\$1,00}} \\\\\n")
- 
+
   cabecalho = paste0("\\multicolumn{1}{L{2.5cm}|}{\\textbf{CÓDIGO}} & ",
                      "\\multicolumn{1}{C{14cm}|}{ \\textbf{ESPECIFICAÇÕES}} & ",
                      "\\multicolumn{1}{C{1.5cm}}{ \\textbf{VALOR}} \\\\\n")
-                     
+
   cat(titulo1)
   cat(titulo2)
   cat(titulo3)
@@ -57,13 +57,13 @@
   cat("\\specialrule{1pt}{0pt}{0pt}\n")
   cat(cabecalho)
   cat("\\hline \\hline\n")
-  
+
   for(i in 1:nrow(banco)){
 
     linha = as.list(banco[i, ])
 
     if(linha[["cod"]]==""){
-      
+
       cat("\\hline\n")
 
       cat("\\multicolumn{1}{L{2.5cm}|}{ \\textbf{", linha[["cod"]],
@@ -78,46 +78,46 @@
 
       }
   }
-  
+
   cat("\\hline\\hline\n")
   cat("\\end{longtable}\n")
 
   # NOTAS DE RODAPÉ
-  
+
   # cat("\\vspace{-0.4cm} \\raggedright\n")
-  # cat("\\fontsize{7pt}{10pt}\\selectfont {FONTE: Armazém Sisor.} \\\\\n")
+  # cat("\\fontsize{7pt}{10pt}\\selectfont {Fonte: PPO.} \\\\\n")
   # cat("\\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCGF/SCPPO/SEPLAG}\\\\\n")
-  
+
   # cat("\\vspace{0.5cm}\n")
-  
+
   # =======================================================================================
   # TABELA 2
-  
+
   cat("\\noindent\\begin{longtable}[c]{m{3cm}|m{12cm}|m{3cm}}\n", sep="")
 
   titulo1= paste0("\\multicolumn{3}{C{19cm}}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
                   "\\textbf{PERCENTUAL DE APLICAÇÃO DA RECEITA DO FUNDEB NA REMUNERAÇÃO DOS PROFISSIONAIS \\newline ",
                   "DA EDUCAÇÃO BÁSICA}}} \\\\\n")
-  
+
   titulo2= paste0("\\multicolumn{3}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize ",
                   "\\textbf{(Inciso XII do Art. 60 ADCT/CR)}}} \\\\\n")
-  
+
   cabecalho = paste0("\\multicolumn{1}{L{3cm}|}{\\textbf{CÓDIGO}} & ",
                      "\\multicolumn{1}{C{12cm}|}{ \\textbf{ESPECIFICAÇÃO}} & ",
                      "\\multicolumn{1}{C{3cm}}{ \\textbf{VALOR}} \\\\\n")
-                     
+
   cat(titulo1)
   cat(titulo2)
   cat("\\hline\\hline \n")
   cat(cabecalho)
   cat("\\hline\\hline \n")
-  
+
   for(i in 1:nrow(banco_pt2)){
 
     linha = as.list(banco_pt2[i, ])
 
     if(linha[["cod"]]==""){
-      
+
       cat("\\hline\\hline\n")
 
       cat("\\multicolumn{1}{L{3cm}|}{ \\textbf{", linha[["cod"]],
@@ -132,22 +132,22 @@
 
       }
   }
-  
+
   cat("\\hline\\hline\\hline\n")
   cat("\\end{longtable}\n")
 
   # NOTAS DE RODAPÉ
-  
+
   cat("\\vspace{-0.4cm} \\raggedright\n")
-  cat("\\fontsize{7pt}{10pt}\\selectfont {FONTE: Armazém Sisor.} \\\\\n")
+  cat("\\fontsize{7pt}{10pt}\\selectfont {Fonte: PPO.} \\\\\n")
   cat("\\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
   # FIM TABELA
 
 @

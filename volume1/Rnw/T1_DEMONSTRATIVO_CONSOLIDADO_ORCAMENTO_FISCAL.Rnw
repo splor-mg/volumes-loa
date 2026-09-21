@@ -132,7 +132,7 @@
   cat("\\end{longtable}\n")
 
   cat("\\raggedright\n")
-  cat("\\fontsize{6pt}{8pt}\\selectfont {Fonte: Armazém SISOR}\\\\\n")
+  cat("\\fontsize{6pt}{8pt}\\selectfont {Fonte: PPO.}\\\\\n")
   cat("\\fontsize{6pt}{8pt}\\selectfont {Elaboração: DCAF/SCPPO/SEPLAG}\\\\\n")
   cat("\\fontsize{6pt}{8pt}\\selectfont {Nota: A partir de 2020 as \"Outras Despesas de Pessoal Decorrentes de Contratos de Terceirização\", assim como os seus respectivos encargos patronais, passarão a ser classificadas no Grupo de Despesa 3 - Outras Despesas Correntes.}\\\\\n")
 
