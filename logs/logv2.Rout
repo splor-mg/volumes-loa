@@ -30,67 +30,15 @@ Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO EST
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume2/R/V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.R'
 
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1221 que não está disponível 
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2321 que não está disponível 
  DETALHES: (não pode desconsiderar) 
- 2414.53.0.1.04.000
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2041 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 1999.99.2.1.19.000
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  3041 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 2414.53.0.1.04.000
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  3051 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 7511.01.0.1.01.004
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2121 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 1922.03.0.1.01.000
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1261 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 1715.53.0.1.01.000
-1922.51.0.1.02.000
-1922.51.0.1.99.000
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2311 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 2414.51.0.1.08.000
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2351 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 2414.51.0.1.08.000
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1301 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 2441.99.0.1.18.004
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2261 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 2414.50.0.1.03.000
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4291 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 1713.51.2.1.01.999
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1371 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 2414.53.0.1.04.000
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2441 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 1121.01.0.1.07.000
-1121.01.0.1.08.000
-1121.01.0.1.09.000
-1121.01.0.1.10.000
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1481 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 1719.99.0.1.15.002
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2011 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 1922.03.0.1.01.000
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  4711 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 1922.03.0.1.01.000
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  1511 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 1717.99.0.1.20.999
+ 7631.99.0.1.04.000
+7631.99.0.2.04.000
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume2/R/V2_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.R'
 
 Warning in trataQDD_Ajustado(qdd, transf, funfip) :
-  trataQDD_Ajustado(): O Valor deduzido das UO's beneficiadas ( 3.842.177.104 ) é diferente do valor somado as UO's financiadoras ( 3.842.150.778 ). Ver logs/erro_qdd_ajustado.csv.
+  trataQDD_Ajustado(): O Valor deduzido das UO's beneficiadas ( 3.842.177.104 ) é diferente do valor somado as UO's financiadoras ( 3.842.169.381 ). Ver logs/erro_qdd_ajustado.csv.
 
 
 
@@ -98,11 +46,3 @@ processing file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd
 output file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.md
 
 sh: 1: xdg-open: not found
-running
-  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T30_INVESTIMENTOS_SEGUNDO_FUNCOES.R'
-
-running
-  '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL.R'
-
-Warning: V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
-
