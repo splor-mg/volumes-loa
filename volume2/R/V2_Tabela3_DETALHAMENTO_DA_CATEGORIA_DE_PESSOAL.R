@@ -36,7 +36,7 @@ pessoal[, nivel := ifelse(grepl("inativo", classificacao, ignore.case = T), 5,
                    ifelse(grepl("terceiri", classificacao, ignore.case = T), 3,
                    ifelse(grepl("temporári", classificacao, ignore.case = T), 2,
                    ifelse(grepl("ativo", classificacao, ignore.case = T), 1, NA)))))]
-                   
+
 if(TRUE %in% pessoal[, is.na(nivel)]){
 
   warning(paste("V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL: No banco BASE_CATEGORIA_PESSOAL",
@@ -45,10 +45,8 @@ if(TRUE %in% pessoal[, is.na(nivel)]){
                 ". Corrigir no código, especificando a ordem em que este deve aparecer no relatório.\n"))
   }
 
-pessoal[, classificacao := ifelse(grepl("^pessoal.+", classificacao, ignore.case = TRUE), toupper(classificacao),
-                                  paste("PESSOAL", toupper(classificacao)))]
-
-
+pessoal[, classificacao := toupper(classificacao)]
+pessoal[classificacao %in% c("ATIVO", "INATIVO"), classificacao := paste("PESSOAL", classificacao)]
 
 
 for(codigo_uo in unique(pessoal$cod_uo)[!(unique(pessoal$cod_uo) %in% desconsiderarUO)]){
@@ -143,15 +141,14 @@ for(codigo_uo in unique(pessoal$cod_uo)[!(unique(pessoal$cod_uo) %in% desconside
 
   qtde[, merge:=NULL]
 
-  linhas_na = c()
+  qtde = qtde[order(nivel, categoria)]
 
+  linhas_na = c()
   for(k in 2:nrow(qtde)){
     if(qtde[k, classificacao]==qtde[k-1, classificacao]){
       linhas_na = append(linhas_na, k)
     }
   }
-
-  qtde = qtde[order(nivel, categoria)]
 
   if(length(linhas_na)>0){
     qtde = qtde[linhas_na, c("classificacao", "total", "valor", "participacao"):=NA]
