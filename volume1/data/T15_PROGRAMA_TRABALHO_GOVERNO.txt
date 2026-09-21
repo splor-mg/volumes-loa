@@ -101,7 +101,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   4	131	109	GESTÃO DE CERIMONIAL E EVENTOS	             0	            0	16.748.716	            0	            0	            0	            0	16.748.716
   4	274		PREVIDÊNCIA ESPECIAL	200.686.029	            0	             0	            0	            0	            0	            0	200.686.029
   4	274	705	APOIO ÀS POLÍTICAS PÚBLICAS	200.686.029	            0	             0	            0	            0	            0	            0	200.686.029
-  6			SEGURANÇA PÚBLICA	26.256.094.775	            0	4.372.659.631	326.454.114	1.000	            0	            0	30.955.209.520
+  6			SEGURANÇA PÚBLICA	26.256.094.775	            0	4.355.257.144	343.856.601	1.000	            0	            0	30.955.209.520
   6	122		ADMINISTRAÇÃO GERAL	6.677.579.726	            0	1.010.889.413	1.306.001	            0	            0	            0	7.689.775.140
   6	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	6.677.579.726	            0	1.010.889.413	1.306.001	            0	            0	            0	7.689.775.140
   6	123		ADMINISTRAÇÃO FINANCEIRA	             0	            0	50.138.066	            0	            0	            0	            0	50.138.066
@@ -111,12 +111,12 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   6	128	52	PROMOÇÃO DE DEFESA CIVIL	50.022.251	            0	23.894.676	25.000	            0	            0	            0	73.941.927
   6	130		ADMINISTRAÇÃO DE CONCESSÕES	             0	            0	             0	            0	1.000	            0	            0	1.000
   6	130	85	PROMOÇÃO DE CONCESSÕES E PARCERIAS	             0	            0	             0	            0	1.000	            0	            0	1.000
-  6	181		POLICIAMENTO	6.050.132.280	            0	1.780.905.739	199.897.222	            0	            0	            0	8.030.935.241
-  6	181	32	INVESTIGAÇÃO	             0	            0	128.486.916	63.272.452	            0	            0	            0	191.759.368
+  6	181		POLICIAMENTO	6.050.132.280	            0	1.763.503.252	217.299.709	            0	            0	            0	8.030.935.241
+  6	181	32	INVESTIGAÇÃO	             0	            0	122.734.429	69.024.939	            0	            0	            0	191.759.368
   6	181	46	SUPORTE AÉREO AOS SERVIÇOS PÚBLICOS ESTADUAIS	34.128.544	            0	32.830.366	800.000	            0	            0	            0	67.758.910
   6	181	134	GESTÃO INTEGRADA DE SEGURANÇA PÚBLICA	             0	            0	54.571.268	993.939	            0	            0	            0	55.565.207
   6	181	135	PROTEÇÃO SOCIAL DOS MILITARES	             0	            0	175.525	403	            0	            0	            0	175.928
-  6	181	137	POLÍCIA OSTENSIVA	6.016.003.736	            0	1.564.841.664	134.830.428	            0	            0	            0	7.715.675.828
+  6	181	137	POLÍCIA OSTENSIVA	6.016.003.736	            0	1.553.191.664	146.480.428	            0	            0	            0	7.715.675.828
   6	182		DEFESA CIVIL	1.114.497.792	            0	230.519.714	21.068.686	            0	            0	            0	1.366.086.192
   6	182	48	PROTEÇÃO E DEFESA CIVIL	             0	            0	1.655.243	40.750	            0	            0	            0	1.695.993
   6	182	52	PROMOÇÃO DE DEFESA CIVIL	1.114.497.792	            0	223.118.283	21.027.936	            0	            0	            0	1.358.644.011
@@ -527,4 +527,4 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 99			RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
 99	999		RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
 99	999	999	RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
-100			TOTAL	95.744.451.256	1.185.539.611	41.423.623.281	6.914.251.368	2.804.136.895	6.437.708.586	1.204.268.408	155.713.979.405
+100			TOTAL	95.744.451.256	1.185.539.611	41.406.220.794	6.931.653.855	2.804.136.895	6.437.708.586	1.204.268.408	155.713.979.405

@@ -89,5 +89,3 @@ running
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R'
 
-Warning: T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R Valor de receitasprevidenciarias em funcoes.R 16.301.234.776 diferente do valor calculado em demonstr_receitas_previdenciarias 16.301.235.776
-
