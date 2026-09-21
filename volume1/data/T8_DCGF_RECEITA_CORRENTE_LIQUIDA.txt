@@ -1,5 +1,5 @@
 espec	VL_LOA_REC	ordem	nvl
-RECEITAS CORRENTES ( I )	176.519.023.518	 0	0
+RECEITAS CORRENTES ( I )	176.519.771.518	 0	0
 Impostos, Taxas e Contribuições de Melhoria	127.428.301.563	 1	1
 Principal	124.056.661.545	 2	2
 ICMS	93.429.607.919	 3	3
@@ -14,17 +14,17 @@ IPVA	1.233.601.640	11	3
 ITCD	229.604.185	12	3
 Taxas	90.208.072	14	3
 Receitas de Contribuições	7.109.727.721	15	1
-Receita Patrimonial	7.677.335.881	16	1
-Rendimentos de Aplicação Financeira	4.864.879.678	17	2
+Receita Patrimonial	7.682.845.249	16	1
+Rendimentos de Aplicação Financeira	4.870.389.046	17	2
 Outras Receitas Patrimoniais	2.812.456.203	18	2
 Receita Agropecuária	12.653.800	19	1
 Receita Industrial	638.693.366	20	1
 Receita de Serviços	1.471.825.296	21	1
-Receita de Transferências Correntes	29.453.268.834	22	1
+Receita de Transferências Correntes	29.448.507.466	22	1
 Cota-Parte do FPE	10.497.799.915	23	2
 Transferências da LC 61/1989	1.320.699.980	25	2
 Transferências do FUNDEB	13.690.598.620	26	2
-Outras Transferências Correntes	3.944.170.319	27	2
+Outras Transferências Correntes	3.939.408.951	27	2
 Outras Receitas Correntes	2.727.217.057	28	1
 DEDUÇÕES ( II )	56.092.930.818	29	0
 Transferências Constitucionais e Legais	31.401.803.505	30	1
@@ -33,10 +33,10 @@ Contrib. para o Custeio das Pensões Militares	1.220.992.610	32	1
 Compensação Financ. entre Regimes Previdência	499.998.000	33	1
 Rendimentos de Aplicações de Recursos Previdenciários	57.088.386	34	1
 Dedução da Receita Corrente – Formação do FUNDEB	18.665.644.586	35	1
-RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )	120.426.092.700	36	0
+RECEITA CORRENTE LÍQUIDA ( III ) = ( I - II )	120.426.840.700	36	0
 (-) Transf. obrig. da União relativas às emendas individuais (art. 166-A, § 1\degree, da CF) (IV)	14.734.468	37	0
-RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )	120.411.358.232	38	0
+RCL AJUSTADA PARA CÁLCULO DOS LIMITES DE ENDIVIDAMENTO (V) = ( III - IV )	120.412.106.232	38	0
 (-) Transf. obrig. da União relativas às emendas de bancada (art. 166, § 16, da CF) (VI)	24.770.072	39	0
 (-) Transf. da União relativas a remuneração dos agentes comunitários de saúde e de combate às endemias (CF, art. 198, § 11 (VII)	              0	40	0
 (-) Outras Deduções Constitucionais ou Legais (VIII)	              0	41	0
-RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (IX) = (V - VI - VII - VIII)	120.386.588.160	42	0
+RCL AJUSTADA PARA CÁLCULO DOS DE DESPESA DE PESSOAL (IX) = (V - VI - VII - VIII)	120.387.336.160	42	0
