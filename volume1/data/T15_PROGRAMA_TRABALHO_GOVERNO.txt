@@ -229,7 +229,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 11	334	83	POLÍTICAS DE PROMOÇÃO AO DESENVOLVIMENTO SOCIAL NO CONTEXTO RURAL - PERCURSOS GERAIS: TRAJETÓRIA PARA AUTONOMIA	             0	            0	17.945	            0	            0	            0	            0	17.945
 11	363		ENSINO PROFISSIONAL	             0	            0	4.621.903	810.354	            0	            0	            0	5.432.257
 11	363	67	REDE DE DESENVOLVIMENTO DA EDUCAÇÃO PROFISSIONAL	             0	            0	4.621.903	810.354	            0	            0	            0	5.432.257
-12			EDUCAÇÃO	17.631.505.989	            0	4.360.608.503	1.026.823.047	27.331.412	            0	            0	23.046.268.951
+12			EDUCAÇÃO	17.631.505.989	            0	4.244.720.832	1.442.710.718	27.331.412	            0	            0	23.346.268.951
 12	122		ADMINISTRAÇÃO GERAL	758.738.756	            0	149.600.557	1.691.527	            0	            0	            0	910.030.840
 12	122	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	1.031.108	16.000	            0	            0	            0	1.047.108
 12	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	758.738.756	            0	148.569.449	1.675.527	            0	            0	            0	908.983.732
@@ -246,26 +246,26 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	306	163	ALIMENTAÇÃO ESCOLAR	             0	            0	701.816.929	5.251.786	            0	            0	            0	707.068.715
 12	334		FOMENTO AO TRABALHO	             0	            0	389.466	960.000	            0	            0	            0	1.349.466
 12	334	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	389.466	960.000	            0	            0	            0	1.349.466
-12	361		ENSINO FUNDAMENTAL	7.689.634.625	            0	204.818.233	201.002.000	            0	            0	            0	8.095.454.858
+12	361		ENSINO FUNDAMENTAL	7.536.019.625	            0	204.818.233	101.002.000	            0	            0	            0	7.841.839.858
 12	361	42	DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	9.826.445	            0	1.452.425	1.000.000	            0	            0	            0	12.278.870
 12	361	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	10.000	            0	            0	            0	            0	10.000
 12	361	136	EDUCAÇÃO ESCOLAR	23.089.170	            0	5.481.143	            0	            0	            0	            0	28.570.313
-12	361	162	PROGRAMA DE DESENVOLVIMENTO E GESTÃO DE PESSOAS DA REDE ESTADUAL DE ENSINO	7.656.719.010	            0	97.866.665	            0	            0	            0	            0	7.754.585.675
+12	361	162	PROGRAMA DE DESENVOLVIMENTO E GESTÃO DE PESSOAS DA REDE ESTADUAL DE ENSINO	7.503.104.010	            0	97.866.665	            0	            0	            0	            0	7.600.970.675
 12	361	167	PROGRAMA ESTADUAL DE DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	100.000.000	            0	            0	            0	            0	100.000.000
-12	361	172	PROGRAMA ESTADUAL DE COOPERACAO ESTADO-MUNICIPIO NA AREA EDUCACIONAL	             0	            0	8.000	200.002.000	            0	            0	            0	200.010.000
+12	361	172	PROGRAMA ESTADUAL DE COOPERACAO ESTADO-MUNICIPIO NA AREA EDUCACIONAL	             0	            0	8.000	100.002.000	            0	            0	            0	100.010.000
 12	362		ENSINO MÉDIO	5.755.455.060	            0	147.907.490	            0	            0	            0	            0	5.903.362.550
 12	362	42	DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	6.362.110	            0	940.592	            0	            0	            0	            0	7.302.702
 12	362	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	20.000	            0	            0	            0	            0	20.000
 12	362	136	EDUCAÇÃO ESCOLAR	192.545.387	            0	36.151.646	            0	            0	            0	            0	228.697.033
 12	362	162	PROGRAMA DE DESENVOLVIMENTO E GESTÃO DE PESSOAS DA REDE ESTADUAL DE ENSINO	5.556.547.563	            0	85.795.252	            0	            0	            0	            0	5.642.342.815
 12	362	167	PROGRAMA ESTADUAL DE DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	25.000.000	            0	            0	            0	            0	25.000.000
-12	363		ENSINO PROFISSIONAL	101.254.898	            0	790.373.788	5.113.839	            0	            0	            0	896.742.525
+12	363		ENSINO PROFISSIONAL	254.869.898	            0	790.373.788	5.113.839	            0	            0	            0	1.050.357.525
 12	363	  7	EDUCAÇÃO SUPERIOR	             0	            0	9.441.681	5.000.000	            0	            0	            0	14.441.681
 12	363	52	PROMOÇÃO DE DEFESA CIVIL	             0	            0	179.770	            0	            0	            0	            0	179.770
 12	363	67	REDE DE DESENVOLVIMENTO DA EDUCAÇÃO PROFISSIONAL	             0	            0	7.959.390	            0	            0	            0	            0	7.959.390
 12	363	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	7.076.096	108.000	            0	            0	            0	7.184.096
 12	363	105	FORMAÇÃO E CAPACITAÇÃO TÉCNICO-CULTURAL	3.277.535	            0	3.087.737	            0	            0	            0	            0	6.365.272
-12	363	162	PROGRAMA DE DESENVOLVIMENTO E GESTÃO DE PESSOAS DA REDE ESTADUAL DE ENSINO	95.725.360	            0	1.807.308	            0	            0	            0	            0	97.532.668
+12	363	162	PROGRAMA DE DESENVOLVIMENTO E GESTÃO DE PESSOAS DA REDE ESTADUAL DE ENSINO	249.340.360	            0	1.807.308	            0	            0	            0	            0	251.147.668
 12	363	167	PROGRAMA ESTADUAL DE DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	759.324.794	            0	            0	            0	            0	759.324.794
 12	363	705	APOIO ÀS POLÍTICAS PÚBLICAS	2.252.003	            0	1.497.012	5.839	            0	            0	            0	3.754.854
 12	364		ENSINO SUPERIOR	25.705.718	            0	212.550.071	50.040.955	            0	            0	            0	288.296.744
@@ -282,7 +282,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	367		EDUCAÇÃO ESPECIAL	2.034.777.193	            0	34.451.857	2.500.000	            0	            0	            0	2.071.729.050
 12	367	  5	PROGRAMA MINEIRO DE ACESSIBILIDADE, INCLUSÃO E SAÚDE (PROMAIS)	             0	            0	2.500.000	2.500.000	            0	            0	            0	5.000.000
 12	367	162	PROGRAMA DE DESENVOLVIMENTO E GESTÃO DE PESSOAS DA REDE ESTADUAL DE ENSINO	2.034.777.193	            0	31.951.857	            0	            0	            0	            0	2.066.729.050
-12	368		EDUCAÇÃO BÁSICA	883.465.473	            0	1.235.711.944	756.656.166	10.000.000	            0	            0	2.885.833.583
+12	368		EDUCAÇÃO BÁSICA	883.465.473	            0	1.119.824.273	1.272.543.837	10.000.000	            0	            0	3.285.833.583
 12	368	37	VALORIZAÇÃO E SAÚDE DO SERVIDOR	             0	            0	1.901.276	16.304	            0	            0	            0	1.917.580
 12	368	42	DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	1.576.509	            0	10.565.000	42.163	            0	            0	            0	12.183.672
 12	368	51	ATENDIMENTO COMUNITÁRIO E PSICOPEDAGOGICO NA FUNDACÃO HELENA ANTIPOFF	569.263	            0	114.214	            0	            0	            0	            0	683.477
@@ -294,7 +294,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	368	163	ALIMENTAÇÃO ESCOLAR	             0	            0	30.000.000	            0	            0	            0	            0	30.000.000
 12	368	165	ORGANIZAÇÃO, AVALIAÇÃO E GESTÃO ESCOLAR	             0	            0	43.575.293	            0	            0	            0	            0	43.575.293
 12	368	167	PROGRAMA ESTADUAL DE DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	83.199.000	1.850.000	            0	            0	            0	85.049.000
-12	368	168	GESTÃO DA REDE FÍSICA ESTADUAL DE ENSINO	             0	            0	669.500.000	719.434.563	10.000.000	            0	            0	1.398.934.563
+12	368	168	GESTÃO DA REDE FÍSICA ESTADUAL DE ENSINO	             0	            0	553.612.329	1.235.322.234	10.000.000	            0	            0	1.798.934.563
 12	368	169	GESTÃO DO SISTEMA ESTADUAL DE EDUCAÇÃO	             0	            0	245.081.021	23.086.140	            0	            0	            0	268.167.161
 12	572		DESENVOLVIMENTO TECNOLÓGICO E ENGENHARIA	             0	            0	             0	200.000	            0	            0	            0	200.000
 12	572	75	AMPLIAÇÃO E MODERNIZAÇÃO DA FUNDAÇÃO HELENA ANTIPOFF	             0	            0	             0	200.000	            0	            0	            0	200.000
@@ -527,4 +527,4 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 99			RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
 99	999		RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
 99	999	999	RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
-100			TOTAL	95.744.451.256	1.185.539.611	41.406.220.794	6.931.653.855	2.804.136.895	6.437.708.586	1.204.268.408	155.713.979.405
+100			TOTAL	95.744.451.256	1.185.539.611	41.290.333.123	7.347.541.526	2.804.136.895	6.437.708.586	1.204.268.408	156.013.979.405
