@@ -141,6 +141,14 @@ for(codigo_uo in unique(pessoal$cod_uo)[!(unique(pessoal$cod_uo) %in% desconside
 
   qtde[, merge:=NULL]
 
+  total_geral = qtde[classificacao == "TOTAL", total]
+
+  qtde[, perc_total_pessoal := round((total / total_geral)*100, 1)]          # linha da classificação
+  qtde[, perc_categoria_pessoal := round((quantidade / total_geral)*100, 1)] # linha da categoria
+
+  setcolorder(qtde, c(setdiff(names(qtde), c("perc_total_pessoal", "perc_categoria_pessoal", "participacao")),
+                      "perc_total_pessoal", "perc_categoria_pessoal", "participacao"))
+
   qtde = qtde[order(nivel, categoria)]
 
   linhas_na = c()
@@ -151,7 +159,7 @@ for(codigo_uo in unique(pessoal$cod_uo)[!(unique(pessoal$cod_uo) %in% desconside
   }
 
   if(length(linhas_na)>0){
-    qtde = qtde[linhas_na, c("classificacao", "total", "valor", "participacao"):=NA]
+    qtde = qtde[linhas_na, c("classificacao", "total", "valor", "perc_total_pessoal", "participacao"):=NA]
   }
 
   nome_uo = qdd[COD_UO==codigo_uo, UO][1]

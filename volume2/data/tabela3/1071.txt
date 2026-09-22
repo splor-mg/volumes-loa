@@ -1,4 +1,4 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"DIREÇÃO E ASSESSORAMENTO"	"60"	"85"	"8.628.259"	"100"	"1.07.1 - GABINETE MILITAR DO GOVERNADOR DO ESTADO DE MINAS GERAIS - GABINETE MILITAR"	"1.07.0 - GABINETE MILITAR DO GOVERNADOR DO ESTADO DE MINAS GERAIS - GABINETE MILITAR"
-	"NATUREZA ESPECIAL"	"25"					
-"TOTAL"			"85"	"8.628.259"	"100"		
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"perc_total_pessoal"	"perc_categoria_pessoal"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"DIREÇÃO E ASSESSORAMENTO"	"60"	"85"	"8.628.259"	"100"	"70,6"	"100"	"1.07.1 - GABINETE MILITAR DO GOVERNADOR DO ESTADO DE MINAS GERAIS - GABINETE MILITAR"	"1.07.0 - GABINETE MILITAR DO GOVERNADOR DO ESTADO DE MINAS GERAIS - GABINETE MILITAR"
+	"NATUREZA ESPECIAL"	"25"				"29,4"			
+"TOTAL"			"85"	"8.628.259"	"100"		"100"		
