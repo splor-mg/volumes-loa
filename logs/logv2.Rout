@@ -21,10 +21,6 @@ running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume2/R/V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL.R'
 
 Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem valores em ações da FUNFIP: 1941 4031
-Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem um quantitativo de inativos, porém apresentam valores superiores a R$ 1.000 nas ações da FUNFIP: 
- 1541 2171 2351 
-Caso seja necessário inserir o quantitativo de inativos manualmente, criar em bancos/manual/PESSOAL_INATIVO_AUSENTE_SISOR.xlsx. 
-Banco com apenas duas variáveis: cod_uo e quantidade
 Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
 
 running
@@ -36,9 +32,6 @@ Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de re
 7631.99.0.2.04.000
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume2/R/V2_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.R'
-
-Warning in trataQDD_Ajustado(qdd, transf, funfip) :
-  trataQDD_Ajustado(): O Valor deduzido das UO's beneficiadas ( 3.842.177.104 ) é diferente do valor somado as UO's financiadoras ( 3.842.169.381 ). Ver logs/erro_qdd_ajustado.csv.
 
 
 

@@ -75,8 +75,8 @@ running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T28_DCGF_PT2_Despesa_prevista_e_realizada.R'
 
 Warning in adiciona_desc(despesa, columns = c("UO", "PROGRAMA")) :
-  Os seguintes pares ANO-PROGRAMA_COD nao foram classificados: 
-  2024-101
+  Utilizando a tabela auxiliar data-raw/desc/desc_programa_tbl.csv
+
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume1/R/T28_DCGF_PT3_Receita_prevista_LOA.R'
 

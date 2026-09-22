@@ -1,0 +1,6 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"perc_total_pessoal"	"perc_categoria_pessoal"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"12"	"82"	"17.478.014"	"100"	"14,6"	"100"	"1.54.1 - ESCOLA DE SAÚDE PÚBLICA DO ESTADO DE MINAS GERAIS - ESP MG"	"1.54.0 - ESCOLA DE SAÚDE PÚBLICA DO ESTADO DE MINAS GERAIS - ESP MG"
+	"DIREÇÃO E ASSESSORAMENTO"	"13"				"15,9"			
+	"DIREÇÃO SUPERIOR"	" 1"				"1,2"			
+	"ESPECIALIZADA"	"56"				"68,3"			
+"TOTAL"			"82"	"17.478.014"	"100"		"100"		

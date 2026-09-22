@@ -40,7 +40,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   3	122	737	MODERNIZAÇÃO  INSTITUCIONAL	             0	            0	30.665.450	37.235.550	            0	            0	            0	67.901.000
   3	128		FORMAÇÃO DE RECURSOS HUMANOS	             0	            0	400.000	            0	            0	            0	            0	400.000
   3	128	726	ACESSO À JUSTIÇA	             0	            0	400.000	            0	            0	            0	            0	400.000
-  4			ADMINISTRAÇÃO	2.272.444.213	            0	3.862.723.273	215.416.563	682.028.437	            0	            0	7.032.612.486
+  4			ADMINISTRAÇÃO	2.272.444.213	            0	3.862.723.273	215.416.563	582.029.437	            0	            0	6.932.613.486
   4	121		PLANEJAMENTO E ORÇAMENTO	             0	            0	8.568.013	2.841.272	            0	            0	            0	11.409.285
   4	121	95	ASSESSORIA E PESQUISA EM POLÍTICAS PÚBLICAS	             0	            0	2.779.481	            0	            0	            0	            0	2.779.481
   4	121	96	PRODUÇÃO DE ESTATÍSTICAS E INFORMAÇÕES	             0	            0	2.912.336	            0	            0	            0	            0	2.912.336
@@ -93,8 +93,8 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   4	129		ADMINISTRAÇÃO DE RECEITAS	             0	            0	52.900.559	2.904.000	            0	            0	            0	55.804.559
   4	129	45	RECEITA ESTADUAL DIGITAL, EFICIENTE, MODERNIZADA E MAIS JUSTA	             0	            0	52.691.877	2.904.000	            0	            0	            0	55.595.877
   4	129	125	POLÍTICA DE REGULARIZAÇÃO FUNDIÁRIA E DE GESTÃO DE IMÓVEIS	             0	            0	208.682	            0	            0	            0	            0	208.682
-  4	130		ADMINISTRAÇÃO DE CONCESSÕES	             0	            0	439.641.942	47.473.386	682.025.437	            0	            0	1.169.140.765
-  4	130	85	PROMOÇÃO DE CONCESSÕES E PARCERIAS	             0	            0	429.803.272	23.009.166	682.025.437	            0	            0	1.134.837.875
+  4	130		ADMINISTRAÇÃO DE CONCESSÕES	             0	            0	439.641.942	47.473.386	582.026.437	            0	            0	1.069.141.765
+  4	130	85	PROMOÇÃO DE CONCESSÕES E PARCERIAS	             0	            0	429.803.272	23.009.166	582.026.437	            0	            0	1.034.838.875
   4	130	123	REGULAÇÃO DOS SERVIÇOS DE INFRAESTRUTURA DE TRANSPORTES	             0	            0	9.838.670	24.464.220	            0	            0	            0	34.302.890
   4	131		COMUNICAÇÃO SOCIAL	             0	            0	188.168.113	            0	            0	            0	            0	188.168.113
   4	131	18	COMUNICAÇÃO INSTITUCIONAL E DE UTILIDADE PÚBLICA	             0	            0	171.419.397	            0	            0	            0	            0	171.419.397
@@ -170,7 +170,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   9	274	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	            0	79.457.271	            0	            0	            0	            0	79.457.271
   9	274	766	BENEFÍCIOS ASSISTENCIAIS	             0	            0	6.395.180	            0	            0	            0	            0	6.395.180
   9	274	767	RESERVA DE BENEFÍCIOS	             0	            0	             0	3.749.406	12.254.750	            0	            0	16.004.156
-10			SAÚDE	3.233.902.774	            0	16.860.364.161	1.409.020.098	1.000	            0	            0	21.503.288.033
+10			SAÚDE	3.233.902.774	            0	16.860.356.438	1.409.020.098	1.000	            0	            0	21.503.280.310
 10	61		AÇÃO JUDICIÁRIA	             0	            0	819.847.511	3.338.000	            0	            0	            0	823.185.511
 10	61	62	ACESSO A SERVIÇOS DE SAÚDE	             0	            0	819.847.511	3.338.000	            0	            0	            0	823.185.511
 10	122		ADMINISTRAÇÃO GERAL	2.545.901.860	            0	1.589.946.033	934.027.309	            0	            0	            0	5.069.875.202
@@ -189,8 +189,8 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 10	243	146	PROMOÇÃO DA POLÍTICA SOCIOEDUCATIVA PARA ATENDIMENTO AOS ADOLESCENTES EM CONFLITO COM A LEI	23.425.414	            0	8.225.304	368.844	            0	            0	            0	32.019.562
 10	301		ATENÇÃO BÁSICA	             0	            0	573.671.632	128.575.455	            0	            0	            0	702.247.087
 10	301	60	ATENÇÃO PRIMÁRIA À SAÚDE	             0	            0	573.671.632	128.575.455	            0	            0	            0	702.247.087
-10	302		ASSISTÊNCIA HOSPITALAR E AMBULATORIAL	394.843.763	            0	11.535.391.574	275.612.983	            0	            0	            0	12.205.848.320
-10	302	  6	ASSISTÊNCIA À SAÚDE DOS SEGURADOS E DOS SEUS DEPENDENTES	             0	            0	918.707.638	13.103.092	            0	            0	            0	931.810.730
+10	302		ASSISTÊNCIA HOSPITALAR E AMBULATORIAL	394.843.763	            0	11.535.383.851	275.612.983	            0	            0	            0	12.205.840.597
+10	302	  6	ASSISTÊNCIA À SAÚDE DOS SEGURADOS E DOS SEUS DEPENDENTES	             0	            0	918.699.915	13.103.092	            0	            0	            0	931.803.007
 10	302	  7	EDUCAÇÃO SUPERIOR	             0	            0	81.500.920	4.836.264	            0	            0	            0	86.337.184
 10	302	19	ATENÇÃO HOSPITALAR ESPECIALIZADA	             0	            0	785.571.112	4.035.656	            0	            0	            0	789.606.768
 10	302	37	VALORIZAÇÃO E SAÚDE DO SERVIDOR	             0	            0	1.950.011	65.408	            0	            0	            0	2.015.419
@@ -229,7 +229,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 11	334	83	POLÍTICAS DE PROMOÇÃO AO DESENVOLVIMENTO SOCIAL NO CONTEXTO RURAL - PERCURSOS GERAIS: TRAJETÓRIA PARA AUTONOMIA	             0	            0	17.945	            0	            0	            0	            0	17.945
 11	363		ENSINO PROFISSIONAL	             0	            0	4.621.903	810.354	            0	            0	            0	5.432.257
 11	363	67	REDE DE DESENVOLVIMENTO DA EDUCAÇÃO PROFISSIONAL	             0	            0	4.621.903	810.354	            0	            0	            0	5.432.257
-12			EDUCAÇÃO	17.631.505.989	            0	4.244.720.832	1.442.710.718	27.331.412	            0	            0	23.346.268.951
+12			EDUCAÇÃO	17.631.505.989	            0	4.244.720.832	1.260.418.535	27.331.412	            0	            0	23.163.976.768
 12	122		ADMINISTRAÇÃO GERAL	758.738.756	            0	149.600.557	1.691.527	            0	            0	            0	910.030.840
 12	122	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	1.031.108	16.000	            0	            0	            0	1.047.108
 12	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	758.738.756	            0	148.569.449	1.675.527	            0	            0	            0	908.983.732
@@ -282,7 +282,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	367		EDUCAÇÃO ESPECIAL	2.034.777.193	            0	34.451.857	2.500.000	            0	            0	            0	2.071.729.050
 12	367	  5	PROGRAMA MINEIRO DE ACESSIBILIDADE, INCLUSÃO E SAÚDE (PROMAIS)	             0	            0	2.500.000	2.500.000	            0	            0	            0	5.000.000
 12	367	162	PROGRAMA DE DESENVOLVIMENTO E GESTÃO DE PESSOAS DA REDE ESTADUAL DE ENSINO	2.034.777.193	            0	31.951.857	            0	            0	            0	            0	2.066.729.050
-12	368		EDUCAÇÃO BÁSICA	883.465.473	            0	1.119.824.273	1.272.543.837	10.000.000	            0	            0	3.285.833.583
+12	368		EDUCAÇÃO BÁSICA	883.465.473	            0	1.119.824.273	1.090.251.654	10.000.000	            0	            0	3.103.541.400
 12	368	37	VALORIZAÇÃO E SAÚDE DO SERVIDOR	             0	            0	1.901.276	16.304	            0	            0	            0	1.917.580
 12	368	42	DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	1.576.509	            0	10.565.000	42.163	            0	            0	            0	12.183.672
 12	368	51	ATENDIMENTO COMUNITÁRIO E PSICOPEDAGOGICO NA FUNDACÃO HELENA ANTIPOFF	569.263	            0	114.214	            0	            0	            0	            0	683.477
@@ -294,7 +294,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	368	163	ALIMENTAÇÃO ESCOLAR	             0	            0	30.000.000	            0	            0	            0	            0	30.000.000
 12	368	165	ORGANIZAÇÃO, AVALIAÇÃO E GESTÃO ESCOLAR	             0	            0	43.575.293	            0	            0	            0	            0	43.575.293
 12	368	167	PROGRAMA ESTADUAL DE DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	83.199.000	1.850.000	            0	            0	            0	85.049.000
-12	368	168	GESTÃO DA REDE FÍSICA ESTADUAL DE ENSINO	             0	            0	553.612.329	1.235.322.234	10.000.000	            0	            0	1.798.934.563
+12	368	168	GESTÃO DA REDE FÍSICA ESTADUAL DE ENSINO	             0	            0	553.612.329	1.053.030.051	10.000.000	            0	            0	1.616.642.380
 12	368	169	GESTÃO DO SISTEMA ESTADUAL DE EDUCAÇÃO	             0	            0	245.081.021	23.086.140	            0	            0	            0	268.167.161
 12	572		DESENVOLVIMENTO TECNOLÓGICO E ENGENHARIA	             0	            0	             0	200.000	            0	            0	            0	200.000
 12	572	75	AMPLIAÇÃO E MODERNIZAÇÃO DA FUNDAÇÃO HELENA ANTIPOFF	             0	            0	             0	200.000	            0	            0	            0	200.000
@@ -491,7 +491,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 25	752	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	            0	             0	            0	1.000	            0	            0	1.000
 25	754		BIOCOMBUSTÍVEIS	             0	            0	590.445	6.665.412	            0	            0	            0	7.255.857
 25	754	133	MINAS GERAÇÃO DE VALOR	             0	            0	590.445	6.665.412	            0	            0	            0	7.255.857
-26			TRANSPORTE	155.128.183	            0	193.771.234	2.162.622.125	1.000	            0	            0	2.511.522.542
+26			TRANSPORTE	155.128.183	            0	193.771.234	1.932.622.125	1.000	            0	            0	2.281.522.542
 26	122		ADMINISTRAÇÃO GERAL	             0	            0	71.295.750	8.138.450	            0	            0	            0	79.434.200
 26	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	            0	71.295.750	8.138.450	            0	            0	            0	79.434.200
 26	129		ADMINISTRAÇÃO DE RECEITAS	             0	            0	33.946.918	5.829.977	            0	            0	            0	39.776.895
@@ -500,10 +500,10 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 26	453	117	MOBILIDADE, TRANSPORTES E LOGÍSTICA	             0	            0	5.035.000	42.881.984	            0	            0	            0	47.916.984
 26	781		TRANSPORTE AÉREO	             0	            0	1.000	            0	            0	            0	            0	1.000
 26	781	117	MOBILIDADE, TRANSPORTES E LOGÍSTICA	             0	            0	1.000	            0	            0	            0	            0	1.000
-26	782		TRANSPORTE RODOVIÁRIO	155.128.183	            0	83.491.566	2.105.771.714	            0	            0	            0	2.344.391.463
-26	782	81	DESENVOLVIMENTO SUSTENTÁVEL DA INFRAESTRUTURA RODOVIÁRIA	             0	            0	39.928.849	1.936.562.029	            0	            0	            0	1.976.490.878
+26	782		TRANSPORTE RODOVIÁRIO	155.128.183	            0	83.491.566	1.875.771.714	            0	            0	            0	2.114.391.463
+26	782	81	DESENVOLVIMENTO SUSTENTÁVEL DA INFRAESTRUTURA RODOVIÁRIA	             0	            0	39.928.849	1.708.242.029	            0	            0	            0	1.748.170.878
 26	782	82	PROMOÇÃO DA SEGURANÇA VIÁRIA	             0	            0	275.000	158.529.685	            0	            0	            0	158.804.685
-26	782	139	PROGRAMA CAMINHO NAS CHUVAS	             0	            0	             0	10.680.000	            0	            0	            0	10.680.000
+26	782	139	PROGRAMA CAMINHO NAS CHUVAS	             0	            0	             0	9.000.000	            0	            0	            0	9.000.000
 26	782	705	APOIO ÀS POLÍTICAS PÚBLICAS	155.128.183	            0	43.287.717	            0	            0	            0	            0	198.415.900
 26	783		TRANSPORTE FERROVIÁRIO	             0	            0	1.000	            0	1.000	            0	            0	2.000
 26	783	117	MOBILIDADE, TRANSPORTES E LOGÍSTICA	             0	            0	1.000	            0	            0	            0	            0	1.000
@@ -527,4 +527,4 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 99			RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
 99	999		RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
 99	999	999	RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
-100			TOTAL	95.744.451.256	1.185.539.611	41.290.333.123	7.347.541.526	2.804.136.895	6.437.708.586	1.204.268.408	156.013.979.405
+100			TOTAL	95.744.451.256	1.185.539.611	41.290.325.400	6.935.249.343	2.704.137.895	6.437.708.586	1.204.268.408	155.501.680.499
