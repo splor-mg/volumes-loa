@@ -81,13 +81,6 @@ trataQDD_Ajustado = function(qdd, transf, funfip){
     linhas = which(qdd_ajustado$COD_UO == COD_UO1 & qdd_ajustado$GRUPO_DESPESA == GRUPO_DESPESA1 &
                    qdd_ajustado$FONTE == FONTE1 & qdd_ajustado$IPU == IPU1 )
 
-    if(length(linhas) == 0) {
-      warning(paste("trataQDD_Ajustado(): Sem correspondência para UO", COD_UO1,
-                    "Grupo", GRUPO_DESPESA1, "Fonte", FONTE1, "IPU", IPU1,
-                    ". O repasse não será deduzido."))
-      next
-    }
-
     valor_qdd = qdd_ajustado[linhas, sum(valor, na.rm=T)]
 
     if(valor_qdd!=funfip_uo_beneficiadas[j, valor]){
@@ -103,9 +96,7 @@ trataQDD_Ajustado = function(qdd, transf, funfip){
 
   }
 
-  if(length(linhas_excluir) > 0) {
-    qdd_ajustado = qdd_ajustado[!(linhas_excluir),]
-  }
+  qdd_ajustado = qdd_ajustado[!(linhas_excluir),]
 
   valor_deduzido = qdd[FONTE %in% c(42,43) & IPU==5 & COD_UO %in% unique(funfip_uo_beneficiadas$COD_UO),
                        sum(valor, na.rm=T)] + qdd_ajustado[IPU==2, sum(valor, na.rm=T)]
