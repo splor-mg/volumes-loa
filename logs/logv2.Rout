@@ -18,7 +18,6 @@ running
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume2/R/V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL.R'
 
-Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem valores em ações da FUNFIP: 1941
 Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
 
 running
