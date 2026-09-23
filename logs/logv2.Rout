@@ -15,23 +15,20 @@ running
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume2/R/V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL.R'
 
-Warning: V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL: Para a UO  4031  não há nome da UO e nome do orgao em BASE_QDD_FISCAL 
-
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume2/R/V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL.R'
 
-Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem valores em ações da FUNFIP: 1941 4031
+Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem valores em ações da FUNFIP: 1941
 Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
 
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume2/R/V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.R'
 
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2321 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 7631.99.0.1.04.000
-7631.99.0.2.04.000
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume2/R/V2_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.R'
+
+Warning in trataQDD_Ajustado(qdd, transf, funfip) :
+  trataQDD_Ajustado(): O Valor deduzido das UO's beneficiadas ( 5.542.305.953 ) é diferente do valor somado as UO's financiadoras ( 3.908.677.104 ). Ver logs/erro_qdd_ajustado.csv.
 
 
 

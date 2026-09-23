@@ -1,8 +1,0 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"perc_total_pessoal"	"perc_categoria_pessoal"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"ADMINISTRATIVA"	"8.398"	"14.634"	" 0"	"100"	"57,4"	"NaN"		
-	"DIREÇÃO E ASSESSORAMENTO"	"3.781"				"25,8"			
-	"DIREÇÃO SUPERIOR"	"    5"				"0,0"			
-	"ESPECIALIZADA"	"1.258"				"8,6"			
-	"MEMBROS DE PODER"	"1.085"				"7,4"			
-	"TÉCNICA"	"107"				"0,7"			
-"TOTAL"			"14.634"	" 0"	"100"		"  0"		

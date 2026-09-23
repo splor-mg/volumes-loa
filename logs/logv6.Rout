@@ -7,10 +7,6 @@ running
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume6/R/volume6B.R'
 
-Warning: T7_QUADRO_GERAL_DA_RECEITA.R: Há um código de receita que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 7631.99.0.1.04.000
-7631.99.0.2.04.000
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=utils/trataBancos/trataQDD_Fiscal_Fonte_STN.R'
 
