@@ -1,0 +1,195 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\newgeometry{top=2cm,bottom=2cm,left=1.5cm,right=1.5cm}
+
+<<results=tex,echo=FALSE>>=
+
+  dir_loa = gsub("(.+LOA).*", "\\1", getwd())
+  dir_data = paste0(dir_loa, "/volume1/data")
+  ANO_DOC = as.numeric(readLines(paste0(dir_loa, "/utils/ano.txt"), warn = F))
+  source(paste0(dir_loa, "/utils/funcoes.R"), encoding = "UTF-8")
+
+  # INICIO TABELA
+
+  arq_banco = paste0(dir_data, "/T40_DEMONSTRATIVO_DESPESAS_OBRIGATORIAS.txt")
+
+  banco = read.csv2(arq_banco, fileEncoding = "UTF-8", stringsAsFactors = FALSE, colClasses = "character")
+
+  banco$PODER         = trimws(banco$PODER)
+  banco$ESPECIFICACAO = trimws(banco$ESPECIFICACAO)
+  banco$NIVEL         = as.integer(trimws(banco$NIVEL))
+
+  anos = c(ANO_DOC, ANO_DOC + 1, ANO_DOC + 2)
+
+  formataValorDemonstrativo = function(valor_br){
+    x = gsub("\\.", "", trimws(valor_br))
+    x = gsub(",", ".", x)
+    valor = round(as.numeric(x))
+    if(is.na(valor)) return("")
+    if(valor == 0) return("-")
+    txt = format(abs(valor), big.mark = ".", decimal.mark = ",", scientific = FALSE, trim = TRUE)
+    if(valor < 0) paste0("\\textcolor{red}{(", txt, ")}") else txt
+  }
+
+  cat("\\setlength{\\tabcolsep}{2pt}\n")
+  cat("\\renewcommand*{\\arraystretch}{1.3}\n")
+  cat("\\footnotesize\n")
+  cat("\\color{myblack}\n")
+  cat("\\centering\n")
+
+  cat("\\noindent\\begin{longtable}[c]{",
+      "L{5cm}|R{2.5cm}|R{1.3cm}|R{2.5cm}|R{1.3cm}|R{2.5cm}|R{1.3cm}}\n", sep="")
+
+  strut_topo = "\\rule{0pt}{0.55cm}"
+  strut_base = "\\rule[-0.2cm]{0pt}{0pt}"
+
+  titulo1 = paste0("\\multicolumn{7}{c}{\\cellcolor{gray!50} ", strut_topo,
+                    "\\parbox{16.4cm}{\\centering\\textcolor{myblack}{\\small \\textbf{",
+                    "DEMONSTRATIVO DAS DESPESAS FINANCEIRAS E DAS DESPESAS PRIMÁRIAS OBRIGATÓRIAS E DISCRICIONÁRIAS",
+                    "}}}} \\\\\n")
+
+  titulo2 = paste0("\\multicolumn{7}{c}{\\cellcolor{gray!50} \\textcolor{myblack}{\\footnotesize \\textbf{",
+                    "Período ", min(anos), "-", max(anos), "}}} \\\\\n")
+
+  titulo3 = paste0("\\multicolumn{7}{c}{\\cellcolor{gray!50} \\textcolor{myblack}{\\footnotesize \\textbf{",
+                    "(Art. 5º, inciso V da Lei Complementar 101/2000)}", strut_base, "}} \\\\\n")
+
+  cat(titulo1)
+  cat(titulo2)
+  cat(titulo3)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+
+  subtitulo1 = "\\multicolumn{7}{l}{\\textbf{ORÇAMENTO FISCAL}} \\\\\n"
+  subtitulo2 = paste0("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{",
+                      ANO_DOC, "}}} & \\multicolumn{6}{r}{\\textbf{R\\$1,00}} \\\\\n")
+
+  cat(subtitulo1)
+  cat(subtitulo2)
+  cat("\\specialrule{1pt}{0pt}{0pt}\n")
+
+  escreve_cabecalho_secao = function(titulo_secao){
+
+    cat(paste0("\\multicolumn{7}{c}{\\textbf{", titulo_secao, "}} \\\\\n"))
+    cat("\\specialrule{1pt}{0pt}{0pt}\n")
+
+    cabecalho1 = paste0("\\multicolumn{1}{L{5cm}|}{\\multirow{2}{*}{\\textbf{ESPECIFICAÇÃO}}} & ",
+                        paste0(sapply(seq_along(anos), function(i){
+                          borda = if(i < length(anos)) "|" else ""
+                          paste0("\\multicolumn{2}{c", borda, "}{\\textbf{", anos[i], "}}")
+                        }), collapse = " & "),
+                        " \\\\\n")
+    cat(cabecalho1)
+    cat("\\cline{2-7}\n")
+
+    rotulos = c("Despesa Orçada", "Despesa Estimada", "Despesa Estimada")
+    cabecalho2 = paste0("& ",
+                        paste0(sapply(seq_along(rotulos), function(i){
+                          borda = if(i < length(rotulos)) "|" else ""
+                          paste0("\\multicolumn{1}{C{2.5cm}|}{", rotulos[i], "} & ",
+                                  "\\multicolumn{1}{C{1.3cm}", borda, "}{\\%}")
+                        }), collapse = " & "),
+                        " \\\\\n")
+    cat(cabecalho2)
+    cat("\\hline\n")
+  }
+
+  escreve_linha = function(rotulo, nivel, valores, percentuais,
+                            negrito = FALSE, sombreado = FALSE, moldura_dupla = FALSE){
+
+    negrito = isTRUE(negrito)
+
+    abre_neg  = if(negrito) "\\textbf{" else ""
+    fecha_neg = if(negrito) "}" else ""
+    fundo     = if(sombreado) "\\cellcolor{gray!20} " else ""
+    recuo = if(isTRUE(nivel == 2)) "\\hspace{2em}" else ""
+
+    rotulo_col = paste0("\\multicolumn{1}{L{5cm}|}{", fundo, recuo, abre_neg, rotulo, fecha_neg, "}")
+
+    celulas = rotulo_col
+    for(i in 1:3){
+      borda     = if(i < 3) "|" else ""
+      valor_fmt = formataValorDemonstrativo(valores[i])
+      perc_fmt  = trimws(percentuais[i])
+      celulas = paste0(celulas,
+                        " & \\multicolumn{1}{R{2.5cm}|}{", fundo, abre_neg, valor_fmt, fecha_neg, "}",
+                        " & \\multicolumn{1}{R{1.3cm}", borda, "}{", fundo, abre_neg, perc_fmt, "\\%", fecha_neg, "}")
+    }
+
+    if(moldura_dupla) cat("\\hline\n")
+    cat(paste0(celulas, " \\\\\n"))
+    if(moldura_dupla) cat("\\specialrule{1.2pt}{0pt}{0pt}\n")
+  }
+
+  # TABELA 1: CONSOLIDADO - TODOS OS PODERES
+  escreve_cabecalho_secao("CONSOLIDADO - TODOS OS PODERES")
+
+  consolidado = banco[banco$PODER == "CONSOLIDADO", ]
+  totalizador = consolidado[consolidado$NIVEL == 0, ]
+  detalhes    = consolidado[consolidado$NIVEL != 0, ]
+
+  for(i in 1:nrow(detalhes)){
+    linha = detalhes[i, ]
+    escreve_linha(linha$ESPECIFICACAO, linha$NIVEL,
+                  c(linha$DESPESA_ANO1, linha$DESPESA_ANO2, linha$DESPESA_ANO3),
+                  c(linha$PERCENTUAL1, linha$PERCENTUAL2, linha$PERCENTUAL3),
+                  negrito = (linha$NIVEL == 1))
+  }
+
+  escreve_linha("TOTAL", 0,
+                c(totalizador$DESPESA_ANO1, totalizador$DESPESA_ANO2, totalizador$DESPESA_ANO3),
+                c(totalizador$PERCENTUAL1, totalizador$PERCENTUAL2, totalizador$PERCENTUAL3),
+                negrito = TRUE, moldura_dupla = TRUE)
+
+  cat("\\multicolumn{7}{c}{} \\\\\n")
+
+  # TABELA 2: DESPESAS POR PODER
+  escreve_cabecalho_secao("DESPESAS POR PODER")
+
+  poderes = unique(banco$PODER[!(banco$PODER %in% c("CONSOLIDADO", "TOTAL"))])
+
+  for(poder in poderes){
+
+    grupo       = banco[banco$PODER == poder, ]
+    totalizador = grupo[grupo$NIVEL == 0, ]
+    detalhes    = grupo[grupo$NIVEL != 0, ]
+
+    escreve_linha(totalizador$ESPECIFICACAO, 0,
+                  c(totalizador$DESPESA_ANO1, totalizador$DESPESA_ANO2, totalizador$DESPESA_ANO3),
+                  c(totalizador$PERCENTUAL1, totalizador$PERCENTUAL2, totalizador$PERCENTUAL3),
+                  negrito = TRUE, sombreado = TRUE)
+
+    for(i in 1:nrow(detalhes)){
+      linha = detalhes[i, ]
+      escreve_linha(linha$ESPECIFICACAO, linha$NIVEL,
+                    c(linha$DESPESA_ANO1, linha$DESPESA_ANO2, linha$DESPESA_ANO3),
+                    c(linha$PERCENTUAL1, linha$PERCENTUAL2, linha$PERCENTUAL3),
+                    negrito = (linha$NIVEL == 1))
+    }
+
+    cat(" & & & & & & \\\\\n")
+  }
+
+  total_geral = banco[banco$PODER == "TOTAL", ]
+  escreve_linha("TOTAL", 0,
+                c(total_geral$DESPESA_ANO1, total_geral$DESPESA_ANO2, total_geral$DESPESA_ANO3),
+                c(total_geral$PERCENTUAL1, total_geral$PERCENTUAL2, total_geral$PERCENTUAL3),
+                negrito = TRUE, moldura_dupla = TRUE)
+
+  cat("\\end{longtable}\n")
+
+  # NOTAS DE RODAPÉ
+
+  cat("\\raggedright\n")
+  cat("\\hspace{1cm} \\fontsize{7pt}{10pt}\\selectfont {FONTE: } \\\\\n")
+  cat("\\hspace{1cm} \\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
+  cat("\\hspace{1cm} \\fontsize{7pt}{10pt}\\selectfont {NOTA: }\\\\\n")
+
+  # FIM TABELA
+
+@
+
+\end{document}
