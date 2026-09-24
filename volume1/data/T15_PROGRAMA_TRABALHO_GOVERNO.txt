@@ -229,7 +229,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 11	334	83	POLÍTICAS DE PROMOÇÃO AO DESENVOLVIMENTO SOCIAL NO CONTEXTO RURAL - PERCURSOS GERAIS: TRAJETÓRIA PARA AUTONOMIA	             0	            0	17.945	            0	            0	            0	            0	17.945
 11	363		ENSINO PROFISSIONAL	             0	            0	4.621.903	810.354	            0	            0	            0	5.432.257
 11	363	67	REDE DE DESENVOLVIMENTO DA EDUCAÇÃO PROFISSIONAL	             0	            0	4.621.903	810.354	            0	            0	            0	5.432.257
-12			EDUCAÇÃO	17.631.505.989	            0	4.244.720.832	1.260.418.535	27.331.412	            0	            0	23.163.976.768
+12			EDUCAÇÃO	17.631.505.989	            0	4.249.972.618	1.255.166.749	27.331.412	            0	            0	23.163.976.768
 12	122		ADMINISTRAÇÃO GERAL	758.738.756	            0	149.600.557	1.691.527	            0	            0	            0	910.030.840
 12	122	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	1.031.108	16.000	            0	            0	            0	1.047.108
 12	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	758.738.756	            0	148.569.449	1.675.527	            0	            0	            0	908.983.732
@@ -242,8 +242,8 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	243	146	PROMOÇÃO DA POLÍTICA SOCIOEDUCATIVA PARA ATENDIMENTO AOS ADOLESCENTES EM CONFLITO COM A LEI	             0	            0	239.206.246	401.000	            0	            0	            0	239.607.246
 12	244		ASSISTÊNCIA COMUNITÁRIA	2.790.171	            0	620.395	20.000	            0	            0	            0	3.430.566
 12	244	51	ATENDIMENTO COMUNITÁRIO E PSICOPEDAGOGICO NA FUNDACÃO HELENA ANTIPOFF	2.790.171	            0	620.395	20.000	            0	            0	            0	3.430.566
-12	306		ALIMENTAÇÃO E NUTRIÇÃO	             0	            0	701.816.929	            0	            0	            0	            0	701.816.929
-12	306	163	ALIMENTAÇÃO ESCOLAR	             0	            0	701.816.929	            0	            0	            0	            0	701.816.929
+12	306		ALIMENTAÇÃO E NUTRIÇÃO	             0	            0	707.068.715	            0	            0	            0	            0	707.068.715
+12	306	163	ALIMENTAÇÃO ESCOLAR	             0	            0	707.068.715	            0	            0	            0	            0	707.068.715
 12	334		FOMENTO AO TRABALHO	             0	            0	389.466	960.000	            0	            0	            0	1.349.466
 12	334	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	389.466	960.000	            0	            0	            0	1.349.466
 12	361		ENSINO FUNDAMENTAL	7.536.019.625	            0	204.818.233	101.002.000	            0	            0	            0	7.841.839.858
@@ -282,7 +282,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	367		EDUCAÇÃO ESPECIAL	2.034.777.193	            0	34.451.857	2.500.000	            0	            0	            0	2.071.729.050
 12	367	  5	PROGRAMA MINEIRO DE ACESSIBILIDADE, INCLUSÃO E SAÚDE (PROMAIS)	             0	            0	2.500.000	2.500.000	            0	            0	            0	5.000.000
 12	367	162	PROGRAMA DE DESENVOLVIMENTO E GESTÃO DE PESSOAS DA REDE ESTADUAL DE ENSINO	2.034.777.193	            0	31.951.857	            0	            0	            0	            0	2.066.729.050
-12	368		EDUCAÇÃO BÁSICA	883.465.473	            0	1.119.824.273	1.095.503.440	10.000.000	            0	            0	3.108.793.186
+12	368		EDUCAÇÃO BÁSICA	883.465.473	            0	1.119.824.273	1.090.251.654	10.000.000	            0	            0	3.103.541.400
 12	368	37	VALORIZAÇÃO E SAÚDE DO SERVIDOR	             0	            0	1.901.276	16.304	            0	            0	            0	1.917.580
 12	368	42	DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	1.576.509	            0	10.565.000	42.163	            0	            0	            0	12.183.672
 12	368	51	ATENDIMENTO COMUNITÁRIO E PSICOPEDAGOGICO NA FUNDACÃO HELENA ANTIPOFF	569.263	            0	114.214	            0	            0	            0	            0	683.477
@@ -294,7 +294,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	368	163	ALIMENTAÇÃO ESCOLAR	             0	            0	30.000.000	            0	            0	            0	            0	30.000.000
 12	368	165	ORGANIZAÇÃO, AVALIAÇÃO E GESTÃO ESCOLAR	             0	            0	43.575.293	            0	            0	            0	            0	43.575.293
 12	368	167	PROGRAMA ESTADUAL DE DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	             0	            0	83.199.000	1.850.000	            0	            0	            0	85.049.000
-12	368	168	GESTÃO DA REDE FÍSICA ESTADUAL DE ENSINO	             0	            0	553.612.329	1.058.281.837	10.000.000	            0	            0	1.621.894.166
+12	368	168	GESTÃO DA REDE FÍSICA ESTADUAL DE ENSINO	             0	            0	553.612.329	1.053.030.051	10.000.000	            0	            0	1.616.642.380
 12	368	169	GESTÃO DO SISTEMA ESTADUAL DE EDUCAÇÃO	             0	            0	245.081.021	23.086.140	            0	            0	            0	268.167.161
 12	572		DESENVOLVIMENTO TECNOLÓGICO E ENGENHARIA	             0	            0	             0	200.000	            0	            0	            0	200.000
 12	572	75	AMPLIAÇÃO E MODERNIZAÇÃO DA FUNDAÇÃO HELENA ANTIPOFF	             0	            0	             0	200.000	            0	            0	            0	200.000
@@ -527,4 +527,4 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 99			RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
 99	999		RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
 99	999	999	RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
-100			TOTAL	95.744.451.256	1.185.539.611	41.290.325.400	6.935.249.343	2.704.137.895	6.437.708.586	1.204.268.408	155.501.680.499
+100			TOTAL	95.744.451.256	1.185.539.611	41.295.577.186	6.929.997.557	2.704.137.895	6.437.708.586	1.204.268.408	155.501.680.499
