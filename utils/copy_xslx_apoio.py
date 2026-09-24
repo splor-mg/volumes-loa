@@ -4,6 +4,7 @@ import shutil
 datapackages_dir = Path('datapackages/apoio/data-raw/')
 sisor_dir = Path('bancos/SISOR/')
 manual_dir = Path('bancos/manual/')
+v1_data_dir = Path('volume1/data/')
 
 items = [
  (datapackages_dir / 'exec_desp_realizada.xlsx', sisor_dir / 'exec_desp_realizada.xlsx'),
@@ -22,6 +23,7 @@ items = [
  (datapackages_dir / 'desc_subfuncao.xlsx', manual_dir / 'desc_subfuncao.xlsx'),
  (datapackages_dir / 'memoria_calculo.xlsx', manual_dir / 'memoria_calculo.xlsx' ),
  (datapackages_dir / 'desc_base_legal_demonstrativos.xlsx', manual_dir / 'desc_base_legal_demonstrativos.xlsx' ),
+ (datapackages_dir / 'demonstrativo_despesas_obrigatorias.csv', v1_data_dir / 'T40_DEMONSTRATIVO_DESPESAS_OBRIGATORIAS.txt' ),
  (Path('datapackages/fonte_stn/data/fonte_stn.csv'), manual_dir / 'fonte_stn.csv' ),
  (Path('datapackages/qdd_fiscal_fonte_95/data/base_qdd_fiscal_fonte_95.xlsx'), sisor_dir / 'BASE_QDD_FISCAL_FONTE_95.xlsx'),
  ]
