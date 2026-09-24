@@ -1,0 +1,7 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"perc_total_pessoal"	"perc_categoria_pessoal"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	"245"	"1.310"	"713.478.494"	"60,8"	"11,4"	"55,6"	"1.02.1 - TRIBUNAL DE CONTAS DO ESTADO DE MINAS GERAIS - TCEMG"	"1.02.0 - TRIBUNAL DE CONTAS DO ESTADO DE MINAS GERAIS - TCEMG"
+	"DIREÇÃO E ASSESSORAMENTO"	"225"				"10,4"			
+	"ESPECIALIZADA"	"825"				"38,3"			
+	"MEMBROS DE PODER"	"15"				"0,7"			
+"PESSOAL INATIVO"	"INATIVO CIVIL"	"845"	"845"	"569.725.125"	"39,2"	"39,2"	"44,4"		
+"TOTAL"			"2.155"	"1.283.203.619"	"100,0"		"100,0"		

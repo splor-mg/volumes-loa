@@ -229,7 +229,7 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 11	334	83	POLÍTICAS DE PROMOÇÃO AO DESENVOLVIMENTO SOCIAL NO CONTEXTO RURAL - PERCURSOS GERAIS: TRAJETÓRIA PARA AUTONOMIA	             0	            0	17.945	            0	            0	            0	            0	17.945
 11	363		ENSINO PROFISSIONAL	             0	            0	4.621.903	810.354	            0	            0	            0	5.432.257
 11	363	67	REDE DE DESENVOLVIMENTO DA EDUCAÇÃO PROFISSIONAL	             0	            0	4.621.903	810.354	            0	            0	            0	5.432.257
-12			EDUCAÇÃO	17.631.477.357	            0	4.244.720.832	1.260.447.167	27.331.412	            0	            0	23.163.976.768
+12			EDUCAÇÃO	17.631.505.989	            0	4.244.720.832	1.260.418.535	27.331.412	            0	            0	23.163.976.768
 12	122		ADMINISTRAÇÃO GERAL	758.738.756	            0	149.600.557	1.691.527	            0	            0	            0	910.030.840
 12	122	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	1.031.108	16.000	            0	            0	            0	1.047.108
 12	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	758.738.756	            0	148.569.449	1.675.527	            0	            0	            0	908.983.732
@@ -246,8 +246,8 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 12	306	163	ALIMENTAÇÃO ESCOLAR	             0	            0	701.816.929	            0	            0	            0	            0	701.816.929
 12	334		FOMENTO AO TRABALHO	             0	            0	389.466	960.000	            0	            0	            0	1.349.466
 12	334	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	389.466	960.000	            0	            0	            0	1.349.466
-12	361		ENSINO FUNDAMENTAL	7.535.990.993	            0	204.818.233	101.030.632	            0	            0	            0	7.841.839.858
-12	361	42	DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	9.797.813	            0	1.452.425	1.028.632	            0	            0	            0	12.278.870
+12	361		ENSINO FUNDAMENTAL	7.536.019.625	            0	204.818.233	101.002.000	            0	            0	            0	7.841.839.858
+12	361	42	DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA	9.826.445	            0	1.452.425	1.000.000	            0	            0	            0	12.278.870
 12	361	104	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM	             0	            0	10.000	            0	            0	            0	            0	10.000
 12	361	136	EDUCAÇÃO ESCOLAR	23.089.170	            0	5.481.143	            0	            0	            0	            0	28.570.313
 12	361	162	PROGRAMA DE DESENVOLVIMENTO E GESTÃO DE PESSOAS DA REDE ESTADUAL DE ENSINO	7.503.104.010	            0	97.866.665	            0	            0	            0	            0	7.600.970.675
@@ -527,4 +527,4 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 99			RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
 99	999		RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
 99	999	999	RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
-100			TOTAL	95.744.422.624	1.185.539.611	41.290.325.400	6.935.277.975	2.704.137.895	6.437.708.586	1.204.268.408	155.501.680.499
+100			TOTAL	95.744.451.256	1.185.539.611	41.290.325.400	6.935.249.343	2.704.137.895	6.437.708.586	1.204.268.408	155.501.680.499
