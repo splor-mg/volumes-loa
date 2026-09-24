@@ -67,7 +67,7 @@
 "20"	"609"	"78"	" 4"	"206"	" 1"								"1.973.468"	"1"	"FISCALIZAÇÃO DO TRÂNSITO DE ANIMAIS, VEGETAIS, INSUMOS E PRODUTOS DE ORIGEM ANIMAL."										
 "20"	"609"	"78"	" 4"	"206"	" 1"	"90"	" 0"	"60"	" 1"		"450.089"		"450.089"	"7"											
 "20"	"609"	"78"	" 4"	"206"	" 1"	"90"	" 0"	"91"	" 1"		"1.523.379"		"1.523.379"	"7"											
-"20"	"609"	"78"	" 4"	"206"	" 1"	"91"	" 0"							"8"	"VISTORIA/FISCALIZAÇÃO REALIZADA"			"1.473"	"VISTORIA"	"Atividade Fim do Orçamento Fiscal"	"Não"				
+"20"	"609"	"78"	" 4"	"206"	" 1"	"91"	" 0"							"8"	"VISTORIA/FISCALIZAÇÃO REALIZADA"			"1.473"	"FISCALIZAÇÃO"	"Atividade Fim do Orçamento Fiscal"	"Não"				
 "20"	"609"	"78"	" 4"	"228"									"1.000"	"5"	"FORTALECER A DEFESA AGROPECUÁRIA DE MINAS GERAIS, GARANTINDO AUMENTO DO PADRÃO DE SERVIÇO PRESTADO PELA ENTIDADE DE FORMA A POSSIBILITAR O DESENVOLVIMENTO DO AGRONEGÓCIO MINEIRO."										
 "20"	"609"	"78"	" 4"	"228"	" 1"								"1.000"	"1"	"FORTALECIMENTO DA ESTRUTURA E DOS PROCESSOS DO INSTITUTO MINEIRO DE AGROPECUÁRIA"										
 "20"	"609"	"78"	" 4"	"228"	" 1"	"90"	" 1"	"91"	" 1"		"1.000"		"1.000"	"7"											
