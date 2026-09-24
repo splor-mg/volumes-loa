@@ -225,12 +225,12 @@
     }
   ],
   "owner_org": "secretaria-de-estado-de-planejamento-e-gestao-seplag",
-  "updated_at": "2026-09-24T14:31:46",
+  "updated_at": "2026-09-24T19:09:59",
   "remote": {
     "host": "raw.githubusercontent.com",
     "user": "splor-mg",
     "repo": "dados-ppo-2027",
     "ref": "main",
-    "sha": "8b9cd88218acaee8dec46819dc20a664f9a4bcdc"
+    "sha": "0b982c2311f7a0deeebe3ef12b8232628b7f0774"
   }
 }

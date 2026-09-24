@@ -1,0 +1,6 @@
+"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"perc_total_pessoal"	"perc_categoria_pessoal"	"participacao"	"nome_uo"	"nome_orgao"
+"PESSOAL ATIVO"	"ADMINISTRATIVA"	" 5"	"102"	"7.996.021"	"100"	"4,9"	"100"	"2.21.1 - FUNDAÇÃO TV MINAS CULTURAL E EDUCATIVA - TV MINAS"	"1.71.0 - SECRETARIA DE ESTADO DE COMUNICAÇÃO SOCIAL - TV MINAS"
+	"DIREÇÃO E ASSESSORAMENTO"	" 4"				"3,9"			
+	"ESPECIALIZADA"	"65"				"63,7"			
+	"TÉCNICA"	"28"				"27,5"			
+"TOTAL"			"102"	"7.996.021"	"100"		"100"		
