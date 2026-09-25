@@ -135,13 +135,13 @@
     linha = detalhes[i, ]
     escreve_linha(linha$ESPECIFICACAO, linha$NIVEL,
                   c(linha$DESPESA_ANO1, linha$DESPESA_ANO2, linha$DESPESA_ANO3),
-                  c(linha$PERCENTUAL1, linha$PERCENTUAL2, linha$PERCENTUAL3),
+                  c(linha$PERCENTUAL_ANO1, linha$PERCENTUAL_ANO2, linha$PERCENTUAL_ANO3),
                   negrito = (linha$NIVEL == 1))
   }
 
   escreve_linha("TOTAL", 0,
                 c(totalizador$DESPESA_ANO1, totalizador$DESPESA_ANO2, totalizador$DESPESA_ANO3),
-                c(totalizador$PERCENTUAL1, totalizador$PERCENTUAL2, totalizador$PERCENTUAL3),
+                c(totalizador$PERCENTUAL_ANO1, totalizador$PERCENTUAL_ANO2, totalizador$PERCENTUAL_ANO3),
                 negrito = TRUE, moldura_dupla = TRUE)
 
   cat("\\multicolumn{7}{c}{} \\\\\n")
@@ -159,14 +159,14 @@
 
     escreve_linha(totalizador$ESPECIFICACAO, 0,
                   c(totalizador$DESPESA_ANO1, totalizador$DESPESA_ANO2, totalizador$DESPESA_ANO3),
-                  c(totalizador$PERCENTUAL1, totalizador$PERCENTUAL2, totalizador$PERCENTUAL3),
+                  c(totalizador$PERCENTUAL_ANO1, totalizador$PERCENTUAL_ANO2, totalizador$PERCENTUAL_ANO3),
                   negrito = TRUE, sombreado = TRUE)
 
     for(i in 1:nrow(detalhes)){
       linha = detalhes[i, ]
       escreve_linha(linha$ESPECIFICACAO, linha$NIVEL,
                     c(linha$DESPESA_ANO1, linha$DESPESA_ANO2, linha$DESPESA_ANO3),
-                    c(linha$PERCENTUAL1, linha$PERCENTUAL2, linha$PERCENTUAL3),
+                    c(linha$PERCENTUAL_ANO1, linha$PERCENTUAL_ANO2, linha$PERCENTUAL_ANO3),
                     negrito = (linha$NIVEL == 1))
     }
 
@@ -176,7 +176,7 @@
   total_geral = banco[banco$PODER == "TOTAL", ]
   escreve_linha("TOTAL", 0,
                 c(total_geral$DESPESA_ANO1, total_geral$DESPESA_ANO2, total_geral$DESPESA_ANO3),
-                c(total_geral$PERCENTUAL1, total_geral$PERCENTUAL2, total_geral$PERCENTUAL3),
+                c(total_geral$PERCENTUAL_ANO1, total_geral$PERCENTUAL_ANO2, total_geral$PERCENTUAL_ANO3),
                 negrito = TRUE, moldura_dupla = TRUE)
 
   cat("\\end{longtable}\n")
@@ -184,9 +184,7 @@
   # NOTAS DE RODAPÉ
 
   cat("\\raggedright\n")
-  cat("\\hspace{1cm} \\fontsize{7pt}{10pt}\\selectfont {FONTE: } \\\\\n")
   cat("\\hspace{1cm} \\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
-  cat("\\hspace{1cm} \\fontsize{7pt}{10pt}\\selectfont {NOTA: }\\\\\n")
 
   # FIM TABELA
 
