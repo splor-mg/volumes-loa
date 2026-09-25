@@ -35,6 +35,13 @@
     if(valor < 0) paste0("\\textcolor{red}{(", txt, ")}") else txt
   }
 
+  formataPercentualDemonstrativo = function(perc_br){
+    perc = as.numeric(gsub(",", ".", trimws(perc_br)))
+    if(is.na(perc)) return("")
+    if(round(perc, 2) == 0) return("-")
+    paste0(formatC(perc, format = "f", digits = 2, big.mark = ".", decimal.mark = ","), "\\%")
+  }
+
   cat("\\setlength{\\tabcolsep}{2pt}\n")
   cat("\\renewcommand*{\\arraystretch}{1.3}\n")
   cat("\\footnotesize\n")
@@ -113,10 +120,10 @@
     for(i in 1:3){
       borda     = if(i < 3) "|" else ""
       valor_fmt = formataValorDemonstrativo(valores[i])
-      perc_fmt  = trimws(percentuais[i])
+      perc_fmt  = formataPercentualDemonstrativo(percentuais[i])
       celulas = paste0(celulas,
                         " & \\multicolumn{1}{R{2.5cm}|}{", fundo, abre_neg, valor_fmt, fecha_neg, "}",
-                        " & \\multicolumn{1}{R{1.3cm}", borda, "}{", fundo, abre_neg, perc_fmt, "\\%", fecha_neg, "}")
+                        " & \\multicolumn{1}{R{1.3cm}", borda, "}{", fundo, abre_neg, perc_fmt, fecha_neg, "}")
     }
 
     if(moldura_dupla) cat("\\hline\n")
@@ -183,8 +190,21 @@
 
   # NOTAS DE RODAPÉ
 
-  cat("\\raggedright\n")
-  cat("\\hspace{1cm} \\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
+  # minipage: reinicia os ajustes de parágrafo herdados da longtable (que estavam
+  # esticando os espaços entre palavras) e impede que o rodapé quebre entre páginas
+  cat("\\par\\vspace{6pt}\\noindent\\hspace{1cm}\\begin{minipage}{\\dimexpr\\linewidth-2cm\\relax}\n")
+  cat("\\raggedright\\fontsize{7pt}{10pt}\\selectfont{}\n")
+  cat("Fonte: Armazém PPO\\par\\vspace{3pt}\n")
+  cat("Elaboração: DCAF/SCPPO/SEPLAG\\par\\vspace{3pt}\n")
+  cat("Notas:\\par\n")
+  cat("1. Este demonstrativo não inclui os valores relativos à reserva de contingência.\\par\\vspace{3pt}\n")
+  cat(paste0("2. As despesas primárias obrigatórias compreendem: precatórios; pessoal e auxílios; Pasep; ",
+             "investimentos e obrigações do Propag; emendas estaduais impositivas; despesas computadas nas ",
+             "aplicações mínimas constitucionais em Manutenção e Desenvolvimento de Ensino, Ações e Serviços ",
+             "Públicos de Saúde e Ciência e Tecnologia (incluindo recomposições de Restos a Pagar cancelados, ",
+             "despesas custeadas com recursos do Fundeb e cumprimento de acordo com TCE para regularização de ",
+             "passivos de exercícios anteriores).\\par\n"))
+  cat("\\end{minipage}\\par\n")
 
   # FIM TABELA
 
