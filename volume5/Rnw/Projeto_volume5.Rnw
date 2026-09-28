@@ -25,13 +25,13 @@
   getCodigoR(paste(dir_latex, "/QUADRO_DETALHAMENTO_DESPESA.Rnw",sep=""), dir_codigosR)
   getCodigoR(paste(dir_latex, "/QUADRO_DETALHAMENTO_DESPESA_PROPOSTA_OUTROS_PODERES.Rnw",sep=""), dir_codigosR)
   getCodigoR(paste(dir_latex, "/ANEXOS.Rnw",sep=""), dir_codigosR)
-  
+
 @
 
 % Capa
 \begin{titlepage}
 \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
-\includepdf[pages={8}]{capaLOA.pdf}
+\includepdf[pages={7}]{capaLOA.pdf}
 \end{titlepage}
 % \capa
 
@@ -93,12 +93,12 @@ Superintendência Central de Planejamento e Orçamento \\
  \scriptsize
  \color{myblack}
  \centering
- 
+
 \newpage
 <<demonstrativo_consolidado, results=tex, echo=F>>=
-  
+
   # INICIO TABELA
-  
+
   dir_loa = gsub("(.+LOA).*", "\\1", getwd())
   dir_codigosR = paste0(dir_loa, "/volume5/Rnw/CodigosR")
   dir_utils = paste0(dir_loa, "/utils/")
@@ -106,7 +106,7 @@ Superintendência Central de Planejamento e Orçamento \\
   dir_bancos = paste0(dir_loa, "/bancos")
   source(paste(dir_utils, "funcoes.R", sep=""))
   ANO_DOC = as.numeric(readLines(paste(dir_utils, "ano.txt", sep=""), warn = F))
-  
+
   source(paste(dir_codigosR, "/demonstrativo_consolidado_despesav1.R", sep=""), encoding = "UTF-8")
 @
 
@@ -129,8 +129,8 @@ Superintendência Central de Planejamento e Orçamento \\
 \setlength{\tabcolsep}{2.5pt}
 
 <<quadro_detalhamento_despesa, results=tex, echo=F>>=
-  
-  banco = read.table(paste(dir_data, "/QUADRO_DETALHAMENTO_DESPESA_porUO.txt", sep=""), header = T, 
+
+  banco = read.table(paste(dir_data, "/QUADRO_DETALHAMENTO_DESPESA_porUO.txt", sep=""), header = T,
                    sep = "\t", quote = NULL,   dec = ",", stringsAsFactors = FALSE)
 
   registro_orgao =c()
@@ -139,7 +139,7 @@ Superintendência Central de Planejamento e Orçamento \\
   for(codigo_uo in unique(banco$COD_UO)){
   #codigo_uo = 4121
     uo = banco[banco$COD_UO==codigo_uo,] # realizar recorte em loop
-    
+
     if("valor_proposto" %in% names(uo)){
       if(as.numeric(gsub("\\.", "", uo$valor_proposto[1])) > 0){
         source(paste(dir_codigosR, "/QUADRO_DETALHAMENTO_DESPESA_PROPOSTA_OUTROS_PODERES.R", sep=""), encoding = "UTF-8")
@@ -149,10 +149,10 @@ Superintendência Central de Planejamento e Orçamento \\
     } else{
       source(paste(dir_codigosR, "/QUADRO_DETALHAMENTO_DESPESA.R", sep=""), encoding = "UTF-8")
     }
-  
+
   }
-  
-  
+
+
 @
 
 \ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
@@ -169,9 +169,9 @@ Superintendência Central de Planejamento e Orçamento \\
 \renewcommand*{\arraystretch}{1.5}
 <<anexos, results=tex, echo=F>>=
   source(paste(dir_codigosR, "/ANEXOS.R", sep=""), encoding = "UTF-8")
-  
+
   # FIM TABELA
-  
+
 @
 
 % Contra capa

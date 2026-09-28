@@ -16,7 +16,7 @@
 
   ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
   ETAPA_ORCAMENTO = readLines(paste(dir_utils, "etapa_orcamento.txt", sep=""), warn = F)
-  
+
   source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
   source(paste0(dir_utils, "formataTexto.R"), encoding = "UTF-8")
 
@@ -37,7 +37,7 @@
 % Capa
 \begin{titlepage}
 \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
-\includepdf[pages={6}]{capaLOA.pdf}
+\includepdf[pages={5}]{capaLOA.pdf}
 \end{titlepage}
 % \capa
 
@@ -105,20 +105,20 @@ Superintendência Central de Planejamento e Orçamento
 \addcontentsline{toc}{section}{ INVESTIMENTOS POR EMPRESA SEGUNDO FONTES DE RECURSO}
 
 <<t1_consolidado, results=tex, echo=F>>=
-  
+
   # INICIO TABELA
-  
+
   dir_loa = gsub("(.+LOA).*", "\\1", getwd())
   dir_latex = paste0(dir_loa, "/volume3/Rnw")
   dir_codigosR = paste0(dir_latex, "/CodigosR")
   dir_utils = paste0(dir_loa, "/utils/")
   dir_data = paste0(dir_loa, "/volume3/data")
   dir_bancos = paste0(dir_loa, "/bancos")
-  
+
   ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
   source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
   source(paste0(dir_utils, "formataTexto.R"), encoding = "UTF-8")
-  
+
   source(paste0(dir_codigosR, "/T1_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_DE_RECURSO.R"), encoding = "UTF-8")
 @
 
@@ -139,7 +139,7 @@ Superintendência Central de Planejamento e Orçamento
 <<t3_consolidado, results=tex, echo=F>>=
   source(paste0(dir_codigosR,"/T3_INVESTIMENTOS_SEGUNDO_FUNCOES_SUB_PROGRAMAS_PROJETOS_ATIVIDADES.R"), encoding="UTF-8")
 @
- 
+
 % FIM DE QUADROS CONSOLIDADOS
 
 \newpage
@@ -167,10 +167,10 @@ Superintendência Central de Planejamento e Orçamento
     cat("\\vspace*{1cm}\n")
     cat("\\phantomsection\n")
     cat("\\vspace*{8cm}\n")
-    
-    cat("\\addcontentsline{toc}{subsection}{", paste(substr(uo,1,1), ".", substr(uo,2,3), ".", substr(uo,4,4), 
+
+    cat("\\addcontentsline{toc}{subsection}{", paste(substr(uo,1,1), ".", substr(uo,2,3), ".", substr(uo,4,4),
                                                      " - ", sumario$uo[sumario$cod_uo==uo] , sep=""),"}\n", sep="")
-    
+
     cat("\\centering \\Huge {\\textbf{",sumario$uo[sumario$cod_uo==uo] ,"}}\n", sep="")
     cat("\\afterpage{\\null\\thispagestyle{empty}\\newpage}\n")
     cat("\\newpage\n")
@@ -178,27 +178,27 @@ Superintendência Central de Planejamento e Orçamento
     cat("\\newgeometry{left=3pt,right=3pt, top=1cm}\n")
 
     ## Tabela 1: PROGRAMA DE INVESTIMENTO
-    
+
     source(paste0(dir_codigosR,"/T1_relatorio_por_empresa.R"), encoding="UTF-8")
     cat("\\newpage\n")
 
     ## Tabela 2 - Origem de Recursos para Investimento
     source(paste0(dir_codigosR,"/T2_ORIGENS_RECURSOS_INVESTIMENTOS.R"), encoding="UTF-8")
     cat("\\newpage\n")
- 
-    ## Tabela 3 - RECURSOS FINANCEIROS FONTE DE RECURSOS E APLICAÇÃO - INVESTIMENTO 
+
+    ## Tabela 3 - RECURSOS FINANCEIROS FONTE DE RECURSOS E APLICAÇÃO - INVESTIMENTO
     source(paste0(dir_codigosR,"/T3_RECURSOS_FINANCEIROS_FONTE_RECURSOS_APLICACAO_INVESTIMENTO.R"), encoding="UTF-8")
     cat("\\newpage\n")
-  
-    ## Tabela 4 - Detalhamento de Investimentos 
+
+    ## Tabela 4 - Detalhamento de Investimentos
     source(paste0(dir_codigosR,"/T4_DETALHAMENTO_INVESTIMENTOS.R"), encoding="UTF-8")
-    cat("\\newpage\n") 
+    cat("\\newpage\n")
 
     ## Tabela 5 - QUADRO DE DETALHAMENTO DE INVESTIMENTO
     source(paste0(dir_codigosR,"/T5_QUADRO_DETALHAMENTO_INVESTIMENTO.R"), encoding="UTF-8")
-    cat("\\newpage\n") 
-  
-    } 
+    cat("\\newpage\n")
+
+    }
 
 
 @
@@ -218,7 +218,7 @@ Superintendência Central de Planejamento e Orçamento
  \normalsize
  \color{myblack}
  \centering
- 
+
 \newgeometry{top=1cm}
 \addcontentsline{toc}{section}{ ORIGEM DE RECURSOS PARA INVESTIMENTO}
 
@@ -232,9 +232,9 @@ Superintendência Central de Planejamento e Orçamento
 
 <<Anexo_Detalhamento_Investimentos, results=tex, echo=FALSE>>=
   source(paste0(dir_codigosR,"/ANEXO_DETALHAMENTO_INVESTIMENTOS.R"), encoding="UTF-8")
-  
+
   # FIM TABELA
-  
+
 @
 
 % \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}

@@ -91,12 +91,12 @@ Superintendência Central de Planejamento e Orçamento \\
  \scriptsize
  \color{myblack}
  \centering
- 
+
 \newpage
 <<quadro_geral_da_receita, results=tex, echo=F>>=
-  
+
   # INICIO TABELA
-  
+
   dir_loa = gsub("(.+LOA).*", "\\1", getwd())
   dir_codigosR = paste0(dir_loa, "/volume6/Rnw/CodigosR")
   dir_utils = paste0(dir_loa, "/utils/")
@@ -104,7 +104,7 @@ Superintendência Central de Planejamento e Orçamento \\
   dir_bancos = paste0(dir_loa, "/bancos")
   source(paste(dir_utils, "funcoes.R", sep=""))
   ANO_DOC = as.numeric(readLines(paste(dir_utils, "ano.txt", sep=""), warn = F))
-  
+
   source(paste(dir_codigosR, "/Projeto_volume6B.R", sep=""), encoding = "UTF-8")
 @
 
