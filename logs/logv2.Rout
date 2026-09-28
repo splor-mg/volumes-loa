@@ -24,6 +24,10 @@ Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO EST
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume2/R/V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.R'
 
+Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2321 que não está disponível 
+ DETALHES: (não pode desconsiderar) 
+ 7631.99.0.1.04.000
+7631.99.0.2.04.000
 running
   '/usr/local/lib/R/bin/R --slave --no-restore --file=volume2/R/V2_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.R'
 
