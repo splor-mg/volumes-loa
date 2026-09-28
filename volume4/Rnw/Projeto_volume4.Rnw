@@ -7,7 +7,7 @@
 \SweaveOpts{concordance=TRUE}
 
 <<ParametrosRecortes, echo=FALSE, results=hide>>=
-  
+
   dir_loa = gsub("(.+LOA).*", "\\1", getwd())
   dir_latex = paste0(dir_loa, "/volume4/Rnw")
   dir_codigosR = paste0(dir_latex, "/CodigosR")
@@ -22,7 +22,7 @@
 
   getCodigoR(paste0(dir_latex, "/T1_OBRAS_POR_UNIDADE_ORCAMENTARIA_SEGUNDO_TERRITORIOS_DE_PLANEJAMENTO.Rnw"),
              dir_codigosR)
-  getCodigoR(paste0(dir_latex, "/T2_DETALHAMENTO_DOS_INVESTIMENTOS_TERRITORIOS_PLANEJAMENTO_MUNICIPIOS.Rnw"), 
+  getCodigoR(paste0(dir_latex, "/T2_DETALHAMENTO_DOS_INVESTIMENTOS_TERRITORIOS_PLANEJAMENTO_MUNICIPIOS.Rnw"),
              dir_codigosR)
   getCodigoR(paste0(dir_latex, "/ANEXO_RelacaoTerritorio_X_Municipios.Rnw"), dir_codigosR)
 
@@ -31,7 +31,7 @@
 % Capa
 \begin{titlepage}
 \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
-\includepdf[pages={7}]{capaLOA.pdf}
+\includepdf[pages={6}]{capaLOA.pdf}
 \end{titlepage}
 % \capa
 
@@ -85,9 +85,9 @@ Superintendência Central de Planejamento e Orçamento \\
 \scriptsize
 
 <<t1_obras_por_territorio, results=tex, echo=F>>=
-  
+
   # INICIO TABELA
-  
+
   dir_loa = gsub("(.+LOA).*", "\\1", getwd())
   dir_latex = paste0(dir_loa, "/volume4/Rnw")
   dir_codigosR = paste0(dir_latex, "/CodigosR")
@@ -96,19 +96,19 @@ Superintendência Central de Planejamento e Orçamento \\
   dir_bancos = paste0(dir_loa, "/bancos")
 
   ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
-  
+
   source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
-  
-  sumario = data.table(read.table(paste(dir_data, "/sumario_v4.txt", sep=""), header = T, sep = "\t", 
+
+  sumario = data.table(read.table(paste(dir_data, "/sumario_v4.txt", sep=""), header = T, sep = "\t",
                                   quote = "\"'", dec = "@", stringsAsFactors = FALSE))
-  
+
   cat("\\newgeometry{bottom=2cm, top=2cm,left=1.5cm,right=1.5cm}\n")
 
   for(uo in sumario[, COD_UO]){
-    
+
     source(paste0(dir_codigosR, "/T1_OBRAS_POR_UNIDADE_ORCAMENTARIA_SEGUNDO_TERRITORIOS_DE_PLANEJAMENTO.R"),
            encoding = "UTF-8")
-    
+
     cat("\\newpage\n")
   }
 @
@@ -123,15 +123,15 @@ Superintendência Central de Planejamento e Orçamento \\
 \newpage
 
 <<t2_consolidado, results=tex, echo=F>>=
-  
+
   cat("\\newgeometry{bottom=2cm,top=1cm,left=1.5cm,right=1.5cm}\n")
   # Parâmetros importantes para a tabela 2
   registro_poder = c()
   registro_orgao = c()
 
   for(uo in sumario$COD_UO){
-  
-    source(paste0(dir_codigosR, "/T2_DETALHAMENTO_DOS_INVESTIMENTOS_TERRITORIOS_PLANEJAMENTO_MUNICIPIOS.R"), 
+
+    source(paste0(dir_codigosR, "/T2_DETALHAMENTO_DOS_INVESTIMENTOS_TERRITORIOS_PLANEJAMENTO_MUNICIPIOS.R"),
           encoding = "UTF-8")
   }
 @
@@ -151,7 +151,7 @@ Superintendência Central de Planejamento e Orçamento \\
   source(paste0(dir_codigosR, "/ANEXO_RelacaoTerritorio_X_Municipios.R"), encoding = "UTF-8")
 
   # FIM TABELA
-  
+
 @
 
 % \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}

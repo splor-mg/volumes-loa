@@ -9,13 +9,13 @@
 
 
 <<results=tex,echo=FALSE>>=
-
+  
   dir_loa = gsub("(.+LOA).*", "\\1", getwd())
   dir_data = paste0(dir_loa, "/volume1/data")
   ANO_DOC = as.numeric(readLines(paste0(dir_loa, "/utils/ano.txt"), warn = F))
   source(paste0(dir_loa, "/utils/funcoes.R"), encoding = "UTF-8")
 
-  # INICIO TABELA
+  # INICIO TABELA 
 
   banco = ler_banco_txt(paste0(dir_data, "/T12_DCGF_Demonstrativo_Evolucao_Despesa_Categoria_Economica.txt"))
 
@@ -31,20 +31,20 @@
 
   titulo1= paste0("\\multicolumn{7}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\small \\textbf{",
                   "DEMONSTRATIVO DA EVOLUÇÃO DA DESPESA POR CATEGORIA ECONÔMICA}}} \\\\\n")
-
+ 
   titulo2= paste0("\\multicolumn{7}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\footnotesize \\textbf{",
                   "Período ", min(anos), "-", max(anos) ,"}}}  \\\\\n")
-
-
+  
+  
   titulo3= paste0("\\multicolumn{7}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\small \\textbf{",
                   base_legal("T12_DCGF_Demonstrativo_Evolucao_Despesa_Categoria_Economica"),
                   "}}}  \\\\\n")
-
+ 
   subtitulo1 = paste0("\\multicolumn{2}{l}{\\textbf{ORÇAMENTO FISCAL}} & ",
                       "\\multicolumn{5}{r}{\\textbf{RECURSOS DE TODAS AS FONTES}} \\\\\n")
   subtitulo2 = paste("\\multicolumn{1}{l}{\\textbf{Exercício: \\textcolor{myblack}{ ",
                      ANO_DOC , "}}} & \\multicolumn{6}{r}{\\textbf{R\\$1,00}} \\\\\n")
-
+ 
   cat(titulo1)
   cat(titulo2)
   cat(titulo3)
@@ -52,7 +52,7 @@
   cat(subtitulo1)
   cat(subtitulo2)
   cat("\\specialrule{1pt}{0pt}{0pt}\n")
-
+ 
   cabecalho1 = paste0("\\multicolumn{1}{L{4cm}|}{\\multirow{2}{*}{\\textbf{ESPECIFICAÇÃO}}} & ",
                       "\\multicolumn{2}{c|}{ \\textbf{", anos[1], "}} & ",
                       "\\multicolumn{2}{c|}{ \\textbf{", anos[2], "}} & ",
@@ -64,13 +64,13 @@
                       "\\multicolumn{1}{C{1.5cm}|}{ \\textbf{\\%}} & ",
                       "\\multicolumn{1}{C{2.5cm}|}{ \\textbf{Despesa Estimada}} & ",
                       "\\multicolumn{1}{C{1.5cm}}{ \\textbf{\\%}} \\\\\n")
-
-
+                      
+  
   cat(cabecalho1)
   cat("\\cline{2-7}\n")
   cat(cabecalho2)
   cat("\\hline\n")
-
+  
 
   for(i in 1:nrow(banco)){
 
@@ -87,7 +87,7 @@
           "}} & \\multicolumn{1}{R{1.5cm}|}{ \\textbf{", linha[[paste0("perc_", anos[2])]],
           "\\%}} & \\multicolumn{1}{R{2.5cm}|}{ \\textbf{", negativoContabil(linha[[paste0("VL_DESP_", anos[3])]]),
           "}} & \\multicolumn{1}{R{1.5cm}}{ \\textbf{",  linha[[paste0("perc_", anos[3])]], "\\%}} \\\\\n", sep="")
-
+          
 
       } else{
 
@@ -98,27 +98,27 @@
           "} & \\multicolumn{1}{R{1.5cm}|}{", linha[[paste0("perc_", anos[2])]],
           "\\%} & \\multicolumn{1}{R{2.5cm}|}{", negativoContabil(linha[[paste0("VL_DESP_", anos[3])]]),
           "} & \\multicolumn{1}{R{1.5cm}}{",  linha[[paste0("perc_", anos[3])]], "\\%} \\\\\n", sep="")
-
+        
       }
   }
-
+  
   cat("\\hline\\hline\\hline\n")
-
+  
   cat("\\end{longtable}\n")
 
   # NOTAS DE RODAPÉ
-
+  
   cat("\\raggedright\n")
   cat("\\fontsize{7pt}{10pt}\\selectfont {FONTE:", min(anos), "Armazém Siafi.} \\\\\n")
-
-  cat("\\fontsize{7pt}{10pt}\\selectfont {", max(anos)-1, "e", max(anos),
-      "Armazém PPO.} \\\\\n")
-
+  
+  cat("\\fontsize{7pt}{10pt}\\selectfont {", max(anos)-1, "e", max(anos), 
+      "Armazém Sisor.} \\\\\n")
+  
   cat("\\fontsize{7pt}{10pt}\\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\\\n")
-
+  
   cat("\\fontsize{7pt}{10pt}\\selectfont {NOTA: \\newline
       Com intuito de evitar a dupla contagem na elaboração desse relatório, foram desconsiderados os valores referentes às operações intra-orçamentárias.}\\\\\n")
-
+  
   # FIM TABELA
 
 @

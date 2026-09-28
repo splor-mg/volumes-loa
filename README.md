@@ -32,17 +32,17 @@ A criação dos volumes depende da atualização de uma série de informações.
 
 1. Alinhar com a DCAF quais versões do pacote `relatorios`, `reest` e `execucao` devem ser utilizados e atualizar as [volumes-docker](https://github.com/splor-mg/volumes-docker).
 
-1. Demandar a atualização das seguintes informações: 
+1. Demandar a atualização das seguintes informações:
 
 - [Informações Específicas para o volume 5](wiki/volume5_info.md)
 - [Informações Específicas para o volume 4](wiki/volume4_info.md)
 - [Informações Específicas para o volume 3](wiki/volume3_info.md)
-- [Informações Específicas para os volumes 2A e 2B](wiki/volume2_info.md)
-- [Informações Específicas para os volume 1](wiki/volume1_info.md)
+- [Informações Específicas para o volume 2](wiki/volume2_info.md)
+- [Informações Específicas para o volume 1](wiki/volume1_info.md)
 
 ### Geração dos pdfs
 
-Essas etapas devem ser realizadas com a imagem docker atualizada. 
+Essas etapas devem ser realizadas com a imagem docker atualizada.
 
 1. Crie um container para geração dos PDFs:
 
@@ -50,7 +50,7 @@ Essas etapas devem ser realizadas com a imagem docker atualizada.
    make docker
    ```
 
-1. Faça download das dependências de dados especificadas em `data.yaml`: 
+1. Faça download das dependências de dados especificadas em `data.yaml`:
 
    ```bash
    dpm install
@@ -150,8 +150,6 @@ Depois de avaliar as diferenças, se houve apenas alterações esperadas, os arq
 
 ```bash
 python3 checks/utils.py snapshot Projeto_volume5
-python3 checks/utils.py snapshot Projeto_volume2A Projeto_volume2B # snapshot de um ou mais demonstrativos
+python3 checks/utils.py snapshot Projeto_volume2 Projeto_volume3 # snapshot de um ou mais demonstrativos
 python3 checks/utils.py snapshot # snapshot de todos os demonstrativos
 ```
-
-
