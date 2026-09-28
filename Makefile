@@ -24,7 +24,7 @@ v1_prodemge: $(DEP_PRODEMGE_PDF_V1) pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUN
 
 v1_dcgf: $(DEP_DCGF_PDF_V1) volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.txt ## Gera tabelas do volume 1 de responsabilidade da DCGF
 
-v2: pdf/Projeto_volume2A.pdf pdf/Projeto_volume2B.pdf ## Gera volume 2
+v2: pdf/Projeto_volume2.pdf ## Gera volume 2
 
 v3: pdf/Projeto_volume3.pdf ## Gera volume 3
 
@@ -180,12 +180,8 @@ volume3/data/tabela5/*.txt: volume3/R/V3_T5_QUADRO_DE_DETALHAMENTO_INVESTIMENTO.
 
 
 # Volume 2
-pdf/Projeto_volume2A.pdf: $(DEPENDENCIAS_V2)
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R 2A 2> logs/warningsV2A.Rout
-	@echo "---------------------------------------------------------------"
-
-pdf/Projeto_volume2B.pdf: $(DEPENDENCIAS_V2)
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R 2B 2> logs/warningsV2B.Rout
+pdf/Projeto_volume2.pdf: $(DEPENDENCIAS_V2)
+	@Rscript $(VERBOSE) utils/Rnw2Tex.R 2 2> logs/warningsV2.Rout
 	@echo "---------------------------------------------------------------"
 
 volume2/data/sumario.txt: volume2/R/sumario.R bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos/manual/codigosPoder.xlsx

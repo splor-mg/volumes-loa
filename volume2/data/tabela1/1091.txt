@@ -1,5 +1,5 @@
 "FUNCAO"	"SUB_FUNCAO"	"PROGRAMA"	"IDENT_PROJATIV"	"PROJ_ATIV"	"SUB_PROJETO"	"MOD"	"IAG"	"FONTE"	"IPU"	"PESSOAL"	"OUTRAS"	"INVESTIMENTOS"	"INVERSOES"	"total"	"tipo"	"descricao"	"nome_uo"	"nome_orgao"	"valor_prod"	"unid_med_prod"	"tipo_acao"	"exc_acao"	"JUROS"	"AMORTIZA"	"valor.9reserva_de_contingencia"
-"  3"														"3.895.123.176"	"1"	"ESSENCIAL À JUSTIÇA"									
+"  3"														"3.895.123.176"	"1"	"ESSENCIAL À JUSTIÇA"	"1.09.1 - PROCURADORIA GERAL DE JUSTIÇA - PGJ"	"1.09.0 - MINISTÉRIO PÚBLICO DO ESTADO DE MINAS GERAIS - PGJ"							
 "  3"	"62"													"1.746.531.500"	"1"	"DEFESA DO INTERESSE PÚBLICO NO PROCESSO JUDICIÁRIO"									
 "  3"	"62"	"703"												"1.715.070.525"	"1"	"PROCESSO JUDICIÁRIO"									
 "  3"	"62"	"703"	" 4"	"493"										"1.715.070.525"	"5"	"TORNAR A ATUAÇÃO DO MINISTÉRIO PÚBLICO DO ESTADO DE MINAS GERAIS CADA VEZ MAIS EFETIVA PERANTE À SOCIEDADE."									

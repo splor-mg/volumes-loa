@@ -1,5 +1,5 @@
 "FUNCAO"	"SUB_FUNCAO"	"PROGRAMA"	"IDENT_PROJATIV"	"PROJ_ATIV"	"SUB_PROJETO"	"MOD"	"IAG"	"FONTE"	"IPU"	"INVERSOES"	"total"	"tipo"	"descricao"	"nome_uo"	"nome_orgao"	"valor_prod"	"unid_med_prod"	"tipo_acao"	"exc_acao"	"PESSOAL"	"JUROS"	"OUTRAS"	"INVESTIMENTOS"	"AMORTIZA"	"valor.9reserva_de_contingencia"
-"  4"											"3.000"	"1"	"ADMINISTRAÇÃO"												
+"  4"											"3.000"	"1"	"ADMINISTRAÇÃO"	"1.91.5 - PARTICIPAÇÃO NO AUMENTO DO CAPITAL SOCIAL DE EMPRESAS - PARTICIPAÇÃO EMPRESAS"	"1.91.0 - ENCARGOS GERAIS DO ESTADO - SECRETARIA DE ESTADO DE FAZENDA - PARTICIPAÇÃO EMPRESAS"										
 "  4"	"122"										"1.000"	"1"	"ADMINISTRAÇÃO GERAL"												
 "  4"	"122"	"705"									"1.000"	"1"	"APOIO ÀS POLÍTICAS PÚBLICAS"												
 "  4"	"122"	"705"	" 7"	"707"							"1.000"	"5"	"VIABILIZAR O APORTE DE RECURSOS NA MINAS GERAIS ADMINISTRAÇÃO E SERVIÇOS (MGS), PARA ATENDER A SUA FUNÇÃO SOCIAL."												

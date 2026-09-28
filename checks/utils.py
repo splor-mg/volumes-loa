@@ -40,8 +40,7 @@ REPORTS = [
         Report('T37_DCGF_DEMONSTRATIVOS_RECURSOS_APLICADOS_SEGURANCA_ALIMENTAR_NUTRICIONAL', 'volume1'),
         Report('T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS', 'volume1'),
         Report('T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO', 'volume1'),
-        Report('Projeto_volume2A', 'volume2'),
-        Report('Projeto_volume2B', 'volume2'),
+        Report('Projeto_volume2', 'volume2'),
         Report('Projeto_volume3', 'volume3'),
         Report('Projeto_volume4', 'volume4'),
         Report('Projeto_volume5', 'volume5'),
@@ -51,10 +50,10 @@ REPORTS = [
 
 def validate_report_name(report_names: str):
     all_report_names = [report.name for report in REPORTS]
-    
+
     if isinstance(report_names, str):
         report_names = [report_names]  # Convert to a single-item list
-    
+
     if report_names:
         for report_name in report_names:
             if report_name not in all_report_names:
