@@ -8,6 +8,7 @@ import subprocess
 app = typer.Typer()
 
 REPORTS = [
+        Report('T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL', 'volume1'),
         Report('T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL', 'volume1'),
         Report('T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas', 'volume1'),
         Report('T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA', 'volume1'),
@@ -40,6 +41,7 @@ REPORTS = [
         Report('T37_DCGF_DEMONSTRATIVOS_RECURSOS_APLICADOS_SEGURANCA_ALIMENTAR_NUTRICIONAL', 'volume1'),
         Report('T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS', 'volume1'),
         Report('T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO', 'volume1'),
+        Report('T40_DEMONSTRATIVO_DESPESAS_OBRIGATORIAS', 'volume1'),
         Report('Projeto_volume2', 'volume2'),
         Report('Projeto_volume3', 'volume3'),
         Report('Projeto_volume4', 'volume4'),
