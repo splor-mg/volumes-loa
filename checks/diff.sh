@@ -126,6 +126,7 @@ fi
 if [ $diff_pdf -eq 1 ]
 then
    echo "Failure testing $1.pdf"
-   diff-pdf -vsm --output-diff="$1"-diff.pdf pdf/"$1".pdf checks/assets/pdf/"$1".pdf
-   echo "pdf diff saved at $1-diff.pdf"
+   mkdir -p pdf/diff
+   diff-pdf -vsm --output-diff=pdf/diff/"$1"-diff.pdf pdf/"$1".pdf checks/assets/pdf/"$1".pdf
+   echo "pdf diff saved at pdf/diff/$1-diff.pdf"
 fi

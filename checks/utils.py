@@ -41,7 +41,7 @@ REPORTS = [
         Report('T37_DCGF_DEMONSTRATIVOS_RECURSOS_APLICADOS_SEGURANCA_ALIMENTAR_NUTRICIONAL', 'volume1'),
         Report('T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS', 'volume1'),
         Report('T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO', 'volume1'),
-        Report('T40_DEMONSTRATIVO_DESPESAS_OBRIGATORIAS', 'volume1'),
+        Report('T40_DEMONSTRATIVOS_DESPESAS_OBRIGATORIAS', 'volume1'),
         Report('Projeto_volume2', 'volume2'),
         Report('Projeto_volume3', 'volume3'),
         Report('Projeto_volume4', 'volume4'),
@@ -69,11 +69,16 @@ def callback():
     """
 
 @app.command()
-def diff(report_name: Annotated[str, typer.Argument(callback=validate_report_name)]):
+def diff(report_names: Annotated[Optional[List[str]], typer.Argument(callback=validate_report_name)] = None):
     """
     Diff of tex and pdf files
     """
-    subprocess.run(["checks/diff.sh", report_name[0],])
+    if report_names:
+        reports = [report for report in REPORTS if report.name in report_names]
+    else:
+        reports = REPORTS
+    for report in reports:
+        subprocess.run(["checks/diff.sh", report.name])
 
 
 @app.command()

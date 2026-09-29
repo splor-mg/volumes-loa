@@ -1,4 +1,4 @@
-.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker v1_dcgf v1_prodemge validate check rm-all
+.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker v1_dcgf v1_prodemge validate check diff rm-all
 
 include config.mk
 
@@ -66,6 +66,9 @@ rstudio: ## Inicia sessão do Rstudio em http://localhost:8787/ (usuário: rstud
 
 check:
 	python3 -m pytest
+
+diff:
+	python3 checks/utils.py diff
 
 # ===================================================================
 # TARGETS
