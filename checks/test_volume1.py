@@ -1,5 +1,10 @@
 from .report import Report
 
+def test_volume1_t1():
+    report = Report('T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL', 'volume1')
+    assert report.test_tex()
+    assert report.test_pdf()
+
 def test_volume1_t2():
     report = Report('T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL', 'volume1')
     assert report.test_tex()
@@ -157,5 +162,10 @@ def test_volume1_t38():
 
 def test_volume1_t39():
     report = Report('T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO', 'volume1')
+    assert report.test_tex()
+    assert report.test_pdf()
+
+def test_volume1_t40():
+    report = Report('T40_DEMONSTRATIVO_DESPESAS_OBRIGATORIAS', 'volume1')
     assert report.test_tex()
     assert report.test_pdf()

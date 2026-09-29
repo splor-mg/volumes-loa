@@ -17,6 +17,8 @@ elif [ $1 == "Projeto_volume6B" ]
 then vol="volume6"
 elif [ $1 == "Projeto_volume7" ]
 then vol="volume7"
+elif [ $1 == "T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL" ]
+then vol="volume1"
 elif [ $1 == "T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL" ]
 then vol="volume1"
 elif [ $1 == "T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas" ]
@@ -80,6 +82,8 @@ then vol="volume1"
 elif [ $1 == "T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS" ]
 then vol="volume1"
 elif [ $1 == "T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO" ]
+then vol="volume1"
+elif [ $1 == "T40_DEMONSTRATIVO_DESPESAS_OBRIGATORIAS" ]
 then vol="volume1"
 else
    echo "$1 is not a valid document"
