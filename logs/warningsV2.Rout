@@ -1,6 +1,3 @@
-running
-  '/usr/local/lib/R/bin/R --slave --no-restore --file=utils/Rnw2Tex.R --args 2'
-
 Warning in eval(expr, .GlobalEnv) :
   V2 T3: Para a UO 4121 NÃO existe o banco T3 RECURSOS OCAMENTARIO CATEGORIA PESSOAL
 
