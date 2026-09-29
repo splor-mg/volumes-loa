@@ -12,12 +12,12 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   1	122	746	CONTROLE EXTERNO DA GESTÃO DOS RECURSOS PÚBLICOS	             0	            0	196.592.633	21.752.235	            0	            0	            0	218.344.868
   1	128		FORMAÇÃO DE RECURSOS HUMANOS	             0	            0	13.800.000	            0	            0	            0	            0	13.800.000
   1	128	760	CAPACITAÇÃO E ORIENTAÇÃO PARA MELHORAR A GESTÃO DOS RECURSOS PÚBLICOS	             0	            0	13.800.000	            0	            0	            0	            0	13.800.000
-  2			JUDICIÁRIA	8.602.680.394	            0	5.201.650.751	733.216.004	5.000.000	            0	            0	14.542.547.149
+  2			JUDICIÁRIA	7.498.315.654	            0	5.201.650.751	733.216.004	5.000.000	            0	            0	13.438.182.409
   2	61		AÇÃO JUDICIÁRIA	             0	            0	4.052.368.419	733.216.004	5.000.000	            0	            0	4.790.584.423
   2	61	706	PRESTAÇÃO JURISDICIONAL	             0	            0	4.020.167.144	725.920.841	            0	            0	            0	4.746.087.985
   2	61	734	PRESTAÇÃO JURISDICIONAL MILITAR	             0	            0	32.201.275	7.295.163	5.000.000	            0	            0	44.496.438
-  2	122		ADMINISTRAÇÃO GERAL	8.602.680.394	            0	1.131.088.078	            0	            0	            0	            0	9.733.768.472
-  2	122	706	PRESTAÇÃO JURISDICIONAL	8.496.983.711	            0	1.131.088.078	            0	            0	            0	            0	9.628.071.789
+  2	122		ADMINISTRAÇÃO GERAL	7.498.315.654	            0	1.131.088.078	            0	            0	            0	            0	8.629.403.732
+  2	122	706	PRESTAÇÃO JURISDICIONAL	7.392.618.971	            0	1.131.088.078	            0	            0	            0	            0	8.523.707.049
   2	122	734	PRESTAÇÃO JURISDICIONAL MILITAR	105.696.683	            0	             0	            0	            0	            0	            0	105.696.683
   2	127		ORDENAMENTO TERRITORIAL	             0	            0	764.472	            0	            0	            0	            0	764.472
   2	127	77	CAMINHOS PARA O DESENVOLVIMENTO INTEGRADO METROPOLITANO	             0	            0	764.472	            0	            0	            0	            0	764.472
@@ -159,13 +159,13 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
   8	511	56	DESENVOLVIMENTO DA INFRAESTRUTURA DO NORTE E NORDESTE DE MINAS GERAIS	             0	            0	1.000	            0	            0	            0	            0	1.000
   8	544		RECURSOS HÍDRICOS	             0	            0	4.362.924	1.777.510	            0	            0	            0	6.140.434
   8	544	101	PROGRAMA ENCONTRO DAS ÁGUAS	             0	            0	4.362.924	1.777.510	            0	            0	            0	6.140.434
-  9			PREVIDÊNCIA SOCIAL	28.974.012.845	            0	555.172.511	3.826.648	12.254.750	            0	            0	29.545.266.754
+  9			PREVIDÊNCIA SOCIAL	28.444.748.736	            0	555.172.511	3.826.648	12.254.750	            0	            0	29.016.002.645
   9	122		ADMINISTRAÇÃO GERAL	10.337.401	            0	32.798.982	77.242	            0	            0	            0	43.213.625
   9	122	705	APOIO ÀS POLÍTICAS PÚBLICAS	10.337.401	            0	32.798.982	77.242	            0	            0	            0	43.213.625
-  9	272		PREVIDÊNCIA DO REGIME ESTATUTÁRIO	28.963.675.444	            0	436.521.078	            0	            0	            0	            0	29.400.196.522
+  9	272		PREVIDÊNCIA DO REGIME ESTATUTÁRIO	28.434.411.335	            0	436.521.078	            0	            0	            0	            0	28.870.932.413
   9	272	  8	PRESTAÇÃO DE SERVIÇOS PREVIDENCIÁRIOS	1.038.052	            0	34.163.318	            0	            0	            0	            0	35.201.370
   9	272	138	CONCESSÃO DE AUXÍLIO FINANCEIRO, SEGURO E PECÚLIO	             0	            0	130.955.045	            0	            0	            0	            0	130.955.045
-  9	272	705	APOIO ÀS POLÍTICAS PÚBLICAS	28.962.637.392	            0	271.402.715	            0	            0	            0	            0	29.234.040.107
+  9	272	705	APOIO ÀS POLÍTICAS PÚBLICAS	28.433.373.283	            0	271.402.715	            0	            0	            0	            0	28.704.775.998
   9	274		PREVIDÊNCIA ESPECIAL	             0	            0	85.852.451	3.749.406	12.254.750	            0	            0	101.856.607
   9	274	705	APOIO ÀS POLÍTICAS PÚBLICAS	             0	            0	79.457.271	            0	            0	            0	            0	79.457.271
   9	274	766	BENEFÍCIOS ASSISTENCIAIS	             0	            0	6.395.180	            0	            0	            0	            0	6.395.180
@@ -527,4 +527,4 @@ funcao	subfuncao	programa	especificacao	pessoal	juros	outras	investimentos	inver
 99			RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
 99	999		RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
 99	999	999	RESERVA DE CONTINGÊNCIA	             0	            0	             0	            0	            0	            0	1.204.268.408	1.204.268.408
-100			TOTAL	95.744.451.256	1.185.539.611	41.295.577.186	6.929.997.557	2.704.137.895	6.437.708.586	1.204.268.408	155.501.680.499
+100			TOTAL	94.110.822.407	1.185.539.611	41.295.577.186	6.929.997.557	2.704.137.895	6.437.708.586	1.204.268.408	153.868.051.650

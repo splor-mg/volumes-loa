@@ -10,9 +10,6 @@ Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de re
  DETALHES: (não pode desconsiderar) 
  7631.99.0.1.04.000
 7631.99.0.2.04.000
-Warning in trataQDD_Ajustado(qdd, transf, funfip) :
-  trataQDD_Ajustado(): O Valor deduzido das UO's beneficiadas ( 5.542.305.953 ) é diferente do valor somado as UO's financiadoras ( 3.908.677.104 ). Ver logs/erro_qdd_ajustado.csv.
-
 
 
 processing file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd
