@@ -1,4 +1,4 @@
-.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker v1_dcgf v1_prodemge validate check diff rm-all
+.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker v1_dcgf v1_prodemge validate check diff rm-all reset
 
 include config.mk
 
@@ -56,6 +56,9 @@ rm-all: ## Remove todos os arquivos de todos os volumes incluindo logs
 	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) 5
 	@Rscript $(VERBOSE) utils/removeArquivos.R $(vol) logs
 
+reset: ### Remove todos os arquivos (de datapackages/ até pdf/)
+	@python3 utils/reset.py
+
 docker:
 	@if [ TRUE ]; then \
 		$(DOCKER_RUN_CMD); \
@@ -74,7 +77,7 @@ diff:
 # TARGETS
 
 # Volume 6
-pdf/Projeto_volume6A.pdf: volume6/data/receita_fonte_stn.txt volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt volume6/Rnw/ANEXOS.Rnw volume6/Rnw/capaLOA.pdf \
+pdf/Projeto_volume6A.pdf: volume6/data/receita_fonte_stn.txt volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt volume6/Rnw/ANEXOS.Rnw \
 						 volume6/Rnw/load_bibliotecas.tex volume6/Rnw/Projeto_volume6A.Rnw volume6/Rnw/QUADRO_DETALHAMENTO_DESPESA.Rnw \
 						 bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_fontes_de_recursos_stn.xlsx bancos/manual/desc_IAG.xlsx bancos/manual/desc_IPU.xlsx
 	@echo "- Gera logs/warningsV6A.Rout"
@@ -264,11 +267,11 @@ volume1/data/T28_DCGF_PT2_Despesa_prevista_e_realizada.txt: volume1/R/T28_DCGF_P
 	@echo "Atualizando volume1/data/T28_DCGF_PT2_Despesa_prevista_e_realizada.txt..."
 	@Rscript $(VERBOSE) volume1/R/T28_DCGF_PT2_Despesa_prevista_e_realizada.R 2>> logs/logv1.Rout
 
-volume1/data/T28_DCGF_PT3_Receita_prevista_LOA.txt: volume1/R/T28_DCGF_PT3_Receita_prevista_LOA.R volume1/R/T28_DCGF_Demonstrativo_programas_financiados_com_recursos_provenientes_Uniao.R bancos/SISOR/exec_desp_realizada.xlsx
+volume1/data/T28_DCGF_PT3_Receita_prevista_LOA.txt: volume1/R/T28_DCGF_PT3_Receita_prevista_LOA.R volume1/R/T28_DCGF_Demonstrativo_programas_financiados_com_recursos_provenientes_Uniao.R
 	@echo "Atualizando volume1/data/T28_DCGF_PT3_Receita_prevista_LOA.txt..."
 	@Rscript $(VERBOSE) volume1/R/T28_DCGF_PT3_Receita_prevista_LOA.R 2>> logs/logv1.Rout
 
-volume1/data/T28_DCGF_PT4_Despesa_prevista_LOA.txt: volume1/R/T28_DCGF_PT4_Despesa_prevista_LOA.R volume1/R/T28_DCGF_Demonstrativo_programas_financiados_com_recursos_provenientes_Uniao.R bancos/SISOR/exec_desp_realizada.xlsx
+volume1/data/T28_DCGF_PT4_Despesa_prevista_LOA.txt: volume1/R/T28_DCGF_PT4_Despesa_prevista_LOA.R volume1/R/T28_DCGF_Demonstrativo_programas_financiados_com_recursos_provenientes_Uniao.R
 	@echo "Atualizando volume1/data/T28_DCGF_PT3_Despesa_prevista_LOA.txt..."
 	@Rscript $(VERBOSE) volume1/R/T28_DCGF_PT4_Despesa_prevista_LOA.R 2>> logs/logv1.Rout
 
