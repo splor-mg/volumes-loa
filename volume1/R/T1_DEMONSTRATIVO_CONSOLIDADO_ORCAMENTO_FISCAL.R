@@ -5,7 +5,6 @@ options(warn=1, scipen = 999)
 suppressMessages(require(relatorios))
 
 source("utils/funcoes.R", encoding = "UTF-8")
-source("utils/formataTexto.R", encoding = "UTF-8")
 source("utils/suporte/V1/demonstr_consolidado.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
@@ -121,10 +120,6 @@ for(i in 2:nrow(painel_rec)){
 painel_rec1 = rbind(painel_rec1, nova_linha)
 painel_rec1[, ordem_rec:=1:nrow(painel_rec1)]
 
-# Salva painel_rec para testes
-painel_rec_para_teste = rbind(painel_rec1, painel_rec_final, fill=T)
-write.csv2(painel_rec_para_teste, paste0("utils/suporte/V1/painel_rec", loa_rec[, max(ANO)], ".csv"),
-           row.names=F)
 
 # ======= Banco LOA DESPESA ==========================================================
 loa_desp = adiciona_desc_volumes(loa_desp, "GRUPO")
@@ -252,12 +247,6 @@ for(i in 2:nrow(painel_desp)){
 }
 
 painel_desp1 = rbind(painel_desp1, nova_linha)
-
-# Salva painel_desp para testes
-painel_desp_para_teste = rbind(painel_desp1, painel_desp_final, fill=T)
-setnames(painel_desp_para_teste, "ordem", "ordem_desp")
-write.csv2(painel_desp_para_teste, paste0("utils/suporte/V1/painel_desp", loa_rec[, max(ANO)], ".csv"),
-           row.names=F)
 
 painel_desp1[, ordem:=1:nrow(painel_desp1)]
 
