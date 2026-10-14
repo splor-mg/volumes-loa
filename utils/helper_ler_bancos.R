@@ -118,17 +118,6 @@ verificaTipoVariaveis = function(base, varsTextoEsperadas){
   }
 }
 
-removeEspacos = function(vetor){
-
-  # ============================================================================
-  # Remove espaços no final e substitui espaços no meio de expressões por ponto
-  # utilizado para padronizar nomes de bancos .xlsx para o padrão de .txt
-  # ============================================================================
-
-  vetor = gsub("(.+) $", "\\1", vetor)
-  return(gsub(" ", ".", vetor))
-
-}
 
 trata_exc_logica = function(base, prefixo="exc"){
 

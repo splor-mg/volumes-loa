@@ -30,13 +30,6 @@ mergeDT <- function(x,y, ...) {
   return(novobanco)
 }
 
-Moda <- function(x) {
-  # =====================================================
-  # Apresenta o valor com maior frequência de um vetor
-  # =====================================================
-  ux <- unique(x)
-  ux[which.max(tabulate(match(x, ux)))]
-}
 
 getCodigoR = function(input, output){
 
@@ -107,15 +100,6 @@ aplicaNegrito = function(texto, colocarNegrito){
     return(texto)
   }
 }
-
-ler_csv = function(caminho){
-
-  # Função para abrir os bancos csv já tratados em data
-
-  return(data.table(read.csv2(caminho, header = T, stringsAsFactors = F)))
-
-}
-
 
 
 apoio = function(caminho, aba){
@@ -245,20 +229,6 @@ fecharLog = function(caminho, tabela){
 }
 
 
-getRnw_V1 = function(tbl){
-
-  # Obtem o arquivo .Rnw em volume1/Rnw que segue o padrão descrito em tbl
-
-  padrao = paste0("^", tbl, ".+\\.Rnw$")
-  indices = grepl(padrao, dir("volume1/Rnw"))
-
-  if(!T %in% indices) stop("Em volume1/Rnw não existe um arquivo com o padrão \'", padrao, "\'\n")
-
-  return(dir("volume1/Rnw")[indices])
-
-}
-
-
 formatarNum = function(x){
   if(is.numeric(x)){
     x = format(x, big.mark=".", scientific = FALSE, decimal.mark = ",")
@@ -355,9 +325,6 @@ merge_QDD_v5 = function(banco, uos_proposta){
 
 }
 
-zero2traco = function(valor){
-  return(ifelse(valor==0, "-", valor))
-}
 
 adiciona_desc_volumes = function(base, column) {
   result <- data.table::copy(base)
