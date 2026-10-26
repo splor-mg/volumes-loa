@@ -107,15 +107,13 @@ bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte
 
 # Volume 7
 pdf/Projeto_volume7.pdf: $(DEPENDENCIAS_V7)
-	@echo "- Gera logs/warningsV7.Rout"
 	@python3 volume7/checks/check_qdd_fonte_95.py 2> logs/logv7.Rout
-	@Rscript $(VERBOSE) volume7/Rnw/CodigosR/Projeto_volume7.R 2> logs/warningsV7.Rout >&-
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R 7
+	@python3 -m volume7.jinja2.Projeto_volume7
 	@echo "---------------------------------------------------------------"
 
-volume7/data/*.txt: volume7/R/volume7.R bancos/SISOR/BASE_QDD_FISCAL_FONTE_95.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+volume7/data/*.txt: volume7/python/volume7.py utils/python/*.py bancos/SISOR/BASE_QDD_FISCAL_FONTE_95.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
 	@echo "Atualizando v7/data/ consolidado.txt e QUADRO_DETALHAMENTO_DESPESA_porUO.txt..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv7.Rout
+	@python3 -m volume7.python.volume7 2>> logs/logv7.Rout
 
 # Volume 5
 pdf/Projeto_volume5.pdf: $(DEPENDENCIAS_V5)
