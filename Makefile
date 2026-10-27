@@ -105,6 +105,7 @@ bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte
 	@echo "Atualizando $@..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
 
+
 # Volume 7
 pdf/Projeto_volume7.pdf: $(DEPENDENCIAS_V7)
 	@python3 -m volume7.jinja2.Projeto_volume7
@@ -115,16 +116,15 @@ volume7/data/*.txt: volume7/python/volume7.py utils/python/*.py volume7/checks/c
 	@python3 volume7/checks/check_orcamento_despesa_fonte_80_95.py 2> logs/logv7.Rout
 	@python3 -m volume7.python.volume7 2>> logs/logv7.Rout
 
+
 # Volume 5
 pdf/Projeto_volume5.pdf: $(DEPENDENCIAS_V5)
-	@echo "- Gera logs/warningsV5.Rout"
-	@Rscript $(VERBOSE) volume5/Rnw/CodigosR/Projeto_volume5.R 2> logs/warningsV5.Rout >&-
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R 5
+	@python3 -m volume5.jinja2.Projeto_volume5
 	@echo "---------------------------------------------------------------"
 
-volume5/data/*.txt: volume5/R/volume5.R bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+volume5/data/*.txt: volume5/python/volume5.py utils/python/*.py bancos/PPO/orcamento_despesa.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
 	@echo "Atualizando v5/data/ consolidado.txt e QUADRO_DETALHAMENTO_DESPESA_porUO.txt..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv5.Rout
+	@python3 -m volume5.python.volume5 2>> logs/logv5.Rout
 
 
 # Volume 4
