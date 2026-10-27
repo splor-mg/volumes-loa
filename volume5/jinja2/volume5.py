@@ -1,7 +1,5 @@
 """
-Gera pdf/Projeto_volume5.pdf a partir dos templates Jinja em volume5/jinja2.
-Substitui, para o volume 5, o Projeto_volume5.Rnw, o utils/Rnw2Tex.R e o utils/limpaDir.R.
-Executar na raiz do projeto com: python3 -m volume5.jinja2.Projeto_volume5
+Gera pdf/volume5.pdf a partir dos templates Jinja em volume5/jinja2.
 """
 import csv
 import os
@@ -14,7 +12,7 @@ import pandas as pd
 from utils.python.funcoes import texto_r
 from utils.python.trata_bancos import le_planilha
 
-NOME = 'Projeto_volume5'
+NOME = 'volume5'
 DADOS = Path('volume5/data')
 JINJA2 = Path('volume5/jinja2')
 AUX_FILES = Path('volume5/pdf/aux_files')
@@ -37,7 +35,7 @@ def prepara_consolidado():
 
 
 def prepara_quadro():
-    banco = pd.read_csv(DADOS / 'QUADRO_DETALHAMENTO_DESPESA_porUO.txt', sep='\t', dtype=str, keep_default_na=False, quoting=csv.QUOTE_NONE)
+    banco = pd.read_csv(DADOS / 'qdd.txt', sep='\t', dtype=str, keep_default_na=False, quoting=csv.QUOTE_NONE)
     banco['tipo'] = 'acao'
     banco.loc[banco['especificacao'] == '', 'tipo'] = 'elemento'
     banco.loc[banco['especificacao'] == 'TOTAL', 'tipo'] = 'total'

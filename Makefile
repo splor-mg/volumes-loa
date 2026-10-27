@@ -30,11 +30,11 @@ v3: pdf/Projeto_volume3.pdf ## Gera volume 3
 
 v4: pdf/Projeto_volume4.pdf ## Gera volume 4
 
-v5: pdf/Projeto_volume5.pdf ## Gera volume 5
+v5: pdf/volume5.pdf ## Gera volume 5
 
 v6: pdf/Projeto_volume6A.pdf ## Gera volume 6
 
-v7: pdf/Projeto_volume7.pdf ## Gera volume 7
+v7: pdf/volume7.pdf ## Gera volume 7
 
 clean: ## Organiza os arquivos auxiliares e outputs da compilação latex. Ex. argumento vol=5. origem=1 limpa o dir principal.
 	@Rscript $(VERBOSE) utils/limpaDir.R $(vol) $(origem)
@@ -107,23 +107,23 @@ bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte
 
 
 # Volume 7
-pdf/Projeto_volume7.pdf: $(DEPENDENCIAS_V7)
-	@python3 -m volume7.jinja2.Projeto_volume7
+pdf/volume7.pdf: $(DEPENDENCIAS_V7)
+	@python3 -m volume7.jinja2.volume7
 	@echo "---------------------------------------------------------------"
 
 volume7/data/*.txt: volume7/python/volume7.py utils/python/*.py volume7/checks/check_orcamento_despesa_fonte_80_95.py bancos/PPO/orcamento_despesa.csv bancos/PPO/orcamento_despesa_fonte_80_95.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
-	@echo "Atualizando v7/data/ consolidado.txt e QUADRO_DETALHAMENTO_DESPESA_porUO.txt..."
+	@echo "Atualizando v7/data/ consolidado.txt e qdd.txt..."
 	@python3 volume7/checks/check_orcamento_despesa_fonte_80_95.py 2> logs/logv7.Rout
 	@python3 -m volume7.python.volume7 2>> logs/logv7.Rout
 
 
 # Volume 5
-pdf/Projeto_volume5.pdf: $(DEPENDENCIAS_V5)
-	@python3 -m volume5.jinja2.Projeto_volume5
+pdf/volume5.pdf: $(DEPENDENCIAS_V5)
+	@python3 -m volume5.jinja2.volume5
 	@echo "---------------------------------------------------------------"
 
 volume5/data/*.txt: volume5/python/volume5.py utils/python/*.py bancos/PPO/orcamento_despesa.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
-	@echo "Atualizando v5/data/ consolidado.txt e QUADRO_DETALHAMENTO_DESPESA_porUO.txt..."
+	@echo "Atualizando v5/data/ consolidado.txt e qdd.txt..."
 	@python3 -m volume5.python.volume5 2>> logs/logv5.Rout
 
 

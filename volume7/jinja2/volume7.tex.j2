@@ -73,7 +73,7 @@ Recursos do acordo de repactuação do Rio Doce}
  \centering
  
 \newpage
-\BLOCK{include "demonstrativo_consolidado_despesa.tex.j2"}
+\BLOCK{include "consolidado.tex.j2"}
 \newpage
 \ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
 
@@ -93,7 +93,7 @@ Recursos do acordo de repactuação do Rio Doce}
 \setlength{\tabcolsep}{2.5pt}
 
 \BLOCK{for uo in uos}
-\BLOCK{include "quadro_detalhamento_despesa.tex.j2"}
+\BLOCK{include "qdd.tex.j2"}
 \BLOCK{endfor}
 \ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
 \phantomsection

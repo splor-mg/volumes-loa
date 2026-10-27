@@ -9,11 +9,11 @@ elif [ $1 == "Projeto_volume3" ]
 then vol="volume3"
 elif [ $1 == "Projeto_volume4" ]
 then vol="volume4"
-elif [ $1 == "Projeto_volume5" ]
+elif [ $1 == "volume5" ]
 then vol="volume5"
 elif [ $1 == "Projeto_volume6A" ]
 then vol="volume6"
-elif [ $1 == "Projeto_volume7" ]
+elif [ $1 == "volume7" ]
 then vol="volume7"
 elif [ $1 == "T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL" ]
 then vol="volume1"
