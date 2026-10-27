@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 def texto_r(valor):
-    # Vazio vira 'NA' e float vira integer
+    """Vazio vira 'NA' e float vira integer"""
     if pd.isna(valor):
         return 'NA'
     if isinstance(valor, float) and valor.is_integer():
@@ -14,13 +14,8 @@ def texto_r(valor):
     return str(valor)
 
 
-def formata_c(serie, largura):
-    # Por exemplo, '4' vira '04'
-    return serie.map(lambda valor: 'NA'.rjust(largura) if pd.isna(valor) else f'{int(valor):0{largura}d}')
-
-
 def formatar_num(serie):
-    # Por exemplo, 1234567 vira '1.234.567', e alinha os valores à direita
+    """Por exemplo, 1234567 vira '1.234.567', e alinha os valores à direita"""
     textos = serie.map(lambda valor: f'{valor:,.0f}'.replace(',', '.'))
     textos = textos.str.rjust(textos.str.len().max())
     return textos.str.replace(r' *(-*\d+.+)', r'\1', regex=True)

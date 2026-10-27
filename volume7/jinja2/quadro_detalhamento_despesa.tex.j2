@@ -31,12 +31,12 @@
 \endlastfoot
 \BLOCK{for linha in uo.linhas}
 \BLOCK{if linha.tipo == "acao"}
-\multicolumn{1}{L{5.5cm}|}{ \VAR{linha.NOME_ACAO} } & \multicolumn{1}{c}{ \VAR{linha.FUNCAO} } & \multicolumn{1}{c}{ \VAR{linha.SUB_FUNCAO} } & \multicolumn{1}{c}{ \VAR{linha.PROGRAMA} } & \multicolumn{1}{l}{ \VAR{linha.IDENT_PROJATIV} } & \multicolumn{1}{c}{ \VAR{linha.PROJ_ATIV} } & \multicolumn{1}{l|}{ \VAR{linha.SUB_PROJETO} } & & & & & & & & & \multicolumn{1}{r}{ \VAR{linha.valor} } \\
+\multicolumn{1}{L{5.5cm}|}{ \VAR{linha.especificacao} } & \multicolumn{1}{c}{ \VAR{linha.funcao_cod} } & \multicolumn{1}{c}{ \VAR{linha.subfuncao_cod} } & \multicolumn{1}{c}{ \VAR{linha.programa_cod} } & \multicolumn{1}{l}{ \VAR{linha.identificador_cod} } & \multicolumn{1}{c}{ \VAR{linha.projeto_atividade_cod} } & \multicolumn{1}{l|}{ \VAR{linha.subprojeto_cod} } & & & & & & & & & \multicolumn{1}{r}{ \VAR{linha.vlr_loa_desp} } \\
 \BLOCK{elif linha.tipo == "elemento"}
-& & & & & & & \multicolumn{1}{c}{ \VAR{linha.CATEGORIA} } & \multicolumn{1}{c}{ \VAR{linha.GRUPO_DESPESA} } & \multicolumn{1}{c}{ \VAR{linha.MODALIDADE} } & \multicolumn{1}{c|}{ \VAR{linha.ELEMENTO_DESPESA} } & \multicolumn{1}{c|}{ \VAR{linha.IAG} } & \multicolumn{1}{l}{ \VAR{linha.FONTE} } & \multicolumn{1}{c|}{ \VAR{linha.IPU} } & \multicolumn{1}{r|}{ \VAR{linha.valor} } & \\
+& & & & & & & \multicolumn{1}{c}{ \VAR{linha.categoria_cod} } & \multicolumn{1}{c}{ \VAR{linha.grupo_cod} } & \multicolumn{1}{c}{ \VAR{linha.modalidade_cod} } & \multicolumn{1}{c|}{ \VAR{linha.elemento_cod} } & \multicolumn{1}{c|}{ \VAR{linha.iag_cod} } & \multicolumn{1}{l}{ \VAR{linha.fonte_cod} } & \multicolumn{1}{c|}{ \VAR{linha.ipu_cod} } & \multicolumn{1}{r|}{ \VAR{linha.vlr_loa_desp} } & \\
 \BLOCK{else}
 \hline
-\multicolumn{15}{C{6cm}|}{\textbf{ \VAR{linha.NOME_ACAO} }} & \multicolumn{1}{r}{\textbf{ \VAR{linha.valor} }} \\
+\multicolumn{15}{C{6cm}|}{\textbf{ \VAR{linha.especificacao} }} & \multicolumn{1}{r}{\textbf{ \VAR{linha.vlr_loa_desp} }} \\
 \BLOCK{endif}
 \BLOCK{endfor}
 \end{longtable}

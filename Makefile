@@ -107,12 +107,12 @@ bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte
 
 # Volume 7
 pdf/Projeto_volume7.pdf: $(DEPENDENCIAS_V7)
-	@python3 volume7/checks/check_qdd_fonte_95.py 2> logs/logv7.Rout
 	@python3 -m volume7.jinja2.Projeto_volume7
 	@echo "---------------------------------------------------------------"
 
-volume7/data/*.txt: volume7/python/volume7.py utils/python/*.py bancos/SISOR/BASE_QDD_FISCAL_FONTE_95.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+volume7/data/*.txt: volume7/python/volume7.py utils/python/*.py volume7/checks/check_orcamento_despesa_fonte_80_95.py bancos/PPO/orcamento_despesa.csv bancos/PPO/orcamento_despesa_fonte_80_95.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
 	@echo "Atualizando v7/data/ consolidado.txt e QUADRO_DETALHAMENTO_DESPESA_porUO.txt..."
+	@python3 volume7/checks/check_orcamento_despesa_fonte_80_95.py 2> logs/logv7.Rout
 	@python3 -m volume7.python.volume7 2>> logs/logv7.Rout
 
 # Volume 5
