@@ -18,6 +18,7 @@ CARACTERES_ESPECIAIS = str.maketrans({
     '\x94': '"',
     '\x93': '',
     '\x96': '-',
+    '\xa0': ' ',
 })
 
 
