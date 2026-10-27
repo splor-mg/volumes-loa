@@ -39,28 +39,26 @@ def prepara_consolidado():
 
 def prepara_quadro():
     banco = pd.read_csv(DADOS / "QUADRO_DETALHAMENTO_DESPESA_porUO.txt", sep="\t", dtype=str, keep_default_na=False, quoting=csv.QUOTE_NONE)
-    for coluna, largura in [("FUNCAO", 2), ("SUB_FUNCAO", 3), ("PROJ_ATIV", 3), ("SUB_PROJETO", 4), ("ELEMENTO_DESPESA", 2)]:
-        banco[coluna] = banco[coluna].str.zfill(largura)
-
     banco["tipo"] = "acao"
-    banco.loc[banco["NOME_ACAO"] == "", "tipo"] = "elemento"
-    banco.loc[banco["NOME_ACAO"] == "TOTAL", "tipo"] = "total"
+    banco.loc[banco["especificacao"] == "", "tipo"] = "elemento"
+    banco.loc[banco["especificacao"] == "TOTAL", "tipo"] = "total"
 
     poderes = set()
     orgaos = set()
     uos = []
-    for _, uo in banco.groupby("COD_UO", sort=False):
+    for _, uo in banco.groupby("uo_cod", sort=False):
         primeira = uo.iloc[0]
         poder = primeira["poder"]
-        orgao = primeira["COD_ORGAO"]
-        unidade = primeira["COD_UO"]
+        orgao = primeira["orgao_cod"]
+        unidade = primeira["uo_cod"]
+        sigla = primeira["uo_sigla"]
         uos.append({
             "novo_poder": poder not in poderes,
             "poder": poder,
             "novo_orgao": orgao not in orgaos,
-            "orgao": f"{orgao[0:1]}.{orgao[1:3]}.{orgao[3:4]} - {primeira['ORGAO']}",
-            "unidade": f"{unidade[0:1]}.{unidade[1:3]}.{unidade[3:4]} - {primeira['UO']}",
-            "ano": primeira["ANO"],
+            "orgao": f"{orgao[0:1]}.{orgao[1:3]}.{orgao[3:4]} - {primeira['orgao_nome']} - {sigla}",
+            "unidade": f"{unidade[0:1]}.{unidade[1:3]}.{unidade[3:4]} - {primeira['uo_nome']} - {sigla}",
+            "ano": primeira["ano"],
             "linhas": uo.to_dict("records"),
         })
         poderes.add(poder)
