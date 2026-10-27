@@ -1,6 +1,8 @@
 """
-Gera os dados do consolidado e do QDD dos volumes 5 e 7 a partir do banco de despesa tratado.
+Gera os dados do consolidado e do QDD dos volumes 5 e 7
+e prepara esses dados para os templates.
 """
+import csv
 import sys
 import pandas as pd
 
@@ -88,3 +90,42 @@ def gera_qdd(banco, caminho, chave_extra):
 
     colunas = colunas + ['vlr_loa_desp', 'poder']
     escreve_tabela(quadro[colunas], caminho)
+
+
+def prepara_consolidado(caminho):
+    consolidado = pd.read_csv(caminho, sep='\t', dtype=str, keep_default_na=False, quoting=csv.QUOTE_NONE)
+    codigo = consolidado['codigo_texto']
+    consolidado['nivel'] = 3
+    consolidado.loc[codigo.str[4:6] == '00', 'nivel'] = 2
+    consolidado.loc[codigo.str[2].isin(['0', '9']), 'nivel'] = 1
+
+    return consolidado.iloc[:-1].to_dict('records'), consolidado.iloc[-1].to_dict()
+
+
+def prepara_qdd(caminho):
+    banco = pd.read_csv(caminho, sep='\t', dtype=str, keep_default_na=False, quoting=csv.QUOTE_NONE)
+    banco['tipo'] = 'acao'
+    banco.loc[banco['especificacao'] == '', 'tipo'] = 'elemento'
+    banco.loc[banco['especificacao'] == 'TOTAL', 'tipo'] = 'total'
+
+    poderes = set()
+    orgaos = set()
+    uos = []
+    for _, uo in banco.groupby('uo_cod', sort=False):
+        primeira = uo.iloc[0]
+        poder = primeira['poder']
+        orgao = primeira['orgao_cod']
+        unidade = primeira['uo_cod']
+        sigla = primeira['uo_sigla']
+        uos.append({
+            'novo_poder': poder not in poderes,
+            'poder': poder,
+            'novo_orgao': orgao not in orgaos,
+            'orgao': f'{orgao[0:1]}.{orgao[1:3]}.{orgao[3:4]} - {primeira["orgao_nome"]} - {sigla}',
+            'unidade': f'{unidade[0:1]}.{unidade[1:3]}.{unidade[3:4]} - {primeira["uo_nome"]} - {sigla}',
+            'ano': primeira['ano'],
+            'linhas': uo.to_dict('records'),
+        })
+        poderes.add(poder)
+        orgaos.add(orgao)
+    return uos
