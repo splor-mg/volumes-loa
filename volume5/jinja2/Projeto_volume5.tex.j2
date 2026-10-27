@@ -1,0 +1,116 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+\renewcommand{\contentsname}{Sumário}
+
+\begin{document}
+
+
+% Capa
+\begin{titlepage}
+\newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+\includepdf[pages={7}]{capaLOA.pdf}
+\end{titlepage}
+% \capa
+
+% Titulos
+% Pagina com os titulos
+\restoregeometry
+\thispagestyle{empty}
+\newgeometry{top=1cm}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=2cm, height=2cm]{brasao_mg}
+\end{center}
+\end{figure}
+\vspace*{-2em}
+\begin{center}
+\large
+Governo do Estado de Minas Gerais \\
+Secretaria de Estado de Planejamento e Gestão \\
+Subsecretaria de Planejamento e Orçamento \\
+Superintendência Central de Planejamento e Orçamento \\
+
+\vspace*{10em}
+ \fontsize{45pt}{10pt}\selectfont {\textbf{\VAR{etapa_orcamento} \VAR{ano_doc}}}
+
+\vspace*{5em}
+\fontsize{15pt}{12pt}\selectfont {\textbf{VOLUME V}} \\
+\large{QUADROS DE DETALHAMENTO DA DESPESA}
+
+\end{center}
+
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+% Preciso que o sumário comece em uma página ímpar
+
+% \Titulos
+
+% Sumario
+\restoregeometry
+\small
+\tableofcontents
+\newpage
+% \Sumario
+
+% Pagina iniciando DEMONSTRATIVO CONSOLIDADO DA DESPESA
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\phantomsection
+%\addtocontents{toc}{\cftpagenumbersoff{section}}
+\restoregeometry
+\vspace*{9cm}
+\addcontentsline{toc}{section}{ DEMONSTRATIVO CONSOLIDADO DA DESPESA}
+\centering \Huge {\textbf{DEMONSTRATIVO CONSOLIDADO DA DESPESA}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+% \Pagina iniciando DEMONSTRATIVO CONSOLIDADO DA DESPESA
+
+\newgeometry{left=1cm,right=1cm, top=2cm}
+
+\renewcommand*{\arraystretch}{1.9}
+ \scriptsize
+ \color{myblack}
+ \centering
+
+\newpage
+\BLOCK{include "demonstrativo_consolidado_despesa.tex.j2"}
+\newpage
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+
+% Pagina iniciando DEMONSTRATIVOS POR ORGAO E ENTIDADE
+\phantomsection
+\restoregeometry
+\vspace*{9cm}
+\addcontentsline{toc}{section}{ DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}
+\centering \Huge {\textbf{DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+\phantomsection
+% \Pagina iniciando DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE
+
+\newgeometry{left=3pt,right=3pt, top=1cm}
+
+\setlength{\tabcolsep}{2.5pt}
+
+\BLOCK{for uo in uos}
+\BLOCK{include "quadro_detalhamento_despesa.tex.j2"}
+\BLOCK{endfor}
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\phantomsection
+\restoregeometry
+\vspace*{9cm}
+\addtocontents{toc}{\cftpagenumberson{section}}
+\addcontentsline{toc}{section}{GRUPOS DE DESPESA, FONTES DE RECURSO, IDENTIFICADORES DE PROCEDÊNCIA E USO E IDENTIFICADOR DE AÇÃO GOVERNAMENTAL}
+\centering \Huge {\textbf{GRUPOS DE DESPESA, FONTES DE RECURSO, IDENTIFICADORES DE PROCEDÊNCIA E USO E IDENTIFICADOR DE AÇÃO GOVERNAMENTAL}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+
+\newgeometry{left=3pt,right=3pt, top=1cm}
+\renewcommand*{\arraystretch}{1.5}
+\BLOCK{include "anexos.tex.j2"}
+% Contra capa
+% \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+% \includepdf[pages={177},scale=1.1]{06_LOA_Volume_V.pdf}
+% \Contra capa
+
+\end{document}

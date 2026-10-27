@@ -1,0 +1,44 @@
+\BLOCK{if uo.novo_poder}
+\addcontentsline{toc}{section}{\underline{ \VAR{uo.poder} }}
+\BLOCK{endif}
+\BLOCK{if uo.novo_orgao}
+\addcontentsline{toc}{section}{ \VAR{uo.orgao} }
+\BLOCK{endif}
+\addcontentsline{toc}{subsection}{ \VAR{uo.unidade} }
+\renewcommand*{\arraystretch}{1.9}
+\scriptsize
+\color{myblack}
+\centering
+\noindent\begin{longtable}[c]{m{6.5cm}|m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}|m{1pt}m{1pt}m{0.5pt}m{1pt}|m{1pt}|m{1pt}m{1pt}|m{1pt}|m{2pt}}
+\BLOCK{set cabecalho}
+\multicolumn{16}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{QUADRO DE DETALHAMENTO DA DESPESA - FISCAL}}}\TBstrut  \\[2ex]
+\specialrule{1.5pt}{2pt}{0pt}
+\multicolumn{15}{l}{\textbf{Exercício:} \textcolor{myblack}{ \VAR{uo.ano} }} & \multicolumn{1}{r}{ R\$1,00} \\
+\multicolumn{16}{L{15cm}}{\textbf{ÓRGÃO:} \VAR{uo.orgao} } \\
+\multicolumn{16}{L{15cm}}{\textbf{UO:} \hspace{13pt}  \VAR{uo.unidade} } \\
+\specialrule{1pt}{0pt}{0pt}
+\multirow{2}{3pt}{ESPECIFICAÇÃO} & \multicolumn{13}{|c|}{CLASSIFICAÇÃO ORÇAMENTÁRIA} & \multicolumn{2}{c}{VALOR} \\
+\cline{2-16}
+& \multicolumn{1}{|c}{\fonteSeis FUN} & \multicolumn{1}{c}{\fonteSeis SUBF} &  \multicolumn{1}{c}{\fonteSeis PRG} & \multicolumn{1}{c}{\fonteSeis ID} &  \multicolumn{1}{c}{\fonteSeis P/A} & \multicolumn{1}{c|}{\fonteSeis C/A} &  \multicolumn{1}{c}{\fonteSeis C} & \multicolumn{1}{c}{\fonteSeis GD} &  \multicolumn{1}{c}{\fonteSeis M} & \multicolumn{1}{c|}{\fonteSeis ED} &  \multicolumn{1}{c|}{\fonteSeis IAG} & \multicolumn{1}{c}{\fonteSeis F/} &  \multicolumn{1}{c|}{\fonteSeis IPU} & \multicolumn{1}{c|}{\fonteSeis DETALHE} &  \multicolumn{1}{c}{\fonteSeis TOTAL} \\
+\hline\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline
+\hline\hline
+\endlastfoot
+\BLOCK{for linha in uo.linhas}
+\BLOCK{if linha.tipo == "acao"}
+\multicolumn{1}{L{5.5cm}|}{ \VAR{linha.especificacao} } & \multicolumn{1}{c}{ \VAR{linha.funcao_cod} } & \multicolumn{1}{c}{ \VAR{linha.subfuncao_cod} } & \multicolumn{1}{c}{ \VAR{linha.programa_cod} } & \multicolumn{1}{l}{ \VAR{linha.identificador_cod} } & \multicolumn{1}{c}{ \VAR{linha.projeto_atividade_cod} } & \multicolumn{1}{l|}{ \VAR{linha.subprojeto_cod} } & & & & & & & & & \multicolumn{1}{r}{ \VAR{linha.vlr_loa_desp} } \\
+\BLOCK{elif linha.tipo == "elemento"}
+& & & & & & & \multicolumn{1}{c}{ \VAR{linha.categoria_cod} } & \multicolumn{1}{c}{ \VAR{linha.grupo_cod} } & \multicolumn{1}{c}{ \VAR{linha.modalidade_cod} } & \multicolumn{1}{c|}{ \VAR{linha.elemento_cod} } & \multicolumn{1}{c|}{ \VAR{linha.iag_cod} } & \multicolumn{1}{l}{ \VAR{linha.fonte_cod} } & \multicolumn{1}{c|}{ \VAR{linha.ipu_cod} } & \multicolumn{1}{r|}{ \VAR{linha.vlr_loa_desp} } & \\
+\BLOCK{else}
+\hline
+\multicolumn{15}{C{6cm}|}{\textbf{ \VAR{linha.especificacao} }} & \multicolumn{1}{r}{\textbf{ \VAR{linha.vlr_loa_desp} }} \\
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}
+\newpage
+\phantomsection

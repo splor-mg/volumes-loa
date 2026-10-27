@@ -1,0 +1,67 @@
+\footnotesize
+\renewcommand*{\arraystretch}{2}
+\noindent\begin{longtable}[c]{m{1cm}|m{11cm}}
+\BLOCK{set cabecalho}
+\multicolumn{2}{c}{\cellcolor{gray!50} \textcolor{red} {\normalsize \textbf{GRUPOS DE DESPESA}}}\Tstrut  \\[2ex]
+\hline\hline
+\multicolumn{1}{c|}{\textbf{CÓDIGO}} & \multicolumn{1}{c}{\textbf{ESPECIFICAÇÃO}} \\
+\hline\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline\hline\hline
+\endlastfoot
+\BLOCK{for codigo, especificacao in grupos_despesa}
+\multicolumn{1}{c|}{ \VAR{codigo} } & \VAR{especificacao} \\
+\BLOCK{endfor}
+\end{longtable}
+\noindent\begin{longtable}[c]{m{1cm}|m{11cm}}
+\BLOCK{set cabecalho}
+\multicolumn{2}{c}{\cellcolor{gray!50} \textcolor{red} {\normalsize \textbf{FONTES DE RECURSOS}}}\Tstrut  \\[2ex]
+\hline\hline
+\multicolumn{1}{c|}{\textbf{CÓDIGO}} & \multicolumn{1}{c}{\textbf{ESPECIFICAÇÃO}} \\
+\hline\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline\hline\hline
+\endlastfoot
+\BLOCK{for codigo, especificacao in fontes}
+\multicolumn{1}{c|}{ \VAR{codigo} } & \VAR{especificacao} \\
+\BLOCK{endfor}
+\end{longtable}
+\noindent\begin{longtable}[c]{m{1cm}|m{14cm}}
+\multicolumn{2}{c}{\cellcolor{gray!50} \textcolor{red} {\normalsize \textbf{ IDENTIFICADORES DE PROCEDÊNCIA E USO}}}\Tstrut  \\[2ex]
+\hline\hline
+\multicolumn{1}{c|}{\textbf{CÓDIGO}} & \multicolumn{1}{c}{\textbf{ESPECIFICAÇÃO}} \\
+\hline
+\endfirsthead
+\hline
+\endhead
+\endfoot
+\hline\hline\hline
+\endlastfoot
+\BLOCK{for codigo, especificacao in ipu}
+\multicolumn{1}{c|}{ \VAR{codigo} } & \VAR{especificacao} \\
+\BLOCK{endfor}
+\end{longtable}
+\newpage
+\noindent\begin{longtable}[c]{m{1cm}|m{11cm}}
+\multicolumn{2}{c}{\cellcolor{gray!50} \textcolor{red} {\normalsize \textbf{ IDENTIFICADORES DE AÇÃO GOVERNAMENTAL}}}\Tstrut  \\[2ex]
+\hline\hline
+\multicolumn{1}{c|}{\textbf{CÓDIGO}} & \multicolumn{1}{c}{\textbf{ESPECIFICAÇÃO}} \\
+\hline
+\endfirsthead
+\hline
+\endhead
+\endfoot
+\hline\hline\hline
+\endlastfoot
+\BLOCK{for codigo, especificacao in iag}
+\multicolumn{1}{c|}{ \VAR{codigo} } & \VAR{especificacao} \\
+\BLOCK{endfor}
+\end{longtable}
