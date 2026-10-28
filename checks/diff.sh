@@ -7,7 +7,7 @@ elif [ $1 == "Projeto_volume2" ]
 then vol="volume2"
 elif [ $1 == "Projeto_volume3" ]
 then vol="volume3"
-elif [ $1 == "Projeto_volume4" ]
+elif [ $1 == "volume4" ]
 then vol="volume4"
 elif [ $1 == "volume5" ]
 then vol="volume5"

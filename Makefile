@@ -28,7 +28,7 @@ v2: pdf/Projeto_volume2.pdf ## Gera volume 2
 
 v3: pdf/Projeto_volume3.pdf ## Gera volume 3
 
-v4: pdf/Projeto_volume4.pdf ## Gera volume 4
+v4: pdf/volume4.pdf ## Gera volume 4
 
 v5: pdf/volume5.pdf ## Gera volume 5
 
@@ -108,43 +108,33 @@ bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte
 
 # Volume 7
 pdf/volume7.pdf: $(DEPENDENCIAS_V7)
-	@python3 -m volume7.jinja2.volume7
+	@python3 -m volume7.jinja2.volume7 2> logs/warningsV7.Rout
 	@echo "---------------------------------------------------------------"
 
 volume7/data/*.txt: volume7/python/volume7.py utils/python/*.py volume7/checks/check_orcamento_despesa_fonte_80_95.py bancos/PPO/orcamento_despesa.csv bancos/PPO/orcamento_despesa_fonte_80_95.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
-	@echo "Atualizando v7/data/ consolidado.txt e qdd.txt..."
+	@echo "Atualizando volume7/data/ consolidado.txt e qdd.txt..."
 	@python3 volume7/checks/check_orcamento_despesa_fonte_80_95.py 2> logs/logv7.Rout
 	@python3 -m volume7.python.volume7 2>> logs/logv7.Rout
 
 
 # Volume 5
 pdf/volume5.pdf: $(DEPENDENCIAS_V5)
-	@python3 -m volume5.jinja2.volume5
+	@python3 -m volume5.jinja2.volume5 2> logs/warningsV5.Rout
 	@echo "---------------------------------------------------------------"
 
 volume5/data/*.txt: volume5/python/volume5.py utils/python/*.py bancos/PPO/orcamento_despesa.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
-	@echo "Atualizando v5/data/ consolidado.txt e qdd.txt..."
-	@python3 -m volume5.python.volume5 2>> logs/logv5.Rout
+	@echo "Atualizando volume5/data/ consolidado.txt e qdd.txt..."
+	@python3 -m volume5.python.volume5 2> logs/logv5.Rout
 
 
 # Volume 4
-pdf/Projeto_volume4.pdf: $(DEPENDENCIAS_V4)
-	@echo "- Gera logs/warningsV4.Rout"
-	@Rscript $(VERBOSE) volume4/Rnw/CodigosR/Projeto_volume4.R 2> logs/warningsV4.Rout >&-
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R 4
+pdf/volume4.pdf: $(DEPENDENCIAS_V4)
+	@python3 -m volume4.jinja2.volume4 2> logs/warningsV4.Rout
 	@echo "---------------------------------------------------------------"
 
-volume4/data/sumario_v4.txt: volume4/R/sumario_v4.R bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx bancos/manual/codigosPoder.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos/SISOR/BASE_DETALHAMENTO_OBRAS.xlsx
-	@echo "Atualizando volume4/data/sumario_v4.csv..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv4.Rout
-
-volume4/data/tabela1/*.txt: volume4/R/T1_OBRAS_POR_UNIDADE_ORCAMENTARIA.R bancos/SISOR/BASE_DETALHAMENTO_OBRAS.xlsx volume4/data/sumario_v4.txt
-	@echo "Atualizando volume4/data/tabela1/*.txt..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv4.Rout
-
-volume4/data/tabela2/*.txt: volume4/R/T2_DETALHAMENTO_INVESTIMENTOS_POR_TERRITORIOS_PLANEJAMENTO_MUNICIPIOS.R $(acoes_planejamento) volume4/data/sumario_v4.txt bancos/SISOR/BASE_DETALHAMENTO_OBRAS.xlsx
-	@echo "Atualizando volume4/data/tabela2/*.txt..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv4.Rout
+volume4/data/*.txt: volume4/python/volume4.py utils/python/*.py bancos/PPO/orcamento_obras.csv bancos/PPO/planejamento_acao.csv bancos/PPO/orcamento_despesa_investimento.csv bancos/PPO/orcamento_despesa.csv bancos/manual/codigosPoder.xlsx
+	@echo "Atualizando volume4/data/ sumario.txt, tabela1/*.txt e tabela2/*.txt..."
+	@python3 -m volume4.python.volume4 2> logs/logv4.Rout
 
 
 # Volume 3
