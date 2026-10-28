@@ -1,0 +1,56 @@
+\renewcommand*{\arraystretch}{1.7}
+\scriptsize
+\phantomsection
+\BLOCK{if uo.novo_poder}
+\addcontentsline{toc}{section}{\underline{ \VAR{uo.poder} }}
+\BLOCK{endif}
+\BLOCK{if uo.novo_orgao}
+\addcontentsline{toc}{section}{ \VAR{uo.orgao} }
+\BLOCK{endif}
+\addcontentsline{toc}{subsection}{ \VAR{uo.unidade} }
+\BLOCK{for acao in uo.acoes}
+\noindent\begin{longtable}[c]{L{8cm}|m{1pt}|m{2cm}|m{1pt}|m{1pt}|m{1pt}|m{1.5cm}|m{1.5cm}}
+\BLOCK{set cabecalho}
+\multicolumn{8}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{DETALHAMENTO DOS INVESTIMENTOS}}} \Tstrut \\
+\multicolumn{8}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{POR REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS E MUNICÍPIOS}}} \\[1ex] 
+\specialrule{1.5pt}{2pt}{0pt}
+\multicolumn{7}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{1}{r}{R\$1,00} \\ 
+\hline
+\multicolumn{8}{L{18cm}}{\textbf{ÓRGÃO:} \VAR{uo.orgao}} \\
+\multicolumn{8}{L{18cm}}{\textbf{UO:} \hspace{14pt} \VAR{uo.unidade}} \\
+\specialrule{1pt}{0pt}{0pt}
+\multicolumn{8}{L{18cm}}{\textbf{ESPECIFICAÇÃO: \textcolor{myblack}{ \VAR{acao.especificacao}}} \VAR{acao.nome_acao}} \Tstrut \\
+\multicolumn{8}{L{18cm}}{\textbf{CÓDIGO ADMIN: \textcolor{myblack}{ \hspace{0.1cm} \VAR{"%4s"|format(acao.cod_admin)} }} \hspace{1.2cm} \VAR{acao.nome_acao}} \\[3ex] 
+\specialrule{1pt}{0pt}{0pt}
+\multicolumn{1}{L{8cm}|}{\textbf{ REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS}} &\multicolumn{2}{c|}{\multirow{2}{*}{\centering \textbf{META FÍSICA}}} & \multicolumn{3}{c|}{\multirow{2}{*}{\parbox{1.5cm}{\centering \textbf{SITUAÇÃO ATUAL DA OBRA}}}} & \multicolumn{2}{c}{\multirow{2}{*}{ \textbf{VALOR}}} \\
+\multicolumn{1}{L{8cm}|}{\textbf{ \hspace{1.5em} MUNICÍPIOS}} &\multicolumn{2}{c|}{} &\multicolumn{3}{c|}{} &\multicolumn{2}{c}{} \\
+\cline{2-8}
+\multicolumn{1}{L{8cm}|}{\textbf{ \hspace{3em} DISCRIMINAÇÃO DA OBRA}} & \multicolumn{1}{c|}{\textbf{ QTDE.}} & \multicolumn{1}{L{2cm}|}{\textbf{ UNID. MEDIDA}}  &  \multicolumn{1}{c|}{\textbf{ I}} &   \multicolumn{1}{c|}{\textbf{ E}} & \multicolumn{1}{c|}{\textbf{ P}} &   \multicolumn{1}{c|}{\textbf{ TESOURO}} &\multicolumn{1}{c}{\textbf{ OUTROS}} \\
+\hline\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline
+\hline\hline
+\endlastfoot
+\BLOCK{for linha in acao.linhas}
+\BLOCK{if linha.novo_territorio}
+\hline
+\multicolumn{1}{L{8cm}|}{\textbf{  \VAR{linha.regiao_geografica_intermediaria_desc} }} & & & & & & & \\
+\BLOCK{endif}
+\BLOCK{if linha.novo_municipio}
+\multicolumn{1}{L{8cm}|}{\textbf{ \hspace{1em}  \VAR{linha.municipio_desc} }} & & & & & & & \\
+\BLOCK{endif}
+\BLOCK{if "TOTAL" in linha.obra}
+\hline \hline 
+\multicolumn{6}{@{\hspace{3.5em}}L{8cm}|}{ \textbf{ \VAR{linha.obra} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.vlr_tesouro} }} & \multicolumn{1}{r}{ \textbf{ \VAR{linha.vlr_outros} }} \\
+\BLOCK{else}
+\multicolumn{1}{@{\hspace{3.5em}}L{8cm}|}{  \VAR{linha.obra} } & \multicolumn{1}{c|}{ \VAR{linha.obra_quantidade} } & \multicolumn{1}{@{\hspace{0.5em}}L{2cm}|}{ \BLOCK{if linha.unidade_medida_desc|length > 11}\fonteSeis{  \VAR{linha.unidade_medida_desc} }\BLOCK{else}\VAR{linha.unidade_medida_desc}\BLOCK{endif} } & \multicolumn{1}{c|}{  \VAR{"X" if linha.obra_status == "INICIADO" else ""} } & \multicolumn{1}{c|}{  \VAR{"X" if linha.obra_status == "EXECUÇÃO" else ""} } & \multicolumn{1}{c|}{  \VAR{"X" if linha.obra_status == "PARALISADO" else ""} } & \multicolumn{1}{r|}{ \VAR{linha.vlr_tesouro} } & \multicolumn{1}{r}{ \VAR{linha.vlr_outros} } \\
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}
+\raggedright{\textbf{SITUAÇÃO ATUAL DA OBRA: I – INICIANDO; E – EM EXECUÇÃO; P – PARALISADA}} 
+\newpage
+\BLOCK{endfor}

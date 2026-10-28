@@ -1,0 +1,22 @@
+\renewcommand*{\arraystretch}{1.5}
+\normalsize
+\BLOCK{for regiao in regioes}
+\noindent\begin{longtable}[c]{m{18cm}}
+\BLOCK{set cabecalho}
+\multicolumn{1}{c}{\cellcolor{gray!50} \textcolor{myblack} {\textbf{ \Large REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS E MUNICÍPIOS}}} \Tstrut \\ [2ex] 
+\specialrule{1.5pt}{2pt}{0pt}
+\multicolumn{1}{l}{\textbf{ \large \VAR{regiao.codigo}  \VAR{regiao.nome}  }} \\\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline
+\hline\hline
+\endlastfoot
+\BLOCK{for codigo, municipio in regiao.municipios}
+\multicolumn{1}{l}{ \hspace{2em} \VAR{codigo} \VAR{municipio} } \\
+\BLOCK{endfor}
+\end{longtable}
+\newpage
+\BLOCK{endfor}

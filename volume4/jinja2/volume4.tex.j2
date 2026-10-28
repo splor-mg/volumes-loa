@@ -1,0 +1,94 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+\renewcommand{\contentsname}{Sumário}
+
+\begin{document}
+
+
+% Capa
+\begin{titlepage}
+\newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+\includepdf[pages={6}]{capaLOA.pdf}
+\end{titlepage}
+% \capa
+
+% Títulos
+% Pagina com os titulos
+\restoregeometry
+\thispagestyle{empty}
+\newgeometry{top=1cm}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=2cm, height=2cm]{brasao_mg}
+\end{center}
+\end{figure}
+\vspace*{-2em}
+\begin{center}
+\large
+Governo do Estado de Minas Gerais \\
+Secretaria de Estado de Planejamento e Gestão \\
+Subsecretaria de Planejamento e Orçamento \\
+Superintendência Central de Planejamento e Orçamento \\
+
+\vspace*{10em}
+ \fontsize{45pt}{10pt}\selectfont {\textbf{\VAR{etapa_orcamento} \VAR{ano_doc}}}
+
+\vspace*{4em}
+\fontsize{15pt}{12pt}\selectfont {\textbf{ANEXO IV}} \\
+\large{DISTRIBUIÇÃO REGIONALIZADA DOS INVESTIMENTOS}
+
+\end{center}
+
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+% \Titulos
+
+% Sumario
+\restoregeometry
+\small
+\tableofcontents
+\newpage
+\phantomsection
+
+% Pagina iniciando Quadros Consolidados
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\restoregeometry
+\vspace*{9cm}
+\addcontentsline{toc}{section}{OBRAS POR UNIDADE ORÇAMENTÁRIA SEGUNDO AS REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS}
+\centering \Huge {\textbf{OBRAS POR UNIDADE ORÇAMENTÁRIA SEGUNDO AS REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+\phantomsection
+\scriptsize
+
+\newgeometry{bottom=2cm, top=2cm,left=1.5cm,right=1.5cm}\BLOCK{for tabela in tabelas1}
+\BLOCK{include "tabela1.tex.j2"}
+\BLOCK{endfor}
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\restoregeometry
+\vspace*{9cm}
+\phantomsection
+\addcontentsline{toc}{section}{INVESTIMENTOS EM OBRAS POR REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS E RESPECTIVOS MUNICÍPIOS}
+\centering \Huge {\textbf{INVESTIMENTOS EM OBRAS POR REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS E RESPECTIVOS MUNICÍPIOS}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+
+\newgeometry{bottom=2cm,top=1cm,left=1.5cm,right=1.5cm}\BLOCK{for uo in uos}
+\BLOCK{include "tabela2.tex.j2"}
+\BLOCK{endfor}
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\restoregeometry
+\vspace*{9cm}
+\phantomsection
+\addcontentsline{toc}{section}{RELAÇÃO DAS REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS E RESPECTIVOS MUNICÍPIOS}
+\centering \Huge {\textbf{RELAÇÃO DAS REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS E RESPECTIVOS MUNICÍPIOS}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+
+
+\newgeometry{bottom=2cm,top=1cm,left=1.5cm,right=1.5cm}\BLOCK{include "anexo.tex.j2"}
+% \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+% \includepdf[pages={157},scale=1.1]{05_LOA__Volume_IV_sem_contra_capa.pdf}
+
+\end{document}
