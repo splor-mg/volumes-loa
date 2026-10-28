@@ -2,11 +2,9 @@
 Gera os dados do consolidado e do QDD dos volumes 5 e 7
 e prepara esses dados para os templates.
 """
-import csv
 import sys
 import pandas as pd
 
-from utils.python.formata_texto import corrige_caracteres_especiais
 from utils.python.funcoes import escreve_tabela, formatar_num
 from utils.python.trata_bancos import le_planilha
 
@@ -52,7 +50,6 @@ def gera_consolidado(banco, caminho):
     consolidado['total'] = consolidado['recurso_tesouro'] + consolidado['outras_fontes']
     for coluna in ['recurso_tesouro', 'outras_fontes', 'total']:
         consolidado[coluna] = formatar_num(consolidado[coluna])
-    consolidado['especificacao'] = corrige_caracteres_especiais(consolidado['especificacao'])
 
     colunas = ['codigo_texto', 'especificacao', 'recurso_tesouro', 'outras_fontes', 'total']
     escreve_tabela(consolidado[colunas], caminho)
@@ -83,17 +80,15 @@ def gera_qdd(banco, caminho, chave_extra):
         )
 
     quadro = quadro.sort_values(['poder_cod', 'orgao_cod', 'uo_cod', 'cod_detalhe'], kind='stable')
-    quadro = quadro[quadro['vlr_loa_desp'] > 0].copy()
+    quadro = quadro[quadro['vlr_loa_desp'] > 0]
     quadro['vlr_loa_desp'] = formatar_num(quadro['vlr_loa_desp'])
-    for coluna in ['especificacao', 'orgao_nome', 'uo_nome', 'uo_sigla', 'poder']:
-        quadro[coluna] = corrige_caracteres_especiais(quadro[coluna])
 
     colunas = colunas + ['vlr_loa_desp', 'poder']
     escreve_tabela(quadro[colunas], caminho)
 
 
 def prepara_consolidado(caminho):
-    consolidado = pd.read_csv(caminho, sep='\t', dtype=str, keep_default_na=False, quoting=csv.QUOTE_NONE)
+    consolidado = pd.read_csv(caminho, sep='\t', dtype=str, keep_default_na=False)
     codigo = consolidado['codigo_texto']
     consolidado['nivel'] = 3
     consolidado.loc[codigo.str[4:6] == '00', 'nivel'] = 2
@@ -103,7 +98,7 @@ def prepara_consolidado(caminho):
 
 
 def prepara_qdd(caminho):
-    banco = pd.read_csv(caminho, sep='\t', dtype=str, keep_default_na=False, quoting=csv.QUOTE_NONE)
+    banco = pd.read_csv(caminho, sep='\t', dtype=str, keep_default_na=False)
     banco['tipo'] = 'acao'
     banco.loc[banco['especificacao'] == '', 'tipo'] = 'elemento'
     banco.loc[banco['especificacao'] == 'TOTAL', 'tipo'] = 'total'

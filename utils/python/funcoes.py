@@ -21,6 +21,12 @@ def formatar_num(serie):
     return textos.str.replace(r' *(-*\d+.+)', r'\1', regex=True)
 
 
+def formatar_num_tabela(serie):
+    """Sem alinhamento à direita quando nenhum valor tem ponto de milhar."""
+    textos = formatar_num(serie).where(serie.notna(), '')
+    return textos if textos.str.contains('.', regex=False).any() else textos.str.strip()
+
+
 def escreve_tabela(tabela, caminho):
     linhas = ['\t'.join(tabela.columns)]
     for linha in tabela.itertuples(index=False):
