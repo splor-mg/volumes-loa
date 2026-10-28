@@ -44,7 +44,7 @@ REPORTS = [
         Report('T40_DEMONSTRATIVO_DESPESAS_OBRIGATORIAS', 'volume1'),
         Report('Projeto_volume2', 'volume2'),
         Report('Projeto_volume3', 'volume3'),
-        Report('Projeto_volume4', 'volume4'),
+        Report('volume4', 'volume4'),
         Report('volume5', 'volume5'),
         Report('Projeto_volume6A', 'volume6'),
         Report('volume7', 'volume7'),
