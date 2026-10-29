@@ -8,10 +8,10 @@
 \scriptsize
 
 \renewcommand*{\arraystretch}{1.9}
- 
+
 \color{myblack}
 \centering
- 
+
 \newgeometry{bottom=1cm,top=1cm,left=1.5cm,right=1.5cm}
 \thispagestyle{empty}
 \begin{landscape}
@@ -23,14 +23,14 @@
   dir_utils = paste0(dir_loa, "/utils/")
   dir_data3 = paste0(dir_loa, "/volume3/data/consolidado")
   dir_bancos = paste0(dir_loa, "/bancos")
-  
+
   ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
-  
+
   source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
 
   # INICIO TABELA
 
-  t1_geral = data.table(read.table(paste0(dir_data3, "/T1_INVESTIMENTO_POR_EMPRESA.txt"),
+  t1_geral = data.table(read.table(paste0(dir_data3, "/t1_investimentos_empresa.txt"),
                                    header=T, sep="\t", dec=",", stringsAsFactors = FALSE))
 
   titulo1 = paste0("\\multicolumn{10}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{",
@@ -39,8 +39,8 @@
   titulo2 = paste0("\\multicolumn{10}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{",
                    base_legal("T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO"),
                    "}}} \\\\\n")
- 
-  subtitulo = paste("\\multicolumn{3}{l}{\\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC, 
+
+  subtitulo = paste("\\multicolumn{3}{l}{\\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC,
                     "}}} & \\multicolumn{7}{r}{R\\$1,00} \\\\\n")
 
   cabecalho1= paste0("\\multirow{2}{*}{\\parbox{5cm}{\\centering \\textbf{ÓRGÃOS E ENTIDADES}}} & ",
@@ -68,7 +68,7 @@
   cat(cabecalho1)
   cat("\\cline{2-9}\n")
   cat(cabecalho2)
- 
+
   cat("\\hline\n")
   cat("\\endfirsthead\n")
 
@@ -80,7 +80,7 @@
   cat(cabecalho1)
   cat("\\cline{2-6}\n")
   cat(cabecalho2)
- 
+
   cat("\\hline\n")
   cat("\\endhead\n")
 
@@ -94,31 +94,31 @@
 
   for(i in 1:nrow(t1_geral)){
     if(toupper(t1_geral[i, orgaos])=="TOTAL"){
-    
+
     cat("\\hline \\hline\n")
-    
-    cat("\\multicolumn{1}{L{5cm}|}{ \\textbf{", t1_geral[i, orgaos], 
-        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, tesouro_ordinario],  
-        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, tesouro_vinculado], 
-        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, outras_entidades],  
-        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, operacao_credito], 
-        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, alienacao],  
-        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, convenios],  
-        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, recursos_proprios],  
-        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, outras_origens],  
+
+    cat("\\multicolumn{1}{L{5cm}|}{ \\textbf{", t1_geral[i, orgaos],
+        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, tesouro_ordinario],
+        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, tesouro_vinculado],
+        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, outras_entidades],
+        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, operacao_credito],
+        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, alienacao],
+        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, convenios],
+        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, recursos_proprios],
+        "}} & \\multicolumn{1}{r|}{ \\textbf{", t1_geral[i, outras_origens],
         "}} & \\multicolumn{1}{r}{ \\textbf{", t1_geral[i, total],"}} \\\\\n", sep="")
-    
+
     } else{
-  
+
       cat("\\multicolumn{1}{L{5cm}|}{", t1_geral[i, orgaos],
-          "} & \\multicolumn{1}{r|}{", t1_geral[i, tesouro_ordinario],  
-          "} & \\multicolumn{1}{r|}{", t1_geral[i, tesouro_vinculado], 
-          "} & \\multicolumn{1}{r|}{", t1_geral[i, outras_entidades],  
-          "} & \\multicolumn{1}{r|}{", t1_geral[i, operacao_credito], 
-          "} & \\multicolumn{1}{r|}{", t1_geral[i, alienacao],  
-          "} & \\multicolumn{1}{r|}{", t1_geral[i, convenios],  
-          "} & \\multicolumn{1}{r|}{", t1_geral[i, recursos_proprios],  
-          "} & \\multicolumn{1}{r|}{", t1_geral[i, outras_origens], 
+          "} & \\multicolumn{1}{r|}{", t1_geral[i, tesouro_ordinario],
+          "} & \\multicolumn{1}{r|}{", t1_geral[i, tesouro_vinculado],
+          "} & \\multicolumn{1}{r|}{", t1_geral[i, outras_entidades],
+          "} & \\multicolumn{1}{r|}{", t1_geral[i, operacao_credito],
+          "} & \\multicolumn{1}{r|}{", t1_geral[i, alienacao],
+          "} & \\multicolumn{1}{r|}{", t1_geral[i, convenios],
+          "} & \\multicolumn{1}{r|}{", t1_geral[i, recursos_proprios],
+          "} & \\multicolumn{1}{r|}{", t1_geral[i, outras_origens],
           "} & \\multicolumn{1}{r}{ \\textbf{", t1_geral[i, total],"}} \\\\\n", sep="")
   }
 }
