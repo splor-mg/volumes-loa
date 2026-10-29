@@ -15,16 +15,23 @@ def texto_r(valor):
 
 
 def formatar_num(serie):
-    """Por exemplo, 1234567 vira '1.234.567', e alinha os valores à direita"""
-    textos = serie.map(lambda valor: f'{valor:,.0f}'.replace(',', '.'))
+    """Por exemplo, 1234567 vira '1.234.567', e alinha os valores à direita."""
+    textos = serie.map(lambda valor: 'NA' if pd.isna(valor)
+                       else f'{valor:,.0f}'.replace(',', '.'))
     textos = textos.str.rjust(textos.str.len().max())
-    return textos.str.replace(r' *(-*\d+.+)', r'\1', regex=True)
+    textos = textos.str.replace(r' *(-*\d+.+)', r'\1', regex=True)
+    return textos.where(serie.notna(), '')
 
 
 def formatar_num_tabela(serie):
     """Sem alinhamento à direita quando nenhum valor tem ponto de milhar."""
     textos = formatar_num(serie).where(serie.notna(), '')
     return textos if textos.str.contains('.', regex=False).any() else textos.str.strip()
+
+
+def le_tabela(caminho):
+    """Lê como texto, sem converter vazios, uma tabela gravada por escreve_tabela"""
+    return pd.read_csv(caminho, sep='\t', dtype=str, keep_default_na=False)
 
 
 def escreve_tabela(tabela, caminho):

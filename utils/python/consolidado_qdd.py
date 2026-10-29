@@ -5,7 +5,7 @@ e prepara esses dados para os templates.
 import sys
 import pandas as pd
 
-from utils.python.funcoes import escreve_tabela, formatar_num
+from utils.python.funcoes import escreve_tabela, formatar_num, le_tabela
 from utils.python.trata_bancos import le_planilha
 
 CHAVE_UO = ['ano', 'poder_cod', 'orgao_cod', 'orgao_nome', 'uo_cod', 'uo_nome', 'uo_sigla']
@@ -88,7 +88,7 @@ def gera_qdd(banco, caminho, chave_extra):
 
 
 def prepara_consolidado(caminho):
-    consolidado = pd.read_csv(caminho, sep='\t', dtype=str, keep_default_na=False)
+    consolidado = le_tabela(caminho)
     codigo = consolidado['codigo_texto']
     consolidado['nivel'] = 3
     consolidado.loc[codigo.str[4:6] == '00', 'nivel'] = 2
@@ -98,7 +98,7 @@ def prepara_consolidado(caminho):
 
 
 def prepara_qdd(caminho):
-    banco = pd.read_csv(caminho, sep='\t', dtype=str, keep_default_na=False)
+    banco = le_tabela(caminho)
     banco['tipo'] = 'acao'
     banco.loc[banco['especificacao'] == '', 'tipo'] = 'elemento'
     banco.loc[banco['especificacao'] == 'TOTAL', 'tipo'] = 'total'
