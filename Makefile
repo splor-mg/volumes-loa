@@ -26,7 +26,7 @@ v1_dcgf: $(DEP_DCGF_PDF_V1) volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_
 
 v2: pdf/Projeto_volume2.pdf ## Gera volume 2
 
-v3: pdf/Projeto_volume3.pdf ## Gera volume 3
+v3: pdf/volume3.pdf ## Gera volume 3
 
 v4: pdf/volume4.pdf ## Gera volume 4
 
@@ -111,7 +111,7 @@ pdf/volume7.pdf: $(DEPENDENCIAS_V7)
 	@python3 -m volume7.jinja2.volume7 2> logs/warningsV7.Rout
 	@echo "---------------------------------------------------------------"
 
-volume7/data/*.txt: volume7/python/volume7.py utils/python/*.py volume7/checks/check_orcamento_despesa_fonte_80_95.py bancos/PPO/orcamento_despesa.csv bancos/PPO/orcamento_despesa_fonte_80_95.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+volume7/data/*.txt: volume7/python/*.py utils/python/*.py volume7/checks/check_orcamento_despesa_fonte_80_95.py bancos/PPO/orcamento_despesa.csv bancos/PPO/orcamento_despesa_fonte_80_95.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
 	@echo "Atualizando volume7/data/ consolidado.txt e qdd.txt..."
 	@python3 volume7/checks/check_orcamento_despesa_fonte_80_95.py 2> logs/logv7.Rout
 	@python3 -m volume7.python.volume7 2>> logs/logv7.Rout
@@ -122,7 +122,7 @@ pdf/volume5.pdf: $(DEPENDENCIAS_V5)
 	@python3 -m volume5.jinja2.volume5 2> logs/warningsV5.Rout
 	@echo "---------------------------------------------------------------"
 
-volume5/data/*.txt: volume5/python/volume5.py utils/python/*.py bancos/PPO/orcamento_despesa.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+volume5/data/*.txt: volume5/python/*.py utils/python/*.py bancos/PPO/orcamento_despesa.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
 	@echo "Atualizando volume5/data/ consolidado.txt e qdd.txt..."
 	@python3 -m volume5.python.volume5 2> logs/logv5.Rout
 
@@ -132,45 +132,19 @@ pdf/volume4.pdf: $(DEPENDENCIAS_V4)
 	@python3 -m volume4.jinja2.volume4 2> logs/warningsV4.Rout
 	@echo "---------------------------------------------------------------"
 
-volume4/data/*.txt: volume4/python/volume4.py utils/python/*.py bancos/PPO/orcamento_obras.csv bancos/PPO/planejamento_acao.csv bancos/PPO/orcamento_despesa_investimento.csv bancos/PPO/orcamento_despesa.csv bancos/manual/codigosPoder.xlsx
+volume4/data/*.txt: volume4/python/*.py utils/python/*.py bancos/PPO/orcamento_obras.csv bancos/PPO/planejamento_acao.csv bancos/PPO/orcamento_despesa_investimento.csv bancos/PPO/orcamento_despesa.csv bancos/manual/codigosPoder.xlsx
 	@echo "Atualizando volume4/data/ sumario.txt, tabela1/*.txt e tabela2/*.txt..."
 	@python3 -m volume4.python.volume4 2> logs/logv4.Rout
 
 
 # Volume 3
-pdf/Projeto_volume3.pdf: $(DEPENDENCIAS_V3)
-	@echo "- Gera logs/warningsV3.Rout"
-	@Rscript $(VERBOSE) volume3/Rnw/CodigosR/Projeto_volume3.R 2> logs/warningsV3.Rout >&-
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R 3
+pdf/volume3.pdf: $(DEPENDENCIAS_V3)
+	@python3 -m volume3.jinja2.volume3 2> logs/warningsV3.Rout
 	@echo "---------------------------------------------------------------"
 
-volume3/data/consolidado/*.txt: volume3/R/V3_bancos_consolidados.R bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx $(acoes_planejamento)
-	@echo "Atualizando volume3/data/consolidado/*.txt ..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv3.Rout
-
-volume3/data/tabela1/*.txt: volume3/R/V3_T1_PROGRAMA_DE_INVESTIMENTO.R bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx $(acoes_planejamento)
-	@echo "Atualizando volume3/data/tabela1/*.txt ..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv3.Rout
-
-volume3/data/tabela2/*.txt: volume3/R/V3_T2_ORIGENS_RECURSOS_INVESTIMENTOS.R bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx bancos/R/V3*.txt
-	@echo "Atualizando volume3/data/tabela2/*.txt ..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv3.Rout
-
-bancos/R/V3*.txt: volume3/R/V3_T2_SUPORTE_CORRESPONDENCIA_DE_NIVEIS_E_SUA_ORDEM.R bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx
-	@echo "Atualizando bancos/R/V3_Niveis_de_Referencia_tabela2.txt ..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv3.Rout
-
-volume3/data/tabela3/*.txt: volume3/R/V3_T3_RECURSOS_FINANCEIROS_FONTE_RECURSOS_APLICACAO_INVESTIMENTO.R bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx
-	@echo "Atualizando volume3/data/tabela3/*.txt ..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv3.Rout
-
-volume3/data/tabela4/*.txt: volume3/R/V3_T4_DETALHAMENTO_DOS_INVESTIMENTOS.R bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx
-	@echo "Atualizando volume3/data/tabela4/*.txt ..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv3.Rout
-
-volume3/data/tabela5/*.txt: volume3/R/V3_T5_QUADRO_DE_DETALHAMENTO_INVESTIMENTO.R bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx
-	@echo "Atualizando volume3/data/tabela5/*.txt ..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv3.Rout
+volume3/data/*.txt: volume3/python/*.py utils/python/*.py bancos/PPO/orcamento_despesa_investimento.csv bancos/PPO/planejamento_acao.csv
+	@echo "Atualizando volume3/data/ consolidado/*.txt e tabela1/*.txt a tabela5/*.txt..."
+	@python3 -m volume3.python.volume3 2> logs/logv3.Rout
 
 
 # Volume 2
@@ -211,15 +185,15 @@ $(DEP_PRODEMGE_PDF_V1): pdf/%.pdf: volume1/Rnw/%.Rnw volume1/data/%.txt
 	@Rscript $(VERBOSE) utils/Rnw2Tex.R $*
 	@echo "---------------------------------------------------------------"
 
-pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.pdf: volume3/data/consolidado/T3_INVESTIMENTOS_SEGUNDO_FUNCOES_SUB_PROGRAMAS_PROJETOS_ATIVIDADES.txt volume1/Rnw/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.Rnw
+pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.pdf: volume3/data/consolidado/t3_investimentos_projeto_atividade.txt volume1/Rnw/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.Rnw
 	@Rscript $(VERBOSE) utils/Rnw2Tex.R T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES
 	@echo "---------------------------------------------------------------"
 
-pdf/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.pdf: volume3/data/consolidado/T1_INVESTIMENTO_POR_EMPRESA.txt volume1/Rnw/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.Rnw
+pdf/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.pdf: volume3/data/consolidado/t1_investimentos_empresa.txt volume1/Rnw/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.Rnw
 	@Rscript $(VERBOSE) utils/Rnw2Tex.R T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO
 	@echo "---------------------------------------------------------------"
 
-pdf/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.pdf: volume3/data/consolidado/T2_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO.txt volume1/Rnw/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.Rnw
+pdf/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.pdf: volume3/data/consolidado/t2_investimentos_empresa_detalhamento.txt volume1/Rnw/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.Rnw
 	@Rscript $(VERBOSE) utils/Rnw2Tex.R T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS
 	@echo "---------------------------------------------------------------"
 

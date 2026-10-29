@@ -1,0 +1,31 @@
+\noindent\begin{longtable}[c]{m{2.0cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.35cm}|m{1.0cm}}
+\BLOCK{set titulo}
+\multicolumn{10}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{INVESTIMENTOS POR EMPRESA SEGUNDO FONTES DE RECURSO}}}\TBstrut  \\[2ex]
+\specialrule{1.5pt}{2pt}{0pt}
+\multicolumn{3}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{7}{r}{R\$1,00} \\
+\specialrule{1pt}{0pt}{0pt}
+\multirow{2}{*}{\parbox{3cm}{\centering \textbf{EMPRESAS CONTROLADAS PELO ESTADO}}} & \multicolumn{3}{|c|}{\textbf{AUMENTO DE CAPITAL}} & \multicolumn{5}{c|}{\textbf{OUTROS}} &  \multicolumn{1}{c}{\multirow{2}{*}{\textbf{TOTAL}}} \\\BLOCK{endset}
+\BLOCK{set fontes}
+ & \valorHeader{\centering TESOURO ORDINÁRIO} &  \valorHeader{\centering TESOURO VINCULADO} & \valorHeader{\centering OUTRAS ENTIDADES} & \valorHeader{\centering OPERAÇÃO DE CRÉDITO} & \valorHeader{\centering ALIENAÇÃO DE BENS E DIREITOS} & \valorHeader{\centering CONVÊNIOS FIRMADOS PELA EMPRESA} & \valorHeader{\centering RECURSOS PRÓPRIOS} & \valorHeader{\centering OUTRAS ORIGENS} & \\
+\hline\BLOCK{endset}
+\VAR{titulo}
+\cline{2-9}
+\VAR{fontes}
+\endfirsthead
+\VAR{titulo}
+\cline{2-6}
+\VAR{fontes}
+\endhead
+\endfoot
+\hline
+\hline\hline
+\endlastfoot
+\BLOCK{for linha in consolidado1}
+\BLOCK{if linha.orgaos == "TOTAL"}
+\hline
+\multicolumn{1}{L{4cm}|}{ \textbf{\VAR{linha.orgaos}}} & \multicolumn{1}{r|}{ \textbf{\VAR{linha.tesouro_ordinario}}} & \multicolumn{1}{r|}{ \textbf{\VAR{linha.tesouro_vinculado}}} & \multicolumn{1}{r|}{ \textbf{\VAR{linha.outras_entidades}}} & \multicolumn{1}{r|}{ \textbf{\VAR{linha.operacao_credito}}} & \multicolumn{1}{r|}{ \textbf{\VAR{linha.alienacao}}} & \multicolumn{1}{r|}{ \textbf{\VAR{linha.convenios}}} & \multicolumn{1}{r|}{ \textbf{\VAR{linha.recursos_proprios}}} & \multicolumn{1}{r|}{ \textbf{\VAR{linha.outras_origens}}} & \multicolumn{1}{r}{ \textbf{\VAR{linha.total}}} \\
+\BLOCK{else}
+\multicolumn{1}{L{4cm}|}{\VAR{linha.orgaos}} & \multicolumn{1}{r|}{\VAR{linha.tesouro_ordinario}} & \multicolumn{1}{r|}{\VAR{linha.tesouro_vinculado}} & \multicolumn{1}{r|}{\VAR{linha.outras_entidades}} & \multicolumn{1}{r|}{\VAR{linha.operacao_credito}} & \multicolumn{1}{r|}{\VAR{linha.alienacao}} & \multicolumn{1}{r|}{\VAR{linha.convenios}} & \multicolumn{1}{r|}{\VAR{linha.recursos_proprios}} & \multicolumn{1}{r|}{\VAR{linha.outras_origens}} & \multicolumn{1}{r}{ \textbf{\VAR{linha.total}}} \\
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}

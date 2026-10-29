@@ -124,11 +124,17 @@ def trata_orcamento_despesa(caminho):
 
 def trata_orcamento_despesa_investimento(caminho):
     """
-    Função para abrir o banco orcamento_despesa_investimento.csv, usado no volume 4.
+    Função para abrir o banco orcamento_despesa_investimento.csv, usado nos volumes 3 e 4.
     """
     qdd = pd.read_csv(caminho, dtype=str, keep_default_na=False)
     qdd = qdd.map(lambda valor: valor.strip() if isinstance(valor, str) else valor)
     qdd = qdd.apply(corrige_caracteres_especiais)
+
+    qdd['vlr_loa_desp'] = qdd['vlr_loa_desp'].str.replace(',', '.').astype(float)
+
+    valores = qdd['vlr_loa_desp']
+    avisa_valores('orcamento_despesa_investimento', 'negativos', valores < 0)
+    avisa_valores('orcamento_despesa_investimento', 'iguais a zero', valores == 0)
 
     return qdd
 

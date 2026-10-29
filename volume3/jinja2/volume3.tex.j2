@@ -1,0 +1,156 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+\renewcommand{\contentsname}{Sumário}
+
+\begin{document}
+
+
+
+% Capa
+\begin{titlepage}
+\newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+\includepdf[pages={5}]{capaLOA.pdf}
+\end{titlepage}
+% \capa
+
+% Títulos
+% Pagina com os titulos
+\restoregeometry
+\newgeometry{top=1cm}
+\thispagestyle{empty}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=2cm, height=2cm]{brasao_mg}
+\end{center}
+\end{figure}
+\vspace*{-2em}
+\begin{center}
+\large
+Governo do Estado de Minas Gerais \\
+Secretaria de Estado de Planejamento e Gestão \\
+Subsecretaria de Planejamento e Orçamento \\
+Superintendência Central de Planejamento e Orçamento
+
+\vspace*{10em}
+ \fontsize{45pt}{10pt}\selectfont {\textbf{\VAR{etapa_orcamento} \VAR{ano_doc}}}
+
+\vspace*{5em}
+\fontsize{15pt}{12pt}\selectfont {\textbf{ANEXO III}} \\
+\large{ORÇAMENTO DE INVESTIMENTO DAS EMPRESAS CONTROLADAS PELO ESTADO}
+
+\end{center}
+%\end{pagestyle}
+
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+% \Titulos
+
+% Sumario
+\restoregeometry
+\small
+\tableofcontents
+\newpage
+\phantomsection
+% \Sumario
+
+% Pagina iniciando Quadros Consolidados
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\restoregeometry
+\vspace*{9cm}
+\addcontentsline{toc}{section}{ QUADROS CONSOLIDADOS}
+\centering \Huge {\textbf{QUADROS CONSOLIDADOS}}
+\newpage
+\phantomsection
+\afterpage{\null\thispagestyle{empty}\newpage}
+\scriptsize
+
+\renewcommand*{\arraystretch}{1.9}
+ \scriptsize
+ \color{myblack}
+ \centering
+
+\newgeometry{left=4pt,right=4pt, top=1cm}
+
+% INICIO DE QUADROS CONSOLIDADOS
+
+% TABELA 1 GERAL - INVESTIMENTOS POR EMPRESA SEGUNDO FONTES DE RECURSO
+\addcontentsline{toc}{section}{ INVESTIMENTOS POR EMPRESA SEGUNDO FONTES DE RECURSO}
+
+\BLOCK{include "consolidado1.tex.j2"}
+\newpage
+\phantomsection
+% INICIO DE TABELA 2 GERAL - INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS
+\addcontentsline{toc}{section}{ INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS}
+
+\BLOCK{include "consolidado2.tex.j2"}
+\newpage
+\phantomsection
+% INICIO DE TABELA3 GERAL - INVESTIMENTOS SEGUNDO FUNÇÕES, SUBFUNÇÕES E PROGRAMAS POR PROJETOS E ATIVIDADES
+\addcontentsline{toc}{section}{ INVESTIMENTOS SEGUNDO FUNÇÕES, SUBFUNÇÕES E PROGRAMAS POR PROJETOS E ATIVIDADES}
+
+\BLOCK{include "consolidado3.tex.j2"}
+% FIM DE QUADROS CONSOLIDADOS
+
+\newpage
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\phantomsection
+\restoregeometry
+\vspace*{9cm}
+\addcontentsline{toc}{section}{ RELATÓRIOS POR EMPRESA}
+\centering \Huge {\textbf{RELATÓRIOS POR EMPRESA}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+
+\BLOCK{for uo in uos}
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\newpage
+\restoregeometry
+\vspace*{1cm}
+\phantomsection
+\vspace*{8cm}
+\addcontentsline{toc}{subsection}{\VAR{uo.uo}}
+\centering \Huge {\textbf{\VAR{uo.empresa}}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+\newgeometry{left=3pt,right=3pt, top=1cm}
+\BLOCK{include "tabela1.tex.j2"}
+\newpage
+\BLOCK{include "tabela2.tex.j2"}
+\newpage
+\BLOCK{include "tabela3.tex.j2"}
+\newpage
+\BLOCK{include "tabela4.tex.j2"}
+\newpage
+\BLOCK{include "tabela5.tex.j2"}
+\newpage
+\BLOCK{endfor}
+\newpage
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\phantomsection
+\restoregeometry
+\vspace*{9cm}
+\addcontentsline{toc}{section}{ ORIGEM DE RECURSOS PARA INVESTIMENTO E DETALHAMENTO DOS INVESTIMENTOS}
+\centering \Huge {\textbf{ORIGEM DE RECURSOS PARA INVESTIMENTO E DETALHAMENTO DOS INVESTIMENTOS}}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+
+% Inicio de Anexo
+\renewcommand*{\arraystretch}{1.2}
+ \normalsize
+ \color{myblack}
+ \centering
+
+\newgeometry{top=1cm}
+\addcontentsline{toc}{section}{ ORIGEM DE RECURSOS PARA INVESTIMENTO}
+
+\BLOCK{include "origem.tex.j2"}
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{DETALHAMENTO DOS INVESTIMENTOS}
+
+\BLOCK{include "detalhamento.tex.j2"}
+% \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+% \includepdf[pages={153},scale=1.1]{04_LOA_Volume_III.pdf}
+
+\end{document}

@@ -1,0 +1,27 @@
+\noindent\begin{longtable}[c]{m{1cm}m{1cm}m{1cm}m{8cm}}
+\BLOCK{set cabecalho}
+\multicolumn{4}{C{14cm}}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{ORIGEM DE RECURSOS PARA INVESTIMENTO}}}\TBstrut  \\[2ex]
+\specialrule{1.5pt}{2pt}{0pt}
+\hline\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline
+\hline\hline
+\endlastfoot
+\BLOCK{for linha in origem}
+\BLOCK{if linha.cod|int == 1}
+\multicolumn{4}{L{10cm}}{\textbf{\VAR{linha.descricao}}} \\
+\BLOCK{elif linha.cod|int == 2}
+& \multicolumn{3}{L{9cm}}{\textbf{\VAR{linha.descricao}}} \\
+\BLOCK{elif linha.cod|int == 3}
+& & \multicolumn{2}{L{7cm}}{\textbf{\VAR{linha.descricao}}} \\
+\BLOCK{elif linha.cod|int == 4}
+& & & \multicolumn{1}{L{8cm}}{\VAR{linha.descricao}} \\
+\BLOCK{else}
+& \multicolumn{3}{L{7cm}}{\VAR{linha.descricao}} \\
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}

@@ -1,0 +1,30 @@
+\noindent\begin{longtable}[c]{m{1pt}m{3cm}|m{1pt}m{5.5cm}|m{1pt}m{2.5cm}|m{1pt}m{2.5cm}|m{1pt}m{2cm}}
+\BLOCK{set cabecalho}
+\multicolumn{10}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{INVESTIMENTOS SEGUNDO FUNÇÕES, SUBFUNÇÕES E PROGRAMAS}}} \\
+\multicolumn{10}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{POR PROJETOS E ATIVIDADES}}} \\
+\specialrule{1.5pt}{2pt}{0pt}
+\multicolumn{6}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{4}{r}{R\$1,00} \\
+\specialrule{1pt}{0pt}{0pt}
+\multicolumn{2}{C{3cm}|}{ \textbf{CÓDIGO}} & \multicolumn{2}{C{5.5cm}|}{\textbf{ESPECIFICAÇÃO}} &  \multicolumn{2}{C{2.5cm}|}{\textbf{PROJETO}} &  \multicolumn{2}{C{2.5cm}|}{\textbf{ATIVIDADE}} & \multicolumn{2}{C{2cm}}{\textbf{TOTAL}} \\
+\hline\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline
+\hline\hline
+\endlastfoot
+\BLOCK{for linha in consolidado3}
+\BLOCK{if linha.especificacao == "TOTAL"}
+\hline \hline 
+ \multicolumn{4}{@{\hspace{2em}}C{5.5cm}|}{ \textbf{\VAR{linha.especificacao}}}  & \multicolumn{2}{r|}{ \textbf{\VAR{linha.projeto}}}  & \multicolumn{2}{r|}{ \textbf{\VAR{linha.atividade}}} & \multicolumn{2}{r}{ \textbf{\VAR{linha.total}}} \\
+\BLOCK{elif linha.codigo.split(".")[1] == "000"}
+\multicolumn{2}{l|}{\textbf{\VAR{linha.codigo}}} & \multicolumn{2}{L{5.5cm}|}{\textbf{\VAR{linha.especificacao}}} & \multicolumn{2}{r|}{\textbf{\VAR{linha.projeto}}} & \multicolumn{2}{r|}{\textbf{\VAR{linha.atividade}}} & \multicolumn{2}{r}{\textbf{\VAR{linha.total}}} \\
+\BLOCK{elif linha.codigo.split(".")[2] == "000"}
+\multicolumn{2}{@{\hspace{2em}}l|}{\textbf{\VAR{linha.codigo}}} & \multicolumn{2}{@{\hspace{2em}}L{5.5cm}|}{\textbf{\VAR{linha.especificacao}}} &  \multicolumn{2}{r|}{\textbf{\VAR{linha.projeto}}} &  \multicolumn{2}{r|}{\textbf{\VAR{linha.atividade}}} & \multicolumn{2}{r}{\textbf{\VAR{linha.total}}} \\
+\BLOCK{else}
+\multicolumn{2}{@{\hspace{4em}}l|}{\VAR{linha.codigo}}  & \multicolumn{2}{@{\hspace{4em}}L{5.5cm}|}{\VAR{linha.especificacao}}  & \multicolumn{2}{r|}{\VAR{linha.projeto}}  & \multicolumn{2}{r|}{\VAR{linha.atividade}} & \multicolumn{2}{r}{ \textbf{\VAR{linha.total}}} \\
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}
