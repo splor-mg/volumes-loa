@@ -5,7 +5,7 @@ if [ $# -ne 1 ]; then
   exit 2
 elif [ $1 == "Projeto_volume2" ]
 then vol="volume2"
-elif [ $1 == "Projeto_volume3" ]
+elif [ $1 == "volume3" ]
 then vol="volume3"
 elif [ $1 == "volume4" ]
 then vol="volume4"
@@ -88,7 +88,7 @@ else
    exit 2
 fi
 
-diff "$vol"/pdf/aux_files/"$1".tex checks/assets/tex/"$1".tex > /dev/null 2>&1
+diff -w "$vol"/pdf/aux_files/"$1".tex checks/assets/tex/"$1".tex > /dev/null 2>&1
 diff_tex=$?
 
 printf "Results:"
@@ -117,7 +117,7 @@ printf "\n"
 if [ $diff_tex -eq 1 ]
 then
    echo "Failure testing $1.tex"
-   diff -u checks/assets/tex/"$1".tex "$vol"/pdf/aux_files/"$1".tex | diff-so-fancy
+   diff -u -w checks/assets/tex/"$1".tex "$vol"/pdf/aux_files/"$1".tex | diff-so-fancy
    echo "==================================="
 fi
 
