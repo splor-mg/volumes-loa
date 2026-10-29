@@ -2,8 +2,8 @@
 Gera pdf/volume4.pdf a partir dos templates Jinja em volume4/jinja2.
 """
 from pathlib import Path
-import pandas as pd
 
+from utils.python.funcoes import le_tabela
 from utils.python.latex import compila, renderiza
 from utils.python.trata_bancos import le_planilha
 
@@ -11,10 +11,6 @@ NOME = 'volume4'
 DADOS = Path('volume4/data')
 JINJA2 = Path('volume4/jinja2')
 AUX_FILES = Path('volume4/pdf/aux_files')
-
-
-def le_tabela(caminho):
-    return pd.read_csv(caminho, sep='\t', dtype=str, keep_default_na=False)
 
 
 def prepara_tabela1(sumario):
@@ -85,7 +81,7 @@ log = Path('logs/logv4.Rout')
 if log.exists() and log.stat().st_size > 0:
     print('!-- Verificar logs/logv4.Rout ...')
 
-print('-- Iniciando volume4.pdf ...')
+print('-- Iniciando pdf/volume4.pdf ...')
 sumario = le_tabela(DADOS / 'sumario.txt')
 tex = renderiza(
     JINJA2,
