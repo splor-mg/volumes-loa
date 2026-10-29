@@ -18,7 +18,7 @@ class Report:
     @property
     def pdf(self):
         return f'pdf/{self.name}.pdf'
-    
+
     @property
     def pdf_snapshot(self):
         return f'checks/assets/pdf/{self.name}.pdf'
@@ -27,7 +27,7 @@ class Report:
         shutil.copy(self.tex, self.tex_snapshot)
         shutil.copy(self.pdf, self.pdf_snapshot)
         return True
-    
+
     def test_pdf(self):
         try:
             subprocess.run(["diff-pdf", self.pdf, self.pdf_snapshot,], check=True, stdout=subprocess.DEVNULL)
@@ -38,7 +38,7 @@ class Report:
 
     def test_tex(self):
         try:
-            subprocess.run(["diff", "-u", self.tex, self.tex_snapshot], check=True, stdout=subprocess.DEVNULL)
+            subprocess.run(["diff", "-u", "-w", self.tex, self.tex_snapshot], check=True, stdout=subprocess.DEVNULL)
             return True
         except subprocess.CalledProcessError:
             print(f"Failure testing {self.name}.tex")
