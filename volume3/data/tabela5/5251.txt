@@ -1,5 +1,5 @@
-funcao	subfuncao	prog	id	proj	iag	especificacao	detalhamento	fontes	valor	total	orgao	uo
-25	121	133	 3	18	 0	GÁS COMPETITIVO- EXPANSÃO DA REDE DE GÁS NATURAL				457.766.318	1.22.0 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO ECONÔMICO - GASMIG	5.25.1 - COMPANHIA DE GÁS DE MINAS GERAIS - GASMIG
-							OBRAS E INSTALAÇÕES			457.766.318		
-								RECURSOS PRÓPRIOS	457.766.318			
-26	121	133	 3	18	 0	TOTAL				457.766.318		
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	acao_desc	natureza_invest_desc	fonte_invest_desc	valor	total
+25	121	133	 3	18	 0	GÁS COMPETITIVO- EXPANSÃO DA REDE DE GÁS NATURAL				457.766.318
+							OBRAS E INSTALAÇÕES			457.766.318
+								RECURSOS PRÓPRIOS	457.766.318	
+						TOTAL				457.766.318

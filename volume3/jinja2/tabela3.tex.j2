@@ -1,0 +1,29 @@
+\BLOCK{set tabela = uo.tabela3}
+\noindent\begin{longtable}[c]{m{5cm}\VAR{("|m{" ~ tabela.largura_coluna ~ "cm}") * (tabela.colunas - 1)}}
+\BLOCK{set cabecalho}
+\multicolumn{\VAR{tabela.colunas}}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{RECURSOS FINANCEIROS}}}\\
+\multicolumn{\VAR{tabela.colunas}}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{FONTE DE RECURSOS E APLICAÇÃO - INVESTIMENTO}}}\\
+\specialrule{1.5pt}{2pt}{0pt}
+\multicolumn{\VAR{tabela.colunas - 1}}{l}{\textbf{Exercício: \textcolor{myblack}{\VAR{ano_doc}}}} & \multicolumn{1}{r}{R\$1,00} \\
+\multicolumn{\VAR{tabela.colunas}}{L{\VAR{5 + tabela.largura}cm}}{\textbf{ÓRGÃO:} \VAR{uo.orgao}} \\
+\multicolumn{\VAR{tabela.colunas}}{L{\VAR{5 + tabela.largura}cm}}{\textbf{UO:} \hspace{12pt} \VAR{uo.uo}} \\
+\specialrule{1pt}{0pt}{0pt}
+\multicolumn{1}{C{3cm}}{ \textbf{ FONTE DE RECURSO / DETALHAMENTO DE INVESTIMENTO}} & \BLOCK{for natureza in tabela.naturezas}\multicolumn{1}{R{\VAR{tabela.largura_demais}cm}}{ \textbf{ \VAR{natureza|replace(",", ".")|replace("-", " ")}}} & \BLOCK{endfor}\multicolumn{1}{R{1.7cm}}{\textbf{ TOTAL}} \\
+\hline\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline
+\hline\hline
+\endlastfoot
+\BLOCK{for linha in tabela.linhas}
+\BLOCK{if linha[0] == "TOTAL"}
+\hline \hline
+\multicolumn{1}{L{3cm}}{ \textbf{\VAR{linha[0]}}} & \BLOCK{for valor in linha[1:-1]}\multicolumn{1}{R{\VAR{tabela.largura_demais}cm}}{ \textbf{\VAR{valor}}} & \BLOCK{endfor}\multicolumn{1}{R{1.7cm}}{ \textbf{\VAR{linha[-1]}}} \\
+\BLOCK{else}
+\multicolumn{1}{L{3cm}}{  \VAR{linha[0]}} & \BLOCK{for valor in linha[1:-1]}\multicolumn{1}{R{\VAR{tabela.largura_demais}cm}}{ \VAR{valor}} & \BLOCK{endfor}\multicolumn{1}{R{1.7cm}}{ \VAR{linha[-1]}} \\
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}

@@ -1,0 +1,33 @@
+\newgeometry{left=3pt,right=3pt, top=1cm}
+\noindent\begin{longtable}[c]{m{2pt}m{2pt}m{2pt}m{1pt}m{2pt}|m{0.5cm}|m{3.5cm}|m{2.5cm}|m{2.5cm}|m{2cm}|m{2cm}}
+\BLOCK{set cabecalho}
+\multicolumn{11}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{QUADRO DE DETALHAMENTO DE INVESTIMENTO}}}\TBstrut  \\[2ex]\specialrule{1.5pt}{2pt}{0pt}
+\multicolumn{10}{l}{\textbf{Exercício: \textcolor{myblack}{\VAR{ano_doc}}}} & \multicolumn{1}{r}{R\$1,00} \\
+\multicolumn{11}{L{18cm}}{\textbf{ÓRGÃO:} \VAR{uo.orgao}} \\
+\multicolumn{11}{L{18cm}}{\textbf{UO:} \hspace{12.5pt} \VAR{uo.uo}} \\
+\specialrule{1pt}{0pt}{0pt}
+\multicolumn{5}{C{2.7cm}|}{\multirow{2}{*}{\textbf{CÓDIGO}}} & \multirow{2}{*}{\textbf{IAG}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{ESPECIFICAÇÃO}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{DETALHAMENTO}}} & \multicolumn{2}{c|}{\textbf{RECURSOS}} & \multicolumn{1}{c}{\multirow{2}{*}{\textbf{TOTAL}}} \\
+\cline{9-10}
+\multicolumn{5}{c|}{} & & & & \multicolumn{1}{c|}{\textbf{FONTES}} & \multicolumn{1}{c|}{\textbf{VALOR}} & \\
+\hline\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline
+\hline \hline
+\endlastfoot
+\BLOCK{for linha in uo.tabela5}
+\BLOCK{set codigo}
+\multicolumn{1}{c@{\hspace{-0.2em}}}{ \textbf{ \VAR{linha.funcao_cod} }} & \multicolumn{1}{c@{\hspace{-0.2em}}}{ \textbf{ \VAR{linha.subfuncao_cod} }} & \multicolumn{1}{c@{\hspace{-0.2em}}}{ \textbf{ \VAR{linha.programa_cod} }} & \multicolumn{1}{c@{\hspace{-0.2em}}}{ \textbf{ \VAR{linha.identificador_cod} }} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.projeto_atividade_cod} }}\BLOCK{endset}
+\BLOCK{if linha.acao_desc == "TOTAL"}
+\hline \hline
+\multicolumn{10}{l}{\textbf{ \VAR{linha.acao_desc} }} & \multicolumn{1}{r}{\textbf{ \VAR{linha.total} }}
+\BLOCK{elif linha.natureza_invest_desc == "" and linha.fonte_invest_desc == ""}
+\VAR{codigo} & \multicolumn{1}{c|}{ {\bf  \VAR{linha.iag_cod} }} & \multicolumn{1}{@{\hspace{0.5em}}L{3.5cm}|}{\novaFonte {\bf  \VAR{linha.acao_desc} }} &  &  &  & \multicolumn{1}{r}{ \textbf{ \VAR{linha.total} }} \\
+\BLOCK{else}
+\VAR{codigo} & \multicolumn{1}{c|}{ \VAR{linha.iag_cod} } & \multicolumn{1}{@{\hspace{0.5em}}L{3.5cm}|}{\novaFonte  \VAR{linha.acao_desc} } & \multicolumn{1}{@{\hspace{0.5em}}L{2.5cm}|}{\novaFonte  \VAR{linha.natureza_invest_desc} } & \multicolumn{1}{@{\hspace{0.5em}}L{2.5cm}|}{\novaFonte  \VAR{linha.fonte_invest_desc} } & \multicolumn{1}{r|}{ \VAR{linha.valor} } & \multicolumn{1}{r}{ \VAR{linha.total} } \\
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}
