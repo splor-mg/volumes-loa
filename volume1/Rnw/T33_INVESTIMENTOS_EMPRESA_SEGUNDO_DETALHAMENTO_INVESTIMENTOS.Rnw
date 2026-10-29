@@ -10,7 +10,7 @@
 \color{myblack}
 \centering
 
-\pagestyle{empty} 
+\pagestyle{empty}
 
 \newgeometry{left=3pt,right=3pt, top=1cm}
 
@@ -22,52 +22,53 @@
   dir_utils = paste0(dir_loa, "/utils/")
   dir_data3 = paste0(dir_loa, "/volume3/data/consolidado")
   dir_bancos = paste0(dir_loa, "/bancos")
-  
+
   ANO_DOC = as.numeric(readLines(paste(dir_utils, "/ano.txt", sep=""), warn = F))
-  
+
   source(paste0(dir_utils, "funcoes.R"), encoding = "UTF-8")
 
   # INICIO TABELA
 
-  t2_geral = data.table(read.table(paste0(dir_data3, "/T2_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO.txt"),
-                                   header=T, sep="\t", dec=",", stringsAsFactors = FALSE))
+  t2_geral = data.table(read.table(paste0(dir_data3, "/t2_investimentos_empresa_detalhamento.txt"),
+                                   header=T, sep="\t", dec=",", stringsAsFactors = FALSE,
+                                   check.names = FALSE))
 
   cat("\\noindent\\begin{longtable}[c]{m{5.5cm}|m{2.5cm}|m{2.5cm}|m{2.5cm}|m{2cm}|m{2cm}}\n")
 
   titulo1 =  paste0("\\multicolumn{6}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{",
                     "INVESTIMENTOS POR EMPRESA SEGUNDO O DETALHAMENTO DOS INVESTIMENTOS}}} \\\\\n")
-   
+
   titulo2 = paste0("\\multicolumn{6}{c}{\\cellcolor{gray!50} \\textcolor{myblack} {\\normalsize \\textbf{",
                     base_legal("T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS"),
                     "}}} \\\\\n")
-   
+
   subtitulo = paste("\\multicolumn{3}{l}{\\textbf{Exercício: \\textcolor{myblack}{", ANO_DOC ,
                      "}}} & \\multicolumn{3}{r}{R\\$1,00} \\\\\n")
- 
+
   cabecalho = paste0("\\multicolumn{1}{C{5.5cm}|}{\\textbf{EMPRESAS CONTROLADAS PELO ESTADO}} & ",
                      "\\multicolumn{1}{C{2.2cm}|}{ \\textbf{PARTICIPAÇÃO SOCIETÁRIA}} &  ",
                      "\\multicolumn{1}{C{2.5cm}|}{ \\textbf{IMOBILIZAÇÕES}} & ",
                      "\\multicolumn{1}{C{2.5cm}|}{ \\textbf{AMORTIZAÇÃO DE DÍVIDAS}} & ",
                      "\\multicolumn{1}{C{2cm}|}{ \\textbf{OUTRAS APLICAÇÕES}} & ",
                      "\\multicolumn{1}{c}{\\textbf{TOTAL}} \\\\\n ")
-   
+
   cat(titulo1)
   cat(titulo2)
   cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
   cat(subtitulo)
   cat("\\specialrule{1pt}{0pt}{0pt}\n")
   cat(cabecalho)
- 
+
   cat("\\hline\n")
   cat("\\endfirsthead\n")
- 
+
   cat(titulo1)
   cat(titulo2)
   cat("\\specialrule{1.5pt}{2pt}{0pt}\n")
   cat(subtitulo)
   cat("\\specialrule{1pt}{0pt}{0pt}\n")
   cat(cabecalho)
-  
+
   cat("\\hline\n")
   cat("\\endhead\n")
 
@@ -76,32 +77,32 @@
 
   cat("\\hline\\hline\n")
   cat("\\endlastfoot\n")
- 
+
 
   for(i in 1:nrow(t2_geral)){
    if(toupper(t2_geral[i, empresas])=="TOTAL"){
      cat("\\hline\n")
-     
-     cat("\\multicolumn{1}{L{5.5cm}|}{ \\textbf{", t2_geral[i, empresas], 
-         "}} & \\multicolumn{1}{r|}{ \\textbf{", t2_geral[i, societaria], 
-         "}} & \\multicolumn{1}{r|}{ \\textbf{", t2_geral[i, imob],
-         "}} & \\multicolumn{1}{r|}{ \\textbf{", t2_geral[i, amort],
-         "}} & \\multicolumn{1}{r|}{ \\textbf{", t2_geral[i, outras],
+
+     cat("\\multicolumn{1}{L{5.5cm}|}{ \\textbf{", t2_geral[i, empresas],
+         "}} & \\multicolumn{1}{r|}{ \\textbf{", t2_geral[i, `4510`],
+         "}} & \\multicolumn{1}{r|}{ \\textbf{", t2_geral[i, `4610`],
+         "}} & \\multicolumn{1}{r|}{ \\textbf{", t2_geral[i, `4710`],
+         "}} & \\multicolumn{1}{r|}{ \\textbf{", t2_geral[i, `4810`],
          "}} & \\multicolumn{1}{r}{ \\textbf{", t2_geral[i, total],
          "}} \\\\\n", sep="")
-     
+
    } else{
-     
+
      cat("\\multicolumn{1}{L{5.5cm}|}{", t2_geral[i, empresas],
-         "} & \\multicolumn{1}{r|}{", t2_geral[i, societaria], 
-         "} & \\multicolumn{1}{r|}{", t2_geral[i, imob],
-         "} & \\multicolumn{1}{r|}{", t2_geral[i, amort],
-         "} & \\multicolumn{1}{r|}{", t2_geral[i, outras],
+         "} & \\multicolumn{1}{r|}{", t2_geral[i, `4510`],
+         "} & \\multicolumn{1}{r|}{", t2_geral[i, `4610`],
+         "} & \\multicolumn{1}{r|}{", t2_geral[i, `4710`],
+         "} & \\multicolumn{1}{r|}{", t2_geral[i, `4810`],
          "} & \\multicolumn{1}{r}{ \\textbf{", t2_geral[i, total],
          "}} \\\\\n", sep="")
    }
   }
- 
+
 cat("\\end{longtable}\n")
 
 # FIM TABELA
@@ -109,4 +110,3 @@ cat("\\end{longtable}\n")
 @
 
 \end{document}
-
