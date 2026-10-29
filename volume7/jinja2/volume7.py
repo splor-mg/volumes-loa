@@ -1,6 +1,5 @@
 """
 Gera pdf/volume7.pdf a partir dos templates Jinja em volume7/jinja2.
-Executar na raiz do projeto com: python3 -m volume7.jinja2.volume7
 """
 from pathlib import Path
 
