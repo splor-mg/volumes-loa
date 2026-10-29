@@ -15,7 +15,7 @@ log = Path('logs/logv5.Rout')
 if log.exists() and log.stat().st_size > 0:
     print('!-- Verificar logs/logv5.Rout ...')
 
-print('-- Iniciando volume5.pdf ...')
+print('-- Iniciando pdf/volume5.pdf ...')
 consolidado, total = prepara_consolidado(DADOS / 'consolidado.txt')
 tex = renderiza(
     JINJA2,
