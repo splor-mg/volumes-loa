@@ -14,7 +14,9 @@ source("utils/trataBancos/trataReceita_Fiscal.R", encoding = "UTF-8")
 source("utils/trataBancos/trataQDD_Elemento_Item.R", encoding = "UTF-8")
 
 
-sumario = data.table(read.table("volume2/data/sumario.txt", header=T, sep="\t",stringsAsFactors =F))
+sumario = data.table(read.table("volume2/data/sumario.txt", header=T, sep="\t", quote="", comment.char="",
+                                 stringsAsFactors=F))
+sumario = sumario[, list(COD_UO = uo_cod, UO = sub("^[0-9.]+ - ", "", uo), poder)]
 
 # receita = trataReceita_Fiscal_antigo("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_2017.xlsx", F)
 receita = trataReceita_Fiscal("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx", F)
