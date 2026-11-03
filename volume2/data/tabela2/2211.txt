@@ -1,10 +1,10 @@
-"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"PESSOAL E ENCARGOS SOCIAIS"	"OUTRAS DESPESAS CORRENTES"	"INVESTIMENTOS"	"Total"
-"1.71.0 - SECRETARIA DE ESTADO DE COMUNICAÇÃO SOCIAL - TV MINAS"	"2.21.1 - FUNDAÇÃO TV MINAS CULTURAL E EDUCATIVA - TV MINAS"	" 3"	" 2"	"10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS"	" 0"	" 1"	"7.996.021"	"7.874.050"	"      0"	"15.870.071"
-						" 7"	"        0"	"1.964.700"	"      0"	"1.964.700"
-					"Total"	" 8"	"7.996.021"	"9.838.750"	"      0"	"17.834.771"
-		" 2"		"47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS"	" 0"	" 1"	"        0"	"         0"	"124.320"	"124.320"
-					"Total"	" 1"	"        0"	"         0"	"124.320"	"124.320"
-		" 3"	" 2"	"60 - RECURSOS DIRETAMENTE ARRECADADOS"	" 0"	" 1"	"        0"	"1.299.000"	"      0"	"1.299.000"
-						" 9"	"        0"	"1.000"	"      0"	"1.000"
-					"Total"	"10"	"        0"	"1.300.000"	"      0"	"1.300.000"
-				"TOTAL"	" 0"	"19"	"7.996.021"	"11.138.750"	"124.320"	"19.259.091"
+fonte_desc	celulas_mesclar_fonte	celulas_mesclar_iag	iag_cod	ipu_cod	PESSOAL E ENCARGOS SOCIAIS	OUTRAS DESPESAS CORRENTES	INVESTIMENTOS	total
+10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS	 3	 2	 0	 1	7.996.021	7.874.050	      0	15.870.071
+				 7	        0	1.964.700	      0	1.964.700
+			Total	 8	7.996.021	9.838.750	      0	17.834.771
+47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS	 2		 0	 1	        0	         0	124.320	124.320
+			Total	 1	        0	         0	124.320	124.320
+60 - RECURSOS DIRETAMENTE ARRECADADOS	 3	 2	 0	 1	        0	1.299.000	      0	1.299.000
+				 9	        0	1.000	      0	1.000
+			Total	10	        0	1.300.000	      0	1.300.000
+TOTAL			 0	19	7.996.021	11.138.750	124.320	19.259.091

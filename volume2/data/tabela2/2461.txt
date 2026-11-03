@@ -1,12 +1,12 @@
-"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"PESSOAL E ENCARGOS SOCIAIS"	"OUTRAS DESPESAS CORRENTES"	"INVESTIMENTOS"	"Total"
-"1.30.0 - SECRETARIA DE ESTADO DE INFRAESTRUTURA, MOBILIDADE E PARCERIA - ARMVA"	"2.46.1 - AGÊNCIA DE DESENVOLVIMENTO DA REGIÃO METROPOLITANA DO VALE DO AÇO - ARMVA"	" 4"	" 3"	"10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS"	" 0"	" 1"	"1.735.187"	"3.797.080"	"25.000"	"5.557.267"
-						" 7"	"        0"	"309.669"	"     0"	"309.669"
-						" 9"	"1.000"	"        0"	"     0"	"1.000"
-					"Total"	"17"	"1.736.187"	"4.106.749"	"25.000"	"5.867.936"
-		" 2"		"24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA"	" 1"	" 1"	"        0"	"8.000"	"     0"	"8.000"
-					"Total"	" 1"	"        0"	"8.000"	"     0"	"8.000"
-		" 2"		"32 - EXPLORAÇÃO DE RECURSOS MINERAIS"	" 1"	" 1"	"        0"	"3.794.482"	"     0"	"3.794.482"
-					"Total"	" 1"	"        0"	"3.794.482"	"     0"	"3.794.482"
-		" 2"		"60 - RECURSOS DIRETAMENTE ARRECADADOS"	" 0"	" 1"	"        0"	"51.000"	"     0"	"51.000"
-					"Total"	" 1"	"        0"	"51.000"	"     0"	"51.000"
-				"TOTAL"	" 2"	"20"	"1.736.187"	"7.960.231"	"25.000"	"9.721.418"
+fonte_desc	celulas_mesclar_fonte	celulas_mesclar_iag	iag_cod	ipu_cod	PESSOAL E ENCARGOS SOCIAIS	OUTRAS DESPESAS CORRENTES	INVESTIMENTOS	total
+10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS	 4	 3	 0	 1	1.735.187	3.797.080	25.000	5.557.267
+				 7	        0	309.669	     0	309.669
+				 9	1.000	        0	     0	1.000
+			Total	17	1.736.187	4.106.749	25.000	5.867.936
+24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA	 2		 1	 1	        0	8.000	     0	8.000
+			Total	 1	        0	8.000	     0	8.000
+32 - EXPLORAÇÃO DE RECURSOS MINERAIS	 2		 1	 1	        0	3.794.482	     0	3.794.482
+			Total	 1	        0	3.794.482	     0	3.794.482
+60 - RECURSOS DIRETAMENTE ARRECADADOS	 2		 0	 1	        0	51.000	     0	51.000
+			Total	 1	        0	51.000	     0	51.000
+TOTAL			 2	20	1.736.187	7.960.231	25.000	9.721.418

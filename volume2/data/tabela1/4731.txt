@@ -1,9 +1,9 @@
-"FUNCAO"	"SUB_FUNCAO"	"PROGRAMA"	"IDENT_PROJATIV"	"PROJ_ATIV"	"SUB_PROJETO"	"MOD"	"IAG"	"FONTE"	"IPU"	"OUTRAS"	"INVESTIMENTOS"	"total"	"tipo"	"descricao"	"nome_uo"	"nome_orgao"	"valor_prod"	"unid_med_prod"	"tipo_acao"	"exc_acao"	"PESSOAL"	"JUROS"	"INVERSOES"	"AMORTIZA"	"valor.9reserva_de_contingencia"
-"  3"												"116.000.000"	"1"	"ESSENCIAL À JUSTIÇA"	"4.73.1 - FUNDO DE DESENVOLVIMENTO DO MINISTÉRIO PÚBLICO - FDMP"	"1.09.0 - MINISTÉRIO PÚBLICO DO ESTADO DE MINAS GERAIS - FDMP"									
-"  3"	"122"											"116.000.000"	"1"	"ADMINISTRAÇÃO GERAL"											
-"  3"	"122"	"703"										"116.000.000"	"1"	"PROCESSO JUDICIÁRIO"											
-"  3"	"122"	"703"	" 2"	"72"								"116.000.000"	"5"	"PROMOVER A MODERNIZAÇÃO, A ESTRUTURAÇÃO E O APRIMORAMENTO DAS ATIVIDADES INSTITUCIONAIS DO MPMG."											
-"  3"	"122"	"703"	" 2"	"72"	" 1"							"116.000.000"	"1"	"APRIMORAMENTO INSTITUCIONAL"											
-"  3"	"122"	"703"	" 2"	"72"	" 1"	"90"	" 0"	"59"	" 1"	"100.000.000"	"16.000.000"	"116.000.000"	"7"												
-"  3"	"122"	"703"	" 2"	"72"	" 1"	"91"	" 0"						"8"	"AÇÃO ADMINISTRATIVA REALIZADA"			" 1"	"AÇÃO"	"Atividade Meio do Orçamento Fiscal"	"Não"					
-"999"										"100.000.000"	"16.000.000"	"116.000.000"	"9"	"TOTAL"											
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+03										1	ESSENCIAL À JUSTIÇA							116.000.000		
+03	122									1	ADMINISTRAÇÃO GERAL							116.000.000		
+03	122	703								1	PROCESSO JUDICIÁRIO							116.000.000		
+03	122	703	2	072						5	PROMOVER A MODERNIZAÇÃO, A ESTRUTURAÇÃO E O APRIMORAMENTO DAS ATIVIDADES INSTITUCIONAIS DO MPMG.							116.000.000		
+03	122	703	2	072	0001					1	APRIMORAMENTO INSTITUCIONAL							116.000.000		
+03	122	703	2	072	0001	90	0	59	1	7				100.000.000	16.000.000			116.000.000		
+03	122	703	2	072	0001	91	0			8	AÇÃO ADMINISTRATIVA REALIZADA								AÇÃO	1
+										9	TOTAL			100.000.000	16.000.000			116.000.000		

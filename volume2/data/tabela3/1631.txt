@@ -1,7 +1,7 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"perc_total_pessoal"	"perc_categoria_pessoal"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"ADMINISTRATIVA"	" 7"	"65"	"10.306.553"	"100"	"10,8"	"100"	"1.63.1 - SECRETARIA-GERAL - SEC. GERAL"	"1.63.0 - GOVERNADORIA DO ESTADO - SEC. GERAL"
-	"DIREÇÃO E ASSESSORAMENTO"	"42"				"64,6"			
-	"DIREÇÃO SUPERIOR"	" 2"				"3,1"			
-	"ESPECIALIZADA"	"12"				"18,5"			
-	"MEMBROS DE PODER"	" 2"				"3,1"			
-"TOTAL"			"65"	"10.306.553"	"100"		"100"		
+pessoal_classificacao	pessoal_categoria	pessoal_quantidade	total	vlr_loa_desp	participacao	perc_total_pessoal	perc_categoria_pessoal
+PESSOAL ATIVO	ADMINISTRATIVA	7	65	10.306.553	100	100	10,8
+	DIREÇÃO E ASSESSORAMENTO	42					64,6
+	DIREÇÃO SUPERIOR	2					3,1
+	ESPECIALIZADA	12					18,5
+	MEMBROS DE PODER	2					3,1
+TOTAL			65	10.306.553	100	100	

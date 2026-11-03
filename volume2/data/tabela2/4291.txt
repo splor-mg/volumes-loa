@@ -1,34 +1,34 @@
-"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"PESSOAL E ENCARGOS SOCIAIS"	"OUTRAS DESPESAS CORRENTES"	"INVESTIMENTOS"	"Total"
-"1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - FES"	"4.29.1 - FUNDO ESTADUAL DE SAÚDE - FES"	" 4"	" 2"	"10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS"	" 0"	" 1"	"424.208.015"	"11.035.293.623"	"1.156.206.562"	"12.615.708.200"
-						" 7"	"          0"	"51.774.705"	"            0"	"51.774.705"
-					" 1"	" 1"	"          0"	"7.969.000"	"            0"	"7.969.000"
-					"Total"	" 9"	"424.208.015"	"11.095.037.328"	"1.156.206.562"	"12.675.451.905"
-		" 2"		"15 - RECURSOS ORDINÁRIOS - OUTROS RECURSOS NÃO VINCULADOS"	" 0"	" 1"	"          0"	"             0"	"28.128.988"	"28.128.988"
-					"Total"	" 1"	"          0"	"             0"	"28.128.988"	"28.128.988"
-		" 2"		"24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA"	" 0"	" 1"	"          0"	"700.000"	"            0"	"700.000"
-					"Total"	" 1"	"          0"	"700.000"	"            0"	"700.000"
-		" 2"		"37 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE"	" 0"	" 1"	"          0"	"6.000.000"	"            0"	"6.000.000"
-					"Total"	" 1"	"          0"	"6.000.000"	"            0"	"6.000.000"
-		" 2"		"57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA"	" 0"	" 1"	"78.574"	"28.638.885"	"            0"	"28.717.459"
-					"Total"	" 1"	"78.574"	"28.638.885"	"            0"	"28.717.459"
-		" 2"		"60 - RECURSOS DIRETAMENTE ARRECADADOS"	" 0"	" 1"	"          0"	"10.819.950"	"            0"	"10.819.950"
-					"Total"	" 1"	"          0"	"10.819.950"	"            0"	"10.819.950"
-		" 2"		"62 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO MANUTENÇÃO - EMENDAS INDIVIDUAIS"	" 0"	" 1"	"          0"	"1.901.000"	"            0"	"1.901.000"
-					"Total"	" 1"	"          0"	"1.901.000"	"            0"	"1.901.000"
-		" 2"		"63 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO MANUTENÇÃO - EMENDAS DE BANCADA"	" 0"	" 1"	"          0"	"901.000"	"            0"	"901.000"
-					"Total"	" 1"	"          0"	"901.000"	"            0"	"901.000"
-		" 2"		"64 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO ESTRUTURAÇÃO - EMENDAS INDIVIDUAIS"	" 0"	" 1"	"          0"	"             0"	"451.000"	"451.000"
-					"Total"	" 1"	"          0"	"             0"	"451.000"	"451.000"
-		" 2"		"65 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO ESTRUTURAÇÃO - EMENDAS DE BANCADA"	" 0"	" 1"	"          0"	"             0"	"402.000"	"402.000"
-					"Total"	" 1"	"          0"	"             0"	"402.000"	"402.000"
-		" 2"		"71 - RECURSOS DO FUNDO ESTADUAL DE ERRADICACAO DA MISERIA"	" 0"	" 1"	"          0"	"75.291.774"	"            0"	"75.291.774"
-					"Total"	" 1"	"          0"	"75.291.774"	"            0"	"75.291.774"
-		" 2"		"80 - RECURSOS DO ACORDO DE REPACTUAÇÃO DO RIO DOCE"	" 0"	" 1"	"          0"	"             0"	"14.317.500"	"14.317.500"
-					"Total"	" 1"	"          0"	"             0"	"14.317.500"	"14.317.500"
-		" 2"		"92 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO MANUTENÇÃO - EXCETO EMENDAS INDIV. E DE BANCADA"	" 0"	" 1"	"          0"	"686.946.287"	"            0"	"686.946.287"
-					"Total"	" 1"	"          0"	"686.946.287"	"            0"	"686.946.287"
-		" 2"		"93 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO ESTRUTURAÇÃO - EXCETO EMENDAS INDIV. E DE BANCADA"	" 0"	" 1"	"          0"	"             0"	"1.001.000"	"1.001.000"
-					"Total"	" 1"	"          0"	"             0"	"1.001.000"	"1.001.000"
-		" 2"		"98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO"	" 0"	" 1"	"          0"	"3.000"	"1.000"	"4.000"
-					"Total"	" 1"	"          0"	"3.000"	"1.000"	"4.000"
-				"TOTAL"	" 1"	"23"	"424.286.589"	"11.906.239.224"	"1.200.508.050"	"13.531.033.863"
+fonte_desc	celulas_mesclar_fonte	celulas_mesclar_iag	iag_cod	ipu_cod	PESSOAL E ENCARGOS SOCIAIS	OUTRAS DESPESAS CORRENTES	INVESTIMENTOS	total
+10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS	 4	 2	 0	 1	424.208.015	11.035.293.623	1.156.206.562	12.615.708.200
+				 7	          0	51.774.705	            0	51.774.705
+			 1	 1	          0	7.969.000	            0	7.969.000
+			Total	 9	424.208.015	11.095.037.328	1.156.206.562	12.675.451.905
+15 - RECURSOS ORDINÁRIOS - OUTROS RECURSOS NÃO VINCULADOS	 2		 0	 1	          0	             0	28.128.988	28.128.988
+			Total	 1	          0	             0	28.128.988	28.128.988
+24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA	 2		 0	 1	          0	700.000	            0	700.000
+			Total	 1	          0	700.000	            0	700.000
+37 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE	 2		 0	 1	          0	6.000.000	            0	6.000.000
+			Total	 1	          0	6.000.000	            0	6.000.000
+57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA	 2		 0	 1	78.574	28.638.885	            0	28.717.459
+			Total	 1	78.574	28.638.885	            0	28.717.459
+60 - RECURSOS DIRETAMENTE ARRECADADOS	 2		 0	 1	          0	10.819.950	            0	10.819.950
+			Total	 1	          0	10.819.950	            0	10.819.950
+62 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO MANUTENÇÃO - EMENDAS INDIVIDUAIS	 2		 0	 1	          0	1.901.000	            0	1.901.000
+			Total	 1	          0	1.901.000	            0	1.901.000
+63 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO MANUTENÇÃO - EMENDAS DE BANCADA	 2		 0	 1	          0	901.000	            0	901.000
+			Total	 1	          0	901.000	            0	901.000
+64 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO ESTRUTURAÇÃO - EMENDAS INDIVIDUAIS	 2		 0	 1	          0	             0	451.000	451.000
+			Total	 1	          0	             0	451.000	451.000
+65 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO ESTRUTURAÇÃO - EMENDAS DE BANCADA	 2		 0	 1	          0	             0	402.000	402.000
+			Total	 1	          0	             0	402.000	402.000
+71 - RECURSOS DO FUNDO ESTADUAL DE ERRADICACAO DA MISERIA	 2		 0	 1	          0	75.291.774	            0	75.291.774
+			Total	 1	          0	75.291.774	            0	75.291.774
+80 - RECURSOS DO ACORDO DE REPACTUAÇÃO DO RIO DOCE	 2		 0	 1	          0	             0	14.317.500	14.317.500
+			Total	 1	          0	             0	14.317.500	14.317.500
+92 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO MANUTENÇÃO - EXCETO EMENDAS INDIV. E DE BANCADA	 2		 0	 1	          0	686.946.287	            0	686.946.287
+			Total	 1	          0	686.946.287	            0	686.946.287
+93 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO ESTRUTURAÇÃO - EXCETO EMENDAS INDIV. E DE BANCADA	 2		 0	 1	          0	             0	1.001.000	1.001.000
+			Total	 1	          0	             0	1.001.000	1.001.000
+98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO	 2		 0	 1	          0	3.000	1.000	4.000
+			Total	 1	          0	3.000	1.000	4.000
+TOTAL			 1	23	424.286.589	11.906.239.224	1.200.508.050	13.531.033.863

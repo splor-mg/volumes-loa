@@ -1,12 +1,12 @@
-"nome_orgao"	"nome_uo"	"celulas_mesclar_fonte"	"celulas_mesclar_iag"	"FONTE / GRUPO DE DESPESA"	"IAG"	"IPU"	"PESSOAL E ENCARGOS SOCIAIS"	"OUTRAS DESPESAS CORRENTES"	"INVESTIMENTOS"	"Total"
-"1.50.0 - SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO - DETRAN-MG"	"2.48.1 - DEPARTAMENTO ESTADUAL DE TRÂNSITO DE MINAS GERAIS - DETRAN-MG"	" 4"	" 3"	"10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS"	" 0"	" 1"	"74.353.681"	"          0"	"        0"	"74.353.681"
-						" 7"	"         0"	"5.065.350"	"        0"	"5.065.350"
-						" 9"	"1.000"	"          0"	"        0"	"1.000"
-					"Total"	"17"	"74.354.681"	"5.065.350"	"        0"	"79.420.031"
-		" 2"		"15 - RECURSOS ORDINÁRIOS - OUTROS RECURSOS NÃO VINCULADOS"	" 0"	" 1"	"         0"	"267.732.675"	"        0"	"267.732.675"
-					"Total"	" 1"	"         0"	"267.732.675"	"        0"	"267.732.675"
-		" 2"		"74 - ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR"	" 0"	" 1"	"         0"	"          0"	"31.000"	"31.000"
-					"Total"	" 1"	"         0"	"          0"	"31.000"	"31.000"
-		" 2"		"82 - NOTIFICACAO DE INFRACAO DE TRANSITO ESTADO"	" 0"	" 1"	"         0"	"130.521.213"	"8.126.200"	"138.647.413"
-					"Total"	" 1"	"         0"	"130.521.213"	"8.126.200"	"138.647.413"
-				"TOTAL"	" 0"	"20"	"74.354.681"	"403.319.238"	"8.157.200"	"485.831.119"
+fonte_desc	celulas_mesclar_fonte	celulas_mesclar_iag	iag_cod	ipu_cod	PESSOAL E ENCARGOS SOCIAIS	OUTRAS DESPESAS CORRENTES	INVESTIMENTOS	total
+10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS	 4	 3	 0	 1	74.353.681	          0	        0	74.353.681
+				 7	         0	5.065.350	        0	5.065.350
+				 9	1.000	          0	        0	1.000
+			Total	17	74.354.681	5.065.350	        0	79.420.031
+15 - RECURSOS ORDINÁRIOS - OUTROS RECURSOS NÃO VINCULADOS	 2		 0	 1	         0	267.732.675	        0	267.732.675
+			Total	 1	         0	267.732.675	        0	267.732.675
+74 - ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR	 2		 0	 1	         0	          0	31.000	31.000
+			Total	 1	         0	          0	31.000	31.000
+82 - NOTIFICACAO DE INFRACAO DE TRANSITO ESTADO	 2		 0	 1	         0	130.521.213	8.126.200	138.647.413
+			Total	 1	         0	130.521.213	8.126.200	138.647.413
+TOTAL			 0	20	74.354.681	403.319.238	8.157.200	485.831.119

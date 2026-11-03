@@ -1,16 +1,16 @@
-"FUNCAO"	"SUB_FUNCAO"	"PROGRAMA"	"IDENT_PROJATIV"	"PROJ_ATIV"	"SUB_PROJETO"	"MOD"	"IAG"	"FONTE"	"IPU"	"OUTRAS"	"total"	"tipo"	"descricao"	"nome_uo"	"nome_orgao"	"valor_prod"	"unid_med_prod"	"tipo_acao"	"exc_acao"	"PESSOAL"	"JUROS"	"INVESTIMENTOS"	"INVERSOES"	"AMORTIZA"	"valor.9reserva_de_contingencia"
-"14"											"660.095"	"1"	"DIREITOS DA CIDADANIA"	"4.09.1 - FUNDO PARA A INFÂNCIA E A ADOLESCÊNCIA - FIA"	"1.48.0 - SECRETARIA DE ESTADO DE DESENVOLVIMENTO SOCIAL - FIA"										
-"14"	"243"										"660.095"	"1"	"ASSISTÊNCIA À CRIANÇA E AO ADOLESCENTE"												
-"14"	"243"	"23"									"45.120"	"1"	"POLÍTICAS PARA CRIANÇAS E ADOLESCENTES"												
-"14"	"243"	"23"	" 4"	"207"							"45.120"	"5"	"FINANCIAR PROJETOS DE PROTEÇÃO, PROMOÇÃO E DEFESA DOS DIREITOS DA CRIANÇA E DO ADOLESCENTE."												
-"14"	"243"	"23"	" 4"	"207"	" 1"						"45.120"	"1"	"APOIO A PROJETOS ESPECIAIS DE PROMOÇÃO E PROTEÇÃO DE CRIANÇAS E ADOLESCENTES"												
-"14"	"243"	"23"	" 4"	"207"	" 1"	"50"	" 0"	"45"	" 1"	"31.584"	"31.584"	"7"													
-"14"	"243"	"23"	" 4"	"207"	" 1"	"50"	" 0"	"60"	" 1"	"13.536"	"13.536"	"7"													
-"14"	"243"	"23"	" 4"	"207"	" 1"	"51"	" 0"					"8"	"PROJETO APOIADO"			" 1"	"PROJETO"	"Atividade Fim do Orçamento Fiscal"	"Não"						
-"14"	"243"	"68"									"614.975"	"1"	"PRIMEIRA INFÂNCIA MINAS"												
-"14"	"243"	"68"	" 4"	"428"							"614.975"	"5"	"FINANCIAR PROJETOS DE PROTEÇÃO, PROMOÇÃO E DEFESA DOS DIREITOS DA PRIMEIRA INFÂNCIA."												
-"14"	"243"	"68"	" 4"	"428"	" 1"						"614.975"	"1"	"APOIO A PROJETOS DE PROMOÇÃO E PROTEÇÃO DA PRIMEIRA INFÂNCIA"												
-"14"	"243"	"68"	" 4"	"428"	" 1"	"50"	" 0"	"45"	" 1"	"564.696"	"564.696"	"7"													
-"14"	"243"	"68"	" 4"	"428"	" 1"	"50"	" 0"	"60"	" 1"	"50.279"	"50.279"	"7"													
-"14"	"243"	"68"	" 4"	"428"	" 1"	"51"	" 0"					"8"	"PROJETO APOIADO"			" 1"	"PROJETO"	"Atividade Fim do Orçamento Fiscal"	"Não"						
-"999"										"660.095"	"660.095"	"9"	"TOTAL"												
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+14										1	DIREITOS DA CIDADANIA							660.095		
+14	243									1	ASSISTÊNCIA À CRIANÇA E AO ADOLESCENTE							660.095		
+14	243	023								1	POLÍTICAS PARA CRIANÇAS E ADOLESCENTES							45.120		
+14	243	023	4	207						5	FINANCIAR PROJETOS DE PROTEÇÃO, PROMOÇÃO E DEFESA DOS DIREITOS DA CRIANÇA E DO ADOLESCENTE.							45.120		
+14	243	023	4	207	0001					1	APOIO A PROJETOS ESPECIAIS DE PROMOÇÃO E PROTEÇÃO DE CRIANÇAS E ADOLESCENTES							45.120		
+14	243	023	4	207	0001	50	0	45	1	7				31.584				31.584		
+14	243	023	4	207	0001	50	0	60	1	7				13.536				13.536		
+14	243	023	4	207	0001	51	0			8	PROJETO APOIADO								PROJETO	1
+14	243	068								1	PRIMEIRA INFÂNCIA MINAS							614.975		
+14	243	068	4	428						5	FINANCIAR PROJETOS DE PROTEÇÃO, PROMOÇÃO E DEFESA DOS DIREITOS DA PRIMEIRA INFÂNCIA.							614.975		
+14	243	068	4	428	0001					1	APOIO A PROJETOS DE PROMOÇÃO E PROTEÇÃO DA PRIMEIRA INFÂNCIA							614.975		
+14	243	068	4	428	0001	50	0	45	1	7				564.696				564.696		
+14	243	068	4	428	0001	50	0	60	1	7				50.279				50.279		
+14	243	068	4	428	0001	51	0			8	PROJETO APOIADO								PROJETO	1
+										9	TOTAL			660.095				660.095		
