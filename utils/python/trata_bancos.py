@@ -171,6 +171,64 @@ def trata_orcamento_obras(caminho):
     return obras
 
 
+def trata_orcamento_pessoal(caminho):
+    """
+    Função para abrir o banco orcamento_pessoal.csv, usado no volume 2.
+    """
+    pessoal = pd.read_csv(caminho, dtype=str, keep_default_na=False)
+    pessoal = pessoal.map(lambda valor: valor.strip() if isinstance(valor, str) else valor)
+    pessoal = pessoal.apply(corrige_caracteres_especiais)
+
+    pessoal['pessoal_quantidade'] = pd.to_numeric(pessoal['pessoal_quantidade'])
+
+    quantidades = pessoal['pessoal_quantidade']
+    avisa_valores('orcamento_pessoal', 'sem 4 dígitos em uo_cod', ~pessoal['uo_cod'].str.match(r'\d{4}'))
+    avisa_valores('orcamento_pessoal', 'negativos', quantidades < 0)
+    avisa_valores('orcamento_pessoal', 'iguais a zero', quantidades == 0)
+
+    return pessoal
+
+
+def trata_orcamento_receita(caminho):
+    """
+    Função para abrir o banco orcamento_receita.csv, usado no volume 2.
+    """
+    receita = pd.read_csv(caminho, dtype=str, keep_default_na=False)
+    receita = receita.map(lambda valor: valor.strip() if isinstance(valor, str) else valor)
+    receita = receita.apply(corrige_caracteres_especiais)
+
+    receita['vlr_loa_rec'] = receita['vlr_loa_rec'].str.replace(',', '.').astype(float)
+    codigos = ['categoria_cod', 'origem_cod', 'especie_cod', 'rubrica_cod', 'alinea_cod', 'subalinea_cod',
+               'receita_tipo_cod', 'item_cod', 'subitem_cod', 'fonte_cod']
+    receita[codigos] = receita[codigos].astype(int)
+
+    negativos = (receita['vlr_loa_rec'] < 0) & ~receita['receita_cod_fmt'].str.startswith('9')
+    avisa_valores('orcamento_receita', 'negativos', negativos)
+
+    return receita
+
+
+def trata_orcamento_repasse(caminho):
+    """
+    Função para abrir o banco orcamento_repasse.csv, usado no volume 2.
+    """
+    repasse = pd.read_csv(caminho, dtype=str, keep_default_na=False)
+    repasse = repasse.map(lambda valor: valor.strip() if isinstance(valor, str) else valor)
+    repasse = repasse.apply(corrige_caracteres_especiais)
+
+    repasse['vlr_repasse'] = repasse['vlr_repasse'].str.replace(',', '.').astype(float)
+    codigos = ['grupo_cod', 'iag_cod', 'fonte_cod', 'ipu_cod']
+    repasse[codigos] = repasse[codigos].astype(int)
+
+    valores = repasse['vlr_repasse']
+    avisa_valores('orcamento_repasse', 'negativos', valores < 0)
+    avisa_valores('orcamento_repasse', 'iguais a zero', valores == 0)
+    for coluna in ['uo_financiadora_cod', 'uo_beneficiada_cod']:
+        avisa_valores('orcamento_repasse', f'sem 4 dígitos em {coluna}', repasse[coluna].str.len() != 4)
+
+    return repasse
+
+
 def trata_planejamento_acao(caminho):
     """
     Função para abrir o banco planejamento_acao.csv, usado no volume 4.
@@ -181,5 +239,11 @@ def trata_planejamento_acao(caminho):
 
     for coluna, largura in [('funcao_cod', 2), ('subfuncao_cod', 3), ('programa_cod', 3)]:
         acoes[coluna] = acoes[coluna].str.zfill(largura)
+
+    acoes['vlr_meta_fisica_ano0'] = pd.to_numeric(acoes['vlr_meta_fisica_ano0'].str.replace(',', '.'))
+
+    textos = ['funcao_desc', 'subfuncao_desc', 'acao_finalidade', 'produto_desc', 'unidade_medida_desc']
+    acoes[textos] = acoes[textos].apply(lambda coluna: coluna.str.replace(r'\n+', ' ', regex=True)
+                                        .str.replace(r'[\x00-\x1f]', ' ', regex=True))
 
     return acoes
