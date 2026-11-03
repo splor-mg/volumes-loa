@@ -22,7 +22,9 @@ receita = trataReceita_Fiscal("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx", F)
 loa_rec = geraLoa_rec(receita)
 # loa_rec[, RECEITA_COD_2 := RECEITA_COD]
 
-sumario = data.table(read.table("volume2/data/sumario.txt", header=T, sep="\t",stringsAsFactors =F))
+sumario = data.table(read.table("volume2/data/sumario.txt", header=T, sep="\t", quote="", comment.char="",
+                                 stringsAsFactors=F))
+sumario = sumario[, list(COD_UO = uo_cod, UO = sub("^[0-9.]+ - ", "", uo), poder)]
 
 mde = demonstr_mde_rec(loa_rec)
 

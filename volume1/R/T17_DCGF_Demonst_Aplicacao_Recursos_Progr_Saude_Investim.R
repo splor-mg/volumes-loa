@@ -10,7 +10,9 @@ source("utils/formataTexto.R", encoding = "UTF-8")
 # ====== LOAD das funções para abertura dos bancos necessários ===================
 source("utils/trataBancos/trataQDD_Fiscal.R", encoding = "UTF-8")
 
-sumario = data.table(read.table("volume2/data/sumario.txt", header=T, sep="\t", stringsAsFactors =F))
+sumario = data.table(read.table("volume2/data/sumario.txt", header=T, sep="\t", quote="", comment.char="",
+                                 stringsAsFactors=F))
+sumario = sumario[, list(COD_UO = uo_cod, UO = sub("^[0-9.]+ - ", "", uo), poder)]
 
 qdd = trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F)
 loa_desp = geraLoa_desp(qdd)
