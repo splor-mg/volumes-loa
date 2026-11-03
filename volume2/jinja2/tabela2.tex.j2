@@ -1,0 +1,41 @@
+\scriptsize
+\noindent\begin{longtable}[c]{m{7cm}|m{4.5pt}@{\hspace{1em}}|m{2.5pt}@{\hspace{1em}}|\BLOCK{for coluna in uo.tabela2.valores}|m{\VAR{uo.tabela2.largura}cm}\BLOCK{endfor}}
+\BLOCK{set cabecalho}
+\multicolumn{\VAR{uo.tabela2.colunas}}{c}{\cellcolor{gray!50} {\normalsize \textbf{FONTE DE RECURSOS E GRUPOS DE DESPESA - FISCAL}}} \TBstrut \\[2ex] 
+\specialrule{1.5pt}{2pt}{0pt}
+\multicolumn{\VAR{uo.tabela2.colunas - 1}}{l}{\textbf{Exercício: \VAR{ano_doc}}} & \multicolumn{1}{r}{R\$1,00} \\
+\multicolumn{\VAR{uo.tabela2.colunas}}{l}{\textbf{ÓRGÃO:} \VAR{uo.orgao}} \\
+\multicolumn{\VAR{uo.tabela2.colunas}}{l}{\textbf{UO:} \hspace{13pt} \VAR{uo.uo}} \\
+\specialrule{1pt}{0pt}{0pt}
+\multicolumn{1}{C{7cm}|}{ \textbf{ FONTE / GRUPO DE DESPESA}} & \multicolumn{1}{@{\hspace{1em}}c@{\hspace{1em}}|}{ \textbf{ IAG}} & \multicolumn{1}{@{\hspace{1em}}c@{\hspace{1em}}|}{ \textbf{ IPU}} & \BLOCK{for grupo in uo.tabela2.grupos}\multicolumn{1}{C{\VAR{uo.tabela2.largura}cm}|}{ \textbf{ \VAR{grupo}}} & \BLOCK{endfor}\multicolumn{1}{C{2cm}}{\textbf{ TOTAL}} \\
+\BLOCK{endset}
+\VAR{cabecalho}\hline
+\endfirsthead
+\VAR{cabecalho}\hline
+\endhead
+\endfoot
+\endlastfoot
+\BLOCK{for linha in uo.tabela2.linhas}
+\BLOCK{if linha.fonte_desc == "TOTAL"}
+\multicolumn{3}{l|}{ \textbf{ TOTAL }} & \BLOCK{else}
+\BLOCK{if linha.celulas_mesclar_fonte}
+\multirow{\VAR{linha.celulas_mesclar_fonte}}{*}{\parbox{7cm}{\raggedright \VAR{linha.fonte_desc}}} & \BLOCK{else}
+\VAR{linha.fonte_desc} & \BLOCK{endif}
+\BLOCK{if linha.celulas_mesclar_iag and linha.iag_cod != "Total"}
+\multicolumn{1}{c|}{\multirow{\VAR{linha.celulas_mesclar_iag}}{*}{\VAR{linha.iag_cod}}} & \multicolumn{1}{c|}{\VAR{linha.ipu_cod}} & \BLOCK{elif linha.iag_cod == "Total"}
+\multicolumn{2}{c|}{ \textbf{ \VAR{linha.iag_cod} }} & \BLOCK{else}
+\multicolumn{1}{c|}{\VAR{linha.iag_cod}} & \multicolumn{1}{c|}{\VAR{linha.ipu_cod}} & \BLOCK{endif}
+\BLOCK{endif}
+\BLOCK{for coluna in uo.tabela2.grupos}
+\multicolumn{1}{R{\VAR{uo.tabela2.largura}cm}@{\hspace{1em}}|}{ \BLOCK{if linha.negrito}\textbf{ \VAR{linha[coluna]} }\BLOCK{else}\VAR{linha[coluna]}\BLOCK{endif}} & \BLOCK{endfor}
+\multicolumn{1}{C{2cm}}{\BLOCK{if linha.negrito}\textbf{ \VAR{linha.total} }\BLOCK{else}\VAR{linha.total}\BLOCK{endif}} \\
+\VAR{linha.linha_horizontal}
+\BLOCK{endfor}
+\end{longtable}
+\tiny
+\begin{tabular}{L{5cm}L{8cm}}
+\textbf{ IAG - IDENTIFICADOR DE AÇÃO GOVERNAMENTAL} & \textbf{IPU - IDENTIFICADOR DE PROCEDÊNCIA E USO:} \\
+\BLOCK{for iag, ipu in rodape}
+\VAR{iag}  &  \VAR{ipu} \\
+\BLOCK{endfor}
+\end{tabular}

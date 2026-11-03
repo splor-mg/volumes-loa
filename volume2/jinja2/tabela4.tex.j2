@@ -1,0 +1,32 @@
+\renewcommand*{\arraystretch}{1.5}
+\small
+\noindent\begin{longtable}[c]{L{3cm}|m{1.5cm}|m{8cm}|m{3cm}|m{3cm}|m{3cm}}
+\BLOCK{set cabecalho}
+\multicolumn{6}{c}{\cellcolor{gray!50} \normalsize \textbf{ DEMONSTRATIVO DOS RECURSOS FINANCEIROS}} \TBstrut   \\[2ex] 
+\specialrule{1.5pt}{2pt}{0pt}
+\multicolumn{5}{l}{\textbf{Exercício:  \VAR{ano_doc} }} & \multicolumn{1}{r}{R\$1,00} \\
+\multicolumn{6}{l}{\textbf{ÓRGÃO:} \VAR{uo.orgao}} \\
+\multicolumn{6}{l}{\textbf{UO:} \hspace{21pt}\VAR{uo.uo}} \\
+\specialrule{1pt}{0pt}{0pt}
+\multicolumn{6}{l}{\textbf{1.RECEITA PRÓPRIA}} \\
+\hline 
+\multicolumn{1}{C{3cm}|}{\textbf{ CÓDIGO}} &  \multicolumn{1}{@{\hspace{1em}}C{1.5cm}@{\hspace{1em}}|}{\textbf{ FONTE}} &  \multicolumn{1}{@{\hspace{1em}}L{8cm}@{\hspace{0.5em}}|}{\textbf{ ESPECIFICAÇÃO}}  &   \multicolumn{1}{C{3.5cm}|}{\textbf{ DESDOBRAMENTO}} &   \multicolumn{1}{C{3cm}|}{\textbf{ ESPÉCIE}} &  \multicolumn{1}{C{3cm}}{\textbf{ CATEGORIA ECONÔMICA/
+ORIGEM}} \\
+\hline\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline
+\hline\hline
+\endlastfoot
+\BLOCK{for linha in uo.tabela4}
+\BLOCK{if linha.receita_desc.startswith("SUBTOTAL")}
+\hline \hline 
+\multicolumn{5}{@{\hspace{1em}}L{8cm}@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.receita_desc} }} & \multicolumn{1}{r@{\hspace{0.5em}}}{ \textbf{ \VAR{linha.valor_categoria} }} \\
+\BLOCK{else}
+\multicolumn{1}{C{3cm}|}{ \VAR{linha.cod_texto} } & \multicolumn{1}{c|}{ \VAR{linha.fonte_cod} } & \multicolumn{1}{@{\hspace{1em}}L{8cm}@{\hspace{0.5em}}|}{ \VAR{linha.receita_desc} } & \multicolumn{1}{r@{\hspace{0.5em}}|}{ \VAR{linha.valor_desdobramento} } & \multicolumn{1}{r@{\hspace{0.5em}}|}{ \VAR{linha.valor_especie} } & \multicolumn{1}{r@{\hspace{1em}}}{ \VAR{linha.valor_categoria} } \\
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}

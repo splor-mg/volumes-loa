@@ -1,0 +1,143 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+\renewcommand{\contentsname}{Sumário}
+
+\begin{document}
+
+
+% Capa
+\newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+\includepdf[pages={4}]{capaLOA.pdf}
+% \capa
+
+% Títulos
+% Pagina com os titulos
+\restoregeometry
+\newgeometry{top=1cm}
+\begin{titlepage}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=2cm, height=2cm]{brasao_mg}
+\end{center}
+\end{figure}
+\vspace*{-2em}
+\begin{center}
+\large
+Governo do Estado de Minas Gerais \\
+Secretaria de Estado de Planejamento e Gestão \\
+Subsecretaria de Planejamento e Orçamento \\
+Superintendência Central de Planejamento e Orçamento
+
+\vspace*{10em}
+ \fontsize{45pt}{10pt}\selectfont {\textbf{\VAR{etapa_orcamento} \VAR{ano_doc}}}
+
+\vspace*{4em}
+\LARGE{\textbf {ANEXO II}} \\
+
+\LARGE{ORÇAMENTO FISCAL}
+
+\end{center}
+\end{titlepage}
+
+\newpage
+% \Titulos
+
+% Sumario
+\restoregeometry
+\normalsize
+\tableofcontents
+\newpage
+% \Sumario
+
+% Pagina iniciando DEMONSTRATIVO CONSOLIDADO DA DESPESA
+\ifthispageodd{ }{\afterpage{\null\thispagestyle{empty}\newpage}}
+\phantomsection
+\addtocontents{toc}{\cftpagenumbersoff{section}}
+\restoregeometry
+\vspace*{10cm}
+\addcontentsline{toc}{section}{ DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}
+\LARGE \centering \textbf{DEMONSTRATIVOS POR ÓRGÃO E ENTIDADE}
+\afterpage{\null\thispagestyle{empty}\newpage}
+
+% retirado, pois as paginas em branco nao são mais necessárias já que os volumes não são mais impressos.
+\newpage
+
+ \newgeometry{bottom=0cm,top=0cm,left=2cm,right=2cm}
+ \thispagestyle{lscape}
+ \pagestyle{lscape}
+
+ \begin{landscape}
+
+\BLOCK{for uo in uos}
+\BLOCK{if uo.novo_poder}
+\phantomsection
+\addcontentsline{toc}{section}{\underline{ \VAR{uo.poder} }}
+\BLOCK{endif}
+\BLOCK{if uo.novo_orgao}
+\phantomsection
+\addcontentsline{toc}{section}{ \VAR{uo.orgao} }
+\BLOCK{endif}
+\ifthispageodd{ }{\null\thispagestyle{empty}\newpage}
+\phantomsection
+\vspace*{10cm}
+\addcontentsline{toc}{subsection}{ \VAR{uo.uo} }
+\begin{longtable}[c]{m{20cm}}
+ \multicolumn{1}{C{20cm}}{ \LARGE \VAR{uo.nome} }
+ \end{longtable}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\newpage
+\BLOCK{include "tabela1.tex.j2"}
+\newpage
+\BLOCK{if uo.tabela2}
+\BLOCK{include "tabela2.tex.j2"}
+\newpage
+\BLOCK{endif}
+\BLOCK{if uo.funfip}
+\end{landscape}
+\newgeometry{left=3pt, right=3pt, top=1cm}
+\pagestyle{plain}
+\BLOCK{include "funfip.tex.j2"}
+\newpage
+\newgeometry{bottom=0cm, top=0cm, left=2cm, right=2cm}
+\thispagestyle{lscape}
+\pagestyle{lscape}
+\begin{landscape}
+\BLOCK{elif uo.tabela3}
+\BLOCK{include "tabela3.tex.j2"}
+\newpage
+\BLOCK{endif}
+\BLOCK{if uo.tabela4}
+\BLOCK{include "tabela4.tex.j2"}
+\newpage
+\BLOCK{endif}
+\BLOCK{if uo.tabela5}
+\BLOCK{include "tabela5.tex.j2"}
+\newpage
+\BLOCK{endif}
+\BLOCK{endfor}
+
+ \end{landscape}
+ \newpage
+
+ \pagestyle{plain}
+
+ \restoregeometry
+ \ifthispageodd{ }{\null\thispagestyle{empty}\newpage}
+ \addtocontents{toc}{\cftpagenumberson{section}}
+ \phantomsection
+  \vspace*{10cm}
+\addcontentsline{toc}{section}{GRUPOS DE DESPESA, FONTES DE RECURSO, IDENTIFICADORES DE PROCEDÊNCIA E USO E IDENTIFICADORES DE AÇÃO GOVERNAMENTAL}
+\begin{longtable}[c]{m{15cm}}
+\multicolumn{1}{C{15cm}}{ \Large GRUPOS DE DESPESA, FONTES DE RECURSO, IDENTIFICADORES DE PROCEDÊNCIA E USO E IDENTIFICADORES DE AÇÃO GOVERNAMENTAL}
+\end{longtable}
+
+\newpage
+
+\BLOCK{include "anexos.tex.j2"}
+ % Inicio: Contra Capa
+%  \newgeometry{top=0cm, right=0cm, left=-6cm, bottom=0cm}
+% \includepdf[pages={641},scale=1.1]{02_LOA_Volume_II_A.pdf}
+ % Fim: Contra Capa
+
+  \end{document}
