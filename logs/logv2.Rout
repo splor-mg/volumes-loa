@@ -1,20 +1,39 @@
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  3041  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' AGRICULTOR/POSSEIRO
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1271  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' MATRÍCULA/INSCRIÇÃO
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1451  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' PARTICIPAÇÃO/PÚBLICO', ATENDIDO/MUNICÍPIO', VAGA/PARTICIPAÇÃO/PÚBLICO
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1481  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESTUDO/PESQUISA/MONITORAMENTO/AVAL.
-Warning: V2_Tabela1_PROGRAMA_DE_TRABALHO: Codigo UO:  1441  possui um valor de Unidade medida do produto que  uma das palavras tem mais de 13 caracteres. Isso pode gerar uma quebra de layout.   Verificar como ficou o layout no final para o caso de unidade de medida do produto.  Procurar pelas palavras ' ESPECIALIZADA/', DEFENSOR/SERVIDOR/CIDADÃO
-Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: As seguintes UO's não possuem valores em ações da FUNFIP: 4711
-Warning: V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
-
-Warning: V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS: Há um código de receita para a UO  2321 que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 7631.99.0.1.04.000
-7631.99.0.2.04.000
-
-
-processing file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.Rmd
-output file: logs/log_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.md
-
-sh: 1: xdg-open: not found
-Warning: V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
-
+Warning: V2 T1: UO 1271: unidade de medida do produto com palavra de mais de 13 caracteres pode quebrar o layout: MATRÍCULA/INSCRIÇÃO
+Warning: V2 T1: UO 1441: unidade de medida do produto com palavra de mais de 13 caracteres pode quebrar o layout: ESPECIALIZADA/, DEFENSOR/SERVIDOR/CIDADÃO
+Warning: V2 T1: UO 1451: unidade de medida do produto com palavra de mais de 13 caracteres pode quebrar o layout: PARTICIPAÇÃO/PÚBLICO, ATENDIDO/MUNICÍPIO, VAGA/PARTICIPAÇÃO/PÚBLICO
+Warning: V2 T1: UO 1481: unidade de medida do produto com palavra de mais de 13 caracteres pode quebrar o layout: ESTUDO/PESQUISA/MONITORAMENTO/AVAL.
+Warning: V2 T1: UO 3041: unidade de medida do produto com palavra de mais de 13 caracteres pode quebrar o layout: AGRICULTOR/POSSEIRO
+Warning: o banco bancos/manual/FFP_acoes.xlsx possui mais de 1 aba. A aba que será aberta é a Plan1
+Warning: V2 T3 FUNFIP: UOs sem valores nas ações do FUNFIP: ['4711']
+Warning: V2 T3 FUNFIP: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
+Warning: V2 T5: UO 4751: receita disponível (17000000) diferente do total de orcamento_despesa.csv (12000000)
+Warning: V2 T5: UO 2041: receita disponível (15915868) diferente do total de orcamento_despesa.csv (5617398)
+Warning: V2 T5: UO 2071: receita disponível (650577934) diferente do total de orcamento_despesa.csv (625516537)
+Warning: V2 T5: UO 2251: receita disponível (108624645) diferente do total de orcamento_despesa.csv (44600932)
+Warning: V2 T5: UO 4111: receita disponível (726000) diferente do total de orcamento_despesa.csv (3000)
+Warning: V2 T5: UO 2311: despesa da função 10 (65002000) diferente da receita do FES (65003000). A correção será feita mesmo assim
+Warning: V2 T5: UO 2311: fontes vinculadas com despesa maior que a receita: 57
+Warning: V2 T5: UO 4331: receita disponível (5483139) diferente do total de orcamento_despesa.csv (3136918)
+Warning: V2 T5: UO 4381: receita disponível (224215889) diferente do total de orcamento_despesa.csv (198581580)
+Warning: V2 T5: UO 4631: receita de fonte ordinária fora do FES e UO fora do caso especial. Codificar nova solução
+Warning: V2 T5: UO 4631: receita disponível (899600310) diferente do total de orcamento_despesa.csv (898613882)
+Warning: V2 T5: UO 2261: fontes vinculadas com despesa maior que a receita: 57
+Warning: V2 T5: UO 2261: receita disponível (1251480399) diferente do total de orcamento_despesa.csv (674814438)
+Warning: V2 T5: UO 2271: despesa da função 10 (2659579770) diferente da receita do FES (2669971285). A correção será feita mesmo assim
+Warning: V2 T5: UO 2271: fontes vinculadas com despesa maior que a receita: 57
+Warning: V2 T4: UO 2321: código de receita sem descrição em desc_classificacao_receita.xlsx: ['7631.99.0.1.04.000', '7631.99.0.2.04.000']
+Warning: V2 T5: UO 2321: fontes vinculadas com despesa maior que a receita: 57
+Warning: V2 T5: UO 2321: receita disponível (487923369) diferente do total de orcamento_despesa.csv (438583705)
+Warning: V2 T5: UO 4291: despesa da função 10 (12675451905) diferente da receita do FES (35000). A correção será feita mesmo assim
+Warning: V2 T5: UO 4291: receita disponível (13597823913) diferente do total de orcamento_despesa.csv (13531033863)
+Warning: V2 T5: UO 2091: receita disponível (156565347) diferente do total de orcamento_despesa.csv (89190525)
+Warning: V2 T5: UO 2101: receita disponível (404182657) diferente do total de orcamento_despesa.csv (312646337)
+Warning: V2 T5: UO 2241: receita disponível (282224064) diferente do total de orcamento_despesa.csv (269773321)
+Warning: V2 T5: UO 2441: receita disponível (66946075) diferente do total de orcamento_despesa.csv (25516877)
+Warning: V2 T5: UO 4341: nenhuma fonte da receita própria aparece no QDD ajustado. A correção segue como se não houvesse receita
+Warning: V2 T5: UO 4341: receita disponível (43083455) diferente do total de orcamento_despesa.csv (42829904)
+Warning: V2 T5: UO 4101: receita disponível (41571088) diferente do total de orcamento_despesa.csv (19824595)
+Warning: V2 T5: UO 4711: a correção da fonte ordinária com receita própria considera só a fonte 10. Ela será feita mesmo assim, mas pode dar erro
+Warning: V2 T5: UO 4711: receita de fonte ordinária fora do FES e UO fora do caso especial. Codificar nova solução
+Warning: V2 T5: UO 4711: receita disponível (20707995509) diferente do total de orcamento_despesa.csv (20707993509)
+Warning: V2 T5: UO 2211: receita disponível (22934771) diferente do total de orcamento_despesa.csv (19259091)

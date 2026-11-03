@@ -1,3 +1,3 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"perc_total_pessoal"	"perc_categoria_pessoal"	"participacao"	"nome_uo"	"nome_orgao"
-"TOTAL"			" 0"	"20.673.993.509"	"NaN"		"100"	"4.71.1 - FUNDO FINANCEIRO DE PREVIDÊNCIA DO ESTADO DE MINAS GERAIS - FFP - MG"	"1.50.0 - SECRETARIA DE ESTADO DE PLANEJAMENTO E GESTÃO - FFP - MG"
-"PESSOAL ATIVO"				"20.673.993.509"			"100"		
+pessoal_classificacao	pessoal_categoria	pessoal_quantidade	total	vlr_loa_desp	participacao	perc_total_pessoal	perc_categoria_pessoal
+TOTAL	NA		0	20.673.993.509	100		
+PESSOAL ATIVO	NA			20.673.993.509	100		

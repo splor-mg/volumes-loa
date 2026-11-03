@@ -1,6 +1,6 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"perc_total_pessoal"	"perc_categoria_pessoal"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"DIREÇÃO E ASSESSORAMENTO"	"29"	"172"	"28.910.355"	"100"	"16,9"	"100"	"2.24.1 - INSTITUTO MINEIRO DE GESTÃO DAS ÁGUAS - IGAM"	"1.37.0 - SECRETARIA DE ESTADO DE MEIO AMBIENTE E DESENVOLVIMENTO SUSTENTÁVEL - IGAM"
-	"DIREÇÃO SUPERIOR"	" 1"				"0,6"			
-	"ESPECIALIZADA"	"99"				"57,6"			
-	"TÉCNICA"	"43"				"25,0"			
-"TOTAL"			"172"	"28.910.355"	"100"		"100"		
+pessoal_classificacao	pessoal_categoria	pessoal_quantidade	total	vlr_loa_desp	participacao	perc_total_pessoal	perc_categoria_pessoal
+PESSOAL ATIVO	DIREÇÃO E ASSESSORAMENTO	29	172	28.910.355	100	100	16,9
+	DIREÇÃO SUPERIOR	1					0,6
+	ESPECIALIZADA	99					57,6
+	TÉCNICA	43					25
+TOTAL			172	28.910.355	100	100	

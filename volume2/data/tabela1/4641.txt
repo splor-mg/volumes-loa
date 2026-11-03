@@ -1,9 +1,9 @@
-"FUNCAO"	"SUB_FUNCAO"	"PROGRAMA"	"IDENT_PROJATIV"	"PROJ_ATIV"	"SUB_PROJETO"	"MOD"	"IAG"	"FONTE"	"IPU"	"OUTRAS"	"total"	"tipo"	"descricao"	"nome_uo"	"nome_orgao"	"valor_prod"	"unid_med_prod"	"tipo_acao"	"exc_acao"	"PESSOAL"	"JUROS"	"INVESTIMENTOS"	"INVERSOES"	"AMORTIZA"	"valor.9reserva_de_contingencia"
-"  4"											"1.000"	"1"	"ADMINISTRAÇÃO"	"4.64.1 - FUNDO DE GARANTIAS DE PARCERIAS PÚBLICO - PRIVADAS DE MINAS GERAIS - FGP - MG"	"1.30.0 - SECRETARIA DE ESTADO DE INFRAESTRUTURA, MOBILIDADE E PARCERIA - FGP - MG"										
-"  4"	"130"										"1.000"	"1"	"ADMINISTRAÇÃO DE CONCESSÕES"												
-"  4"	"130"	"85"									"1.000"	"1"	"PROMOÇÃO DE CONCESSÕES E PARCERIAS"												
-"  4"	"130"	"85"	" 4"	"432"							"1.000"	"5"	"VIABILIZAR O ADIMPLEMENTO INTEGRAL E TEMPESTIVO DAS OBRIGAÇÕES DE CONSTITUIÇÃO E MANUTENÇÃO DAS GARANTIAS PÚBLICAS PACTUADAS PELO ESTADO NO ÂMBITOS DOS CONTRATOS DE PPP."												
-"  4"	"130"	"85"	" 4"	"432"	" 1"						"1.000"	"1"	"GESTÃO E APRIMORAMENTO DO FUNDO GARANTIDOR DE PPP"												
-"  4"	"130"	"85"	" 4"	"432"	" 1"	"90"	" 0"	"10"	" 1"	"1.000"	"1.000"	"7"													
-"  4"	"130"	"85"	" 4"	"432"	" 1"	"91"	" 0"					"8"	"RELATÓRIO DE ACOMPANHAMENTO ELABORADO"			"12"	"UNIDADE"	"Atividade Fim do Orçamento Fiscal"	"Não"						
-"999"										"1.000"	"1.000"	"9"	"TOTAL"												
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+04										1	ADMINISTRAÇÃO							1.000		
+04	130									1	ADMINISTRAÇÃO DE CONCESSÕES							1.000		
+04	130	085								1	PROMOÇÃO DE CONCESSÕES E PARCERIAS							1.000		
+04	130	085	4	432						5	VIABILIZAR O ADIMPLEMENTO INTEGRAL E TEMPESTIVO DAS OBRIGAÇÕES DE CONSTITUIÇÃO E MANUTENÇÃO DAS GARANTIAS PÚBLICAS PACTUADAS PELO ESTADO NO ÂMBITOS DOS CONTRATOS DE PPP.							1.000		
+04	130	085	4	432	0001					1	GESTÃO E APRIMORAMENTO DO FUNDO GARANTIDOR DE PPP							1.000		
+04	130	085	4	432	0001	90	0	10	1	7				1.000				1.000		
+04	130	085	4	432	0001	91	0			8	RELATÓRIO DE ACOMPANHAMENTO ELABORADO								UNIDADE	12
+										9	TOTAL			1.000				1.000		

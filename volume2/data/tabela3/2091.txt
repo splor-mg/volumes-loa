@@ -1,6 +1,6 @@
-"classificacao"	"categoria"	"quantidade"	"total"	"valor"	"perc_total_pessoal"	"perc_categoria_pessoal"	"participacao"	"nome_uo"	"nome_orgao"
-"PESSOAL ATIVO"	"DIREÇÃO E ASSESSORAMENTO"	"78"	"419"	"56.415.640"	"100"	"18,6"	"100"	"2.09.1 - FUNDAÇÃO ESTADUAL DO MEIO AMBIENTE - FEAM"	"1.37.0 - SECRETARIA DE ESTADO DE MEIO AMBIENTE E DESENVOLVIMENTO SUSTENTÁVEL - FEAM"
-	"DIREÇÃO SUPERIOR"	"  1"				"0,2"			
-	"ESPECIALIZADA"	"286"				"68,3"			
-	"TÉCNICA"	"54"				"12,9"			
-"TOTAL"			"419"	"56.415.640"	"100"		"100"		
+pessoal_classificacao	pessoal_categoria	pessoal_quantidade	total	vlr_loa_desp	participacao	perc_total_pessoal	perc_categoria_pessoal
+PESSOAL ATIVO	DIREÇÃO E ASSESSORAMENTO	78	419	56.415.640	100	100	18,6
+	DIREÇÃO SUPERIOR	1					0,2
+	ESPECIALIZADA	286					68,3
+	TÉCNICA	54					12,9
+TOTAL			419	56.415.640	100	100	
