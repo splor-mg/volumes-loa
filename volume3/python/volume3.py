@@ -5,7 +5,6 @@ Gera os dados do volume 3 em volume3/data a partir de bancos/PPO:
 - tabela1/<uo>.txt a tabela5/<uo>.txt: relatórios por empresa (volume3/python/tabelas.py)
 """
 import sys
-import pandas as pd
 from pathlib import Path
 
 from utils.python.funcoes import escreve_tabela
@@ -32,7 +31,6 @@ qdd['orgao'] = (qdd['orgao_cod'].str.replace(r'(.)(..)(.)', r'\1.\2.\3', regex=T
 # Descrições, finalidade e produto de cada ação
 acoes = trata_planejamento_acao('bancos/PPO/planejamento_acao.csv')
 acoes = acoes.rename(columns={'uo_acao_cod': 'uo_cod'})
-acoes['vlr_meta_fisica_ano0'] = pd.to_numeric(acoes['vlr_meta_fisica_ano0'].str.replace(',', '.'))
 
 colunas = ['uo_cod',
            'acao_cod',
