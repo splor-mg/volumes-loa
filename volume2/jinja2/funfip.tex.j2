@@ -1,0 +1,34 @@
+\renewcommand*{\arraystretch}{1.9}
+\scriptsize
+\noindent\begin{longtable}[c]{m{12cm}m{2.5cm}m{2.5cm}}
+\BLOCK{set cabecalho}
+\multicolumn{3}{c}{\cellcolor{gray!50} \normalsize \textbf{DETALHAMENTO DE PESSOAL INATIVO CIVIL}} \TBstrut   \\[2ex] 
+\specialrule{1.5pt}{2pt}{0pt}
+\multicolumn{3}{l}{\textbf{Exercício:  \VAR{ano_doc} }} \\
+\specialrule{1pt}{0pt}{0pt}
+\multicolumn{3}{l}{\textbf{ÓRGÃO:} \VAR{uo.orgao}} \\
+\multicolumn{3}{l}{\textbf{UO:} \hspace{14pt} \VAR{uo.uo}} \\
+\hline 
+\multicolumn{1}{C{12cm}}{\textbf{ÓRGÃO / ENTIDADE}} &  \multicolumn{1}{c}{\textbf{QUANTIDADE}} &  \multicolumn{1}{c}{\textbf{VALOR}}  \\
+ \hline\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline
+\hline\hline
+\endlastfoot
+\BLOCK{for linha in uo.funfip}
+\BLOCK{if linha.poder}
+\hline 
+\multicolumn{1}{L{12cm}}{ \textbf{ \VAR{linha.poder}}} & \multicolumn{1}{c}{ \textbf{ \VAR{linha.quantidade_poder}}} & \multicolumn{1}{r}{ \textbf{ \VAR{linha.valor_poder}}} \\
+\hline 
+\BLOCK{endif}
+\BLOCK{if linha.poder != "TOTAL" and linha.uo.startswith("ADMIN")}
+\multicolumn{1}{@{ \hspace{2em}}L{12cm}}{ \textbf{ \VAR{linha.uo}}} & \multicolumn{1}{c}{ \textbf{ \VAR{linha.pessoal_quantidade}}} & \multicolumn{1}{r}{ \textbf{ \VAR{linha.vlr_loa_desp}}} \\
+\BLOCK{elif linha.poder != "TOTAL"}
+\multicolumn{1}{@{ \hspace{4em}}L{12cm}}{\VAR{linha.uo}} & \multicolumn{1}{c}{ \VAR{linha.pessoal_quantidade}} & \multicolumn{1}{r}{ \VAR{linha.vlr_loa_desp}} \\
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}

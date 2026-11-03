@@ -1,0 +1,46 @@
+\renewcommand*{\arraystretch}{1.9}
+\scriptsize
+\color{myblack}
+\centering
+\noindent\begin{longtable}[c]{m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}m{1pt}m{5cm}m{2cm}m{1cm}|m{0.1cm}|m{0.3cm}@{\hskip 0.15cm}|m{0.65cm}|m{0.5cm}|m{1.5cm}|m{1.3cm}|m{1.48cm}|m{1.3cm}|m{1.65cm}|m{1.7cm}|m{1.3cm}}
+\BLOCK{set cabecalho}
+\hline
+\multicolumn{20}{c}{\cellcolor{gray!50} \small \textbf{ PROGRAMA DE TRABALHO}}\TBstrut  \\[2ex]
+\specialrule{1.5pt}{0pt}{0pt}
+\multicolumn{2}{l}{\textbf{Exercício:}} & \multicolumn{8}{l}{\textbf{  \VAR{ano_doc} }} & \multicolumn{9}{l}{}  & \multicolumn{1}{r}{\textbf{R\$1,00}} \\
+\hline
+\multicolumn{2}{l}{\textbf{ÓRGÃO:}} & \multicolumn{18}{l}{\VAR{uo.orgao}} \\
+\multicolumn{2}{l}{\textbf{UO:}} & \multicolumn{18}{l}{\VAR{uo.uo}} \\
+\specialrule{1pt}{0pt}{0pt}
+\multicolumn{9}{L{8.2cm}|}{ESPECIFICAÇÃO} & \multicolumn{1}{l|}{MOD} & \multicolumn{1}{c|}{IAG} & \multicolumn{1}{c|}{FONTE} & \multicolumn{1}{c|}{IPU} & \multicolumn{1}{C{1.5cm}|}{1.PESSOAL E ENCARGOS SOCIAIS} & \multicolumn{1}{C{1.3cm}|}{2.JUROS E ENCARGOS DA DÍVIDA} & \multicolumn{1}{C{1.48cm}|}{3.OUTRAS DESPESAS CORRENTES} & \multicolumn{1}{l|}{4.INVESTIMENTOS} & \multicolumn{1}{C{1.65cm}|}{5.INVERSOES FINANCEIRAS} & \multicolumn{1}{C{2.1cm}|}{6.AMORTIZAÇÃO DA DÍVIDA} & \multicolumn{1}{c}{TOTAL} \\
+\hline\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline
+\hline \hline
+\endlastfoot
+\BLOCK{for linha in uo.tabela1}
+\BLOCK{if linha.tipo == "1" and linha.subfuncao_cod == ""}
+\multicolumn{1}{c}{ {\bf  \VAR{linha.funcao_cod} }} & \multicolumn{5}{c}{} & \multicolumn{3}{L{4cm}@{}|}{ \VAR{linha.especificacao} } & & & & & & & & & & & \multicolumn{1}{r}{ \VAR{linha.vlr_loa_desp} } \\
+\BLOCK{elif linha.tipo == "1" and linha.programa_cod == ""}
+\multicolumn{1}{c}{ \VAR{linha.funcao_cod} } & \multicolumn{1}{c}{ {\bf  \VAR{linha.subfuncao_cod} }} & \multicolumn{4}{c}{} & \multicolumn{3}{L{4cm}@{}|}{ \VAR{linha.especificacao} } & & & & & & & & & & & \multicolumn{1}{r}{ \VAR{linha.vlr_loa_desp} } \\
+\BLOCK{elif linha.tipo == "1" and linha.identificador_cod == ""}
+\multicolumn{1}{c}{ \VAR{linha.funcao_cod} } & \multicolumn{1}{c}{ \VAR{linha.subfuncao_cod} } & \multicolumn{1}{c}{ {\bf  \VAR{linha.programa_cod} }} & \multicolumn{3}{c}{} & \multicolumn{3}{L{4cm}@{}|}{ \VAR{linha.especificacao} } & & & & & & & & & & & \multicolumn{1}{r}{ \VAR{linha.vlr_loa_desp} } \\
+\BLOCK{elif linha.tipo == "1"}
+\multicolumn{1}{c}{{\bf  \VAR{linha.funcao_cod} }} & \multicolumn{1}{c}{{\bf  \VAR{linha.subfuncao_cod} }} & \multicolumn{1}{c}{{\bf  \VAR{linha.programa_cod} }} & \multicolumn{1}{c}{{\bf  \VAR{linha.identificador_cod} }} & \multicolumn{1}{c}{{\bf  \VAR{linha.projeto_atividade_cod} }} & \multicolumn{1}{c}{{\bf  \VAR{linha.subprojeto_cod} }} & \multicolumn{3}{L{4cm}@{}|}{{\bf \VAR{linha.especificacao} }} & & & & & & & & & & & \multicolumn{1}{r}{{\bf  \VAR{linha.vlr_loa_desp} }} \\
+\BLOCK{elif linha.tipo == "7"}
+\multicolumn{9}{l|}{} & \multicolumn{1}{c|}{ \VAR{linha.modalidade_cod} } &\multicolumn{1}{c|}{ \VAR{linha.iag_cod} } & \multicolumn{1}{c|}{ \VAR{linha.fonte_cod} } & \multicolumn{1}{c|}{ \VAR{linha.ipu_cod} } & \multicolumn{1}{r|}{ \VAR{linha.pessoal} } & \multicolumn{1}{r|}{ \VAR{linha.juros} } & \multicolumn{1}{r|}{ \VAR{linha.outras} } & \multicolumn{1}{r|}{ \VAR{linha.investimentos} } & \multicolumn{1}{r|}{ \VAR{linha.inversoes} } & \multicolumn{1}{r|}{ \VAR{linha.amortizacao} } & \multicolumn{1}{r}{ \VAR{linha.vlr_loa_desp} } \\
+\BLOCK{elif linha.tipo == "5"}
+\multicolumn{9}{L{8cm}|}{\underline{Finalidade}} & & & & & & & & & & & \\
+\multicolumn{9}{L{8cm}|}{\fontsize{6pt}{8pt}\selectfont \textit{\VAR{linha.especificacao}}} & & & & & & & & & & & \\
+\BLOCK{elif linha.tipo == "8"}
+\multicolumn{6}{L{1cm}}{\underline{Produto}} &  \multicolumn{2}{C{2.2cm}}{\underline{Unidade de Medida}} & \multicolumn{1}{R{1.6cm}|}{\underline{Meta Física}} & & & & & & & & & & & \\
+\multicolumn{6}{L{3cm}}{ \fontsize{6pt}{8pt}\selectfont \VAR{linha.especificacao|replace("/", "/\\allowbreak{}")}} & \multicolumn{2}{C{2cm}}{\fontsize{6pt}{8pt}\selectfont \VAR{linha.unidade_medida_desc|replace("/", "/\\allowbreak{}")}} & \multicolumn{1}{R{1.5cm}|}{\fontsize{6pt}{8pt}\selectfont \VAR{linha.vlr_meta_fisica_ano0}} & & & & & & & & & & & \\
+\BLOCK{else}
+\hline \hline\multicolumn{13}{l|}{\textbf{ \VAR{linha.especificacao}}} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.pessoal}}} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.juros}}} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.outras}}} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.investimentos}}} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.inversoes}}} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.amortizacao}}} & \multicolumn{1}{c}{ \textbf{ \VAR{linha.vlr_loa_desp}}} \\
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}

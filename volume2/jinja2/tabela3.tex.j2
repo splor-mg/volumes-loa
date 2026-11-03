@@ -1,0 +1,32 @@
+\small
+\noindent\begin{longtable}[c]{m{7cm}|m{2.5cm}|m{2.5cm}|m{2.5cm}|m{3.5cm}}
+\BLOCK{set cabecalho}
+\multicolumn{5}{c}{\cellcolor{gray!50} \normalsize \textbf{ DETALHAMENTO DA CATEGORIA DE PESSOAL}} \TBstrut   \\[2ex] 
+\specialrule{1.5pt}{2pt}{0pt}
+\multicolumn{5}{l}{\textbf{Exercício:  \VAR{ano_doc} }} \\
+\specialrule{1pt}{0pt}{0pt}
+\multicolumn{5}{L{16cm}}{\textbf{ÓRGÃO:} \VAR{uo.orgao}} \\
+\multicolumn{5}{L{16cm}}{\textbf{UO:} \hspace{17pt} \VAR{uo.uo}} \\
+\hline 
+\multicolumn{1}{C{7cm}|}{\textbf{ESPECIFICAÇÃO}} &  \multicolumn{1}{c|}{\textbf{QUANTIDADE}} &  \multicolumn{1}{c|}{\textbf{VALOR}} & \multicolumn{1}{C{2.5cm}|}{\textbf{\% DO TOTAL DE PESSOAL}} & \multicolumn{1}{C{3.5cm}}{\textbf{\% DE PARTICIPAÇÃO ORÇAMENTÁRIA}} \\
+ \hline\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline
+\hline\hline
+\endlastfoot
+\BLOCK{for linha in uo.tabela3}
+\BLOCK{if linha.pessoal_classificacao == "TOTAL"}
+\hline \hline 
+\BLOCK{endif}
+\BLOCK{if linha.pessoal_classificacao}
+\multicolumn{1}{L{7cm}|}{ \textbf{\VAR{linha.pessoal_classificacao}}} & \multicolumn{1}{r|}{ \textbf{\VAR{linha.total}}} & \multicolumn{1}{r|}{ \textbf{\VAR{linha.vlr_loa_desp}}} & \multicolumn{1}{r|}{ \textbf{\BLOCK{if linha.perc_total_pessoal}\VAR{linha.perc_total_pessoal}\%\BLOCK{endif}}} & \multicolumn{1}{r}{ \textbf{\BLOCK{if linha.participacao}\VAR{linha.participacao}\%\BLOCK{endif}}} \\
+\BLOCK{endif}
+\BLOCK{if linha.pessoal_classificacao != "TOTAL"}
+\multicolumn{1}{L{7cm}|}{ \hspace{3em} \VAR{linha.pessoal_categoria}} & \multicolumn{1}{r|}{ \VAR{linha.pessoal_quantidade}} &  & \multicolumn{1}{r|}{ \BLOCK{if linha.perc_categoria_pessoal}\VAR{linha.perc_categoria_pessoal}\%\BLOCK{endif}} & \\
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}
