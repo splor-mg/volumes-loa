@@ -42,7 +42,7 @@ REPORTS = [
         Report('T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS', 'volume1'),
         Report('T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO', 'volume1'),
         Report('T40_DEMONSTRATIVO_DESPESAS_OBRIGATORIAS', 'volume1'),
-        Report('Projeto_volume2', 'volume2'),
+        Report('volume2', 'volume2'),
         Report('volume3', 'volume3'),
         Report('volume4', 'volume4'),
         Report('volume5', 'volume5'),

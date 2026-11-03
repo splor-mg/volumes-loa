@@ -3,7 +3,7 @@
 if [ $# -ne 1 ]; then
   echo 1>&2 "$0: please pass one argument naming the document to test"
   exit 2
-elif [ $1 == "Projeto_volume2" ]
+elif [ $1 == "volume2" ]
 then vol="volume2"
 elif [ $1 == "volume3" ]
 then vol="volume3"

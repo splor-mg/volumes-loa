@@ -24,7 +24,7 @@ v1_prodemge: $(DEP_PRODEMGE_PDF_V1) pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUN
 
 v1_dcgf: $(DEP_DCGF_PDF_V1) volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.txt ## Gera tabelas do volume 1 de responsabilidade da DCGF
 
-v2: pdf/Projeto_volume2.pdf ## Gera volume 2
+v2: pdf/volume2.pdf ## Gera volume 2
 
 v3: pdf/volume3.pdf ## Gera volume 3
 
@@ -148,37 +148,14 @@ volume3/data/*.txt: volume3/python/*.py utils/python/*.py bancos/PPO/orcamento_d
 
 
 # Volume 2
-pdf/Projeto_volume2.pdf: $(DEPENDENCIAS_V2)
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R 2 2> logs/warningsV2.Rout
+pdf/volume2.pdf: $(DEPENDENCIAS_V2)
+	@python3 -m volume2.jinja2.volume2 2> logs/warningsV2.Rout
 	@echo "---------------------------------------------------------------"
 
-volume2/data/sumario.txt: volume2/R/sumario.R bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos/manual/codigosPoder.xlsx
-	@echo "Atualizando volume2/data/sumario.txt..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv2.Rout
+volume2/data/*.txt: volume2/python/*.py utils/python/*.py bancos/PPO/orcamento_despesa.csv bancos/PPO/planejamento_acao.csv bancos/PPO/orcamento_pessoal.csv bancos/PPO/orcamento_receita.csv bancos/PPO/orcamento_repasse.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_fontes_de_recursos.xlsx bancos/manual/desc_classificacao_receita.xlsx bancos/manual/Nome_UO_antigas.xlsx bancos/manual/FFP_acoes.xlsx
+	@echo "Atualizando volume2/data/ sumario.txt e tabela1/*.txt a tabela5/*.txt..."
+	@python3 -m volume2.python.volume2 2> logs/logv2.Rout
 
-volume2/data/tabela1/*.txt: volume2/R/V2_Tabela1_PROGRAMA_DE_TRABALHO.R bancos/SISOR/BASE_QDD_FISCAL.xlsx $(acoes_planejamento) bancos/manual/desc_grupos_de_despesa.xlsx
-	@echo "Atualizando volume2/data/tabela1/*.txt..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv2.Rout
-
-volume2/data/tabela2/*.txt: volume2/R/V2_Tabela2_FONTE_RECURSOS_GRUPOS_DESPESA_FISCAL.R bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_fontes_de_recursos.xlsx bancos/manual/desc_IAG.xlsx bancos/manual/desc_IPU.xlsx
-	@echo "Atualizando volume2/data/tabela2/*.txt..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv2.Rout
-
-volume2/data/tabela3/*.txt: volume2/R/V2_Tabela3_DETALHAMENTO_DA_CATEGORIA_DE_PESSOAL.R bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos/SISOR/BASE_CATEGORIA_PESSOAL.xlsx
-	@echo "Atualizando volume2/data/tabela3/*.txt..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv2.Rout
-
-volume2/data/tabela3/4461.csv: volume2/R/V2_Tabela3_FUNFIP_DETALHAMENTO_DE_PESSOAL_INATIVO_CIVIL.R bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos/SISOR/BASE_CATEGORIA_PESSOAL.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/Nome_UO_antigas.xlsx bancos/manual/FFP_acoes.xlsx
-	@echo "Atualizando Pessoal FUNFIP volume2/data/tabela3/4461.csv..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv2.Rout
-
-volume2/data/tabela4/*.txt: volume2/R/V2_Tabela4_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx volume2/data/sumario.txt bancos/SISOR/BASE_REPASSE_RECURSOS.xlsx bancos/manual/desc_classificacao_receita.xlsx
-	@echo "Atualizando volume2/data/tabela4/*.txt..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv2.Rout
-
-volume2/data/tabela5/*.txt: volume2/R/V2_Tabela5_DEMONSTRATIVO_DOS_RECURSOS_FINANCEIROS.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx volume2/data/sumario.txt bancos/SISOR/BASE_REPASSE_RECURSOS.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx volume2/R/lib/*.R
-	@echo "Atualizando volume2/data/tabela5/*.txt..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv2.Rout
 
 # Volume 1
 $(DEP_PRODEMGE_PDF_V1): pdf/%.pdf: volume1/Rnw/%.Rnw volume1/data/%.txt
