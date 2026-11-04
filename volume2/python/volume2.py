@@ -7,7 +7,7 @@ import sys
 import pandas as pd
 from pathlib import Path
 
-from utils.python.formata_texto import CARACTERES_ESPECIAIS
+from utils.python.formata_texto import corrige_caracteres_especiais
 from utils.python.funcoes import escreve_tabela
 from utils.python.trata_bancos import (le_planilha, trata_orcamento_despesa, trata_orcamento_pessoal,
                                        trata_orcamento_receita, trata_orcamento_repasse, trata_planejamento_acao)
@@ -51,12 +51,11 @@ if len(sem_nivel):
 
 receita = trata_orcamento_receita('bancos/PPO/orcamento_receita.csv')
 
-classificacao = pd.read_excel('bancos/manual/desc_classificacao_receita.xlsx').dropna(subset='RECEITA_COD_2')
+classificacao = le_planilha('bancos/manual/desc_classificacao_receita.xlsx').dropna(subset='RECEITA_COD_2')
 classificacao = pd.DataFrame({
     'cod_texto': classificacao['RECEITA_COD_2'].astype('int64').astype(str).str.replace(
         r'(.{4})(..)(.)(.)(..)(...)', r'\1.\2.\3.\4.\5.\6', regex=True),
-    'receita_desc': classificacao['RECEITA_DESC_2'].str.upper().str.translate(
-        CARACTERES_ESPECIAIS | {ord('\xa0'): '\xa0'}),
+    'receita_desc': corrige_caracteres_especiais(classificacao['RECEITA_DESC_2']),
 })
 
 repasse = trata_orcamento_repasse('bancos/PPO/orcamento_repasse.csv')
