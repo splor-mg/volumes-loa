@@ -1,3 +1,3 @@
 pessoal_classificacao	pessoal_categoria	pessoal_quantidade	total	vlr_loa_desp	participacao	perc_total_pessoal	perc_categoria_pessoal
-TOTAL	NA		0	20.673.993.509	100		
-PESSOAL ATIVO	NA			20.673.993.509	100		
+TOTAL			0	20.673.993.509	100		
+PESSOAL ATIVO				20.673.993.509	100		

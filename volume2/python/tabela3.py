@@ -18,12 +18,13 @@ ACOES_DESCONSIDERAR_FUNFIP = [7008, 7016, 7023]
 
 
 def gera_tabela3(pessoal, despesa, com_inativos, caminho):
-    aviso = f'Warning: V2 T3: UO {pessoal["uo_cod"].iloc[0]}: '
+    uo_cod = pessoal['uo_cod'].iloc[0]
+    aviso = f'Warning: V2 T3: UO {uo_cod}: '
 
     # Os inativos das UOs sem ação de inativos entram na tabela do FUNFIP
     if not com_inativos:
         pessoal = pessoal[~pessoal['pessoal_classificacao'].str.contains('INATIVO')]
-    elif pessoal['uo_cod'].iloc[0] in UOS_MILITARES:
+    elif uo_cod in UOS_MILITARES:
         pessoal = pessoal[pessoal['pessoal_categoria'] != 'INATIVO CIVIL']
 
     classificacao = pessoal.groupby(['pessoal_classificacao', 'nivel'], as_index=False)['pessoal_quantidade']
@@ -40,6 +41,10 @@ def gera_tabela3(pessoal, despesa, com_inativos, caminho):
         print(aviso + f'{"há" if inativos else "não há"} servidores inativos, mas '
               f'{"não há" if inativos else "há"} valores nas ações 7006 e 7007', file=sys.stderr)
     valor = {'PESSOAL ATIVO': despesa.loc[~acao_inativos, 'vlr_loa_desp'].sum()}
+    sem_ativos = classificacao['pessoal_classificacao'].str.contains('INATIVO').all()
+    if valor['PESSOAL ATIVO'] and sem_ativos and uo_cod != FUNFIP:
+        print(aviso + 'há valores para pessoal ativo, mas não há servidores ativos em '
+              'orcamento_pessoal.csv', file=sys.stderr)
     if acao_inativos.any() and inativos:
         valor['PESSOAL INATIVO'] = despesa.loc[acao_inativos, 'vlr_loa_desp'].sum()
     valor = pd.DataFrame({'pessoal_classificacao': list(valor), 'vlr_loa_desp': list(valor.values())})
@@ -56,8 +61,6 @@ def gera_tabela3(pessoal, despesa, com_inativos, caminho):
     repete = tabela['pessoal_classificacao'] == tabela['pessoal_classificacao'].shift()
     tabela[colunas] = tabela[colunas].mask(repete, axis=0)
 
-    if categoria.ngroups == 0:
-        tabela['pessoal_categoria'] = 'NA'
     if despesa.empty:
         print(aviso + 'sem nome da UO e do órgão em orcamento_despesa.csv', file=sys.stderr)
 
