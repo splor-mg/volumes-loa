@@ -48,6 +48,7 @@ def ajusta_despesa(despesa, repasse):
               f'({linha["vlr_loa_desp"]:.0f}) e orcamento_repasse.csv ({linha["vlr_repasse"]:.0f}). '
               'O ajuste será feito do mesmo jeito.', file=sys.stderr)
     excluir = ajustado.set_index(chave_funfip).index.isin(beneficiadas.set_index(chave_funfip).index)
+    deduzidas = ajustado[excluir | (ajustado['ipu_cod'] == 2)]
     ajustado = ajustado[~excluir]
 
     deduzido = despesa.loc[despesa['fonte_cod'].isin([42, 43])
@@ -56,7 +57,17 @@ def ajusta_despesa(despesa, repasse):
     deduzido += ajustado.loc[ajustado['ipu_cod'] == 2, 'vlr_loa_desp'].sum()
     if deduzido != financiadora['vlr_loa_desp'].sum():
         print(aviso + f'valor deduzido das UOs beneficiadas ({deduzido:.0f}) diferente do valor somado às '
-              f'UOs financiadoras ({financiadora["vlr_loa_desp"].sum():.0f})', file=sys.stderr)
+              f'UOs financiadoras ({financiadora["vlr_loa_desp"].sum():.0f}). '
+              'Ver logs/erro_qdd_ajustado.csv', file=sys.stderr)
+        # Valor deduzido e valor recebido das financiadoras por UO beneficiada
+        chave_erro = ['uo_cod', 'categoria_cod', 'grupo_cod', 'fonte_cod', 'ipu_cod', 'iag_cod']
+        deduzidas = deduzidas.groupby(chave_erro)['vlr_loa_desp'].sum().rename('vlr_beneficiada')
+        recebidas = repasse[(repasse['ipu_cod'] == 2) | funfip].rename(columns={'uo_beneficiada_cod': 'uo_cod'})
+        recebidas = recebidas.groupby(chave_erro).agg(vlr_financiadora=('vlr_repasse', 'sum'),
+                                                      uos_financiadoras=('uo_financiadora_cod', '\n'.join))
+        erro = pd.concat([deduzidas, recebidas], axis=1).sort_index().fillna(0).reset_index()
+        erro['diferenca'] = erro['vlr_beneficiada'] - erro['vlr_financiadora']
+        erro.to_csv('logs/erro_qdd_ajustado.csv', sep=';', decimal=',', index=False)
 
     financiadora = financiadora.rename(columns={'uo_financiadora_cod': 'uo_cod'})
     ajustado = pd.concat([ajustado[ajustado['ipu_cod'] != 2], financiadora])
