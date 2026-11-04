@@ -43,6 +43,9 @@ def renderiza(pasta, nome, **contexto):
 
 
 def compila(pasta, aux_files, nome):
+    for extensao in ('aux', 'toc', 'out'):
+        (aux_files / f'{nome}.{extensao}').unlink(missing_ok=True)
+
     ambiente = os.environ | {'TEXINPUTS': f'{pasta}:capas:'}
     comando = [
         'pdflatex',
