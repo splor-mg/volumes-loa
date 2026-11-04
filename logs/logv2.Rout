@@ -3,6 +3,7 @@ Warning: V2 T1: UO 1441: unidade de medida do produto com palavra de mais de 13 
 Warning: V2 T1: UO 1451: unidade de medida do produto com palavra de mais de 13 caracteres pode quebrar o layout: PARTICIPAÇÃO/PÚBLICO, ATENDIDO/MUNICÍPIO, VAGA/PARTICIPAÇÃO/PÚBLICO
 Warning: V2 T1: UO 1481: unidade de medida do produto com palavra de mais de 13 caracteres pode quebrar o layout: ESTUDO/PESQUISA/MONITORAMENTO/AVAL.
 Warning: V2 T1: UO 3041: unidade de medida do produto com palavra de mais de 13 caracteres pode quebrar o layout: AGRICULTOR/POSSEIRO
+Warning: V2 T3: UO 2351: há valores para pessoal ativo, mas não há servidores ativos em orcamento_pessoal.csv
 Warning: o banco bancos/manual/FFP_acoes.xlsx possui mais de 1 aba. A aba que será aberta é a Plan1
 Warning: V2 T3 FUNFIP: UOs sem valores nas ações do FUNFIP: ['4711']
 Warning: V2 T3 FUNFIP: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
