@@ -78,5 +78,5 @@ demonstr[, cod:=as.character(cod)]
 demonstr = demonstr[,lapply(.SD, formatarNum)]
 demonstr[, espec:=correcaoCaracteresEspeciais(espec, caracteres)]
 
-write.table(demonstr, "volume1/data/T19_DCGF_Demonstrativo_Aplicacao_Recursos_Amparo_Fomento_Pesquisa.txt", 
+write.table(demonstr, "volume1/data/tabela19.txt", 
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)

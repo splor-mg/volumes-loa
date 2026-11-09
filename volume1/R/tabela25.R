@@ -89,7 +89,7 @@ if(total_despesa!=total_receita){
 demonst1[, espec := correcaoCaracteresEspeciais(espec, caracteres)]
 demonst1 = demonst1[, lapply(.SD, formatarNum)]
 
-write.table(demonst1, "volume1/data/T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB.txt", 
+write.table(demonst1, "volume1/data/tabela25a.txt", 
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
 
 
@@ -113,6 +113,6 @@ demonst2 = rbind(data.table(cod=NA, espec = "DESPESA COM PESSOAL", valor = forma
 
 demonst2[, espec := correcaoCaracteresEspeciais(espec, caracteres)]
 
-write.table(demonst2, "volume1/data/T25_DCGF_PT2_PESSOAL_MAGISTERIO_RELATIVO_RECEITA_FUNDEB.txt", 
+write.table(demonst2, "volume1/data/tabela25b.txt", 
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
 

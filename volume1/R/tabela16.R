@@ -127,6 +127,6 @@ setcolorder(demonstr, c("cod", "nvl", "espec", "VL_LOA"))
 
 demonstr[, espec := correcaoCaracteresEspeciais(espec, caracteres)]
 
-write.table(demonstr, "volume1/data/T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino.txt", 
+write.table(demonstr, "volume1/data/tabela16.txt", 
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
 

@@ -140,5 +140,5 @@ demonstr = rbindlist(list(parteA,
 demonstr = demonstr[,lapply(.SD, formatarNum)]
 demonstr[, espec := correcaoCaracteresEspeciais(espec, caracteres)]
 
-write.table(demonstr, "volume1/data/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.txt",
+write.table(demonstr, "volume1/data/tabela20a.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)

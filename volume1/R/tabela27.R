@@ -65,5 +65,5 @@ final = rbind(final, data.table(tipo = NA, espec = "TOTAL", valor=sum(total_pode
 final = final[,lapply(.SD, formatarNum)]
 final[, espec := correcaoCaracteresEspeciais(espec, caracteres)]
 
-write.table(final, "volume1/data/T27_DCGF_Demonst_Despesas_UGEPREVI.txt", quote = F, 
+write.table(final, "volume1/data/tabela27.txt", quote = F, 
             sep = "\t", na = "", dec = ",", row.names = FALSE)

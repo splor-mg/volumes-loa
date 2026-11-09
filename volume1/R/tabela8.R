@@ -38,6 +38,6 @@ rcl = rcl[,lapply(.SD, formatarNum)]
 rcl[, espec := correcaoCaracteresEspeciais(espec, caracteres, is_maiscula = F)]
 rcl[, nvl := as.numeric(nvl)]
 
-write.table(rcl, "volume1/data/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.txt", 
+write.table(rcl, "volume1/data/tabela8.txt", 
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
 
