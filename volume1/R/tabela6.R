@@ -105,6 +105,6 @@ setcolorder(painel_rec, novos_nomes)
 painel_rec[, RECEITA_DESC:=correcaoCaracteresEspeciais(RECEITA_DESC, caracteres)]
 painel_rec = painel_rec[, lapply(.SD, formatarNum)]
 
-write.table(painel_rec, "volume1/data/T6_DCGF_Demonstrativo_Evolucao_Receita_por_Categoria_Economica.txt", 
+write.table(painel_rec, "volume1/data/tabela6.txt", 
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
 

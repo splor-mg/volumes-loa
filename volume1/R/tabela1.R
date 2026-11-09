@@ -291,5 +291,5 @@ setnames(demonstr,
                  "DESPESA ORÇAMENTÁRIA", "ORDINÁRIA", "% PART", "VINCULADA",
                  "% PART", "TOTAL", "% PART"))
 
-write.table(demonstr, "volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.txt",
+write.table(demonstr, "volume1/data/tabela1.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)

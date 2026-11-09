@@ -6,7 +6,7 @@ suppressMessages(require(relatorios))
 
 source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
-source("volume1/R/T28_DCGF_Demonstrativo_programas_financiados_com_recursos_provenientes_Uniao.R")
+source("volume1/R/tabela28_comum.R")
 
 loa_desp = execucao::loa_desp[ANO==ano_exercicio,]
 desp_real = data.table(read_excel("bancos/SISOR/exec_desp_realizada.xlsx", sheet=1))
@@ -47,5 +47,5 @@ indice_vl = which(grepl("VL.+", names(despesa)))
 despesa = despesa[, (indice_vl) := lapply(.SD, formatarNum), .SDcols=indice_vl]
 despesa[, PROGRAMA_DESC := correcaoCaracteresEspeciais(PROGRAMA_DESC, caracteres)]
 
-write.table(despesa, "volume1/data/T28_DCGF_PT2_Despesa_prevista_e_realizada.txt", 
+write.table(despesa, "volume1/data/tabela28b.txt", 
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE, fileEncoding = "UTF-8")

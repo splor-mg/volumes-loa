@@ -5,7 +5,7 @@ suppressMessages(require(relatorios))
 
 source("utils/funcoes.R", encoding = "UTF-8")
 source("utils/formataTexto.R", encoding = "UTF-8")
-source("volume1/R/T28_DCGF_Demonstrativo_programas_financiados_com_recursos_provenientes_Uniao.R")
+source("volume1/R/tabela28_comum.R")
 
 # ====================================================================================
 # Receita prevista e realizada no exercício vigente
@@ -40,6 +40,6 @@ receita[, RECEITA_DESC := correcaoCaracteresEspeciais(RECEITA_DESC, caracteres)]
 receita[, c("ANO", "MES", "FONTE_EXEC") := NA_character_]
 receita[1,c("ANO", "MES", "FONTE_EXEC") := list(as.character(ano_exercicio), mes_executado, FONTES_CONSIDERADAS)]
 
-write.table(receita, "volume1/data/T28_DCGF_PT1_Receita_prevista_e_realizada.txt",
+write.table(receita, "volume1/data/tabela28a.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
 

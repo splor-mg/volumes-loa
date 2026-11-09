@@ -66,6 +66,6 @@ demonstrativo[, espec := correcaoCaracteresEspeciais(espec, caracteres)]
 demonstrativo[, VL_LOA := negativoContabil(formatarNum(VL_LOA))]
 
 write.table(demonstrativo, 
-            "volume1/data/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.txt",
+            "volume1/data/tabela38.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
 

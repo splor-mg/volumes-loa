@@ -67,6 +67,6 @@ setcolorder(evol, novos_nomes)
 evol[, espec:=correcaoCaracteresEspeciais(espec, caracteres)]
 evol = evol[,lapply(.SD, formatarNum)]
 
-write.table(evol, "volume1/data/T12_DCGF_Demonstrativo_Evolucao_Despesa_Categoria_Economica.txt",
+write.table(evol, "volume1/data/tabela12.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
 
