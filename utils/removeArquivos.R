@@ -38,7 +38,7 @@ if(args[1] %in% c("2","3","4","5","6", "7")){
   removeArquivos(args[1])
   
 } else if(args[1]=="1"){
-  arquivos = dir("volume1/data")[grepl("^T.+\\.(txt|csv)$", dir("volume1/data"))]
+  arquivos = dir("volume1/data")[grepl("^(T|tabela).+\\.(txt|csv)$", dir("volume1/data"))]
   del = lapply(arquivos, function(x) del_arquivos(x, "volume1/data"))
   
 }else{

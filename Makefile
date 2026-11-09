@@ -1,4 +1,4 @@
-.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker v1_dcgf v1_prodemge validate check diff rm-all reset
+.PHONY: help volumes v1 v2 v3 v4 v5 v6 clean format rm docker validate check diff rm-all reset
 
 include config.mk
 
@@ -18,11 +18,7 @@ snapshot: ## Cria snapshot dos volumes gerados para conferência posterior via p
 
 volumes: v7 v6 v5 v4 v3 v2 v1 ## Gera todos os volumes
 
-v1: v1_prodemge v1_dcgf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE e DCGF
-
-v1_prodemge: $(DEP_PRODEMGE_PDF_V1) pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.pdf pdf/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.pdf pdf/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.pdf pdf/T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO.pdf ## Gera tabelas do volume 1 de responsabilidade da PRODEMGE
-
-v1_dcgf: $(DEP_DCGF_PDF_V1) volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.txt ## Gera tabelas do volume 1 de responsabilidade da DCGF
+v1: $(PDF_R_V1) $(PDF_PYTHON_V1) pdf/tabela3.pdf pdf/tabela25.pdf pdf/tabela31.pdf pdf/tabela32.pdf pdf/tabela33.pdf ## Gera as tabelas do volume 1
 
 v2: pdf/volume2.pdf ## Gera volume 2
 
@@ -158,75 +154,71 @@ volume2/data/*.txt: volume2/python/*.py utils/python/*.py bancos/PPO/orcamento_d
 
 
 # Volume 1
-$(DEP_PRODEMGE_PDF_V1): pdf/%.pdf: volume1/Rnw/%.Rnw volume1/data/%.txt
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R $*
+$(PDF_PYTHON_V1) $(PDF_R_V1): pdf/%.pdf: volume1/jinja2/%.tex.j2 volume1/data/%.txt $(DEPENDENCIAS_V1)
+	@python3 -m volume1.jinja2.volume1 $* 2>> logs/warningsV1.Rout
 	@echo "---------------------------------------------------------------"
 
-pdf/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.pdf: volume3/data/consolidado/t3_investimentos_projeto_atividade.txt volume1/Rnw/T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES.Rnw
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES
+pdf/tabela3.pdf: volume1/data/tabela3a.txt volume1/data/tabela3b.txt volume1/jinja2/tabela3.tex.j2 $(DEPENDENCIAS_V1)
+	@python3 -m volume1.jinja2.volume1 tabela3 2>> logs/warningsV1.Rout
 	@echo "---------------------------------------------------------------"
 
-pdf/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.pdf: volume3/data/consolidado/t1_investimentos_empresa.txt volume1/Rnw/T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO.Rnw
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO
+pdf/tabela25.pdf: volume1/data/tabela25a.txt volume1/data/tabela25b.txt volume1/jinja2/tabela25.tex.j2 $(DEPENDENCIAS_V1)
+	@python3 -m volume1.jinja2.volume1 tabela25 2>> logs/warningsV1.Rout
 	@echo "---------------------------------------------------------------"
 
-pdf/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.pdf: volume3/data/consolidado/t2_investimentos_empresa_detalhamento.txt volume1/Rnw/T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS.Rnw
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS
+pdf/tabela31.pdf: volume3/data/consolidado/t3_investimentos_projeto_atividade.txt volume1/jinja2/tabela31.tex.j2 $(DEPENDENCIAS_V1)
+	@python3 -m volume1.jinja2.volume1 tabela31 2>> logs/warningsV1.Rout
 	@echo "---------------------------------------------------------------"
 
-$(DEP_DCGF_PDF_V1): pdf/%.pdf: volume1/Rnw/%.Rnw volume1/data/%.txt bancos/manual/desc_base_legal_demonstrativos.xlsx
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R $*
+pdf/tabela32.pdf: volume3/data/consolidado/t1_investimentos_empresa.txt volume1/jinja2/tabela32.tex.j2 $(DEPENDENCIAS_V1)
+	@python3 -m volume1.jinja2.volume1 tabela32 2>> logs/warningsV1.Rout
 	@echo "---------------------------------------------------------------"
 
-$(DEP_QDD_FISCAL_TXT_V1): volume1/data/%.txt: volume1/R/%.R bancos/SISOR/BASE_QDD_FISCAL.xlsx volume2/data/sumario.txt bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_funcao.xlsx bancos/manual/desc_subfuncao.xlsx
+pdf/tabela33.pdf: volume3/data/consolidado/t2_investimentos_empresa_detalhamento.txt volume1/jinja2/tabela33.tex.j2 $(DEPENDENCIAS_V1)
+	@python3 -m volume1.jinja2.volume1 tabela33 2>> logs/warningsV1.Rout
+	@echo "---------------------------------------------------------------"
+
+$(subst volume1/data/,volume1/%/,$(TXT_PYTHON_V1)): volume1/python/*.py utils/python/*.py bancos/PPO/orcamento_despesa.csv bancos/PPO/orcamento_despesa_investimento.csv bancos/PPO/orcamento_pessoal.csv bancos/PPO/orcamento_receita.csv bancos/PPO/planejamento_acao.csv bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_funcao.xlsx bancos/manual/desc_subfuncao.xlsx bancos/manual/desc_classificacao_receita.xlsx bancos/manual/memoria_calculo.xlsx utils/volume1/indice_crianca_adolescente.txt volume2/data/sumario.txt
+	@echo "Atualizando volume1/data/ tabelas em Python..."
+	@python3 -m volume1.python.volume1 2>> logs/logv1.Rout
+
+$(TXT_QDD_V1): volume1/data/%.txt: volume1/R/%.R bancos/SISOR/BASE_QDD_FISCAL.xlsx volume2/data/sumario.txt bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_funcao.xlsx bancos/manual/desc_subfuncao.xlsx
 	@echo "Atualizando volume1/data/$*.txt..."
 	@Rscript $(VERBOSE) volume1/R/$*.R 2>> logs/logv1.Rout
 
-$(DEP_RECEITA_TXT_V1): volume1/data/%.txt: volume1/R/%.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/manual/desc_classificacao_receita.xlsx
+$(TXT_RECEITA_V1): volume1/data/%.txt: volume1/R/%.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/manual/desc_classificacao_receita.xlsx
 	@echo "Atualizando volume1/data/$*.txt..."
 	@Rscript $(VERBOSE) volume1/R/$*.R 2>> logs/logv1.Rout
 
-$(DEP_REC_QDD_TXT_V1): volume1/data/%.txt: volume1/R/%.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/manual/desc_classificacao_receita.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx volume2/data/sumario.txt bancos/manual/desc_subfuncao.xlsx
+$(TXT_RECEITA_QDD_V1): volume1/data/%.txt: volume1/R/%.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/manual/desc_classificacao_receita.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx volume2/data/sumario.txt bancos/manual/desc_subfuncao.xlsx
 	@echo "Atualizando volume1/data/$*.txt..."
 	@Rscript $(VERBOSE) volume1/R/$*.R 2>> logs/logv1.Rout
 
-volume1/data/T5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL.txt: volume1/R/T5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL.R bancos/SISOR/BASE_QDD_FISCAL.xlsx bancos/SISOR/BASE_CATEGORIA_PESSOAL.xlsx
-	@echo "Atualizando volume1/data/T5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL.txt..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv2.Rout
+volume1/%/tabela25a.txt volume1/%/tabela25b.txt: volume1/R/tabela25.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/manual/desc_classificacao_receita.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx volume2/data/sumario.txt bancos/manual/desc_subfuncao.xlsx
+	@echo "Atualizando volume1/data/tabela25a.txt e tabela25b.txt..."
+	@Rscript $(VERBOSE) volume1/R/tabela25.R 2>> logs/logv1.Rout
 
-volume1/data/T30_INVESTIMENTOS_SEGUNDO_FUNCOES.txt: volume1/R/T30_INVESTIMENTOS_SEGUNDO_FUNCOES.R bancos/SISOR/BASE_QDD_INVESTIMENTO.xlsx $(acoes_planejamento)
-	@echo "Atualizando volume1/data/T30_INVESTIMENTOS_SEGUNDO_FUNCOES.txt..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv2.Rout
+volume1/data/tabela28a.txt: volume1/R/tabela28a.R volume1/R/tabela28_comum.R bancos/SISOR/exec_rec.xlsx
+	@echo "Atualizando volume1/data/tabela28a.txt..."
+	@Rscript $(VERBOSE) volume1/R/tabela28a.R 2>> logs/logv1.Rout
 
-volume1/data/T28_DCGF_PT1_Receita_prevista_e_realizada.txt: volume1/R/T28_DCGF_PT1_Receita_prevista_e_realizada.R volume1/R/T28_DCGF_Demonstrativo_programas_financiados_com_recursos_provenientes_Uniao.R bancos/SISOR/exec_rec.xlsx
-	@echo "Atualizando volume1/data/T28_DCGF_PT1_Receita_prevista_e_realizada.txt..."
-	@Rscript $(VERBOSE) volume1/R/T28_DCGF_PT1_Receita_prevista_e_realizada.R 2>> logs/logv1.Rout
+volume1/data/tabela28b.txt: volume1/R/tabela28b.R volume1/R/tabela28_comum.R bancos/SISOR/exec_desp_realizada.xlsx
+	@echo "Atualizando volume1/data/tabela28b.txt..."
+	@Rscript $(VERBOSE) volume1/R/tabela28b.R 2>> logs/logv1.Rout
 
-volume1/data/T28_DCGF_PT2_Despesa_prevista_e_realizada.txt: volume1/R/T28_DCGF_PT2_Despesa_prevista_e_realizada.R volume1/R/T28_DCGF_Demonstrativo_programas_financiados_com_recursos_provenientes_Uniao.R bancos/SISOR/exec_desp_realizada.xlsx
-	@echo "Atualizando volume1/data/T28_DCGF_PT2_Despesa_prevista_e_realizada.txt..."
-	@Rscript $(VERBOSE) volume1/R/T28_DCGF_PT2_Despesa_prevista_e_realizada.R 2>> logs/logv1.Rout
+volume1/data/tabela20a.txt: volume1/R/tabela20a.R bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx
+	@echo "Atualizando volume1/data/tabela20a.txt..."
+	@Rscript $(VERBOSE) volume1/R/tabela20a.R 2>> logs/logv1.Rout
 
-volume1/data/T28_DCGF_PT3_Receita_prevista_LOA.txt: volume1/R/T28_DCGF_PT3_Receita_prevista_LOA.R volume1/R/T28_DCGF_Demonstrativo_programas_financiados_com_recursos_provenientes_Uniao.R
-	@echo "Atualizando volume1/data/T28_DCGF_PT3_Receita_prevista_LOA.txt..."
-	@Rscript $(VERBOSE) volume1/R/T28_DCGF_PT3_Receita_prevista_LOA.R 2>> logs/logv1.Rout
-
-volume1/data/T28_DCGF_PT4_Despesa_prevista_LOA.txt: volume1/R/T28_DCGF_PT4_Despesa_prevista_LOA.R volume1/R/T28_DCGF_Demonstrativo_programas_financiados_com_recursos_provenientes_Uniao.R
-	@echo "Atualizando volume1/data/T28_DCGF_PT3_Despesa_prevista_LOA.txt..."
-	@Rscript $(VERBOSE) volume1/R/T28_DCGF_PT4_Despesa_prevista_LOA.R 2>> logs/logv1.Rout
-
-volume1/data/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.txt: volume1/R/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.R bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx
-	@echo "Atualizando volume1/data/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.txt..."
-	@Rscript $(VERBOSE) volume1/R/T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF.R 2>> logs/logv1.Rout
-
-volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.txt: volume1/R/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx utils/suporte/V1/demonstr_consolidado.R
-	@echo "Atualizando volume1/data/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.txt..."
+volume1/data/tabela1.txt: volume1/R/tabela1.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx utils/suporte/V1/demonstr_consolidado.R
+	@echo "Atualizando volume1/data/tabela1.txt..."
 	@echo "------------------------------------------------------------------------"
-	@Rscript $(VERBOSE) volume1/R/T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL.R 2>> logs/logv1.Rout
+	@Rscript $(VERBOSE) volume1/R/tabela1.R 2>> logs/logv1.Rout
 
-volume1/data/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.txt: volume1/R/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx utils/suporte/V1/demonstr_rcl.R
-	@echo "Atualizando volume1/data/T8_DCGF_RECEITA_CORRENTE_LIQUIDA.txt..."
+volume1/data/tabela8.txt: volume1/R/tabela8.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx utils/suporte/V1/demonstr_rcl.R
+	@echo "Atualizando volume1/data/tabela8.txt..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv1.Rout
 
-volume1/data/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.txt: volume1/R/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx utils/suporte/V1/demonstr_despesas_previdenciarias.R utils/suporte/V1/demonstr_receitas_previdenciarias.R bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx
-	@echo "Atualizando volume1/data/T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS.txt..."
+volume1/data/tabela38.txt: volume1/R/tabela38.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx utils/suporte/V1/demonstr_despesas_previdenciarias.R utils/suporte/V1/demonstr_receitas_previdenciarias.R bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx
+	@echo "Atualizando volume1/data/tabela38.txt..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv1.Rout
