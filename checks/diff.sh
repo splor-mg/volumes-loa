@@ -15,73 +15,73 @@ elif [ $1 == "Projeto_volume6A" ]
 then vol="volume6"
 elif [ $1 == "volume7" ]
 then vol="volume7"
-elif [ $1 == "T1_DEMONSTRATIVO_CONSOLIDADO_ORCAMENTO_FISCAL" ]
+elif [ $1 == "tabela1" ]
 then vol="volume1"
-elif [ $1 == "T2_DCGF_DEMONSTRATIVO_RECEITA_CORRENTE_FISCAL" ]
+elif [ $1 == "tabela2" ]
 then vol="volume1"
-elif [ $1 == "T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas" ]
+elif [ $1 == "tabela3" ]
 then vol="volume1"
-elif [ $1 == "T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA" ]
+elif [ $1 == "tabela4" ]
 then vol="volume1"
-elif [ $1 == "T5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL" ]
+elif [ $1 == "tabela5" ]
 then vol="volume1"
-elif [ $1 == "T6_DCGF_Demonstrativo_Evolucao_Receita_por_Categoria_Economica" ]
+elif [ $1 == "tabela6" ]
 then vol="volume1"
-elif [ $1 == "T7_QUADRO_GERAL_DA_RECEITA" ]
+elif [ $1 == "tabela7" ]
 then vol="volume1"
-elif [ $1 == "T8_DCGF_RECEITA_CORRENTE_LIQUIDA" ]
+elif [ $1 == "tabela8" ]
 then vol="volume1"
-elif [ $1 == "T9_DEMONSTRATIVO_RECEITA_ORCAMENTARIA_CORRENTE_ORDINARIA" ]
+elif [ $1 == "tabela9" ]
 then vol="volume1"
-elif [ $1 == "T12_DCGF_Demonstrativo_Evolucao_Despesa_Categoria_Economica" ]
+elif [ $1 == "tabela12" ]
 then vol="volume1"
-elif [ $1 == "T13_DCGF_Demonstrativo_Consolidado_Despesa" ]
+elif [ $1 == "tabela13" ]
 then vol="volume1"
-elif [ $1 == "T14_DEMONSTRATIVO_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_CONFORME_VINCULO_COM_RECURSOS" ]
+elif [ $1 == "tabela14" ]
 then vol="volume1"
-elif [ $1 == "T15_PROGRAMA_TRABALHO_GOVERNO" ]
+elif [ $1 == "tabela15" ]
 then vol="volume1"
-elif [ $1 == "T16_DCGF_Demons_Aplicacao_Recursos_Manut_Desenv_Ensino" ]
+elif [ $1 == "tabela16" ]
 then vol="volume1"
-elif [ $1 == "T17_DCGF_Demonst_Aplicacao_Recursos_Progr_Saude_Investim" ]
+elif [ $1 == "tabela17" ]
 then vol="volume1"
-elif [ $1 == "T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude" ]
+elif [ $1 == "tabela18" ]
 then vol="volume1"
-elif [ $1 == "T19_DCGF_Demonstrativo_Aplicacao_Recursos_Amparo_Fomento_Pesquisa" ]
+elif [ $1 == "tabela19" ]
 then vol="volume1"
-elif [ $1 == "T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF" ]
+elif [ $1 == "tabela20a" ]
 then vol="volume1"
-elif [ $1 == "T23_DCGF_Demonstrativo_do_Servico_da_divida_publica" ]
+elif [ $1 == "tabela23" ]
 then vol="volume1"
-elif [ $1 == "T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB" ]
+elif [ $1 == "tabela25" ]
 then vol="volume1"
-elif [ $1 == "T26_DCGF_DEMONSTRATIVO_RECURSOS_APLICADOS_ACOES_PARA_CRIANCA_E_ADOLESCENTE" ]
+elif [ $1 == "tabela26" ]
 then vol="volume1"
-elif [ $1 == "T27_DCGF_Demonst_Despesas_UGEPREVI" ]
+elif [ $1 == "tabela27" ]
 then vol="volume1"
-elif [ $1 == "T28_DCGF_PT1_Receita_prevista_e_realizada" ]
+elif [ $1 == "tabela28a" ]
 then vol="volume1"
-elif [ $1 == "T28_DCGF_PT2_Despesa_prevista_e_realizada" ]
+elif [ $1 == "tabela28b" ]
 then vol="volume1"
-elif [ $1 == "T28_DCGF_PT3_Receita_prevista_LOA" ]
+elif [ $1 == "tabela28c" ]
 then vol="volume1"
-elif [ $1 == "T28_DCGF_PT4_Despesa_prevista_LOA" ]
+elif [ $1 == "tabela28d" ]
 then vol="volume1"
-elif [ $1 == "T30_INVESTIMENTOS_SEGUNDO_FUNCOES" ]
+elif [ $1 == "tabela30" ]
 then vol="volume1"
-elif [ $1 == "T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES" ]
+elif [ $1 == "tabela31" ]
 then vol="volume1"
-elif [ $1 == "T32_INVESTIMENTOS_POR_EMPRESA_SEGUNDO_FONTES_RECURSO" ]
+elif [ $1 == "tabela32" ]
 then vol="volume1"
-elif [ $1 == "T33_INVESTIMENTOS_EMPRESA_SEGUNDO_DETALHAMENTO_INVESTIMENTOS" ]
+elif [ $1 == "tabela33" ]
 then vol="volume1"
-elif [ $1 == "T37_DCGF_DEMONSTRATIVOS_RECURSOS_APLICADOS_SEGURANCA_ALIMENTAR_NUTRICIONAL" ]
+elif [ $1 == "tabela37" ]
 then vol="volume1"
-elif [ $1 == "T38_DCGF_DEMONSTRATIVO_RECEITAS_DESPESAS_PREVIDENCIARIAS_RPPS" ]
+elif [ $1 == "tabela38" ]
 then vol="volume1"
-elif [ $1 == "T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO" ]
+elif [ $1 == "tabela39" ]
 then vol="volume1"
-elif [ $1 == "T40_DEMONSTRATIVO_DESPESAS_OBRIGATORIAS" ]
+elif [ $1 == "tabela40" ]
 then vol="volume1"
 else
    echo "$1 is not a valid document"
