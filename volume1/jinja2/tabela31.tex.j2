@@ -1,0 +1,30 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+
+\begin{document}
+
+\color{myblack}
+\centering
+ 
+% Geometry de acordo com apenas essa tabela
+
+\pagestyle{empty} % Numeração da páginas não será feito aqui
+\newgeometry{bottom=1.5cm,top=1cm,left=1.5cm,right=1.5cm}
+
+
+\BLOCK{set cabecalho}\multicolumn{5}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{INVESTIMENTOS SEGUNDO FUNÇÕES, SUBFUNÇÕES E PROGRAMAS}}} \\\multicolumn{5}{c}{\cellcolor{gray!50} \textcolor{myblack}{\normalsize \textbf{POR PROJETOS E ATIVIDADES}}} \\\multicolumn{5}{c}{\cellcolor{gray!50} \textcolor{myblack}{\footnotesize \textbf{\VAR{base_legal("T31_INVESTIMENTOS_SEGUNDO_FUNCOES_SUBFUNCOES_PROGRAMAS_POR_PROJETOS_ATIVIDADES")}}}} \\\specialrule{1.5pt}{2pt}{0pt}\multicolumn{4}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{1}{r}{R\$1,00} \\[2ex] \multicolumn{5}{c}{ \textbf{FUNÇÕES, SUBFUNÇÕES E PROGRAMAS}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{1}{C{3cm}|}{\textbf{ CÓDIGO}} &  \multicolumn{1}{@{\hspace{1em}}L{6cm}@{\hspace{0.5em}}|}{\textbf{ ESPECIFICAÇÃO}}  &   \multicolumn{1}{C{2cm}|}{\textbf{ PROJETO}} & \multicolumn{1}{C{2cm}|}{\textbf{ ATIVIDADE}} &  \multicolumn{1}{C{2cm}}{\textbf{ TOTAL}} \\\hline\BLOCK{endset}
+\renewcommand*{\arraystretch}{1.7}\scriptsize\noindent\begin{longtable}[c]{L{3cm}|m{6cm}|m{2cm}|m{2cm}|m{2cm}}\VAR{cabecalho}\endfirsthead\VAR{cabecalho}\endhead\endfoot\hline\hline\hline\endlastfoot\BLOCK{for linha in linhas}
+\BLOCK{if "TOTAL" in linha.especificacao.upper()}
+\hline \hline 
+\multicolumn{2}{@{\hspace{1em}}L{6cm}@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.especificacao} }} & \multicolumn{1}{r@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.projeto} }} & \multicolumn{1}{r@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.atividade} }} & \multicolumn{1}{r@{\hspace{1em}}}{ \textbf{ \VAR{linha.total} }} \\\BLOCK{elif linha.codigo.endswith(".000.000")}
+\multicolumn{1}{L{3cm}|}{\textbf{ \VAR{linha.codigo} }} & \multicolumn{1}{@{\hspace{1em}}L{6cm}@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.especificacao} }} & \multicolumn{1}{r@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.projeto} }} & \multicolumn{1}{r@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.atividade} }} & \multicolumn{1}{r@{\hspace{1em}}}{ \textbf{ \VAR{linha.total} }} \\\BLOCK{elif linha.codigo[3] != "0" and linha.codigo.endswith(".000")}
+\multicolumn{1}{L{3cm}|}{ \hspace{1em} \textbf{ \VAR{linha.codigo} }} & \multicolumn{1}{@{\hspace{2em}}L{6cm}@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.especificacao} }} & \multicolumn{1}{r@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.projeto} }} & \multicolumn{1}{r@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.atividade} }} & \multicolumn{1}{r@{\hspace{1em}}}{ \textbf{ \VAR{linha.total} }} \\\BLOCK{else}
+\multicolumn{1}{L{3cm}|}{ \hspace{2em} \VAR{linha.codigo} } & \multicolumn{1}{@{\hspace{3em}}L{6cm}@{\hspace{0.5em}}|}{ \VAR{linha.especificacao} } & \multicolumn{1}{r@{\hspace{0.5em}}|}{ \VAR{linha.projeto} } & \multicolumn{1}{r@{\hspace{0.5em}}|}{ \VAR{linha.atividade} } & \multicolumn{1}{r@{\hspace{1em}}}{ \VAR{linha.total} } \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}\newpage
+
+\end{document}

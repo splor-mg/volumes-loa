@@ -1,0 +1,32 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+
+\begin{document}
+
+\renewcommand*{\arraystretch}{1.9}
+\scriptsize
+\color{myblack}
+\centering
+ 
+\newgeometry{bottom=0cm,top=0cm,left=1.5cm,right=2cm}
+%  \thispagestyle{lscape}
+%  \pagestyle{lscape}
+ 
+\begin{landscape}
+ 
+\BLOCK{set cabecalho}\multicolumn{12}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{PROGRAMA DE TRABALHO DO GOVERNO: DEMONSTRATIVO DA DESPESA POR FUNÇÕES, SUBFUNÇÕES E PROGRAMAS CONFORME OS GRUPOS DE DESPESA}}}\\\multicolumn{12}{c}{\cellcolor{gray!50} { \textcolor{myblack}{ \textbf{\VAR{base_legal("T15_PROGRAMA_TRABALHO_GOVERNO")}}}}}\\\specialrule{1.5pt}{2pt}{0pt}\multicolumn{12}{l}{ \textbf{Exercício: \textcolor{myblack}{\VAR{ano_doc}}}} \\\multicolumn{5}{l}{ \textbf{ORÇAMENTO FISCAL}} &\multicolumn{6}{l}{ \textbf{RECURSOS DE TODAS AS FONTES}}  & \multicolumn{1}{r}{ \textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{3}{C{2cm}|}{\textbf{CÓDIGO}} & \multicolumn{1}{C{5cm}|}{\multirow{2}{*}{ \textbf{ESPECIFICAÇÃO}}} & \multirow{2}{*}{\parbox{1.7cm}{\centering \textbf{PESSOAL ENCARGOS SOCIAIS}}} & \multirow{2}{*}{\parbox{1.5cm}{\centering \textbf{JUROS E ENCARGOS DA DÍVIDA}}} & \multirow{2}{*}{\parbox{1.8cm}{\centering \textbf{OUTRAS DESPESAS CORRENTES}}} & \multicolumn{1}{C{2.2cm}|}{\multirow{2}{*}{\textbf{INVESTIMENTOS}}} & \multirow{2}{*}{\parbox{1.9cm}{\centering \textbf{INVERSÕES FINANCEIRAS}}} & \multirow{2}{*}{\parbox{2.3cm}{\centering \textbf{AMORTIZAÇÃO DA DÍVIDA}}} & \multirow{2}{*}{\parbox{2.2cm}{\centering \textbf{RESERVA DE CONTINGÊNCIA}}} & \multicolumn{1}{c}{\multirow{2}{*}{\textbf{TOTAL}}} \\\multicolumn{1}{c}{\fonteSeis{FUN}} & \multicolumn{1}{c}{\fonteSeis{SUBF}} &  \multicolumn{1}{c|}{\fonteSeis{PROG}} & & & & & & & & & \\\hline\BLOCK{endset}
+\scriptsize\noindent\begin{longtable}[c]{m{3pt}m{3pt}m{3pt}|m{5cm}|m{1.7cm}|m{1.5cm}|m{1.8cm}|m{1.5cm}|m{1.7cm}|m{2.3cm}|m{2cm}|m{1.3cm}}\VAR{cabecalho}\endfirsthead\VAR{cabecalho}\endhead\endfoot\hline\hline\hline\endlastfoot\BLOCK{for linha in linhas}
+\BLOCK{if linha.especificacao == "TOTAL"}
+\hline \hline
+\multicolumn{4}{@{\hspace{0.5em}}C{5cm}|}{ \textbf{ \VAR{linha.especificacao} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.pessoal} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.juros} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.outras} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.investimentos} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.inversoes} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.amort} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.reserva} }} & \multicolumn{1}{r}{ \textbf{ \VAR{linha.total} }} \\\BLOCK{else}
+\multicolumn{1}{l}{ \VAR{linha.funcao_cod} } & \multicolumn{1}{l}{ \VAR{linha.subfuncao_cod} } & \multicolumn{1}{c|}{ \VAR{linha.programa_cod} } & \multicolumn{1}{@{\hspace{0.5em}}L{5cm}|}{ \VAR{linha.especificacao} } & \multicolumn{1}{r|}{ \VAR{linha.pessoal} } & \multicolumn{1}{r|}{ \VAR{linha.juros} } & \multicolumn{1}{r|}{ \VAR{linha.outras} } & \multicolumn{1}{r|}{ \VAR{linha.investimentos} } & \multicolumn{1}{r|}{ \VAR{linha.inversoes} } & \multicolumn{1}{r|}{ \VAR{linha.amort} } & \multicolumn{1}{r|}{ \VAR{linha.reserva} } & \multicolumn{1}{r}{ \VAR{linha.total} } \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}
+\end{landscape}
+ 
+
+\end{document}

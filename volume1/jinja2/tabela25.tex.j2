@@ -1,0 +1,29 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{bottom=0.5cm,top=0.5cm,left=1.5cm,right=1.5cm}
+
+
+\renewcommand*{\arraystretch}{1.6}\scriptsize\color{myblack}\centering\noindent\begin{longtable}[c]{m{2.5cm}|m{14cm}|m{1.5cm}}\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize{ \textbf{DEMONSTRATIVO DA APLICAÇÃO DE RECURSOS DO FUNDO DE MANUTENÇÃO E DESENVOLVIMENTO}}}} \\\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{DA EDUCAÇÃO BÁSICA E DE VALORIZAÇÃO DOS PROFISSIONAIS DA EDUCAÇÃO}}} \\\multicolumn{3}{C{19cm}}{\cellcolor{gray!50} \textcolor{myblack} {\scriptsize \textbf{ \VAR{base_legal("T25_DCGF_Demonstrativo_Aplicacao_Recursos_FUNDEB")} }}}  \\\specialrule{1.5pt}{2pt}{0pt}\multicolumn{3}{l}{\textbf{ORÇAMENTO FISCAL}} \\\multicolumn{1}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{2}{r}{\textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{1}{L{2.5cm}|}{\textbf{CÓDIGO}} & \multicolumn{1}{C{14cm}|}{ \textbf{ESPECIFICAÇÕES}} & \multicolumn{1}{C{1.5cm}}{ \textbf{VALOR}} \\\hline \hline\BLOCK{for linha in linhas}
+\BLOCK{if linha.cod == ""}
+\hline
+\multicolumn{1}{L{2.5cm}|}{ \textbf{}} & \multicolumn{1}{L{14cm}|}{ \textbf{\VAR{linha.espec}}} & \multicolumn{1}{R{1.5cm}}{ \textbf{\VAR{linha.valor}}} \\\BLOCK{else}
+\multicolumn{1}{L{2.5cm}|}{\VAR{formata_receita_cod(linha.cod)}} & \multicolumn{1}{L{14cm}|}{\VAR{linha.espec}} & \multicolumn{1}{R{1.5cm}}{\VAR{linha.valor}} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\end{longtable}\noindent\begin{longtable}[c]{m{3cm}|m{12cm}|m{3cm}}\multicolumn{3}{C{19cm}}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{PERCENTUAL DE APLICAÇÃO DA RECEITA DO FUNDEB NA REMUNERAÇÃO DOS PROFISSIONAIS \newline DA EDUCAÇÃO BÁSICA}}} \\\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{(Inciso XII do Art. 60 ADCT/CR)}}} \\\hline\hline \multicolumn{1}{L{3cm}|}{\textbf{CÓDIGO}} & \multicolumn{1}{C{12cm}|}{ \textbf{ESPECIFICAÇÃO}} & \multicolumn{1}{C{3cm}}{ \textbf{VALOR}} \\\hline\hline \BLOCK{for linha in magisterio}
+\BLOCK{if linha.cod == ""}
+\hline\hline
+\multicolumn{1}{L{3cm}|}{ \textbf{}} & \multicolumn{1}{L{12cm}|}{ \textbf{\VAR{linha.espec}}} & \multicolumn{1}{R{3cm}}{ \textbf{\VAR{linha.valor}}} \\\BLOCK{else}
+\multicolumn{1}{L{3cm}|}{\VAR{formata_receita_cod(linha.cod)}} & \multicolumn{1}{L{12cm}|}{\VAR{linha.espec}} & \multicolumn{1}{R{3cm}}{\VAR{linha.valor}} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\hline\end{longtable}\vspace{-0.4cm} \raggedright\fontsize{7pt}{10pt}\selectfont {Fonte: PPO.} \\\fontsize{7pt}{10pt}\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\
+\end{document}

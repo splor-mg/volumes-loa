@@ -1,0 +1,24 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{bottom=1cm,top=1cm,left=1.5cm,right=1.5cm}
+
+
+\BLOCK{set cabecalho}\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{DEMONSTRATIVO DA APLICAÇÃO DE RECURSOS NAS AÇÕES E SERVIÇOS PÚBLICOS DE SAÚDE}}} \\\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{\VAR{base_legal("T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude")}}}}  \\\specialrule{1.5pt}{2pt}{0pt}\multicolumn{3}{l}{\textbf{ORÇAMENTO FISCAL}} \\\multicolumn{2}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{1}{r}{\textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{2}{L{15cm}}{ \textbf{ESPECIFICAÇÕES}} & \multicolumn{1}{C{3cm}}{ \textbf{VALOR}} \\\BLOCK{endset}
+\renewcommand*{\arraystretch}{1.6}\scriptsize\color{myblack}\centering\noindent\begin{longtable}[c]{m{3cm}m{9cm}|m{3cm}}\VAR{cabecalho}\hline\hline\endfirsthead\VAR{cabecalho}\hline\endhead\endfoot\hline\hline\endlastfoot\BLOCK{for linha in linhas}
+\BLOCK{if linha.nvl == "0" and not linha.espec.startswith("A")}
+\hline\hline
+\BLOCK{endif}
+\BLOCK{if linha.cod != ""}
+\multicolumn{1}{@{\hspace{2em}}L{2cm}}{\VAR{linha.cod}} & \multicolumn{1}{L{10cm}}{\VAR{linha.espec}} & \multicolumn{1}{R{3cm}}{\VAR{linha.VL_LOA}} \\\BLOCK{elif linha.nvl == "0"}
+\multicolumn{2}{@{\hspace{0em}}L{12cm}}{\textbf{ \VAR{linha.espec} }} & \multicolumn{1}{R{3cm}}{\textbf{ \VAR{linha.VL_LOA} }} \\\BLOCK{else}
+\multicolumn{2}{@{\hspace{\VAR{2 * linha.nvl|int}em}}L{12cm}}{\VAR{linha.espec}} & \multicolumn{1}{R{3cm}}{\VAR{linha.VL_LOA}} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\end{longtable}\raggedright\fontsize{7pt}{10pt}\selectfont {Fonte: PPO.} \\\fontsize{7pt}{10pt}\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\
+\end{document}

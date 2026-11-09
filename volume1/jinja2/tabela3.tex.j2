@@ -1,0 +1,28 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{bottom=1cm,top=1cm,left=1.5cm,right=1.5cm}
+
+\renewcommand*{\arraystretch}{1.9}\scriptsize\color{myblack}\centering\noindent\begin{longtable}[c]{m{4cm}|m{1.8cm}|m{1.8cm}|m{4cm}|m{1.8cm}|m{1.8cm}}\multicolumn{6}{c}{\cellcolor{gray!50} \textcolor{myblack} {\small \textbf{DEMONSTRATIVO DA RECEITA E DESPESA SEGUNDO AS CATEGORIAS ECONÔMICAS}}} \TBstrut \\[2ex]\multicolumn{6}{c}{\cellcolor{gray!50} \textcolor{myblack} {\small \textbf{\VAR{base_legal("T3_DCGF_Demonstrativo_Receita_Despesa_Segundo_Categorias_Economicas")}}}}  \\\specialrule{1.5pt}{0pt}{0pt}\multicolumn{6}{l}{\textbf{ORÇAMENTO FISCAL}} \\\multicolumn{1}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{5}{r}{\textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{1}{L{4cm}|}{ \textbf{RECEITA}} & \multicolumn{2}{C{3cm}|}{ \textbf{VALOR}} & \multicolumn{1}{C{4cm}|}{ \textbf{DESPESA}} & \multicolumn{2}{C{3cm}}{ \textbf{VALOR}} \\\hline\BLOCK{for linha in linhas}
+\BLOCK{if linha.vl_rec == ""}
+\BLOCK{set alinhamento = "C" if linha.receita_desc == "TOTAL" else "L"}
+\multicolumn{1}{\VAR{alinhamento}{4.5cm}|}{ \textbf{\VAR{linha.receita_desc}}} & \multicolumn{1}{R{1.8cm}|}{ \textbf{\VAR{linha.vl_rec}}} & \multicolumn{1}{R{1.8cm}|}{ \textbf{\VAR{linha.vl_rec_total}}} & \multicolumn{1}{\VAR{alinhamento}{4.5cm}|}{ \textbf{\VAR{linha.despesa_desc}}} & \multicolumn{1}{R{1.8cm}|}{ \textbf{\VAR{linha.vl_desp}}} & \multicolumn{1}{R{1.8cm}}{ \textbf{\VAR{linha.vl_desp_total}}} \\\BLOCK{else}
+\multicolumn{1}{@{\hspace{2em}}L{4.5cm}|}{\VAR{linha.receita_desc}} & \multicolumn{1}{R{1.8cm}|}{\VAR{linha.vl_rec}} & \multicolumn{1}{R{1.8cm}|}{\VAR{linha.vl_rec_total}} & \multicolumn{1}{@{\hspace{2em}}L{4.5cm}|}{\VAR{linha.despesa_desc}} & \multicolumn{1}{R{1.8cm}|}{\VAR{linha.vl_desp}} & \multicolumn{1}{R{1.8cm}}{\VAR{linha.vl_desp_total}} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\hline\end{longtable}\footnotesize\vspace{-0.7cm}\noindent\begin{longtable}[c]{m{4cm}|m{2cm}|m{4cm}|m{2cm}}\multicolumn{4}{c}{\small \textbf{RESUMO} \newline}  \\\BLOCK{for linha in resumo}
+\BLOCK{if linha.receita_desc in ("TOTAL", "DÉFICIT")}
+\multicolumn{1}{L{6cm}}{ \textbf{\VAR{linha.receita_desc}}} & \multicolumn{1}{R{3cm}}{ \textbf{\VAR{linha.vl_rec_total}}} & \multicolumn{1}{L{6cm}}{ \textbf{ \hspace{1cm}\VAR{linha.despesa_desc}}} & \multicolumn{1}{R{2.5cm}}{ \textbf{\VAR{linha.vl_desp_total}}} \\\BLOCK{else}
+\multicolumn{1}{L{6cm}}{\VAR{linha.receita_desc}} & \multicolumn{1}{R{3cm}}{\VAR{linha.vl_rec_total}} & \multicolumn{1}{L{6cm}}{ \hspace{1cm}\VAR{linha.despesa_desc}} & \multicolumn{1}{R{2.5cm}}{\VAR{linha.vl_desp_total}} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\hline\hline\end{longtable}\raggedright\fontsize{7pt}{10pt}\selectfont {Fonte: PPO.}\\\fontsize{7pt}{10pt}\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\fontsize{7pt}{10pt}\selectfont {NOTA: Com intuito de evitar a dupla contagem na elaboração desse relatório, foram desconsiderados os valores referentes às operações intra-orçamentárias.}\\
+
+\end{document}

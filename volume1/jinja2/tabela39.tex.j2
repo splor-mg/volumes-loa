@@ -1,0 +1,22 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{bottom=1cm,top=1cm,left=1.5cm,right=1.5cm}
+
+
+\BLOCK{set cabecalho}\multicolumn{5}{c}{\cellcolor{gray!50} \footnotesize \textbf{DEMONSTRATIVO DOS RECURSOS A SEREM APLICADOS, DIRETA OU INDIRETAMENTE,}} \\\multicolumn{5}{c}{\cellcolor{gray!50} \footnotesize \textbf{NA EXECUÇÃO DA POLÍTICA DE ATENDIMENTO À MULHER VÍTIMA DE VIOLÊNCIA NO ESTADO}} \\\multicolumn{5}{c}{\cellcolor{gray!50} \scriptsize \textbf{ \VAR{base_legal("T39_DCGF_DEMONSTRATIVO_DA_POLITICA_DE_ATENDIMENTO_A_MULHER_VITIMA_DE_VIOLENCIA_NO_ESTADO")} }}  \\\specialrule{1.5pt}{2pt}{0pt}\multicolumn{2}{l}{\textbf{Exercício: \VAR{ano_doc} }} & \multicolumn{3}{r}{\textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{1}{C{1cm}|}{\textbf{ \footnotesize{UO}}} & \multicolumn{1}{C{2cm}|}{ \textbf{ \footnotesize{Funcional Programática}}} & \multicolumn{1}{C{10cm}|}{ \textbf{ \footnotesize{Ação}}} &\multicolumn{1}{C{2cm}|}{ \textbf{ \footnotesize{Valor}}} &\multicolumn{1}{C{1cm}}{ \textbf{ \footnotesize{DR/IR(*)}}} \\\hline \hline\BLOCK{endset}
+\renewcommand*{\arraystretch}{1.9}\scriptsize\color{myblack}\centering\noindent\begin{longtable}[c]{m{1cm}|m{2cm}|m{10cm}|m{2cm}|m{1cm}}\VAR{cabecalho}\endfirsthead\VAR{cabecalho}\endhead\endfoot\hline\hline\hline\endlastfoot\BLOCK{for linha in linhas}
+\BLOCK{if linha.uo_cod.startswith("TOTAL")}
+\hline\hline
+\multicolumn{3}{c|}{ \textbf{\VAR{linha.uo_cod}}} & \multicolumn{1}{R{2cm}|}{ \textbf{\VAR{linha.vlr_loa_desp}}} &  \\
+\hline\hline\BLOCK{else}
+\multicolumn{1}{C{1cm}|}{\VAR{linha.uo_cod}} & \multicolumn{1}{C{2cm}|}{\VAR{linha.funcional}} & \multicolumn{1}{L{10cm}|}{\VAR{linha.acao_desc}} & \multicolumn{1}{R{2cm}|}{\VAR{linha.vlr_loa_desp}} & \multicolumn{1}{C{1cm}}{\VAR{linha.exclusiva}} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\end{longtable}\vspace{-0.4cm} \raggedright\fontsize{8pt}{10pt}\selectfont {*Legenda:} \\\fontsize{8pt}{10pt}\selectfont {(DR) Diretamente Relacionada e (IR) Indiretamente Relacionada} \\\fontsize{8pt}{10pt}\selectfont {NOTA:}\\\fontsize{8pt}{10pt}\selectfont {Conforme a Lei nº 22.256, de 26 de julho de 2016, considera-se violência contra a mulher qualquer ação ou omissão baseada no gênero, no âmbito público ou no privado, inclusive a decorrente de discriminação ou desigualdade étnica, que cause morte, dano ou sofrimento físico, sexual ou psicológico à mulher. Considerando o disposto na legislação, cada unidade responsável pela ação assinalou se a ação em análise atua: 1) Diretamente na política de atendimento à mulher vítima de violência no Estado; 2) Indiretamente na política de atendimento à mulher vítima de violência no Estado; 3) Não atua na política de atendimento à mulher vítima de violência no Estado.}\\
+\end{document}

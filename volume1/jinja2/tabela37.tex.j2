@@ -1,0 +1,21 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{bottom=1.5cm,top=1.5cm,left=1.5cm,right=1.5cm}
+
+
+\BLOCK{set cabecalho}\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{DEMONSTRATIVOS DE RECURSOS A SEREM APLICADOS DIRETA OU INDIRETAMENTE NA EXECUÇÃO DA}}} \\\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{POLÍTICA ESTADUAL DE SEGURANÇA ALIMENTAR E NUTRICIONAL SUSTENTÁVEL}}} \\\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\scriptsize \textbf{ \VAR{base_legal("T37_DCGF_DEMONSTRATIVOS_RECURSOS_APLICADOS_SEGURANCA_ALIMENTAR_NUTRICIONAL")} }}}  \\\specialrule{1.5pt}{2pt}{0pt}\multicolumn{2}{l}{\textbf{Exercício: \VAR{ano_doc} }} & \multicolumn{1}{r}{\textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{1}{C{2cm}|}{ \footnotesize{ \textbf{ Funcional Programática}}} & \multicolumn{1}{C{12cm}|}{ \textbf{ \footnotesize{Ação}}} &\multicolumn{1}{C{2cm}}{ \textbf{ \footnotesize{Valor}}} \\\hline \hline\BLOCK{endset}
+\renewcommand*{\arraystretch}{1.9}\scriptsize\color{myblack}\centering\noindent\begin{longtable}[c]{m{3cm}|m{12cm}|m{2cm}}\VAR{cabecalho}\endfirsthead\VAR{cabecalho}\endhead\endfoot\hline\hline\hline\endlastfoot\BLOCK{for linha in linhas}
+\BLOCK{if linha.funcional == "TOTAL"}
+\hline\hline
+\multicolumn{2}{c|}{ \textbf{\VAR{linha.funcional}}} & \multicolumn{1}{R{2cm}}{ \textbf{\VAR{linha.vlr_loa_desp}}} \\\BLOCK{else}
+\multicolumn{1}{C{3cm}|}{\VAR{linha.funcional}} & \multicolumn{1}{L{12cm}|}{\VAR{linha.acao_desc}} & \multicolumn{1}{R{2cm}}{\VAR{linha.vlr_loa_desp}} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\end{longtable}
+\end{document}
