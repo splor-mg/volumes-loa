@@ -1,0 +1,22 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\newgeometry{bottom=0cm,top=0cm,left=1.5cm,right=2cm}
+
+\begin{landscape}
+
+\BLOCK{set cabecalho}\hline\multicolumn{9}{c}{\cellcolor{gray!50} \textcolor{myblack} {\small \textbf{DEMONSTRATIVO DA DESPESA POR UNIDADE ORÇAMENTÁRIA SEGUNDO OS GRUPOS DE DESPESA}}} \TBstrut \\[2ex]\multicolumn{9}{c}{\cellcolor{gray!50} \textcolor{myblack} {\small \textbf{\VAR{base_legal("T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA")}}}}  \\\specialrule{1.5pt}{0pt}{0pt}\multicolumn{9}{l}{\textbf{ORÇAMENTO FISCAL}} \\\multicolumn{1}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{8}{r}{\textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{1}{L{6cm}|}{ \textbf{UNIDADE ORÇAMENTÁRIA}} & \multicolumn{1}{C{1.7cm}|}{ \textbf{PESSOAL ENCARGOS SOCIAIS}} & \multicolumn{1}{C{1.5cm}|}{ \textbf{JUROS E ENCARGOS DA DÍVIDA}} & \multicolumn{1}{C{1.8cm}|}{ \textbf{OUTRAS DESPESAS CORRENTES}} & \multicolumn{1}{c|}{ \textbf{INVESTIMENTOS}} & \multicolumn{1}{C{1.9cm}|}{ \textbf{INVERSÕES FINANCEIRAS}} & \multicolumn{1}{C{2.3cm}|}{ \textbf{AMORTIZAÇÃO DA DÍVIDA}} & \multicolumn{1}{C{2.2cm}|}{ \textbf{RESERVA DE CONTINGÊNCIA}} & \multicolumn{1}{c}{ \textbf{TOTAL}} \\\hline\BLOCK{endset}
+\renewcommand*{\arraystretch}{1.9}\footnotesize\color{myblack}\centering\noindent\begin{longtable}[c]{m{6cm}|m{1.7cm}|m{1.5cm}|m{1.8cm}|m{1.5cm}|m{1.7cm}|m{2cm}|m{2cm}|m{1.3cm}}\VAR{cabecalho}\endfirsthead\VAR{cabecalho}\endhead\endfoot\hline\hline \hline\endlastfoot\BLOCK{for linha in linhas}
+\BLOCK{if linha.uo_nome == "TOTAL"}
+\hline \hline\multicolumn{1}{L{6cm}@{}|}{ \textbf{ \VAR{linha.uo_nome} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.pessoal} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.juros} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.outras} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.investimentos} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.inversoes} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.amort} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.reserva} }} & \multicolumn{1}{r}{ \textbf{ \VAR{linha.total} }} \\\BLOCK{else}
+\multicolumn{1}{L{6cm}@{}|}{ \VAR{linha.uo_nome} - \VAR{linha.uo_sigla} } & \multicolumn{1}{r|}{ \VAR{linha.pessoal} } & \multicolumn{1}{r|}{ \VAR{linha.juros} } & \multicolumn{1}{r|}{ \VAR{linha.outras} } & \multicolumn{1}{r|}{ \VAR{linha.investimentos} } & \multicolumn{1}{r|}{ \VAR{linha.inversoes} } & \multicolumn{1}{r|}{ \VAR{linha.amort} } & \multicolumn{1}{r|}{ \VAR{linha.reserva} } & \multicolumn{1}{r}{ \VAR{linha.total} } \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}
+\end{landscape}
+
+\end{document}

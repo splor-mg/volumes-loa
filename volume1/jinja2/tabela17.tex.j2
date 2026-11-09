@@ -1,0 +1,21 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{bottom=1.5cm,top=1.5cm,left=1.5cm,right=1.5cm}
+
+
+\BLOCK{set cabecalho}\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{DEMONSTRATIVO DA APLICAÇÃO DE RECURSOS EM PROGRAMAS DE SAÚDE E}}} \\\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{INVESTIMENTO EM TRANSPORTE E SISTEMA VIÁRIO}}} \\\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{\VAR{base_legal("T17_DCGF_Demonst_Aplicacao_Recursos_Progr_Saude_Investim")}}}}  \\\specialrule{1.5pt}{2pt}{0pt}\multicolumn{1}{l}{\textbf{ORÇAMENTO FISCAL}} & \multicolumn{2}{r}{\textbf{RECURSOS DE TODAS AS FONTES}} \\\multicolumn{1}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{2}{r}{\textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{1}{L{3cm}|}{\textbf{CÓDIGO}} & \multicolumn{1}{C{12cm}|}{ \textbf{ESPECIFICAÇÕES}} & \multicolumn{1}{C{3cm}}{ \textbf{VALOR}} \\\hline\BLOCK{endset}
+\renewcommand*{\arraystretch}{1.8}\footnotesize\color{myblack}\centering\noindent\begin{longtable}[c]{m{3cm}|m{12cm}|m{3cm}}\VAR{cabecalho}\endfirsthead\VAR{cabecalho}\endhead\endfoot\hline\hline\endlastfoot\BLOCK{for linha in linhas}
+\BLOCK{if linha.cod == ""}
+\hline
+\multicolumn{1}{C{3cm}|}{ \textbf{\VAR{linha.cod}}} & \multicolumn{1}{L{12cm}|}{ \textbf{\VAR{linha.espec}}} & \multicolumn{1}{R{3cm}}{ \textbf{\VAR{linha.valor}}} \\\BLOCK{else}
+\multicolumn{1}{C{3cm}|}{\VAR{linha.cod}} & \multicolumn{1}{L{12cm}|}{\VAR{linha.uo_nome} - \VAR{linha.uo_sigla}\BLOCK{if linha.cod.endswith(".26")} (GRUPO DE DESPESA: 4 - INVESTIMENTO, 5 - INVERSÕES FINANCEIRAS DE ATIVIDADES E PROJETOS)\BLOCK{endif}} & \multicolumn{1}{R{3cm}}{\VAR{linha.valor}} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\end{longtable}\raggedright\fontsize{7pt}{10pt}\selectfont {Fonte: PPO.} \\\fontsize{7pt}{10pt}\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\fontsize{7pt}{10pt}\selectfont {NOTA: A partir do exercício de 2015, os repasses realizados pelo Fundo Estadual de Saúde, nos termos do Decreto Estadual n$\mathbf{^o}$ 46422, de 17 de janeiro de 2014, estão sendo considerados no Demonstrativo da Aplicação de Recursos em Programas de Saúde e Investimento em Transporte e Sistema Viário.}\\
+\end{document}

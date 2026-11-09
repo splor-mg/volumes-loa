@@ -1,0 +1,25 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{bottom=1cm,top=1cm,left=1.5cm,right=1.5cm}
+
+
+\renewcommand*{\arraystretch}{1.9}\scriptsize\color{myblack}\centering\noindent\begin{longtable}[c]{m{4cm}|m{2cm}|m{1.5cm}|m{2cm}|m{1.5cm}|m{2cm}|m{1.5cm}}\multicolumn{7}{c}{\cellcolor{gray!50} \textcolor{myblack} {\small \textbf{DEMONSTRATIVO DA EVOLUÇÃO DA DESPESA POR CATEGORIA ECONÔMICA}}} \\\multicolumn{7}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{Período \VAR{anos[0]}-\VAR{anos[-1]}}}}  \\\multicolumn{7}{c}{\cellcolor{gray!50} \textcolor{myblack} {\small \textbf{\VAR{base_legal("T12_DCGF_Demonstrativo_Evolucao_Despesa_Categoria_Economica")}}}}  \\\specialrule{1.5pt}{0pt}{0pt}\multicolumn{2}{l}{\textbf{ORÇAMENTO FISCAL}} & \multicolumn{5}{r}{\textbf{RECURSOS DE TODAS AS FONTES}} \\\multicolumn{1}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{6}{r}{\textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{1}{L{4cm}|}{\multirow{2}{*}{\textbf{ESPECIFICAÇÃO}}} & \multicolumn{2}{c|}{ \textbf{\VAR{anos[0]}}} & \multicolumn{2}{c|}{ \textbf{\VAR{anos[1]}}} & \multicolumn{2}{c}{ \textbf{\VAR{anos[2]}}} \\\cline{2-7} & \multicolumn{1}{C{2.5cm}|}{ \textbf{Despesa Realizada}} & \multicolumn{1}{C{1.5cm}|}{ \textbf{\%}} & \multicolumn{1}{C{2.5cm}|}{ \textbf{Despesa Orçada}} & \multicolumn{1}{C{1.5cm}|}{ \textbf{\%}} & \multicolumn{1}{C{2.5cm}|}{ \textbf{Despesa Estimada}} & \multicolumn{1}{C{1.5cm}}{ \textbf{\%}} \\\hline\BLOCK{for linha in linhas}
+\BLOCK{set ordem = linha.ordem|trim}
+\BLOCK{if ordem == "100"}
+\hline\hline\hline
+\BLOCK{endif}
+\BLOCK{if ordem[1:2] == "0"}
+\multicolumn{1}{L{4cm}|}{ \textbf{\VAR{linha.espec}}}\BLOCK{for ano in anos} & \multicolumn{1}{R{2.5cm}|}{ \textbf{\VAR{negativo_contabil(linha["VL_DESP_" ~ ano])}}} & \multicolumn{1}{R{1.5cm}\VAR{"" if loop.last else "|"}}{ \textbf{\VAR{linha["perc_" ~ ano]}\%}}\BLOCK{endfor} \\\BLOCK{else}
+\multicolumn{1}{@{\hspace{2em}}L{4cm}|}{\VAR{linha.espec}}\BLOCK{for ano in anos} & \multicolumn{1}{R{2.5cm}|}{\VAR{negativo_contabil(linha["VL_DESP_" ~ ano])}} & \multicolumn{1}{R{1.5cm}\VAR{"" if loop.last else "|"}}{\VAR{linha["perc_" ~ ano]}\%}\BLOCK{endfor} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\hline\end{longtable}\raggedright\fontsize{7pt}{10pt}\selectfont {FONTE: \VAR{anos[0]} Armazém Siafi.} \\\fontsize{7pt}{10pt}\selectfont { \VAR{anos[-1] - 1} e \VAR{anos[-1]} Armazém PPO.} \\\fontsize{7pt}{10pt}\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\fontsize{7pt}{10pt}\selectfont {NOTA: \newline
+      Com intuito de evitar a dupla contagem na elaboração desse relatório, foram desconsiderados os valores referentes às operações intra-orçamentárias.}\\
+
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{bottom=1.5cm,top=1.5cm,left=1.5cm,right=1.5cm}
+
+
+\BLOCK{set cabecalho}\multicolumn{5}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{DEMONSTRATIVO DOS PROGRAMAS FINANCIADOS COM RECURSOS PROVENIENTES DA UNIÂO}}} \\\multicolumn{5}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{\VAR{base_legal("T28_DCGF")}}}}  \\\specialrule{1.5pt}{2pt}{0pt}\multicolumn{5}{c}{\textbf{Despesa prevista para o exercício de \VAR{ano_doc}}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{2}{c|}{\textbf{UO}} & \multicolumn{2}{c|}{ \textbf{Programa}} & \multicolumn{1}{C{2cm}}{ \textbf{Crédito Inicial}} \\\hline\BLOCK{endset}
+\renewcommand*{\arraystretch}{1.8}\scriptsize\color{myblack}\centering\noindent\begin{longtable}[c]{m{1cm}|m{1.5cm}|m{1cm}m{10cm}|m{2cm}}\VAR{cabecalho}\endfirsthead\VAR{cabecalho}\endhead\endfoot\hline\hline\endlastfoot\BLOCK{for linha in linhas}
+\BLOCK{if linha.programa_desc == "TOTAL"}
+\hline
+\multicolumn{4}{c|}{ \textbf{\VAR{linha.programa_desc}}} & \multicolumn{1}{R{2cm}}{ \textbf{\VAR{linha.vlr_loa_desp}}} \\\BLOCK{else}
+\multicolumn{1}{C{1cm}|}{\VAR{linha.uo_cod}} & \multicolumn{1}{L{1.5cm}|}{\VAR{linha.uo_sigla or "NA"}} & \multicolumn{1}{C{1cm}|}{\VAR{linha.programa_cod}} & \multicolumn{1}{L{10cm}|}{\VAR{linha.programa_desc}} & \multicolumn{1}{R{2cm}}{\VAR{linha.vlr_loa_desp}} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\end{longtable}\raggedright\fontsize{7pt}{10pt}\selectfont {Fonte: PPO.} \\\fontsize{7pt}{10pt}\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\fontsize{7pt}{10pt}\selectfont {Nota: Na elaboração desse relatório foram consideradas as fontes de recurso \VAR{linhas[0].fonte_exec}.}\\
+
+\end{document}

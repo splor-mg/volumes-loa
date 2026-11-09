@@ -1,0 +1,29 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{bottom=1.5cm,top=1.5cm,left=1.5cm,right=1.5cm}
+
+
+\BLOCK{set cabecalho}\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{DEMONSTRATIVO DA PARTICIPAÇÃO PERCENTUAL DE PESSOAL NA RECEITA CORRENTE LÍQUIDA}}} \\\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{\VAR{base_legal("T20A_DCGF_Demonstrativo_Partic_Percentual_Pessoal_RCL_LRF")}}}}  \\\specialrule{1.5pt}{2pt}{0pt}\multicolumn{3}{l}{\textbf{ORÇAMENTO FISCAL}} \\\multicolumn{1}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{2}{r}{\textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{2}{c|}{ \textbf{ESPECIFICAÇÃO}} & \multicolumn{1}{C{3cm}}{ \textbf{VALOR}} \\\hline\BLOCK{endset}
+\renewcommand*{\arraystretch}{1.8}\footnotesize\color{myblack}\centering\noindent\begin{longtable}[c]{m{12cm}m{2cm}|m{3cm}}\VAR{cabecalho}\endfirsthead\VAR{cabecalho}\endhead\endfoot\hline\hline\endlastfoot\BLOCK{for linha in linhas}
+\BLOCK{set cod = linha.cod|int}
+\BLOCK{set perc = linha.perc ~ "\\%" if linha.perc else ""}
+\BLOCK{if cod in (3, 5, 7, 9, 11)}
+ & \multicolumn{1}{r|}{} & \multicolumn{1}{r}{} \\[-2ex]
+\BLOCK{endif}
+\BLOCK{if cod in (1, 2)}
+\multicolumn{1}{L{12cm}}{ \textbf{\VAR{linha.espec}}} & \multicolumn{1}{C{2cm}|}{ \textbf{\VAR{perc}}} & \multicolumn{1}{R{3cm}}{\textbf{ \VAR{linha.valor} }} \\\BLOCK{elif cod in (12, 13)}
+\multicolumn{1}{@{\hspace{2em}}L{12cm}}{ \textbf{\VAR{linha.espec}}} & \multicolumn{1}{C{2cm}|}{ \textbf{\VAR{perc}}} & \multicolumn{1}{R{3cm}}{\VAR{linha.valor}} \\\BLOCK{else}
+\multicolumn{1}{L{12cm}}{\VAR{linha.espec}} & \multicolumn{1}{C{2cm}|}{ \textbf{\VAR{perc}}} & \multicolumn{1}{R{3cm}}{\VAR{linha.valor}} \\\BLOCK{endif}
+\BLOCK{if cod == 1}
+
+\hline\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\end{longtable}\raggedright\fontsize{7pt}{10pt}\selectfont {Fonte: PPO.} \\\vskip 0.2cm\fontsize{7pt}{10pt}\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\vskip 0.2cm\fontsize{7pt}{10pt}\selectfont {Nota: Conforme disposto na Instrução Normativa n\degree 01/2018, o Estado de Minas Gerais deixou de publicar o Demonstrativo da Participação Percentual de Pessoal na Receita Corrente Líquida disciplinado pela Instrução n\degree 5/2001 – TCEMG.}\\
+\end{document}

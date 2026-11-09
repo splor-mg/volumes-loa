@@ -1,0 +1,21 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{bottom=1cm,top=1cm,left=1.5cm,right=1.5cm}
+
+
+\BLOCK{set cabecalho}\multicolumn{5}{c}{\cellcolor{gray!50} \footnotesize \textbf{DEMONSTRATIVO DE RECURSOS A SEREM APLICADOS DIRETA OU INDIRETAMENTE EM AÇÕES VOLTADAS}} \\\multicolumn{5}{c}{\cellcolor{gray!50} \footnotesize \textbf{PARA A CRIANÇA E O ADOLESCENTE}} \\\multicolumn{5}{c}{\cellcolor{gray!50} \scriptsize \textbf{ \VAR{base_legal("T26_DCGF_DEMONSTRATIVO_RECURSOS_APLICADOS_ACOES_PARA_CRIANCA_E_ADOLESCENTE")} }}  \\\specialrule{1.5pt}{2pt}{0pt}\multicolumn{2}{l}{\textbf{Exercício: \VAR{ano_doc} }} & \multicolumn{3}{r}{\textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{1}{C{1cm}|}{\textbf{ \footnotesize{UO}}} & \multicolumn{1}{C{2cm}|}{ \textbf{ \footnotesize{Funcional Programática}}} & \multicolumn{1}{C{10cm}|}{ \textbf{ \footnotesize{Ação}}} &\multicolumn{1}{C{2cm}|}{ \textbf{ \footnotesize{Valor}}} &\multicolumn{1}{C{1cm}}{ \textbf{ \footnotesize{E/NE(*)}}} \\\hline \hline\BLOCK{endset}
+\renewcommand*{\arraystretch}{1.9}\scriptsize\color{myblack}\centering\noindent\begin{longtable}[c]{m{1cm}|m{2cm}|m{10cm}|m{2cm}|m{1cm}}\VAR{cabecalho}\endfirsthead\VAR{cabecalho}\endhead\endfoot\hline\hline\hline\endlastfoot\BLOCK{for linha in linhas}
+\BLOCK{if linha.uo_cod == "TOTAL"}
+\hline\hline
+\multicolumn{3}{c|}{ \textbf{\VAR{linha.uo_cod}}} & \multicolumn{1}{R{2cm}|}{ \textbf{\VAR{linha.vlr_loa_desp}}} &  \\\BLOCK{else}
+\multicolumn{1}{C{1cm}|}{\VAR{linha.uo_cod}} & \multicolumn{1}{C{2cm}|}{\VAR{linha.funcional}} & \multicolumn{1}{L{10cm}|}{\VAR{linha.acao_desc}} & \multicolumn{1}{R{2cm}|}{\VAR{linha.vlr_loa_desp}} & \multicolumn{1}{C{1cm}}{\VAR{linha.exclusiva}} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\end{longtable}\vspace{-0.4cm} \raggedright\fontsize{8pt}{10pt}\selectfont {*Legenda:} \\\fontsize{8pt}{10pt}\selectfont {(E) Exclusiva e (NE) Não Exclusiva} \\\fontsize{8pt}{10pt}\selectfont {NOTA:}\\\fontsize{8pt}{10pt}\selectfont {A metodologia do OCA foi desenvolvida pelo UNICEF, em parceria com o Instituto de Estudos Socioeconômicos - INESC - e com a Fundação Abrinq, e é recomendada pelo Conanda. Para as ações não exclusivas os valores foram calculados proporcionalmente à população de crianças e adolescentes (0 a 18 anos).}\\\fontsize{8pt}{10pt}\selectfont {Cálculo da população de crianças e adolescentes segundo dados do IBGE - Censo 2022.}\\
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{bottom=0.4cm,top=0.4cm,left=0.8cm,right=0.8cm}
+
+\begin{landscape}
+
+\BLOCK{macro negrito(texto, ativo)}\VAR{"\\textbf{ " ~ texto ~ " }" if ativo else texto}\BLOCK{endmacro}
+\BLOCK{macro lado(desc, nivel, valores, borda)}\multicolumn{1}{L{5.95cm}|}{\hspace*{\VAR{nivel}em}\VAR{negrito(desc, nivel <= 1)}}\BLOCK{for valor in valores} & \multicolumn{1}{R{\VAR{"1.4" if loop.index is odd else "0.75"}cm}\VAR{borda if loop.last else "|"}}{\VAR{negrito(valor, nivel <= 1)}}\BLOCK{endfor}\BLOCK{endmacro}
+\BLOCK{set borda_meio = "!{\\vrule width 1pt}"}
+\BLOCK{set strut = "\\rule[-1.2ex]{0pt}{3.6ex}"}
+\renewcommand*{\arraystretch}{1.1}\setlength{\tabcolsep}{2pt}\tiny\color{myblack}\centering\noindent\begin{longtable}[c]{m{5.95cm}|m{1.4cm}|m{0.75cm}|m{1.4cm}|m{0.75cm}|m{1.4cm}|m{0.75cm}!{\vrule width 1pt}m{5.95cm}|m{1.4cm}|m{0.75cm}|m{1.4cm}|m{0.75cm}|m{1.4cm}|m{0.75cm}}\multicolumn{14}{c}{\cellcolor{gray!50} \parbox[c][1.1cm][c]{25cm}{\centering \small \textcolor{myblack}{\textbf{DEMONSTRATIVO CONSOLIDADO - ORÇAMENTO FISCAL} \\ \textbf{(Art. 7º, Inciso I da Lei 24.218/2022 - LDO)}}}} \\\multicolumn{14}{c}{} \\\multicolumn{7}{l}{\fontsize{6.5pt}{8pt}\selectfont \textbf{\textit{EXERCÍCIO: \VAR{ano_doc}}}} & \multicolumn{7}{r}{\fontsize{5.5pt}{7pt}\selectfont Em R\$1,00} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{1}{C{5.95cm}|}{\textbf{\rule[-0.8ex]{0pt}{2.8ex}RECEITA ORÇAMENTÁRIA}} & \multicolumn{1}{C{1.4cm}|}{\textbf{ORDINÁRIA}} & \multicolumn{1}{C{0.75cm}|}{\textbf{\% PART}} & \multicolumn{1}{C{1.4cm}|}{\textbf{VINCULADA}} & \multicolumn{1}{C{0.75cm}|}{\textbf{\% PART}} & \multicolumn{1}{C{1.4cm}|}{\textbf{TOTAL}} & \multicolumn{1}{C{0.75cm}!{\vrule width 1pt}}{\textbf{\% PART}} & \multicolumn{1}{C{5.95cm}|}{\textbf{DESPESA ORÇAMENTÁRIA}} & \multicolumn{1}{C{1.4cm}|}{\textbf{ORDINÁRIA}} & \multicolumn{1}{C{0.75cm}|}{\textbf{\% PART}} & \multicolumn{1}{C{1.4cm}|}{\textbf{VINCULADA}} & \multicolumn{1}{C{0.75cm}|}{\textbf{\% PART}} & \multicolumn{1}{C{1.4cm}|}{\textbf{TOTAL}} & \multicolumn{1}{C{0.75cm}}{\textbf{\% PART}} \\\hline\BLOCK{for linha in linhas}
+\BLOCK{if linha.tipo == "vazia"}
+ &  &  &  &  &  &  &  &  &  &  &  &  &  \\\BLOCK{elif linha.tipo == "resultado"}
+\specialrule{1pt}{0pt}{0pt}
+\multicolumn{14}{c}{} \\
+\cline{1-2}\cline{4-4}\cline{6-6}
+\multicolumn{1}{|L{5.95cm}|}{\VAR{strut}\textbf{\VAR{linha.rec_desc}}} & \multicolumn{1}{R{1.4cm}|}{\textbf{\VAR{linha.resultado[0]}}} & \multicolumn{1}{c}{} & \multicolumn{1}{|R{1.4cm}|}{\textbf{\VAR{linha.resultado[1]}}} & \multicolumn{1}{c}{} & \multicolumn{1}{|R{1.4cm}|}{\textbf{\VAR{linha.resultado[2]}}} & \multicolumn{8}{c}{} \\
+\cline{1-2}\cline{4-4}\cline{6-6}\BLOCK{elif linha.tipo == "total"}
+\VAR{"\\hline" if linha.apos_total else "\\specialrule{1pt}{0pt}{0pt}"}
+\VAR{lado(strut ~ linha.rec_desc, 0, linha.rec_valores, borda_meio)} & \VAR{lado(linha.desp_desc, 0, linha.desp_valores, "")} \\\BLOCK{else}
+\VAR{lado(linha.rec_desc, linha.rec_nivel, linha.rec_valores, borda_meio)} & \VAR{lado(linha.desp_desc, linha.desp_nivel, linha.desp_valores, "")} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}\raggedright\fontsize{6pt}{8pt}\selectfont {Fonte: PPO.}\\\fontsize{6pt}{8pt}\selectfont {Elaboração: DCAF/SCPPO/SEPLAG}\\\fontsize{6pt}{8pt}\selectfont {Nota: A partir de 2020 as "Outras Despesas de Pessoal Decorrentes de Contratos de Terceirização", assim como os seus respectivos encargos patronais, passarão a ser classificadas no Grupo de Despesa 3 - Outras Despesas Correntes.}\\
+\end{landscape}
+
+\end{document}

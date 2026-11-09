@@ -1,0 +1,22 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{bottom=1.5cm,top=1.5cm,left=1.5cm,right=1.5cm}
+
+
+\BLOCK{set cabecalho}\multicolumn{6}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{DEMONSTRATIVO DOS PROGRAMAS FINANCIADOS COM RECURSOS PROVENIENTES DA UNIÂO}}} \\\multicolumn{6}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{\VAR{base_legal("T28_DCGF")}}}}  \\\specialrule{1.5pt}{2pt}{0pt}\multicolumn{6}{c}{\textbf{Despesa prevista e realizada no exercício de \VAR{linhas[0].ANO}}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{2}{c|}{\textbf{UO}} & \multicolumn{2}{c|}{ \textbf{Programa}} & \multicolumn{1}{C{2cm}|}{ \textbf{Crédito Inicial}} & \multicolumn{1}{C{2cm}}{ \textbf{Despesa Realizada}} \\\hline\BLOCK{endset}
+\renewcommand*{\arraystretch}{1.8}\scriptsize\color{myblack}\centering\noindent\begin{longtable}[c]{m{1cm}|m{1.5cm}|m{1cm}m{8cm}|m{2cm}m{2cm}}\VAR{cabecalho}\endfirsthead\VAR{cabecalho}\endhead\endfoot\hline\hline\endlastfoot\BLOCK{for linha in linhas}
+\BLOCK{if linha.PROGRAMA_DESC == "TOTAL"}
+\hline
+\multicolumn{4}{c|}{ \textbf{\VAR{linha.PROGRAMA_DESC}}} & \multicolumn{1}{R{2cm}|}{ \textbf{\VAR{linha.VL_LOA_DESP}}} & \multicolumn{1}{R{2cm}}{ \textbf{\VAR{linha.VL_DESP_REALIZ}}} \\\BLOCK{else}
+\multicolumn{1}{C{1cm}|}{\VAR{linha.UO_COD}} & \multicolumn{1}{L{1.5cm}|}{\VAR{linha.UO_SIGLA}} & \multicolumn{1}{C{1cm}|}{\VAR{linha.PROGRAMA_COD}} & \multicolumn{1}{L{8cm}|}{\VAR{linha.PROGRAMA_DESC}} & \multicolumn{1}{R{2cm}|}{\VAR{linha.VL_LOA_DESP}} & \multicolumn{1}{R{2cm}}{\VAR{linha.VL_DESP_REALIZ}} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\end{longtable}\raggedright\fontsize{7pt}{10pt}\selectfont {Fonte: PPO.} \\\fontsize{7pt}{10pt}\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\\fontsize{7pt}{10pt}\selectfont {Nota: Foi considerado o valor da despesa realizada até o mês de \VAR{linhas[0].MES}/\VAR{linhas[0].ANO}}\\\fontsize{7pt}{10pt}\selectfont {Na elaboração desse relatório foram consideradas as fontes de recurso \VAR{linhas[0].FONTE_EXEC}.}\\
+
+\end{document}

@@ -1,0 +1,20 @@
+\documentclass{article}
+\input{load_bibliotecas}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{bottom=1.5cm,top=1.5cm,left=1.5cm,right=1.5cm}
+
+
+\renewcommand*{\arraystretch}{1.8}\footnotesize\color{myblack}\centering\noindent\begin{longtable}[c]{m{6cm}m{3cm}m{3cm}m{3cm}}\multicolumn{4}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{DEMONSTRATIVO DO SERVIÇO DA DÍVIDA PÚBLICA}}} \\\multicolumn{4}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{\VAR{base_legal("T23_DCGF_Demonstrativo_do_Servico_da_divida_publica")}}}}  \\\specialrule{1.5pt}{2pt}{0pt}\multicolumn{4}{l}{\textbf{ORÇAMENTO FISCAL}} \\\multicolumn{1}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{3}{r}{\textbf{R\$1,00}} \\\specialrule{1pt}{0pt}{0pt}\multicolumn{1}{C{6cm}|}{ \textbf{NATUREZA DA DÍVIDA}} & \multicolumn{1}{C{3cm}|}{ \textbf{PRINCIPAL}} & \multicolumn{1}{C{3cm}|}{ \textbf{ACESSÓRIO}} & \multicolumn{1}{C{3cm}}{ \textbf{TOTAL}} \\\hline\hline\multicolumn{1}{L{6cm}|}{ \textbf{CONTRATADA}} & \multicolumn{1}{r|}{ } & \multicolumn{1}{r|}{ } & \\\BLOCK{for linha in linhas}
+\BLOCK{if linha.espec == "TOTAL"}
+\hline\hline
+\multicolumn{1}{L{6cm}|}{ \textbf{\VAR{linha.espec}}} & \multicolumn{1}{R{3cm}|}{\textbf{ \VAR{linha.principal} }} & \multicolumn{1}{R{3cm}|}{\textbf{ \VAR{linha.acessorio} }} & \multicolumn{1}{R{3cm}}{\textbf{ \VAR{linha.total} }} \\\BLOCK{else}
+\multicolumn{1}{@{\hspace{2em}}L{6cm}|}{ \textbf{\VAR{linha.espec}}} & \multicolumn{1}{R{3cm}|}{\VAR{linha.principal}} & \multicolumn{1}{R{3cm}|}{\VAR{linha.acessorio}} & \multicolumn{1}{R{3cm}}{\VAR{linha.total}} \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\hline\hline\end{longtable}\raggedright\hspace{1cm} \fontsize{7pt}{10pt}\selectfont {Fonte: PPO.} \\\hspace{1cm} \fontsize{7pt}{10pt}\selectfont {ELABORAÇÃO: DCAF/SCPPO/SEPLAG}\\
+\end{document}

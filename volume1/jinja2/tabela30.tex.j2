@@ -1,0 +1,27 @@
+\documentclass{article}
+
+\input{load_bibliotecas}
+
+\begin{document}
+
+\color{myblack}
+\centering
+ 
+% Geometry de acordo com apenas essa tabela
+
+\pagestyle{empty} % Numeração da páginas não será feito aqui
+\newgeometry{bottom=2cm,top=2cm,left=1.5cm,right=1.5cm}
+
+
+\BLOCK{set cabecalho}\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{INVESTIMENTOS SEGUNDO AS FUNÇÕES}}} \\\multicolumn{3}{c}{\cellcolor{gray!50} \textcolor{myblack} {\footnotesize \textbf{\VAR{base_legal("T30_INVESTIMENTOS_SEGUNDO_FUNCOES")}}}} \\\specialrule{1.5pt}{2pt}{0pt}\multicolumn{2}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{1}{r}{R\$1,00} \\[2ex] \specialrule{1pt}{0pt}{0pt}\multicolumn{1}{@{\hspace{1em}}L{6cm}@{\hspace{0.5em}}|}{\textbf{ ESPECIFICAÇÃO}}  & \multicolumn{1}{c|}{\textbf{ VALOR}} & \multicolumn{1}{c}{\textbf{ \% DE PARTICIPAÇÃO}} \\\hline\BLOCK{endset}
+\renewcommand*{\arraystretch}{1.7}\normalsize\noindent\begin{longtable}[c]{m{8cm}|m{4cm}|m{5cm}}\VAR{cabecalho}\endfirsthead\VAR{cabecalho}\endhead\endfoot\hline\hline\hline\endlastfoot\BLOCK{for linha in linhas}
+\BLOCK{if linha.funcao_desc == "TOTAL"}
+\hline \hline 
+\multicolumn{1}{@{\hspace{1em}}L{8cm}|}{ \textbf{ \VAR{linha.funcao_desc} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.vlr_loa_desp} }} & \multicolumn{1}{r}{ \textbf{ \VAR{linha.porcent} }} \\\BLOCK{else}
+\multicolumn{1}{@{\hspace{1em}}L{8cm}|}{ \VAR{linha.funcao_desc} } & \multicolumn{1}{r|}{ \VAR{linha.vlr_loa_desp} } & \multicolumn{1}{r}{ \VAR{linha.porcent} } \\\BLOCK{endif}
+\BLOCK{if not loop.last}
+
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}\newpage
+\end{document}
