@@ -1,7 +1,5 @@
-Warning: T7_QUADRO_GERAL_DA_RECEITA.R: Há um código de receita que não está disponível 
- DETALHES: (não pode desconsiderar) 
- 7631.99.0.1.04.000
-7631.99.0.2.04.000
 Warning in adiciona_desc(despesa, columns = c("UO", "PROGRAMA")) :
   Utilizando a tabela auxiliar data-raw/desc/desc_programa_tbl.csv
 
+Warning: V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
+Warning: tabela7: código de receita sem descrição em desc_classificacao_receita.xlsx: ['7631.99.0.1.04.000', '7631.99.0.2.04.000']
