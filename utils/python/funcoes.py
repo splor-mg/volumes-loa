@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 def texto_r(valor):
-    """Vazio vira 'NA' e float vira integer"""
+    """Vazio vira 'NA' e float vira integer."""
     if pd.isna(valor):
         return 'NA'
     if isinstance(valor, float) and valor.is_integer():
@@ -29,8 +29,27 @@ def formatar_num_tabela(serie):
     return textos if textos.str.contains('.', regex=False).any() else textos.str.strip()
 
 
+def formatar_num_contabil(serie):
+    """
+    Como formatar_num, com os negativos entre parênteses: -1.234 vira '(1.234)'.
+    """
+    return formatar_num(serie).str.replace(r' *-(\d.+)', r'(\1)', regex=True)
+
+
+def nat(receita_cod, *naturezas):
+    """
+    Testa se o código da receita começa com alguma das naturezas.
+    Naturezas negativas são excluídas: nat(codigos, 1, 9, -91) pega 1 e 9 menos 91.
+    """
+    incluir = tuple(str(natureza) for natureza in naturezas if natureza > 0)
+    excluir = tuple(str(-natureza) for natureza in naturezas if natureza < 0)
+    return receita_cod.str.startswith(incluir) & ~receita_cod.str.startswith(excluir)
+
+
 def le_tabela(caminho):
-    """Lê como texto, sem converter vazios, uma tabela gravada por escreve_tabela"""
+    """
+    Lê como texto, sem converter vazios, uma tabela gravada por escreve_tabela.
+    """
     return pd.read_csv(caminho, sep='\t', dtype=str, keep_default_na=False)
 
 
