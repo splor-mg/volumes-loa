@@ -59,6 +59,7 @@ def compila(pasta, aux_files, nome):
         auxiliares = [
             (aux_files / f'{nome}.{extensao}').read_bytes()
             for extensao in ('aux', 'toc', 'out')
+            if (aux_files / f'{nome}.{extensao}').exists()
         ]
         if auxiliares == anteriores:
             break

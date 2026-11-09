@@ -87,8 +87,12 @@ def trata_orcamento_despesa(caminho):
     qdd = qdd.apply(corrige_caracteres_especiais)
 
     qdd['vlr_loa_desp'] = qdd['vlr_loa_desp'].str.replace(',', '.').astype(float)
+    regras = qdd.columns[qdd.isin(['TRUE', 'FALSE']).all()]
+    qdd[regras] = qdd[regras] == 'TRUE'
 
-    for coluna, largura in [('funcao_cod', 2), ('subfuncao_cod', 3), ('elemento_cod', 2)]:
+    larguras = [('funcao_cod', 2), ('subfuncao_cod', 3), ('projeto_atividade_cod', 3), ('subprojeto_cod', 4),
+                ('elemento_cod', 2)]
+    for coluna, largura in larguras:
         qdd[coluna] = qdd[coluna].str.zfill(largura)
 
     valores = qdd['vlr_loa_desp']
@@ -201,11 +205,25 @@ def trata_orcamento_receita(caminho):
     codigos = ['categoria_cod', 'origem_cod', 'especie_cod', 'rubrica_cod', 'alinea_cod', 'subalinea_cod',
                'receita_tipo_cod', 'item_cod', 'subitem_cod', 'fonte_cod']
     receita[codigos] = receita[codigos].astype(int)
+    regras = receita.columns[receita.isin(['TRUE', 'FALSE']).all()]
+    receita[regras] = receita[regras] == 'TRUE'
 
-    negativos = (receita['vlr_loa_rec'] < 0) & ~receita['receita_cod_fmt'].str.startswith('9')
+    negativos = (receita['vlr_loa_rec'] < 0) & ~receita['receita_cod'].str.startswith('9')
     avisa_valores('orcamento_receita', 'negativos', negativos)
 
     return receita
+
+
+def trata_classificacao_receita(caminho):
+    """
+    Função para abrir o banco desc_classificacao_receita.xlsx, usado nos volumes 1 e 2.
+    """
+    classificacao = le_planilha(caminho).dropna(subset='RECEITA_COD_2')
+    return pd.DataFrame({
+        'cod_texto': classificacao['RECEITA_COD_2'].astype('int64').astype(str).str.replace(
+            r'(.{4})(..)(.)(.)(..)(...)', r'\1.\2.\3.\4.\5.\6', regex=True),
+        'receita_desc': corrige_caracteres_especiais(classificacao['RECEITA_DESC_2']),
+    })
 
 
 def trata_orcamento_repasse(caminho):

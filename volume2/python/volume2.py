@@ -4,13 +4,12 @@ Gera os dados do volume 2 em volume2/data a partir de bancos/PPO:
 - tabela1/ a tabela5/: uma tabela por UO, e tabela3/funfip.txt
 """
 import sys
-import pandas as pd
 from pathlib import Path
 
-from utils.python.formata_texto import corrige_caracteres_especiais
 from utils.python.funcoes import escreve_tabela
-from utils.python.trata_bancos import (le_planilha, trata_orcamento_despesa, trata_orcamento_pessoal,
-                                       trata_orcamento_receita, trata_orcamento_repasse, trata_planejamento_acao)
+from utils.python.trata_bancos import (le_planilha, trata_classificacao_receita, trata_orcamento_despesa,
+                                       trata_orcamento_pessoal, trata_orcamento_receita, trata_orcamento_repasse,
+                                       trata_planejamento_acao)
 from volume2.python.tabela1 import gera_tabela1
 from volume2.python.tabela2 import gera_tabela2
 from volume2.python.tabela3 import ACOES_INATIVOS, UOS_DESCONSIDERAR, gera_funfip, gera_tabela3
@@ -50,14 +49,7 @@ if len(sem_nivel):
           'Definir no código em que ordem ela sai na tabela', file=sys.stderr)
 
 receita = trata_orcamento_receita('bancos/PPO/orcamento_receita.csv')
-
-classificacao = le_planilha('bancos/manual/desc_classificacao_receita.xlsx').dropna(subset='RECEITA_COD_2')
-classificacao = pd.DataFrame({
-    'cod_texto': classificacao['RECEITA_COD_2'].astype('int64').astype(str).str.replace(
-        r'(.{4})(..)(.)(.)(..)(...)', r'\1.\2.\3.\4.\5.\6', regex=True),
-    'receita_desc': corrige_caracteres_especiais(classificacao['RECEITA_DESC_2']),
-})
-
+classificacao = trata_classificacao_receita('bancos/manual/desc_classificacao_receita.xlsx')
 repasse = trata_orcamento_repasse('bancos/PPO/orcamento_repasse.csv')
 
 # Sumário ----------------------------------------------------------------------
