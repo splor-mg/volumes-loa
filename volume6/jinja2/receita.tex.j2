@@ -1,0 +1,31 @@
+\renewcommand*{\arraystretch}{1.7}
+\scriptsize
+\noindent\begin{longtable}[c]{L{3cm}|m{1cm}|m{6cm}|m{2.5cm}|m{2cm}|m{2cm}}
+\BLOCK{set cabecalho}
+\multicolumn{6}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{QUADRO GERAL DA RECEITA}}} \\
+\multicolumn{6}{c}{\cellcolor{gray!50} \textcolor{myblack} {\normalsize \textbf{(Art. 2$^o$, \S 1$^o$, Inciso III da Lei 4.320/64)}}} \\
+\specialrule{1.5pt}{2pt}{0pt}
+\multicolumn{5}{l}{\textbf{Exercício: \textcolor{myblack}{ \VAR{ano_doc} }}} & \multicolumn{1}{r}{R\$1,00} \\[2ex] 
+\specialrule{1pt}{0pt}{0pt}
+\multicolumn{1}{C{3cm}|}{\textbf{ CÓDIGO}} &  \multicolumn{1}{@{\hspace{1em}}C{1cm}@{\hspace{1em}}|}{\textbf{ FONTE}} &  \multicolumn{1}{@{\hspace{1em}}L{6cm}@{\hspace{0.5em}}|}{\textbf{ ESPECIFICAÇÃO}}  &   \multicolumn{1}{C{2.5cm}|}{\textbf{ DESDOBRAMENTO}} &  \multicolumn{1}{C{2cm}|}{\textbf{ ESPÉCIE}} &  \multicolumn{1}{C{2cm}}{\textbf{ CATEGORIA / ORIGEM}} \\
+\hline\BLOCK{endset}
+\VAR{cabecalho}
+\endfirsthead
+\VAR{cabecalho}
+\endhead
+\endfoot
+\hline
+\hline\hline
+\endlastfoot
+\BLOCK{for linha in receita}
+\BLOCK{if linha.tipo == "total"}
+\hline \hline 
+\multicolumn{5}{@{\hspace{1em}}L{8cm}@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.descricao} }} & \multicolumn{1}{r@{\hspace{0.5em}}}{ \textbf{ \VAR{linha.valor_categoria} }} \\
+\BLOCK{elif linha.tipo == "categoria"}
+\multicolumn{1}{L{3cm}|}{\textbf{  \VAR{linha.cod_texto} }} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.COD_FONTE} }} & \multicolumn{1}{@{\hspace{1em}}J{6cm}@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.descricao} }} & \multicolumn{1}{r@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.valor_desdobramento} }} & \multicolumn{1}{r@{\hspace{0.5em}}|}{ \textbf{ \VAR{linha.valor_especie} }} & \multicolumn{1}{r@{\hspace{1em}}}{ \textbf{ \VAR{linha.valor_categoria} }} \\
+\BLOCK{else}
+\BLOCK{set recuo = 1 if linha.tipo == "origem" else 2}
+\multicolumn{1}{L{3cm}|}{ \hspace{\VAR{recuo}em} \VAR{linha.cod_texto} } & \multicolumn{1}{c|}{  \VAR{linha.COD_FONTE} } & \multicolumn{1}{@{\hspace{\VAR{recuo + 1}em}}J{6cm}@{\hspace{0.5em}}|}{  \VAR{linha.descricao} } & \multicolumn{1}{r@{\hspace{0.5em}}|}{  \VAR{linha.valor_desdobramento} } & \multicolumn{1}{r@{\hspace{0.5em}}|}{  \VAR{linha.valor_especie} } & \multicolumn{1}{r@{\hspace{1em}}}{  \VAR{linha.valor_categoria} } \\
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{longtable}
