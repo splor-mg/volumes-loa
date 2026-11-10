@@ -15,6 +15,7 @@ DEPENDENCIAS_V2 := $(shell Rscript $(VERBOSE) utils/makefile/gera_dependencias_v
 DEPENDENCIAS_V3 := $(shell Rscript $(VERBOSE) utils/makefile/gera_dependencias_v3.R 2> logs/log.Rout)
 DEPENDENCIAS_V4 := $(shell Rscript $(VERBOSE) utils/makefile/gera_dependencias_v4.R 2> logs/log.Rout)
 DEPENDENCIAS_V5 := $(shell Rscript $(VERBOSE) utils/makefile/gera_dependencias_v5.R 2> logs/log.Rout)
+DEPENDENCIAS_V6 := $(shell Rscript $(VERBOSE) utils/makefile/gera_dependencias_v6.R 2> logs/log.Rout)
 DEPENDENCIAS_V7 := $(shell Rscript $(VERBOSE) utils/makefile/gera_dependencias_v7.R 2> logs/log.Rout)
 
 # variaveis utilizadas pelo target make docker
