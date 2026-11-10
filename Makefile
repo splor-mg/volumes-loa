@@ -28,7 +28,7 @@ v4: pdf/volume4.pdf ## Gera volume 4
 
 v5: pdf/volume5.pdf ## Gera volume 5
 
-v6: pdf/Projeto_volume6A.pdf ## Gera volume 6
+v6: pdf/volume6.pdf ## Gera volume 6
 
 v7: pdf/volume7.pdf ## Gera volume 7
 
@@ -72,13 +72,20 @@ diff:
 # ===================================================================
 # TARGETS
 
+# Volume 7
+pdf/volume7.pdf: $(DEPENDENCIAS_V7)
+	@python3 -m volume7.jinja2.volume7 2> logs/warningsV7.Rout
+	@echo "---------------------------------------------------------------"
+
+volume7/data/*.txt: volume7/python/*.py utils/python/*.py volume7/checks/check_orcamento_despesa_fonte_80_95.py bancos/PPO/orcamento_despesa.csv bancos/PPO/orcamento_despesa_fonte_80_95.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+	@echo "Atualizando volume7/data/ consolidado.txt e qdd.txt..."
+	@python3 volume7/checks/check_orcamento_despesa_fonte_80_95.py 2> logs/logv7.Rout
+	@python3 -m volume7.python.volume7 2>> logs/logv7.Rout
+
+
 # Volume 6
-pdf/Projeto_volume6A.pdf: volume6/data/receita_fonte_stn.txt volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt volume6/Rnw/ANEXOS.Rnw \
-						 volume6/Rnw/load_bibliotecas.tex volume6/Rnw/Projeto_volume6A.Rnw volume6/Rnw/QUADRO_DETALHAMENTO_DESPESA.Rnw \
-						 bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_fontes_de_recursos_stn.xlsx bancos/manual/desc_IAG.xlsx bancos/manual/desc_IPU.xlsx
-	@echo "- Gera logs/warningsV6A.Rout"
-	@touch logs/warningsV6A.Rout
-	@Rscript $(VERBOSE) utils/Rnw2Tex.R 6A
+pdf/volume6.pdf: $(DEPENDENCIAS_V6)
+	@python3 -m volume6.jinja2.volume6 2> logs/warningsV6.Rout
 	@echo "---------------------------------------------------------------"
 
 volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt: volume6/R/volume6A.R bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
@@ -100,17 +107,6 @@ bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_FONTE_STN.xlsx: utils/trataBancos/trataRe
 bancos/manual/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte_STN.R bancos/manual/fonte_stn.csv utils/ano.txt
 	@echo "Atualizando $@..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
-
-
-# Volume 7
-pdf/volume7.pdf: $(DEPENDENCIAS_V7)
-	@python3 -m volume7.jinja2.volume7 2> logs/warningsV7.Rout
-	@echo "---------------------------------------------------------------"
-
-volume7/data/*.txt: volume7/python/*.py utils/python/*.py volume7/checks/check_orcamento_despesa_fonte_80_95.py bancos/PPO/orcamento_despesa.csv bancos/PPO/orcamento_despesa_fonte_80_95.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
-	@echo "Atualizando volume7/data/ consolidado.txt e qdd.txt..."
-	@python3 volume7/checks/check_orcamento_despesa_fonte_80_95.py 2> logs/logv7.Rout
-	@python3 -m volume7.python.volume7 2>> logs/logv7.Rout
 
 
 # Volume 5
