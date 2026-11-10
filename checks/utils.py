@@ -46,7 +46,7 @@ REPORTS = [
         Report('volume3', 'volume3'),
         Report('volume4', 'volume4'),
         Report('volume5', 'volume5'),
-        Report('Projeto_volume6A', 'volume6'),
+        Report('volume6', 'volume6'),
         Report('volume7', 'volume7'),
     ]
 
