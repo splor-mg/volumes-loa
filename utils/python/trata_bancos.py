@@ -20,6 +20,16 @@ def le_planilha(caminho):
     return planilha.parse(0).map(lambda valor: valor.strip() if isinstance(valor, str) else valor)
 
 
+def le_banco(caminho):
+    """
+    Lê um banco de bancos/PPO como texto, sem espaços nas pontas e com os caracteres especiais corrigidos.
+    """
+    banco = pd.read_csv(caminho, dtype=str, keep_default_na=False)
+    banco = banco.apply(lambda coluna: corrige_caracteres_especiais(coluna.str.strip()))
+
+    return banco
+
+
 def avisa_valores(banco, descricao, linhas):
     if linhas.any():
         numeros = ', '.join(str(i + 2) for i in linhas.index[linhas])
@@ -30,13 +40,12 @@ def trata_orcamento_despesa_fonte_80_95(caminho):
     """
     Função para abrir o banco orcamento_despesa_fonte_80_95.csv, usado no volume 7.
     """
-    qdd = pd.read_csv(caminho, dtype=str)
-    qdd = qdd.map(lambda valor: valor.strip() if isinstance(valor, str) else valor)
-    qdd = qdd.apply(corrige_caracteres_especiais)
+    qdd = le_banco(caminho)
+    qdd['vlr_loa_desp'] = qdd['vlr_loa_desp'].astype(float)
 
-    qdd['vlr_loa_desp'] = qdd['vlr_loa_desp'].str.replace(',', '.').astype(float)
-
-    for coluna, largura in [('funcao_cod', 2), ('subfuncao_cod', 3), ('elemento_cod', 2)]:
+    larguras = [('funcao_cod', 2), ('subfuncao_cod', 3), ('projeto_atividade_cod', 3),
+                ('subprojeto_cod', 4), ('elemento_cod', 2)]
+    for coluna, largura in larguras:
         qdd[coluna] = qdd[coluna].str.zfill(largura)
 
     qdd = qdd.sort_values('fonte_cod', kind='stable')
@@ -80,15 +89,11 @@ def trata_orcamento_despesa_fonte_80_95(caminho):
 
 def trata_orcamento_despesa(caminho):
     """
-    Função para abrir o banco orcamento_despesa.csv, usado no volume 5.
+    Função para abrir o banco orcamento_despesa.csv, usado nos volumes 1, 2 e 5.
     """
-    qdd = pd.read_csv(caminho, dtype=str).rename(columns={'acao_desc': 'especificacao'})
-    qdd = qdd.map(lambda valor: valor.strip() if isinstance(valor, str) else valor)
-    qdd = qdd.apply(corrige_caracteres_especiais)
-
-    qdd['vlr_loa_desp'] = qdd['vlr_loa_desp'].str.replace(',', '.').astype(float)
-    regras = qdd.columns[qdd.isin(['TRUE', 'FALSE']).all()]
-    qdd[regras] = qdd[regras] == 'TRUE'
+    qdd = le_banco(caminho).rename(columns={'acao_desc': 'especificacao'})
+    qdd['vlr_loa_desp'] = qdd['vlr_loa_desp'].astype(float)
+    qdd['asps'] = qdd['asps'] == 'TRUE'
 
     larguras = [('funcao_cod', 2), ('subfuncao_cod', 3), ('projeto_atividade_cod', 3), ('subprojeto_cod', 4),
                 ('elemento_cod', 2)]
@@ -128,13 +133,10 @@ def trata_orcamento_despesa(caminho):
 
 def trata_orcamento_despesa_investimento(caminho):
     """
-    Função para abrir o banco orcamento_despesa_investimento.csv, usado nos volumes 3 e 4.
+    Função para abrir o banco orcamento_despesa_investimento.csv, usado nos volumes 1 e 3.
     """
-    qdd = pd.read_csv(caminho, dtype=str, keep_default_na=False)
-    qdd = qdd.map(lambda valor: valor.strip() if isinstance(valor, str) else valor)
-    qdd = qdd.apply(corrige_caracteres_especiais)
-
-    qdd['vlr_loa_desp'] = qdd['vlr_loa_desp'].str.replace(',', '.').astype(float)
+    qdd = le_banco(caminho)
+    qdd['vlr_loa_desp'] = qdd['vlr_loa_desp'].astype(float)
 
     valores = qdd['vlr_loa_desp']
     avisa_valores('orcamento_despesa_investimento', 'negativos', valores < 0)
@@ -147,29 +149,24 @@ def trata_orcamento_obras(caminho):
     """
     Função para abrir o banco orcamento_obras.csv, usado no volume 4.
     """
-    obras = pd.read_csv(caminho, dtype=str, keep_default_na=False)
-    obras = obras.map(lambda valor: valor.strip() if isinstance(valor, str) else valor)
-    obras = obras.apply(corrige_caracteres_especiais)
+    obras = le_banco(caminho)
 
     obras['obra_desc'] = obras['obra_desc'].str.replace(r'\r?\n', ' ', regex=True)
     obras['obra_quantidade'] = pd.to_numeric(obras['obra_quantidade'])
-    for coluna in ['vlr_tesouro', 'vlr_outros']:
-        obras[coluna] = obras[coluna].str.replace(',', '.').astype(float)
+    obras[['vlr_tesouro', 'vlr_outros']] = obras[['vlr_tesouro', 'vlr_outros']].astype(float)
 
     for coluna, largura in [('funcao_cod', 2), ('subfuncao_cod', 3), ('programa_cod', 3)]:
         obras[coluna] = obras[coluna].str.zfill(largura)
 
-    obras['obra_numero'] = range(1, len(obras) + 1)
-
     avisa_valores('orcamento_obras', 'negativos em vlr_tesouro', obras['vlr_tesouro'] < 0)
     avisa_valores('orcamento_obras', 'negativos em vlr_outros', obras['vlr_outros'] < 0)
     avisa_valores('orcamento_obras', 'iguais a zero na soma de vlr_tesouro e vlr_outros', obras['vlr_tesouro'] + obras['vlr_outros'] == 0)
-    avisa_valores('orcamento_obras', 'vazios em unidade_medida_desc', obras['unidade_medida_desc'] == '')
+    avisa_valores('orcamento_obras', 'vazios em unidade_medida', obras['unidade_medida'] == '')
 
-    palavras = obras['unidade_medida_desc'].str.split().explode().dropna()
+    palavras = obras['unidade_medida'].str.split().explode().dropna()
     longas = palavras[palavras.str.len() > 14].unique()
     if len(longas) > 0:
-        print('orcamento_obras: há palavras de mais de 14 caracteres em unidade_medida_desc:'
+        print('orcamento_obras: há palavras de mais de 14 caracteres em unidade_medida:'
               f'{", ".join(longas)}', file=sys.stderr)
 
     return obras
@@ -177,12 +174,9 @@ def trata_orcamento_obras(caminho):
 
 def trata_orcamento_pessoal(caminho):
     """
-    Função para abrir o banco orcamento_pessoal.csv, usado no volume 2.
+    Função para abrir o banco orcamento_pessoal.csv, usado nos volumes 1 e 2.
     """
-    pessoal = pd.read_csv(caminho, dtype=str, keep_default_na=False)
-    pessoal = pessoal.map(lambda valor: valor.strip() if isinstance(valor, str) else valor)
-    pessoal = pessoal.apply(corrige_caracteres_especiais)
-
+    pessoal = le_banco(caminho)
     pessoal['pessoal_quantidade'] = pd.to_numeric(pessoal['pessoal_quantidade'])
 
     quantidades = pessoal['pessoal_quantidade']
@@ -195,16 +189,11 @@ def trata_orcamento_pessoal(caminho):
 
 def trata_orcamento_receita(caminho):
     """
-    Função para abrir o banco orcamento_receita.csv, usado no volume 2.
+    Função para abrir o banco orcamento_receita.csv, usado nos volumes 1 e 2.
     """
-    receita = pd.read_csv(caminho, dtype=str, keep_default_na=False)
-    receita = receita.map(lambda valor: valor.strip() if isinstance(valor, str) else valor)
-    receita = receita.apply(corrige_caracteres_especiais)
-
-    receita['vlr_loa_rec'] = receita['vlr_loa_rec'].str.replace(',', '.').astype(float)
-    codigos = ['categoria_cod', 'origem_cod', 'especie_cod', 'rubrica_cod', 'alinea_cod', 'subalinea_cod',
-               'receita_tipo_cod', 'item_cod', 'subitem_cod', 'fonte_cod']
-    receita[codigos] = receita[codigos].astype(int)
+    receita = le_banco(caminho)
+    receita['vlr_loa_rec'] = receita['vlr_loa_rec'].astype(float)
+    receita['fonte_cod'] = receita['fonte_cod'].astype(int)
     regras = receita.columns[receita.isin(['TRUE', 'FALSE']).all()]
     receita[regras] = receita[regras] == 'TRUE'
 
@@ -216,13 +205,13 @@ def trata_orcamento_receita(caminho):
 
 def trata_classificacao_receita(caminho):
     """
-    Função para abrir o banco desc_classificacao_receita.xlsx, usado nos volumes 1 e 2.
+    Função para abrir o banco classificacao_receita.csv, usado nos volumes 1 e 2.
     """
-    classificacao = le_planilha(caminho).dropna(subset='RECEITA_COD_2')
+    classificacao = le_banco(caminho)
     return pd.DataFrame({
-        'cod_texto': classificacao['RECEITA_COD_2'].astype('int64').astype(str).str.replace(
+        'cod_texto': classificacao['receita_cod'].str.replace(
             r'(.{4})(..)(.)(.)(..)(...)', r'\1.\2.\3.\4.\5.\6', regex=True),
-        'receita_desc': corrige_caracteres_especiais(classificacao['RECEITA_DESC_2']),
+        'receita_desc': classificacao['receita_desc'],
     })
 
 
@@ -230,11 +219,8 @@ def trata_orcamento_repasse(caminho):
     """
     Função para abrir o banco orcamento_repasse.csv, usado no volume 2.
     """
-    repasse = pd.read_csv(caminho, dtype=str, keep_default_na=False)
-    repasse = repasse.map(lambda valor: valor.strip() if isinstance(valor, str) else valor)
-    repasse = repasse.apply(corrige_caracteres_especiais)
-
-    repasse['vlr_repasse'] = repasse['vlr_repasse'].str.replace(',', '.').astype(float)
+    repasse = le_banco(caminho)
+    repasse['vlr_repasse'] = repasse['vlr_repasse'].astype(float)
     codigos = ['grupo_cod', 'iag_cod', 'fonte_cod', 'ipu_cod']
     repasse[codigos] = repasse[codigos].astype(int)
 
@@ -249,18 +235,17 @@ def trata_orcamento_repasse(caminho):
 
 def trata_planejamento_acao(caminho):
     """
-    Função para abrir o banco planejamento_acao.csv, usado no volume 4.
+    Função para abrir o banco planejamento_acao.csv, usado nos volumes 1 a 4.
     """
-    acoes = pd.read_csv(caminho, dtype=str, keep_default_na=False)
-    acoes = acoes.apply(corrige_caracteres_especiais)
-    acoes = acoes[(acoes['programa_exclusao'] == 'NÃO') & (acoes['acao_exclusao'] == 'NÃO')]
+    acoes = le_banco(caminho)
+    acoes = acoes[(acoes['programa_exclusao'] == 'N') & (acoes['acao_exclusao'] == 'N')]
 
     for coluna, largura in [('funcao_cod', 2), ('subfuncao_cod', 3), ('programa_cod', 3)]:
         acoes[coluna] = acoes[coluna].str.zfill(largura)
 
-    acoes['vlr_meta_fisica_ano0'] = pd.to_numeric(acoes['vlr_meta_fisica_ano0'].str.replace(',', '.'))
+    acoes['vlr_meta_fisica_ano0'] = pd.to_numeric(acoes['vlr_meta_fisica_ano0'])
 
-    textos = ['funcao_desc', 'subfuncao_desc', 'acao_finalidade', 'produto_desc', 'unidade_medida_desc']
+    textos = ['funcao_desc', 'subfuncao_desc', 'acao_finalidade', 'produto', 'unidade_medida']
     acoes[textos] = acoes[textos].apply(lambda coluna: coluna.str.replace(r'\n+', ' ', regex=True)
                                         .str.replace(r'[\x00-\x1f]', ' ', regex=True))
 
