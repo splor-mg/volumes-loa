@@ -327,40 +327,29 @@ merge_QDD_v5 = function(banco, uos_proposta){
 
 
 adiciona_desc_volumes = function(base, column) {
-  result <- data.table::copy(base)
+  arquivos = c(GRUPO = "grupo_categoria", UO = "uo", PROGRAMA = "programa")
 
-  if(column == "GRUPO") {
-    aux <- data.table(read_excel("bancos/manual/desc_grupos_de_despesa.xlsx"))
-    aux <- aux[
-      , .(GRUPO_COD = CODIGO,
-          GRUPO_DESC = stringi::stri_trans_general(ESPECIFICACAO, "latin-ascii"))
-    ]
-    result <- aux[result, on = "GRUPO_COD"]
-  } else if(column == "UO") {
-    aux <- data.table(read_excel("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx"))
-    aux <- unique(
-      aux[
-        , .(UO_COD = UO_COD,
-            UO_SIGLA = SIGLA_UO)
-      ]
-    )
-    result <- aux[result, on = "UO_COD"]
-  } else if(column == "PROGRAMA") {
-    aux <- data.table(read_excel("bancos/SISOR/BASE_QDD_FISCAL.xlsx"))
-    aux <- unique(
-      aux[
-        , .(UO_COD = COD_UO,
-            PROGRAMA_COD = PROGRAMA,
-            PROGRAMA_DESC = stringi::stri_trans_general(NOME_PROGRAMA, "latin-ascii"))
-      ]
-    )
-    result <- aux[result, on = c("UO_COD", "PROGRAMA_COD")]
-  } else {
+  if(!column %in% names(arquivos)) {
     stop(paste("adiciona_desc_volumes não pode ser utilizada para coluna", column))
   }
 
+  cod = paste0(column, "_COD")
+  desc = ifelse(column == "UO", "UO_SIGLA", paste0(column, "_DESC"))
+
+  aux = fread(paste0("bancos/classificadores/", arquivos[column], ".csv"), encoding = "UTF-8")
+  names(aux) = toupper(names(aux))
+  aux = unique(aux[, c("ANO", cod, desc), with = FALSE], by = c("ANO", cod))
+  setnames(aux, "ANO", "ANO_DESC")
+
+  result = data.table::copy(base)
+  result[, ANO_DESC := pmin(ANO, max(aux$ANO_DESC))]
+  result = merge(result, aux, by = c("ANO_DESC", cod), all.x = TRUE, sort = FALSE)
+  result[, ANO_DESC := NULL]
+  setcolorder(result, append(names(base), desc, after = match(cod, names(base))))
+
   result
 }
+
 
 base_legal <- function(id_demonstrativo) {
   banco <- "bancos/manual/desc_base_legal_demonstrativos.xlsx"
