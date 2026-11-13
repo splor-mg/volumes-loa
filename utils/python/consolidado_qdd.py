@@ -8,7 +8,7 @@ import pandas as pd
 from utils.python.funcoes import escreve_tabela, formatar_num, le_tabela
 from utils.python.trata_bancos import le_banco
 
-CHAVE_UO = ['ano', 'poder_cod', 'poder', 'orgao_cod', 'orgao_nome', 'uo_cod', 'uo_nome', 'uo_sigla']
+CHAVE_UO = ['ano', 'poder_cod', 'poder_desc', 'orgao_cod', 'orgao_nome', 'uo_cod', 'uo_nome', 'uo_sigla']
 CHAVE_ACAO = ['funcao_cod', 'subfuncao_cod', 'programa_cod', 'identificador_cod', 'projeto_atividade_cod', 'subprojeto_cod']
 CHAVE_ELEMENTO = ['categoria_cod', 'grupo_cod', 'modalidade_cod', 'elemento_cod', 'iag_cod', 'fonte_cod', 'ipu_cod']
 
@@ -103,7 +103,7 @@ def prepara_qdd(caminho):
     uos = []
     for _, uo in banco.groupby('uo_cod', sort=False):
         primeira = uo.iloc[0]
-        poder = primeira['poder']
+        poder = primeira['poder_desc']
         orgao = primeira['orgao_cod']
         unidade = primeira['uo_cod']
         sigla = primeira['uo_sigla']
