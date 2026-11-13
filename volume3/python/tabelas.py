@@ -50,21 +50,21 @@ def gera_tabela1(uo, caminho):
         soma = uo.groupby(chave + [descricao], as_index=False, dropna=False)['vlr_loa_desp'].sum()
         partes.append(soma.rename(columns={descricao: 'especificacao'}).assign(tipo='acao'))
 
-    planejada = uo[uo['produto_desc'].notna()]
+    planejada = uo[uo['produto'].notna()]
     finalidade = planejada[CHAVE + ['acao_finalidade']].drop_duplicates()
     finalidade = finalidade.rename(columns={'acao_finalidade': 'especificacao'})
     partes.append(finalidade.assign(tipo='finalidade'))
 
-    colunas = CHAVE + ['produto_desc', 'unidade_medida_desc', 'vlr_meta_fisica_ano0']
+    colunas = CHAVE + ['produto', 'unidade_medida', 'vlr_meta_fisica_ano0']
     produto = planejada[colunas].drop_duplicates()
-    produto = produto.rename(columns={'produto_desc': 'especificacao'})
+    produto = produto.rename(columns={'produto': 'especificacao'})
     partes.append(produto.assign(tipo='produto'))
 
-    palavras = produto['unidade_medida_desc'].str.split(' ').explode()
+    palavras = produto['unidade_medida'].str.split(' ').explode()
     if (palavras.str.len() > 14).any():
         print(f'Warning: UO {uo["uo_cod"].iloc[0]}: unidade de medida do produto com palavra '
               'de mais de 14 caracteres pode quebrar o layout: '
-              f'{", ".join(produto["unidade_medida_desc"].unique())}', file=sys.stderr)
+              f'{", ".join(produto["unidade_medida"].unique())}', file=sys.stderr)
 
     # Cada ação seguida da finalidade e do produto
     tabela = pd.concat(partes).sort_values(CHAVE + ['tipo'], na_position='first', ignore_index=True)
@@ -79,7 +79,7 @@ def gera_tabela1(uo, caminho):
     for coluna in CHAVE + ['vlr_loa_desp', 'vlr_meta_fisica_ano0']:
         tabela[coluna] = formatar_num(tabela[coluna])
 
-    colunas = CHAVE + ['tipo', 'especificacao', 'vlr_loa_desp', 'unidade_medida_desc', 'vlr_meta_fisica_ano0']
+    colunas = CHAVE + ['tipo', 'especificacao', 'vlr_loa_desp', 'unidade_medida', 'vlr_meta_fisica_ano0']
     escreve_tabela(tabela[colunas], caminho)
 
 
