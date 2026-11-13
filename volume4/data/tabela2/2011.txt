@@ -1,4 +1,4 @@
-regiao_geografica_intermediaria_desc	municipio_desc	obra	obra_quantidade	unidade_medida_desc	obra_status	especificacao	cod_admin	nome_acao	vlr_tesouro	vlr_outros
+regiao_geografica_intermediaria	municipio	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
 REGIÃO INTERMEDIÁRIA DE BELO HORIZONTE	BELO HORIZONTE	123 - APOIO À GELENG, NO ATENDIMENTO ÀS DEMANDAS DE SERVIÇOS DE REFORMA E MANUTENÇÃO NAS UNIDADES.		AÇÃO	INICIADO	10  122 705 2 500	1	ASSESSORAMENTO E GERENCIAMENTO DE POLÍTICAS PÚBLICAS	0	2.200.000
 		TOTAL				10  122 705 2 500	1		0	2.200.000
 REGIÃO INTERMEDIÁRIA DE BELO HORIZONTE	BELO HORIZONTE	121 - EXECUCAO DE OBRAS POR CONTRATO DE BENS PATRIMONIAVEIS ADEQUAÇÃO DO HGIP PARA OBTENÇÃO DO AVCB		BENEFICIÁRIO	INICIADO	10  302 088 4 231	1	ATENÇÃO À SAÚDE HOSPITALAR NA REDE PRÓPRIA	0	2.000.000

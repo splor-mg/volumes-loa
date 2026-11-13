@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 04										1	ADMINISTRAÇÃO							485.830.119		
 04	122									1	ADMINISTRAÇÃO GERAL							292.970.242		
 04	122	161								1	GESTÃO DE TRÂNSITO							213.551.211		
@@ -11,7 +11,7 @@ funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	su
 04	122	161	4	495	0001					1	REGISTRO DE VEÍCULOS							26.208.793		
 04	122	161	4	495	0001	90	0	15	1	7				60.449				60.449		
 04	122	161	4	495	0001	90	0	82	1	7				26.148.344				26.148.344		
-04	122	161	4	495	0001	91	0			8	NÚMERO DE LICENCIAMENTOS DE VEÍCULOS EMITIDOS 								DOCUMENTO	9.800.000
+04	122	161	4	495	0001	91	0			8	NÚMERO DE LICENCIAMENTOS DE VEÍCULOS EMITIDOS								DOCUMENTO	9.800.000
 04	122	161	4	496						5	ASSEGURAR AOS USUÁRIOS DOS SERVIÇOS DE TRÂNSITO ATENDIMENTO ACESSÍVEL, INTEGRADO, TEMPESTIVO, SEGURO E DE QUALIDADE, POR MEIO DA GESTÃO E DO APERFEIÇOAMENTO DOS CANAIS PRESENCIAIS E DIGITAIS, DA SIMPLIFICAÇÃO DOS PROCEDIMENTOS, DA TRANSFORMAÇÃO DOS SERVIÇOS E DA MELHORIA CONTÍNUA DA EXPERIÊNCIA DO CIDADÃO.							96.877.676		
 04	122	161	4	496	0001					1	ATENDIMENTO AO CIDADÃO E TRANSFORMAÇÃO DOS SERVIÇOS DE TRÂNSITO							96.877.676		
 04	122	161	4	496	0001	90	0	15	1	7				61.676.223				61.676.223		

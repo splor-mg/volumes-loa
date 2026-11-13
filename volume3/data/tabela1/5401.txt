@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 25						acao	ENERGIA	5.570.404.894		
 25	752					acao	ENERGIA ELÉTRICA	5.570.404.894		
 25	752	72				acao	DISTRIBUIÇÃO DE ENERGIA ELÉTRICA			

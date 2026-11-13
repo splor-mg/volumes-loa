@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 22						acao	INDÚSTRIA	323.000		
 22	122					acao	ADMINISTRAÇÃO GERAL	323.000		
 22	122	142				acao	MANUTENÇÃO DA INFRAESTRUTURA ADMINISTRATIVA E OPERACIONAL - INVEST MINAS			

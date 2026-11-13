@@ -1,3 +1,3 @@
-regiao_geografica_intermediaria_desc	municipio_desc	obra	obra_quantidade	unidade_medida_desc	obra_status	especificacao	cod_admin	nome_acao	vlr_tesouro	vlr_outros
+regiao_geografica_intermediaria	municipio	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
 REGIÃO INTERMEDIÁRIA DE MONTES CLAROS	MONTES CLAROS	221 - PERFURAÇÃO DE SISTEMAS DE ABASTECIMENTO DE AGUA CONFORME DEMANDA DOS MUNICÍPIOS ATENDIDOS PELO IDENE		UNIDADE	INICIADO	08  544 101 1 016	1	PROMOÇÃO DE INFRAESTRUTURA HÍDRICA DE PEQUENO PORTE NO NORTE E NORDESTE DE MINAS GERAIS	0	477.508
 		TOTAL				08  544 101 1 016	1		0	477.508

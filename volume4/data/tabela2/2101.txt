@@ -1,4 +1,4 @@
-regiao_geografica_intermediaria_desc	municipio_desc	obra	obra_quantidade	unidade_medida_desc	obra_status	especificacao	cod_admin	nome_acao	vlr_tesouro	vlr_outros
+regiao_geografica_intermediaria	municipio	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
 ESTADUAL	DIVERSOS MUNICÍPIOS - ESTADUAL	124 - CONSTRUÇÃO DO CETRAS DE GOVERNADOR VALADARES	1	UNIDADE	INICIADO	18  541 031 4 058	1	PROTEÇÃO E CONSERVAÇÃO DA FAUNA SILVESTRE	0	350.000
 		TOTAL				18  541 031 4 058	1		0	350.000
 ESTADUAL	DIVERSOS MUNICÍPIOS - ESTADUAL	125 - APA PARQUE CATAGUÁS	1	UNIDADE	INICIADO	18  541 031 4 059	1	GESTÃO DE UNIDADES E CONSERVAÇÃO	0	1.000.000

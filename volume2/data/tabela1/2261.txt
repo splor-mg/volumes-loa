@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 10										1	SAÚDE							668.922.454		
 10	122									1	ADMINISTRAÇÃO GERAL							82.354.906		
 10	122	705								1	APOIO ÀS POLÍTICAS PÚBLICAS							82.354.906		
@@ -13,7 +13,7 @@ funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	su
 10	303	153	4	457	0001	90	0	10	1	7				33.467.601	11.281.510			44.749.111		
 10	303	153	4	457	0001	91	0			8	LAUDOS/RESULTADOS LIBERADOS NO PRAZO								PERCENTUAL	90
 10	303	154								1	DESENVOLVIMENTO E PRODUÇÃO DE MEDICAMENTOS PARA O SISTEMA ÚNICO DE SAÚDE (SUS)							336.550.178		
-10	303	154	4	459						5	GARANTIR O ABASTECIMENTO DO SUS COM BIOFÁRMACOS E IMUNOBIOLÓGICOS ESTRATÉGICOS DE ALTA COMPLEXIDADE. O FOCO É REDUZIR A DEPENDÊNCIA EXTERNA DO PAÍS, FORTALECER O COMPLEXO INDUSTRIAL DE SAUDE E VIABILIZAR O ACESSO GRATUITO DA POPULAÇÃO A TERAPIAS ESSENCIAIS.  							255.963.902		
+10	303	154	4	459						5	GARANTIR O ABASTECIMENTO DO SUS COM BIOFÁRMACOS E IMUNOBIOLÓGICOS ESTRATÉGICOS DE ALTA COMPLEXIDADE. O FOCO É REDUZIR A DEPENDÊNCIA EXTERNA DO PAÍS, FORTALECER O COMPLEXO INDUSTRIAL DE SAUDE E VIABILIZAR O ACESSO GRATUITO DA POPULAÇÃO A TERAPIAS ESSENCIAIS.							255.963.902		
 10	303	154	4	459	0001					1	PRODUÇÃO DE VACINA, SOROS E OUTROS PRODUTOS BIOLÓGICOS							255.963.902		
 10	303	154	4	459	0001	90	0	10	1	7				245.462.902	10.501.000			255.963.902		
 10	303	154	4	459	0001	91	0			8	VACINA, SORO OU OUTRO PRODUTO BIOLÓGICO PRODUZIDO								UNIDADE	14.681.000

@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
  4						acao	ADMINISTRAÇÃO	18.018.430		
  4	122					acao	ADMINISTRAÇÃO GERAL	18.018.430		
  4	122	57				acao	SOLUÇÕES EM SERVIÇOS DE APOIO TÉCNICO-OPERACIONAL			

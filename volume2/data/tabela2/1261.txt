@@ -29,7 +29,7 @@ fonte_desc	celulas_mesclar_fonte	celulas_mesclar_iag	iag_cod	ipu_cod	PESSOAL E E
 71 - RECURSOS DO FUNDO ESTADUAL DE ERRADICACAO DA MISERIA	 3	 2	 1	 0	             0	50.958.873	            0	         0	50.958.873
 				 1	             0	105.898.989	            0	         0	105.898.989
 			Total	 1	             0	156.857.862	            0	         0	156.857.862
-89 - RECURSOS DO FUNDO DE EQUALIZAÇÃO FEDERATIVA – FEF	 3		 0	 1	             0	            0	117.707.817	         0	117.707.817
+89 - RECURSOS DO FUNDO DE EQUALIZAÇÃO FEDERATIVA - FEF	 3		 0	 1	             0	            0	117.707.817	         0	117.707.817
 			 1	 1	             0	            0	117.707.817	         0	117.707.817
 			Total	 2	             0	            0	235.415.634	         0	235.415.634
 98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO	 3		 0	 1	             0	            0	1.000.000	         0	1.000.000

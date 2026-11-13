@@ -1,5 +1,5 @@
 fonte_desc	celulas_mesclar_fonte	celulas_mesclar_iag	iag_cod	ipu_cod	PESSOAL E ENCARGOS SOCIAIS	OUTRAS DESPESAS CORRENTES	INVESTIMENTOS	INVERSÕES FINANCEIRAS	total
-26 - TAXA FLORESTAL - ADMINISTRAÇÃO INDIRETA	 2		 0	 1	115.202.000	          0	        0	         0	115.202.000
+26 - TAXA  FLORESTAL - ADMINISTRAÇÃO INDIRETA	 2		 0	 1	115.202.000	          0	        0	         0	115.202.000
 			Total	 1	115.202.000	          0	        0	         0	115.202.000
 60 - RECURSOS DIRETAMENTE ARRECADADOS	 2		 0	 9	2.565.024	1.937.453	        0	         0	4.502.477
 			Total	 9	2.565.024	1.937.453	        0	         0	4.502.477

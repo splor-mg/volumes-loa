@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 04										1	ADMINISTRAÇÃO							880.295.042		
 04	130									1	ADMINISTRAÇÃO DE CONCESSÕES							880.295.042		
 04	130	085								1	PROMOÇÃO DE CONCESSÕES E PARCERIAS							880.295.042		
@@ -7,7 +7,7 @@ funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	su
 04	130	085	4	128	0001	67	0	10	1	7						10.000.000		10.000.000		
 04	130	085	4	128	0001	67	0	80	1	7						322.000.000		322.000.000		
 04	130	085	4	128	0001	68	0			8	PAGAMENTOS REALIZADOS								\% (PERCENTUAL)	100
-04	130	085	4	139						5	VIABILIZAR, POR MEIO DE PARCERIA PÚBLICO-PRIVADA, O RESSARCIMENTO DE INVESTIMENTOS REALIZADOS PELA CONCESSIONÁRIA EM OBRAS DE REFORMA, RENOVAÇÃO E ADEQUAÇÃO DA INFRAESTRUTURA NO SETOR DE TRANSPORTES AQUAVIÁRIOS - BALSAS DO LAGO DE FURNAS. REMUNERAR O PARCEIRO PELOS SERVIÇOS PRESTADOS NA MANUTENÇÃO, CONSERVAÇÃO, BEM COMO PAGAMENTO DE DESPESAS ASSOCIADAS À GESTÃO DAS PPPS. 							14.512.313		
+04	130	085	4	139						5	VIABILIZAR, POR MEIO DE PARCERIA PÚBLICO-PRIVADA, O RESSARCIMENTO DE INVESTIMENTOS REALIZADOS PELA CONCESSIONÁRIA EM OBRAS DE REFORMA, RENOVAÇÃO E ADEQUAÇÃO DA INFRAESTRUTURA NO SETOR DE TRANSPORTES AQUAVIÁRIOS - BALSAS DO LAGO DE FURNAS. REMUNERAR O PARCEIRO PELOS SERVIÇOS PRESTADOS NA MANUTENÇÃO, CONSERVAÇÃO, BEM COMO PAGAMENTO DE DESPESAS ASSOCIADAS À GESTÃO DAS PPPS.							14.512.313		
 04	130	085	4	139	0001					1	TRANSPORTE AQUAVIÁRIO - BALSAS DO LAGO DE FURNAS							14.512.313		
 04	130	085	4	139	0001	67	0	10	1	7						14.512.313		14.512.313		
 04	130	085	4	139	0001	68	0			8	QUANTIDADE DE PAGAMENTOS REALIZADOS								\% (PERCENTUAL)	100

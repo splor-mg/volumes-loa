@@ -6,7 +6,7 @@ fonte_desc	celulas_mesclar_fonte	celulas_mesclar_iag	iag_cod	ipu_cod	PESSOAL E E
 			Total	 1	1.952.878.323	         0	1.952.878.323
 42 - CONTRIBUIÇÃO PATRONAL PARA O RPPS	 2		 0	 1	5.990.046.171	         0	5.990.046.171
 			Total	 1	5.990.046.171	         0	5.990.046.171
-43 - CONTRIBUIÇÃO DO SERVIDOR PARA O RPPS	 2		 0	 1	2.701.427.848	         0	2.701.427.848
+43 - CONTRIBUICAO DO SERVIDOR PARA O RPPS	 2		 0	 1	2.701.427.848	         0	2.701.427.848
 			Total	 1	2.701.427.848	         0	2.701.427.848
 44 - COMPENSAÇÃO FINANCEIRA ENTRE REGIMES DE PREVIDÊNCIA	 2		 0	 1	500.000.000	         0	500.000.000
 			Total	 1	500.000.000	         0	500.000.000

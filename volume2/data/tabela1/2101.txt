@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 18										1	GESTÃO AMBIENTAL							308.143.860		
 18	122									1	ADMINISTRAÇÃO GERAL							180.521.960		
 18	122	705								1	APOIO ÀS POLÍTICAS PÚBLICAS							180.521.960		
@@ -39,7 +39,7 @@ funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	su
 18	541	031	4	059	0001					1	GESTÃO DE UNIDADES E CONSERVAÇÃO							48.568.500		
 18	541	031	4	059	0001	90	0	72	1	7				42.768.500				42.768.500		
 18	541	031	4	059	0001	90	0	80	1	7				4.800.000	1.000.000			5.800.000		
-18	541	031	4	059	0001	91	0			8	PLANO DE MANEJO ELABORADO OU REVISADO 								UNIDADE	15
+18	541	031	4	059	0001	91	0			8	PLANO DE MANEJO ELABORADO OU REVISADO								UNIDADE	15
 18	541	031	4	500						5	A AÇÃO POSSUI FINALIDADE DE REGULARIZAÇÃO FUNDIÁRIA NO INTERIOR DAS UNIDADES DE CONSERVAÇÃO ESTADUAIS PARA AS QUAIS SE FAZ NECESSÁRIA A POSSE E DOMÍNIO PÚBLICOS.							14.800.000		
 18	541	031	4	500	0001					1	REGULARIZAÇÃO FUNDIÁRIA DE UNIDADES DE CONSERVAÇÃO							14.800.000		
 18	541	031	4	500	0001	90	0	80	1	7				1.500.000	300.000	13.000.000		14.800.000		

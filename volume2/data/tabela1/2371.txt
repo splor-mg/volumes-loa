@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 20										1	AGRICULTURA							346.820.836		
 20	122									1	ADMINISTRAÇÃO GERAL							320.771.721		
 20	122	705								1	APOIO ÀS POLÍTICAS PÚBLICAS							320.771.721		
@@ -43,7 +43,7 @@ funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	su
 20	304	112	4	440	0001	90	0	91	1	7				513.074				513.074		
 20	304	112	4	440	0001	91	0			8	DOCUMENTO DE AUDITORIA E INICIATIVAS IMPLEMENTADAS								AUDITORIA	1.200
 20	304	118								1	EDUCAÇÃO E SUCESSÃO RURAL							817.247		
-20	304	118	4	439						5	DISPONIBILIZAR INFORMAÇÕES AGROPECUÁRIAS E PROMOVER PROCESSOS EDUCATIVOS NO ÂMBITO DA DEFESA SANITÁRIA ANIMAL E VEGETAL E DA INSPEÇÃO DE PRODUTOS DE ORIGEM ANIMAL E VEGETAL, PARA AMPLIAR A PERCEPÇÃO SOBRE RISCOS SANITÁRIOS, PROMOVER MUDANÇAS COGNITIVAS E INCENTIVAR PRÁTICAS E COMPORTAMENTOS VOLTADOS À SAÚDE HUMANA, ANIMAL, VEGETAL E AMBIENTAL E À SEGURANÇA DOS ALIMENTOS.        							817.247		
+20	304	118	4	439						5	DISPONIBILIZAR INFORMAÇÕES AGROPECUÁRIAS E PROMOVER PROCESSOS EDUCATIVOS NO ÂMBITO DA DEFESA SANITÁRIA ANIMAL E VEGETAL E DA INSPEÇÃO DE PRODUTOS DE ORIGEM ANIMAL E VEGETAL, PARA AMPLIAR A PERCEPÇÃO SOBRE RISCOS SANITÁRIOS, PROMOVER MUDANÇAS COGNITIVAS E INCENTIVAR PRÁTICAS E COMPORTAMENTOS VOLTADOS À SAÚDE HUMANA, ANIMAL, VEGETAL E AMBIENTAL E À SEGURANÇA DOS ALIMENTOS.							817.247		
 20	304	118	4	439	0001					1	EDUCAÇÃO SANITÁRIA							817.247		
 20	304	118	4	439	0001	90	0	47	1	7					62.500			62.500		
 20	304	118	4	439	0001	90	0	60	1	7				450.089				450.089		

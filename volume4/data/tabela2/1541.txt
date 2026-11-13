@@ -1,3 +1,3 @@
-regiao_geografica_intermediaria_desc	municipio_desc	obra	obra_quantidade	unidade_medida_desc	obra_status	especificacao	cod_admin	nome_acao	vlr_tesouro	vlr_outros
-REGIÃO INTERMEDIÁRIA DE BELO HORIZONTE	BELO HORIZONTE	120 - REFORMA DA ESCOLA DE SAÚDE PÚBLICA DO MUNICÍPIO DE BELO HORIZONTE		AÇÃO	EXECUÇÃO	10  122 705 2 500	1	ASSESSORAMENTO E GERENCIAMENTO DE POLÍTICAS PÚBLICAS	2.896.100	0
+regiao_geografica_intermediaria	municipio	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
+REGIÃO INTERMEDIÁRIA DE BELO HORIZONTE	BELO HORIZONTE	120 - REFORMA DA ESCOLA DE SAÚDE PÚBLICA DO MUNICÍPIO DE BELO HORIZONTE		AÇÃO	EXECUCAO	10  122 705 2 500	1	ASSESSORAMENTO E GERENCIAMENTO DE POLÍTICAS PÚBLICAS	2.896.100	0
 		TOTAL				10  122 705 2 500	1		2.896.100	0

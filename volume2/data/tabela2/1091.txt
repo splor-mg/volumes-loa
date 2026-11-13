@@ -9,7 +9,7 @@ fonte_desc	celulas_mesclar_fonte	celulas_mesclar_iag	iag_cod	ipu_cod	PESSOAL E E
 			Total	 1	            0	1.396.086	518.914	        0	1.915.000
 42 - CONTRIBUIÇÃO PATRONAL PARA O RPPS	 2		 0	 5	448.050.447	          0	         0	        0	448.050.447
 			Total	 5	448.050.447	          0	         0	        0	448.050.447
-43 - CONTRIBUIÇÃO DO SERVIDOR PARA O RPPS	 2		 0	 5	300.411.652	          0	         0	        0	300.411.652
+43 - CONTRIBUICAO DO SERVIDOR PARA O RPPS	 2		 0	 5	300.411.652	          0	         0	        0	300.411.652
 			Total	 5	300.411.652	          0	         0	        0	300.411.652
 47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS	 2		 0	 1	            0	          0	645.000	        0	645.000
 			Total	 1	            0	          0	645.000	        0	645.000

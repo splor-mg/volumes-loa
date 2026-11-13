@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 01										1	LEGISLATIVA							7.336.057		
 01	122									1	ADMINISTRAÇÃO GERAL							7.336.057		
 01	122	705								1	APOIO ÀS POLÍTICAS PÚBLICAS							7.336.057		
@@ -19,7 +19,7 @@ funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	su
 09	274	766	2	113	0001	90	0	60	1	7				6.395.180				6.395.180		
 09	274	766	2	113	0001	91	0			8	BENEFÍCIO CONCEDIDO								BENEFÍCIO	65
 09	274	767								1	RESERVA DE BENEFÍCIOS							16.004.156		
-09	274	767	2	114						5	 MANUTENÇÃO E EQUÍLIBRIO DA RESERVA TÉCNICA EXIGÍVEL DO IPLEMG, POR MEIO DE INVESTIMENTOS, APLICAÇÕES E INVERSÕES FINANCEIRAS, NA FORMA DA LEGISLAÇÃO PROPRIA.							16.004.156		
+09	274	767	2	114						5	MANUTENÇÃO E EQUÍLIBRIO DA RESERVA TÉCNICA EXIGÍVEL DO IPLEMG, POR MEIO DE INVESTIMENTOS, APLICAÇÕES E INVERSÕES FINANCEIRAS, NA FORMA DA LEGISLAÇÃO PROPRIA.							16.004.156		
 09	274	767	2	114	0001					1	RESERVA TÉCNICA							16.004.156		
 09	274	767	2	114	0001	90	0	60	1	7					3.749.406	12.254.750		16.004.156		
 09	274	767	2	114	0001	91	0			8	RESERVA ASSEGURADA								R\$ MIL	2.850

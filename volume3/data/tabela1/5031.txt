@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 19						acao	CIÊNCIA E TECNOLOGIA	26.830.404		
 19	572					acao	DESENVOLVIMENTO TECNOLÓGICO E ENGENHARIA	26.830.404		
 19	572	133				acao	MINAS GERAÇÃO DE VALOR			

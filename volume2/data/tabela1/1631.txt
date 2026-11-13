@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 04										1	ADMINISTRAÇÃO							15.950.644		
 04	121									1	PLANEJAMENTO E ORÇAMENTO							1.575.434		
 04	121	131								1	ARTICULAÇÃO INTERFEDERATIVA,  ATRAÇÃO DE INVESTIMENTOS, CAPTAÇÃO E TRANSFERÊNCIA DE RECURSOS E PARCERIAS							1.575.434		
@@ -8,7 +8,7 @@ funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	su
 04	121	131	2	070	0001	91	0			8	RECURSOS CAPTADOS VIA CONVÊNIOS DE ENTRADA E INSTRUMENTOS CONGÊNERES								R\$ 1,00	230.000.000
 04	122									1	ADMINISTRAÇÃO GERAL							14.375.210		
 04	122	005								1	PROGRAMA MINEIRO DE ACESSIBILIDADE, INCLUSÃO E SAÚDE (PROMAIS)							11.900		
-04	122	005	4	111						5	ACOMPANHAR CONSTANTEMENTE AS DEMAIS AÇÕES RELACIONADAS AO PROMAIS, INCLUSIVE COM VISITAS IN LOCO PARA ACOMPANHAMENTO DAS ENTREGAS, BEM COMO PROMOVER A CONSCIENTIZAÇÃO E DAR VISIBILIDADE ÀS PESSOAS COM DEFICIÊNCIAS E DOENÇAS RARAS POR MEIO DA REALIZAÇÃO DE CAMPANHAS DE INFORMAÇÃO E DIVULGAÇÃO DAS POLÍTICAS PÚBLICAS PARA O PÚBLICO MENCIONADO. 							11.900		
+04	122	005	4	111						5	ACOMPANHAR CONSTANTEMENTE AS DEMAIS AÇÕES RELACIONADAS AO PROMAIS, INCLUSIVE COM VISITAS IN LOCO PARA ACOMPANHAMENTO DAS ENTREGAS, BEM COMO PROMOVER A CONSCIENTIZAÇÃO E DAR VISIBILIDADE ÀS PESSOAS COM DEFICIÊNCIAS E DOENÇAS RARAS POR MEIO DA REALIZAÇÃO DE CAMPANHAS DE INFORMAÇÃO E DIVULGAÇÃO DAS POLÍTICAS PÚBLICAS PARA O PÚBLICO MENCIONADO.							11.900		
 04	122	005	4	111	0001					1	COORDENAÇÃO, GOVERNANÇA E COMUNICAÇÃO DO PROMAIS							11.900		
 04	122	005	4	111	0001	90	0	10	1	7				11.900				11.900		
 04	122	005	4	111	0001	91	0			8	CAMPANHAS DE DIVULGAÇÃO, INFORMAÇÃO E CONSCIENTIZAÇÃO REALIZADAS								UNIDADE	          8
