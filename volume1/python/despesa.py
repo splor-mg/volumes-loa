@@ -39,16 +39,8 @@ def sem_acento(texto):
     return unicodedata.normalize('NFKD', texto).encode('ascii', 'ignore').decode()
 
 
-def gera_t4(despesa, grupos, caminho):
-    sem_grupo = sorted(set(despesa['grupo_cod']) - set(grupos))
-    if sem_grupo:
-        print('Warning: T4_DEMONSTRATIVO_DESPESA_POR_ORGAOS_ENTIDADES_SEGUNDO_GRUPOS_DESPESA: Há códigos '
-              'de grupo de despesa em orcamento_despesa.csv que não possuem uma correspondência em '
-              f'desc_grupos_de_despesa.xlsx. Os codigos são {", ".join(map(str, sem_grupo))}',
-              file=sys.stderr)
-
-    tabela = despesa[despesa['grupo_cod'].isin(grupos)]
-    tabela = tabela.groupby(['uo_cod', 'uo_nome', 'uo_sigla', 'grupo_cod'])['vlr_loa_desp'].sum()
+def gera_t4(despesa, caminho):
+    tabela = despesa.groupby(['uo_cod', 'uo_nome', 'uo_sigla', 'grupo_cod'])['vlr_loa_desp'].sum()
     tabela = tabela.unstack(fill_value=0).reindex(columns=list(GRUPOS), fill_value=0)
     tabela = tabela.rename(columns=GRUPOS).reset_index().sort_values(['uo_nome', 'uo_sigla'], kind='stable')
     tabela['total'] = tabela[list(GRUPOS.values())].sum(axis=1)
@@ -90,18 +82,18 @@ def gera_t5(despesa, pessoal, caminho):
     escreve_tabela(tabela[['uo_nome', 'uo_sigla'] + colunas + ['total']], caminho)
 
 
-def gera_t13(despesa, grupos, caminho):
+def gera_t13(despesa, caminho):
     base = despesa[despesa['modalidade_cod'] != 91].assign(recurso='outras')
     base.loc[base['fonte_cod'].isin([10, 11, 12, 15, 19]), 'recurso'] = 'tesouro'
-    descricoes = {codigo: sem_acento(texto).upper() for codigo, texto in grupos.items()}
 
     categoria = base.groupby(['categoria_cod', 'recurso'], as_index=False)['vlr_loa_desp'].sum()
     categoria['ordem'] = categoria['categoria_cod'] * 10
     categoria['espec'] = categoria['categoria_cod'].map(CATEGORIAS).fillna('IGN')
 
-    grupo = base.groupby(['categoria_cod', 'grupo_cod', 'recurso'], as_index=False)['vlr_loa_desp'].sum()
+    grupo = base.groupby(['categoria_cod', 'grupo_cod', 'grupo_desc', 'recurso'], as_index=False)
+    grupo = grupo['vlr_loa_desp'].sum()
     grupo['ordem'] = (grupo['categoria_cod'].astype(str) + grupo['grupo_cod'].astype(str)).astype(int)
-    grupo['espec'] = grupo['grupo_cod'].map(descricoes)
+    grupo['espec'] = grupo['grupo_desc'].map(sem_acento)
 
     total = base.groupby('recurso', as_index=False)['vlr_loa_desp'].sum().assign(ordem=100, espec='TOTAL')
 
@@ -117,27 +109,14 @@ def gera_t13(despesa, grupos, caminho):
     escreve_tabela(tabela[['ordem', 'espec', 'tesouro', 'outras', 'total']], caminho)
 
 
-def soma_niveis(despesa, funcoes, subfuncoes, coluna, nome):
+def soma_niveis(despesa, coluna):
     """Soma por função, subfunção e programa, com os valores abertos pelas categorias de coluna"""
-    for codigo, descricoes, arquivo in [('funcao_cod', funcoes, 'desc_funcao.xlsx'),
-                                         ('subfuncao_cod', subfuncoes, 'desc_subfuncao.xlsx')]:
-        sem_descricao = sorted(set(despesa[codigo]) - set(descricoes))
-        if sem_descricao:
-            print(f'Warning: {nome}: Há códigos de {codigo} em orcamento_despesa.csv que não possuem '
-                  f'uma correspondência em {arquivo}. Os codigos são {", ".join(map(str, sem_descricao))}',
-                  file=sys.stderr)
+    partes = []
+    for nivel, descricao in [(1, 'funcao_desc'), (2, 'subfuncao_desc'), (3, 'programa_desc')]:
+        soma = despesa.groupby(NIVEIS[:nivel] + [descricao, coluna], as_index=False)['vlr_loa_desp'].sum()
+        partes.append(soma.rename(columns={descricao: 'especificacao'}))
 
-    funcao = despesa.groupby(['funcao_cod', coluna], as_index=False)['vlr_loa_desp'].sum()
-    funcao['especificacao'] = funcao['funcao_cod'].map(funcoes)
-
-    subfuncao = despesa.groupby(NIVEIS[:2] + [coluna], as_index=False)['vlr_loa_desp'].sum()
-    subfuncao['especificacao'] = subfuncao['subfuncao_cod'].map(subfuncoes)
-
-    programa = despesa.groupby(NIVEIS + ['programa_desc', coluna], as_index=False)['vlr_loa_desp'].sum()
-    programa = programa.rename(columns={'programa_desc': 'especificacao'})
-
-    tabela = pd.concat([funcao.dropna(subset='especificacao'), subfuncao.dropna(subset='especificacao'),
-                        programa])
+    tabela = pd.concat(partes)
     tabela[NIVEIS] = tabela[NIVEIS].fillna(0)
     tabela = tabela.pivot_table(index=NIVEIS + ['especificacao'], columns=coluna, values='vlr_loa_desp',
                                 aggfunc='sum', fill_value=0)
@@ -158,28 +137,21 @@ def finaliza_niveis(tabela, colunas, caminho):
     escreve_tabela(tabela[NIVEIS + ['especificacao'] + colunas + ['total']], caminho)
 
 
-def gera_t14(despesa, funcoes, subfuncoes, caminho):
+def gera_t14(despesa, caminho):
     base = despesa.assign(recurso='vinculados')
     base.loc[base['fonte_cod'].isin(REC_ORDINARIOS), 'recurso'] = 'ordinarios'
     base.loc[base['fonte_cod'].isin(REC_DIRETAMENTE_ARRECADADOS), 'recurso'] = 'arrecadados'
 
     colunas = ['ordinarios', 'vinculados', 'arrecadados']
-    tabela = soma_niveis(base, funcoes, subfuncoes, 'recurso',
-                         'T14_DEMONSTRATIVO_DESPESA_FUNCAO_SUBFUNCAO_PROGRAMA_CONFORME_VINCULO_COM_RECURSOS')
+    tabela = soma_niveis(base, 'recurso')
     finaliza_niveis(tabela.reindex(columns=NIVEIS + ['especificacao'] + colunas, fill_value=0),
                     colunas, caminho)
 
 
-def gera_t15(despesa, funcoes, subfuncoes, grupos, caminho):
-    sem_grupo = sorted(set(despesa['grupo_cod']) - set(grupos))
-    if sem_grupo:
-        print('Warning: T15_PROGRAMA_TRABALHO_GOVERNO: Há códigos de grupo de despesa em '
-              'orcamento_despesa.csv que não possuem uma correspondência em desc_grupos_de_despesa.xlsx. '
-              f'Os codigos são {", ".join(map(str, sem_grupo))}', file=sys.stderr)
-
-    base = despesa[despesa['grupo_cod'].isin(grupos)].assign(grupo=lambda base: base['grupo_cod'].map(GRUPOS))
+def gera_t15(despesa, caminho):
+    base = despesa.assign(grupo=despesa['grupo_cod'].map(GRUPOS))
     colunas = list(GRUPOS.values())
-    tabela = soma_niveis(base, funcoes, subfuncoes, 'grupo', 'T15_PROGRAMA_TRABALHO_GOVERNO')
+    tabela = soma_niveis(base, 'grupo')
     finaliza_niveis(tabela.reindex(columns=NIVEIS + ['especificacao'] + colunas, fill_value=0),
                     colunas, caminho)
 
