@@ -15,8 +15,8 @@ sumario = data.table(read.table("volume2/data/sumario.txt", header=T, sep="\t", 
                                  stringsAsFactors=F))
 sumario = sumario[, list(COD_UO = uo_cod, UO = sub("^[0-9.]+ - ", "", uo), poder)]
 
-loa_desp = trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx", T)
-qdd = trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F)
+loa_desp = trataQDD_Elemento_Item("bancos/PPO/orcamento_despesa.csv", T)
+qdd = trataQDD_Fiscal("bancos/PPO/orcamento_despesa.csv", F)
 qdd = qdd[, list(x=1), by=list(ACAO_COD = ACAO, ACAO_DESC = NOME_ACAO)]
 
 loa_desp = mergeDT(loa_desp, qdd, by="ACAO_COD", all.x=T)

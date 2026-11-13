@@ -1,37 +1,30 @@
-
 trataQDD_Fiscal = function(caminho, realizarTeste = TRUE){
 
-  #==============================================================================
-  # Função para abir o banco BASE_QDD_FISCAL.xlsx presente no volume 5 e volume 2
-  #==============================================================================
+  #=====================================================================================
+  # Função para abrir o banco bancos/PPO/orcamento_despesa.csv
+  #=====================================================================================
 
-  avisoNumAbas(caminho)
+  ppo = fread(caminho, encoding = "UTF-8")
+  texto = function(x) toupper(trimws(x, whitespace = "[\\h\\v]"))
 
-  qdd = as.data.table(read_excel(caminho, sheet=1))
-  data.table::setnames(qdd, "VALOR FINAL (R$)", "valor")
-  names(qdd) = stringi::stri_trans_general(names(qdd), "latin-ascii")
+  if(TRUE %in% (ppo$vlr_loa_desp<0)){
+    warning(paste("orcamento_despesa: Há valores negativos na linha ", paste0(which(ppo$vlr_loa_desp<0)+1, collapse=", ")))
+  }
 
-  nomes_esperados = c("ANO", "COD_ORGAO", "ORGAO", "PODER", "COD_UO", "UO", "CATEGORIA", "GRUPO_DESPESA",
-                        "MODALIDADE", "ELEMENTO_DESPESA", "FONTE", "IPU", "SEQ_PROGTRAB", "FUNCAO", "SUB_FUNCAO",
-                        "PROGRAMA","IDENT_PROJATIV", "PROJ_ATIV", "ACAO", "SUB_PROJETO", "valor","IAG", "NOME_ACAO",
-                        "NOME_PROGRAMA")
+  if(TRUE %in% (ppo$vlr_loa_desp==0)){
+    warning(paste("orcamento_despesa: Há valores iguais a zero na linha ", paste0(which(ppo$vlr_loa_desp==0)+1, collapse=", ")))
+  }
 
-  nomes_diferentes = setdiff(nomes_esperados, names(qdd))
+  qdd = ppo[, list(valor = sum(vlr_loa_desp)),
+            by = list(ANO = ano, COD_ORGAO = orgao_cod, ORGAO = paste(texto(orgao_nome), "-", texto(uo_sigla)),
+                      PODER = poder_cod, COD_UO = uo_cod, UO = paste(texto(uo_nome), "-", texto(uo_sigla)),
+                      CATEGORIA = categoria_cod, GRUPO_DESPESA = grupo_cod, MODALIDADE = modalidade_cod,
+                      ELEMENTO_DESPESA = elemento_cod, FONTE = fonte_cod, IPU = ipu_cod, FUNCAO = funcao_cod,
+                      SUB_FUNCAO = subfuncao_cod, PROGRAMA = programa_cod, IDENT_PROJATIV = identificador_cod,
+                      PROJ_ATIV = projeto_atividade_cod, ACAO = acao_cod, SUB_PROJETO = subprojeto_cod,
+                      IAG = iag_cod, NOME_ACAO = texto(acao_desc), NOME_PROGRAMA = texto(programa_desc))]
 
-  if(length(nomes_diferentes)>0){
-    warning(paste("BASE_QDD_FISCAL: Há nomes diferentes no banco. Os seguintes nomes de campos não estão no banco atual: {{",
-                  paste(nomes_diferentes, collapse=", ")," }}"))
-    }
-
-    if(TRUE %in% (qdd$valor<0)){
-      warning(paste("BASE_QDD_FISCAL: Há valores negativos na linha ", paste0(which(qdd$valor<0)+1, collapse=", ")))
-    }
-
-    if(TRUE %in% (qdd$valor==0)){
-      warning(paste("BASE_QDD_FISCAL: Há valores iguais a zero na linha ", paste0(which(qdd$valor==0)+1, collapse=", ")))
-    }
-
-  return(data.table(qdd))
+  return(qdd)
   }
 
 
