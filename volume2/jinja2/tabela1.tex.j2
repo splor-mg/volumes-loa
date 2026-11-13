@@ -38,7 +38,7 @@
 \multicolumn{9}{L{8cm}|}{\fontsize{6pt}{8pt}\selectfont \textit{\VAR{linha.especificacao}}} & & & & & & & & & & & \\
 \BLOCK{elif linha.tipo == "8"}
 \multicolumn{6}{L{1cm}}{\underline{Produto}} &  \multicolumn{2}{C{2.2cm}}{\underline{Unidade de Medida}} & \multicolumn{1}{R{1.6cm}|}{\underline{Meta Física}} & & & & & & & & & & & \\
-\multicolumn{6}{L{3cm}}{ \fontsize{6pt}{8pt}\selectfont \VAR{linha.especificacao|replace("/", "/\\allowbreak{}")}} & \multicolumn{2}{C{2cm}}{\fontsize{6pt}{8pt}\selectfont \VAR{linha.unidade_medida_desc|replace("/", "/\\allowbreak{}")}} & \multicolumn{1}{R{1.5cm}|}{\fontsize{6pt}{8pt}\selectfont \VAR{linha.vlr_meta_fisica_ano0}} & & & & & & & & & & & \\
+\multicolumn{6}{L{3cm}}{ \fontsize{6pt}{8pt}\selectfont \VAR{linha.especificacao|replace("/", "/\\allowbreak{}")}} & \multicolumn{2}{C{2cm}}{\fontsize{6pt}{8pt}\selectfont \VAR{linha.unidade_medida|replace("/", "/\\allowbreak{}")}} & \multicolumn{1}{R{1.5cm}|}{\fontsize{6pt}{8pt}\selectfont \VAR{linha.vlr_meta_fisica_ano0}} & & & & & & & & & & & \\
 \BLOCK{else}
 \hline \hline\multicolumn{13}{l|}{\textbf{ \VAR{linha.especificacao}}} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.pessoal}}} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.juros}}} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.outras}}} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.investimentos}}} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.inversoes}}} & \multicolumn{1}{c|}{ \textbf{ \VAR{linha.amortizacao}}} & \multicolumn{1}{c}{ \textbf{ \VAR{linha.vlr_loa_desp}}} \\
 \BLOCK{endif}
