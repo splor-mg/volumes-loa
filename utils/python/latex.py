@@ -7,17 +7,11 @@ from pathlib import Path
 
 import jinja2
 
-from utils.python.funcoes import texto_r
-from utils.python.trata_bancos import le_planilha
 
-
-def ler_codigos(arquivo, coluna):
-    planilha = le_planilha(Path('bancos/manual') / arquivo)
-    planilha = planilha.sort_values('CODIGO', kind='stable')
-    return [
-        (texto_r(codigo), texto_r(descricao).upper())
-        for codigo, descricao in zip(planilha['CODIGO'], planilha[coluna])
-    ]
+def ler_codigos(banco, codigo, descricao):
+    codigos = banco.drop_duplicates(codigo)
+    codigos = codigos.sort_values(codigo, key=lambda coluna: coluna.astype(int))
+    return list(zip(codigos[codigo].astype(str), codigos[descricao]))
 
 
 def renderiza(pasta, nome, **contexto):
