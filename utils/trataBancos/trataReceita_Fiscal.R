@@ -1,49 +1,32 @@
-
 trataReceita_Fiscal = function(caminho, realizarTeste = TRUE){
 
-  #==============================================================================
-  # Função para abir o banco BASE_ORCAM_RECEITA_FISCAL.xlsx presente no volume 2
-  #==============================================================================
+  #===================================================================================
+  # Função para abrir o banco bancos/PPO/orcamento_receita.csv
+  #===================================================================================
 
-  avisoNumAbas(caminho)
+  ppo = fread(caminho, encoding = "UTF-8", colClasses = list(character = "receita_cod"))
+  texto = function(x) toupper(trimws(x, whitespace = "[\\h\\v]"))
+  digitos = function(inicio, fim) as.numeric(substr(ppo$receita_cod, inicio, fim))
 
-  receita = read_excel(caminho, sheet=1)
-  names(receita) = toupper(removeAcentos(names(receita)))
-
-  receita = data.table(receita)
-
-  setnames(receita, c("TIPO_RECEITA", "VALOR FINAL (R$)"), c("TIPO", "valor"))
+  receita = ppo[, list(UO_COD = uo_cod, NOME_UO = texto(uo_nome), SIGLA_UO = texto(uo_sigla),
+                       COD_FONTE = fonte_cod, FONTE = fonte_desc,
+                       CATEGORIA = digitos(1, 1), ORIGEM = digitos(2, 2), ESPECIE = digitos(3, 3),
+                       RUBRICA = digitos(4, 4), ALINEA = digitos(5, 6), SUBALINEA = digitos(7, 7),
+                       TIPO = digitos(8, 8), ITEM = digitos(9, 10), SUBITEM = digitos(11, 13),
+                       COD_RECEITA = as.numeric(receita_cod), RECEITA = texto(receita_desc),
+                       INTERP_RECEITA = interpretacao, valor = vlr_loa_rec, ANO = ano,
+                       `BASE LEGAL` = base_legal)]
 
   if(realizarTeste){
-
-
-    nomes_esperados = c("UO_COD", "NOME_UO","SIGLA_UO", "COD_FONTE", "FONTE", #"INTERPRETACAO",
-                        "CATEGORIA","ORIGEM", "ESPECIE", "RUBRICA", "ALINEA","SUBALINEA", "TIPO",
-                        "ITEM", "SUBITEM", "COD_RECEITA", "RECEITA", "INTERP_RECEITA" , "valor",
-                        "ANO", "BASE LEGAL")
-
-    nomes_diferentes = setdiff(nomes_esperados, names(receita))
-
-
-
-    if(length(nomes_diferentes)>0){
-      warning(paste("trataReceita_Fiscal(): Há nomes diferentes no banco. Os seguintes nomes de ",
-                    "campos não estão no banco atual: {{", paste(nomes_diferentes, collapse=", ")," }}\n"))
-    }
 
     if(nrow(receita[valor<0 & substr(COD_RECEITA,1,1)!="9"])>0){
       warning(paste("trataReceita_Fiscal(): Há valores negativos na linha ",
                     paste0(which(receita$valor<0)+1, collapse=", "), "\n"))
     }
 
-    # if(TRUE %in% (receita$valor==0)){
-    #   warning(paste("trataReceita_Fiscal(): Há valores iguais a zero na linha ",
-    #                     paste0(which(receita$valor==0)+1, collapse=", "), "\n"))
-    # }
-
   }
 
-  return(data.table(receita))
+  return(receita)
 
   }
 
@@ -126,10 +109,9 @@ trataReceita_Fiscal_antigo = function(caminho, realizarTeste = TRUE){
 
 ler_novaReceita = function(caminho){
 
-  classificacao = data.table(read_excel(caminho, sheet=1))
-  classificacao = classificacao[, list(RECEITA_COD = RECEITA_COD_2, RECEITA_DESC = RECEITA_DESC_2)]
-
-  classificacao$RECEITA_COD = as.numeric(as.character(classificacao$RECEITA_COD))
+  classificacao = fread(caminho, encoding = "UTF-8", colClasses = list(character = "receita_cod"))
+  classificacao = classificacao[, list(RECEITA_COD = as.numeric(receita_cod),
+                                       RECEITA_DESC = trimws(receita_desc, whitespace = "[\\h\\v]"))]
 
   return(classificacao[!is.na(RECEITA_COD), ])
 

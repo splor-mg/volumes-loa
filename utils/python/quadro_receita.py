@@ -5,16 +5,19 @@ item e subitem com a fonte, usado na tabela 4 do volume 2 e nas tabelas 7 e 9 do
 import sys
 import pandas as pd
 
-NIVEIS = ['categoria_cod', 'origem_cod', 'especie_cod', 'rubrica_cod', 'alinea_cod', 'subalinea_cod', 'receita_tipo_cod', 'item_cod']
+NIVEIS = [1, 2, 3, 4, 6, 7, 8, 10] # categoria, origem, espécie, rubrica, alínea, subalínea, tipo e item
 VALORES = ['valor_desdobramento', 'valor_especie', 'valor_categoria']
 
 
 def gera_quadro_receita(receita, classificacao, aviso):
     # Um nível de agregação por vez, até o subitem com a fonte.
-    niveis = [NIVEIS[:nivel] for nivel in range(1, 9)] + [NIVEIS + ['subitem_cod', 'fonte_cod']]
-    tabela = pd.concat([receita.groupby(nivel, as_index=False)['vlr_loa_rec'].sum() for nivel in niveis])
-    tabela['cod_texto'] = tabela[NIVEIS + ['subitem_cod']].fillna(0).astype(int).apply(
-        lambda codigos: '{}{}{}{}.{:02}.{}.{}.{:02}.{:03}'.format(*codigos), axis=1)
+    codigo = receita['receita_cod']
+    partes = [receita.groupby(codigo.str[:nivel].str.ljust(13, '0'))['vlr_loa_rec']
+              .sum().reset_index() for nivel in NIVEIS]
+    partes.append(receita.groupby(['receita_cod', 'fonte_cod'], as_index=False)['vlr_loa_rec'].sum())
+    tabela = pd.concat(partes)
+    tabela['cod_texto'] = tabela['receita_cod'].str.replace(
+        r'(.{4})(..)(.)(.)(..)(...)', r'\1.\2.\3.\4.\5.\6', regex=True)
     tabela = tabela.sort_values(['cod_texto', 'fonte_cod'], kind='stable', ignore_index=True)
     repetido = (tabela['cod_texto'] == tabela['cod_texto'].shift()) & tabela['fonte_cod'].isna()
 

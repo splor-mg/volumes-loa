@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 13										1	CULTURA							38.879.578		
 13	122									1	ADMINISTRAÇÃO GERAL							20.816.631		
 13	122	705								1	APOIO ÀS POLÍTICAS PÚBLICAS							20.816.631		

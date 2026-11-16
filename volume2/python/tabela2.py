@@ -1,17 +1,16 @@
 """
 Tabela 2: FONTE DE RECURSOS E GRUPOS DE DESPESA - FISCAL
 """
-import sys
 import pandas as pd
 
-from utils.python.formata_texto import corrige_caracteres_especiais
 from utils.python.funcoes import escreve_tabela, formatar_num
 
 
-def gera_tabela2(uo, fontes, grupos, caminho):
+def gera_tabela2(uo, caminho):
     fonte = uo.groupby(['fonte_cod', 'iag_cod', 'ipu_cod', 'grupo_cod'])['vlr_loa_desp'].sum()
     fonte = fonte.unstack(fill_value=0)
-    fonte.columns = [grupos.get(grupo, grupo) for grupo in fonte.columns]
+    grupos = uo.drop_duplicates('grupo_cod').set_index('grupo_cod')['grupo_desc']
+    fonte.columns = fonte.columns.map(grupos)
     valores = fonte.columns.tolist() + ['total']
     fonte['total'] = fonte.sum(axis=1)
     fonte = fonte.reset_index()
@@ -20,13 +19,9 @@ def gera_tabela2(uo, fontes, grupos, caminho):
     total = fonte.sum().to_dict() | {'fonte_desc': 'TOTAL'}
     fonte = pd.concat([fonte, fonte.groupby('fonte_cod', as_index=False).sum().assign(iag_cod=99)])
 
-    fonte['fonte_desc'] = corrige_caracteres_especiais(fonte['fonte_cod'].astype(str) + ' - '
-                                                       + fonte['fonte_cod'].map(fontes))
-    if fonte['fonte_desc'].isna().any():
-        print('Warning: V2 T2: fonte sem descrição em desc_fontes_de_recursos.xlsx: '
-              f'{set(fonte.loc[fonte["fonte_desc"].isna(), "fonte_cod"])}', file=sys.stderr)
-    fonte = fonte.dropna(subset='fonte_desc').sort_values(['fonte_desc', 'iag_cod', 'ipu_cod'],
-                                                          kind='stable', ignore_index=True)
+    fontes = uo.drop_duplicates('fonte_cod').set_index('fonte_cod')['fonte_desc']
+    fonte['fonte_desc'] = fonte['fonte_cod'].astype(str) + ' - ' + fonte['fonte_cod'].map(fontes)
+    fonte = fonte.sort_values(['fonte_desc', 'iag_cod', 'ipu_cod'], kind='stable', ignore_index=True)
 
     # Células mescladas de fonte e de IAG: o número de linhas fica só na primeira
     fonte['celulas_mesclar_fonte'] = fonte.groupby('fonte_desc')['fonte_desc'].transform('size')

@@ -15,11 +15,11 @@ sumario = data.table(read.table("volume2/data/sumario.txt", header=T, sep="\t", 
                                  stringsAsFactors=F))
 sumario = sumario[, list(COD_UO = uo_cod, UO = sub("^[0-9.]+ - ", "", uo), poder)]
 
-receita = trataReceita_Fiscal("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx", F)
+receita = trataReceita_Fiscal("bancos/PPO/orcamento_receita.csv", F)
 loa_rec = geraLoa_rec(receita)
 setnames(loa_rec, "VL_LOA_REC", "VL_REC")
 
-qdd = trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F)
+qdd = trataQDD_Fiscal("bancos/PPO/orcamento_despesa.csv", F)
 loa_desp = geraLoa_desp(qdd)
 setnames(loa_desp, "VL_LOA_DESP", "VL_DESP")
 

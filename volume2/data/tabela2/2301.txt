@@ -9,7 +9,7 @@ fonte_desc	celulas_mesclar_fonte	celulas_mesclar_iag	iag_cod	ipu_cod	PESSOAL E E
 32 - EXPLORAÇÃO DE RECURSOS MINERAIS	 3	 2	 0	 0	          0	          0	235.101.900	235.101.900
 				 1	          0	          0	103.295.958	103.295.958
 			Total	 1	          0	          0	338.397.858	338.397.858
-33 - EXPLORAÇÃO E PRODUÇÃO DE PETRÓLEO E GÁS NATURAL	 2		 0	 1	          0	          0	43.343.915	43.343.915
+33 - EXPLORAÇÃO E PRODUÇÃO DE PETRÓLEO  E GÁS NATURAL	 2		 0	 1	          0	          0	43.343.915	43.343.915
 			Total	 1	          0	          0	43.343.915	43.343.915
 48 - ALIENAÇÃO DE BENS DO TESOURO ESTADUAL	 3	 2	 0	 0	          0	          0	515.552.603	515.552.603
 				 1	          0	          0	300.000.000	300.000.000
@@ -26,7 +26,7 @@ fonte_desc	celulas_mesclar_fonte	celulas_mesclar_iag	iag_cod	ipu_cod	PESSOAL E E
 			Total	 1	          0	          0	136.182.023	136.182.023
 83 - NOTIFICACAO DE INFRACAO DE TRANSITO FUNTRANS	 2		 0	 2	          0	          0	66.500.000	66.500.000
 			Total	 2	          0	          0	66.500.000	66.500.000
-89 - RECURSOS DO FUNDO DE EQUALIZAÇÃO FEDERATIVA – FEF	 2		 0	 1	          0	          0	105.109.417	105.109.417
+89 - RECURSOS DO FUNDO DE EQUALIZAÇÃO FEDERATIVA - FEF	 2		 0	 1	          0	          0	105.109.417	105.109.417
 			Total	 1	          0	          0	105.109.417	105.109.417
 91 - TAXA DE EXPEDIENTE - ADMINISTRAÇÃO INDIRETA	 2		 0	 1	          0	5.487.492	            0	5.487.492
 			Total	 1	          0	5.487.492	            0	5.487.492

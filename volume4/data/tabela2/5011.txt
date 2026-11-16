@@ -1,3 +1,3 @@
-regiao_geografica_intermediaria_desc	municipio_desc	obra	obra_quantidade	unidade_medida_desc	obra_status	especificacao	cod_admin	nome_acao	vlr_tesouro	vlr_outros
-ESTADUAL	DIVERSOS MUNICÍPIOS - ESTADUAL	249 - CENTRO DE CULTURA PRESIDENTE ITAMAR FRANCO		UNIDADE	INICIADO	04  122 133 3 017	1	 MANUTENÇÃO E AQUISIÇÕES DA CODEMIG	0	800.000
+regiao_geografica_intermediaria	municipio	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
+ESTADUAL	DIVERSOS MUNICÍPIOS - ESTADUAL	249 - CENTRO DE CULTURA PRESIDENTE ITAMAR FRANCO		UNIDADE	INICIADO	04  122 133 3 017	1	MANUTENÇÃO E AQUISIÇÕES DA CODEMIG	0	800.000
 		TOTAL				04  122 133 3 017	1		0	800.000

@@ -1,5 +1,5 @@
 fonte_desc	celulas_mesclar_fonte	celulas_mesclar_iag	iag_cod	ipu_cod	PESSOAL E ENCARGOS SOCIAIS	OUTRAS DESPESAS CORRENTES	INVESTIMENTOS	total
-1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS	 2		 0	 1	         0	959.500	        0	959.500
+1 - CONVÊNIOS COM A UNIAO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS	 2		 0	 1	         0	959.500	        0	959.500
 			Total	 1	         0	959.500	        0	959.500
 10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS	 2		 0	 9	1.000	         0	        0	1.000
 			Total	 9	1.000	         0	        0	1.000

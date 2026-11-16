@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 23						acao	COMÉRCIO E SERVIÇOS	1.123.941.920		
 23	122					acao	ADMINISTRAÇÃO GERAL	38.941.920		
 23	122	17				acao	INVESTIMENTO NA INFRAESTRUTURA ADMINISTRATIVA E OPERACIONAL  DO BDMG			

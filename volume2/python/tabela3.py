@@ -135,16 +135,12 @@ def gera_funfip(despesa, pessoal, sumario, caminho):
     if (tabela['uo_cod'] == '4291').any():
         print(aviso + '4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE '
               'ESTADO DE SAÚDE - SES (Órgão)', file=sys.stderr)
-        tabela.loc[tabela['uo_cod'] == '4291', ['uo_cod', 'uo']] = ['1320', float('nan')]
-        tabela.loc[tabela['uo_cod'] == '1320', 'poder'] = 'PODER EXECUTIVO'
+        tabela.loc[tabela['uo_cod'] == '4291', ['uo_cod', 'uo']] = [
+            '1320', '1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES']
 
-    antigas = le_planilha('bancos/manual/Nome_UO_antigas.xlsx').astype({'cod_uo': str})
-    antigas = tabela['uo_cod'].map(antigas.set_index('cod_uo')['nome'])
-    tabela['uo'] = tabela['uo'].fillna(corrige_caracteres_especiais(
-        tabela['uo_cod'].str.replace(r'(.)(..)(.)', r'\1.\2.\3', regex=True) + ' - ' + antigas))
     if tabela['uo'].isna().any():
         print(aviso + f'UO {list(tabela.loc[tabela["uo"].isna(), "uo_cod"])} sem nome em '
-              'orcamento_despesa.csv e em Nome_UO_antigas.xlsx', file=sys.stderr)
+              'orcamento_despesa.csv', file=sys.stderr)
         tabela['uo'] = tabela['uo'].fillna(tabela['uo_cod'] + ' - NA')
 
     # Poder Executivo separado em administração direta e indireta

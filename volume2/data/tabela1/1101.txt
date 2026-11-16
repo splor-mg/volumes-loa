@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 14										1	DIREITOS DA CIDADANIA							22.054.314		
 14	122									1	ADMINISTRAÇÃO GERAL							20.720.845		
 14	122	054								1	GOVERNANÇA PARA INTEGRIDADE E MELHORES RESULTADOS EM SERVIÇOS PÚBLICOS							51.005		
@@ -41,7 +41,7 @@ funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	su
 14	422	055	4	101	0001					1	OUVIDORIA MÓVEL							109.685		
 14	422	055	4	101	0001	90	0	10	1	7				109.685				109.685		
 14	422	055	4	101	0001	91	0			8	OUVIDORIA MÓVEL REALIZADA								UNIDADE	24
-14	422	055	4	109						5	AMPLIAR A PARTICIPAÇÃO DO CIDADÃO MINEIRO COMO AGENTE DE FISCALIZAÇÃO E APERFEIÇOAMENTO DA PRESTAÇÃO DOS SERVIÇOS E ATIVIDADES PÚBLICAS, FOMENTANDO A CRIAÇÃO OU APERFEIÇOAMENTO DE CANAIS DE OUVIDORIAS PÚBLICAS MUNICIPAIS E CONSOLIDANDO AS PARCERIAS, A COOPERAÇÃO MÚTUA E A ARTICULAÇÃO DE ESFORÇOS ENTRE AS DIVERSAS INSTITUIÇÕES DE OUVIDORIA PÚBLICA. 							19.934		
+14	422	055	4	109						5	AMPLIAR A PARTICIPAÇÃO DO CIDADÃO MINEIRO COMO AGENTE DE FISCALIZAÇÃO E APERFEIÇOAMENTO DA PRESTAÇÃO DOS SERVIÇOS E ATIVIDADES PÚBLICAS, FOMENTANDO A CRIAÇÃO OU APERFEIÇOAMENTO DE CANAIS DE OUVIDORIAS PÚBLICAS MUNICIPAIS E CONSOLIDANDO AS PARCERIAS, A COOPERAÇÃO MÚTUA E A ARTICULAÇÃO DE ESFORÇOS ENTRE AS DIVERSAS INSTITUIÇÕES DE OUVIDORIA PÚBLICA.							19.934		
 14	422	055	4	109	0001					1	FOMENTO À PARTICIPAÇÃO SOCIAL NO ESTADO DE MINAS GERAIS							19.934		
 14	422	055	4	109	0001	90	0	10	1	7				19.934				19.934		
 14	422	055	4	109	0001	91	0			8	AÇÃO DE APOIO REALIZADA								AÇÃO	4

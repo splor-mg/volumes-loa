@@ -6,7 +6,7 @@ fonte_desc	celulas_mesclar_fonte	celulas_mesclar_iag	iag_cod	ipu_cod	PESSOAL E E
 			Total	22	801.633.100	276.074.940	5.000.000	1.082.708.040
 42 - CONTRIBUIÇÃO PATRONAL PARA O RPPS	 2		 0	 5	105.515.757	          0	         0	105.515.757
 			Total	 5	105.515.757	          0	         0	105.515.757
-43 - CONTRIBUIÇÃO DO SERVIDOR PARA O RPPS	 2		 0	 5	72.184.243	          0	         0	72.184.243
+43 - CONTRIBUICAO DO SERVIDOR PARA O RPPS	 2		 0	 5	72.184.243	          0	         0	72.184.243
 			Total	 5	72.184.243	          0	         0	72.184.243
 60 - RECURSOS DIRETAMENTE ARRECADADOS	 2		 0	 1	          0	6.509.379	8.628.711	15.138.090
 			Total	 1	          0	6.509.379	8.628.711	15.138.090

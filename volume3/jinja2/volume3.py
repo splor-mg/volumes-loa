@@ -5,6 +5,7 @@ from pathlib import Path
 
 from utils.python.funcoes import le_tabela
 from utils.python.latex import compila, renderiza
+from utils.python.trata_bancos import le_banco
 
 NOME = 'volume3'
 DADOS = Path('volume3/data')
@@ -27,7 +28,7 @@ def prepara_tabela3(uo_cod):
     else:
         largura = 12
         largura_demais = round(12 / (colunas - 2), 1)
-        
+
     return {
         'colunas': colunas,
         'largura': largura,
@@ -48,6 +49,17 @@ def prepara_uos():
     return uos
 
 
+def prepara_detalhamento():
+    classificacao = le_banco('bancos/PPO/classificacao_investimento.csv')
+    naturezas = classificacao[classificacao['natureza_invest_cod'] != classificacao['categoria_invest_cod']]
+    detalhamento = []
+    for (_, categoria), grupo in naturezas.groupby(['categoria_invest_cod', 'categoria_invest_desc']):
+        detalhamento.append({'cod': 1, 'descricao': categoria})
+        for natureza in sorted(grupo['natureza_invest_desc']):
+            detalhamento.append({'cod': 5, 'descricao': natureza})
+    return detalhamento
+
+
 log = Path('logs/logv3.Rout')
 if log.exists() and log.stat().st_size > 0:
     print('!-- Verificar logs/logv3.Rout ...')
@@ -57,7 +69,6 @@ consolidado1 = le_tabela(DADOS / 'consolidado' / 't1_investimentos_empresa.txt')
 consolidado2 = le_tabela(DADOS / 'consolidado' / 't2_investimentos_empresa_detalhamento.txt')
 consolidado3 = le_tabela(DADOS / 'consolidado' / 't3_investimentos_projeto_atividade.txt')
 origem = le_tabela('bancos/manual/ANEXO_origens_de_recursos.txt')
-detalhamento = le_tabela('bancos/manual/ANEXO_detalhamento_investimentos.txt')
 tex = renderiza(
     JINJA2,
     NOME,
@@ -66,7 +77,7 @@ tex = renderiza(
     consolidado3=consolidado3.to_dict('records'),
     uos=prepara_uos(),
     origem=origem.to_dict('records'),
-    detalhamento=detalhamento.to_dict('records'),
+    detalhamento=prepara_detalhamento(),
 )
 AUX_FILES.mkdir(parents=True, exist_ok=True)
 (AUX_FILES / f'{NOME}.tex').write_text(tex, encoding='utf-8')

@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 04										1	ADMINISTRAÇÃO							154.542.833		
 04	130									1	ADMINISTRAÇÃO DE CONCESSÕES							154.542.833		
 04	130	085								1	PROMOÇÃO DE CONCESSÕES E PARCERIAS							154.542.833		
@@ -73,7 +73,7 @@ funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	su
 15	451	099	4	391						5	PROMOVER A MODERNIZAÇÃO E A QUALIFICAÇÃO DA INFRAESTRUTURA URBANA E RURAL, AMPLIANDO A FUNCIONALIDADE DOS ESPAÇOS PÚBLICOS, A MOBILIDADE E A OFERTA DE SERVIÇOS À POPULAÇÃO, DE FORMA A CONTRIBUIR PARA O DESENVOLVIMENTO SUSTENTÁVEL DOS MUNICÍPIOS.							1.000		
 15	451	099	4	391	0001					1	APOIO AO DESENVOLVIMENTO URBANO E REGIONAL							1.000		
 15	451	099	4	391	0001	90	1	10	1	7				1.000				1.000		
-15	451	099	4	391	0001	91	1			8	TRANSFERÊNCIA REALIZADA 								TERMO	1
+15	451	099	4	391	0001	91	1			8	TRANSFERÊNCIA REALIZADA								TERMO	1
 15	451	139								1	PROGRAMA CAMINHO NAS CHUVAS							196.534.483		
 15	451	139	1	036						5	PREVENIR DESLIZAMENTOS DE TERRA ATRAVÉS DA EXECUÇÃO DE OBRAS DE CONTENÇÃO DE ENCOSTAS EM ÁREAS DE RISCO.							182.008.206		
 15	451	139	1	036	0001					1	CONTENÇÃO DE ENCOSTAS EM ÁREAS DE RISCO - PAC ENCOSTAS							182.008.206		

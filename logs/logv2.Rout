@@ -7,6 +7,7 @@ Warning: V2 T3: UO 2351: há valores para pessoal ativo, mas não há servidores
 Warning: o banco bancos/manual/FFP_acoes.xlsx possui mais de 1 aba. A aba que será aberta é a Plan1
 Warning: V2 T3 FUNFIP: UOs sem valores nas ações do FUNFIP: ['4711']
 Warning: V2 T3 FUNFIP: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
+Warning: V2 T5 qdd_ajustado: valor deduzido das UOs beneficiadas (5542305953) diferente do valor somado às UOs financiadoras (3908677104). Ver logs/erro_qdd_ajustado.csv
 Warning: V2 T5: UO 4751: receita disponível (17000000) diferente do total de orcamento_despesa.csv (12000000)
 Warning: V2 T5: UO 2041: receita disponível (15915868) diferente do total de orcamento_despesa.csv (5617398)
 Warning: V2 T5: UO 2071: receita disponível (650577934) diferente do total de orcamento_despesa.csv (625516537)
@@ -16,13 +17,10 @@ Warning: V2 T5: UO 2311: despesa da função 10 (65002000) diferente da receita 
 Warning: V2 T5: UO 2311: fontes vinculadas com despesa maior que a receita: 57
 Warning: V2 T5: UO 4331: receita disponível (5483139) diferente do total de orcamento_despesa.csv (3136918)
 Warning: V2 T5: UO 4381: receita disponível (224215889) diferente do total de orcamento_despesa.csv (198581580)
-Warning: V2 T5: UO 4631: receita de fonte ordinária fora do FES e UO fora do caso especial. Codificar nova solução
-Warning: V2 T5: UO 4631: receita disponível (899600310) diferente do total de orcamento_despesa.csv (898613882)
 Warning: V2 T5: UO 2261: fontes vinculadas com despesa maior que a receita: 57
 Warning: V2 T5: UO 2261: receita disponível (1251480399) diferente do total de orcamento_despesa.csv (674814438)
 Warning: V2 T5: UO 2271: despesa da função 10 (2659579770) diferente da receita do FES (2669971285). A correção será feita mesmo assim
 Warning: V2 T5: UO 2271: fontes vinculadas com despesa maior que a receita: 57
-Warning: V2 T4: UO 2321: código de receita sem descrição em desc_classificacao_receita.xlsx: ['7631.99.0.1.04.000', '7631.99.0.2.04.000']
 Warning: V2 T5: UO 2321: fontes vinculadas com despesa maior que a receita: 57
 Warning: V2 T5: UO 2321: receita disponível (487923369) diferente do total de orcamento_despesa.csv (438583705)
 Warning: V2 T5: UO 4291: despesa da função 10 (12675451905) diferente da receita do FES (35000). A correção será feita mesmo assim

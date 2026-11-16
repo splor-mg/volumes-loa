@@ -19,8 +19,8 @@
 \multicolumn{8}{L{18cm}}{\textbf{ÓRGÃO:} \VAR{uo.orgao}} \\
 \multicolumn{8}{L{18cm}}{\textbf{UO:} \hspace{14pt} \VAR{uo.unidade}} \\
 \specialrule{1pt}{0pt}{0pt}
-\multicolumn{8}{L{18cm}}{\textbf{ESPECIFICAÇÃO: \textcolor{myblack}{ \VAR{acao.especificacao}}} \VAR{acao.nome_acao}} \Tstrut \\
-\multicolumn{8}{L{18cm}}{\textbf{CÓDIGO ADMIN: \textcolor{myblack}{ \hspace{0.1cm} \VAR{"%4s"|format(acao.cod_admin)} }} \hspace{1.2cm} \VAR{acao.nome_acao}} \\[3ex] 
+\multicolumn{8}{L{18cm}}{\textbf{ESPECIFICAÇÃO: \textcolor{myblack}{ \VAR{acao.especificacao}}} \VAR{acao.acao_desc}} \Tstrut \\
+\multicolumn{8}{L{18cm}}{\textbf{CÓDIGO ADMIN: \textcolor{myblack}{ \hspace{0.1cm} \VAR{"%4s"|format(acao.cod_admin)} }} \hspace{1.2cm} \VAR{acao.acao_desc}} \\[3ex] 
 \specialrule{1pt}{0pt}{0pt}
 \multicolumn{1}{L{8cm}|}{\textbf{ REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS}} &\multicolumn{2}{c|}{\multirow{2}{*}{\centering \textbf{META FÍSICA}}} & \multicolumn{3}{c|}{\multirow{2}{*}{\parbox{1.5cm}{\centering \textbf{SITUAÇÃO ATUAL DA OBRA}}}} & \multicolumn{2}{c}{\multirow{2}{*}{ \textbf{VALOR}}} \\
 \multicolumn{1}{L{8cm}|}{\textbf{ \hspace{1.5em} MUNICÍPIOS}} &\multicolumn{2}{c|}{} &\multicolumn{3}{c|}{} &\multicolumn{2}{c}{} \\
@@ -38,16 +38,16 @@
 \BLOCK{for linha in acao.linhas}
 \BLOCK{if linha.novo_territorio}
 \hline
-\multicolumn{1}{L{8cm}|}{\textbf{  \VAR{linha.regiao_geografica_intermediaria_desc} }} & & & & & & & \\
+\multicolumn{1}{L{8cm}|}{\textbf{  \VAR{linha.regiao_geografica_intermediaria} }} & & & & & & & \\
 \BLOCK{endif}
 \BLOCK{if linha.novo_municipio}
-\multicolumn{1}{L{8cm}|}{\textbf{ \hspace{1em}  \VAR{linha.municipio_desc} }} & & & & & & & \\
+\multicolumn{1}{L{8cm}|}{\textbf{ \hspace{1em}  \VAR{linha.municipio} }} & & & & & & & \\
 \BLOCK{endif}
 \BLOCK{if "TOTAL" in linha.obra}
 \hline \hline 
 \multicolumn{6}{@{\hspace{3.5em}}L{8cm}|}{ \textbf{ \VAR{linha.obra} }} & \multicolumn{1}{r|}{ \textbf{ \VAR{linha.vlr_tesouro} }} & \multicolumn{1}{r}{ \textbf{ \VAR{linha.vlr_outros} }} \\
 \BLOCK{else}
-\multicolumn{1}{@{\hspace{3.5em}}L{8cm}|}{  \VAR{linha.obra} } & \multicolumn{1}{c|}{ \VAR{linha.obra_quantidade} } & \multicolumn{1}{@{\hspace{0.5em}}L{2cm}|}{ \BLOCK{if linha.unidade_medida_desc|length > 11}\fonteSeis{  \VAR{linha.unidade_medida_desc} }\BLOCK{else}\VAR{linha.unidade_medida_desc}\BLOCK{endif} } & \multicolumn{1}{c|}{  \VAR{"X" if linha.obra_status == "INICIADO" else ""} } & \multicolumn{1}{c|}{  \VAR{"X" if linha.obra_status == "EXECUÇÃO" else ""} } & \multicolumn{1}{c|}{  \VAR{"X" if linha.obra_status == "PARALISADO" else ""} } & \multicolumn{1}{r|}{ \VAR{linha.vlr_tesouro} } & \multicolumn{1}{r}{ \VAR{linha.vlr_outros} } \\
+\multicolumn{1}{@{\hspace{3.5em}}L{8cm}|}{  \VAR{linha.obra} } & \multicolumn{1}{c|}{ \VAR{linha.obra_quantidade} } & \multicolumn{1}{@{\hspace{0.5em}}L{2cm}|}{ \BLOCK{if linha.unidade_medida|length > 11}\fonteSeis{  \VAR{linha.unidade_medida} }\BLOCK{else}\VAR{linha.unidade_medida}\BLOCK{endif} } & \multicolumn{1}{c|}{  \VAR{"X" if linha.obra_status == "INICIADO" else ""} } & \multicolumn{1}{c|}{  \VAR{"X" if linha.obra_status == "EXECUCAO" else ""} } & \multicolumn{1}{c|}{  \VAR{"X" if linha.obra_status == "PARALISADO" else ""} } & \multicolumn{1}{r|}{ \VAR{linha.vlr_tesouro} } & \multicolumn{1}{r}{ \VAR{linha.vlr_outros} } \\
 \BLOCK{endif}
 \BLOCK{endfor}
 \end{longtable}

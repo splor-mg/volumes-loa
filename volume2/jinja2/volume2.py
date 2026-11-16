@@ -5,9 +5,9 @@ import re
 import sys
 from pathlib import Path
 
-from utils.python.funcoes import le_tabela, texto_r
+from utils.python.funcoes import le_tabela
 from utils.python.latex import compila, ler_codigos, renderiza
-from utils.python.trata_bancos import le_planilha
+from utils.python.trata_bancos import le_banco
 
 NOME = 'volume2'
 DADOS = Path('volume2/data')
@@ -54,10 +54,10 @@ def prepara_tabela5(caminho):
 
 
 def prepara_rodape():
-    ipu = le_planilha('bancos/manual/desc_IPU.xlsx')
-    iag = le_planilha('bancos/manual/desc_IAG.xlsx')
-    ipus = [f'{texto_r(codigo)} - {texto}' for codigo, texto in zip(ipu['CODIGO'], ipu['ESPECIFICACAO'])]
-    iags = [f'{texto_r(codigo)} - {texto}' for codigo, texto in zip(iag['CODIGO'], iag['INTERPRETACAO'])]
+    ipu = le_banco('bancos/PPO/classificacao_ipu.csv')
+    iag = le_banco('bancos/PPO/classificacao_iag.csv')
+    ipus = [f'{codigo} - {texto}' for codigo, texto in ler_codigos(ipu, 'ipu_cod', 'ipu_desc')]
+    iags = [f'{codigo} - {texto}' for codigo, texto in ler_codigos(iag, 'iag_cod', 'iag_desc')]
     return list(zip(iags + [''] * (len(ipus) - len(iags)), ipus))
 
 
@@ -121,16 +121,18 @@ log = Path('logs/logv2.Rout')
 if log.exists() and log.stat().st_size > 0:
     print('!-- Verificar logs/logv2.Rout ...')
 
+classificacao = le_banco('bancos/PPO/classificacao_despesa.csv')
+grupos = classificacao[(classificacao['grupo_cod'] != '0') & (classificacao['modalidade_cod'] == '0')]
 print('-- Iniciando pdf/volume2.pdf ...')
 tex = renderiza(
     JINJA2,
     NOME,
     uos=prepara_uos(),
     rodape=prepara_rodape(),
-    grupos_despesa=ler_codigos('desc_grupos_de_despesa.xlsx', 'ESPECIFICACAO'),
-    fontes=ler_codigos('desc_fontes_de_recursos.xlsx', 'CLASSIFICACAO'),
-    ipu=ler_codigos('desc_IPU.xlsx', 'ESPECIFICACAO'),
-    iag=ler_codigos('desc_IAG.xlsx', 'INTERPRETACAO'),
+    grupos_despesa=ler_codigos(grupos, 'grupo_cod', 'despesa_desc'),
+    fontes=ler_codigos(le_banco('bancos/PPO/classificacao_fonte.csv'), 'fonte_cod', 'fonte_desc'),
+    ipu=ler_codigos(le_banco('bancos/PPO/classificacao_ipu.csv'), 'ipu_cod', 'ipu_desc'),
+    iag=ler_codigos(le_banco('bancos/PPO/classificacao_iag.csv'), 'iag_cod', 'iag_desc'),
 )
 AUX_FILES.mkdir(parents=True, exist_ok=True)
 (AUX_FILES / f'{NOME}.tex').write_text(tex, encoding='utf-8')

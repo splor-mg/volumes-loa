@@ -12,9 +12,9 @@ desconsiderarUO = c(9901)
 # ============================================================================
 
 # Receita Orçamentária
-receita = trataReceita_Fiscal("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_FONTE_STN.xlsx", TRUE)
+receita = trataReceita_Fiscal("bancos/PPO/orcamento_receita_fonte_stn.csv", TRUE)
 
-classificacao_receita = ler_novaReceita("bancos/manual/desc_classificacao_receita.xlsx")
+classificacao_receita = ler_novaReceita("bancos/PPO/classificacao_receita.csv")
 
 classificacao_receita[, cod_texto := paste0(substr(RECEITA_COD, 1, 4), ".", substr(RECEITA_COD, 5, 6), ".", 
                                             substr(RECEITA_COD, 7, 7), ".", substr(RECEITA_COD, 8, 8), ".",

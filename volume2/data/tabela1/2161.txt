@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 12										1	EDUCAÇÃO							17.735.916		
 12	122									1	ADMINISTRAÇÃO GERAL							8.852.354		
 12	122	104								1	ENFRENTAMENTO À VULNERABILIDADE NOS TERRITÓRIOS DE ATUAÇÃO DA FUCAM							1.047.108		
@@ -22,7 +22,7 @@ funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	su
 12	242	005	1	011						5	CAPACITAR OS SERVIDORES DA FUCAM PARA ATENDIMENTO ADEQUADO E INCLUSIVO AOS ALUNOS COM DEFICIÊNCIAS PARA QUE POSSAM ESTAR DEVIDAMENTE INCLUÍDOS EM TODOS OS CURSOS, COM FERRAMENTAS DE ENSINO ESPECÍFICAS E APROPRIADAS.							300.000		
 12	242	005	1	011	0001					1	CAPACITAÇÃO DOS PROFISSIONAIS DA FUCAM PARA ATENDIMENTO ADEQUADO A PESSOAS COM DEFICIÊNCIAS							300.000		
 12	242	005	1	011	0001	90	0	10	1	7				300.000				300.000		
-12	242	005	1	011	0001	91	0			8	AÇÃO DE CAPACITAÇÃO 								AÇÃO	30
+12	242	005	1	011	0001	91	0			8	AÇÃO DE CAPACITAÇÃO								AÇÃO	30
 12	242	005	1	030						5	REALIZAR ADEQUAÇÕES NA REDE FÍSICA DOS ESPAÇOS DA FUCAM PARA POSSIBILITAR O ACESSO SEGURO E INCLUSIVO DE PESSOAS COM DEFICIÊNCIAS.							20.000		
 12	242	005	1	030	0001					1	REALIZAÇÃO DE INTERVENÇÕES DE MELHORIA DA ACESSIBILIDADE NOS ESPAÇOS DA FUCAM							20.000		
 12	242	005	1	030	0001	90	0	10	1	7					20.000			20.000		

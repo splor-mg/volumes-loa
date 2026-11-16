@@ -10,9 +10,9 @@ source("utils/trataBancos/trataReceita_Fiscal.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
 
-class_receita = ler_novaReceita("bancos/manual/desc_classificacao_receita.xlsx")
+class_receita = ler_novaReceita("bancos/PPO/classificacao_receita.csv")
 
-receita = trataReceita_Fiscal("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx", F)
+receita = trataReceita_Fiscal("bancos/PPO/orcamento_receita.csv", F)
 loa_rec = geraLoa_rec(receita)
 setnames(loa_rec, "VL_LOA_REC", "VL_REC")
 

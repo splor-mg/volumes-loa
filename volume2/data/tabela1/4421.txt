@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 14										1	DIREITOS DA CIDADANIA							8.906.618		
 14	422									1	DIREITOS INDIVIDUAIS, COLETIVOS E DIFUSOS							8.906.618		
 14	422	070								1	POLÍTICAS DE DIREITOS HUMANOS							8.906.618		

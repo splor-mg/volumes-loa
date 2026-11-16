@@ -5,7 +5,7 @@ from pathlib import Path
 
 from utils.python.funcoes import le_tabela
 from utils.python.latex import compila, renderiza
-from utils.python.trata_bancos import le_planilha
+from utils.python.trata_bancos import le_banco
 
 NOME = 'volume4'
 DADOS = Path('volume4/data')
@@ -38,8 +38,8 @@ def prepara_tabela2(sumario):
             municipios = {''}
             linhas = []
             for linha in banco.to_dict('records'):
-                territorio = linha['regiao_geografica_intermediaria_desc']
-                municipio = linha['municipio_desc']
+                territorio = linha['regiao_geografica_intermediaria']
+                municipio = linha['municipio']
                 linha['novo_territorio'] = territorio not in territorios
                 linha['novo_municipio'] = municipio not in municipios
                 territorios.add(territorio)
@@ -48,7 +48,7 @@ def prepara_tabela2(sumario):
             acoes.append({
                 'especificacao': especificacao,
                 'cod_admin': linhas[0]['cod_admin'],
-                'nome_acao': linhas[0]['nome_acao'],
+                'acao_desc': linhas[0]['acao_desc'],
                 'linhas': linhas,
             })
         uos.append({
@@ -65,14 +65,14 @@ def prepara_tabela2(sumario):
 
 
 def prepara_anexo():
-    anexo = le_planilha('bancos/manual/correspondencia_mun_terr_desenvol.xlsx')
-    anexo = anexo.sort_values('COD SIGPLAN')
+    anexo = le_banco('bancos/PPO/classificacao_municipio.csv')
+    anexo = anexo.sort_values('municipio_cod', key=lambda coluna: coluna.astype(int))
     regioes = []
-    for codigo, regiao in anexo.groupby('Código Região Geográfica Intermediária'):
+    for (codigo, nome), regiao in anexo.groupby([anexo['regiao_cod'].astype(int), 'regiao_desc']):
         regioes.append({
             'codigo': f'{codigo:02}',
-            'nome': regiao['Região Geográfica Intermediária'].iloc[0].upper(),
-            'municipios': list(zip(regiao['COD SIGPLAN'], regiao['Municípios'])),
+            'nome': nome,
+            'municipios': list(zip(regiao['municipio_cod'], regiao['municipio_desc'])),
         })
     return regioes
 

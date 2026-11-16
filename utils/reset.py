@@ -10,7 +10,6 @@ PADROES = [
 ] + ["bancos/manual/*"]
 
 EXCECOES = {
-    Path("bancos/manual/ANEXO_detalhamento_investimentos.txt"),
     Path("bancos/manual/ANEXO_origens_de_recursos.txt"),
     Path("bancos/manual/desc_fontes_de_recursos_stn.xlsx"),
     Path("logs/.gitkeep"),

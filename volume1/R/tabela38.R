@@ -13,7 +13,7 @@ source("utils/suporte/V1/demonstr_receitas_previdenciarias.R", encoding = "UTF-8
 source("utils/trataBancos/trataQDD_Elemento_Item.R", encoding = "UTF-8")
 source("utils/trataBancos/trataReceita_Fiscal.R", encoding = "UTF-8")
 
-loa_desp = trataQDD_Elemento_Item("bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx", F)
+loa_desp = trataQDD_Elemento_Item("bancos/PPO/orcamento_despesa.csv", F)
 
 desp_prev = demonstr_despesas_previdenciarias(loa_desp)
 
@@ -32,7 +32,7 @@ desp_prev = rbind(data.table(espec = "DESPESAS PREVIDENCIÁRIAS",
                              VL_LOA = total_despesas),
                   desp_prev)
 
-receita = trataReceita_Fiscal("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx", F)
+receita = trataReceita_Fiscal("bancos/PPO/orcamento_receita.csv", F)
 # receita = trataReceita_Fiscal_antigo("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_2017.xlsx", F)
 loa_rec = geraLoa_rec(receita)
 loa_rec[, RECEITA_COD_2 := RECEITA_COD]

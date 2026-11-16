@@ -34,7 +34,8 @@ despesa = mergeDT(loa_desp, desp_real, by=c("ANO", "UO_COD", "PROGRAMA_COD"), al
 despesa[, merge:=NULL]
 despesa[is.na(despesa)] = 0
 
-despesa = adiciona_desc(despesa, columns = c("UO", "PROGRAMA"))
+despesa = adiciona_desc_volumes(despesa, "UO")
+despesa = adiciona_desc_volumes(despesa, "PROGRAMA")
 
 despesa = rbind(despesa, despesa[, lapply(.SD, sum), .SDcols=6:7], fill=T)
 despesa = despesa[nrow(despesa), c("UO_SIGLA", "PROGRAMA_DESC"):="TOTAL"]

@@ -21,7 +21,7 @@ source("utils/trataBancos/trataReceita_Fiscal.R", encoding = "UTF-8")
 # ============================================================
 # Nova codificação da receita
 
-receita = trataReceita_Fiscal("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx", F)
+receita = trataReceita_Fiscal("bancos/PPO/orcamento_receita.csv", F)
 rec = geraLoa_rec(receita)
 rec[, RECEITA_COD_2 := RECEITA_COD]
 rcl = demonstr_rcl(rec)

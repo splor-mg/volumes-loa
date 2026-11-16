@@ -5,7 +5,6 @@ Tabelas do volume 1 por ação, a partir de orcamento_despesa.csv e orcamento_de
 - T37: RECURSOS APLICADOS NA POLÍTICA DE SEGURANÇA ALIMENTAR E NUTRICIONAL SUSTENTÁVEL
 - T39: RECURSOS APLICADOS NA POLÍTICA DE ATENDIMENTO À MULHER VÍTIMA DE VIOLÊNCIA
 """
-import sys
 import pandas as pd
 
 from utils.python.funcoes import escreve_tabela, formatar_num
@@ -40,17 +39,8 @@ def gera_t26(despesa, memoria, indice, caminho):
     escreve_tabela(tabela[['uo_cod', 'funcional', 'acao_desc', 'vlr_loa_desp', 'exclusiva']], caminho)
 
 
-def gera_t30(investimento, acoes, caminho):
-    funcoes = acoes[['funcao_cod', 'funcao_desc']].drop_duplicates()
-    tabela = investimento.groupby('funcao_cod', as_index=False)['vlr_loa_desp'].sum()
-
-    sem_nome = sorted(set(tabela['funcao_cod']) - set(funcoes['funcao_cod']))
-    if sem_nome:
-        print(f'Warning: T30_INVESTIMENTOS_SEGUNDO_FUNCOES: O código da função {", ".join(map(str, sem_nome))} '
-              'não existe em planejamento_acao.csv, ou seja, não é possível lhe atribuir um nome.',
-              file=sys.stderr)
-
-    tabela = tabela.merge(funcoes).sort_values('funcao_cod', kind='stable')
+def gera_t30(investimento, caminho):
+    tabela = investimento.groupby(['funcao_cod', 'funcao_desc'], as_index=False)['vlr_loa_desp'].sum()
     tabela['porcent'] = (tabela['vlr_loa_desp'] / tabela['vlr_loa_desp'].sum() * 100).round(3)
 
     total = {'funcao_desc': 'TOTAL', 'vlr_loa_desp': tabela['vlr_loa_desp'].sum(), 'porcent': tabela['porcent'].sum()}

@@ -1,4 +1,4 @@
-regiao_geografica_intermediaria_desc	municipio_desc	obra	obra_quantidade	unidade_medida_desc	obra_status	especificacao	cod_admin	nome_acao	vlr_tesouro	vlr_outros
+regiao_geografica_intermediaria	municipio	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
 REGIÃO INTERMEDIÁRIA DE BELO HORIZONTE	BELO HORIZONTE	132 - NOVO PRÉDIO ADMINISTRATIVO DA FUNED EM STEEL FRAME (UNIDADE IV)		AÇÃO	INICIADO	10  122 705 2 500	1	ASSESSORAMENTO E GERENCIAMENTO DE POLÍTICAS PÚBLICAS	10.535.000	0
 REGIÃO INTERMEDIÁRIA DE BELO HORIZONTE	BELO HORIZONTE	133 - OBRAS DE ADEQUAÇÃO ESTRUTURAL DO REFEITÓRIO PARA ATENDIMENTO ÀS EXIGÊNCIAS DA VIGILÂNCIA SANITÁRIA MUNICIPAL.		AÇÃO	INICIADO	10  122 705 2 500	1	ASSESSORAMENTO E GERENCIAMENTO DE POLÍTICAS PÚBLICAS	500.000	0
 		TOTAL				10  122 705 2 500	1		11.035.000	0

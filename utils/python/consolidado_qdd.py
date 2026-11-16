@@ -6,9 +6,9 @@ import sys
 import pandas as pd
 
 from utils.python.funcoes import escreve_tabela, formatar_num, le_tabela
-from utils.python.trata_bancos import le_planilha
+from utils.python.trata_bancos import le_banco
 
-CHAVE_UO = ['ano', 'poder_cod', 'orgao_cod', 'orgao_nome', 'uo_cod', 'uo_nome', 'uo_sigla']
+CHAVE_UO = ['ano', 'poder_cod', 'poder_desc', 'orgao_cod', 'orgao_nome', 'uo_cod', 'uo_nome', 'uo_sigla']
 CHAVE_ACAO = ['funcao_cod', 'subfuncao_cod', 'programa_cod', 'identificador_cod', 'projeto_atividade_cod', 'subprojeto_cod']
 CHAVE_ELEMENTO = ['categoria_cod', 'grupo_cod', 'modalidade_cod', 'elemento_cod', 'iag_cod', 'fonte_cod', 'ipu_cod']
 
@@ -30,14 +30,19 @@ def gera_consolidado(banco, caminho):
     codigo = consolidado['codigo_numerico']
     consolidado['codigo_texto'] = codigo.str[0] + '.' + codigo.str[1] + '.' + codigo.str[2:4] + '.' + codigo.str[4:6]
 
-    classificacao = le_planilha('bancos/manual/desc_classificacao_economica_despesa.xlsx')
-    descricoes = dict(zip(classificacao['codigo'].str.replace(r'\s', '.', regex=True), classificacao['especificacao']))
-    consolidado['especificacao'] = consolidado['codigo_texto'].map(descricoes)
+    classificacao = le_banco('bancos/PPO/classificacao_despesa.csv')
+    descricoes = classificacao['despesa_desc'].set_axis(
+        classificacao['categoria_cod']
+        + classificacao['grupo_cod']
+        + classificacao['modalidade_cod'].str.zfill(2)
+        + classificacao['elemento_cod'].str.zfill(2)
+    )
+    consolidado['especificacao'] = consolidado['codigo_numerico'].map(descricoes)
     sem_descricao = consolidado.loc[consolidado['especificacao'].isna(), 'codigo_texto']
     if len(sem_descricao):
         print(
             'Warning: Os códigos de despesa não possuem correspondência em '
-            f'desc_classificacao_economica_despesa.xlsx: {", ".join(sem_descricao)}',
+            f'classificacao_despesa.csv: {", ".join(sem_descricao)}',
             file=sys.stderr,
         )
 
@@ -69,21 +74,11 @@ def gera_qdd(banco, caminho, chave_extra):
         colunas + ['cod_detalhe'], sort=False, dropna=False, as_index=False
     )['vlr_loa_desp'].sum()
 
-    poderes = le_planilha('bancos/manual/codigosPoder.xlsx').astype({'cod_poder': str})
-    quadro = quadro.merge(poderes, left_on='poder_cod', right_on='cod_poder', how='left')
-    sem_poder = sorted(quadro.loc[quadro['poder'].isna(), 'poder_cod'].unique())
-    if sem_poder:
-        print(
-            'Warning: Há um código de Poder que não está presente em codigosPoder.xlsx. '
-            f'Trata-se de {", ".join(sem_poder)} . Alterar em codigosPoder.xlsx \n',
-            file=sys.stderr,
-        )
-
     quadro = quadro.sort_values(['poder_cod', 'orgao_cod', 'uo_cod', 'cod_detalhe'], kind='stable')
     quadro = quadro[quadro['vlr_loa_desp'] > 0]
     quadro['vlr_loa_desp'] = formatar_num(quadro['vlr_loa_desp'])
 
-    colunas = colunas + ['vlr_loa_desp', 'poder']
+    colunas = colunas + ['vlr_loa_desp']
     escreve_tabela(quadro[colunas], caminho)
 
 
@@ -108,7 +103,7 @@ def prepara_qdd(caminho):
     uos = []
     for _, uo in banco.groupby('uo_cod', sort=False):
         primeira = uo.iloc[0]
-        poder = primeira['poder']
+        poder = primeira['poder_desc']
         orgao = primeira['orgao_cod']
         unidade = primeira['uo_cod']
         sigla = primeira['uo_sigla']

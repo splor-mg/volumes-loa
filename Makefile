@@ -77,7 +77,7 @@ pdf/volume7.pdf: $(DEPENDENCIAS_V7)
 	@python3 -m volume7.jinja2.volume7 2> logs/warningsV7.Rout
 	@echo "---------------------------------------------------------------"
 
-volume7/data/*.txt: volume7/python/*.py utils/python/*.py volume7/checks/check_orcamento_despesa_fonte_80_95.py bancos/PPO/orcamento_despesa.csv bancos/PPO/orcamento_despesa_fonte_80_95.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+volume7/data/*.txt: volume7/python/*.py utils/python/*.py volume7/checks/check_orcamento_despesa_fonte_80_95.py bancos/PPO/orcamento_despesa.csv bancos/PPO/orcamento_despesa_fonte_80_95.csv bancos/PPO/classificacao_despesa.csv
 	@echo "Atualizando volume7/data/ consolidado.txt e qdd.txt..."
 	@python3 volume7/checks/check_orcamento_despesa_fonte_80_95.py 2> logs/logv7.Rout
 	@python3 -m volume7.python.volume7 2>> logs/logv7.Rout
@@ -88,19 +88,19 @@ pdf/volume6.pdf: $(DEPENDENCIAS_V6)
 	@python3 -m volume6.jinja2.volume6 2> logs/warningsV6.Rout
 	@echo "---------------------------------------------------------------"
 
-volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt: volume6/R/volume6A.R bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt: volume6/R/volume6A.R bancos/PPO/orcamento_despesa_fonte_stn.csv
 	@echo "Atualizando $@..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
 
-volume6/data/receita_fonte_stn.txt: volume6/R/volume6B.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_FONTE_STN.xlsx
+volume6/data/receita_fonte_stn.txt: volume6/R/volume6B.R bancos/PPO/orcamento_receita_fonte_stn.csv
 	@echo "Atualizando $@..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
 
-bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx: utils/trataBancos/trataQDD_Fiscal_Fonte_STN.R bancos/SISOR/BASE_QDD_FISCAL.xlsx
+bancos/PPO/orcamento_despesa_fonte_stn.csv: utils/trataBancos/trataQDD_Fiscal_Fonte_STN.R bancos/PPO/orcamento_despesa.csv
 	@echo "Atualizando $@..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
 
-bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_FONTE_STN.xlsx: utils/trataBancos/trataReceita_Fiscal_Fonte_STN.R bancos/manual/desc_fontes_de_recursos_stn.xlsx
+bancos/PPO/orcamento_receita_fonte_stn.csv: utils/trataBancos/trataReceita_Fiscal_Fonte_STN.R bancos/PPO/orcamento_receita.csv bancos/manual/desc_fontes_de_recursos_stn.xlsx
 	@echo "Atualizando $@..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
 
@@ -114,7 +114,7 @@ pdf/volume5.pdf: $(DEPENDENCIAS_V5)
 	@python3 -m volume5.jinja2.volume5 2> logs/warningsV5.Rout
 	@echo "---------------------------------------------------------------"
 
-volume5/data/*.txt: volume5/python/*.py utils/python/*.py bancos/PPO/orcamento_despesa.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_classificacao_economica_despesa.xlsx
+volume5/data/*.txt: volume5/python/*.py utils/python/*.py bancos/PPO/orcamento_despesa.csv bancos/PPO/classificacao_despesa.csv
 	@echo "Atualizando volume5/data/ consolidado.txt e qdd.txt..."
 	@python3 -m volume5.python.volume5 2> logs/logv5.Rout
 
@@ -124,7 +124,7 @@ pdf/volume4.pdf: $(DEPENDENCIAS_V4)
 	@python3 -m volume4.jinja2.volume4 2> logs/warningsV4.Rout
 	@echo "---------------------------------------------------------------"
 
-volume4/data/*.txt: volume4/python/*.py utils/python/*.py bancos/PPO/orcamento_obras.csv bancos/PPO/planejamento_acao.csv bancos/PPO/orcamento_despesa_investimento.csv bancos/PPO/orcamento_despesa.csv bancos/manual/codigosPoder.xlsx
+volume4/data/*.txt: volume4/python/*.py utils/python/*.py bancos/PPO/orcamento_obras.csv bancos/PPO/planejamento_acao.csv
 	@echo "Atualizando volume4/data/ sumario.txt, tabela1/*.txt e tabela2/*.txt..."
 	@python3 -m volume4.python.volume4 2> logs/logv4.Rout
 
@@ -144,7 +144,7 @@ pdf/volume2.pdf: $(DEPENDENCIAS_V2)
 	@python3 -m volume2.jinja2.volume2 2> logs/warningsV2.Rout
 	@echo "---------------------------------------------------------------"
 
-volume2/data/*.txt: volume2/python/*.py utils/python/*.py bancos/PPO/orcamento_despesa.csv bancos/PPO/planejamento_acao.csv bancos/PPO/orcamento_pessoal.csv bancos/PPO/orcamento_receita.csv bancos/PPO/orcamento_repasse.csv bancos/manual/codigosPoder.xlsx bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_fontes_de_recursos.xlsx bancos/manual/desc_classificacao_receita.xlsx bancos/manual/Nome_UO_antigas.xlsx bancos/manual/FFP_acoes.xlsx
+volume2/data/*.txt: volume2/python/*.py utils/python/*.py bancos/PPO/orcamento_despesa.csv bancos/PPO/planejamento_acao.csv bancos/PPO/orcamento_pessoal.csv bancos/PPO/orcamento_receita.csv bancos/PPO/orcamento_repasse.csv bancos/PPO/classificacao_receita.csv bancos/manual/FFP_acoes.xlsx
 	@echo "Atualizando volume2/data/ sumario.txt e tabela1/*.txt a tabela5/*.txt..."
 	@python3 -m volume2.python.volume2 2> logs/logv2.Rout
 
@@ -174,23 +174,23 @@ pdf/tabela33.pdf: volume3/data/consolidado/t2_investimentos_empresa_detalhamento
 	@python3 -m volume1.jinja2.volume1 tabela33 2>> logs/warningsV1.Rout
 	@echo "---------------------------------------------------------------"
 
-$(subst volume1/data/,volume1/%/,$(TXT_PYTHON_V1)): volume1/python/*.py utils/python/*.py bancos/PPO/orcamento_despesa.csv bancos/PPO/orcamento_despesa_investimento.csv bancos/PPO/orcamento_pessoal.csv bancos/PPO/orcamento_receita.csv bancos/PPO/planejamento_acao.csv bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_funcao.xlsx bancos/manual/desc_subfuncao.xlsx bancos/manual/desc_classificacao_receita.xlsx bancos/manual/memoria_calculo.xlsx utils/volume1/indice_crianca_adolescente.txt volume2/data/sumario.txt
+$(subst volume1/data/,volume1/%/,$(TXT_PYTHON_V1)): volume1/python/*.py utils/python/*.py bancos/PPO/orcamento_despesa.csv bancos/PPO/orcamento_despesa_investimento.csv bancos/PPO/orcamento_pessoal.csv bancos/PPO/orcamento_receita.csv bancos/PPO/classificacao_receita.csv bancos/PPO/planejamento_acao.csv bancos/manual/memoria_calculo.xlsx utils/volume1/indice_crianca_adolescente.txt
 	@echo "Atualizando volume1/data/ tabelas em Python..."
 	@python3 -m volume1.python.volume1 2>> logs/logv1.Rout
 
-$(TXT_QDD_V1): volume1/data/%.txt: volume1/R/%.R bancos/SISOR/BASE_QDD_FISCAL.xlsx volume2/data/sumario.txt bancos/manual/desc_grupos_de_despesa.xlsx bancos/manual/desc_funcao.xlsx bancos/manual/desc_subfuncao.xlsx
+$(TXT_QDD_V1): volume1/data/%.txt: volume1/R/%.R bancos/PPO/orcamento_despesa.csv volume2/data/sumario.txt
 	@echo "Atualizando volume1/data/$*.txt..."
 	@Rscript $(VERBOSE) volume1/R/$*.R 2>> logs/logv1.Rout
 
-$(TXT_RECEITA_V1): volume1/data/%.txt: volume1/R/%.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/manual/desc_classificacao_receita.xlsx
+$(TXT_RECEITA_V1): volume1/data/%.txt: volume1/R/%.R bancos/PPO/orcamento_receita.csv bancos/PPO/classificacao_receita.csv
 	@echo "Atualizando volume1/data/$*.txt..."
 	@Rscript $(VERBOSE) volume1/R/$*.R 2>> logs/logv1.Rout
 
-$(TXT_RECEITA_QDD_V1): volume1/data/%.txt: volume1/R/%.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/manual/desc_classificacao_receita.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx volume2/data/sumario.txt bancos/manual/desc_subfuncao.xlsx
+$(TXT_RECEITA_QDD_V1): volume1/data/%.txt: volume1/R/%.R bancos/PPO/orcamento_receita.csv bancos/PPO/classificacao_receita.csv bancos/PPO/orcamento_despesa.csv volume2/data/sumario.txt
 	@echo "Atualizando volume1/data/$*.txt..."
 	@Rscript $(VERBOSE) volume1/R/$*.R 2>> logs/logv1.Rout
 
-volume1/%/tabela25a.txt volume1/%/tabela25b.txt: volume1/R/tabela25.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/manual/desc_classificacao_receita.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx volume2/data/sumario.txt bancos/manual/desc_subfuncao.xlsx
+volume1/%/tabela25a.txt volume1/%/tabela25b.txt: volume1/R/tabela25.R bancos/PPO/orcamento_receita.csv bancos/PPO/classificacao_receita.csv bancos/PPO/orcamento_despesa.csv volume2/data/sumario.txt
 	@echo "Atualizando volume1/data/tabela25a.txt e tabela25b.txt..."
 	@Rscript $(VERBOSE) volume1/R/tabela25.R 2>> logs/logv1.Rout
 
@@ -202,19 +202,19 @@ volume1/data/tabela28b.txt: volume1/R/tabela28b.R volume1/R/tabela28_comum.R ban
 	@echo "Atualizando volume1/data/tabela28b.txt..."
 	@Rscript $(VERBOSE) volume1/R/tabela28b.R 2>> logs/logv1.Rout
 
-volume1/data/tabela20a.txt: volume1/R/tabela20a.R bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx
+volume1/data/tabela20a.txt: volume1/R/tabela20a.R bancos/PPO/orcamento_despesa.csv bancos/PPO/orcamento_receita.csv
 	@echo "Atualizando volume1/data/tabela20a.txt..."
 	@Rscript $(VERBOSE) volume1/R/tabela20a.R 2>> logs/logv1.Rout
 
-volume1/data/tabela1.txt: volume1/R/tabela1.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx bancos/SISOR/BASE_QDD_FISCAL.xlsx utils/suporte/V1/demonstr_consolidado.R
+volume1/data/tabela1.txt: volume1/R/tabela1.R bancos/PPO/orcamento_receita.csv bancos/PPO/orcamento_despesa.csv utils/suporte/V1/demonstr_consolidado.R
 	@echo "Atualizando volume1/data/tabela1.txt..."
 	@echo "------------------------------------------------------------------------"
 	@Rscript $(VERBOSE) volume1/R/tabela1.R 2>> logs/logv1.Rout
 
-volume1/data/tabela8.txt: volume1/R/tabela8.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx utils/suporte/V1/demonstr_rcl.R
+volume1/data/tabela8.txt: volume1/R/tabela8.R bancos/PPO/orcamento_receita.csv utils/suporte/V1/demonstr_rcl.R
 	@echo "Atualizando volume1/data/tabela8.txt..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv1.Rout
 
-volume1/data/tabela38.txt: volume1/R/tabela38.R bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx utils/suporte/V1/demonstr_despesas_previdenciarias.R utils/suporte/V1/demonstr_receitas_previdenciarias.R bancos/SISOR/BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx
+volume1/data/tabela38.txt: volume1/R/tabela38.R bancos/PPO/orcamento_receita.csv utils/suporte/V1/demonstr_despesas_previdenciarias.R utils/suporte/V1/demonstr_receitas_previdenciarias.R bancos/PPO/orcamento_despesa.csv
 	@echo "Atualizando volume1/data/tabela38.txt..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv1.Rout

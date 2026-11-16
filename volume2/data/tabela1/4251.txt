@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 08										1	ASSISTÊNCIA SOCIAL							227.196.059		
 08	242									1	ASSISTÊNCIA À PESSOA COM DEFICIÊNCIA							240.000		
 08	242	071								1	FORTALECIMENTO DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL - SUAS							240.000		
@@ -51,5 +51,5 @@ funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	su
 08	244	071	4	435	0001					1	EDUCAÇÃO PERMANENTE DO SUAS							6.225.253		
 08	244	071	4	435	0001	90	0	56	1	7				4.118.926				4.118.926		
 08	244	071	4	435	0001	90	0	71	1	7				1.424.429	681.898			2.106.327		
-08	244	071	4	435	0001	91	0			8	PESSOA QUALIFICADA 								PESSOA	25.500
+08	244	071	4	435	0001	91	0			8	PESSOA QUALIFICADA								PESSOA	25.500
 										9	TOTAL			203.877.170	23.318.889			227.196.059		

@@ -9,7 +9,7 @@ source("utils/formataTexto.R", encoding = "UTF-8")
 # ====== LOAD das funções para abertura dos bancos necessários ===================
 source("utils/trataBancos/trataQDD_Fiscal.R", encoding = "UTF-8")
 
-qdd = trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F)
+qdd = trataQDD_Fiscal("bancos/PPO/orcamento_despesa.csv", F)
 loa_desp = geraLoa_desp(qdd)
 setnames(loa_desp, "VL_LOA_DESP", "VL_DESP")
 
@@ -26,11 +26,7 @@ setnames(loa, "VL_LOA_DESP", "VL_DESP")
 desp = rbind(loa_desp, exec_desp, fill=T)
 desp = rbind(desp, loa, fill=T)
 
-# existe um de-para no pacote relatórios que pode nao ser atualizado ano a ano, 
-# manter um valor de ano que esteja no de-para ou pedir para atualizar pacote relatórios (andrey 09-2022)
-desp[, ANO_TEMP:= ANO]; desp[, ANO:=2022]
 desp = adiciona_desc_volumes(desp, column = "GRUPO")
-desp[, ANO:= ANO_TEMP]; desp[, ANO_TEMP:=NULL]
 
 desp[, CATEGORIA_DESC := ifelse(CATEGORIA_COD==3, "Despesas Correntes", 
                          ifelse(CATEGORIA_COD==4, "Despesas de Capital",

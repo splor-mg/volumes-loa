@@ -7,9 +7,9 @@ import sys
 from pathlib import Path
 
 from utils.python.funcoes import escreve_tabela
-from utils.python.trata_bancos import (le_planilha, trata_classificacao_receita, trata_orcamento_despesa,
-                                       trata_orcamento_pessoal, trata_orcamento_receita, trata_orcamento_repasse,
-                                       trata_planejamento_acao)
+from utils.python.trata_bancos import (trata_classificacao_receita, trata_orcamento_despesa,
+                                       trata_orcamento_pessoal, trata_orcamento_receita,
+                                       trata_orcamento_repasse, trata_planejamento_acao)
 from volume2.python.tabela1 import gera_tabela1
 from volume2.python.tabela2 import gera_tabela2
 from volume2.python.tabela3 import ACOES_INATIVOS, UOS_DESCONSIDERAR, gera_funfip, gera_tabela3
@@ -32,11 +32,6 @@ codigos = ['funcao_cod', 'subfuncao_cod', 'programa_cod', 'acao_cod', 'iag_cod']
 acoes[codigos] = acoes[codigos].astype(int)
 acoes['identificador_cod'], acoes['projeto_atividade_cod'] = divmod(acoes['acao_cod'], 1000)
 
-grupos = le_planilha('bancos/manual/desc_grupos_de_despesa.xlsx')
-grupos = dict(zip(grupos['CODIGO'], grupos['ESPECIFICACAO'].str.upper()))
-fontes = le_planilha('bancos/manual/desc_fontes_de_recursos.xlsx').dropna(subset='CLASSIFICACAO')
-fontes = fontes.set_index('CODIGO')['CLASSIFICACAO']
-
 pessoal = trata_orcamento_pessoal('bancos/PPO/orcamento_pessoal.csv')
 terceirizado = pessoal['pessoal_classificacao'].str.contains('TERCEIRI')
 pessoal.loc[terceirizado, 'pessoal_classificacao'] = 'PESSOAL ATIVO'
@@ -49,31 +44,22 @@ if len(sem_nivel):
           'Definir no código em que ordem ela sai na tabela', file=sys.stderr)
 
 receita = trata_orcamento_receita('bancos/PPO/orcamento_receita.csv')
-classificacao = trata_classificacao_receita('bancos/manual/desc_classificacao_receita.xlsx')
+classificacao = trata_classificacao_receita('bancos/PPO/classificacao_receita.csv')
 repasse = trata_orcamento_repasse('bancos/PPO/orcamento_repasse.csv')
 
 # Sumário ----------------------------------------------------------------------
-sumario = despesa[['poder_cod', 'orgao_cod', 'orgao_nome', 'uo_cod', 'uo_nome', 'uo_sigla']].drop_duplicates()
-poderes = le_planilha('bancos/manual/codigosPoder.xlsx').astype({'cod_poder': str})
-sumario = sumario.merge(poderes, left_on='poder_cod', right_on='cod_poder', how='left')
-sem_poder = sorted(sumario.loc[sumario['poder'].isna(), 'poder_cod'].unique())
-if sem_poder:
-    print(f'Warning: sumario_v2: O código de poder {", ".join(sem_poder)} não possui correspondência '
-          'em codigosPoder.xlsx. Alterar esse banco de codigosPoder.xlsx', file=sys.stderr)
-sem_uo = poderes.loc[~poderes['cod_poder'].isin(sumario['poder_cod']), 'poder']
-if len(sem_uo):
-    print(f'Warning: sumario_v2: O poder {", ".join(sem_uo)} não possui uma UO em '
-          'orcamento_despesa.csv. Desconsiderar esse poder do banco.', file=sys.stderr)
+sumario = despesa.drop_duplicates('uo_cod')
 sumario = sumario.sort_values(['poder_cod', 'orgao_cod', 'uo_cod'], key=lambda coluna: coluna.astype(int))
 for nivel in ['orgao', 'uo']:
     sumario[nivel] = (sumario[f'{nivel}_cod'].str.replace(r'(.)(..)(.)', r'\1.\2.\3', regex=True)
                       + ' - ' + sumario[f'{nivel}_nome'] + ' - ' + sumario['uo_sigla'])
+sumario = sumario.rename(columns={'poder_desc': 'poder'})
 escreve_tabela(sumario[['poder', 'orgao_cod', 'orgao', 'uo_cod', 'uo']], DADOS / 'sumario.txt')
 
 # Tabelas 1 e 2 ----------------------------------------------------------------
 for uo_cod, uo in despesa.groupby('uo_cod'):
-    gera_tabela1(uo, acoes, set(grupos), DADOS / 'tabela1' / f'{uo_cod}.txt')
-    gera_tabela2(uo, fontes, grupos, DADOS / 'tabela2' / f'{uo_cod}.txt')
+    gera_tabela1(uo, acoes, DADOS / 'tabela1' / f'{uo_cod}.txt')
+    gera_tabela2(uo, DADOS / 'tabela2' / f'{uo_cod}.txt')
 
 # Tabela 3 ---------------------------------------------------------------------
 despesa_pessoal = despesa[((despesa['grupo_cod'] == 1) & (despesa['ipu_cod'] != 9))

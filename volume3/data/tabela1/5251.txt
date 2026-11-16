@@ -1,8 +1,8 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 25						acao	ENERGIA	457.766.318		
 25	121					acao	PLANEJAMENTO E ORÇAMENTO	457.766.318		
 25	121	133				acao	MINAS GERAÇÃO DE VALOR			
 25	121	133	 3	18	 0	acao	GÁS COMPETITIVO- EXPANSÃO DA REDE DE GÁS NATURAL	457.766.318		
 						finalidade	EXPANDIR A REDE DE GÁS NATURAL NO TERRITÓRIO DE MINAS GERAIS			
-						produto	AÇÃO DESENVOLVIDA 		AÇÃO	171
+						produto	AÇÃO DESENVOLVIDA		AÇÃO	171
 						total	TOTAL GERAL	457.766.318		

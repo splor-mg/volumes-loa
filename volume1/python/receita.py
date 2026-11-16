@@ -32,10 +32,10 @@ def gera_t2(receita, caminho):
     escreve_tabela(tabela, caminho)
 
 
-def gera_t3(receita, despesa, classificacao, grupos, caminho, caminho_resumo):
+def gera_t3(receita, despesa, classificacao, caminho, caminho_resumo):
     base = despesa[despesa['modalidade_cod'] != 91]
     categoria = base['categoria_cod'].astype(str)
-    grupo_desc = base['grupo_cod'].map({codigo: sem_acento(texto) for codigo, texto in grupos.items()})
+    grupo_desc = base['grupo_desc'].map(sem_acento)
 
     # Despesa: categorias (30, 40, 90), na ordem em que aparecem no banco, e grupos (31, 32...)
     chave = categoria + '0. ' + base['categoria_cod'].map(CATEGORIAS).fillna('IGN')
@@ -126,7 +126,7 @@ def gera_t7_t9(receita, classificacao, nome, caminho):
     escreve_tabela(tabela, caminho)
 
 
-def gera_t18(receita, despesa, sumario, caminho):
+def gera_t18(receita, despesa, caminho):
     nome = 'T18_DCGF_Demonst_Aplicacao_Recursos_Acoes_Servicos_Publicos_Saude'
 
     # A. Receita: as colunas de regras também marcam as dedutoras (9...), que ficam de fora
@@ -185,16 +185,11 @@ def gera_t18(receita, despesa, sumario, caminho):
                      columns=['espec', 'nvl', 'VL_LOA'])
     asps = pd.concat([a, asps.drop(columns='ordem')])
 
-    # B. Despesa, com o nome da UO de volume2/data/sumario.txt
-    uos = dict(zip(sumario['uo_cod'], sumario['uo'].str.replace(r'^[0-9.]+ - ', '', regex=True)))
-    sem_nome = despesa.loc[~despesa['uo_cod'].isin(uos), 'uo_cod'].unique()
-    if len(sem_nome):
-        sys.exit(f"{nome}: Há UO's que não possuem seu descritivo em volume2/data/sumario.txt. "
-                 f'É o caso de: {", ".join(sem_nome)}')
-
+    # B. Despesa
     desp = despesa[despesa['asps']]
     cod = (desp['uo_cod'] + '.' + desp['funcao_cod'].astype(str)).rename('cod')
-    parte_b = desp.groupby([cod, desp['uo_cod'].map(uos).rename('espec')])['vlr_loa_desp'].sum()
+    espec = (desp['uo_nome'] + ' - ' + desp['uo_sigla']).rename('espec')
+    parte_b = desp.groupby([cod, espec])['vlr_loa_desp'].sum()
     parte_b = parte_b.rename('VL_LOA').reset_index()
     parte_b['nvl'] = 1
     b = pd.DataFrame([['B. DESPESA COM SAÚDE', 0, parte_b['VL_LOA'].sum()]], columns=['espec', 'nvl', 'VL_LOA'])

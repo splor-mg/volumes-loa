@@ -11,15 +11,16 @@ source("utils/formataTexto.R", encoding = "UTF-8")
 source("utils/trataBancos/trataReceita_Fiscal.R", encoding = "UTF-8")
 source("utils/trataBancos/trataQDD_Fiscal.R", encoding = "UTF-8")
 
-class_receita = ler_novaReceita("bancos/manual/desc_classificacao_receita.xlsx")
-subfuncao_desc = data.table(read_excel("bancos/manual/desc_subfuncao.xlsx", sheet=1))
+class_receita = ler_novaReceita("bancos/PPO/classificacao_receita.csv")
+subfuncao_desc = unique(fread("bancos/PPO/orcamento_despesa.csv", encoding = "UTF-8")[
+  , list(codigo = subfuncao_cod, subfuncao = subfuncao_desc)])
 
-qdd = trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL.xlsx", F)
+qdd = trataQDD_Fiscal("bancos/PPO/orcamento_despesa.csv", F)
 loa_desp = geraLoa_desp(qdd)
 setnames(loa_desp, "VL_LOA_DESP", "VL_DESP")
 
 # receita = trataReceita_Fiscal_antigo("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_2017.xlsx", F)
-receita = trataReceita_Fiscal("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL.xlsx", F)
+receita = trataReceita_Fiscal("bancos/PPO/orcamento_receita.csv", F)
 loa_rec = geraLoa_rec(receita)
 setnames(loa_rec, "VL_LOA_REC", "VL_REC")
 

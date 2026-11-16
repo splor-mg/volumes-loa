@@ -28,22 +28,20 @@ qdd['orgao'] = (qdd['orgao_cod'].str.replace(r'(.)(..)(.)', r'\1.\2.\3', regex=T
                 + ' - ' + qdd['orgao_nome']
                 + ' - ' + qdd['uo_sigla'])
 
-# Descrições, finalidade e produto de cada ação
+# Finalidade e produto de cada ação
 acoes = trata_planejamento_acao('bancos/PPO/planejamento_acao.csv')
 acoes = acoes.rename(columns={'uo_acao_cod': 'uo_cod'})
 
 colunas = ['uo_cod',
            'acao_cod',
-           'funcao_desc',
-           'subfuncao_desc',
            'acao_finalidade',
-           'produto_desc',
-           'unidade_medida_desc',
+           'produto',
+           'unidade_medida',
            'vlr_meta_fisica_ano0']
 
 qdd = qdd.merge(acoes[colunas], how='left', validate='many_to_one')
 
-sem_acao = qdd.loc[qdd['funcao_desc'].isna(), ['uo_cod', 'acao_cod']].drop_duplicates()
+sem_acao = qdd.loc[qdd['acao_finalidade'].isna(), ['uo_cod', 'acao_cod']].drop_duplicates()
 if len(sem_acao):
     print('Warning: Ações (UO/ação) sem correspondência em planejamento_acao.csv: '
           f'{", ".join(sem_acao["uo_cod"] + "/" + sem_acao["acao_cod"])}', file=sys.stderr)

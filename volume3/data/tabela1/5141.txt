@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	iag_cod	tipo	especificacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
  4						acao	ADMINISTRAÇÃO	74.348.446		
  4	126					acao	TECNOLOGIA DA INFORMAÇÃO	74.348.446		
  4	126	30				acao	SOLUÇÕES EM TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO			

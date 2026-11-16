@@ -1,4 +1,4 @@
-funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida_desc	vlr_meta_fisica_ano0
+funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	modalidade_cod	iag_cod	fonte_cod	ipu_cod	tipo	especificacao	pessoal	juros	outras	investimentos	inversoes	amortizacao	vlr_loa_desp	unidade_medida	vlr_meta_fisica_ano0
 12										1	EDUCAÇÃO							55.106.884		
 12	364									1	ENSINO SUPERIOR							55.106.884		
 12	364	015								1	ENSINO SUPERIOR PARA A AGRICULTURA E PECUÁRIA							55.106.884		
@@ -55,7 +55,7 @@ funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	su
 20	571	016	4	022						5	PRODUZIR E TRANSFERIR BOVINOS DE QUALIDADE GENÉTICA SUPERIOR, INCLUSIVE POR MEIO DA FERTILIZAÇÃO IN VITRO (FIV), VISANDO PROMOVER O DESENVOLVIMENTO DA PECUÁRIA, A REPRODUÇÃO ANIMAL MAIS EFICIENTE E A SUSTENTABILIDADE DO PEQUENO PRODUTOR DE LEITE.							1.400.000		
 20	571	016	4	022	0001					1	TRANSFERÊNCIA DE TECNOLOGIA VIA MATRIZES E REPRODUTORES							1.400.000		
 20	571	016	4	022	0001	90	0	60	1	7				1.400.000				1.400.000		
-20	571	016	4	022	0001	91	0			8	MATRIZ E REPRODUTOR TRANSFERIDO 								UNIDADE	105
+20	571	016	4	022	0001	91	0			8	MATRIZ E REPRODUTOR TRANSFERIDO								UNIDADE	105
 20	573									1	DIFUSÃO DO CONHECIMENTO CIENTÍFICO E TECNOLÓGICO							250.000		
 20	573	016								1	INOVAÇÕES E SOLUÇÕES TECNOLÓGICAS PARA A AGROPECUÁRIA E A AGROINDÚSTRIA							250.000		
 20	573	016	4	023						5	DIFUNDIR INFORMAÇÕES CIENTÍFICAS E TECNOLÓGICAS PARA O DESENVOLVIMENTO SUSTENTÁVEL DO AGRONEGÓCIO E DA AGRICULTURA FAMILIAR, VISANDO AMPLIAR A PRODUTIVIDADE E A OFERTA DE ALIMENTOS SEGUROS E DE QUALIDADE, POR MEIO DE PUBLICAÇÕES.							250.000		

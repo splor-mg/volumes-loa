@@ -1,3 +1,3 @@
-regiao_geografica_intermediaria_desc	municipio_desc	obra	obra_quantidade	unidade_medida_desc	obra_status	especificacao	cod_admin	nome_acao	vlr_tesouro	vlr_outros
+regiao_geografica_intermediaria	municipio	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
 ESTADUAL	DIVERSOS MUNICÍPIOS - ESTADUAL	250 - BALNEÁRIO ÁGUAS SANTAS - TIRADENTES/MG | BARREIO DE ARAXÁ		UNIDADE	INICIADO	19  572 133 3 015	1	GESTÃO DE INFRAESTRUTURA, CONSÓRCIOS E EQUIPAMENTOS CULTURAIS E TURÍSTICOS	0	4.782.988
 		TOTAL				19  572 133 3 015	1		0	4.782.988
