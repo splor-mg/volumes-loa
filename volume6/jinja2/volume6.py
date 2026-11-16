@@ -6,6 +6,7 @@ from pathlib import Path
 
 from utils.python.funcoes import le_tabela
 from utils.python.latex import compila, ler_codigos, renderiza
+from utils.python.trata_bancos import le_banco, le_planilha
 
 NOME = 'volume6'
 DADOS = Path('volume6/data')
@@ -59,16 +60,20 @@ log = Path('logs/logv6.Rout')
 if log.exists() and log.stat().st_size > 0:
     print('!-- Verificar logs/logv6.Rout ...')
 
+classificacao = le_banco('bancos/PPO/classificacao_despesa.csv')
+grupos = classificacao[(classificacao['grupo_cod'] != '0')
+                       & (classificacao['modalidade_cod'] == '0')]
+fontes = le_planilha('bancos/manual/desc_fontes_de_recursos_stn.xlsx')
 print('-- Iniciando pdf/volume6.pdf ...')
 tex = renderiza(
     JINJA2,
     NOME,
     receita=prepara_receita(DADOS / 'receita_fonte_stn.txt'),
     uos=prepara_qdd(DADOS / 'QUADRO_DETALHAMENTO_DESPESA_porUO.txt'),
-    grupos_despesa=ler_codigos('desc_grupos_de_despesa.xlsx', 'ESPECIFICACAO'),
-    fontes=ler_codigos('desc_fontes_de_recursos_stn.xlsx', 'CLASSIFICACAO'),
-    ipu=ler_codigos('desc_IPU.xlsx', 'ESPECIFICACAO'),
-    iag=ler_codigos('desc_IAG.xlsx', 'INTERPRETACAO'),
+    grupos_despesa=ler_codigos(grupos, 'grupo_cod', 'despesa_desc'),
+    fontes=ler_codigos(fontes, 'CODIGO', 'CLASSIFICACAO'),
+    ipu=ler_codigos(le_banco('bancos/PPO/classificacao_ipu.csv'), 'ipu_cod', 'ipu_desc'),
+    iag=ler_codigos(le_banco('bancos/PPO/classificacao_iag.csv'), 'iag_cod', 'iag_desc'),
 )
 AUX_FILES.mkdir(parents=True, exist_ok=True)
 (AUX_FILES / f'{NOME}.tex').write_text(tex, encoding='utf-8')

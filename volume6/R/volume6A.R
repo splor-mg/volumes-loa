@@ -13,20 +13,10 @@ source("utils/trataBancos/trataQDD_Fiscal.R", encoding = "UTF-8")
 # so utilizado se existir uma base em "bancos/SISOR/BASE_QDD_FISCAL_PROPOSTA.xlsx"
 uos_proposta <- c(1011, 1021, 1031, 1051, 1091, 1441, 2361, 4031, 4121, 4441, 4451, 4611)
 
-classificacao_despesa <- data.table(read_excel("bancos/manual/desc_classificacao_economica_despesa.xlsx", sheet = 1))
+banco <- trataQDD_Fiscal("bancos/PPO/orcamento_despesa_fonte_stn.csv")
 
-classificacao_despesa <- classificacao_despesa[!is.na(codigo), ]
-
-classificacao_despesa[, codigo:= format(as.numeric(gsub(" |\u00A0", "", codigo)), scientific = F)]
-
-classificacao_despesa[, codigo_texto := paste(substr(codigo, 1, 1), substr(codigo, 2, 2),
-  substr(codigo, 3, 4), substr(codigo, 5, 6),
-  sep = "."
-)]
-
-banco <- trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL_FONTE_STN.xlsx")
-
-poderes <- read_excel("bancos/manual/codigosPoder.xlsx", sheet = 1)
+poderes <- unique(fread("bancos/PPO/orcamento_despesa.csv", encoding = "UTF-8")[
+  , list(cod_poder = poder_cod, poder = poder_desc)])
 
 # banco[, cod_funcao := paste0(FUNCAO,
 #                              formatC(SUB_FUNCAO, width = 3, flag = "0"),
@@ -112,14 +102,6 @@ banco <- rbind(banco, agregado, fill = TRUE)
 banco <- rbind(banco, bancoTotal, fill = TRUE)
 
 banco <- mergeDT(banco, poderes, by.x = "PODER", by.y = "cod_poder", all = T)
-
-if ("Apenas no Banco X" %in% banco[, unique(merge)]) {
-  warning(paste(
-    "Há um código de Poder que aparece no banco, que não está presente no banco de apoio codigosPoder.xlsx.",
-    "Trata-se de", paste(banco[merge == "Apenas no Banco X", unique(PODER)], collapse = "\n"),
-    ". Alterar em codigosPoder.xlsx \n"
-  ))
-}
 
 banco <- banco[order(PODER, COD_ORGAO, COD_UO, cod_detalhe)]
 
