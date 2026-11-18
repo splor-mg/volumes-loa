@@ -1,6 +1,6 @@
 """
 Gera em volume1/data os dados das tabelas do volume 1 migradas para Python,
-um arquivo <tabela>.txt por tabela, a partir de bancos/PPO.
+um arquivo <tabela>.txt por tabela, a partir de datapackages/ppo.
 As demais tabelas do volume 1 continuam em R (volume1/R).
 """
 from pathlib import Path
@@ -18,20 +18,20 @@ from volume1.python.receita import REC_ORDINARIO, gera_t2, gera_t3, gera_t7_t9, 
 DADOS = Path('volume1/data')
 
 # Prepara as bases -------------------------------------------------------------
-despesa = trata_orcamento_despesa('bancos/PPO/orcamento_despesa.csv')
+despesa = trata_orcamento_despesa('datapackages/ppo/data/orcamento_despesa.csv')
 codigos = ['funcao_cod', 'subfuncao_cod', 'programa_cod', 'acao_cod', 'categoria_cod', 'grupo_cod',
            'modalidade_cod', 'elemento_cod', 'fonte_cod', 'ipu_cod']
 despesa[codigos] = despesa[codigos].astype(int)
 
-investimento = trata_orcamento_despesa_investimento('bancos/PPO/orcamento_despesa_investimento.csv')
+investimento = trata_orcamento_despesa_investimento('datapackages/ppo/data/orcamento_despesa_investimento.csv')
 investimento[codigos[:4]] = investimento[codigos[:4]].astype(int)
 
-acoes = trata_planejamento_acao('bancos/PPO/planejamento_acao.csv')
+acoes = trata_planejamento_acao('datapackages/ppo/data/planejamento_acao.csv')
 acoes[codigos[:2] + ['acao_cod']] = acoes[codigos[:2] + ['acao_cod']].astype(int)
 
-pessoal = trata_orcamento_pessoal('bancos/PPO/orcamento_pessoal.csv')
-receita = trata_orcamento_receita('bancos/PPO/orcamento_receita.csv')
-classificacao = trata_classificacao_receita('bancos/PPO/classificacao_receita.csv')
+pessoal = trata_orcamento_pessoal('datapackages/ppo/data/orcamento_pessoal.csv')
+receita = trata_orcamento_receita('datapackages/ppo/data/orcamento_receita.csv')
+classificacao = trata_classificacao_receita('datapackages/ppo/data/classificacao_receita.csv')
 
 # Tabelas de despesa -----------------------------------------------------------
 gera_t4(despesa, DADOS / 'tabela4.txt')
@@ -57,7 +57,7 @@ colunas = ['uo_cod', 'funcao_cod', 'subfuncao_cod', 'programa_cod', 'acao_cod', 
 fiscal_investimento = pd.concat([despesa.rename(columns={'especificacao': 'acao_desc'})[colunas],
                                  investimento[colunas]], ignore_index=True)
 
-memoria = pd.read_excel('bancos/manual/memoria_calculo.xlsx',
+memoria = pd.read_excel('datapackages/apoio/data-raw/memoria_calculo.xlsx',
                         sheet_name=['criança e adolescente', 'segurança alimentar'])
 
 crianca = memoria['criança e adolescente'].rename(

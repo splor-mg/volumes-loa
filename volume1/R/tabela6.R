@@ -10,9 +10,9 @@ source("utils/trataBancos/trataReceita_Fiscal.R", encoding = "UTF-8")
 
 # ====== LOAD das funções para abertura dos bancos necessários ===================
 
-class_receita = ler_novaReceita("bancos/PPO/classificacao_receita.csv")
+class_receita = ler_novaReceita("datapackages/ppo/data/classificacao_receita.csv")
 
-receita = trataReceita_Fiscal("bancos/PPO/orcamento_receita.csv", F)
+receita = trataReceita_Fiscal("datapackages/ppo/data/orcamento_receita.csv", F)
 loa_rec = geraLoa_rec(receita)
 setnames(loa_rec, "VL_LOA_REC", "VL_REC")
 
@@ -20,8 +20,12 @@ ano_estimado = loa_rec[, unique(ANO)]
 ano_orcado = ano_estimado-1
 ano_exec = (ano_orcado-3):(ano_orcado-1)
 
-exec_rec = execucao::exec_rec[ANO %in% ano_exec,]
-setnames(exec_rec, "VL_EFET_AJUST", "VL_REC")
+exec_rec = rbindlist(lapply(ano_exec, function(ano) {
+  fread(cmd = paste0("gzip -dc datapackages/siafi_", ano, "/data/receita.csv.gz"),
+        select = c("ano", "receita_cod", "vlr_efetivado_ajustado"),
+        colClasses = list(numeric = "receita_cod"))
+}))
+setnames(exec_rec, c("ano", "receita_cod", "vlr_efetivado_ajustado"), c("ANO", "RECEITA_COD", "VL_REC"))
 
 loa = execucao::loa_rec[ANO==ano_orcado,]
 setnames(loa, "VL_LOA_REC", "VL_REC")
@@ -63,19 +67,19 @@ rec = rbind(rec_antigo, rec_novo, fill=T)
 
 #rec = rec[!nat(RECEITA_COD, 999), ]
 
-painel_rec = rbind(rec[, list(VL_REC = sum(VL_REC, na.rm = T)), 
+painel_rec = rbind(rec[, list(VL_REC = sum(VL_REC, na.rm = T)),
                        by=list(RECEITA_COD = substr(RECEITA_COD,1,1), ANO)],
-                   rec[!nat(RECEITA_COD, 9), list(VL_REC = sum(VL_REC, na.rm = T)), 
+                   rec[!nat(RECEITA_COD, 9), list(VL_REC = sum(VL_REC, na.rm = T)),
                        by=list(RECEITA_COD = substr(RECEITA_COD,1,2), ANO)])
 
-painel_rec[, RECEITA_COD:=ifelse(nchar(RECEITA_COD)==1, 
+painel_rec[, RECEITA_COD:=ifelse(nchar(RECEITA_COD)==1,
                                  as.numeric(paste0(RECEITA_COD, paste0(rep(0,12), collapse=""))),
                                  as.numeric(paste0(RECEITA_COD, paste0(rep(0,11), collapse=""))))]
 
 painel_rec = painel_rec[order(RECEITA_COD)]
 painel_rec[, ANO := paste0("VL_", ANO)]
 
-painel_rec = dcast(painel_rec, "RECEITA_COD ~ ANO", value.var = "VL_REC", 
+painel_rec = dcast(painel_rec, "RECEITA_COD ~ ANO", value.var = "VL_REC",
                    fun.aggregate = function(x) round(sum(x)), fill=0)
 
 painel_rec = mergeDT(painel_rec, class_receita, by="RECEITA_COD", all.x=T)
@@ -84,7 +88,7 @@ painel_rec = painel_rec[, c("RECEITA_COD", "RECEITA_DESC", paste0("VL_", min(ano
 
 indices_ano = which(names(painel_rec) %in% paste0("VL_", min(ano_exec):ano_estimado))
 
-painel_rec = rbind(painel_rec, 
+painel_rec = rbind(painel_rec,
                    painel_rec[grepl("^\\d{1}0{12}", RECEITA_COD), lapply(.SD, sum), .SDcols=indices_ano], fill=T)
 
 painel_rec[nrow(painel_rec), RECEITA_DESC:="TOTAL"]
@@ -93,9 +97,9 @@ novos_nomes = c("RECEITA_COD", "RECEITA_DESC")
 
 for(l in indices_ano){
   ano = substr(names(painel_rec)[l], 4,7)
-  
+
   total_ano = as.numeric(painel_rec[nrow(painel_rec),l, with=F])
-  
+
   painel_rec[, paste0("perc_",ano):= round(painel_rec[,l, with=F]*100 / total_ano, 2)]
   novos_nomes = union(novos_nomes, c(names(painel_rec)[l], paste0("perc_", ano)))
 }
@@ -105,6 +109,5 @@ setcolorder(painel_rec, novos_nomes)
 painel_rec[, RECEITA_DESC:=correcaoCaracteresEspeciais(RECEITA_DESC, caracteres)]
 painel_rec = painel_rec[, lapply(.SD, formatarNum)]
 
-write.table(painel_rec, "volume1/data/tabela6.txt", 
+write.table(painel_rec, "volume1/data/tabela6.txt",
             quote = F, sep = "\t", na = "", dec = ",", row.names = FALSE)
-

@@ -13,19 +13,19 @@ source("utils/trataBancos/trataQDD_Fiscal.R", encoding = "UTF-8")
 
 rec_ordinario = c(10,11,12,15,19)
 
-receita = trataReceita_Fiscal("bancos/PPO/orcamento_receita.csv", F)
+receita = trataReceita_Fiscal("datapackages/ppo/data/orcamento_receita.csv", F)
 loa_rec = geraLoa_rec(receita)
 
-classificacao = fread("bancos/PPO/classificacao_receita.csv", encoding = "UTF-8", colClasses = list(character = "receita_cod"))
-classificacao = classificacao[receita_nivel=="DETALHE",
-                              list(RECEITA_COD = as.numeric(receita_cod), RECEITA_DESC = receita_desc)]
+classificacao = fread("datapackages/ppo/data/classificacao_receita.csv", encoding = "UTF-8",
+                      colClasses = list(character = "receita_cod"))
+classificacao = classificacao[receita_nivel=="DETALHE", list(RECEITA_COD = as.numeric(receita_cod), RECEITA_DESC = receita_desc)]
 
 loa_rec = rbind(loa_rec, classificacao, fill=T)
 loa_rec[is.na(loa_rec)] = 0
 
 loa_rec[, ANO:=max(loa_rec$ANO)]
 
-qdd = trataQDD_Fiscal("bancos/PPO/orcamento_despesa.csv", F)
+qdd = trataQDD_Fiscal("datapackages/ppo/data/orcamento_despesa.csv", F)
 loa_desp = geraLoa_desp(qdd)
 loa_desp[, ANO:=max(loa_rec$ANO) - 1]
 

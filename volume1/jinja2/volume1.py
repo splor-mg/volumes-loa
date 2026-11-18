@@ -24,7 +24,7 @@ DADOS_TABELA = {
 
 
 def base_legal(codigo):
-    banco = 'bancos/manual/desc_base_legal_demonstrativos.xlsx'
+    banco = 'datapackages/apoio/data-raw/desc_base_legal_demonstrativos.xlsx'
     base = pd.read_excel(banco, sheet_name='base_legal')
     legislacao = base.loc[base['cod'].str.strip() == codigo, 'legislacao'].str.strip()
     if legislacao.empty:
@@ -114,7 +114,8 @@ def prepara_t1():
 
 
 def prepara_t40():
-    banco = pd.read_csv(DADOS / 'tabela40.txt', sep=';', dtype=str).apply(lambda coluna: coluna.str.strip())
+    banco = pd.read_csv('datapackages/apoio/data-raw/demonstrativo_despesas_obrigatorias.csv',
+                        sep=';', dtype=str).apply(lambda coluna: coluna.str.strip())
     linhas = []
     for linha in banco.to_dict('records'):
         nivel = int(linha['NIVEL'])

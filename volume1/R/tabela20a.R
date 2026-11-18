@@ -48,12 +48,12 @@ source("utils/trataBancos/trataQDD_Elemento_Item.R", encoding = "UTF-8")
 geraPerc = function(x) return(round(x*100,2))
 
 #receita = trataReceita_Fiscal_antigo("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_2017.xlsx", F)
-receita = trataReceita_Fiscal("bancos/PPO/orcamento_receita.csv", F)
+receita = trataReceita_Fiscal("datapackages/ppo/data/orcamento_receita.csv", F)
 loa_rec = geraLoa_rec(receita)
 #loa_rec[, RECEITA_COD_2 := RECEITA_COD]
 setnames(loa_rec, "VL_LOA_REC", "VL_REC")
 
-loa_desp = trataQDD_Elemento_Item("bancos/PPO/orcamento_despesa.csv", T)
+loa_desp = trataQDD_Elemento_Item("datapackages/ppo/data/orcamento_despesa.csv", T)
 
 setnames(loa_desp, "VL_LOA_DESP", "VL_DESP")
 

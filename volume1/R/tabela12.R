@@ -9,7 +9,7 @@ source("utils/formataTexto.R", encoding = "UTF-8")
 # ====== LOAD das funções para abertura dos bancos necessários ===================
 source("utils/trataBancos/trataQDD_Fiscal.R", encoding = "UTF-8")
 
-qdd = trataQDD_Fiscal("bancos/PPO/orcamento_despesa.csv", F)
+qdd = trataQDD_Fiscal("datapackages/ppo/data/orcamento_despesa.csv", F)
 loa_desp = geraLoa_desp(qdd)
 setnames(loa_desp, "VL_LOA_DESP", "VL_DESP")
 
@@ -17,8 +17,14 @@ ano_estimado = loa_desp[, unique(ANO)]
 ano_orcado = ano_estimado-1
 ano_exec = ano_orcado-1
 
-exec_desp = execucao::exec_desp[ANO==ano_exec,]
-setnames(exec_desp, "VL_EMP", "VL_DESP")
+exec_desp = fread(cmd = paste0("gzip -dc datapackages/siafi_", ano_exec, "/data/execucao.csv.gz"),
+                  select = c("ano", "grupo_cod", "modalidade_cod", "vlr_empenhado"))
+exec_desp = exec_desp[, list(ANO = ano,
+                             CATEGORIA_COD = ifelse(grupo_cod %in% 1:3, 3,
+                                             ifelse(grupo_cod %in% 4:6, 4, 9)),
+                             GRUPO_COD = grupo_cod,
+                             MODALIDADE_COD = modalidade_cod,
+                             VL_DESP = vlr_empenhado)]
 
 loa = execucao::loa_desp[ANO==ano_orcado,]
 setnames(loa, "VL_LOA_DESP", "VL_DESP")

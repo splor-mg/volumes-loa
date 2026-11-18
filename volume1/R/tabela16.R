@@ -12,11 +12,11 @@ source("utils/suporte/V1/demonstr_mde_rec.R", encoding = "UTF-8")
 source("utils/trataBancos/trataReceita_Fiscal.R", encoding = "UTF-8")
 source("utils/trataBancos/trataQDD_Elemento_Item.R", encoding = "UTF-8")
 
-loa_desp = trataQDD_Elemento_Item("bancos/PPO/orcamento_despesa.csv", F)
+loa_desp = trataQDD_Elemento_Item("datapackages/ppo/data/orcamento_despesa.csv", F)
 setnames(loa_desp, "VL_LOA_DESP", "VL_DESP")
 
 #andrey #apagar #receitas mudança governo aqui deve ser a forma que é tratada quando a forma das receitas muda
-receita = trataReceita_Fiscal("bancos/PPO/orcamento_receita.csv", F)
+receita = trataReceita_Fiscal("datapackages/ppo/data/orcamento_receita.csv", F)
 # receita = trataReceita_Fiscal_antigo("bancos/SISOR/BASE_ORCAM_RECEITA_FISCAL_2017.xlsx", F)
 
 loa_rec = geraLoa_rec(receita)
