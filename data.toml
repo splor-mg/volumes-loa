@@ -1,32 +1,53 @@
 [packages]
 
-[packages.sisor]
-
+[packages.ppo]
 path = "https://raw.githubusercontent.com/splor-mg/dados-ppo-2027/main/datapackage.json"
 resources = [
-  "base_categoria_pessoal",
-  "base_detalhamento_obras",
-  "base_orcam_despesa_item_fiscal",
-  "base_orcam_receita_fiscal",
-  "base_qdd_fiscal",
-  "base_qdd_investimento",
-  "base_repasse_recursos"
+  "classificacao_despesa",
+  "classificacao_fonte",
+  "classificacao_iag",
+  "classificacao_investimento",
+  "classificacao_ipu",
+  "classificacao_municipio",
+  "classificacao_receita",
+  "orcamento_despesa",
+  "orcamento_despesa_investimento",
+  "orcamento_obras",
+  "orcamento_pessoal",
+  "orcamento_receita",
+  "orcamento_repasse",
+  "planejamento_acao"
 ]
 
-[packages.sigplan]
-
-path = "https://raw.githubusercontent.com/splor-mg/dados-ppo-2027/main/datapackage.json"
-resources = ["acoes_planejamento"]
+[packages.classificadores]
+path = "https://raw.githubusercontent.com/splor-mg/dados-classificadores/49e346ae895024cdb33e2548574cbb4ffb10ef81/datapackage.json"
+resources = ["grupo_categoria", "programa", "uo", "receita"]
 
 [packages.apoio]
-
-path = "https://raw.githubusercontent.com/splor-mg/dados-volumes-loa/main/datapackage.yaml"
+path = "https://raw.githubusercontent.com/splor-mg/dados-volumes-loa/60350bfb237c0f0436abbede9bbecfa89447bd0b/datapackage.yaml"
+resources = ["desc_base_legal_demonstrativos", "ffp_acoes", "memoria_calculo", "demonstrativo_despesas_obrigatorias"]
 
 [packages.fonte_stn]
-
-path = "https://raw.githubusercontent.com/splor-mg/matriz-fonte-stn-dadosmg/main/datapackage.yaml"
+path = "https://raw.githubusercontent.com/splor-mg/matriz-fonte-stn-dadosmg/c88e15cdfd4da23d5077dfc93ebf94d419f99eca/datapackage.yaml"
 resources = ["fonte_stn"]
 
-[packages.qdd_fiscal_fonte_95]
+[packages.fonte_80_95]
+path = "https://raw.githubusercontent.com/splor-mg/dados-fonte-80-95-2027/1d4ccd324d3685e44a78dc7858b43dac7ad29bcc/datapackage.json"
+resources = ["orcamento_despesa_fonte_80_95"]
 
-path = "https://raw.githubusercontent.com/splor-mg/dados-qdd-fonte-95/main/datapackage.json"
+[packages.siafi_2026]
+path = "https://raw.githubusercontent.com/splor-mg/dados-armazem-siafi-2026/ecc08fc76dad2a354b58d2a7547f8fb93b8520d8/datapackage.json"
+resources = ["execucao", "receita"]
+token = "GH_TOKEN"
+
+[packages.siafi_2025]
+path = "https://raw.githubusercontent.com/splor-mg/dados-siafi-2025/main/datapackage.json"
+resources = ["execucao", "receita"]
+
+[packages.siafi_2024]
+path = "https://raw.githubusercontent.com/splor-mg/dados-siafi-2024/main/datapackage.json"
+resources = ["receita"]
+
+[packages.siafi_2023]
+path = "https://raw.githubusercontent.com/splor-mg/dados-siafi-2023/main/datapackage.json"
+resources = ["receita"]
