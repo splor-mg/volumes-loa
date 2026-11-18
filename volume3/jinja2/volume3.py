@@ -12,6 +12,25 @@ DADOS = Path('volume3/data')
 JINJA2 = Path('volume3/jinja2')
 AUX_FILES = Path('volume3/pdf/aux_files')
 
+# Anexo "Origem de recursos para investimento": cod é o nível de recuo da linha
+ORIGEM = [
+    {'cod': 1, 'descricao': 'Aumento de Capital'},
+    {'cod': 2, 'descricao': 'Recursos do Estado'},
+    {'cod': 3, 'descricao': 'Tesouro Ordinário'},
+    {'cod': 4, 'descricao': 'Aplicação Livre'},
+    {'cod': 3, 'descricao': 'Tesouro Vinculado'},
+    {'cod': 4, 'descricao': 'FUNDESE'},
+    {'cod': 1, 'descricao': 'Operação de Crédito'},
+    {'cod': 2, 'descricao': 'Contratada'},
+    {'cod': 3, 'descricao': 'Interna'},
+    {'cod': 4, 'descricao': 'BNDES'},
+    {'cod': 4, 'descricao': 'Outras'},
+    {'cod': 3, 'descricao': 'Externa'},
+    {'cod': 4, 'descricao': 'KFW'},
+    {'cod': 1, 'descricao': 'Recursos Próprios'},
+    {'cod': 4, 'descricao': 'Recursos Próprios'},
+]
+
 
 def prepara_tabela3(uo_cod):
     tabela = le_tabela(DADOS / 'tabela3' / f'{uo_cod}.txt')
@@ -50,7 +69,7 @@ def prepara_uos():
 
 
 def prepara_detalhamento():
-    classificacao = le_banco('bancos/PPO/classificacao_investimento.csv')
+    classificacao = le_banco('datapackages/ppo/data/classificacao_investimento.csv')
     naturezas = classificacao[classificacao['natureza_invest_cod'] != classificacao['categoria_invest_cod']]
     detalhamento = []
     for (_, categoria), grupo in naturezas.groupby(['categoria_invest_cod', 'categoria_invest_desc']):
@@ -68,7 +87,6 @@ print('-- Iniciando pdf/volume3.pdf ...')
 consolidado1 = le_tabela(DADOS / 'consolidado' / 't1_investimentos_empresa.txt')
 consolidado2 = le_tabela(DADOS / 'consolidado' / 't2_investimentos_empresa_detalhamento.txt')
 consolidado3 = le_tabela(DADOS / 'consolidado' / 't3_investimentos_projeto_atividade.txt')
-origem = le_tabela('bancos/manual/ANEXO_origens_de_recursos.txt')
 tex = renderiza(
     JINJA2,
     NOME,
@@ -76,7 +94,7 @@ tex = renderiza(
     consolidado2=consolidado2.to_dict('records'),
     consolidado3=consolidado3.to_dict('records'),
     uos=prepara_uos(),
-    origem=origem.to_dict('records'),
+    origem=ORIGEM,
     detalhamento=prepara_detalhamento(),
 )
 AUX_FILES.mkdir(parents=True, exist_ok=True)

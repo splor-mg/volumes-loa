@@ -1,5 +1,5 @@
 """
-Gera os dados do volume 3 em volume3/data a partir de bancos/PPO:
+Gera os dados do volume 3 em volume3/data a partir de datapackages/ppo:
 - sumario.txt: UOs com investimento, em ordem de código, com o órgão e a UO usados nas tabelas
 - consolidado/: quadros consolidados (volume3/python/consolidados.py)
 - tabela1/<uo>.txt a tabela5/<uo>.txt: relatórios por empresa (volume3/python/tabelas.py)
@@ -15,7 +15,7 @@ from volume3.python.tabelas import (CHAVE, gera_tabela1, gera_tabela2, gera_tabe
 
 DADOS = Path('volume3/data')
 
-qdd = trata_orcamento_despesa_investimento('bancos/PPO/orcamento_despesa_investimento.csv')
+qdd = trata_orcamento_despesa_investimento('datapackages/ppo/data/orcamento_despesa_investimento.csv')
 for coluna in CHAVE:
     qdd[coluna] = qdd[coluna].astype(int)
 
@@ -29,7 +29,7 @@ qdd['orgao'] = (qdd['orgao_cod'].str.replace(r'(.)(..)(.)', r'\1.\2.\3', regex=T
                 + ' - ' + qdd['uo_sigla'])
 
 # Finalidade e produto de cada ação
-acoes = trata_planejamento_acao('bancos/PPO/planejamento_acao.csv')
+acoes = trata_planejamento_acao('datapackages/ppo/data/planejamento_acao.csv')
 acoes = acoes.rename(columns={'uo_acao_cod': 'uo_cod'})
 
 colunas = ['uo_cod',
