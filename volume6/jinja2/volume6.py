@@ -4,9 +4,11 @@ Os dados continuam sendo gerados em R (volume6/R).
 """
 from pathlib import Path
 
+import pandas as pd
+
 from utils.python.funcoes import le_tabela
 from utils.python.latex import compila, ler_codigos, renderiza
-from utils.python.trata_bancos import le_banco, le_planilha
+from utils.python.trata_bancos import le_banco
 
 NOME = 'volume6'
 DADOS = Path('volume6/data')
@@ -63,7 +65,9 @@ if log.exists() and log.stat().st_size > 0:
 classificacao = le_banco('datapackages/ppo/data/classificacao_despesa.csv')
 grupos = classificacao[(classificacao['grupo_cod'] != '0')
                        & (classificacao['modalidade_cod'] == '0')]
-fontes = le_planilha('volume6/data/desc_fontes_de_recursos_stn.xlsx')
+vigencia = Path('utils/ano.txt').read_text().strip() + '-01-01'
+fontes = pd.read_csv('datapackages/fonte_stn/data/fonte_stn.csv', sep=';', dtype=str, encoding='utf-8-sig')
+fontes = fontes[(fontes['DT_INICIO_VIGENCIA'] <= vigencia) & (vigencia < fontes['DT_FIM_VIGENCIA'])]
 print('-- Iniciando pdf/volume6.pdf ...')
 tex = renderiza(
     JINJA2,
@@ -71,7 +75,7 @@ tex = renderiza(
     receita=prepara_receita(DADOS / 'receita_fonte_stn.txt'),
     uos=prepara_qdd(DADOS / 'QUADRO_DETALHAMENTO_DESPESA_porUO.txt'),
     grupos_despesa=ler_codigos(grupos, 'grupo_cod', 'despesa_desc'),
-    fontes=ler_codigos(fontes, 'CODIGO', 'CLASSIFICACAO'),
+    fontes=ler_codigos(fontes, 'FONTE_STN_COD', 'FONTE_STN_DESCRICAO'),
     ipu=ler_codigos(le_banco('datapackages/ppo/data/classificacao_ipu.csv'), 'ipu_cod', 'ipu_desc'),
     iag=ler_codigos(le_banco('datapackages/ppo/data/classificacao_iag.csv'), 'iag_cod', 'iag_desc'),
 )

@@ -94,11 +94,7 @@ volume6/data/orcamento_despesa_fonte_stn.csv: utils/trataBancos/trataQDD_Fiscal_
 	@echo "Atualizando $@..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
 
-volume6/data/orcamento_receita_fonte_stn.csv: utils/trataBancos/trataReceita_Fiscal_Fonte_STN.R $(PPO)/orcamento_receita.csv volume6/data/desc_fontes_de_recursos_stn.xlsx
-	@echo "Atualizando $@..."
-	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
-
-volume6/data/desc_fontes_de_recursos_stn.xlsx: utils/trataBancos/trataDescFonte_STN.R datapackages/fonte_stn/data/fonte_stn.csv utils/ano.txt
+volume6/data/orcamento_receita_fonte_stn.csv: utils/trataBancos/trataReceita_Fiscal_Fonte_STN.R $(PPO)/orcamento_receita.csv datapackages/fonte_stn/data/fonte_stn.csv utils/ano.txt
 	@echo "Atualizando $@..."
 	@Rscript $(VERBOSE) $< 2>> logs/logv6.Rout
 

@@ -12,7 +12,7 @@ dependencias = c("volume6/data/QUADRO_DETALHAMENTO_DESPESA_porUO.txt",
                  "datapackages/ppo/data/classificacao_despesa.csv",
                  "datapackages/ppo/data/classificacao_ipu.csv",
                  "datapackages/ppo/data/classificacao_iag.csv",
-                 "volume6/data/desc_fontes_de_recursos_stn.xlsx")
+                 "datapackages/fonte_stn/data/fonte_stn.csv")
 
 
 arquivos = paste0(dependencias)
