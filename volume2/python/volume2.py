@@ -1,5 +1,5 @@
 """
-Gera os dados do volume 2 em volume2/data a partir de bancos/PPO:
+Gera os dados do volume 2 em volume2/data a partir de datapackages/ppo:
 - sumario.txt: UOs do orçamento fiscal, em ordem de poder, órgão e UO
 - tabela1/ a tabela5/: uma tabela por UO, e tabela3/funfip.txt
 """
@@ -21,18 +21,18 @@ UOS_SEM_RECURSOS = ['9901']
 
 
 # Prepara as bases -------------------------------------------------------------
-despesa = trata_orcamento_despesa('bancos/PPO/orcamento_despesa.csv')
+despesa = trata_orcamento_despesa('datapackages/ppo/data/orcamento_despesa.csv')
 codigos = ['funcao_cod', 'subfuncao_cod', 'programa_cod', 'acao_cod', 'identificador_cod',
            'projeto_atividade_cod', 'subprojeto_cod', 'categoria_cod', 'grupo_cod', 'modalidade_cod',
            'elemento_cod', 'iag_cod', 'fonte_cod', 'ipu_cod']
 despesa[codigos] = despesa[codigos].astype(int)
 
-acoes = trata_planejamento_acao('bancos/PPO/planejamento_acao.csv')
+acoes = trata_planejamento_acao('datapackages/ppo/data/planejamento_acao.csv')
 codigos = ['funcao_cod', 'subfuncao_cod', 'programa_cod', 'acao_cod', 'iag_cod']
 acoes[codigos] = acoes[codigos].astype(int)
 acoes['identificador_cod'], acoes['projeto_atividade_cod'] = divmod(acoes['acao_cod'], 1000)
 
-pessoal = trata_orcamento_pessoal('bancos/PPO/orcamento_pessoal.csv')
+pessoal = trata_orcamento_pessoal('datapackages/ppo/data/orcamento_pessoal.csv')
 terceirizado = pessoal['pessoal_classificacao'].str.contains('TERCEIRI')
 pessoal.loc[terceirizado, 'pessoal_classificacao'] = 'PESSOAL ATIVO'
 niveis = {'ATIVO': 1, 'TEMPORÁRI': 2, 'PENSIONISTA': 3, 'INATIVO': 4}
@@ -43,9 +43,9 @@ if len(sem_nivel):
     print(f'Warning: V2 T3: classificação de orcamento_pessoal.csv sem nível: {", ".join(sem_nivel)}. '
           'Definir no código em que ordem ela sai na tabela', file=sys.stderr)
 
-receita = trata_orcamento_receita('bancos/PPO/orcamento_receita.csv')
-classificacao = trata_classificacao_receita('bancos/PPO/classificacao_receita.csv')
-repasse = trata_orcamento_repasse('bancos/PPO/orcamento_repasse.csv')
+receita = trata_orcamento_receita('datapackages/ppo/data/orcamento_receita.csv')
+classificacao = trata_classificacao_receita('datapackages/ppo/data/classificacao_receita.csv')
+repasse = trata_orcamento_repasse('datapackages/ppo/data/orcamento_repasse.csv')
 
 # Sumário ----------------------------------------------------------------------
 sumario = despesa.drop_duplicates('uo_cod')

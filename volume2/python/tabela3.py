@@ -82,18 +82,18 @@ def gera_funfip(despesa, pessoal, sumario, caminho):
                      & (despesa['ipu_cod'] != 9)
                      & ~despesa['acao_cod'].isin(ACOES_DESCONSIDERAR_FUNFIP)]
     valores = funfip.groupby(['acao_cod', 'especificacao'], as_index=False)['vlr_loa_desp'].sum()
-    acoes = le_planilha('bancos/manual/FFP_acoes.xlsx').astype({'COD_UO': str})
+    acoes = le_planilha('datapackages/apoio/data-raw/FFP_acoes.xlsx').astype({'COD_UO': str})
     valores = valores.merge(acoes.rename(columns={'COD_UO': 'uo_cod', 'ACAO': 'acao_cod'}),
                             how='outer', indicator=True)
 
     novas = valores[valores['_merge'] == 'left_only']
     if len(novas):
         print(aviso + f'ações sem correspondência em FFP_acoes.xlsx: {list(novas["acao_cod"])}. '
-              'Atualizar FFP_acoes.xlsx com bancos/manual/novasAcoes_FUNFIP.csv e depois apagar esse '
-              'arquivo', file=sys.stderr)
+              'Atualizar datapackages/apoio/FFP_acoes.xlsx com volume2/data/novasAcoes_FUNFIP.csv '
+              'e depois apagar esse arquivo', file=sys.stderr)
         novas = novas[['acao_cod', 'especificacao', 'uo_cod']]
         novas = novas.set_axis(['ACAO', 'DESCRITIVO_ACAO', 'COD_UO'], axis=1)
-        novas.to_csv('bancos/manual/novasAcoes_FUNFIP.csv', sep=';', index=False)
+        novas.to_csv('volume2/data/novasAcoes_FUNFIP.csv', sep=';', index=False)
     sem_valor = valores.loc[valores['_merge'] == 'right_only', 'acao_cod']
     if len(sem_valor):
         print(aviso + f'ações de FFP_acoes.xlsx sem valor em orcamento_despesa.csv: {list(sem_valor)}',
@@ -108,7 +108,7 @@ def gera_funfip(despesa, pessoal, sumario, caminho):
     pessoal = pessoal[pessoal['pessoal_categoria'].str.contains('INATIVO CIVIL')
                       & ~pessoal['uo_cod'].isin(folha | set(UOS_DESCONSIDERAR))]
     pessoal = pessoal.groupby('uo_cod', as_index=False)['pessoal_quantidade'].sum()
-    ausentes = Path('bancos/manual/PESSOAL_INATIVO_AUSENTE_SISOR.xlsx')
+    ausentes = Path('volume2/data/PESSOAL_INATIVO_AUSENTE_SISOR.xlsx')
     if ausentes.exists():
         ausentes = le_planilha(ausentes).astype({'cod_uo': str})
         pessoal = pd.concat([pessoal, ausentes.set_axis(['uo_cod', 'pessoal_quantidade'], axis=1)])
@@ -120,7 +120,7 @@ def gera_funfip(despesa, pessoal, sumario, caminho):
     sem_pessoal = tabela.loc[(tabela['_merge'] == 'right_only') & (tabela['vlr_loa_desp'] > 1000), 'uo_cod']
     if len(sem_pessoal):
         print(aviso + f'UOs sem quantidade de inativos e com mais de R$ 1.000 nas ações do FUNFIP: '
-              f'{list(sem_pessoal)}. Se preciso, criar bancos/manual/PESSOAL_INATIVO_AUSENTE_SISOR.xlsx, '
+              f'{list(sem_pessoal)}. Se preciso, criar volume2/data/PESSOAL_INATIVO_AUSENTE_SISOR.xlsx, '
               'com as colunas cod_uo e quantidade', file=sys.stderr)
 
     # R$ 1.000 sem quantidade é só a abertura de uma conta: a quantidade fica "-"
