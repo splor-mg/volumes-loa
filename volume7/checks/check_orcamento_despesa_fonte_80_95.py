@@ -6,9 +6,9 @@ import sys
 import pandas as pd
 
 
-orcamento = pd.read_csv('bancos/PPO/orcamento_despesa.csv')
+orcamento = pd.read_csv('datapackages/ppo/data/orcamento_despesa.csv')
 orcamento = orcamento[orcamento['fonte_cod'].isin([80, 95])]
-fonte_80_95 = pd.read_csv('bancos/PPO/orcamento_despesa_fonte_80_95.csv')
+fonte_80_95 = pd.read_csv('datapackages/fonte_80_95/data/orcamento_despesa_fonte_80_95.csv')
 orcamento = orcamento[orcamento.columns.intersection(fonte_80_95.columns)]
 
 chave = [coluna for coluna in orcamento.columns if coluna != 'vlr_loa_desp']
