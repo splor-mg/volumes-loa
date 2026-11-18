@@ -10,12 +10,10 @@ source("utils/formataTexto.R", encoding = "UTF-8")
 # ====== LOAD das funções para abertura dos bancos necessários ===================
 source("utils/trataBancos/trataQDD_Fiscal.R", encoding = "UTF-8")
 
-# so utilizado se existir uma base em "bancos/SISOR/BASE_QDD_FISCAL_PROPOSTA.xlsx"
-uos_proposta <- c(1011, 1021, 1031, 1051, 1091, 1441, 2361, 4031, 4121, 4441, 4451, 4611)
 
-banco <- trataQDD_Fiscal("bancos/PPO/orcamento_despesa_fonte_stn.csv")
+banco <- trataQDD_Fiscal("volume6/data/orcamento_despesa_fonte_stn.csv")
 
-poderes <- unique(fread("bancos/PPO/orcamento_despesa.csv", encoding = "UTF-8")[
+poderes <- unique(fread("datapackages/ppo/data/orcamento_despesa.csv", encoding = "UTF-8")[
   , list(cod_poder = poder_cod, poder = poder_desc)])
 
 # banco[, cod_funcao := paste0(FUNCAO,

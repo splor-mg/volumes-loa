@@ -60,10 +60,10 @@ log = Path('logs/logv6.Rout')
 if log.exists() and log.stat().st_size > 0:
     print('!-- Verificar logs/logv6.Rout ...')
 
-classificacao = le_banco('bancos/PPO/classificacao_despesa.csv')
+classificacao = le_banco('datapackages/ppo/data/classificacao_despesa.csv')
 grupos = classificacao[(classificacao['grupo_cod'] != '0')
                        & (classificacao['modalidade_cod'] == '0')]
-fontes = le_planilha('bancos/manual/desc_fontes_de_recursos_stn.xlsx')
+fontes = le_planilha('volume6/data/desc_fontes_de_recursos_stn.xlsx')
 print('-- Iniciando pdf/volume6.pdf ...')
 tex = renderiza(
     JINJA2,
@@ -72,8 +72,8 @@ tex = renderiza(
     uos=prepara_qdd(DADOS / 'QUADRO_DETALHAMENTO_DESPESA_porUO.txt'),
     grupos_despesa=ler_codigos(grupos, 'grupo_cod', 'despesa_desc'),
     fontes=ler_codigos(fontes, 'CODIGO', 'CLASSIFICACAO'),
-    ipu=ler_codigos(le_banco('bancos/PPO/classificacao_ipu.csv'), 'ipu_cod', 'ipu_desc'),
-    iag=ler_codigos(le_banco('bancos/PPO/classificacao_iag.csv'), 'iag_cod', 'iag_desc'),
+    ipu=ler_codigos(le_banco('datapackages/ppo/data/classificacao_ipu.csv'), 'ipu_cod', 'ipu_desc'),
+    iag=ler_codigos(le_banco('datapackages/ppo/data/classificacao_iag.csv'), 'iag_cod', 'iag_desc'),
 )
 AUX_FILES.mkdir(parents=True, exist_ok=True)
 (AUX_FILES / f'{NOME}.tex').write_text(tex, encoding='utf-8')
