@@ -38,10 +38,10 @@
 \BLOCK{for linha in acao.linhas}
 \BLOCK{if linha.novo_territorio}
 \hline
-\multicolumn{1}{L{8cm}|}{\textbf{  \VAR{linha.regiao_geografica_intermediaria} }} & & & & & & & \\
+\multicolumn{1}{L{8cm}|}{\textbf{  \VAR{linha.regiao_geografica_intermediaria_desc} }} & & & & & & & \\
 \BLOCK{endif}
 \BLOCK{if linha.novo_municipio}
-\multicolumn{1}{L{8cm}|}{\textbf{ \hspace{1em}  \VAR{linha.municipio} }} & & & & & & & \\
+\multicolumn{1}{L{8cm}|}{\textbf{ \hspace{1em}  \VAR{linha.municipio_desc} }} & & & & & & & \\
 \BLOCK{endif}
 \BLOCK{if "TOTAL" in linha.obra}
 \hline \hline 

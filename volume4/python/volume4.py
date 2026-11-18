@@ -1,5 +1,5 @@
 """
-Gera os dados do volume 4 em volume4/data a partir de bancos/PPO:
+Gera os dados do volume 4 em volume4/data a partir de datapackages/ppo:
 - sumario.txt: UOs com obras, em ordem de poder, órgão e UO
 - tabela1/<uo>.txt: OBRAS POR UNIDADE ORÇAMENTÁRIA SEGUNDO AS REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS
 - tabela2/<uo>.txt: DETALHAMENTO DOS INVESTIMENTOS POR REGIÕES GEOGRÁFICAS INTERMEDIÁRIAS E MUNICÍPIOS
@@ -12,8 +12,8 @@ from utils.python.trata_bancos import trata_orcamento_obras, trata_planejamento_
 
 DADOS = Path('volume4/data')
 
-obras = trata_orcamento_obras('bancos/PPO/orcamento_obras.csv')
-acoes = trata_planejamento_acao('bancos/PPO/planejamento_acao.csv')
+obras = trata_orcamento_obras('datapackages/ppo/data/orcamento_obras.csv')
+acoes = trata_planejamento_acao('datapackages/ppo/data/planejamento_acao.csv')
 
 
 # Gera o sumário ---------------------------------------------------------------
@@ -36,7 +36,7 @@ for uo_cod in sumario['uo_cod']:
     uo = obras[obras['uo_cod'] == uo_cod]
 
     territorios = (uo['vlr_tesouro'] + uo['vlr_outros']).groupby(
-        uo['regiao_geografica_intermediaria']).sum()
+        uo['regiao_geografica_intermediaria_desc']).sum()
     territorios = territorios.sort_index(key=lambda nomes: (
         nomes.str.normalize('NFKD').str.encode('ascii', 'ignore').str.decode('ascii')),
         kind='stable')
@@ -61,7 +61,7 @@ obras = obras.merge(unidades, on=chave, how='left', suffixes=('', '_acao'))
 obras['unidade_medida'] = obras['unidade_medida'].mask(obras['unidade_medida'] == '',
                                                        obras['unidade_medida_acao'])
 
-obras['obra'] = obras['obra_numero'].astype(str) + ' - ' + obras['obra_desc']
+obras['obra'] = obras['obra_num'].astype(str) + ' - ' + obras['obra_desc']
 obras['especificacao'] = (obras['funcao_cod']
                           + '  ' + obras['subfuncao_cod']
                           + ' ' + obras['programa_cod']
@@ -75,7 +75,7 @@ for uo_cod in sumario['uo_cod']:
     totais = uo.groupby(['especificacao', 'cod_admin'], as_index=False)
     totais = totais[['vlr_tesouro', 'vlr_outros']].sum().assign(obra='TOTAL')
 
-    ordem = ['especificacao', 'cod_admin', 'total', 'regiao_geografica_intermediaria', 'municipio', 'obra']
+    ordem = ['especificacao', 'cod_admin', 'total', 'regiao_geografica_intermediaria_desc', 'municipio_desc', 'obra']
 
     tabela = pd.concat([uo.assign(total=0), totais.assign(total=1)])
     tabela = tabela.sort_values(ordem, kind='stable', ignore_index=True)
@@ -83,8 +83,8 @@ for uo_cod in sumario['uo_cod']:
     for coluna in ['obra_quantidade', 'vlr_tesouro', 'vlr_outros']:
         tabela[coluna] = formatar_num_tabela(tabela[coluna])
 
-    colunas = ['regiao_geografica_intermediaria',
-               'municipio',
+    colunas = ['regiao_geografica_intermediaria_desc',
+               'municipio_desc',
                'obra',
                'obra_quantidade',
                'unidade_medida',

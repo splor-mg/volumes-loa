@@ -38,8 +38,8 @@ def prepara_tabela2(sumario):
             municipios = {''}
             linhas = []
             for linha in banco.to_dict('records'):
-                territorio = linha['regiao_geografica_intermediaria']
-                municipio = linha['municipio']
+                territorio = linha['regiao_geografica_intermediaria_desc']
+                municipio = linha['municipio_desc']
                 linha['novo_territorio'] = territorio not in territorios
                 linha['novo_municipio'] = municipio not in municipios
                 territorios.add(territorio)
@@ -65,10 +65,12 @@ def prepara_tabela2(sumario):
 
 
 def prepara_anexo():
-    anexo = le_banco('bancos/PPO/classificacao_municipio.csv')
+    anexo = le_banco('datapackages/ppo/data/classificacao_municipio.csv')
     anexo = anexo.sort_values('municipio_cod', key=lambda coluna: coluna.astype(int))
     regioes = []
-    for (codigo, nome), regiao in anexo.groupby([anexo['regiao_cod'].astype(int), 'regiao_desc']):
+    regiao_cod = anexo['regiao_geografica_intermediaria_cod'].astype(int)
+    regiao_desc = anexo['regiao_geografica_intermediaria_desc']
+    for (codigo, nome), regiao in anexo.groupby([regiao_cod, regiao_desc]):
         regioes.append({
             'codigo': f'{codigo:02}',
             'nome': nome,
