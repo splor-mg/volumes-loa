@@ -1,7 +1,7 @@
 [packages]
 
 [packages.ppo]
-path = "https://raw.githubusercontent.com/splor-mg/dados-ppo-2027/main/datapackage.json"
+path = "https://raw.githubusercontent.com/splor-mg/dados-ppo-2027/14ec29744f590e4c73632786bf3031d4e5b49be1/datapackage.json"
 resources = [
   "classificacao_despesa",
   "classificacao_fonte",
