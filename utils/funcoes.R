@@ -304,28 +304,6 @@ is_receitas_previdenciarias = function(base){
 
 }
 
-merge_QDD_v5 = function(banco, uos_proposta){
-
-  vl_banco = banco[, sum(valor)]
-
-  banco_proposta = trataQDD_Fiscal("bancos/SISOR/BASE_QDD_FISCAL_PROPOSTA.xlsx")
-
-  chave_bancos = c("ANO", "COD_ORGAO", "COD_UO", "FUNCAO", "SUB_FUNCAO", "PROGRAMA",
-                   "IDENT_PROJATIV", "PROJ_ATIV", "SUB_PROJETO", "CATEGORIA", "GRUPO_DESPESA",
-                   "MODALIDADE", "ELEMENTO_DESPESA", 'IAG', "FONTE", "IPU")
-
-  banco_proposta = banco_proposta[, c(chave_bancos, "valor"), with=F]
-
-  setnames(banco_proposta, "valor", "valor_proposto")
-  banco = merge(banco, banco_proposta[COD_UO %in% uos_proposta], by=chave_bancos, all.x=T)
-
-  if(vl_banco != banco[, sum(valor)]) stop("Erro em merge_QDD_v5")
-
-  return(banco)
-
-}
-
-
 adiciona_desc_volumes = function(base, column) {
   arquivos = c(GRUPO = "grupo_categoria", UO = "uo", PROGRAMA = "programa")
 
@@ -336,7 +314,7 @@ adiciona_desc_volumes = function(base, column) {
   cod = paste0(column, "_COD")
   desc = ifelse(column == "UO", "UO_SIGLA", paste0(column, "_DESC"))
 
-  aux = fread(paste0("bancos/classificadores/", arquivos[column], ".csv"), encoding = "UTF-8")
+  aux = fread(paste0("datapackages/classificadores/data/", arquivos[column], ".csv"), encoding = "UTF-8")
   names(aux) = toupper(names(aux))
   aux = unique(aux[, c("ANO", cod, desc), with = FALSE], by = c("ANO", cod))
   setnames(aux, "ANO", "ANO_DESC")
@@ -352,7 +330,7 @@ adiciona_desc_volumes = function(base, column) {
 
 
 base_legal <- function(id_demonstrativo) {
-  banco <- "bancos/manual/desc_base_legal_demonstrativos.xlsx"
+  banco <- "datapackages/apoio/data-raw/desc_base_legal_demonstrativos.xlsx"
   base_legal <- as.data.table(readxl::read_excel(banco, sheet = "base_legal"))
   result <- base_legal[cod == id_demonstrativo, legislacao]
   if(identical(result, character(0))) {

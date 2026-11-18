@@ -49,8 +49,7 @@ dependencias = list(
     "pdf/tabela28d.pdf",
     "pdf/tabela30.pdf",
     "pdf/tabela37.pdf",
-    "pdf/tabela39.pdf",
-    "pdf/tabela40.pdf"),
+    "pdf/tabela39.pdf"),
 
   # TXT gerados por volume1/python/volume1.py
   txt_python = c(
@@ -78,7 +77,7 @@ dependencias = list(
   jinja2 = c(
     "volume1/jinja2/volume1.py",
     "volume1/jinja2/load_bibliotecas.tex",
-    "bancos/manual/desc_base_legal_demonstrativos.xlsx")
+    "datapackages/apoio/data-raw/desc_base_legal_demonstrativos.xlsx")
 )
 
 args = commandArgs(trailingOnly = TRUE)

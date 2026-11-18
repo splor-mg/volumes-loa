@@ -2,7 +2,7 @@
 trataQDD_Elemento_Item = function(caminho, realizarTeste = TRUE){
   
   #==========================================================================================================
-  # Função para abir o banco bancos/PPO/orcamento_despesa.csv por item de despesa
+  # Função para abir o banco datapackages/ppo/data/orcamento_despesa.csv por item de despesa
   #==========================================================================================================
   
   qdd = fread(caminho, encoding = "UTF-8")

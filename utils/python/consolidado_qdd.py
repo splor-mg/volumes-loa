@@ -30,7 +30,7 @@ def gera_consolidado(banco, caminho):
     codigo = consolidado['codigo_numerico']
     consolidado['codigo_texto'] = codigo.str[0] + '.' + codigo.str[1] + '.' + codigo.str[2:4] + '.' + codigo.str[4:6]
 
-    classificacao = le_banco('bancos/PPO/classificacao_despesa.csv')
+    classificacao = le_banco('datapackages/ppo/data/classificacao_despesa.csv')
     descricoes = classificacao['despesa_desc'].set_axis(
         classificacao['categoria_cod']
         + classificacao['grupo_cod']

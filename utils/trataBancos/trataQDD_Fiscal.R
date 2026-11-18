@@ -1,7 +1,7 @@
 trataQDD_Fiscal = function(caminho, realizarTeste = TRUE){
 
   #=====================================================================================
-  # Função para abrir o banco bancos/PPO/orcamento_despesa.csv
+  # Função para abrir o banco datapackages/ppo/data/orcamento_despesa.csv
   #=====================================================================================
 
   ppo = fread(caminho, encoding = "UTF-8")

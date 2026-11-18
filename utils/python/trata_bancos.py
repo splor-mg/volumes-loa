@@ -22,7 +22,8 @@ def le_planilha(caminho):
 
 def le_banco(caminho):
     """
-    Lê um banco de bancos/PPO como texto, sem espaços nas pontas e com os caracteres especiais corrigidos.
+    Lê um banco de datapackages/ppo como texto, sem espaços nas pontas
+    e com os caracteres especiais corrigidos.
     """
     banco = pd.read_csv(caminho, dtype=str, keep_default_na=False)
     banco = banco.apply(lambda coluna: corrige_caracteres_especiais(coluna.str.strip()))

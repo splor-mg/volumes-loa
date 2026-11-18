@@ -15,8 +15,7 @@ dependencias = c("volume3/data/*.txt",
                  "volume3/jinja2/tabela4.tex.j2",
                  "volume3/jinja2/tabela5.tex.j2",
                  "volume3/jinja2/volume3.tex.j2",
-                 "bancos/manual/ANEXO_origens_de_recursos.txt",
-                 "bancos/PPO/classificacao_investimento.csv")
+                 "datapackages/ppo/data/classificacao_investimento.csv")
 
 arquivos = paste0(dependencias)
 write(arquivos, file = stdout())

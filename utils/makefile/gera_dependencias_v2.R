@@ -12,10 +12,10 @@ dependencias = c("volume2/data/*.txt",
                  "volume2/jinja2/tabela4.tex.j2",
                  "volume2/jinja2/tabela5.tex.j2",
                  "volume2/jinja2/volume2.tex.j2",
-                 "bancos/PPO/classificacao_despesa.csv",
-                 "bancos/PPO/classificacao_fonte.csv",
-                 "bancos/PPO/classificacao_ipu.csv",
-                 "bancos/PPO/classificacao_iag.csv")
+                 "datapackages/ppo/data/classificacao_despesa.csv",
+                 "datapackages/ppo/data/classificacao_fonte.csv",
+                 "datapackages/ppo/data/classificacao_ipu.csv",
+                 "datapackages/ppo/data/classificacao_iag.csv")
 
 arquivos = paste0(dependencias)
 write(arquivos, file = stdout())

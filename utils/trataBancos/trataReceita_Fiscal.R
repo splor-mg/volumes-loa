@@ -1,7 +1,7 @@
 trataReceita_Fiscal = function(caminho, realizarTeste = TRUE){
 
   #===================================================================================
-  # Função para abrir o banco bancos/PPO/orcamento_receita.csv
+  # Função para abrir o banco datapackages/ppo/data/orcamento_receita.csv
   #===================================================================================
 
   ppo = fread(caminho, encoding = "UTF-8", colClasses = list(character = "receita_cod"))
