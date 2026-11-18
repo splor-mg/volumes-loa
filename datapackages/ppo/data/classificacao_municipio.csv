@@ -1,0 +1,868 @@
+ano,municipio_cod,municipio_desc,regiao_geografica_intermediaria_cod,regiao_geografica_intermediaria_desc,data_cadastro
+2027,6,ARAÇAÍ,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,7,AUGUSTO DE LIMA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,8,BALDIM,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,9,BARÃO DE COCAIS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,13,BELO HORIZONTE,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,15,BETIM,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,17,BOM JESUS DO AMPARO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,19,BRUMADINHO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,20,BUENÓPOLIS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,21,CACHOEIRA DA PRATA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,22,CAETANÓPOLIS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,23,CAETÉ,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,25,CAPIM BRANCO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,29,CATAS ALTAS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,33,CONCEIÇÃO DO MATO DENTRO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,34,CONFINS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,36,CONGONHAS DO NORTE,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,38,CONTAGEM,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,39,CORDISBURGO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,40,CORINTO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,45,CURVELO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,55,ESMERALDAS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,57,FELIXLÂNDIA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,58,FERROS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,59,FLORESTAL,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,60,FORTUNA DE MINAS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,61,FUNILÂNDIA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,64,IBIRITÉ,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,65,IGARAPÉ,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,66,INHAÚMA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,67,INIMUTABA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,68,ITABIRA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,69,ITABIRITO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,71,ITAMBÉ DO MATO DENTRO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,74,JABOTICATUBAS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,76,JEQUITIBÁ,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,79,JUATUBA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,81,LAGOA SANTA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,84,MARIANA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,85,MÁRIO CAMPOS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,86,MATEUS LEME,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,87,MATOZINHOS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,88,MOEDA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,89,MONJOLOS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,91,MORRO DA GARÇA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,92,MORRO DO PILAR,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,95,NOVA LIMA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,96,NOVA UNIÃO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,99,OURO PRETO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,103,PARAOPEBA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,104,PASSABÉM,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,105,PEDRO LEOPOLDO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,112,PRESIDENTE JUSCELINO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,114,PRUDENTE DE MORAIS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,116,RAPOSOS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,119,RIBEIRÃO DAS NEVES,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,120,RIO ACIMA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,125,SABARÁ,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,126,SANTA BÁRBARA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,129,SANTA LUZIA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,130,SANTA MARIA DE ITABIRA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,131,SANTANA DE PIRAPAMA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,133,SANTANA DO RIACHO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,136,SANTO ANTÔNIO DO RIO ABAIXO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,137,SANTO HIPÓLITO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,143,SÃO JOAQUIM DE BICAS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,144,SÃO JOSÉ DA LAPA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,147,SÃO SEBASTIÃO DO RIO PRETO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,149,SARZEDO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,154,SETE LAGOAS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,155,TAQUARAÇU DE MINAS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,157,TRÊS MARIAS,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,158,VESPASIANO,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,766,CARMÉSIA,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,854,DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE BELO HORIZONTE,3101,Região Intermediária de Belo Horizonte,2023-07-04 10:52:00
+2027,78,JOAQUIM FELÍCIO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,598,BERIZAL,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,599,BOCAIÚVA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,600,BONITO DE MINAS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,601,BOTUMIRIM,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,602,BRASÍLIA DE MINAS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,603,BURITIZEIRO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,604,CAMPO AZUL,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,605,CAPITÃO ENÉAS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,606,CATUTI,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,607,CHAPADA GAÚCHA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,608,CLARO DOS POÇÕES,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,609,CÔNEGO MARINHO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,610,CORAÇÃO DE JESUS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,611,CRISTÁLIA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,612,CURRAL DE DENTRO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,614,ENGENHEIRO NAVARRO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,615,ESPINOSA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,616,FRANCISCO DUMONT,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,617,FRANCISCO SÁ,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,618,FRUTA DE LEITE,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,619,GAMELEIRAS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,620,GLAUCILÂNDIA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,621,GRÃO MOGOL,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,622,GUARACIAMA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,623,IBIAÍ,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,624,IBIRACATU,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,625,ICARAÍ DE MINAS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,626,INDAIABIRA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,627,ITACAMBIRA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,628,ITACARAMBI,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,629,JAÍBA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,630,JANAÚBA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,631,JANUÁRIA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,632,JAPONVAR,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,633,JEQUITAÍ,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,634,JOSENÓPOLIS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,635,JURAMENTO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,636,JUVENÍLIA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,637,LAGOA DOS PATOS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,638,LASSANCE,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,639,LONTRA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,640,LUISLÂNDIA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,641,MAMONAS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,642,MANGA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,643,MATIAS CARDOSO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,644,MATO VERDE,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,645,MIRABELA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,646,MIRAVÂNIA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,647,MONTALVÂNIA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,648,MONTE AZUL,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,649,MONTES CLAROS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,650,MONTEZUMA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,651,NINHEIRA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,652,NOVA PORTEIRINHA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,653,NOVORIZONTE,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,654,OLHOS-D ÁGUA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,655,PADRE CARVALHO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,656,PAI PEDRO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,657,PATIS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,658,PEDRAS DE MARIA DA CRUZ,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,659,PINTÓPOLIS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,660,PIRAPORA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,661,PONTO CHIQUE,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,662,PORTEIRINHA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,664,RIACHO DOS MACHADOS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,665,RIO PARDO DE MINAS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,666,RUBELITA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,667,SALINAS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,668,SANTA CRUZ DE SALINAS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,669,SANTA FÉ DE MINAS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,670,SANTO ANTÔNIO DO RETIRO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,671,SÃO FRANCISCO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,672,SÃO JOÃO DA LAGOA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,673,SÃO JOÃO DA PONTE,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,674,SÃO JOÃO DAS MISSÕES,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,675,SÃO JOÃO DO PACUÍ,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,676,SÃO JOÃO DO PARAÍSO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,677,SÃO ROMÃO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,678,SERRANÓPOLIS DE MINAS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,679,TAIOBEIRAS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,680,UBAÍ,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,682,VARGEM GRANDE DO RIO PARDO,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,683,VÁRZEA DA PALMA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,684,VARZELÂNDIA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,685,VERDELÂNDIA,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,855,DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE MONTES CLAROS,3102,Região Intermediária de Montes Claros,2023-07-04 10:52:00
+2027,4,ALVORADA DE MINAS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,42,COUTO DE MAGALHÃES DE MINAS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,46,DATAS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,49,DIAMANTINA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,56,FELÍCIO DOS SANTOS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,62,GOUVEIA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,113,PRESIDENTE KUBITSCHEK,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,135,SANTO ANTÔNIO DO ITAMBÉ,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,141,SÃO GONÇALO DO RIO PRETO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,150,SENADOR MODESTINO GONÇALVES,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,152,SERRA AZUL DE MINAS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,153,SERRO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,597,ÁGUAS VERMELHAS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,613,DIVISA ALEGRE,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,686,ÁGUAS FORMOSAS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,687,ALMENARA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,688,ANGELÂNDIA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,689,ARAÇUAÍ,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,690,ARICANDUVA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,691,ATALÉIA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,692,BANDEIRA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,693,BERILO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,694,BERTÓPOLIS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,695,CACHOEIRA DE PAJEÚ,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,696,CAPELINHA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,697,CARAÍ,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,698,CARBONITA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,699,CARLOS CHAGAS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,700,CATUJI,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,701,CHAPADA DO NORTE,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,702,COMERCINHO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,703,CORONEL MURTA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,704,CRISÓLITA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,705,DIVISÓPOLIS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,706,FELISBURGO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,707,FRANCISCO BADARÓ,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,708,FRANCISCÓPOLIS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,709,FREI GASPAR,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,710,FRONTEIRA DOS VALES,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,711,ITAIPÉ,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,712,ITAMARANDIBA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,713,ITAOBIM,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,714,ITINGA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,715,JACINTO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,716,JENIPAPO DE MINAS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,717,JEQUITINHONHA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,718,JOAÍMA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,719,JORDÂNIA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,720,JOSÉ GONÇALVES DE MINAS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,721,LADAINHA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,722,LEME DO PRADO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,723,MACHACALIS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,724,MALACACHETA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,725,MATA VERDE,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,726,MEDINA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,727,MINAS NOVAS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,728,MONTE FORMOSO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,729,NANUQUE,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,730,NOVO CRUZEIRO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,731,NOVO ORIENTE DE MINAS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,732,OURO VERDE DE MINAS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,733,PADRE PARAÍSO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,734,PALMÓPOLIS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,735,PAVÃO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,736,PEDRA AZUL,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,737,PONTO DOS VOLANTES,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,738,POTÉ,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,739,RIO DO PRADO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,740,RUBIM,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,741,SALTO DA DIVISA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,742,SANTA HELENA DE MINAS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,743,SANTA MARIA DO SALTO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,744,SANTO ANTÔNIO DO JACINTO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,745,SERRA DOS AIMORÉS,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,746,SETUBINHA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,747,TEÓFILO OTONI,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,748,TURMALINA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,749,UMBURATIBA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,750,VEREDINHA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,751,VIRGEM DA LAPA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,753,ÁGUA BOA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,762,CAMPANÁRIO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,796,ITAMBACURI,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,814,NOVA MÓDICA,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,818,PESCADOR,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,838,SÃO JOSÉ DO DIVINO,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,856,DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE TEÓFILO OTONI,3103,Região Intermediária de Teófilo Otoni,2023-07-04 10:52:00
+2027,52,DOM JOAQUIM,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,123,RIO VERMELHO,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,754,AIMORÉS,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,755,ALPERCATA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,763,CANTAGALO,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,764,CAPITÃO ANDRADE,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,767,CENTRAL DE MINAS,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,768,COLUNA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,770,CONSELHEIRO PENA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,771,COROACI,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,774,CUPARAQUE,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,775,DIVINO DAS LARANJEIRAS,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,776,DIVINOLÂNDIA DE MINAS,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,778,DORES DE GUANHÃES,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,779,ENGENHEIRO CALDAS,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,781,FERNANDES TOURINHO,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,782,FREI INOCÊNCIO,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,783,FREI LAGONEGRO,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,784,GALILÉIA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,785,GOIABEIRA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,786,GONZAGA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,787,GOVERNADOR VALADARES,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,788,GUANHÃES,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,795,ITABIRINHA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,797,ITANHOMI,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,798,ITUETA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,800,JAMPRUCA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,802,JOSÉ RAYDAN,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,803,MANTENA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,804,MARILAC,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,806,MATERLÂNDIA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,807,MATHIAS LOBATO,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,808,MENDES PIMENTEL,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,811,NACIP RAYDAN,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,813,NOVA BELÉM,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,815,PAULISTAS,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,816,PEÇANHA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,822,RESPLENDOR,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,823,SABINÓPOLIS,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,825,SANTA EFIGÊNIA DE MINAS,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,826,SANTA MARIA DO SUAÇUÍ,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,828,SANTA RITA DO ITUETO,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,831,SÃO FÉLIX DE MINAS,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,832,SÃO GERALDO DA PIEDADE,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,833,SÃO GERALDO DO BAIXIO,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,834,SÃO JOÃO DO MANTENINHA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,836,SÃO JOÃO EVANGELISTA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,837,SÃO JOSÉ DA SAFIRA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,839,SÃO JOSÉ DO JACURI,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,840,SÃO PEDRO DO SUAÇUÍ,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,842,SÃO SEBASTIÃO DO MARANHÃO,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,843,SARDOÁ,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,844,SENHORA DO PORTO,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,845,SOBRÁLIA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,847,TARUMIRIM,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,849,TUMIRITINGA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,852,VIRGINÓPOLIS,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,853,VIRGOLÂNDIA,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,857,DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE GOVERNADOR VALADARES,3104,Região Intermediária de Governador Valadares,2023-07-04 10:52:00
+2027,12,BELA VISTA DE MINAS,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,51,DIONÍSIO,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,77,JOÃO MONLEVADE,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,94,NOVA ERA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,122,RIO PIRACICABA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,139,SÃO DOMINGOS DO PRATA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,140,SÃO GONÇALO DO RIO ABAIXO,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,146,SÃO JOSÉ DO GOIABAL,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,251,RAUL SOARES,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,296,VERMELHO NOVO,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,752,AÇUCENA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,756,ALVARENGA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,757,ANTÔNIO DIAS,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,758,BELO ORIENTE,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,759,BOM JESUS DO GALHO,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,760,BRAÚNAS,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,761,BUGRE,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,765,CARATINGA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,772,CORONEL FABRICIANO,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,773,CÓRREGO NOVO,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,777,DOM CAVATI,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,780,ENTRE FOLHAS,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,789,IAPU,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,790,IMBÉ DE MINAS,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,791,INHAPIM,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,792,IPABA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,794,IPATINGA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,799,JAGUARAÇU,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,801,JOANÉSIA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,805,MARLIÉRIA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,809,MESQUITA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,812,NAQUE,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,817,PERIQUITO,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,819,PIEDADE DE CARATINGA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,820,PINGO-D ÁGUA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,824,SANTA BÁRBARA DO LESTE,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,827,SANTA RITA DE MINAS,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,829,SANTANA DO PARAÍSO,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,830,SÃO DOMINGOS DAS DORES,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,835,SÃO JOÃO DO ORIENTE,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,841,SÃO SEBASTIÃO DO ANTA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,848,TIMÓTEO,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,850,UBAPORANGA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,851,VARGEM ALEGRE,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,858,DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE IPATINGA,3105,Região Intermediária de Ipatinga,2023-07-04 10:52:00
+2027,3,ALVINÓPOLIS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,50,DIOGO DE VASCONCELOS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,159,ABRE CAMPO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,160,ACAIACA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,161,ALÉM PARAÍBA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,162,ALTO CAPARAÓ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,163,ALTO JEQUITIBÁ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,165,AMPARO DO SERRA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,166,ANTÔNIO PRADO DE MINAS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,167,ARACITABA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,168,ARAPONGA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,169,ARGIRITA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,170,ASTOLFO DUTRA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,171,BARÃO DE MONTE ALTO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,172,BARRA LONGA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,173,BELMIRO BRAGA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,174,BIAS FORTES,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,175,BICAS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,176,BRÁS PIRES,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,177,CAIANA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,178,CAJURI,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,179,CANAÃ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,180,CAPARAÓ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,181,CAPUTIRA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,182,CARANGOLA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,183,CATAGUASES,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,184,CHÁCARA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,185,CHALÉ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,186,CHIADOR,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,188,COIMBRA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,189,CORONEL PACHECO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,190,DESCOBERTO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,191,DIVINÉSIA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,192,DIVINO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,193,DOM SILVÉRIO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,194,DONA EUZÉBIA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,195,DORES DO TURVO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,196,DURANDÉ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,197,ERVÁLIA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,198,ESPERA FELIZ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,199,ESTRELA DALVA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,200,EUGENÓPOLIS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,201,EWBANK DA CÂMARA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,202,FARIA LEMOS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,203,FERVEDOURO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,204,GOIANÁ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,205,GUARACIABA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,206,GUARANI,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,207,GUARARÁ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,208,GUIDOVAL,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,209,GUIRICEMA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,210,ITAMARATI DE MINAS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,211,JEQUERI,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,212,JUIZ DE FORA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,213,LAJINHA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,215,LARANJAL,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,216,LEOPOLDINA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,217,LIMA DUARTE,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,218,LUISBURGO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,219,MANHUAÇU,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,220,MANHUMIRIM,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,221,MAR DE ESPANHA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,222,MARIPÁ DE MINAS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,223,MARTINS SOARES,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,224,MATIAS BARBOSA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,225,MATIPÓ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,226,MERCÊS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,227,MIRADOURO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,228,MIRAÍ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,229,MURIAÉ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,230,OLARIA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,231,OLIVEIRA FORTES,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,232,ORATÓRIOS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,233,ORIZÂNIA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,234,PAIVA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,235,PALMA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,236,PATROCÍNIO DO MURIAÉ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,237,PAULA CÂNDIDO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,238,PEDRA BONITA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,239,PEDRA DO ANTA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,240,PEDRA DOURADA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,241,PEDRO TEIXEIRA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,242,PEQUERI,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,243,PIAU,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,244,PIEDADE DE PONTE NOVA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,246,PIRAPETINGA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,247,PIRAÚBA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,248,PONTE NOVA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,249,PORTO FIRME,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,250,PRESIDENTE BERNARDES,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,252,RECREIO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,253,REDUTO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,254,RIO CASCA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,255,RIO DOCE,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,257,RIO NOVO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,258,RIO POMBA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,259,RIO PRETO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,260,ROCHEDO DE MINAS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,261,RODEIRO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,262,ROSÁRIO DA LIMEIRA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,263,SANTA BÁRBARA DO MONTE VERDE,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,264,SANTA CRUZ DO ESCALVADO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,265,SANTA MARGARIDA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,267,SANTA RITA DE JACUTINGA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,268,SANTANA DE CATAGUASES,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,269,SANTANA DO DESERTO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,270,SANTANA DO MANHUAÇU,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,271,SANTO ANTÔNIO DO AVENTUREIRO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,272,SANTO ANTÔNIO DO GRAMA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,273,SANTOS DUMONT,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,274,SÃO FRANCISCO DO GLÓRIA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,275,SÃO GERALDO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,276,SÃO JOÃO DO MANHUAÇU,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,277,SÃO JOÃO NEPOMUCENO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,278,SÃO JOSÉ DO MANTIMENTO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,279,SÃO MIGUEL DO ANTA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,280,SÃO PEDRO DOS FERROS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,281,SÃO SEBASTIÃO DA VARGEM ALEGRE,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,282,SEM-PEIXE,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,283,SENADOR CORTES,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,284,SENADOR FIRMINO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,286,SERICITA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,287,SILVEIRÂNIA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,288,SIMÃO PEREIRA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,289,SIMONÉSIA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,290,TABULEIRO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,291,TEIXEIRAS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,292,TOCANTINS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,293,TOMBOS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,294,UBÁ,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,295,URUCÂNIA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,297,VIÇOSA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,298,VIEIRAS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,299,VISCONDE DO RIO BRANCO,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,300,VOLTA GRANDE,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,308,ANDRELÂNDIA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,309,ARANTINA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,315,BOCAINA DE MINAS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,316,BOM JARDIM DE MINAS,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,392,LIBERDADE,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,412,PASSA VINTE,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,769,CONCEIÇÃO DE IPANEMA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,793,IPANEMA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,810,MUTUM,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,821,POCRANE,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,846,TAPARUBA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,859,DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE JUÍZ DE FORA,3106,Região Intermediária de Juíz de Fora,2023-07-04 10:52:00
+2027,2,ALFREDO VASCONCELOS,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,5,ANTÔNIO CARLOS,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,10,BARBACENA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,11,BARROSO,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,14,BELO VALE,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,24,CAPELA NOVA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,26,CARANAÍBA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,27,CARANDAÍ,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,28,CASA GRANDE,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,30,CATAS ALTAS DA NORUEGA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,32,CONCEIÇÃO DA BARRA DE MINAS,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,35,CONGONHAS,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,37,CONSELHEIRO LAFAIETE,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,41,CORONEL XAVIER CHAVES,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,43,CRISTIANO OTONI,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,47,DESTERRO DE ENTRE RIOS,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,48,DESTERRO DO MELO,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,53,DORES DE CAMPOS,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,54,ENTRE RIOS DE MINAS,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,63,IBERTIOGA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,73,ITAVERAVA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,75,JECEABA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,80,LAGOA DOURADA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,82,MADRE DE DEUS DE MINAS,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,93,NAZARENO,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,98,OURO BRANCO,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,107,PIEDADE DO RIO GRANDE,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,111,PRADOS,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,115,QUELUZITO,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,117,RESENDE COSTA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,118,RESSAQUINHA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,124,RITÁPOLIS,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,127,SANTA BÁRBARA DO TUGÚRIO,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,128,SANTA CRUZ DE MINAS,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,132,SANTANA DO GARAMBÉU,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,134,SANTANA DOS MONTES,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,138,SÃO BRÁS DO SUAÇUÍ,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,142,SÃO JOÃO DEL REI,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,148,SÃO TIAGO,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,151,SENHORA DOS REMÉDIOS,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,156,TIRADENTES,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,164,ALTO RIO DOCE,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,187,CIPOTÂNEA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,214,LAMIM,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,245,PIRANGA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,256,RIO ESPERA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,266,SANTA RITA DE IBITIPOCA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,285,SENHORA DE OLIVEIRA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,439,SÃO VICENTE DE MINAS,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,860,DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE BARBACENA,3107,Região Intermediária de Barbacena,2023-07-04 10:52:00
+2027,304,ALFENAS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,305,ALPINÓPOLIS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,306,ALTEROSA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,310,ARCEBURGO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,311,AREADO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,314,BOA ESPERANÇA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,317,BOM JESUS DA PENHA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,323,CABO VERDE,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,328,CAMBUQUIRA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,329,CAMPANHA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,331,CAMPO DO MEIO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,332,CAMPOS GERAIS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,333,CAPETINGA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,334,CAPITÓLIO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,336,CARMO DA CACHOEIRA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,338,CARMO DO RIO CLARO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,339,CARRANCAS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,340,CARVALHÓPOLIS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,342,CÁSSIA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,344,CLARAVAL,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,345,CONCEIÇÃO DA APARECIDA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,351,COQUEIRAL,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,352,CORDISLÂNDIA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,357,DELFINÓPOLIS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,358,DIVISA NOVA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,360,ELÓI MENDES,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,364,FAMA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,365,FORTALEZA DE MINAS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,367,GUAPÉ,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,368,GUARANÉSIA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,369,GUAXUPÉ,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,371,IBIRACI,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,373,IJACI,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,374,ILICÍNEA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,376,INGAÍ,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,379,ITAMOGI,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,383,ITAÚ DE MINAS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,384,ITUMIRIM,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,385,ITUTINGA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,386,JACUÍ,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,389,JURUAIA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,391,LAVRAS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,393,LUMINÁRIAS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,394,MACHADO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,398,MONSENHOR PAULO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,399,MONTE BELO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,400,MONTE SANTO DE MINAS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,403,MUZAMBINHO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,405,NEPOMUCENO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,406,NOVA RESENDE,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,409,PARAGUAÇU,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,413,PASSOS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,417,POÇO FUNDO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,421,PRATÁPOLIS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,422,RIBEIRÃO VERMELHO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,425,SANTANA DA VARGEM,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,426,SÃO BENTO ABADE,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,427,SÃO GONÇALO DO SAPUCAÍ,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,428,SÃO JOÃO BATISTA DO GLÓRIA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,430,SÃO JOSÉ DA BARRA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,433,SÃO PEDRO DA UNIÃO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,435,SÃO SEBASTIÃO DO PARAÍSO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,437,SÃO TOMÉ DAS LETRAS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,438,SÃO TOMÁS DE AQUINO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,444,SERRANIA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,450,TRÊS CORAÇÕES,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,451,TRÊS PONTAS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,453,VARGINHA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,522,AGUANIL,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,527,BOM SUCESSO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,529,CAMPO BELO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,530,CANA VERDE,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,531,CANDEIAS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,539,CRISTAIS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,542,DORESÓPOLIS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,545,IBITURUNA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,563,PERDÕES,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,566,PIUMHI,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,568,SANTANA DO JACARÉ,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,569,SANTO ANTÔNIO DO AMPARO,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,573,SÃO ROQUE DE MINAS,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,577,VARGEM BONITA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,861,DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE VARGINHA,3108,Região Intermediária de Varginha,2023-07-04 10:52:00
+2027,301,AIURUOCA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,302,ALAGOA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,303,ALBERTINA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,307,ANDRADAS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,312,BAEPENDI,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,313,BANDEIRA DO SUL,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,318,BOM REPOUSO,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,319,BORDA DA MATA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,320,BOTELHOS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,321,BRAZÓPOLIS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,322,BUENO BRANDÃO,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,324,CACHOEIRA DE MINAS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,325,CALDAS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,326,CAMANDUCAIA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,327,CAMBUÍ,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,330,CAMPESTRE,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,335,CAREAÇU,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,337,CARMO DE MINAS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,341,CARVALHOS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,343,CAXAMBU,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,346,CONCEIÇÃO DAS PEDRAS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,347,CONCEIÇÃO DO RIO VERDE,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,348,CONCEIÇÃO DOS OUROS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,349,CONGONHAL,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,350,CONSOLAÇÃO,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,353,CÓRREGO DO BOM JESUS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,354,CRISTINA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,355,CRUZÍLIA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,356,DELFIM MOREIRA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,359,DOM VIÇOSO,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,361,ESPÍRITO SANTO DO DOURADO,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,362,ESTIVA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,363,EXTREMA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,366,GONÇALVES,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,370,HELIODORA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,372,IBITIÚRA DE MINAS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,375,INCONFIDENTES,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,377,IPUIÚNA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,378,ITAJUBÁ,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,380,ITAMONTE,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,381,ITANHANDU,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,382,ITAPEVA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,387,JACUTINGA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,388,JESUÂNIA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,390,LAMBARI,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,395,MARIA DA FÉ,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,396,MARMELÓPOLIS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,397,MINDURI,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,401,MONTE SIÃO,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,402,MUNHOZ,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,404,NATÉRCIA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,407,OLÍMPIO NORONHA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,408,OURO FINO,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,410,PARAISÓPOLIS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,411,PASSA QUATRO,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,414,PEDRALVA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,415,PIRANGUÇU,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,416,PIRANGUINHO,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,418,POÇOS DE CALDAS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,419,POUSO ALEGRE,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,420,POUSO ALTO,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,423,SANTA RITA DE CALDAS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,424,SANTA RITA DO SAPUCAÍ,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,429,SÃO JOÃO DA MATA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,431,SÃO JOSÉ DO ALEGRE,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,432,SÃO LOURENÇO,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,434,SÃO SEBASTIÃO DA BELA VISTA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,436,SÃO SEBASTIÃO DO RIO VERDE,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,440,SAPUCAÍ-MIRIM,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,441,SENADOR AMARAL,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,442,SENADOR JOSÉ BENTO,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,443,SERITINGA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,445,SERRANOS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,446,SILVIANÓPOLIS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,447,SOLEDADE DE MINAS,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,448,TOCOS DO MOJI,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,449,TOLEDO,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,452,TURVOLÂNDIA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,454,VIRGÍNIA,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,455,WENCESLAU BRAZ,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,862,DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE POUSO ALEGRE,3109,Região Intermediária de Pouso Alegre,2023-07-04 10:52:00
+2027,456,ÁGUA COMPRIDA,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,461,CAMPO FLORIDO,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,464,CARNEIRINHO,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,467,COMENDADOR GOMES,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,468,CONCEIÇÃO DAS ALAGOAS,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,469,CONQUISTA,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,470,DELTA,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,471,FRONTEIRA,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,472,FRUTAL,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,476,ITAPAGIPE,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,478,ITURAMA,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,479,LIMEIRA DO OESTE,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,481,PIRAJUBA,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,482,PLANURA,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,485,SÃO FRANCISCO DE SALES,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,487,UBERABA,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,489,UNIÃO DE MINAS,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,490,VERÍSSIMO,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,493,ARAXÁ,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,494,CAMPOS ALTOS,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,502,IBIÁ,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,507,NOVA PONTE,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,510,PEDRINÓPOLIS,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,511,PERDIZES,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,512,PRATINHA,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,515,SACRAMENTO,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,516,SANTA JULIANA,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,517,SANTA ROSA DA SERRA,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,520,TAPIRA,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,863,DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE UBERABA,3110,Região Intermediária de Uberaba,2023-07-04 10:52:00
+2027,457,ARAGUARI,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,458,ARAPORÃ,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,459,CACHOEIRA DOURADA,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,460,CAMPINA VERDE,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,462,CANÁPOLIS,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,463,CAPINÓPOLIS,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,465,CASCALHO RICO,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,466,CENTRALINA,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,473,GURINHATÃ,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,474,INDIANÓPOLIS,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,475,IPIAÇU,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,477,ITUIUTABA,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,480,MONTE ALEGRE DE MINAS,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,483,PRATA,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,484,SANTA VITÓRIA,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,486,TUPACIGUARA,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,488,UBERLÂNDIA,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,491,ABADIA DOS DOURADOS,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,498,DOURADOQUARA,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,499,ESTRELA DO SUL,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,500,GRUPIARA,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,503,IRAÍ DE MINAS,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,506,MONTE CARMELO,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,514,ROMARIA,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,864,DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE UBERLÂNDIA,3111,Região Intermediária de Uberlândia,2023-07-04 10:52:00
+2027,492,ARAPUÁ,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,495,CARMO DO PARANAÍBA,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,496,COROMANDEL,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,497,CRUZEIRO DA FORTALEZA,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,501,GUIMARÂNIA,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,504,LAGOA FORMOSA,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,505,MATUTINA,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,508,PATOS DE MINAS,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,509,PATROCÍNIO,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,513,RIO PARANAÍBA,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,518,SÃO GOTARDO,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,519,SERRA DO SALITRE,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,521,TIROS,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,578,ARINOS,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,579,BONFINÓPOLIS DE MINAS,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,580,BRASILÂNDIA DE MINAS,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,581,BURITIS,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,582,CABECEIRA GRANDE,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,583,DOM BOSCO,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,584,FORMOSO,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,585,GUARDA-MOR,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,586,JOÃO PINHEIRO,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,587,LAGAMAR,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,588,LAGOA GRANDE,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,589,NATALÂNDIA,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,590,PARACATU,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,591,PRESIDENTE OLEGÁRIO,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,592,SÃO GONÇALO DO ABAETÉ,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,593,UNAÍ,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,594,URUANA DE MINAS,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,595,VARJÃO DE MINAS,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,596,VAZANTE,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,663,RIACHINHO,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,681,URUCUIA,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,865,DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE PATOS DE MINAS,3112,Região Intermediária de Patos de Minas,2023-07-04 10:52:00
+2027,1,ABAETÉ,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,16,BIQUINHAS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,18,BONFIM,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,31,CEDRO DO ABAETÉ,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,44,CRUCILÂNDIA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,70,ITAGUARA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,72,ITATIAIUÇU,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,83,MARAVILHAS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,90,MORADA NOVA DE MINAS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,97,ONÇA DE PITANGUI,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,100,PAINEIRAS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,101,PAPAGAIOS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,102,PARÁ DE MINAS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,106,PEQUI,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,108,PIEDADE DOS GERAIS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,109,PITANGUI,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,110,POMPÉU,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,121,RIO MANSO,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,145,SÃO JOSÉ DA VARGINHA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,523,ARAÚJOS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,524,ARCOS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,525,BAMBUÍ,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,526,BOM DESPACHO,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,528,CAMACHO,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,532,CARMO DA MATA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,533,CARMO DO CAJURU,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,534,CARMÓPOLIS DE MINAS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,535,CLÁUDIO,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,536,CONCEIÇÃO DO PARÁ,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,537,CÓRREGO DANTA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,538,CÓRREGO FUNDO,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,540,DIVINÓPOLIS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,541,DORES DO INDAIÁ,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,543,ESTRELA DO INDAIÁ,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,544,FORMIGA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,546,IGARATINGA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,547,IGUATAMA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,548,ITAPECERICA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,549,ITAÚNA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,550,JAPARAÍBA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,551,LAGOA DA PRATA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,552,LEANDRO FERREIRA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,553,LUZ,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,554,MARTINHO CAMPOS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,555,MEDEIROS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,556,MOEMA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,557,NOVA SERRANA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,558,OLIVEIRA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,559,PAINS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,560,PASSA TEMPO,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,561,PEDRA DO INDAIÁ,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,562,PERDIGÃO,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,564,PIMENTA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,565,PIRACEMA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,567,QUARTEL GERAL,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,570,SANTO ANTÔNIO DO MONTE,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,571,SÃO FRANCISCO DE PAULA,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,572,SÃO GONÇALO DO PARÁ,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,574,SÃO SEBASTIÃO DO OESTE,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,575,SERRA DA SAUDADE,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,576,TAPIRAÍ,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,866,DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE DIVINÓPOLIS,3113,Região Intermediária de Divinópolis,2023-07-04 10:52:00
+2027,999,DIVERSOS MUNICÍPIOS - ESTADUAL,3199,Estadual,2023-07-04 10:52:00

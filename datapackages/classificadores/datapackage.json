@@ -1,0 +1,262 @@
+{
+  "name": "dados_classificadores",
+  "title": "Tabelas Auxiliares de Classificadores",
+  "resources": [
+    {
+      "name": "grupo_categoria",
+      "type": "table",
+      "path": "data/grupo_categoria.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "hash": "sha256:5dd91c1460bf1b0e5fadad2923da5c0cc69766b77ed7fb553750c7c2339dc685",
+      "bytes": 10695,
+      "fields": 5,
+      "rows": 205,
+      "dialect": {
+        "csv": {
+          "delimiter": ","
+        }
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "ano",
+            "type": "string",
+            "title": "Ano de Exercício",
+            "description": "Ano de exercício do orçamento fiscal.\n",
+            "constraints": {
+              "required": true,
+              "pattern": "^[1-2]\\d{3}$"
+            }
+          },
+          {
+            "name": "grupo_cod",
+            "type": "string",
+            "title": "Grupo Despesa - Código",
+            "description": "Código do grupo de natureza econômica da despesa.\nConsiste na agregação de elementos de despesa que apresentam as mesmas características quanto ao objeto do gasto.\nA Portaria Interministerial STN/SOF n.o 163/01 definiu como grupos de despesa: (1) pessoal e encargos sociais, (2) juros e encargos da dívida, (3) outras despesas correntes, (4) investimentos, (5) inversões financeiras e (6) amortização da dívida.\n",
+            "constraints": {
+              "pattern": "^([0-6]|9)$"
+            }
+          },
+          {
+            "name": "grupo_desc",
+            "type": "string",
+            "title": "Grupo Despesa - Descrição",
+            "description": "Descrição do grupo de natureza econômica da despesa.\n",
+            "constraints": {
+              "maxLength": 500
+            }
+          },
+          {
+            "name": "categoria_cod",
+            "type": "string",
+            "title": "Categoria Econômica - Código",
+            "description": "Código da categoria econômica.\n",
+            "constraints": {
+              "pattern": "^(1|2|3|4|7|9)$"
+            }
+          },
+          {
+            "name": "categoria_desc",
+            "type": "string",
+            "title": "Categoria Econômica Despesa - Desc",
+            "description": "Descrição da categoria econômica da despesa.\n",
+            "constraints": {
+              "maxLength": 500
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "programa",
+      "type": "table",
+      "path": "data/programa.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "hash": "sha256:9dc50f589ebe7931e463d127623644b9d2ad75308141db09a7735659adf7d644",
+      "bytes": 270826,
+      "fields": 3,
+      "rows": 5257,
+      "dialect": {
+        "csv": {
+          "delimiter": ","
+        }
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "ano",
+            "type": "string",
+            "title": "Ano de Exercício",
+            "description": "Ano de exercício do orçamento fiscal.\n",
+            "constraints": {
+              "required": true,
+              "pattern": "^[1-2]\\d{3}$"
+            }
+          },
+          {
+            "name": "programa_cod",
+            "type": "string",
+            "title": "Programa - Código",
+            "description": "Código identificador do objeto concreto, bem ou serviço que se quer atingir.\nO programa representa uma política pública que visa o enfrentamento de um problema ou oportunidade, sendo mensurado por indicadores.\n",
+            "constraints": {
+              "pattern": "^\\d{1,3}$"
+            }
+          },
+          {
+            "name": "programa_desc",
+            "type": "string",
+            "title": "Programa - Descrição",
+            "description": "Descrição do objetivo contreto, bem ou serviço que se quer atingir.\n",
+            "constraints": {
+              "maxLength": 500
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "receita",
+      "type": "table",
+      "path": "data/receita.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "hash": "sha256:a6ff62de4ba200e78bf10c9608e3c7520e5698cb655812dc0fb6794c271c49a9",
+      "bytes": 1325405,
+      "fields": 3,
+      "rows": 14157,
+      "dialect": {
+        "csv": {
+          "delimiter": ","
+        }
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "ano",
+            "type": "string",
+            "title": "Ano de Exercício",
+            "description": "Ano de exercício do orçamento fiscal.\n",
+            "constraints": {
+              "required": true,
+              "pattern": "^[1-2]\\d{3}$"
+            }
+          },
+          {
+            "name": "receita_cod",
+            "type": "string",
+            "title": "Classificação Receita - Código",
+            "description": "Código da classificação da receita.\n",
+            "constraints": {
+              "required": true,
+              "pattern": "^(0|[1-9]\\d{9,12}|[1-9]\\.[1-9]\\.[1-9]\\.[1-9]\\.\\d{2}\\.\\d\\.[1-9]\\.\\d{2}\\.\\d{3})$"
+            }
+          },
+          {
+            "name": "receita_desc",
+            "type": "string",
+            "title": "Classificação Receita - Descrição",
+            "description": "Descrição da Classificação da Receita.\n",
+            "constraints": {
+              "maxLength": 500
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "uo",
+      "type": "table",
+      "path": "data/uo.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "hash": "sha256:791d8a753723045a0e42a48b797e18a137d70c2da991134d1e49308618e4902f",
+      "bytes": 298220,
+      "fields": 6,
+      "rows": 3832,
+      "dialect": {
+        "csv": {
+          "delimiter": ","
+        }
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "ano",
+            "type": "string",
+            "title": "Ano de Exercício",
+            "description": "Ano de exercício do orçamento fiscal.\n",
+            "constraints": {
+              "required": true,
+              "pattern": "^[1-2]\\d{3}$"
+            }
+          },
+          {
+            "name": "uo_cod",
+            "type": "string",
+            "title": "Unidade Orçamentária - Código",
+            "description": "Código representativo da unidade orçamentária.\n",
+            "constraints": {
+              "required": true,
+              "pattern": "^[1-9]\\d{3}$"
+            }
+          },
+          {
+            "name": "uo_sigla",
+            "type": "string",
+            "title": "Unidade Orçamentária - Sigla",
+            "description": "Nome abreviado ou sigla da unidade orçamentária.\n",
+            "constraints": {
+              "maxLength": 500
+            }
+          },
+          {
+            "name": "uo_nome",
+            "type": "string",
+            "title": "Unidade Orçamentária - Nome",
+            "description": "Nome completo da Unidade Orçamentária.\n",
+            "constraints": {
+              "maxLength": 500
+            }
+          },
+          {
+            "name": "poder_cod",
+            "type": "string",
+            "title": "Poder Unidade Orçamentária - Código",
+            "description": "Código indicativo do Poder no qual a unidade orçamentária está incluída.\nRefere-se a designação das orgãos e entidades segregados de acordo com suas funções e atribuições no setor público, a saber:\n(a) Poder Executivo.\n(b) Poder Judiciário.\n(c) Poder Legislativo.\n(d) Ministério Pùblico.\n(e) Tribunal de Contas\n(f) Defensoria Pública.\n",
+            "constraints": {
+              "pattern": "^[1-6]$"
+            }
+          },
+          {
+            "name": "poder_desc",
+            "type": "string",
+            "title": "Poder Unidade Orçamentária - Descrição",
+            "description": "Descrição do Poder no qual a unidade orçamentária está incluída:\nLesgislativo, Judiciário, Executivo, Ministério Público.\n",
+            "constraints": {
+              "maxLength": 500
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "owner_org": "secretaria-de-estado-de-planejamento-e-gestao-seplag",
+  "updated_at": "2026-11-17T14:15:58",
+  "remote": {
+    "host": "raw.githubusercontent.com",
+    "user": "splor-mg",
+    "repo": "dados-classificadores",
+    "ref": "49e346ae895024cdb33e2548574cbb4ffb10ef81",
+    "sha": "49e346ae895024cdb33e2548574cbb4ffb10ef81"
+  }
+}

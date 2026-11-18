@@ -1,0 +1,261 @@
+{
+  "name": "dados-armazem-siafi-2026",
+  "title": "Sistema Integrado de Administração Financeira – SIAFI 2026",
+  "profile": "tabular-data-package",
+  "resources": [
+    {
+      "name": "execucao",
+      "type": "table",
+      "title": "execucao",
+      "profile": "tabular-data-resource",
+      "path": "data/execucao.csv.gz",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "compression": "gz",
+      "encoding": "utf-8",
+      "hash": "sha256:67ca741b13f604d18c2397e7f11323ab3363936e060f04bd882068697edbaecf",
+      "bytes": 21880496,
+      "fields": 30,
+      "rows": 828240,
+      "schema": {
+        "fields": [
+          {
+            "name": "ano",
+            "type": "integer",
+            "source": "Ano de Exercício"
+          },
+          {
+            "name": "mes_cod",
+            "type": "integer",
+            "source": "Mês - Numérico"
+          },
+          {
+            "name": "uo_cod",
+            "type": "integer",
+            "source": "Unidade Orçamentária - Código"
+          },
+          {
+            "name": "ue_cod",
+            "type": "integer",
+            "source": "Unidade Executora - Código"
+          },
+          {
+            "name": "upg_cod",
+            "type": "integer",
+            "source": "Unid Programação Gasto - Código"
+          },
+          {
+            "name": "uo_fin_cod",
+            "type": "integer",
+            "source": "Unid Orçam Financiadora Gasto - Cod"
+          },
+          {
+            "name": "funcao_cod",
+            "type": "integer",
+            "source": "Função - Código"
+          },
+          {
+            "name": "subfuncao_cod",
+            "type": "integer",
+            "source": "Subfunção - Código"
+          },
+          {
+            "name": "programa_cod",
+            "type": "integer",
+            "source": "Programa - Código"
+          },
+          {
+            "name": "acao_cod",
+            "type": "integer",
+            "source": "Projeto_Atividade - Código"
+          },
+          {
+            "name": "grupo_cod",
+            "type": "integer",
+            "source": "Grupo Despesa - Código"
+          },
+          {
+            "name": "modalidade_cod",
+            "type": "integer",
+            "source": "Modalidade Aplicação - Código"
+          },
+          {
+            "name": "iag_cod",
+            "type": "integer",
+            "source": "Identificador Orçamento - Código"
+          },
+          {
+            "name": "fonte_cod",
+            "type": "integer",
+            "source": "Fonte Recurso - Código"
+          },
+          {
+            "name": "ipu_cod",
+            "type": "integer",
+            "source": "Procedência - Código"
+          },
+          {
+            "name": "elemento_item_cod",
+            "type": "integer",
+            "source": "Elemento Item Despesa - Código"
+          },
+          {
+            "name": "elemento_dea_cod",
+            "type": "integer",
+            "source": "Elemento origem DEA"
+          },
+          {
+            "name": "item_dea_cod",
+            "type": "integer",
+            "source": "Item origem DEA"
+          },
+          {
+            "name": "num_processo_compra",
+            "type": "string",
+            "source": "Número Processo Compra SIAD"
+          },
+          {
+            "name": "licitacao_modalidade",
+            "type": "string",
+            "source": "Licitação - Descrição da Modalidade"
+          },
+          {
+            "name": "cnpj_cpf_formatado",
+            "type": "string",
+            "source": "CNPJ_CPF Credor - Formatado"
+          },
+          {
+            "name": "num_contrato_saida",
+            "type": "integer",
+            "source": "ContratoConvênio Saída"
+          },
+          {
+            "name": "num_contrato_entrada",
+            "type": "integer",
+            "source": "ContratoConvênio Entrada"
+          },
+          {
+            "name": "num_obra",
+            "type": "integer",
+            "source": "Número Obra"
+          },
+          {
+            "name": "num_empenho",
+            "type": "integer",
+            "source": "Número Empenho"
+          },
+          {
+            "name": "vlr_empenhado",
+            "type": "number",
+            "source": "Valor Despesa Empenhada"
+          },
+          {
+            "name": "vlr_liquidado",
+            "type": "number",
+            "source": "Valor Despesa Liquidada"
+          },
+          {
+            "name": "vlr_liquidado_retido",
+            "type": "number",
+            "source": "Valor Liquidado Retido"
+          },
+          {
+            "name": "vlr_pago_orcamentario",
+            "type": "number",
+            "source": "Valor Pago Orçamentário"
+          },
+          {
+            "name": "vlr_pago_financeiro",
+            "type": "number",
+            "source": "Valor Pago Financeiro"
+          }
+        ]
+      }
+    },
+    {
+      "name": "receita",
+      "type": "table",
+      "title": "receita",
+      "profile": "tabular-data-resource",
+      "path": "data/receita.csv.gz",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "compression": "gz",
+      "encoding": "utf-8",
+      "hash": "sha256:2defe2440643dc8a7d3524f25868d04e4164821db6b0172bdc1aef2cf0c5301a",
+      "bytes": 111515,
+      "fields": 11,
+      "rows": 7194,
+      "schema": {
+        "fields": [
+          {
+            "name": "ano",
+            "type": "integer",
+            "source": "Ano de Exercício"
+          },
+          {
+            "name": "mes_cod",
+            "type": "integer",
+            "source": "Mês - Numérico"
+          },
+          {
+            "name": "uo_cod",
+            "type": "integer",
+            "source": "Unidade Orçamentária - Código"
+          },
+          {
+            "name": "fonte_cod",
+            "type": "integer",
+            "source": "Fonte Recurso - Código"
+          },
+          {
+            "name": "receita_cod",
+            "type": "integer",
+            "source": "Classificação Receita - Código"
+          },
+          {
+            "name": "receita_cod_formatado",
+            "type": "string",
+            "source": "Classificação Receita - Formatado"
+          },
+          {
+            "name": "vlr_previsto_inicial",
+            "type": "number",
+            "source": "Valor Previsto Inicial"
+          },
+          {
+            "name": "vlr_previsto_adicional",
+            "type": "number",
+            "source": "Valor Previsto Adicional"
+          },
+          {
+            "name": "vlr_previsto_atualizado",
+            "type": "number",
+            "source": "Valor Previsto Atualizado"
+          },
+          {
+            "name": "vlr_contabilizado",
+            "type": "number",
+            "source": "Valor Contabilizado"
+          },
+          {
+            "name": "vlr_efetivado_ajustado",
+            "type": "number",
+            "source": "Valor Efetivado Ajustado"
+          }
+        ]
+      }
+    }
+  ],
+  "owner_org": "secretaria-de-estado-de-planejamento-e-gestao-seplag",
+  "updated_at": "2026-09-22T14:18:54",
+  "remote": {
+    "host": "raw.githubusercontent.com",
+    "user": "splor-mg",
+    "repo": "dados-armazem-siafi-2026",
+    "ref": "ecc08fc76dad2a354b58d2a7547f8fb93b8520d8",
+    "sha": "ecc08fc76dad2a354b58d2a7547f8fb93b8520d8"
+  }
+}

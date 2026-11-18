@@ -1,0 +1,162 @@
+{
+  "name": "dados_siafi",
+  "title": "Sistema Integrado de Administração Financeira – SIAFI 2023",
+  "resources": [
+    {
+      "name": "receita",
+      "type": "table",
+      "path": "data/receita.csv.gz",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "compression": "gz",
+      "encoding": "utf-8",
+      "hash": "sha256:fe27edbfb6701457f32934de6a27c1f8e86d6cef56651d9ae339f23077c4c57e",
+      "bytes": 287270,
+      "fields": 15,
+      "rows": 9240,
+      "dialect": {
+        "csv": {
+          "delimiter": ","
+        }
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "ano",
+            "type": "string",
+            "title": "Ano de Exercício",
+            "description": "Ano de exercício do orçamento fiscal.\n",
+            "constraints": {
+              "required": true,
+              "pattern": "^[1-2]\\d{3}$"
+            }
+          },
+          {
+            "name": "mes_cod",
+            "type": "string",
+            "title": "Mês",
+            "description": "Mês de registro do documento SIAFI\n",
+            "constraints": {
+              "pattern": "^([1-9]|1[0-4])$"
+            }
+          },
+          {
+            "name": "uo_cod",
+            "type": "string",
+            "title": "Unidade Orçamentária - Código",
+            "description": "Código representativo da unidade orçamentária.\n",
+            "constraints": {
+              "required": true,
+              "pattern": "^[1-9]\\d{3}$"
+            }
+          },
+          {
+            "name": "uo_sigla",
+            "type": "string",
+            "title": "Unidade Orçamentária - Sigla",
+            "description": "Nome abreviado ou sigla da unidade orçamentária.\n",
+            "constraints": {
+              "maxLength": 500
+            }
+          },
+          {
+            "name": "uo_nome",
+            "type": "string",
+            "title": "Unidade Orçamentária - Nome",
+            "description": "Nome completo da Unidade Orçamentária.\n",
+            "constraints": {
+              "maxLength": 500
+            }
+          },
+          {
+            "name": "fonte_cod",
+            "type": "string",
+            "title": "Fonte Recurso - Código",
+            "description": "Código referente à fonte dos recursos financeiros.\nIdentifica a origem e natureza dos recursos orçamentários através de código e é utilizada para indicar que espécies de recursos irão financiar as despesas.\n",
+            "constraints": {
+              "required": true,
+              "pattern": "^(0|[1-9]\\d{0,1})$"
+            }
+          },
+          {
+            "name": "fonte_desc",
+            "type": "string",
+            "title": "Fonte Recurso - Descrição",
+            "description": "Descrição da fonte dos recursos financeiros.\n",
+            "constraints": {
+              "maxLength": 500
+            }
+          },
+          {
+            "name": "receita_cod",
+            "type": "string",
+            "title": "Classificação Receita - Código",
+            "description": "Código da classificação da receita.\n",
+            "constraints": {
+              "required": true,
+              "pattern": "^(0|[1-9]\\d{9,12})$"
+            }
+          },
+          {
+            "name": "receita_desc",
+            "type": "string",
+            "title": "Classificação Receita - Descrição",
+            "description": "Descrição da Classificação da Receita.\n",
+            "constraints": {
+              "maxLength": 500
+            }
+          },
+          {
+            "name": "receita_cod_formatado",
+            "type": "string",
+            "title": "Classificação Receita - Formatado",
+            "description": "Código da Classificação Receita Formatado.\n",
+            "constraints": {
+              "pattern": "^(\\d{4}\\.\\d{2}\\.\\d{1}\\.\\d{1}\\.\\d{2}\\.\\d{3}|\\d{1}\\.\\d{1}\\.\\d{1}\\.\\d{1}\\.\\d{2}\\.\\d{2}\\.\\d{2})$"
+            }
+          },
+          {
+            "name": "vlr_previsto_inicial",
+            "type": "number",
+            "title": "Valor Previsto Inicial",
+            "description": "Valor, em reais, da previsão inicial da receita.\n"
+          },
+          {
+            "name": "vlr_previsto_adicional",
+            "type": "number",
+            "title": "Valor Previsto Adicional",
+            "description": "Valor, em reais, da previsão adicional da receita.\n"
+          },
+          {
+            "name": "vlr_previsto_atualizado",
+            "type": "number",
+            "title": "Valor Previsto Atualizado",
+            "description": "Valor, em reais, da previsão atualizada da receita.\n"
+          },
+          {
+            "name": "vlr_contabilizado",
+            "type": "number",
+            "title": "Valor Contabilizado",
+            "description": "Valor, em reais, da receita orçamentária contabilizada.\nAparece negativo quando houve cancelamento da receita.\n"
+          },
+          {
+            "name": "vlr_efetivado_ajustado",
+            "type": "number",
+            "title": "Valor Efetivado Ajustado",
+            "description": "Valor, em reais, da receita orçamentária efetivada ajustada.\n"
+          }
+        ]
+      }
+    }
+  ],
+  "owner_org": "secretaria-de-estado-de-planejamento-e-gestao-seplag",
+  "updated_at": "2026-10-26T13:51:53",
+  "remote": {
+    "host": "raw.githubusercontent.com",
+    "user": "splor-mg",
+    "repo": "dados-siafi-2023",
+    "ref": "main",
+    "sha": "2a013e53d4c5f09695c4afad24a74b6994201064"
+  }
+}
