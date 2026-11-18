@@ -1,4 +1,4 @@
-regiao_geografica_intermediaria	municipio	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
+regiao_geografica_intermediaria_desc	municipio_desc	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
 REGIÃO INTERMEDIÁRIA DE MONTES CLAROS	DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE MONTES CLAROS	102 - PROGRAMA ÁGUA DOCE - RIMC		UNIDADE	INICIADO	17  511 101 4 118	1	PROMOÇÃO DAS POLÍTICAS PÚBLICAS DE ABASTECIMENTO DE ÁGUA - PROGRAMA ÁGUA DOCE.	0	4.547.000
 REGIÃO INTERMEDIÁRIA DE TEÓFILO OTONI	DIVERSOS MUNICÍPIOS - REGIÃO INTERMEDIÁRIA DE TEÓFILO OTONI	103 - PROGRAMA ÁGUA DOCE - RITO		UNIDADE	INICIADO	17  511 101 4 118	1	PROMOÇÃO DAS POLÍTICAS PÚBLICAS DE ABASTECIMENTO DE ÁGUA - PROGRAMA ÁGUA DOCE.	0	4.547.000
 		TOTAL				17  511 101 4 118	1		0	9.094.000

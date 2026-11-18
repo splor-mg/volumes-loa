@@ -1,3 +1,3 @@
-regiao_geografica_intermediaria	municipio	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
+regiao_geografica_intermediaria_desc	municipio_desc	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
 ESTADUAL	DIVERSOS MUNICÍPIOS - ESTADUAL	251 - ELABORAÇÃO E EXECUÇÃO DE PROJETOS RELACIONADOS À REFORMA, MODERNIZAÇÃO E ADEQUAÇÃO DAS INSTALAÇÕES PREDIAIS DA COMPANHIA.		PERCENTUAL	INICIADO	04  126 030 6 006	1	MANUTENÇÃO DAS UNIDADES PREDIAIS	0	16.317.109
 		TOTAL				04  126 030 6 006	1		0	16.317.109

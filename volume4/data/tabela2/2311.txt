@@ -1,3 +1,3 @@
-regiao_geografica_intermediaria	municipio	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
+regiao_geografica_intermediaria_desc	municipio_desc	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
 REGIÃO INTERMEDIÁRIA DE PATOS DE MINAS	UNAÍ	215 - CONSTRUÇÃO DA ESCOLA DO BRASIL PROFISSIONALIZADO NO MUNICÍPIO DE UNAÍ-MG	5.000	METRO QUADRADO	PARALISADO	12  363 007 4 006	1	OFERTA DE ENSINO TÉCNICO E PROFISSIONAL	5.000.000	0
 		TOTAL				12  363 007 4 006	1		5.000.000	0

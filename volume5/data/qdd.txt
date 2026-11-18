@@ -1,4 +1,4 @@
-ano	poder_cod	poder	orgao_cod	orgao_nome	uo_cod	uo_nome	uo_sigla	especificacao	funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	categoria_cod	grupo_cod	modalidade_cod	elemento_cod	iag_cod	fonte_cod	ipu_cod	vlr_loa_desp
+ano	poder_cod	poder_desc	orgao_cod	orgao_nome	uo_cod	uo_nome	uo_sigla	especificacao	funcao_cod	subfuncao_cod	programa_cod	identificador_cod	projeto_atividade_cod	subprojeto_cod	categoria_cod	grupo_cod	modalidade_cod	elemento_cod	iag_cod	fonte_cod	ipu_cod	vlr_loa_desp
 2027	1	PODER LEGISLATIVO	1010	ASSEMBLEIA LEGISLATIVA DO ESTADO DE MINAS GERAIS	1011	ASSEMBLEIA LEGISLATIVA DO ESTADO DE MINAS GERAIS	ALMG	ELABORAÇÃO LEGISLATIVA E ACOMPANHAMENTO DAS POLÍTICAS PÚBLICAS	01	031	729	4	239	0001								1.817.927.379
 2027	1	PODER LEGISLATIVO	1010	ASSEMBLEIA LEGISLATIVA DO ESTADO DE MINAS GERAIS	1011	ASSEMBLEIA LEGISLATIVA DO ESTADO DE MINAS GERAIS	ALMG								3	1	90	07	0	10	1	4.306.800
 2027	1	PODER LEGISLATIVO	1010	ASSEMBLEIA LEGISLATIVA DO ESTADO DE MINAS GERAIS	1011	ASSEMBLEIA LEGISLATIVA DO ESTADO DE MINAS GERAIS	ALMG								3	1	90	11	0	10	1	952.083.985

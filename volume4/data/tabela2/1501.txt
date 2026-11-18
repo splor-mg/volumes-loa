@@ -1,4 +1,4 @@
-regiao_geografica_intermediaria	municipio	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
+regiao_geografica_intermediaria_desc	municipio_desc	obra	obra_quantidade	unidade_medida	obra_status	especificacao	cod_admin	acao_desc	vlr_tesouro	vlr_outros
 REGIÃO INTERMEDIÁRIA DE BELO HORIZONTE	BELO HORIZONTE	111 - REDIMENSIONAMENTO DE REDE ELÉTRICA (NRPMSO'S) - GARANTIR A SEGURANÇA ELÉTRICA PARA IMPLEMENTAÇÃO DE NOVOS EQUIPAMENTOS		UNIDADE	INICIADO	04  122 147 4 476	1	SAÚDE DO SERVIDOR	270.000	0
 		TOTAL				04  122 147 4 476	1		270.000	0
 REGIÃO INTERMEDIÁRIA DE BELO HORIZONTE	BELO HORIZONTE	112 - CONSTRUÇÃO DE UM ABRIGO DE RESÍDUOS SÓLIDOS E GUARITAS DE SEGURANÇA EXTERNA NA CAMG		UNIDADE	INICIADO	04  122 156 4 465	1	GESTÃO DA INFRAESTRUTURA DA CIDADE ADMINISTRATIVA	1.100.000	0

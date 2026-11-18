@@ -1,4 +1,1 @@
-Warning in adiciona_desc(despesa, columns = c("UO", "PROGRAMA")) :
-  Utilizando a tabela auxiliar data-raw/desc/desc_programa_tbl.csv
-
 Warning: V1_Tabela5_DEMONSTRATIVO_CONSOLIDADO_CATEGORIA_PESSOAL: 4291 FUNDO ESTADUAL DE SAÚDE (UO) será considerado como 1.32.0 - SECRETARIA DE ESTADO DE SAÚDE - SES (Órgão)
